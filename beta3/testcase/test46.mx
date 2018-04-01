@@ -1,0 +1,29 @@
+class List{
+    int val;
+    List next;
+}
+
+
+
+
+
+int main(){
+    int n=5;
+    List head = new List();
+    List cur = head;
+    int i;
+    for(i=0;i<n;i++){
+        cur.val=i;
+        cur.next=new List();
+        cur=cur.next;
+    }
+    
+    cur=head;
+    while(cur.next > 0){
+        println(toString(cur.val));
+        cur=cur.next;
+    }
+    
+    
+    return 0;
+}

@@ -1,0 +1,11 @@
+int main() {
+    int a = 5;
+    int b = 1;
+    int c = 0;
+
+    if (!(c == 10 && a/b == 0 && a == 5))
+        c = 30;
+
+    println(toString(c));
+    return 0;
+}

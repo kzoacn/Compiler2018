@@ -1,0 +1,91 @@
+
+LL lcm(LL x,LL y){return x*y/__gcd(x,y);}
+void get_p(){
+	mu[1]=1;
+	for(i=2;i<maxn;i++){
+		if(!minp[i]){
+			prime[++prime[0]]=i;
+			minp[i]=i;
+		}for(j=1;j<=prime[0];j++){
+			if(i*prime[j]>=maxn)break;
+			minp[i*prime[j]]=prime[j];
+			if(i%prime[j]==0){
+				mu[i*prime[j]]=0;
+				phi[i*prime[j]]=phi[i]*prime[j];
+				break;
+			}else{
+				phi[i*prime[j]]=phi[i]*(prime[j]-1);
+				mu[i*prime[j]]=-mu[i];
+			}
+		}
+	}
+}
+
+LL find(LL x){
+
+
+	vector<pair<LL,LL> >vec;
+	if(x>16){
+		for(i=1;prime[i]*prime[i]<=x;i++){
+			if(x%prime[i]==0){
+				vec.push_back(make_pair(prime[i],0));
+				while(x%prime[i]==0){
+					vec.back().second++;
+					x/=prime[i];
+				}
+			}			
+		}
+		
+		if(x>1){
+			vec.push_back(make_pair(x,1));
+		}
+	}else{
+		while(x!=1){
+			if(!vec.empty() && vec.back().first==minp[x])
+				vec.back().second++;
+			else vec.push_back(make_pair(minp[x],1));
+			x/=minp[x];
+		}
+	}
+	LL ans=1;
+	for(i=0;i<vec.size();i++){
+		if(vec[i].second%2==1)
+			vec[i].second++;
+		while(vec[i].second--)
+			ans=vec[i].first;
+	}
+	return ans;
+}
+LL Sqrt(LL x){
+	LL s=LL(sqrt(x));
+	for(i=max(s-1,2LL);i<=s+1;i++)
+		if(i*i==x)
+			return i;
+	return -1;
+}
+int main(){
+	//freopen("ans","w",stdout);
+	get_p();
+	int n;
+	cin>>n;
+	
+	LL nw=2;
+	
+	for(i=1;i<=n;i++){
+		LL nx=lcm(i,LL(i+1)*LL(i+1));
+			nx=find(nx);
+		
+		while(nx<nw)
+			nx*=4;
+		//if(i%1000==0)
+		//	cerr<<nx<<endl;
+		//printf("ans[%d]=%lldLL;\n",i,(nx-nw)/i);
+		printf("%lld\n",(nx-nw)/i);
+		//cout<<nw<<endl;
+		//err<<nx<<"->"<<Sqrt(nx)<<endl;
+		
+		nw=Sqrt(nx);
+		
+	}
+	return 0;
+}

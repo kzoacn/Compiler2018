@@ -1,0 +1,12 @@
+
+class Adder{
+    int c;
+    int add(int x,int y){
+        return x+y;
+    }
+}
+
+int main(){
+    Adder adder = new Adder();
+    println(toString(adder.add(3,4)));
+}

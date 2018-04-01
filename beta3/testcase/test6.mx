@@ -1,0 +1,15 @@
+int main(){
+    int a=12;
+    int b=7;
+    println(toString(a+b));
+    println(toString(a-b));
+    println(toString(a*b));
+    println(toString(a/b));
+    println(toString(a%b));
+    println(toString(a&b));
+    println(toString(a|b));
+    println(toString(a^b));
+    println(toString(!a));
+    println(toString(-a));
+    println(toString(~a));
+}

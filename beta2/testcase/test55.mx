@@ -1,0 +1,6 @@
+int main(){
+    int[][] a = new int[10];
+    a[0]=new int[6];
+    println(toString(a[0].size()));
+    return 0;
+}

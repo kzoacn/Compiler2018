@@ -1,0 +1,11 @@
+int main(){
+    int f0=1;
+    int f1=1;
+    int f2;
+    while(f1<25){
+        println(toString(f1));
+        f2=f0+f1;
+        f0=f1;
+        f1=f2;
+    }
+}

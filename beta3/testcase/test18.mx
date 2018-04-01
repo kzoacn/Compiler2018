@@ -1,0 +1,22 @@
+int main(){
+    int n=4;
+    int m=3;
+    int l=6;
+    int[][][] dp=new int[7][7][7];
+    int i;
+    int j;
+    int k;
+    dp[0][0][0]=1;
+    for(i=0;i<=n;i++)
+    for(j=0;j<=m;j++)
+    for(k=0;k<=l;k++){
+        if(i==0 || j==0 ||k==0)
+            dp[i][j][k]=1;
+        else{
+            dp[i][j][k]=dp[i-1][j][k]+dp[i][j-1][k]+dp[i][j][k-1];
+        }
+    }
+    println(toString(dp[n][m][l]));
+
+    return 0;
+}

@@ -1,0 +1,14 @@
+class Hello{
+    void say(){
+        println("hi");
+    }
+}
+int main(){
+    Hello[] h = new Hello[3];
+    int i=0;
+    for(;i<3;i++){
+        h[i]=new Hello();
+        h[i].say();
+    }
+    return 0;
+}

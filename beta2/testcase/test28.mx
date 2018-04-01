@@ -1,0 +1,9 @@
+int main() {
+    int a = 5;
+    int b;
+    int c;
+    c = a++;
+    b = c;
+    println(toString(a));
+    return 0;
+}

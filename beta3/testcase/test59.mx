@@ -1,0 +1,9 @@
+int main(){
+    int n=5;
+    int[] a= new int[n];
+    int i; 
+    a[0]=3;
+    a[1]=2;
+    println(toString(a[0]));
+    println(toString(a[1]));
+}

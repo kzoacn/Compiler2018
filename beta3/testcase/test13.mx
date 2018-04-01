@@ -1,0 +1,40 @@
+
+    int mo=233;
+    int n=mo-1;
+    int i;
+    int e=1;
+    int[] a=new int[n];
+    int j;
+    int root;
+
+int main(){
+    for(root=1;;root++){
+        int ok=1;
+        for(i=0;i<n;i++){
+            a[i]=e;
+            e=(e*root)%mo;
+            for(j=0;j<i;j++)
+                if(a[i]==a[j]){
+                    ok=0;
+                    break;
+                }
+        }
+        
+        if(ok)break;
+    }
+    
+    for(i=0;i<n;i++){
+        for(j=0;j+1<n;j++){
+            if(a[j]>a[j+1]){
+                int t=a[j];
+                a[j]=a[j+1];
+                a[j+1]=t;
+            }
+        }
+    }
+    
+    for(i=0;i<n;i++)
+        println(toString(a[i]));
+    
+    return 0;
+}

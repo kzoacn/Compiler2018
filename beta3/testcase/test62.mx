@@ -1,0 +1,10 @@
+int main(){
+    int n=5;
+    int[] a;
+    a=new int[n];
+    
+    a[2]=5;
+    
+    println(toString(a[2]));
+    return 0;
+}

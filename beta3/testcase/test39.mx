@@ -1,0 +1,14 @@
+
+int N=0;
+
+int f(int n){
+    if(n==0)return 0;
+    N++;
+    f(--n);
+    N++;
+}
+
+int main(){
+    f(5);
+    println(toString(N));
+}

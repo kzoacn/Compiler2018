@@ -1,0 +1,10 @@
+int main(){
+    int f0=1;
+    int f1;
+    int f2;
+    for(f1=1;f1<25;f1=f2){
+        println(toString(f1));
+        f2=f0+f1;
+        f0=f1;
+    }
+}

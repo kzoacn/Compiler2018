@@ -1,0 +1,22 @@
+
+class human{
+    string name;
+    int age;
+}
+
+
+int main(){
+    human zky = new human();
+    zky.name="kzoacn";
+    zky.age=20;
+    
+    
+    human xiaojiejie = new human();
+    xiaojiejie.name="xiaojiejie";
+    xiaojiejie.age=20;
+    
+    println(zky.name + " xiang yao "+ xiaojiejie.name);
+    println(toString(zky.age-xiaojiejie.age));
+    
+    return 0;
+}

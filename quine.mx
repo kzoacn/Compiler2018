@@ -1,0 +1,1 @@
+int main(){string a="\"";string b="\\";println(s);}string s="int main(){string a="+a+b+a+a+";string b="+a+b+b+a+";println(s);}";
