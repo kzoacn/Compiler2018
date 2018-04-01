@@ -282,12 +282,12 @@ multiArray:
 
 
 main:
-	call global_init
-	mov [rsp+8*1] , rax
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 32
-	mov qword [gbl+8*2] ,t1098
+	sub    rsp, 96
+	call global_init
+	mov [rsp+8*1] , rax
+	mov qword [gbl+8*2] ,t30
 	mov r8, [gbl+8*2]
 	mov qword [rsp+8*3] ,r8
 	mov rdi, formatln
@@ -303,7 +303,7 @@ main:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 32
+	sub    rsp, 96
 	mov rax,[rsp+8*4]
 	leave
 	ret
@@ -311,7 +311,7 @@ global_init:
 QED:
 	
 	 section   .bss
-gbl:         resb   40
+gbl:         resb   2080
 
 	 section   .data
 
@@ -321,7 +321,7 @@ formatln:
 format:
 	db  "%s",  0
 	
-t1098:
-	 db 13,"Hello World" ,0
+t30:
+	 db 11,"Hello World" ,0
 
 

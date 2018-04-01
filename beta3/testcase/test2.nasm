@@ -282,12 +282,12 @@ multiArray:
 
 
 main:
-	call global_init
-	mov [rsp+8*1] , rax
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 56
-	mov qword [gbl+8*2] ,t1113
+	sub    rsp, 120
+	call global_init
+	mov [rsp+8*1] , rax
+	mov qword [gbl+8*2] ,t45
 	mov r8, [gbl+8*2]
 	mov qword [rsp+8*3] ,r8
 	mov rdi, formatln
@@ -295,7 +295,7 @@ main:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov qword [gbl+8*2] ,t1117
+	mov qword [gbl+8*2] ,t49
 	mov r8, [gbl+8*2]
 	mov qword [rsp+8*4] ,r8
 	mov rdi, formatln
@@ -303,7 +303,7 @@ main:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov qword [gbl+8*2] ,t1121
+	mov qword [gbl+8*2] ,t53
 	mov r8, [gbl+8*2]
 	mov qword [rsp+8*5] ,r8
 	mov rdi, formatln
@@ -311,7 +311,7 @@ main:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov qword [gbl+8*2] ,t1125
+	mov qword [gbl+8*2] ,t57
 	mov r8, [gbl+8*2]
 	mov qword [rsp+8*6] ,r8
 	mov rdi, formatln
@@ -327,7 +327,7 @@ main:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 56
+	sub    rsp, 120
 	mov rax,[rsp+8*7]
 	leave
 	ret
@@ -335,7 +335,7 @@ global_init:
 QED:
 	
 	 section   .bss
-gbl:         resb   64
+gbl:         resb   2104
 
 	 section   .data
 
@@ -345,16 +345,16 @@ formatln:
 format:
 	db  "%s",  0
 	
-t1117:
-	 db 12,"0123456789" ,0
+t53:
+	 db 3,"adf" ,0
 
-t1121:
-	 db 5,"adf" ,0
+t45:
+	 db 11,"Hello World" ,0
 
-t1125:
-	 db 14,"asdfasdfasdf" ,0
+t57:
+	 db 12,"asdfasdfasdf" ,0
 
-t1113:
-	 db 13,"Hello World" ,0
+t49:
+	 db 10,"0123456789" ,0
 
 

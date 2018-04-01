@@ -1,5 +1,5 @@
-bool check(int a, int N) {
-    return ((a < N) && (a >= 0));
+bool check(int a1, int N1) {
+    return ((a1 < N1) && (a1 >= 0));
 }
 
 int main() {
@@ -48,10 +48,11 @@ int main() {
     step[startx][starty] = 0;
     while (head <= tail)
     {
+    
         now = step[xlist[head]][ylist[head]];
         x = xlist[head] - 1;
         y = ylist[head] - 2;
-        if (check(x, N) && check(y, N) && step[x][y] == -1)
+        if (check(x, N) && check(y, N) )if(step[x][y] == -1)
         {
             tail = tail + 1;
             xlist[tail] = x;
@@ -61,7 +62,7 @@ int main() {
         }
         x = xlist[head] - 1;
         y = ylist[head] + 2;
-        if (check(x, N) && check(y, N) && step[x][y] == -1)
+        if (check(x, N) && check(y, N) )if(step[x][y] == -1)
         {
             tail = tail + 1;
             xlist[tail] = x;
@@ -71,7 +72,7 @@ int main() {
         }
         x = xlist[head] + 1;
         y = ylist[head] - 2;
-        if (check(x, N) && check(y, N) && step[x][y] == -1)
+        if (check(x, N) && check(y, N) )if(step[x][y] == -1)
         {
             tail = tail + 1;
             xlist[tail] = x;
@@ -81,7 +82,7 @@ int main() {
         }
         x = xlist[head] + 1;
         y = ylist[head] + 2;
-        if (check(x, N) && check(y, N) && step[x][y] == -1)
+        if (check(x, N) && check(y, N) )if(step[x][y] == -1)
         {
             tail = tail + 1;
             xlist[tail] = x;
@@ -91,7 +92,7 @@ int main() {
         }
         x = xlist[head] - 2;
         y = ylist[head] - 1;
-        if (check(x, N) && check(y, N) && step[x][y] == -1)
+        if (check(x, N) && check(y, N) )if(step[x][y] == -1)
         {
             tail = tail + 1;
             xlist[tail] = x;
@@ -99,9 +100,10 @@ int main() {
             step[x][y] = now + 1;
             if (x == targetx && y == targety) ok = 1;
         }
+        
         x = xlist[head] - 2;
         y = ylist[head] + 1;
-        if (check(x, N) && check(y, N) && step[x][y] == -1)
+        if (check(x, N) && check(y, N)  )if(step[x][y] == -1)
         {
             tail = tail + 1;
             xlist[tail] = x;
@@ -109,9 +111,10 @@ int main() {
             step[x][y] = now + 1;
             if (x == targetx && y == targety) ok = 1;
         }
+        
         x = xlist[head] + 2;
         y = ylist[head] - 1;
-        if (check(x, N) && check(y, N) && step[x][y] == -1)
+        if (check(x, N) && check(y, N)  )if(step[x][y] == -1)
         {
             tail = tail + 1;
             xlist[tail] = x;
@@ -119,9 +122,10 @@ int main() {
             step[x][y] = now + 1;
             if (x == targetx && y == targety) ok = 1;
         }
+        
         x = xlist[head] + 2;
         y = ylist[head] + 1;
-        if (check(x, N) && check(y, N) && step[x][y] == -1)
+        if (check(x, N) && check(y, N)  )if(step[x][y] == -1)
         {
             tail = tail + 1;
             xlist[tail] = x;

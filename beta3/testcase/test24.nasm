@@ -282,11 +282,11 @@ multiArray:
 
 
 main:
-	call global_init
-	mov [rsp+8*1] , rax
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 328
+	sub    rsp, 392
+	call global_init
+	mov [rsp+8*1] , rax
 	mov qword [rsp+8*2] ,10000
 	mov qword [rsp+8*3] ,0
 	mov qword [rsp+8*4] ,2800
@@ -299,7 +299,7 @@ main:
 	mov qword [rsp+8*8] ,r8
 	mov qword [rsp+8*9] ,0
 	
-L_148:
+L_176:
 	mov r8, [rsp+8*3]
 	sub r8, [rsp+8*4]
 	mov qword [rsp+8*10],r8 
@@ -310,7 +310,7 @@ L_148:
 	setne [rsp+8*11]
 	mov r8, [rsp+8*11]
 	cmp r8, 0
-	je L_149
+	je L_177
 	xor rdx, rdx
 	mov rax, [rsp+8*2]
 	mov rbx, 5
@@ -333,12 +333,12 @@ L_148:
 	mov r9, [rsp+8*15]
 	mov qword [r9], r8
 	
-L_150:
-	jmp L_148
+L_178:
+	jmp L_176
 	
-L_149:
+L_177:
 	
-L_151:
+L_179:
 	mov qword [rsp+8*5] ,0
 	mov r8, [rsp+8*4]
 	imul r8, 2
@@ -352,14 +352,14 @@ L_151:
 	sete [rsp+8*17]
 	mov r8, [rsp+8*17]
 	cmp r8, 0
-	je L_155
-	jmp L_152
+	je L_183
+	jmp L_180
 	
-L_155:
+L_183:
 	mov r8, [rsp+8*4]
 	mov qword [rsp+8*3] ,r8
 	
-L_156:
+L_184:
 	mov r8, [rsp+8*8]
 	mov qword [rsp+8*18] ,r8
 	mov     rsi, [rsp+8*3]
@@ -423,20 +423,20 @@ L_156:
 	sete [rsp+8*30]
 	mov r8, [rsp+8*30]
 	cmp r8, 0
-	je L_160
-	jmp L_157
+	je L_188
+	jmp L_185
 	
-L_160:
+L_188:
 	
-L_158:
+L_186:
 	mov r8, [rsp+8*5]
 	imul r8, [rsp+8*3]
 	mov qword [rsp+8*31],r8 
 	mov r8, [rsp+8*31]
 	mov qword [rsp+8*5] ,r8
-	jmp L_156
+	jmp L_184
 	
-L_157:
+L_185:
 	mov r8, [rsp+8*4]
 	sub r8, 14
 	mov qword [rsp+8*32],r8 
@@ -468,7 +468,7 @@ L_157:
 	xor rax, rax
 	call printf
 	
-L_153:
+L_181:
 	xor rdx, rdx
 	mov rax, [rsp+8*5]
 	mov rbx, [rsp+8*2]
@@ -477,10 +477,10 @@ L_153:
 	mov [rsp+8*39], rdx
 	mov r8, [rsp+8*39]
 	mov qword [rsp+8*6] ,r8
-	jmp L_151
+	jmp L_179
 	
-L_152:
-	mov qword [gbl+8*35] ,t978
+L_180:
+	mov qword [gbl+8*35] ,t1365
 	mov r8, [gbl+8*35]
 	mov qword [rsp+8*40] ,r8
 	mov rdi, formatln
@@ -499,7 +499,7 @@ L_152:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 328
+	sub    rsp, 392
 	mov rax,[rsp+8*41]
 	leave
 	ret
@@ -507,7 +507,7 @@ global_init:
 QED:
 	
 	 section   .bss
-gbl:         resb   336
+gbl:         resb   2376
 
 	 section   .data
 
@@ -517,7 +517,7 @@ formatln:
 format:
 	db  "%s",  0
 	
-t978:
-	 db 2,"" ,0
+t1365:
+	 db 0,"" ,0
 
 

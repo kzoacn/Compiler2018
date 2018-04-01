@@ -17,112 +17,75 @@ import java.util.Scanner;
 class ExecTest {
 
     @Test
-    void test0()throws Exception{
-        test("test0");
+    void testTo40()throws Exception{
+        for(int i=0;i<=40;i++){
+            String name="test"+Integer.toString(i);
+            test(name);
+        }
     }
     @Test
-    void test1()throws Exception{
-        test("test1");
+    void test41()throws Exception{
+        test("test41");
     }
     @Test
-    void test2()throws Exception{
-        test("test2");
+    void test42()throws Exception{
+        test("test42");
     }
     @Test
-    void test3()throws Exception{
-        test("test3");
+    void test43()throws Exception{
+        test("test43");
     }
     @Test
-    void test4()throws Exception{
-        test("test4");
+    void test44()throws Exception{
+        test("test44");
     }
     @Test
-    void test5()throws Exception{
-        test("test5");
+    void test45()throws Exception{
+        test("test45");
     }
     @Test
-    void test6()throws Exception{
-        test("test6");
+    void test46()throws Exception{
+        test("test46");
     }
     @Test
-    void test7()throws Exception{
-        test("test7");
+    void test47()throws Exception{
+        test("test47");
     }
     @Test
-    void test8()throws Exception{
-        test("test8");
+    void test48()throws Exception{
+        test("test48");
     }
     @Test
-    void test9()throws Exception{
-        test("test9");
+    void test49()throws Exception{
+        test("test49");
     }
     @Test
-    void test10()throws Exception{
-        test("test10");
+    void test50()throws Exception{
+        test("test50");
     }
     @Test
-    void test11()throws Exception{
-        test("test11");
+    void test51()throws Exception{
+        test("test51");
     }
     @Test
-    void test12()throws Exception{
-        test("test12");
+    void test52()throws Exception{
+        test("test52");
     }
     @Test
-    void test13()throws Exception{
-        test("test13");
+    void test53()throws Exception{
+        test("test53");
     }
     @Test
-    void test14()throws Exception{
-        test("test14");
+    void test54()throws Exception{
+        test("test54");
     }
     @Test
-    void test15()throws Exception{
-        test("test15");
+    void test55()throws Exception{
+        test("test55");
     }
     @Test
-    void test16()throws Exception{
-        test("test16");
-    }
-    @Test
-    void test17()throws Exception{
-        test("test17");
-    }
-    @Test
-    void test18()throws Exception{
-        test("test18");
-    }
-    @Test
-    void test19()throws Exception{
-        test("test19");
-    }
-    @Test
-    void test20()throws Exception{
-        test("test20");
-    }
-    @Test
-    void test21()throws Exception{
-        test("test21");
-    }
-    @Test
-    void test22()throws Exception{
-        test("test22");
-    }
-    @Test
-    void test23()throws Exception{
-        test("test23");
-    }
-    @Test
-    void test24()throws Exception{
-        test("test24");
-    }
-    @Test
-    void test25()throws Exception{
-        test("test25");
-    }
-    @Test
-    void test59()throws Exception{
-        test("test59");
+    void test56()throws Exception{
+        test("test56");
     }
 
     void test(String name) throws Exception{

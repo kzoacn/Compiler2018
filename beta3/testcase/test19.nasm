@@ -282,11 +282,11 @@ multiArray:
 
 
 main:
-	call global_init
-	mov [rsp+8*1] , rax
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 152
+	sub    rsp, 216
+	call global_init
+	mov [rsp+8*1] , rax
 	mov qword [rsp+8*2] ,1
 	mov r8, 1
 	mov r9, 0
@@ -298,8 +298,8 @@ main:
 	mov qword [rsp+8*4],r8 
 	mov r8, [rsp+8*4]
 	cmp r8, 0
-	je L_106
-	mov qword [gbl+8*5] ,t647
+	je L_134
+	mov qword [gbl+8*5] ,t1034
 	mov r8, [gbl+8*5]
 	mov qword [rsp+8*6] ,r8
 	mov rdi, formatln
@@ -307,10 +307,10 @@ main:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	jmp L_107
+	jmp L_135
 	
-L_106:
-	mov qword [gbl+8*5] ,t651
+L_134:
+	mov qword [gbl+8*5] ,t1038
 	mov r8, [gbl+8*5]
 	mov qword [rsp+8*7] ,r8
 	mov rdi, formatln
@@ -319,7 +319,7 @@ L_106:
 	xor rax, rax
 	call printf
 	
-L_107:
+L_135:
 	mov r8, [rsp+8*2]
 	mov qword [rsp+8*8], 0
 	cmp r8, 0
@@ -334,8 +334,8 @@ L_107:
 	mov qword [rsp+8*10],r8 
 	mov r8, [rsp+8*10]
 	cmp r8, 0
-	je L_108
-	mov qword [gbl+8*5] ,t660
+	je L_136
+	mov qword [gbl+8*5] ,t1047
 	mov r8, [gbl+8*5]
 	mov qword [rsp+8*11] ,r8
 	mov rdi, formatln
@@ -343,10 +343,10 @@ L_107:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	jmp L_109
+	jmp L_137
 	
-L_108:
-	mov qword [gbl+8*5] ,t664
+L_136:
+	mov qword [gbl+8*5] ,t1051
 	mov r8, [gbl+8*5]
 	mov qword [rsp+8*12] ,r8
 	mov rdi, formatln
@@ -355,7 +355,7 @@ L_108:
 	xor rax, rax
 	call printf
 	
-L_109:
+L_137:
 	mov qword [rsp+8*2] ,0
 	mov r8, 1
 	mov r9, 0
@@ -375,8 +375,8 @@ L_109:
 	mov qword [rsp+8*16],r8 
 	mov r8, [rsp+8*16]
 	cmp r8, 0
-	je L_110
-	mov qword [gbl+8*5] ,t677
+	je L_138
+	mov qword [gbl+8*5] ,t1064
 	mov r8, [gbl+8*5]
 	mov qword [rsp+8*17] ,r8
 	mov rdi, formatln
@@ -384,10 +384,10 @@ L_109:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	jmp L_111
+	jmp L_139
 	
-L_110:
-	mov qword [gbl+8*5] ,t681
+L_138:
+	mov qword [gbl+8*5] ,t1068
 	mov r8, [gbl+8*5]
 	mov qword [rsp+8*18] ,r8
 	mov rdi, formatln
@@ -396,7 +396,7 @@ L_110:
 	xor rax, rax
 	call printf
 	
-L_111:
+L_139:
 	mov rax,0
 	leave
 	ret
@@ -405,7 +405,7 @@ L_111:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 152
+	sub    rsp, 216
 	mov rax,[rsp+8*19]
 	leave
 	ret
@@ -413,7 +413,7 @@ global_init:
 QED:
 	
 	 section   .bss
-gbl:         resb   160
+gbl:         resb   2200
 
 	 section   .data
 
@@ -423,22 +423,22 @@ formatln:
 format:
 	db  "%s",  0
 	
-t647:
-	 db 7,"true1" ,0
+t1038:
+	 db 6,"false1" ,0
 
-t664:
-	 db 8,"false2" ,0
+t1051:
+	 db 6,"false2" ,0
 
-t677:
-	 db 7,"true3" ,0
+t1064:
+	 db 5,"true3" ,0
 
-t660:
-	 db 7,"true2" ,0
+t1068:
+	 db 6,"false3" ,0
 
-t651:
-	 db 8,"false1" ,0
+t1034:
+	 db 5,"true1" ,0
 
-t681:
-	 db 8,"false3" ,0
+t1047:
+	 db 5,"true2" ,0
 
 

@@ -160,7 +160,7 @@ public class IRTranslator {
             putVariable(cur.dest);
         }
 
-        bss.append("gbl:         resb   "+Integer.toString(variableIndex.size()*8+8)+"\n");
+        bss.append("gbl:         resb   "+Integer.toString(variableIndex.size()*8+2048)+"\n");
 
         data.append(new StringBuffer("\nformatln:\n\t"));
         data.append(new StringBuffer("db  \"%s\", 10, 0\n\t"));
@@ -169,7 +169,7 @@ public class IRTranslator {
 
         for(Map.Entry<Variable,String> entry : constStringPool.entrySet()){
             String string=entry.getValue();
-            data.append("\n"+entry.getKey()+":\n\t db "+ Integer.toString(string.length())+","+string +" ,0\n");
+            data.append("\n"+entry.getKey()+":\n\t db "+ Integer.toString(string.length()-2)+","+string +" ,0\n");
             //variableMap.put(entry.getKey(),allocateString(string.substring(1,string.length()-1)));
         }
 
@@ -183,12 +183,18 @@ public class IRTranslator {
 
 
         int skipCounter=0;
+        int line=0;
         for(Quad cur=ir.head;cur!=null;cur=cur.next){
+            line+=1;
             Variable var1=cur.var1;
             Variable var2=cur.var2;
             Variable dest=cur.dest;
             String name=cur.name;
+            System.err.println(cur.opCode);
+            if(line==120){
+                System.err.println(cur.opCode);
 
+            }
             if(cur.opCode.equals(OpCode.saveContext))
                 skipCounter++;
             if(cur.opCode.equals(OpCode.resumeContext))
@@ -196,7 +202,8 @@ public class IRTranslator {
             if(cur.opCode.equals(OpCode.endContext))
                 skipCounter--;
             if(skipCounter>0){
-                cur=cur.next;
+                //cur=cur.next;
+                continue;
             }
 
             switch (cur.opCode){
@@ -422,7 +429,7 @@ public class IRTranslator {
                 case enterFunction:
                     text.append(new StringBuffer("push   rbp\n\t"));
                     text.append(new StringBuffer("mov    rbp, rsp\n\t"));
-                    text.append(new StringBuffer("sub    rsp, "+Integer.toString(variableIndex.size()*8)+"\n\t")); //TODO
+                    text.append(new StringBuffer("sub    rsp, "+Integer.toString(variableIndex.size()*8+64)+"\n\t")); //TODO
                     break;
                 case endContext:
                     break;

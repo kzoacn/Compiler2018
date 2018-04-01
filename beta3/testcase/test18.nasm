@@ -282,11 +282,11 @@ multiArray:
 
 
 main:
-	call global_init
-	mov [rsp+8*1] , rax
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 392
+	sub    rsp, 456
+	call global_init
+	mov [rsp+8*1] , rax
 	mov qword [rsp+8*2] ,4
 	mov qword [rsp+8*3] ,3
 	mov qword [rsp+8*4] ,6
@@ -344,7 +344,7 @@ main:
 	mov qword [r9], r8
 	mov qword [rsp+8*10] ,0
 	
-L_95:
+L_123:
 	mov r8, [rsp+8*10]
 	mov r9, [rsp+8*2]
 	cmp r8, r9
@@ -352,10 +352,10 @@ L_95:
 	setle [rsp+8*11]
 	mov r8, [rsp+8*11]
 	cmp r8, 0
-	je L_96
+	je L_124
 	mov qword [rsp+8*12] ,0
 	
-L_98:
+L_126:
 	mov r8, [rsp+8*12]
 	mov r9, [rsp+8*3]
 	cmp r8, r9
@@ -363,10 +363,10 @@ L_98:
 	setle [rsp+8*13]
 	mov r8, [rsp+8*13]
 	cmp r8, 0
-	je L_99
+	je L_127
 	mov qword [rsp+8*14] ,0
 	
-L_101:
+L_129:
 	mov r8, [rsp+8*14]
 	mov r9, [rsp+8*4]
 	cmp r8, r9
@@ -374,7 +374,7 @@ L_101:
 	setle [rsp+8*15]
 	mov r8, [rsp+8*15]
 	cmp r8, 0
-	je L_102
+	je L_130
 	mov r8, [rsp+8*10]
 	mov r9, 0
 	cmp r8, r9
@@ -398,7 +398,7 @@ L_101:
 	mov qword [rsp+8*20],r8 
 	mov r8, [rsp+8*20]
 	cmp r8, 0
-	je L_104
+	je L_132
 	mov r8, [rsp+8*7]
 	mov qword [rsp+8*21] ,r8
 	mov     rsi, [rsp+8*10]
@@ -422,9 +422,9 @@ L_101:
 	mov r8, 1
 	mov r9, [rsp+8*22]
 	mov qword [r9], r8
-	jmp L_105
+	jmp L_133
 	
-L_104:
+L_132:
 	mov r8, [rsp+8*10]
 	sub r8, 1
 	mov qword [rsp+8*23],r8 
@@ -533,40 +533,40 @@ L_104:
 	mov r9, [rsp+8*38]
 	mov qword [r9], r8
 	
-L_105:
+L_133:
 	
-L_103:
+L_131:
 	mov r8, [rsp+8*14]
 	add r8, 1
 	mov qword [rsp+8*14],r8 
 	mov r8, [rsp+8*14]
 	sub r8, 1
 	mov qword [rsp+8*39],r8 
-	jmp L_101
+	jmp L_129
 	
-L_102:
+L_130:
 	
-L_100:
+L_128:
 	mov r8, [rsp+8*12]
 	add r8, 1
 	mov qword [rsp+8*12],r8 
 	mov r8, [rsp+8*12]
 	sub r8, 1
 	mov qword [rsp+8*40],r8 
-	jmp L_98
+	jmp L_126
 	
-L_99:
+L_127:
 	
-L_97:
+L_125:
 	mov r8, [rsp+8*10]
 	add r8, 1
 	mov qword [rsp+8*10],r8 
 	mov r8, [rsp+8*10]
 	sub r8, 1
 	mov qword [rsp+8*41],r8 
-	jmp L_95
+	jmp L_123
 	
-L_96:
+L_124:
 	mov r8, [rsp+8*7]
 	mov qword [rsp+8*42] ,r8
 	mov     rsi, [rsp+8*2]
@@ -617,7 +617,7 @@ L_96:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 392
+	sub    rsp, 456
 	mov rax,[rsp+8*49]
 	leave
 	ret
@@ -625,7 +625,7 @@ global_init:
 QED:
 	
 	 section   .bss
-gbl:         resb   400
+gbl:         resb   2440
 
 	 section   .data
 

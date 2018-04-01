@@ -1146,9 +1146,9 @@ class MVisitor extends MxstarBaseVisitor<IR>{
 
 
         ir.push(new Quad(OpCode.label,name));
+        ir.push(new Quad(OpCode.enterFunction,name));
         if(name.equals("main"))
             ir.push(new Quad(OpCode.call,"global_init",nextVariable(VariableType.INT)));
-        ir.push(new Quad(OpCode.enterFunction,name));
         if(ctx.parameterList()!=null) {
             for (int i = 0; i < ctx.parameterList().parameter().size(); i++) {
                 String variableName = ctx.parameterList().parameter(i).variableName().getText();

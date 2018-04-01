@@ -25,26 +25,32 @@ void search(int c) {
     else {
         int r;
         for (r = 0; r < N; r++) {
-            if (row[r] == 0 && d[0][r+c] == 0 && d[1][r+N-1-c] == 0) {
-                d[1][r+N-1-c] = 1;
-                d[0][r+c] = 1;
-                row[r] = 1;
-                col[c] = r;
+            if(row[r] == 0) {
+                if(d[0][r+c] == 0 ){
+                    if(d[1][r+N-1-c] == 0) {
+                        d[1][r+N-1-c] = 1;
+                        d[0][r+c] = 1;
+                        row[r] = 1;
+                        col[c] = r;
+                        
+                        
+                        search(c+1);
+                        toString(1);
 
-                search(c+1);
-
-                row[r] = 0;
-                d[0][r+c] = 0;
-                d[1][r+N-1-c] = 0;
+                        row[r] = 0;
+                        d[0][r+c] = 0;
+                        d[1][r+N-1-c] = 0;
+                    }
+                }
             }
         }
     }
 }
 
 int main() {
-    int i;
-	for (i = 0; i < 2; i ++)
-	    d[i] = new int[8 + 8 - 1];
+    int k;
+	for (k = 0; k < 2; k ++)
+	    d[k] = new int[8 + 8 - 1];
     search(0);
     return 0;
 }

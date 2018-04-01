@@ -6,13 +6,14 @@ long* mallocArray(long size){
 }
 
 char* concat(char *s1,char *s2){
-    char *s=malloc(*s1 + *s2 +1 );
+    char *s=malloc(*s1 + *s2 +2 );
     *s=*s1 + *s2;
     long i=0,j=0;
     for(i=0;i< *s1 ;i++)
         s[++j]=s1[i+1];
     for(i=0;i< *s2 ;i++)
         s[++j]=s2[i+1];
+    s[++j]=0;    
     return s;
 }
 
@@ -38,6 +39,43 @@ long* _multiArray(int n,long* a){
 
 long* multiArray(long* a){
     return _multiArray(0,a);
+}
+
+char* toString(long x){
+
+
+    long len=0,flag=1;
+    if(x==0)
+        len=1;
+    if(x<0){
+        x=-x;
+        flag=-1;
+        len++;
+    }
+    long y=x;
+    while(y>0){
+        len++;
+        y/=10;
+    }
+    char *s=malloc(len+2);
+    *(s+len+1)=0;
+    char *c=s;
+    *c=(char)len&255;
+    c++;
+    
+    if(flag==-1){
+        *c='-';
+    }
+    c=s+len;
+    if(x==0)
+        *c='0';
+   
+    while(x>0){
+        *c=(char)(x%10+'0');
+        c--;
+        x/=10;
+    }
+    return s;
 }
 
 
@@ -70,7 +108,9 @@ void test(){
 
 int main(){
     test();
-//    char *s1="asd";
-//    char *s2="fff";
-//    concat(s1,s2);
+    char *s1=toString(123);
+    char *s2=toString(450);
+    char *s=concat(s1,s2);
+    s++;
+    puts(s);
 }

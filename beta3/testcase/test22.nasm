@@ -282,14 +282,14 @@ multiArray:
 
 
 main:
-	call global_init
-	mov [rsp+8*1] , rax
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 512
+	sub    rsp, 576
+	call global_init
+	mov [rsp+8*1] , rax
 	mov qword [rsp+8*2] ,1
 	
-L_124:
+L_152:
 	mov r8, [rsp+8*2]
 	mov r9, [gbl+8*3]
 	cmp r8, r9
@@ -297,7 +297,7 @@ L_124:
 	setle [rsp+8*4]
 	mov r8, [rsp+8*4]
 	cmp r8, 0
-	je L_125
+	je L_153
 	mov r8, [gbl+8*3]
 	add r8, 1
 	mov qword [rsp+8*5],r8 
@@ -314,16 +314,16 @@ L_124:
 	mov r9, [rsp+8*9]
 	mov qword [r9], r8
 	
-L_126:
+L_154:
 	mov r8, [rsp+8*2]
 	add r8, 1
 	mov qword [rsp+8*2],r8 
 	mov r8, [rsp+8*2]
 	sub r8, 1
 	mov qword [rsp+8*10],r8 
-	jmp L_124
+	jmp L_152
 	
-L_125:
+L_153:
 	mov r8, [gbl+8*3]
 	mov qword [gbl+8*11] ,r8
 	mov qword [gbl+8*12] ,1
@@ -331,7 +331,7 @@ L_125:
 	mov [rsp+8*13] , rax
 	mov qword [rsp+8*2] ,1
 	
-L_127:
+L_155:
 	mov r8, [rsp+8*2]
 	mov r9, [gbl+8*3]
 	cmp r8, r9
@@ -339,7 +339,7 @@ L_127:
 	setle [rsp+8*14]
 	mov r8, [rsp+8*14]
 	cmp r8, 0
-	je L_128
+	je L_156
 	mov r8, [gbl+8*7]
 	mov qword [rsp+8*15] ,r8
 	mov     rsi, [rsp+8*2]
@@ -365,7 +365,7 @@ L_127:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov qword [gbl+8*12] ,t815
+	mov qword [gbl+8*12] ,t1202
 	mov r8, [gbl+8*12]
 	mov qword [rsp+8*21] ,r8
 	mov rdi, format
@@ -374,17 +374,17 @@ L_127:
 	xor rax, rax
 	call printf
 	
-L_129:
+L_157:
 	mov r8, [rsp+8*2]
 	add r8, 1
 	mov qword [rsp+8*2],r8 
 	mov r8, [rsp+8*2]
 	sub r8, 1
 	mov qword [rsp+8*22],r8 
-	jmp L_127
+	jmp L_155
 	
-L_128:
-	mov qword [gbl+8*12] ,t819
+L_156:
+	mov qword [gbl+8*12] ,t1206
 	mov r8, [gbl+8*12]
 	mov qword [rsp+8*23] ,r8
 	mov rdi, formatln
@@ -403,7 +403,7 @@ L_128:
 qsrt:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 512
+	sub    rsp, 576
 	mov r8, [gbl+8*12]
 	mov qword [rsp+8*24] ,r8
 	mov r8, [gbl+8*11]
@@ -433,7 +433,7 @@ qsrt:
 	mov r8, [rsp+8*32]
 	mov qword [rsp+8*33] ,r8
 	
-L_112:
+L_140:
 	mov r8, [rsp+8*26]
 	mov r9, [rsp+8*27]
 	cmp r8, r9
@@ -441,9 +441,9 @@ L_112:
 	setle [rsp+8*34]
 	mov r8, [rsp+8*34]
 	cmp r8, 0
-	je L_113
+	je L_141
 	
-L_114:
+L_142:
 	mov r8, [gbl+8*7]
 	mov qword [rsp+8*35] ,r8
 	mov     rsi, [rsp+8*26]
@@ -460,18 +460,18 @@ L_114:
 	setl [rsp+8*38]
 	mov r8, [rsp+8*38]
 	cmp r8, 0
-	je L_115
+	je L_143
 	mov r8, [rsp+8*26]
 	add r8, 1
 	mov qword [rsp+8*26],r8 
 	mov r8, [rsp+8*26]
 	sub r8, 1
 	mov qword [rsp+8*39],r8 
-	jmp L_114
+	jmp L_142
 	
-L_115:
+L_143:
 	
-L_116:
+L_144:
 	mov r8, [gbl+8*7]
 	mov qword [rsp+8*40] ,r8
 	mov     rsi, [rsp+8*27]
@@ -488,16 +488,16 @@ L_116:
 	setg [rsp+8*43]
 	mov r8, [rsp+8*43]
 	cmp r8, 0
-	je L_117
+	je L_145
 	mov r8, [rsp+8*27]
 	sub r8, 1
 	mov qword [rsp+8*27],r8 
 	mov r8, [rsp+8*27]
 	add r8, 1
 	mov qword [rsp+8*44],r8 
-	jmp L_116
+	jmp L_144
 	
-L_117:
+L_145:
 	mov r8, [rsp+8*26]
 	mov r9, [rsp+8*27]
 	cmp r8, r9
@@ -505,7 +505,7 @@ L_117:
 	setle [rsp+8*45]
 	mov r8, [rsp+8*45]
 	cmp r8, 0
-	je L_119
+	je L_147
 	mov r8, [gbl+8*7]
 	mov qword [rsp+8*46] ,r8
 	mov     rsi, [rsp+8*26]
@@ -557,10 +557,10 @@ L_117:
 	add r8, 1
 	mov qword [rsp+8*58],r8 
 	
-L_119:
-	jmp L_112
+L_147:
+	jmp L_140
 	
-L_113:
+L_141:
 	mov r8, [rsp+8*24]
 	mov r9, [rsp+8*27]
 	cmp r8, r9
@@ -568,11 +568,15 @@ L_113:
 	setl [rsp+8*59]
 	mov r8, [rsp+8*59]
 	cmp r8, 0
-	je L_121
+	je L_149
 	mov r8, [rsp+8*27]
 	mov qword [gbl+8*11] ,r8
+	mov r8, [rsp+8*24]
+	mov qword [gbl+8*12] ,r8
+	call qsrt
+	mov [rsp+8*60] , rax
 	
-L_121:
+L_149:
 	mov r8, [rsp+8*26]
 	mov r9, [rsp+8*25]
 	cmp r8, r9
@@ -580,11 +584,15 @@ L_121:
 	setl [rsp+8*61]
 	mov r8, [rsp+8*61]
 	cmp r8, 0
-	je L_123
+	je L_151
 	mov r8, [rsp+8*25]
 	mov qword [gbl+8*11] ,r8
+	mov r8, [rsp+8*26]
+	mov qword [gbl+8*12] ,r8
+	call qsrt
+	mov [rsp+8*62] , rax
 	
-L_123:
+L_151:
 	mov rax,0
 	leave
 	ret
@@ -595,7 +603,7 @@ L_123:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 512
+	sub    rsp, 576
 	mov     rdi, 11
 	call    mallocArray
 	mov     qword [gbl+8*63], rax
@@ -609,7 +617,7 @@ global_init:
 QED:
 	
 	 section   .bss
-gbl:         resb   520
+gbl:         resb   2560
 
 	 section   .data
 
@@ -619,10 +627,10 @@ formatln:
 format:
 	db  "%s",  0
 	
-t819:
-	 db 2,"" ,0
+t1206:
+	 db 0,"" ,0
 
-t815:
-	 db 3," " ,0
+t1202:
+	 db 1," " ,0
 
 

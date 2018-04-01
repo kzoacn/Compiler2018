@@ -282,11 +282,11 @@ multiArray:
 
 
 main:
-	call global_init
-	mov [rsp+8*1] , rax
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 136
+	sub    rsp, 200
+	call global_init
+	mov [rsp+8*1] , rax
 	mov qword [rsp+8*2] ,5
 	mov     rdi, [rsp+8*2]
 	call    mallocArray
@@ -295,7 +295,7 @@ main:
 	mov qword [rsp+8*4] ,r8
 	mov qword [rsp+8*5] ,0
 	
-L_176:
+L_9:
 	mov r8, [rsp+8*5]
 	mov r9, [rsp+8*2]
 	cmp r8, r9
@@ -303,7 +303,7 @@ L_176:
 	setl [rsp+8*6]
 	mov r8, [rsp+8*6]
 	cmp r8, 0
-	je L_177
+	je L_10
 	mov r8, [rsp+8*4]
 	mov qword [rsp+8*7] ,r8
 	mov     rsi, [rsp+8*5]
@@ -339,16 +339,16 @@ L_176:
 	xor rax, rax
 	call printf
 	
-L_178:
+L_11:
 	mov r8, [rsp+8*5]
 	add r8, 1
 	mov qword [rsp+8*5],r8 
 	mov r8, [rsp+8*5]
 	sub r8, 1
 	mov qword [rsp+8*16],r8 
-	jmp L_176
+	jmp L_9
 	
-L_177:
+L_10:
 	mov rax,0
 	leave
 	ret
@@ -357,7 +357,7 @@ L_177:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 136
+	sub    rsp, 200
 	mov rax,[rsp+8*17]
 	leave
 	ret
@@ -365,7 +365,7 @@ global_init:
 QED:
 	
 	 section   .bss
-gbl:         resb   144
+gbl:         resb   2184
 
 	 section   .data
 

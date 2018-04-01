@@ -282,11 +282,11 @@ multiArray:
 
 
 main:
-	call global_init
-	mov [rsp+8*1] , rax
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 416
+	sub    rsp, 480
+	call global_init
+	mov [rsp+8*1] , rax
 	mov qword [rsp+8*2] ,5
 	mov     rdi, [rsp+8*2]
 	call    mallocArray
@@ -340,7 +340,7 @@ main:
 	mov qword [r9], r8
 	mov qword [rsp+8*15] ,0
 	
-L_179:
+L_12:
 	mov r8, [rsp+8*15]
 	mov r9, [rsp+8*2]
 	cmp r8, r9
@@ -348,10 +348,10 @@ L_179:
 	setl [rsp+8*16]
 	mov r8, [rsp+8*16]
 	cmp r8, 0
-	je L_180
+	je L_13
 	mov qword [rsp+8*17] ,0
 	
-L_182:
+L_15:
 	mov r8, [rsp+8*17]
 	add r8, 1
 	mov qword [rsp+8*18],r8 
@@ -362,7 +362,7 @@ L_182:
 	setl [rsp+8*19]
 	mov r8, [rsp+8*19]
 	cmp r8, 0
-	je L_183
+	je L_16
 	mov r8, [rsp+8*4]
 	mov qword [rsp+8*20] ,r8
 	mov     rsi, [rsp+8*17]
@@ -391,7 +391,7 @@ L_182:
 	setg [rsp+8*27]
 	mov r8, [rsp+8*27]
 	cmp r8, 0
-	je L_186
+	je L_19
 	mov r8, [rsp+8*4]
 	mov qword [rsp+8*28] ,r8
 	mov     rsi, [rsp+8*17]
@@ -437,32 +437,32 @@ L_182:
 	mov r9, [rsp+8*40]
 	mov qword [r9], r8
 	
-L_186:
+L_19:
 	
-L_184:
+L_17:
 	mov r8, [rsp+8*17]
 	add r8, 1
 	mov qword [rsp+8*17],r8 
 	mov r8, [rsp+8*17]
 	sub r8, 1
 	mov qword [rsp+8*41],r8 
-	jmp L_182
+	jmp L_15
 	
-L_183:
+L_16:
 	
-L_181:
+L_14:
 	mov r8, [rsp+8*15]
 	add r8, 1
 	mov qword [rsp+8*15],r8 
 	mov r8, [rsp+8*15]
 	sub r8, 1
 	mov qword [rsp+8*42],r8 
-	jmp L_179
+	jmp L_12
 	
-L_180:
+L_13:
 	mov qword [rsp+8*15] ,0
 	
-L_187:
+L_20:
 	mov r8, [rsp+8*15]
 	mov r9, [rsp+8*2]
 	cmp r8, r9
@@ -470,7 +470,7 @@ L_187:
 	setl [rsp+8*43]
 	mov r8, [rsp+8*43]
 	cmp r8, 0
-	je L_188
+	je L_21
 	mov r8, [rsp+8*4]
 	mov qword [rsp+8*44] ,r8
 	mov     rsi, [rsp+8*15]
@@ -497,16 +497,16 @@ L_187:
 	xor rax, rax
 	call printf
 	
-L_189:
+L_22:
 	mov r8, [rsp+8*15]
 	add r8, 1
 	mov qword [rsp+8*15],r8 
 	mov r8, [rsp+8*15]
 	sub r8, 1
 	mov qword [rsp+8*51],r8 
-	jmp L_187
+	jmp L_20
 	
-L_188:
+L_21:
 	mov rax,0
 	leave
 	ret
@@ -518,7 +518,7 @@ L_188:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 416
+	sub    rsp, 480
 	mov rax,[rsp+8*52]
 	leave
 	ret
@@ -526,7 +526,7 @@ global_init:
 QED:
 	
 	 section   .bss
-gbl:         resb   424
+gbl:         resb   2464
 
 	 section   .data
 

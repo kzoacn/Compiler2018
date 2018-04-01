@@ -282,11 +282,11 @@ multiArray:
 
 
 main:
-	call global_init
-	mov [rsp+8*1] , rax
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 192
+	sub    rsp, 256
+	call global_init
+	mov [rsp+8*1] , rax
 	mov     rdi, [gbl+8*2]
 	call    mallocArray
 	mov     qword [rsp+8*3], rax
@@ -295,7 +295,7 @@ main:
 	mov qword [rsp+8*5] ,0
 	mov qword [rsp+8*6] ,0
 	
-L_75:
+L_103:
 	mov r8, [rsp+8*6]
 	mov r9, [gbl+8*2]
 	cmp r8, r9
@@ -303,7 +303,7 @@ L_75:
 	setl [rsp+8*7]
 	mov r8, [rsp+8*7]
 	cmp r8, 0
-	je L_76
+	je L_104
 	xor rdx, rdx
 	mov rax, [rsp+8*6]
 	mov rbx, 2
@@ -312,7 +312,7 @@ L_75:
 	mov [rsp+8*8], rdx
 	mov r8, [rsp+8*8]
 	cmp r8, 0
-	je L_79
+	je L_107
 	mov r8, [gbl+8*4]
 	mov qword [rsp+8*9] ,r8
 	mov     rsi, [rsp+8*6]
@@ -322,9 +322,9 @@ L_75:
 	mov r8, 0
 	mov r9, [rsp+8*10]
 	mov qword [r9], r8
-	jmp L_77
+	jmp L_105
 	
-L_79:
+L_107:
 	mov r8, [rsp+8*5]
 	add r8, 1
 	mov qword [rsp+8*5],r8 
@@ -340,19 +340,19 @@ L_79:
 	mov r9, [rsp+8*13]
 	mov qword [r9], r8
 	
-L_77:
+L_105:
 	mov r8, [rsp+8*6]
 	add r8, 1
 	mov qword [rsp+8*6],r8 
 	mov r8, [rsp+8*6]
 	sub r8, 1
 	mov qword [rsp+8*14],r8 
-	jmp L_75
+	jmp L_103
 	
-L_76:
+L_104:
 	mov qword [rsp+8*6] ,0
 	
-L_80:
+L_108:
 	mov r8, [rsp+8*6]
 	mov r9, [gbl+8*2]
 	cmp r8, r9
@@ -360,7 +360,7 @@ L_80:
 	setl [rsp+8*15]
 	mov r8, [rsp+8*15]
 	cmp r8, 0
-	je L_81
+	je L_109
 	mov r8, [gbl+8*4]
 	mov qword [rsp+8*16] ,r8
 	mov     rsi, [rsp+8*6]
@@ -387,16 +387,16 @@ L_80:
 	xor rax, rax
 	call printf
 	
-L_82:
+L_110:
 	mov r8, [rsp+8*6]
 	add r8, 1
 	mov qword [rsp+8*6],r8 
 	mov r8, [rsp+8*6]
 	sub r8, 1
 	mov qword [rsp+8*23],r8 
-	jmp L_80
+	jmp L_108
 	
-L_81:
+L_109:
 	mov rax,0
 	leave
 	ret
@@ -408,7 +408,7 @@ L_81:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 192
+	sub    rsp, 256
 	mov qword [gbl+8*2] ,5
 	mov rax,[rsp+8*24]
 	leave
@@ -417,7 +417,7 @@ global_init:
 QED:
 	
 	 section   .bss
-gbl:         resb   200
+gbl:         resb   2240
 
 	 section   .data
 

@@ -30,7 +30,7 @@ bool check(int a2, int N2) {
 }
 
 void addList(int x3, int y3) {
-    if (check(x3, N) && check(y3, N) && step[x3][y3] == -1) {
+    if (check(x3, N) && check(y3, N) ) if( step[x3][y3] == -1) {
         tail = tail + 1;
         xlist[tail] = x3;
         ylist[tail] = y3;

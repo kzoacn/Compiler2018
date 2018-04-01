@@ -282,11 +282,11 @@ multiArray:
 
 
 main:
-	call global_init
-	mov [rsp+8*1] , rax
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 88
+	sub    rsp, 152
+	call global_init
+	mov [rsp+8*1] , rax
 	mov qword [gbl+8*2] ,4
 	mov qword [gbl+8*3] ,3
 	call add
@@ -315,7 +315,7 @@ main:
 add:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 88
+	sub    rsp, 152
 	mov r8, [gbl+8*3]
 	mov qword [rsp+8*8] ,r8
 	mov r8, [gbl+8*2]
@@ -333,7 +333,7 @@ add:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 88
+	sub    rsp, 152
 	mov rax,[rsp+8*11]
 	leave
 	ret
@@ -341,7 +341,7 @@ global_init:
 QED:
 	
 	 section   .bss
-gbl:         resb   96
+gbl:         resb   2136
 
 	 section   .data
 

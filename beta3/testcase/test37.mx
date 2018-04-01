@@ -2,7 +2,6 @@ int n=4;
 int main(){
     if(n>0){
         println(toString(n--));
-        main();
     }
     return 0;
 }
