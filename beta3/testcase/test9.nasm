@@ -345,7 +345,7 @@ main:
 	mov qword [r9], r8
 	mov qword [rsp+8*17] ,0
 	
-L_23:
+L_29:
 	mov r8, [rsp+8*17]
 	mov r9, [rsp+8*2]
 	cmp r8, r9
@@ -353,7 +353,7 @@ L_23:
 	setl [rsp+8*18]
 	mov r8, [rsp+8*18]
 	cmp r8, 0
-	je L_24
+	je L_30
 	mov r8, [rsp+8*4]
 	mov qword [rsp+8*19] ,r8
 	mov     rsi, [rsp+8*17]
@@ -370,23 +370,23 @@ L_23:
 	sete [rsp+8*22]
 	mov r8, [rsp+8*22]
 	cmp r8, 0
-	je L_27
+	je L_33
 	mov r8, [rsp+8*17]
 	mov qword [rsp+8*6] ,r8
-	jmp L_24
+	jmp L_30
 	
-L_27:
+L_33:
 	
-L_25:
+L_31:
 	mov r8, [rsp+8*17]
 	add r8, 1
 	mov qword [rsp+8*17],r8 
 	mov r8, [rsp+8*17]
 	sub r8, 1
 	mov qword [rsp+8*23],r8 
-	jmp L_23
+	jmp L_29
 	
-L_24:
+L_30:
 	mov r8, [rsp+8*6]
 	mov qword [gbl+8*24] ,r8
 	mov r8, [gbl+8*24]

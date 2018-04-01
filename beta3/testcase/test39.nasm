@@ -324,12 +324,12 @@ f:
 	sete [rsp+8*9]
 	mov r8, [rsp+8*9]
 	cmp r8, 0
-	je L_323
+	je L_329
 	mov rax,0
 	leave
 	ret
 	
-L_323:
+L_329:
 	mov r8, [gbl+8*4]
 	add r8, 1
 	mov qword [gbl+8*4],r8 

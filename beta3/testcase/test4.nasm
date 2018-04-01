@@ -290,7 +290,7 @@ main:
 	mov qword [rsp+8*2] ,1
 	mov qword [rsp+8*3] ,1
 	
-L_2:
+L_8:
 	mov r8, [rsp+8*3]
 	mov r9, 25
 	cmp r8, r9
@@ -298,7 +298,7 @@ L_2:
 	setl [rsp+8*4]
 	mov r8, [rsp+8*4]
 	cmp r8, 0
-	je L_3
+	je L_9
 	mov r8, [rsp+8*3]
 	mov qword [gbl+8*5] ,r8
 	mov r8, [gbl+8*5]
@@ -323,12 +323,12 @@ L_2:
 	mov r8, [rsp+8*3]
 	mov qword [rsp+8*2] ,r8
 	
-L_4:
+L_10:
 	mov r8, [rsp+8*10]
 	mov qword [rsp+8*3] ,r8
-	jmp L_2
+	jmp L_8
 	
-L_3:
+L_9:
 	mov rax,0
 	leave
 	ret

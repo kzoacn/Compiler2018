@@ -376,13 +376,13 @@ gcd:
 	sete [rsp+8*19]
 	mov r8, [rsp+8*19]
 	cmp r8, 0
-	je L_292
+	je L_298
 	mov rax,[rsp+8*17]
 	leave
 	ret
-	jmp L_293
+	jmp L_299
 	
-L_292:
+L_298:
 	xor rdx, rdx
 	mov rax, [rsp+8*16]
 	mov rbx, [rsp+8*17]
@@ -399,7 +399,7 @@ L_292:
 	leave
 	ret
 	
-L_293:
+L_299:
 	mov rax,0
 	leave
 	ret

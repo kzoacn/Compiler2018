@@ -297,7 +297,7 @@ main:
 	mov qword [gbl+8*5] ,r8
 	mov qword [rsp+8*6] ,1
 	
-L_335:
+L_341:
 	mov r8, [rsp+8*6]
 	mov r9, [gbl+8*2]
 	cmp r8, r9
@@ -305,7 +305,7 @@ L_335:
 	setle [rsp+8*7]
 	mov r8, [rsp+8*7]
 	cmp r8, 0
-	je L_336
+	je L_342
 	call rnd
 	mov [rsp+8*8] , rax
 	mov r8, [gbl+8*5]
@@ -318,16 +318,16 @@ L_335:
 	mov r9, [rsp+8*10]
 	mov qword [r9], r8
 	
-L_337:
+L_343:
 	mov r8, [rsp+8*6]
 	add r8, 1
 	mov qword [rsp+8*6],r8 
 	mov r8, [rsp+8*6]
 	sub r8, 1
 	mov qword [rsp+8*11],r8 
-	jmp L_335
+	jmp L_341
 	
-L_336:
+L_342:
 	mov r8, [gbl+8*2]
 	mov qword [gbl+8*12] ,r8
 	mov qword [gbl+8*13] ,1
@@ -372,12 +372,12 @@ max:
 	setg [rsp+8*20]
 	mov r8, [rsp+8*20]
 	cmp r8, 0
-	je L_325
+	je L_331
 	mov rax,[rsp+8*18]
 	leave
 	ret
 	
-L_325:
+L_331:
 	mov rax,[rsp+8*19]
 	leave
 	ret
@@ -428,12 +428,12 @@ dp:
 	setg [rsp+8*28]
 	mov r8, [rsp+8*28]
 	cmp r8, 0
-	je L_327
+	je L_333
 	mov rax,0
 	leave
 	ret
 	
-L_327:
+L_333:
 	mov r8, [gbl+8*29]
 	mov qword [rsp+8*30] ,r8
 	mov     rsi, [rsp+8*26]
@@ -457,7 +457,7 @@ L_327:
 	setne [rsp+8*33]
 	mov r8, [rsp+8*33]
 	cmp r8, 0
-	je L_329
+	je L_335
 	mov r8, [gbl+8*29]
 	mov qword [rsp+8*34] ,r8
 	mov     rsi, [rsp+8*26]
@@ -478,7 +478,7 @@ L_327:
 	leave
 	ret
 	
-L_329:
+L_335:
 	mov r8, [rsp+8*26]
 	mov r9, [rsp+8*27]
 	cmp r8, r9
@@ -486,7 +486,7 @@ L_329:
 	sete [rsp+8*37]
 	mov r8, [rsp+8*37]
 	cmp r8, 0
-	je L_331
+	je L_337
 	mov r8, [gbl+8*5]
 	mov qword [rsp+8*38] ,r8
 	mov     rsi, [rsp+8*26]
@@ -500,12 +500,12 @@ L_329:
 	leave
 	ret
 	
-L_331:
+L_337:
 	mov qword [rsp+8*41] ,0
 	mov r8, [rsp+8*26]
 	mov qword [rsp+8*42] ,r8
 	
-L_332:
+L_338:
 	mov r8, [rsp+8*42]
 	mov r9, [rsp+8*27]
 	cmp r8, r9
@@ -513,7 +513,7 @@ L_332:
 	setl [rsp+8*43]
 	mov r8, [rsp+8*43]
 	cmp r8, 0
-	je L_333
+	je L_339
 	mov r8, [rsp+8*42]
 	mov qword [gbl+8*12] ,r8
 	mov r8, [rsp+8*26]
@@ -541,16 +541,16 @@ L_332:
 	mov r8, [rsp+8*48]
 	mov qword [rsp+8*41] ,r8
 	
-L_334:
+L_340:
 	mov r8, [rsp+8*42]
 	add r8, 1
 	mov qword [rsp+8*42],r8 
 	mov r8, [rsp+8*42]
 	sub r8, 1
 	mov qword [rsp+8*49],r8 
-	jmp L_332
+	jmp L_338
 	
-L_333:
+L_339:
 	mov r8, [gbl+8*29]
 	mov qword [rsp+8*50] ,r8
 	mov     rsi, [rsp+8*26]

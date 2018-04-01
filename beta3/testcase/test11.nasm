@@ -301,11 +301,11 @@ main:
 	mov qword [rsp+8*7] ,r8
 	mov qword [rsp+8*8] ,1
 	
-L_52:
+L_58:
 	mov qword [rsp+8*9] ,1
 	mov qword [rsp+8*10] ,0
 	
-L_55:
+L_61:
 	mov r8, [rsp+8*10]
 	mov r9, [rsp+8*4]
 	cmp r8, r9
@@ -313,7 +313,7 @@ L_55:
 	setl [rsp+8*11]
 	mov r8, [rsp+8*11]
 	cmp r8, 0
-	je L_56
+	je L_62
 	mov r8, [rsp+8*7]
 	mov qword [rsp+8*12] ,r8
 	mov     rsi, [rsp+8*10]
@@ -336,7 +336,7 @@ L_55:
 	mov qword [rsp+8*5] ,r8
 	mov qword [rsp+8*16] ,0
 	
-L_58:
+L_64:
 	mov r8, [rsp+8*16]
 	mov r9, [rsp+8*10]
 	cmp r8, r9
@@ -344,7 +344,7 @@ L_58:
 	setl [rsp+8*17]
 	mov r8, [rsp+8*17]
 	cmp r8, 0
-	je L_59
+	je L_65
 	mov r8, [rsp+8*7]
 	mov qword [rsp+8*18] ,r8
 	mov     rsi, [rsp+8*10]
@@ -370,53 +370,53 @@ L_58:
 	sete [rsp+8*24]
 	mov r8, [rsp+8*24]
 	cmp r8, 0
-	je L_62
+	je L_68
 	mov qword [rsp+8*9] ,0
-	jmp L_59
+	jmp L_65
 	
-L_62:
+L_68:
 	
-L_60:
+L_66:
 	mov r8, [rsp+8*16]
 	add r8, 1
 	mov qword [rsp+8*16],r8 
 	mov r8, [rsp+8*16]
 	sub r8, 1
 	mov qword [rsp+8*25],r8 
-	jmp L_58
+	jmp L_64
 	
-L_59:
+L_65:
 	
-L_57:
+L_63:
 	mov r8, [rsp+8*10]
 	add r8, 1
 	mov qword [rsp+8*10],r8 
 	mov r8, [rsp+8*10]
 	sub r8, 1
 	mov qword [rsp+8*26],r8 
-	jmp L_55
+	jmp L_61
 	
-L_56:
+L_62:
 	mov r8, [rsp+8*9]
 	cmp r8, 0
-	je L_64
-	jmp L_53
+	je L_70
+	jmp L_59
 	
-L_64:
+L_70:
 	
-L_54:
+L_60:
 	mov r8, [rsp+8*8]
 	add r8, 1
 	mov qword [rsp+8*8],r8 
 	mov r8, [rsp+8*8]
 	sub r8, 1
 	mov qword [rsp+8*27],r8 
-	jmp L_52
+	jmp L_58
 	
-L_53:
+L_59:
 	mov qword [rsp+8*10] ,0
 	
-L_65:
+L_71:
 	mov r8, [rsp+8*10]
 	mov r9, [rsp+8*4]
 	cmp r8, r9
@@ -424,10 +424,10 @@ L_65:
 	setl [rsp+8*28]
 	mov r8, [rsp+8*28]
 	cmp r8, 0
-	je L_66
+	je L_72
 	mov qword [rsp+8*16] ,0
 	
-L_68:
+L_74:
 	mov r8, [rsp+8*16]
 	add r8, 1
 	mov qword [rsp+8*29],r8 
@@ -438,7 +438,7 @@ L_68:
 	setl [rsp+8*30]
 	mov r8, [rsp+8*30]
 	cmp r8, 0
-	je L_69
+	je L_75
 	mov r8, [rsp+8*7]
 	mov qword [rsp+8*31] ,r8
 	mov     rsi, [rsp+8*16]
@@ -467,7 +467,7 @@ L_68:
 	setg [rsp+8*38]
 	mov r8, [rsp+8*38]
 	cmp r8, 0
-	je L_72
+	je L_78
 	mov r8, [rsp+8*7]
 	mov qword [rsp+8*39] ,r8
 	mov     rsi, [rsp+8*16]
@@ -513,32 +513,32 @@ L_68:
 	mov r9, [rsp+8*51]
 	mov qword [r9], r8
 	
-L_72:
+L_78:
 	
-L_70:
+L_76:
 	mov r8, [rsp+8*16]
 	add r8, 1
 	mov qword [rsp+8*16],r8 
 	mov r8, [rsp+8*16]
 	sub r8, 1
 	mov qword [rsp+8*52],r8 
-	jmp L_68
+	jmp L_74
 	
-L_69:
+L_75:
 	
-L_67:
+L_73:
 	mov r8, [rsp+8*10]
 	add r8, 1
 	mov qword [rsp+8*10],r8 
 	mov r8, [rsp+8*10]
 	sub r8, 1
 	mov qword [rsp+8*53],r8 
-	jmp L_65
+	jmp L_71
 	
-L_66:
+L_72:
 	mov qword [rsp+8*10] ,0
 	
-L_73:
+L_79:
 	mov r8, [rsp+8*10]
 	mov r9, [rsp+8*4]
 	cmp r8, r9
@@ -546,7 +546,7 @@ L_73:
 	setl [rsp+8*54]
 	mov r8, [rsp+8*54]
 	cmp r8, 0
-	je L_74
+	je L_80
 	mov r8, [rsp+8*7]
 	mov qword [rsp+8*55] ,r8
 	mov     rsi, [rsp+8*10]
@@ -573,16 +573,16 @@ L_73:
 	xor rax, rax
 	call printf
 	
-L_75:
+L_81:
 	mov r8, [rsp+8*10]
 	add r8, 1
 	mov qword [rsp+8*10],r8 
 	mov r8, [rsp+8*10]
 	sub r8, 1
 	mov qword [rsp+8*62],r8 
-	jmp L_73
+	jmp L_79
 	
-L_74:
+L_80:
 	mov rax,0
 	leave
 	ret

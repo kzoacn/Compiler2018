@@ -295,7 +295,7 @@ main:
 	mov qword [rsp+8*4] ,r8
 	mov qword [rsp+8*5] ,0
 	
-L_9:
+L_15:
 	mov r8, [rsp+8*5]
 	mov r9, [rsp+8*2]
 	cmp r8, r9
@@ -303,7 +303,7 @@ L_9:
 	setl [rsp+8*6]
 	mov r8, [rsp+8*6]
 	cmp r8, 0
-	je L_10
+	je L_16
 	mov r8, [rsp+8*4]
 	mov qword [rsp+8*7] ,r8
 	mov     rsi, [rsp+8*5]
@@ -339,16 +339,16 @@ L_9:
 	xor rax, rax
 	call printf
 	
-L_11:
+L_17:
 	mov r8, [rsp+8*5]
 	add r8, 1
 	mov qword [rsp+8*5],r8 
 	mov r8, [rsp+8*5]
 	sub r8, 1
 	mov qword [rsp+8*16],r8 
-	jmp L_9
+	jmp L_15
 	
-L_10:
+L_16:
 	mov rax,0
 	leave
 	ret

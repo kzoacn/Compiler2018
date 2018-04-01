@@ -324,7 +324,7 @@ main:
 	mov r8, [rsp+8*9]
 	mov r8, [r8]
 	mov [rsp+8*8], r8
-	mov r8, t3289
+	mov r8, t3357
 	mov r9, [rsp+8*9]
 	mov qword [r9], r8
 	mov r8, [rsp+8*4]
@@ -343,7 +343,7 @@ main:
 	mov r8, [rsp+8*11]
 	mov r8, [r8]
 	mov [rsp+8*10], r8
-	mov r8, t3294
+	mov r8, t3362
 	mov r9, [rsp+8*11]
 	mov qword [r9], r8
 	mov r8, [rsp+8*4]
@@ -362,7 +362,7 @@ main:
 	mov r8, [rsp+8*13]
 	mov r8, [r8]
 	mov [rsp+8*12], r8
-	mov r8, t3299
+	mov r8, t3367
 	mov r9, [rsp+8*13]
 	mov qword [r9], r8
 	mov r8, [rsp+8*4]
@@ -381,7 +381,7 @@ main:
 	mov r8, [rsp+8*15]
 	mov r8, [r8]
 	mov [rsp+8*14], r8
-	mov r8, t3304
+	mov r8, t3372
 	mov r9, [rsp+8*15]
 	mov qword [r9], r8
 	mov r8, [rsp+8*4]
@@ -497,16 +497,16 @@ formatln:
 format:
 	db  "%s",  0
 	
-t3304:
+t3372:
 	 db 2,"de" ,0
 
-t3294:
+t3362:
 	 db 4,"luo " ,0
 
-t3299:
-	 db 3,"wo " ,0
-
-t3289:
+t3357:
 	 db 3,"ha " ,0
+
+t3367:
+	 db 3,"wo " ,0
 
 

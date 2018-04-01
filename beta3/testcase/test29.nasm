@@ -330,7 +330,7 @@ qpow:
 	mov r8, [rsp+8*9]
 	mov qword [rsp+8*13] ,r8
 	
-L_283:
+L_289:
 	mov r8, [rsp+8*10]
 	mov r9, 0
 	cmp r8, r9
@@ -338,7 +338,7 @@ L_283:
 	setg [rsp+8*14]
 	mov r8, [rsp+8*14]
 	cmp r8, 0
-	je L_284
+	je L_290
 	mov r8, [rsp+8*10]
 	and r8, 1
 	mov qword [rsp+8*15],r8 
@@ -349,7 +349,7 @@ L_283:
 	sete [rsp+8*16]
 	mov r8, [rsp+8*16]
 	cmp r8, 0
-	je L_286
+	je L_292
 	mov r8, [rsp+8*12]
 	imul r8, [rsp+8*13]
 	mov qword [rsp+8*17],r8 
@@ -362,7 +362,7 @@ L_283:
 	mov r8, [rsp+8*18]
 	mov qword [rsp+8*12] ,r8
 	
-L_286:
+L_292:
 	mov r8, [rsp+8*13]
 	imul r8, [rsp+8*13]
 	mov qword [rsp+8*19],r8 
@@ -382,9 +382,9 @@ L_286:
 	mov [rsp+8*21], rax
 	mov r8, [rsp+8*21]
 	mov qword [rsp+8*10] ,r8
-	jmp L_283
+	jmp L_289
 	
-L_284:
+L_290:
 	mov rax,[rsp+8*12]
 	leave
 	ret

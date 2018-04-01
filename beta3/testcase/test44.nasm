@@ -301,7 +301,7 @@ main:
 	mov r8, [rsp+8*5]
 	mov r8, [r8]
 	mov [rsp+8*4], r8
-	mov r8, t2926
+	mov r8, t2994
 	mov r9, [rsp+8*5]
 	mov qword [r9], r8
 	mov r8, [rsp+8*3]
@@ -330,7 +330,7 @@ main:
 	mov r8, [rsp+8*11]
 	mov r8, [r8]
 	mov [rsp+8*10], r8
-	mov r8, t2936
+	mov r8, t3004
 	mov r9, [rsp+8*11]
 	mov qword [r9], r8
 	mov r8, [rsp+8*9]
@@ -354,7 +354,7 @@ main:
 	mov r8, [rsp+8*15]
 	mov r8, [r8]
 	mov [rsp+8*14], r8
-	mov     rsi, t2944
+	mov     rsi, t3012
 	mov     rdi, [rsp+8*14]
 	call    concat
 	mov [rsp+8*16], rax
@@ -446,13 +446,13 @@ formatln:
 format:
 	db  "%s",  0
 	
-t2944:
+t3012:
 	 db 11," xiang yao " ,0
 
-t2936:
-	 db 10,"xiaojiejie" ,0
-
-t2926:
+t2994:
 	 db 6,"kzoacn" ,0
+
+t3004:
+	 db 10,"xiaojiejie" ,0
 
 
