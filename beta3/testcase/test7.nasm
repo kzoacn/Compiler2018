@@ -283,68 +283,73 @@ multiArray:
 
 main:
 	call global_init
+	mov [rsp+8*1] , rax
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 112
-	mov qword [rsp+8*0] ,5
-	mov     rdi, [rsp+8*0]
+	sub    rsp, 136
+	mov qword [rsp+8*2] ,5
+	mov     rdi, [rsp+8*2]
 	call    mallocArray
-	mov     qword [rsp+8*1], rax
-	mov r8, [rsp+8*1]
-	mov qword [rsp+8*2] ,r8
-	mov qword [rsp+8*3] ,0
+	mov     qword [rsp+8*3], rax
+	mov r8, [rsp+8*3]
+	mov qword [rsp+8*4] ,r8
+	mov qword [rsp+8*5] ,0
 	
-L_121:
-	mov r8, [rsp+8*3]
-	mov r9, [rsp+8*0]
+L_176:
+	mov r8, [rsp+8*5]
+	mov r9, [rsp+8*2]
 	cmp r8, r9
-	mov qword [rsp+8*4], 0
-	setl [rsp+8*4]
-	mov r8, [rsp+8*4]
+	mov qword [rsp+8*6], 0
+	setl [rsp+8*6]
+	mov r8, [rsp+8*6]
 	cmp r8, 0
-	je L_122
-	mov r8, [rsp+8*2]
-	mov qword [rsp+8*5] ,r8
-	mov     rsi, [rsp+8*3]
-	mov     rdi, [rsp+8*5]
-	call    address
-	mov [rsp+8*6], rax
-	mov r8, [rsp+8*3]
-	mov r9, [rsp+8*6]
-	mov qword [r9], r8
-	mov r8, [rsp+8*2]
+	je L_177
+	mov r8, [rsp+8*4]
 	mov qword [rsp+8*7] ,r8
-	mov     rsi, [rsp+8*3]
+	mov     rsi, [rsp+8*5]
 	mov     rdi, [rsp+8*7]
 	call    address
 	mov [rsp+8*8], rax
-	mov r8, [rsp+8*8]
+	mov r8, [rsp+8*5]
+	mov r9, [rsp+8*8]
+	mov qword [r9], r8
+	mov r8, [rsp+8*4]
+	mov qword [rsp+8*9] ,r8
+	mov     rsi, [rsp+8*5]
+	mov     rdi, [rsp+8*9]
+	call    address
+	mov [rsp+8*10], rax
+	mov r8, [rsp+8*10]
 	mov r8, [r8]
-	mov [rsp+8*9], r8
-	push qword [rsp+8*9]
-	pop qword [rsp+8*10]
-	mov     rdi, [rsp+8*10]
+	mov [rsp+8*11], r8
+	mov r8, [rsp+8*11]
+	mov qword [gbl+8*12] ,r8
+	mov r8, [gbl+8*12]
+	mov qword [rsp+8*13] ,r8
+	mov     rdi, [rsp+8*13]
 	call    toString
-	mov     qword[rsp+8*11], rax
-	push qword [rsp+8*11]
-	pop qword [rsp+8*12]
+	mov     qword[rsp+8*14], rax
+	mov r8, [rsp+8*14]
+	mov qword [gbl+8*12] ,r8
+	mov r8, [gbl+8*12]
+	mov qword [rsp+8*15] ,r8
 	mov rdi, formatln
-	mov rsi,[rsp+8*12] 
+	mov rsi,[rsp+8*15] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
 	
-L_123:
-	mov r8, [rsp+8*3]
+L_178:
+	mov r8, [rsp+8*5]
 	add r8, 1
-	mov qword [rsp+8*3],r8 
-	mov r8, [rsp+8*3]
+	mov qword [rsp+8*5],r8 
+	mov r8, [rsp+8*5]
 	sub r8, 1
-	mov qword [rsp+8*13],r8 
-	jmp L_121
+	mov qword [rsp+8*16],r8 
+	jmp L_176
 	
-L_122:
-	push qword 0
+L_177:
+	mov rax,0
 	leave
 	ret
 	jmp QED
@@ -352,14 +357,15 @@ L_122:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 112
+	sub    rsp, 136
+	mov rax,[rsp+8*17]
 	leave
 	ret
 	
 QED:
 	
 	 section   .bss
-gbl:         resb   112
+gbl:         resb   144
 
 	 section   .data
 

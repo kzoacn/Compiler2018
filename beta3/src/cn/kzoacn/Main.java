@@ -193,6 +193,11 @@ class Quad{
         this.opCode=opCode;
         this.name=label;
     }
+    Quad(OpCode opCode,String label,Variable dest){
+        this.opCode=opCode;
+        this.name=label;
+        this.dest=dest;
+    }
     Quad(OpCode opCode){
         this.opCode=opCode;
     }
@@ -324,20 +329,20 @@ class IR{
                 tmp=cur;
                 for(int i=0;i<arrayList.size();i++) {
                     Variable variable=arrayList.get(i);
-                    if(!variable.type.name.equals("const_int")
+                    //if(!variable.type.name.equals("const_int")
                         /*&&birthday.get(variable.name)<cur.line
-                            && cur.line< deathday.get(variable.name)*/)
-                        tmp = tmp.insert(new Quad(OpCode.push, variable,Variable.empty,Variable.empty));
+                            && cur.line< deathday.get(variable.name)*/
+                        //tmp = tmp.insert(new Quad(OpCode.push, variable,Variable.empty,Variable.empty));
                 }
             }
             if(cur.opCode.equals(OpCode.resumeContext)){
                 tmp=cur;
                 for(int i=arrayList.size()-1;i>=0;i--) {
                     Variable variable=arrayList.get(i);
-                    if(!variable.type.name.equals("const_int")
+                   // if(!variable.type.name.equals("const_int")
                             /*&&birthday.get(variable.name)<cur.line
-                            && cur.line< deathday.get(variable.name)*/)
-                        tmp = tmp.insert(new Quad(OpCode.pop,Variable.empty,Variable.empty, variable));
+                            && cur.line< deathday.get(variable.name)*/
+                        //tmp = tmp.insert(new Quad(OpCode.pop,Variable.empty,Variable.empty, variable));
                 }
             }
         }
@@ -588,7 +593,7 @@ class RecursionVisitor extends MxstarBaseVisitor<Integer>{
 class MVisitor extends MxstarBaseVisitor<IR>{
 
     RecursionVisitor recursionVisitor = new RecursionVisitor();
-
+    ArrayList<Variable> argList = new ArrayList<Variable>();
     SymbolMap symbolMap = new SymbolMap();
     HashMap<Variable,String> constStringPool = new HashMap<Variable, String>();
     HashMap<String,HashMap<String,Variable> >classMember = new HashMap<String,HashMap<String, Variable>  >();
@@ -649,6 +654,15 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         IR globalVariableIR = new IR();
         globalVariableIR.push(new Quad(OpCode.label,"global_init"));
         globalVariableIR.push(new Quad(OpCode.enterFunction));
+        Variable.isGlobal=true;
+        symbolMap.global=true;
+        for(int i=0;i<8;i++) {
+            Variable variable=nextVariable(VariableType.INT);
+            argList.add(variable);
+            symbolMap.putSymbol(variable.name,variable.type);
+        }
+        symbolMap.global=false;
+        Variable.isGlobal=false;
         for(ParseTree child : ctx.children){
             if(child.getClass().equals(MxstarParser.GlobalVariableDefinitionContext.class)){
                 System.out.println("Variable");
@@ -660,7 +674,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
             }
         }
         globalVariableIR.push(new Quad(OpCode.exitFunction));
-        globalVariableIR.push(new Quad(OpCode.ret));
+        globalVariableIR.push(new Quad(OpCode.ret,nextConst(0,VariableType.INT),Variable.empty,Variable.empty));
 
         for(ParseTree child : ctx.children){
             if(child.getClass().equals(MxstarParser.FunctionDefinitionContext.class)){
@@ -778,18 +792,18 @@ class MVisitor extends MxstarBaseVisitor<IR>{
 
         ir.push(new Quad(OpCode.label,name));
 
-        ir.push(new Quad(OpCode.pop, Variable.empty, Variable.empty, methodThis));
+        //ir.push(new Quad(OpCode.pop, Variable.empty, Variable.empty, methodThis));
         if(ctx.parameterList()!=null) {
             for (int i = 0; i < ctx.parameterList().parameter().size(); i++) {
                 String variableName = ctx.parameterList().parameter(i).variableName().getText();
                 String newName = symbolMap.renameMap.get(variableName);
-                ir.push(new Quad(OpCode.pop, Variable.empty, Variable.empty, new Variable(newName, parameterList.get(i+1))));
+                //ir.push(new Quad(OpCode.pop, Variable.empty, Variable.empty, new Variable(newName, parameterList.get(i+1))));
             }
         }
 
         ir.concat(stmt);
-        ir.push(new Quad(OpCode.push,nextConst(0,VariableType.CONST_INT),Variable.empty,Variable.empty));
-        ir.push(new Quad(OpCode.ret,Variable.empty,Variable.empty,Variable.empty));
+        //ir.push(new Quad(OpCode.push,nextConst(0,VariableType.CONST_INT),Variable.empty,Variable.empty));
+        ir.push(new Quad(OpCode.ret,nextConst(0,VariableType.INT),Variable.empty,Variable.empty));
 
         //ir.modify_context(symbolMap.globalVariableMap);
 
@@ -812,7 +826,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
             local = (ArrayList<String>) symbolMap.localVariable.get(symbolMap.currentFunction).clone();
             ir.push(new Quad(OpCode.saveContext));
             for(String variable : local){
-                ir.push(new Quad(OpCode.push,new Variable(variable,VariableType.INT),Variable.empty,Variable.empty));
+               // ir.push(new Quad(OpCode.push,new Variable(variable,VariableType.INT),Variable.empty,Variable.empty));
             }
             ir.push(new Quad(OpCode.endContext));
         }
@@ -821,13 +835,12 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         if(ctx.expressionList()!=null) {
             ir.concat(visit(ctx.expressionList()));
         }
-        ir.push(new Quad(OpCode.push,left.last.dest,Variable.empty,Variable.empty));
+        //ir.push(new Quad(OpCode.push,left.last.dest,Variable.empty,Variable.empty));
 
         Variable returnTemp=nextConst(0,VariableType.CONST_INT);
         if(function!=null) {
             returnTemp=nextVariable(function.returnType);
-            ir.push(new Quad(OpCode.call, function.name));
-            ir.push(new Quad(OpCode.pop, Variable.empty,Variable.empty,returnTemp));
+            ir.push(new Quad(OpCode.call, function.name,returnTemp));
         }else{
 
             Variable temp = nextVariable(VariableType.STRING);
@@ -844,11 +857,11 @@ class MVisitor extends MxstarBaseVisitor<IR>{
                     ir.push(new Quad(OpCode.print,temp,Variable.empty,Variable.empty));
                     break;
                 case "size":
-                    ir.push(new Quad(OpCode.pop,Variable.empty,Variable.empty,tmp));
+                    ir.push(new Quad(OpCode.move,argList.get(0),Variable.empty,tmp));
                     ir.push(new Quad(OpCode.load,tmp,Variable.empty,tmp));
                     break;
                 case "length":
-                    ir.push(new Quad(OpCode.pop,Variable.empty,Variable.empty,tmp));
+                    ir.push(new Quad(OpCode.move,argList.get(0),Variable.empty,tmp));
                     ir.push(new Quad(OpCode.load,tmp,Variable.empty,tmp));
                     ir.push(new Quad(OpCode.and,tmp,nextConst(255,VariableType.CONST_INT),tmp));
                     break;
@@ -862,7 +875,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
             ir.push(new Quad(OpCode.resumeContext));
             for(int i=local.size()-1;i>=0;i--){
                 String variable = local.get(i);
-                ir.push(new Quad(OpCode.pop,Variable.empty,Variable.empty,new Variable(variable,VariableType.INT)));
+                //ir.push(new Quad(OpCode.pop,Variable.empty,Variable.empty,new Variable(variable,VariableType.INT)));
             }
             ir.push(new Quad(OpCode.endContext));
             ir.push(new Quad(OpCode.move,returnTemp,Variable.empty,returnTemp));
@@ -1134,19 +1147,20 @@ class MVisitor extends MxstarBaseVisitor<IR>{
 
         ir.push(new Quad(OpCode.label,name));
         if(name.equals("main"))
-            ir.push(new Quad(OpCode.call,"global_init"));
+            ir.push(new Quad(OpCode.call,"global_init",nextVariable(VariableType.INT)));
         ir.push(new Quad(OpCode.enterFunction,name));
         if(ctx.parameterList()!=null) {
             for (int i = 0; i < ctx.parameterList().parameter().size(); i++) {
                 String variableName = ctx.parameterList().parameter(i).variableName().getText();
                 String newName = symbolMap.renameMap.get(variableName);
-                ir.push(new Quad(OpCode.pop, Variable.empty, Variable.empty, new Variable(newName, parameterList.get(i))));
+                ir.push(new Quad(OpCode.move, argList.get(i), Variable.empty, new Variable(newName, parameterList.get(i))));
+                //ir.push(new Quad(OpCode.pop, Variable.empty, Variable.empty, new Variable(newName, parameterList.get(i))));
             }
         }
 
         ir.concat(stmt);
-        ir.push(new Quad(OpCode.push, nextConst(0, VariableType.CONST_INT), Variable.empty, Variable.empty));
-        Quad quad =new Quad(OpCode.ret, Variable.empty, Variable.empty, Variable.empty);
+        //ir.push(new Quad(OpCode.push, nextConst(0, VariableType.CONST_INT), Variable.empty, Variable.empty));
+        Quad quad =new Quad(OpCode.ret, nextConst(0, VariableType.CONST_INT), Variable.empty, Variable.empty);
         quad.name=function.name;
         ir.push(quad);
         ir.push(new Quad(OpCode.exitFunction,name));
@@ -1275,12 +1289,12 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         IR ir = new IR();
 
         if(ctx.expression()==null){
-            ir.push(new Quad(OpCode.push,nextConst(0,VariableType.CONST_INT),Variable.empty,Variable.empty));
-            ir.push(new Quad(OpCode.ret,Variable.empty,Variable.empty,Variable.empty));
+            //ir.push(new Quad(OpCode.push,nextConst(0,VariableType.CONST_INT),Variable.empty,Variable.empty));
+            ir.push(new Quad(OpCode.ret,nextConst(0,VariableType.CONST_INT),Variable.empty,Variable.empty));
         }else{
             ir.concat(visit(ctx.expression()));
-            ir.push(new Quad(OpCode.push,ir.last.dest,Variable.empty,Variable.empty));
-            Quad quad=new Quad(OpCode.ret,Variable.empty,Variable.empty,Variable.empty);
+            //ir.push(new Quad(OpCode.push,ir.last.dest,Variable.empty,Variable.empty));
+            Quad quad=new Quad(OpCode.ret,ir.last.dest,Variable.empty,Variable.empty);
             quad.name=symbolMap.currentFunction;
             ir.push(quad);
         }
@@ -1573,7 +1587,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
             local = (ArrayList<String>) symbolMap.localVariable.get(symbolMap.currentFunction).clone();
             ir.push(new Quad(OpCode.saveContext));
             for(String variable : local){
-                ir.push(new Quad(OpCode.push,new Variable(variable,VariableType.INT),Variable.empty,Variable.empty));
+                //ir.push(new Quad(OpCode.push,new Variable(variable,VariableType.INT),Variable.empty,Variable.empty));
             }
             ir.push(new Quad(OpCode.endContext));
         }
@@ -1585,8 +1599,8 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         Variable returntemp=nextConst(0,VariableType.CONST_INT);
         if(function!=null) {
             returntemp=nextVariable(function.returnType);
-            ir.push(new Quad(OpCode.call, function.name));
-            ir.push(new Quad(OpCode.pop, Variable.empty,Variable.empty,returntemp));
+            ir.push(new Quad(OpCode.call, function.name,returntemp));
+            //ir.push(new Quad(OpCode.pop, Variable.empty,Variable.empty,));
         }else{
 
             Variable temp = nextVariable(VariableType.STRING);
@@ -1599,15 +1613,15 @@ class MVisitor extends MxstarBaseVisitor<IR>{
                     ir.push(new Quad(OpCode.getString,Variable.empty,Variable.empty,nextVariable(VariableType.STRING)));
                     break;
                 case "print":
-                    ir.push(new Quad(OpCode.pop,Variable.empty,Variable.empty,temp));
+                    ir.push(new Quad(OpCode.move,argList.get(0),Variable.empty,temp));
                     ir.push(new Quad(OpCode.print,temp,Variable.empty,Variable.empty));
                     break;
                 case "println":
-                    ir.push(new Quad(OpCode.pop,Variable.empty,Variable.empty,temp));
+                    ir.push(new Quad(OpCode.move,argList.get(0),Variable.empty,temp));
                     ir.push(new Quad(OpCode.println,temp,Variable.empty,Variable.empty));
                     break;
                 case "toString":
-                    ir.push(new Quad(OpCode.pop,Variable.empty,Variable.empty,tmp));
+                    ir.push(new Quad(OpCode.move,argList.get(0),Variable.empty,tmp));
                     ir.push(new Quad(OpCode.toString,tmp,Variable.empty,temp));
                     break;
                 default:
@@ -1620,7 +1634,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
             ir.push(new Quad(OpCode.resumeContext));
             for(int i=local.size()-1;i>=0;i--){
                 String vaiable = local.get(i);
-                ir.push(new Quad(OpCode.pop,Variable.empty,Variable.empty,new Variable(vaiable,VariableType.INT)));
+               // ir.push(new Quad(OpCode.pop,Variable.empty,Variable.empty,new Variable(vaiable,VariableType.INT)));
             }
             ir.push(new Quad(OpCode.endContext));
             ir.push(new Quad(OpCode.move,returntemp,Variable.empty,returntemp));
@@ -1740,7 +1754,8 @@ class MVisitor extends MxstarBaseVisitor<IR>{
             arrayList.add(tmpIR.last.dest);
         }
         for(int i=arrayList.size()-1;i>=0;i--){
-            ir.push(new Quad(OpCode.push,arrayList.get(i),Variable.empty,Variable.empty));
+            ir.push(new Quad(OpCode.move,arrayList.get(i),Variable.empty,argList.get(i)));
+            //ir.push(new Quad(OpCode.push,arrayList.get(i),Variable.empty,Variable.empty));
         }
         return ir;
     }
@@ -1754,7 +1769,7 @@ public class Main {
     public static void main(String [] args) throws Exception {
 
 
-        /*Scanner cin = new Scanner(System.in);
+       /* Scanner cin = new Scanner(System.in);
 
         FileInputStream fileInputStream = new FileInputStream(new File("./testcase/test7.mx"));
         Scanner fin = new Scanner(fileInputStream);

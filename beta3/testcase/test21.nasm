@@ -283,26 +283,31 @@ multiArray:
 
 main:
 	call global_init
+	mov [rsp+8*1] , rax
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 56
-	push qword 4
-	push qword 3
+	sub    rsp, 88
+	mov qword [gbl+8*2] ,4
+	mov qword [gbl+8*3] ,3
 	call add
-	pop qword [rsp+8*0]
-	push qword [rsp+8*0]
-	pop qword [rsp+8*1]
-	mov     rdi, [rsp+8*1]
+	mov [rsp+8*4] , rax
+	mov r8, [rsp+8*4]
+	mov qword [gbl+8*3] ,r8
+	mov r8, [gbl+8*3]
+	mov qword [rsp+8*5] ,r8
+	mov     rdi, [rsp+8*5]
 	call    toString
-	mov     qword[rsp+8*2], rax
-	push qword [rsp+8*2]
-	pop qword [rsp+8*3]
+	mov     qword[rsp+8*6], rax
+	mov r8, [rsp+8*6]
+	mov qword [gbl+8*3] ,r8
+	mov r8, [gbl+8*3]
+	mov qword [rsp+8*7] ,r8
 	mov rdi, formatln
-	mov rsi,[rsp+8*3] 
+	mov rsi,[rsp+8*7] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	push qword 0
+	mov rax,0
 	leave
 	ret
 	jmp QED
@@ -310,30 +315,33 @@ main:
 add:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 56
-	pop qword [rsp+8*4]
-	pop qword [rsp+8*5]
-	mov r8, [rsp+8*4]
-	add r8, [rsp+8*5]
-	mov qword [rsp+8*6],r8 
-	push qword [rsp+8*6]
+	sub    rsp, 88
+	mov r8, [gbl+8*3]
+	mov qword [rsp+8*8] ,r8
+	mov r8, [gbl+8*2]
+	mov qword [rsp+8*9] ,r8
+	mov r8, [rsp+8*8]
+	add r8, [rsp+8*9]
+	mov qword [rsp+8*10],r8 
+	mov rax,[rsp+8*10]
 	leave
 	ret
-	push qword 0
+	mov rax,0
 	leave
 	ret
 	
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 56
+	sub    rsp, 88
+	mov rax,[rsp+8*11]
 	leave
 	ret
 	
 QED:
 	
 	 section   .bss
-gbl:         resb   56
+gbl:         resb   96
 
 	 section   .data
 

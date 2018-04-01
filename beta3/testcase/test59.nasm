@@ -283,76 +283,85 @@ multiArray:
 
 main:
 	call global_init
+	mov [rsp+8*1] , rax
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 152
-	mov qword [rsp+8*0] ,5
-	mov     rdi, [rsp+8*0]
+	sub    rsp, 176
+	mov qword [rsp+8*2] ,5
+	mov     rdi, [rsp+8*2]
 	call    mallocArray
-	mov     qword [rsp+8*1], rax
-	mov r8, [rsp+8*1]
-	mov qword [rsp+8*2] ,r8
-	mov r8, [rsp+8*2]
-	mov qword [rsp+8*3] ,r8
-	mov     rsi, 0
-	mov     rdi, [rsp+8*3]
-	call    address
-	mov [rsp+8*4], rax
-	mov r8, 3
-	mov r9, [rsp+8*4]
-	mov qword [r9], r8
-	mov r8, [rsp+8*2]
+	mov     qword [rsp+8*3], rax
+	mov r8, [rsp+8*3]
+	mov qword [rsp+8*4] ,r8
+	mov r8, [rsp+8*4]
 	mov qword [rsp+8*5] ,r8
-	mov     rsi, 1
+	mov     rsi, 0
 	mov     rdi, [rsp+8*5]
 	call    address
 	mov [rsp+8*6], rax
-	mov r8, 2
+	mov r8, 3
 	mov r9, [rsp+8*6]
 	mov qword [r9], r8
-	mov r8, [rsp+8*2]
+	mov r8, [rsp+8*4]
 	mov qword [rsp+8*7] ,r8
-	mov     rsi, 0
+	mov     rsi, 1
 	mov     rdi, [rsp+8*7]
 	call    address
 	mov [rsp+8*8], rax
-	mov r8, [rsp+8*8]
-	mov r8, [r8]
-	mov [rsp+8*9], r8
-	push qword [rsp+8*9]
-	pop qword [rsp+8*10]
-	mov     rdi, [rsp+8*10]
-	call    toString
-	mov     qword[rsp+8*11], rax
-	push qword [rsp+8*11]
-	pop qword [rsp+8*12]
-	mov rdi, formatln
-	mov rsi,[rsp+8*12] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
-	mov r8, [rsp+8*2]
-	mov qword [rsp+8*13] ,r8
-	mov     rsi, 1
-	mov     rdi, [rsp+8*13]
+	mov r8, 2
+	mov r9, [rsp+8*8]
+	mov qword [r9], r8
+	mov r8, [rsp+8*4]
+	mov qword [rsp+8*9] ,r8
+	mov     rsi, 0
+	mov     rdi, [rsp+8*9]
 	call    address
-	mov [rsp+8*14], rax
-	mov r8, [rsp+8*14]
+	mov [rsp+8*10], rax
+	mov r8, [rsp+8*10]
 	mov r8, [r8]
-	mov [rsp+8*15], r8
-	push qword [rsp+8*15]
-	pop qword [rsp+8*16]
-	mov     rdi, [rsp+8*16]
+	mov [rsp+8*11], r8
+	mov r8, [rsp+8*11]
+	mov qword [gbl+8*12] ,r8
+	mov r8, [gbl+8*12]
+	mov qword [rsp+8*13] ,r8
+	mov     rdi, [rsp+8*13]
 	call    toString
-	mov     qword[rsp+8*17], rax
-	push qword [rsp+8*17]
-	pop qword [rsp+8*18]
+	mov     qword[rsp+8*14], rax
+	mov r8, [rsp+8*14]
+	mov qword [gbl+8*12] ,r8
+	mov r8, [gbl+8*12]
+	mov qword [rsp+8*15] ,r8
 	mov rdi, formatln
-	mov rsi,[rsp+8*18] 
+	mov rsi,[rsp+8*15] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	push qword 0
+	mov r8, [rsp+8*4]
+	mov qword [rsp+8*16] ,r8
+	mov     rsi, 1
+	mov     rdi, [rsp+8*16]
+	call    address
+	mov [rsp+8*17], rax
+	mov r8, [rsp+8*17]
+	mov r8, [r8]
+	mov [rsp+8*18], r8
+	mov r8, [rsp+8*18]
+	mov qword [gbl+8*12] ,r8
+	mov r8, [gbl+8*12]
+	mov qword [rsp+8*19] ,r8
+	mov     rdi, [rsp+8*19]
+	call    toString
+	mov     qword[rsp+8*20], rax
+	mov r8, [rsp+8*20]
+	mov qword [gbl+8*12] ,r8
+	mov r8, [gbl+8*12]
+	mov qword [rsp+8*21] ,r8
+	mov rdi, formatln
+	mov rsi,[rsp+8*21] 
+	add rsi, 1 
+	xor rax, rax
+	call printf
+	mov rax,0
 	leave
 	ret
 	jmp QED
@@ -360,14 +369,15 @@ main:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 152
+	sub    rsp, 176
+	mov rax,[rsp+8*22]
 	leave
 	ret
 	
 QED:
 	
 	 section   .bss
-gbl:         resb   152
+gbl:         resb   184
 
 	 section   .data
 

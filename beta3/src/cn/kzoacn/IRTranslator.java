@@ -91,7 +91,7 @@ public class IRTranslator {
             return ;
 
         if(!variable.type.name.contains("const") && !variableIndex.containsKey(variable)){
-            variableIndex.put(variable,variableIndex.size());
+            variableIndex.put(variable,variableIndex.size()+1);
         }
     }
     int getIndex(Variable variable){
@@ -160,7 +160,7 @@ public class IRTranslator {
             putVariable(cur.dest);
         }
 
-        bss.append("gbl:         resb   "+Integer.toString(variableIndex.size()*8)+"\n");
+        bss.append("gbl:         resb   "+Integer.toString(variableIndex.size()*8+8)+"\n");
 
         data.append(new StringBuffer("\nformatln:\n\t"));
         data.append(new StringBuffer("db  \"%s\", 10, 0\n\t"));
@@ -290,8 +290,10 @@ public class IRTranslator {
                     break;
                 case call:
                     text.append(new StringBuffer("call "+name+"\n\t"));
+                    text.append(new StringBuffer("mov "+varName(dest)+" , rax\n\t"));
                     break;
                 case ret:
+                    text.append(new StringBuffer("mov rax," +varName(var1)+"\n\t"));
                     text.append(new StringBuffer("leave\n\t"));
                     text.append(new StringBuffer("ret\n\t"));
                     break;

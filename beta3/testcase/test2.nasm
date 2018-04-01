@@ -283,38 +283,43 @@ multiArray:
 
 main:
 	call global_init
+	mov [rsp+8*1] , rax
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 32
-	push qword t657
-	pop qword [rsp+8*0]
-	mov rdi, formatln
-	mov rsi,[rsp+8*0] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
-	push qword t661
-	pop qword [rsp+8*1]
-	mov rdi, formatln
-	mov rsi,[rsp+8*1] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
-	push qword t665
-	pop qword [rsp+8*2]
-	mov rdi, formatln
-	mov rsi,[rsp+8*2] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
-	push qword t669
-	pop qword [rsp+8*3]
+	sub    rsp, 56
+	mov qword [gbl+8*2] ,t1113
+	mov r8, [gbl+8*2]
+	mov qword [rsp+8*3] ,r8
 	mov rdi, formatln
 	mov rsi,[rsp+8*3] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	push qword 0
+	mov qword [gbl+8*2] ,t1117
+	mov r8, [gbl+8*2]
+	mov qword [rsp+8*4] ,r8
+	mov rdi, formatln
+	mov rsi,[rsp+8*4] 
+	add rsi, 1 
+	xor rax, rax
+	call printf
+	mov qword [gbl+8*2] ,t1121
+	mov r8, [gbl+8*2]
+	mov qword [rsp+8*5] ,r8
+	mov rdi, formatln
+	mov rsi,[rsp+8*5] 
+	add rsi, 1 
+	xor rax, rax
+	call printf
+	mov qword [gbl+8*2] ,t1125
+	mov r8, [gbl+8*2]
+	mov qword [rsp+8*6] ,r8
+	mov rdi, formatln
+	mov rsi,[rsp+8*6] 
+	add rsi, 1 
+	xor rax, rax
+	call printf
+	mov rax,0
 	leave
 	ret
 	jmp QED
@@ -322,14 +327,15 @@ main:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 32
+	sub    rsp, 56
+	mov rax,[rsp+8*7]
 	leave
 	ret
 	
 QED:
 	
 	 section   .bss
-gbl:         resb   32
+gbl:         resb   64
 
 	 section   .data
 
@@ -339,16 +345,16 @@ formatln:
 format:
 	db  "%s",  0
 	
-t669:
-	 db 14,"asdfasdfasdf" ,0
+t1117:
+	 db 12,"0123456789" ,0
 
-t657:
-	 db 13,"Hello World" ,0
-
-t665:
+t1121:
 	 db 5,"adf" ,0
 
-t661:
-	 db 12,"0123456789" ,0
+t1125:
+	 db 14,"asdfasdfasdf" ,0
+
+t1113:
+	 db 13,"Hello World" ,0
 
 

@@ -283,114 +283,121 @@ multiArray:
 
 main:
 	call global_init
+	mov [rsp+8*1] , rax
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 128
-	mov qword [rsp+8*0] ,1
+	sub    rsp, 152
+	mov qword [rsp+8*2] ,1
 	mov r8, 1
 	mov r9, 0
 	cmp r8, r9
-	mov qword [rsp+8*1], 0
-	setg [rsp+8*1]
-	mov r8, [rsp+8*0]
-	and r8, [rsp+8*1]
-	mov qword [rsp+8*2],r8 
+	mov qword [rsp+8*3], 0
+	setg [rsp+8*3]
 	mov r8, [rsp+8*2]
+	and r8, [rsp+8*3]
+	mov qword [rsp+8*4],r8 
+	mov r8, [rsp+8*4]
 	cmp r8, 0
 	je L_106
-	push qword t548
-	pop qword [rsp+8*3]
+	mov qword [gbl+8*5] ,t647
+	mov r8, [gbl+8*5]
+	mov qword [rsp+8*6] ,r8
 	mov rdi, formatln
-	mov rsi,[rsp+8*3] 
+	mov rsi,[rsp+8*6] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
 	jmp L_107
 	
 L_106:
-	push qword t552
-	pop qword [rsp+8*4]
+	mov qword [gbl+8*5] ,t651
+	mov r8, [gbl+8*5]
+	mov qword [rsp+8*7] ,r8
 	mov rdi, formatln
-	mov rsi,[rsp+8*4] 
+	mov rsi,[rsp+8*7] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
 	
 L_107:
-	mov r8, [rsp+8*0]
-	mov qword [rsp+8*5], 0
+	mov r8, [rsp+8*2]
+	mov qword [rsp+8*8], 0
 	cmp r8, 0
-	sete [rsp+8*5]
+	sete [rsp+8*8]
 	mov r8, 1
 	mov r9, 0
 	cmp r8, r9
-	mov qword [rsp+8*6], 0
-	setg [rsp+8*6]
-	mov r8, [rsp+8*5]
-	or r8, [rsp+8*6]
-	mov qword [rsp+8*7],r8 
-	mov r8, [rsp+8*7]
+	mov qword [rsp+8*9], 0
+	setg [rsp+8*9]
+	mov r8, [rsp+8*8]
+	or r8, [rsp+8*9]
+	mov qword [rsp+8*10],r8 
+	mov r8, [rsp+8*10]
 	cmp r8, 0
 	je L_108
-	push qword t561
-	pop qword [rsp+8*8]
+	mov qword [gbl+8*5] ,t660
+	mov r8, [gbl+8*5]
+	mov qword [rsp+8*11] ,r8
 	mov rdi, formatln
-	mov rsi,[rsp+8*8] 
+	mov rsi,[rsp+8*11] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
 	jmp L_109
 	
 L_108:
-	push qword t565
-	pop qword [rsp+8*9]
+	mov qword [gbl+8*5] ,t664
+	mov r8, [gbl+8*5]
+	mov qword [rsp+8*12] ,r8
 	mov rdi, formatln
-	mov rsi,[rsp+8*9] 
+	mov rsi,[rsp+8*12] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
 	
 L_109:
-	mov qword [rsp+8*0] ,0
+	mov qword [rsp+8*2] ,0
 	mov r8, 1
 	mov r9, 0
 	cmp r8, r9
-	mov qword [rsp+8*10], 0
-	setne [rsp+8*10]
-	mov r8, [rsp+8*0]
-	and r8, [rsp+8*10]
-	mov qword [rsp+8*11],r8 
+	mov qword [rsp+8*13], 0
+	setne [rsp+8*13]
+	mov r8, [rsp+8*2]
+	and r8, [rsp+8*13]
+	mov qword [rsp+8*14],r8 
 	mov r8, 2
 	mov r9, 4
 	cmp r8, r9
-	mov qword [rsp+8*12], 0
-	setne [rsp+8*12]
-	mov r8, [rsp+8*11]
-	and r8, [rsp+8*12]
-	mov qword [rsp+8*13],r8 
-	mov r8, [rsp+8*13]
+	mov qword [rsp+8*15], 0
+	setne [rsp+8*15]
+	mov r8, [rsp+8*14]
+	and r8, [rsp+8*15]
+	mov qword [rsp+8*16],r8 
+	mov r8, [rsp+8*16]
 	cmp r8, 0
 	je L_110
-	push qword t578
-	pop qword [rsp+8*14]
+	mov qword [gbl+8*5] ,t677
+	mov r8, [gbl+8*5]
+	mov qword [rsp+8*17] ,r8
 	mov rdi, formatln
-	mov rsi,[rsp+8*14] 
+	mov rsi,[rsp+8*17] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
 	jmp L_111
 	
 L_110:
-	push qword t582
-	pop qword [rsp+8*15]
+	mov qword [gbl+8*5] ,t681
+	mov r8, [gbl+8*5]
+	mov qword [rsp+8*18] ,r8
 	mov rdi, formatln
-	mov rsi,[rsp+8*15] 
+	mov rsi,[rsp+8*18] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
 	
 L_111:
-	push qword 0
+	mov rax,0
 	leave
 	ret
 	jmp QED
@@ -398,14 +405,15 @@ L_111:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 128
+	sub    rsp, 152
+	mov rax,[rsp+8*19]
 	leave
 	ret
 	
 QED:
 	
 	 section   .bss
-gbl:         resb   128
+gbl:         resb   160
 
 	 section   .data
 
@@ -415,22 +423,22 @@ formatln:
 format:
 	db  "%s",  0
 	
-t548:
+t647:
 	 db 7,"true1" ,0
 
-t565:
+t664:
 	 db 8,"false2" ,0
 
-t578:
+t677:
 	 db 7,"true3" ,0
 
-t561:
+t660:
 	 db 7,"true2" ,0
 
-t552:
+t651:
 	 db 8,"false1" ,0
 
-t582:
+t681:
 	 db 8,"false3" ,0
 
 

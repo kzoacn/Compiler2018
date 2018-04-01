@@ -283,17 +283,19 @@ multiArray:
 
 main:
 	call global_init
+	mov [rsp+8*1] , rax
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 8
-	push qword t652
-	pop qword [rsp+8*0]
+	sub    rsp, 32
+	mov qword [gbl+8*2] ,t1098
+	mov r8, [gbl+8*2]
+	mov qword [rsp+8*3] ,r8
 	mov rdi, formatln
-	mov rsi,[rsp+8*0] 
+	mov rsi,[rsp+8*3] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	push qword 0
+	mov rax,0
 	leave
 	ret
 	jmp QED
@@ -301,14 +303,15 @@ main:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 8
+	sub    rsp, 32
+	mov rax,[rsp+8*4]
 	leave
 	ret
 	
 QED:
 	
 	 section   .bss
-gbl:         resb   8
+gbl:         resb   40
 
 	 section   .data
 
@@ -318,7 +321,7 @@ formatln:
 format:
 	db  "%s",  0
 	
-t652:
+t1098:
 	 db 13,"Hello World" ,0
 
 
