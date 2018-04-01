@@ -635,6 +635,16 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         IR classIR=new IR();
 
 
+        Variable.isGlobal=true;
+        symbolMap.global=true;
+        for(int i=0;i<16;i++) {
+            Variable variable=nextVariable(VariableType.INT);
+            argList.add(variable);
+            symbolMap.putSymbol(variable.name,variable.type);
+        }
+        symbolMap.global=false;
+        Variable.isGlobal=false;
+
         for(ParseTree child : ctx.children){
             if(child.getClass().equals(MxstarParser.FunctionDefinitionContext.class)){
                 MxstarParser.FunctionDefinitionContext childContext =((MxstarParser.FunctionDefinitionContext)(Object)child);
@@ -654,15 +664,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         IR globalVariableIR = new IR();
         globalVariableIR.push(new Quad(OpCode.label,"global_init"));
         globalVariableIR.push(new Quad(OpCode.enterFunction));
-        Variable.isGlobal=true;
-        symbolMap.global=true;
-        for(int i=0;i<8;i++) {
-            Variable variable=nextVariable(VariableType.INT);
-            argList.add(variable);
-            symbolMap.putSymbol(variable.name,variable.type);
-        }
-        symbolMap.global=false;
-        Variable.isGlobal=false;
+
         for(ParseTree child : ctx.children){
             if(child.getClass().equals(MxstarParser.GlobalVariableDefinitionContext.class)){
                 System.out.println("Variable");
@@ -792,7 +794,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
 
         ir.push(new Quad(OpCode.label,name));
 
-        //ir.push(new Quad(OpCode.pop, Variable.empty, Variable.empty, methodThis));
+        ir.push(new Quad(OpCode.move, argList.get(15), Variable.empty, methodThis));
         if(ctx.parameterList()!=null) {
             for (int i = 0; i < ctx.parameterList().parameter().size(); i++) {
                 String variableName = ctx.parameterList().parameter(i).variableName().getText();
@@ -835,7 +837,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         if(ctx.expressionList()!=null) {
             ir.concat(visit(ctx.expressionList()));
         }
-        //ir.push(new Quad(OpCode.push,left.last.dest,Variable.empty,Variable.empty));
+        ir.push(new Quad(OpCode.move,left.last.dest,Variable.empty,argList.get(15)));
 
         Variable returnTemp=nextConst(0,VariableType.CONST_INT);
         if(function!=null) {
@@ -857,11 +859,11 @@ class MVisitor extends MxstarBaseVisitor<IR>{
                     ir.push(new Quad(OpCode.print,temp,Variable.empty,Variable.empty));
                     break;
                 case "size":
-                    ir.push(new Quad(OpCode.move,argList.get(0),Variable.empty,tmp));
+                    ir.push(new Quad(OpCode.move,argList.get(15),Variable.empty,tmp));
                     ir.push(new Quad(OpCode.load,tmp,Variable.empty,tmp));
                     break;
                 case "length":
-                    ir.push(new Quad(OpCode.move,argList.get(0),Variable.empty,tmp));
+                    ir.push(new Quad(OpCode.move,argList.get(15),Variable.empty,tmp));
                     ir.push(new Quad(OpCode.load,tmp,Variable.empty,tmp));
                     ir.push(new Quad(OpCode.and,tmp,nextConst(255,VariableType.CONST_INT),tmp));
                     break;

@@ -365,7 +365,7 @@ L_155:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov qword [gbl+8*12] ,t1202
+	mov qword [gbl+8*12] ,t1386
 	mov r8, [gbl+8*12]
 	mov qword [rsp+8*21] ,r8
 	mov rdi, format
@@ -384,7 +384,7 @@ L_157:
 	jmp L_155
 	
 L_156:
-	mov qword [gbl+8*12] ,t1206
+	mov qword [gbl+8*12] ,t1390
 	mov r8, [gbl+8*12]
 	mov qword [rsp+8*23] ,r8
 	mov rdi, formatln
@@ -627,10 +627,10 @@ formatln:
 format:
 	db  "%s",  0
 	
-t1206:
+t1390:
 	 db 0,"" ,0
 
-t1202:
+t1386:
 	 db 1," " ,0
 
 

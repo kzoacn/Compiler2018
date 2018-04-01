@@ -298,7 +298,7 @@ hello:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 104
-	mov qword [gbl+8*3] ,t1083
+	mov qword [gbl+8*3] ,t1251
 	mov r8, [gbl+8*3]
 	mov qword [rsp+8*4] ,r8
 	mov rdi, formatln
@@ -334,7 +334,7 @@ formatln:
 format:
 	db  "%s",  0
 	
-t1083:
+t1251:
 	 db 12,"Hello World!" ,0
 
 

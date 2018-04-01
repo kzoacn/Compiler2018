@@ -569,7 +569,7 @@ L_381:
 	jmp L_385
 	
 L_384:
-	mov qword [gbl+8*2] ,t3144
+	mov qword [gbl+8*2] ,t3496
 	mov r8, [gbl+8*2]
 	mov qword [rsp+8*70] ,r8
 	mov rdi, formatln
@@ -855,7 +855,7 @@ formatln:
 format:
 	db  "%s",  0
 	
-t3144:
+t3496:
 	 db 12,"no solution!" ,0
 
 

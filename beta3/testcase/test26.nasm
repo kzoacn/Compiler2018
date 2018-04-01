@@ -1716,7 +1716,7 @@ L_208:
 	jmp L_260
 	
 L_259:
-	mov qword [gbl+8*70] ,t1798
+	mov qword [gbl+8*70] ,t2014
 	mov r8, [gbl+8*70]
 	mov qword [rsp+8*288] ,r8
 	mov rdi, formatln
@@ -1783,7 +1783,7 @@ formatln:
 format:
 	db  "%s",  0
 	
-t1798:
+t2014:
 	 db 12,"no solution!" ,0
 
 

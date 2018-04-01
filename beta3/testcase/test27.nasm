@@ -381,7 +381,7 @@ L_264:
 	mov r8, [rsp+8*22]
 	cmp r8, 0
 	je L_267
-	mov qword [gbl+8*11] ,t1838
+	mov qword [gbl+8*11] ,t2062
 	mov r8, [gbl+8*11]
 	mov qword [rsp+8*23] ,r8
 	mov rdi, format
@@ -392,7 +392,7 @@ L_264:
 	jmp L_268
 	
 L_267:
-	mov qword [gbl+8*11] ,t1842
+	mov qword [gbl+8*11] ,t2066
 	mov r8, [gbl+8*11]
 	mov qword [rsp+8*24] ,r8
 	mov rdi, format
@@ -413,7 +413,7 @@ L_266:
 	jmp L_264
 	
 L_265:
-	mov qword [gbl+8*11] ,t1846
+	mov qword [gbl+8*11] ,t2070
 	mov r8, [gbl+8*11]
 	mov qword [rsp+8*26] ,r8
 	mov rdi, formatln
@@ -432,7 +432,7 @@ L_263:
 	jmp L_261
 	
 L_262:
-	mov qword [gbl+8*11] ,t1850
+	mov qword [gbl+8*11] ,t2074
 	mov r8, [gbl+8*11]
 	mov qword [rsp+8*28] ,r8
 	mov rdi, formatln
@@ -739,16 +739,16 @@ formatln:
 format:
 	db  "%s",  0
 	
-t1842:
-	 db 2," ." ,0
-
-t1846:
+t2070:
 	 db 0,"" ,0
 
-t1838:
+t2062:
 	 db 2," O" ,0
 
-t1850:
+t2074:
 	 db 0,"" ,0
+
+t2066:
+	 db 2," ." ,0
 
 

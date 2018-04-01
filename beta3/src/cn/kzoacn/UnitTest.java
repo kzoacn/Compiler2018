@@ -64,7 +64,7 @@ class UnitTest {
     void test49()throws Exception{
         test("test49");
     }
-    @Test
+    @Test @Disabled
     void test50()throws Exception{
         test("test50");
     }
