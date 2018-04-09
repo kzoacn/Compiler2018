@@ -280,6 +280,52 @@ multiArray:
         leave
         ret
 
+multiAddress:
+        push    rbp
+        mov     rbp, rsp
+        sub     rsp, 48
+        mov     qword [rbp-28H], rdi
+        mov     qword [rbp-30H], rsi
+        mov     rax, qword [rbp-30H]
+        mov     rax, qword [rax]
+        mov     qword [rbp-18H], rax
+        mov     rax, qword [rbp-28H]
+        mov     qword [rbp-10H], rax
+        mov     qword [rbp-8H], 1
+        jmp     mAd_006
+
+mAd_005:  mov     rax, qword [rbp-8H]
+        lea     rdx, [rax-1H]
+        mov     rax, qword [rbp-30H]
+        mov     rsi, rdx
+        mov     rdi, rax
+        call    address
+        mov     rdx, qword [rax]
+        mov     rax, qword [rbp-10H]
+        mov     rsi, rdx
+        mov     rdi, rax
+        call    address
+        mov     rax, qword [rax]
+        mov     qword [rbp-10H], rax
+        add     qword [rbp-8H], 1
+mAd_006:  mov     rax, qword [rbp-8H]
+        cmp     rax, qword [rbp-18H]
+        jl      mAd_005
+        mov     rax, qword [rbp-18H]
+        lea     rdx, [rax-1H]
+        mov     rax, qword [rbp-30H]
+        mov     rsi, rdx
+        mov     rdi, rax
+        call    address
+        mov     rdx, qword [rax]
+        mov     rax, qword [rbp-10H]
+        mov     rsi, rdx
+        mov     rdi, rax
+        call    address
+        mov     qword [rbp-10H], rax
+        mov     rax, qword [rbp-10H]
+        leave
+        ret
 
 main:
 	push   rbp

@@ -60,7 +60,7 @@ class ExecTest {
     void test49()throws Exception{
         test("test49");
     }
-    @Test@Disabled
+    @Test
     void test50()throws Exception{
         test("test50");
     }
@@ -84,9 +84,13 @@ class ExecTest {
     void test55()throws Exception{
         test("test55");
     }
-    @Test @Disabled
+    @Test
     void test56()throws Exception{
         test("test56");
+    }
+    @Test
+    void test63()throws Exception{
+        test("test63");
     }
     @Test
     void testfyd()throws Exception{

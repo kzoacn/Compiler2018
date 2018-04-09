@@ -162,7 +162,7 @@ enum OpCode{
     less,leq,equal,inequal,geq,greater,
     jmp,jz,jnz,jne,
     malloc,mallocArray,multiArray,concat,
-    load,store,address,
+    load,store,address,multiAddress,
     print,println,getString,getInt,toString,
     saveContext,resumeContext,
     endContext,
@@ -770,11 +770,62 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         IR ir = new IR();
         String name=ctx.functionName().getText();
         symbolMap.currentFunction=name;
+        VariableType returnType=VariableType.toVariableType(ctx.variableType());
+        ArrayList<VariableType>parameterList = new ArrayList<VariableType>();
+
+        Variable methodThis=nextThis(currentClassType);
+        currentThis=methodThis;
+        if(ctx.parameterList()!=null) {
+            for (int i = 0; i < ctx.parameterList().parameter().size(); i++) {
+                String variableName = ctx.parameterList().parameter(i).variableName().getText();
+                VariableType variableType = VariableType.toVariableType(ctx.parameterList().parameter(i).variableType());
+                symbolMap.putSymbol(variableName, variableType);
+                parameterList.add(variableType);
+
+            }
+        }
+        Function function=new Function(name,returnType,parameterList);
+        symbolMap.functionMap.put(name,function);
+
+
+        IR stmt=visit(ctx.block());
+
+
+        ir.push(new Quad(OpCode.label,name));
+        ir.push(new Quad(OpCode.enterFunction,name));
+        ir.push(new Quad(OpCode.move, argList.get(15), Variable.empty, methodThis));
+        if(name.equals("main"))
+            ir.push(new Quad(OpCode.call,"global_init",nextVariable(VariableType.INT)));
+        if(ctx.parameterList()!=null) {
+            for (int i = 0; i < ctx.parameterList().parameter().size(); i++) {
+                String variableName = ctx.parameterList().parameter(i).variableName().getText();
+                String newName = symbolMap.renameMap.get(variableName);
+                ir.push(new Quad(OpCode.move, argList.get(i), Variable.empty, new Variable(newName, parameterList.get(i))));
+                //ir.push(new Quad(OpCode.pop, Variable.empty, Variable.empty, new Variable(newName, parameterList.get(i))));
+            }
+        }
+
+        ir.concat(stmt);
+        //ir.push(new Quad(OpCode.push, nextConst(0, VariableType.CONST_INT), Variable.empty, Variable.empty));
+        Quad quad =new Quad(OpCode.ret, nextConst(0, VariableType.CONST_INT), Variable.empty, Variable.empty);
+        quad.name=function.name;
+        ir.push(quad);
+        ir.push(new Quad(OpCode.exitFunction,name));
+
+        //ir.modify_context(symbolMap.globalVariableMap);
+
+        symbolMap.prevScope();
+        symbolMap.currentFunction="";
+        return ir;
+
+/*        symbolMap.nextScope();
+        IR ir = new IR();
+        String name=ctx.functionName().getText();
+        symbolMap.currentFunction=name;
         VariableType returnType=ctx.variableType()==null ? VariableType.INT :VariableType.toVariableType(ctx.variableType());
         ArrayList<VariableType>parameterList = new ArrayList<VariableType>();
         parameterList.add(VariableType.INT);
-        Variable methodThis=nextThis(currentClassType);
-        currentThis=methodThis;
+
         //methodSelf.put();
         if(ctx.parameterList()!=null) {
             for (int i = 0; i < ctx.parameterList().parameter().size(); i++) {
@@ -799,7 +850,9 @@ class MVisitor extends MxstarBaseVisitor<IR>{
             for (int i = 0; i < ctx.parameterList().parameter().size(); i++) {
                 String variableName = ctx.parameterList().parameter(i).variableName().getText();
                 String newName = symbolMap.renameMap.get(variableName);
+                ir.push(new Quad(OpCode.move, argList.get(i), Variable.empty, new Variable(newName, parameterList.get(i))));
                 //ir.push(new Quad(OpCode.pop, Variable.empty, Variable.empty, new Variable(newName, parameterList.get(i+1))));
+
             }
         }
 
@@ -812,7 +865,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         symbolMap.prevScope();
         symbolMap.currentFunction="";
         currentThis=null;
-        return ir;
+        return ir;*/
     }
 
     @Override public IR visitMethodCall(MxstarParser.MethodCallContext ctx) {
@@ -895,7 +948,53 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         VariableType startType = symbolMap.getVariable(startName);
         Variable start = nextVariable(startType.clone());
         Variable adr=nextVariable(VariableType.INT);
-        ir.push(new Quad(OpCode.move,new Variable(symbolMap.renameMap.get(startName),startType),Variable.empty,start));
+
+        start.name=startName;
+        Variable cur = nextVariable(startType.clone());
+
+        Variable arr = nextVariable(VariableType.INT);
+        Variable head = nextVariable(VariableType.INT);
+        //ir.push(new Quad(OpCode.mallocArray,));
+        IR accIR = new IR(),tmp=new IR();
+        int size=0;
+        for(int i=0;i<ctx.variable().size();i++){
+            if(ctx.variable(i).index()!=null)
+                size+=ctx.variable(i).index().size();
+            size++;
+        }
+        size--;
+        int curs=0;
+        ir.push(new Quad(OpCode.mallocArray,nextConst(size,VariableType.CONST_INT),Variable.empty,arr));
+        ir.push(new Quad(OpCode.move,arr,Variable.empty,head));
+        for(int i=0;i<ctx.variable().size();i++){
+
+            if(i==0){
+
+            }else{
+                String name=ctx.variable(i).variableName().getText();
+                Variable variable=classMember.get(cur.type.name).get(name);
+                Variable idx = nextConst(classMemberIndex.get(cur.type.name).get(variable),VariableType.CONST_INT);
+                accIR.push(new Quad(OpCode.address,arr,nextConst(curs,VariableType.CONST_INT),head));
+                curs++;
+                accIR.push(new Quad(OpCode.store,idx,Variable.empty,head));
+                cur.type=variable.type.clone();
+            }
+            if(ctx.variable(i).index()!=null)
+                for(int j=0;j<ctx.variable(i).index().size();j++){
+                    tmp=visit(ctx.variable(i).index(j));
+                    ir.concat(tmp);
+                    accIR.push(new Quad(OpCode.address,arr,nextConst(curs,VariableType.CONST_INT),head));
+                    curs++;
+                    accIR.push(new Quad(OpCode.store,tmp.last.dest,Variable.empty,head));
+                    cur.type.level--;
+                }
+        }
+        Variable result=nextVariable(cur.type);
+        accIR.push(new Quad(OpCode.multiAddress,start,arr,result));
+        ir.concat(accIR);
+        ir.push(new Quad(OpCode.load,result,Variable.empty,result));
+
+/*        ir.push(new Quad(OpCode.move,new Variable(symbolMap.renameMap.get(startName),startType),Variable.empty,start));
         ArrayList<IR> parameterList = new ArrayList<IR>();
 
         for(int i=0;i<ctx.variable(0).index().size();i++){
@@ -938,7 +1037,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         }
         ir.push(new Quad(OpCode.move,start,Variable.empty,start));
 
-
+*/
         return ir;
     }
     @Override public IR visitNewVariable(MxstarParser.NewVariableContext ctx) {
@@ -1012,8 +1111,52 @@ class MVisitor extends MxstarBaseVisitor<IR>{
             startName=currentThis.name;
         VariableType startType = symbolMap.getVariable(startName);
         Variable start = nextVariable(startType.clone());
+        start.name=startName;
+        Variable cur = nextVariable(startType.clone());
         Variable adr=nextVariable(VariableType.INT);
-        ir.push(new Quad(OpCode.move,new Variable(symbolMap.renameMap.get(startName),startType),Variable.empty,start));
+
+        Variable arr = nextVariable(VariableType.INT);
+        Variable head = nextVariable(VariableType.INT);
+        //ir.push(new Quad(OpCode.mallocArray,));
+        IR accIR = new IR(),tmp=new IR();
+        int size=0;
+        for(int i=0;i<ctx.variable().size();i++){
+            if(ctx.variable(i).index()!=null)
+                size+=ctx.variable(i).index().size();
+            size++;
+        }
+        size--;
+        int curs=0;
+        ir.push(new Quad(OpCode.mallocArray,nextConst(size,VariableType.CONST_INT),Variable.empty,arr));
+        ir.push(new Quad(OpCode.move,arr,Variable.empty,head));
+        for(int i=0;i<ctx.variable().size();i++){
+
+            if(i==0){
+
+            }else{
+                String name=ctx.variable(i).variableName().getText();
+                Variable variable=classMember.get(cur.type.name).get(name);
+                Variable idx = nextConst(classMemberIndex.get(cur.type.name).get(variable),VariableType.CONST_INT);
+                accIR.push(new Quad(OpCode.address,arr,nextConst(curs,VariableType.CONST_INT),head));
+                curs++;
+                accIR.push(new Quad(OpCode.store,idx,Variable.empty,head));
+                cur.type=variable.type.clone();
+            }
+            if(ctx.variable(i).index()!=null)
+            for(int j=0;j<ctx.variable(i).index().size();j++){
+                tmp=visit(ctx.variable(i).index(j));
+                ir.concat(tmp);
+                accIR.push(new Quad(OpCode.address,arr,nextConst(curs,VariableType.CONST_INT),head));
+                curs++;
+                accIR.push(new Quad(OpCode.store,tmp.last.dest,Variable.empty,head));
+                cur.type.level--;
+            }
+        }
+        Variable result=nextVariable(cur.type);
+        accIR.push(new Quad(OpCode.multiAddress,start,arr,result));
+        ir.concat(accIR);
+
+/*        ir.push(new Quad(OpCode.move,new Variable(symbolMap.renameMap.get(startName),startType),Variable.empty,start));
         ArrayList<IR> parameterList = new ArrayList<IR>();
 
         for(int i=0;i<ctx.variable(0).index().size();i++){
@@ -1052,7 +1195,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         }
         ir.push(new Quad(OpCode.move,adr,Variable.empty,adr));
 
-
+*/
         return ir;
     }
 

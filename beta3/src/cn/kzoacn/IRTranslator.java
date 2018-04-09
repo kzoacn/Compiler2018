@@ -178,6 +178,7 @@ public class IRTranslator {
         text.append(ConstantPool.concatFunction).append("\n");
         text.append(ConstantPool.addressFunction).append("\n");
         text.append(ConstantPool.multiArrayFunction).append("\n");
+        text.append(ConstantPool.multiAddressFunction).append("\n");
        // text.append("start:\n\t");
        // text.append("jmp main\n\t");
 
@@ -438,6 +439,13 @@ public class IRTranslator {
                                     "mov     rdi, "+varName(var1)+"\n\t" +
                                     "call    multiArray\n\t"+
                                     "mov     qword "+varName(dest)+", rax\n\t"));
+                    break;
+                case multiAddress:
+                    text.append(new StringBuffer(
+                                    "mov     rsi, "+varName(var2)+"\n\t" +
+                                    "mov     rdi, "+varName(var1)+"\n\t" +
+                                    "call    multiAddress\n\t") +
+                                    "mov "+varName(dest)+", rax\n\t");
                     break;
             }
         }

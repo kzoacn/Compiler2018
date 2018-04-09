@@ -1,7 +1,52 @@
 package cn.kzoacn;
 
 public class ConstantPool {
-
+    static final StringBuffer multiAddressFunction = new StringBuffer("multiAddress:\n" +
+            "        push    rbp\n" +
+            "        mov     rbp, rsp\n" +
+            "        sub     rsp, 48\n" +
+            "        mov     qword [rbp-28H], rdi\n" +
+            "        mov     qword [rbp-30H], rsi\n" +
+            "        mov     rax, qword [rbp-30H]\n" +
+            "        mov     rax, qword [rax]\n" +
+            "        mov     qword [rbp-18H], rax\n" +
+            "        mov     rax, qword [rbp-28H]\n" +
+            "        mov     qword [rbp-10H], rax\n" +
+            "        mov     qword [rbp-8H], 1\n" +
+            "        jmp     mAd_006\n" +
+            "\n" +
+            "mAd_005:  mov     rax, qword [rbp-8H]\n" +
+            "        lea     rdx, [rax-1H]\n" +
+            "        mov     rax, qword [rbp-30H]\n" +
+            "        mov     rsi, rdx\n" +
+            "        mov     rdi, rax\n" +
+            "        call    address\n" +
+            "        mov     rdx, qword [rax]\n" +
+            "        mov     rax, qword [rbp-10H]\n" +
+            "        mov     rsi, rdx\n" +
+            "        mov     rdi, rax\n" +
+            "        call    address\n" +
+            "        mov     rax, qword [rax]\n" +
+            "        mov     qword [rbp-10H], rax\n" +
+            "        add     qword [rbp-8H], 1\n" +
+            "mAd_006:  mov     rax, qword [rbp-8H]\n" +
+            "        cmp     rax, qword [rbp-18H]\n" +
+            "        jl      mAd_005\n" +
+            "        mov     rax, qword [rbp-18H]\n" +
+            "        lea     rdx, [rax-1H]\n" +
+            "        mov     rax, qword [rbp-30H]\n" +
+            "        mov     rsi, rdx\n" +
+            "        mov     rdi, rax\n" +
+            "        call    address\n" +
+            "        mov     rdx, qword [rax]\n" +
+            "        mov     rax, qword [rbp-10H]\n" +
+            "        mov     rsi, rdx\n" +
+            "        mov     rdi, rax\n" +
+            "        call    address\n" +
+            "        mov     qword [rbp-10H], rax\n" +
+            "        mov     rax, qword [rbp-10H]\n" +
+            "        leave\n" +
+            "        ret");
     static final StringBuffer multiArrayFunction = new StringBuffer("_multiArray:\n" +
             "        push    rbp\n" +
             "        mov     rbp, rsp\n" +

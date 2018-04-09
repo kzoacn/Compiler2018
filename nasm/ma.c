@@ -23,6 +23,15 @@ long* address(long st,long pos){
 }
 
 
+long* multiAddress(char* st,long* a){
+    long size=*a,i;
+    char *cur=st;
+    for(i=1;i<size;i++){
+        cur=*address((long)cur,*address(a,i-1));
+    }
+    cur=address((long)cur,*address(a,size-1));
+    return cur;
+}
 
 
 long* _multiArray(int n,long* a){
@@ -107,10 +116,27 @@ void test(){
 
 
 int main(){
-    test();
-    char *s1=toString(123);
-    char *s2=toString(450);
-    char *s=concat(s1,s2);
-    s++;
-    puts(s);
+    long* id=mallocArray(2);
+    *address(id,0)=3;
+    *address(id,1)=4;
+    
+    long* mul=multiArray(id);
+    
+    long i,j;
+    for(i=0;i<3;i++){
+        for(j=0;j<4;j++){
+            *address(id,0)=i;
+            *address(id,1)=j;
+            *multiAddress(mul,id)=i+j;
+    
+        }
+    }
+    for(i=0;i<3;i++){
+        for(j=0;j<4;j++){
+            *address(id,0)=i;
+            *address(id,1)=j;
+    
+            printf("%d\n",*multiAddress(mul,id));
+        }
+    }
 }
