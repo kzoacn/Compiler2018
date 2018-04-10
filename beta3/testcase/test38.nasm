@@ -126,31 +126,29 @@ concat:
         mov     qword [rbp-30H], rsi
         mov     rax, qword [rbp-28H]
         movzx   eax, byte [rax]
-        movsx   edx, al
+        movzx   edx, al
         mov     rax, qword [rbp-30H]
         movzx   eax, byte [rax]
-        movsx   eax, al
+        movzx   eax, al
         add     eax, edx
-        add     eax, 1
+        add     eax, 2
         cdqe
         mov     rdi, rax
         call    malloc
         mov     qword [rbp-18H], rax
         mov     rax, qword [rbp-28H]
-        movzx   eax, byte [rax]
-        mov     edx, eax
+        movzx   edx, byte [rax]
         mov     rax, qword [rbp-30H]
         movzx   eax, byte [rax]
-        add     eax, edx
-        mov     edx, eax
+        add     edx, eax
         mov     rax, qword [rbp-18H]
         mov     byte [rax], dl
         mov     qword [rbp-8H], 0
         mov     qword [rbp-10H], 0
         mov     qword [rbp-8H], 0
-        jmp     cat_02
+        jmp     cc_002
 
-cat_01:  add     qword [rbp-10H], 1
+cc_001:  add     qword [rbp-10H], 1
         mov     rdx, qword [rbp-10H]
         mov     rax, qword [rbp-18H]
         add     rdx, rax
@@ -161,15 +159,15 @@ cat_01:  add     qword [rbp-10H], 1
         movzx   eax, byte [rax]
         mov     byte [rdx], al
         add     qword [rbp-8H], 1
-cat_02:  mov     rax, qword [rbp-28H]
+cc_002:  mov     rax, qword [rbp-28H]
         movzx   eax, byte [rax]
-        movsx   rax, al
+        movzx   eax, al
         cmp     rax, qword [rbp-8H]
-        jg      cat_01
+        jg      cc_001
         mov     qword [rbp-8H], 0
-        jmp     cat_04
+        jmp     cc_004
 
-cat_03:  add     qword [rbp-10H], 1
+cc_003:  add     qword [rbp-10H], 1
         mov     rdx, qword [rbp-10H]
         mov     rax, qword [rbp-18H]
         add     rdx, rax
@@ -180,11 +178,16 @@ cat_03:  add     qword [rbp-10H], 1
         movzx   eax, byte [rax]
         mov     byte [rdx], al
         add     qword [rbp-8H], 1
-cat_04:  mov     rax, qword [rbp-30H]
+cc_004:  mov     rax, qword [rbp-30H]
         movzx   eax, byte [rax]
-        movsx   rax, al
+        movzx   eax, al
         cmp     rax, qword [rbp-8H]
-        jg      cat_03
+        jg      cc_003
+        add     qword [rbp-10H], 1
+        mov     rdx, qword [rbp-10H]
+        mov     rax, qword [rbp-18H]
+        add     rax, rdx
+        mov     byte [rax], 0
         mov     rax, qword [rbp-18H]
         leave
         ret

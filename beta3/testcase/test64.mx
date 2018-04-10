@@ -1,0 +1,8 @@
+int main(){
+    string q="\"";
+    string b="\\";
+    string co=";";
+    println(q);
+    println(b);
+    println(co);
+}

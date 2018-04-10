@@ -116,6 +116,18 @@ class ExecTest {
     void test63()throws Exception{
         test("test63");
     }
+    @Test
+    void test64()throws Exception{
+        test("test64");
+    }
+    @Test
+    void test65()throws Exception{
+        test("test65");
+    }
+    @Test
+    void quine()throws Exception{
+        test("quine");
+    }
 
     void test(String name) throws Exception{
 
@@ -131,6 +143,7 @@ class ExecTest {
             ctx.append(fin.nextLine());
             ctx.append("\n");
         }
+        //System.out.println(ctx);
 
         //ctx=new StringBuilder("a=4\n");
         //ctx=new StringBuilder("a=4\nb=a+4\n");

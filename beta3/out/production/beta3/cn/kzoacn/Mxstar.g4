@@ -186,7 +186,7 @@ ConstNumber
     :   [0-9]+
     ;
 ConstString
-    :   '"' ('\\"' | ~'"')* '"'
+    :   '"' ('\\"' | ~('"'|'\n') )* '"'
     ;
 
 Identifier

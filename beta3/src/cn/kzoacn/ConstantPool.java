@@ -146,31 +146,29 @@ public class ConstantPool {
             "        mov     qword [rbp-30H], rsi\n" +
             "        mov     rax, qword [rbp-28H]\n" +
             "        movzx   eax, byte [rax]\n" +
-            "        movsx   edx, al\n" +
+            "        movzx   edx, al\n" +
             "        mov     rax, qword [rbp-30H]\n" +
             "        movzx   eax, byte [rax]\n" +
-            "        movsx   eax, al\n" +
+            "        movzx   eax, al\n" +
             "        add     eax, edx\n" +
-            "        add     eax, 1\n" +
+            "        add     eax, 2\n" +
             "        cdqe\n" +
             "        mov     rdi, rax\n" +
             "        call    malloc\n" +
             "        mov     qword [rbp-18H], rax\n" +
             "        mov     rax, qword [rbp-28H]\n" +
-            "        movzx   eax, byte [rax]\n" +
-            "        mov     edx, eax\n" +
+            "        movzx   edx, byte [rax]\n" +
             "        mov     rax, qword [rbp-30H]\n" +
             "        movzx   eax, byte [rax]\n" +
-            "        add     eax, edx\n" +
-            "        mov     edx, eax\n" +
+            "        add     edx, eax\n" +
             "        mov     rax, qword [rbp-18H]\n" +
             "        mov     byte [rax], dl\n" +
             "        mov     qword [rbp-8H], 0\n" +
             "        mov     qword [rbp-10H], 0\n" +
             "        mov     qword [rbp-8H], 0\n" +
-            "        jmp     cat_02\n" +
+            "        jmp     cc_002\n" +
             "\n" +
-            "cat_01:  add     qword [rbp-10H], 1\n" +
+            "cc_001:  add     qword [rbp-10H], 1\n" +
             "        mov     rdx, qword [rbp-10H]\n" +
             "        mov     rax, qword [rbp-18H]\n" +
             "        add     rdx, rax\n" +
@@ -181,15 +179,15 @@ public class ConstantPool {
             "        movzx   eax, byte [rax]\n" +
             "        mov     byte [rdx], al\n" +
             "        add     qword [rbp-8H], 1\n" +
-            "cat_02:  mov     rax, qword [rbp-28H]\n" +
+            "cc_002:  mov     rax, qword [rbp-28H]\n" +
             "        movzx   eax, byte [rax]\n" +
-            "        movsx   rax, al\n" +
+            "        movzx   eax, al\n" +
             "        cmp     rax, qword [rbp-8H]\n" +
-            "        jg      cat_01\n" +
+            "        jg      cc_001\n" +
             "        mov     qword [rbp-8H], 0\n" +
-            "        jmp     cat_04\n" +
+            "        jmp     cc_004\n" +
             "\n" +
-            "cat_03:  add     qword [rbp-10H], 1\n" +
+            "cc_003:  add     qword [rbp-10H], 1\n" +
             "        mov     rdx, qword [rbp-10H]\n" +
             "        mov     rax, qword [rbp-18H]\n" +
             "        add     rdx, rax\n" +
@@ -200,11 +198,16 @@ public class ConstantPool {
             "        movzx   eax, byte [rax]\n" +
             "        mov     byte [rdx], al\n" +
             "        add     qword [rbp-8H], 1\n" +
-            "cat_04:  mov     rax, qword [rbp-30H]\n" +
+            "cc_004:  mov     rax, qword [rbp-30H]\n" +
             "        movzx   eax, byte [rax]\n" +
-            "        movsx   rax, al\n" +
+            "        movzx   eax, al\n" +
             "        cmp     rax, qword [rbp-8H]\n" +
-            "        jg      cat_03\n" +
+            "        jg      cc_003\n" +
+            "        add     qword [rbp-10H], 1\n" +
+            "        mov     rdx, qword [rbp-10H]\n" +
+            "        mov     rax, qword [rbp-18H]\n" +
+            "        add     rax, rdx\n" +
+            "        mov     byte [rax], 0\n" +
             "        mov     rax, qword [rbp-18H]\n" +
             "        leave\n" +
             "        ret\n");

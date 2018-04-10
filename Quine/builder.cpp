@@ -37,7 +37,7 @@ string trans(string s){
 vector<string>vec;
 
 int main(){
-    vec.push_back("string di(int x){");
+    vec.push_back("string digt(int x){");
     vec.push_back("if(x==0)return \"0\";");
     vec.push_back("if(x==1)return \"1\";");
     vec.push_back("if(x==2)return \"2\";");
@@ -50,21 +50,24 @@ int main(){
     vec.push_back("if(x==9)return \"9\";");
     vec.push_back("}");
     
-    vec.push_back("string s2(int x){");
-    vec.push_back("if(x<=9)return \"s[\"+di(x)+\"]=\";");
-    vec.push_back("return \"s[\"+di(x/10)+di(x%10)+\"]=\";");
+    vec.push_back("string[] s=new string[256];");
+    vec.push_back("string[] c=new string[256];");
+  
+//    vec.push_back("string s[256];");
+//    vec.push_back("string c[256];");  
+    vec.push_back("string s2(int ss){");
+    vec.push_back("if(ss<=9)return \"s[\"+digt(ss)+\"]=\";");
+    vec.push_back("return \"s[\"+digt(ss/10)+digt(ss%10)+\"]=\";");
     vec.push_back("}");
     
-    vec.push_back("string c2(int x){");
-    vec.push_back("if(x<=9)return \"c[\"+di(x)+\"]=\";");
-    vec.push_back("return \"c[\"+di(x/10)+di(x%10)+\"]=\";");
+    vec.push_back("string c2(int cc){");
+    vec.push_back("if(cc<=9)return \"c[\"+digt(cc)+\"]=\";");
+    vec.push_back("return \"c[\"+digt(cc/10)+digt(cc%10)+\"]=\";");
     vec.push_back("}");
     
     vec.push_back("string co=\";\";");
     vec.push_back("string a2q=\"\\\"\";");
     vec.push_back("string a2b=\"\\\\\";");
-    vec.push_back("string s[256];");
-    vec.push_back("string c[256];");
 
     head();
     int cur=0;

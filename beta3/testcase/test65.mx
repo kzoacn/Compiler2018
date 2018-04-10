@@ -1,0 +1,12 @@
+int main(){
+    int len=100;
+    int i=0;
+    string s="";
+    for(i=0;i<len;i++)
+        s=s+"0";
+    println(s);
+    for(i=0;i<len;i++)
+        s=s+"0";
+    println(s);    
+    return 0;
+}

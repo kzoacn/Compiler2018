@@ -5,9 +5,9 @@ long* mallocArray(long size){
     return s;
 }
 
-char* concat(char *s1,char *s2){
-    char *s=malloc(*s1 + *s2 +2 );
-    *s=*s1 + *s2;
+unsigned char* concat(unsigned char *s1,unsigned char *s2){
+    unsigned char *s=malloc((unsigned char)*s1 + (unsigned char)*s2 +2 );
+    *s=(unsigned char)*s1 + (unsigned char)*s2;
     long i=0,j=0;
     for(i=0;i< *s1 ;i++)
         s[++j]=s1[i+1];
@@ -23,9 +23,9 @@ long* address(long st,long pos){
 }
 
 
-long* multiAddress(char* st,long* a){
+long* multiAddress(unsigned char* st,long* a){
     long size=*a,i;
-    char *cur=st;
+    unsigned char *cur=st;
     for(i=1;i<size;i++){
         cur=*address((long)cur,*address(a,i-1));
     }
@@ -50,7 +50,7 @@ long* multiArray(long* a){
     return _multiArray(0,a);
 }
 
-char* toString(long x){
+unsigned char* toString(long x){
 
 
     long len=0,flag=1;
@@ -66,10 +66,10 @@ char* toString(long x){
         len++;
         y/=10;
     }
-    char *s=malloc(len+2);
+    unsigned char *s=malloc(len+2);
     *(s+len+1)=0;
-    char *c=s;
-    *c=(char)len&255;
+    unsigned char *c=s;
+    *c=(unsigned char)len&255;
     c++;
     
     if(flag==-1){
@@ -80,7 +80,7 @@ char* toString(long x){
         *c='0';
    
     while(x>0){
-        *c=(char)(x%10+'0');
+        *c=(unsigned char)(x%10+'0');
         c--;
         x/=10;
     }
@@ -116,27 +116,16 @@ void test(){
 
 
 int main(){
-    long* id=mallocArray(2);
-    *address(id,0)=3;
-    *address(id,1)=4;
-    
-    long* mul=multiArray(id);
-    
-    long i,j;
-    for(i=0;i<3;i++){
-        for(j=0;j<4;j++){
-            *address(id,0)=i;
-            *address(id,1)=j;
-            *multiAddress(mul,id)=i+j;
-    
-        }
+    unsigned char *one=toString(1);
+    unsigned char *zero=toString(0);
+    int len=126;
+    unsigned char *s1=toString(0),*s2=toString(0);
+    int i=0;
+    for(i=0;i<len;i++){
+        s1=concat(s1,one);
+        s2=concat(s2,zero);
     }
-    for(i=0;i<3;i++){
-        for(j=0;j<4;j++){
-            *address(id,0)=i;
-            *address(id,1)=j;
-    
-            printf("%d\n",*multiAddress(mul,id));
-        }
-    }
+    puts(s1+1);
+    puts(s2+1);
+    puts(concat(s1,s2)+1);
 }

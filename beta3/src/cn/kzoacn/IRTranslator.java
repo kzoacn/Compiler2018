@@ -137,6 +137,36 @@ public class IRTranslator {
         cmd.append("call printf\n\t");
         return  cmd;
     }
+    String format(String s){
+        String res="";
+        res+="\"";
+        for(int i=1;i+1<s.length();i++){
+            if(s.charAt(i)=='\\'){
+                res+="\"";
+                res+=",";
+                res+=Integer.toString(s.charAt(i+1));
+                res+=",";
+                res+="\"";
+                i++;
+            }else{
+                res+=String.valueOf(s.charAt(i));
+            }
+        }
+        res+="\"";
+        return res;
+    }
+    int format_length(String s){
+        int ans=0;
+        for(int i=1;i+1<s.length();i++){
+            if(s.charAt(i)=='\\'){
+                ans++;
+                i++;
+            }else{
+                ans++;
+            }
+        }
+        return ans;
+    }
 
     void run(String fileName)throws Exception{
         StringBuffer result=new StringBuffer();
@@ -169,7 +199,7 @@ public class IRTranslator {
 
         for(Map.Entry<Variable,String> entry : constStringPool.entrySet()){
             String string=entry.getValue();
-            data.append("\n"+entry.getKey()+":\n\t db "+ Integer.toString(string.length()-2)+","+string +" ,0\n");
+            data.append("\n"+entry.getKey()+":\n\t db "+ Integer.toString(format_length(string))+","+format(string) +" ,0\n");
             //variableMap.put(entry.getKey(),allocateString(string.substring(1,string.length()-1)));
         }
 
