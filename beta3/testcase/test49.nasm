@@ -380,7 +380,7 @@ main:
 	mov qword [r9], r8
 	mov qword [rsp+8*10] ,0
 	
-L_362:
+L_356:
 	mov r8, [rsp+8*10]
 	mov r9, [rsp+8*2]
 	cmp r8, r9
@@ -388,10 +388,10 @@ L_362:
 	setl [rsp+8*11]
 	mov r8, [rsp+8*11]
 	cmp r8, 0
-	je L_363
+	je L_357
 	mov qword [rsp+8*12] ,0
 	
-L_365:
+L_359:
 	mov r8, [rsp+8*12]
 	mov r9, [rsp+8*2]
 	cmp r8, r9
@@ -399,7 +399,7 @@ L_365:
 	setl [rsp+8*13]
 	mov r8, [rsp+8*13]
 	cmp r8, 0
-	je L_366
+	je L_360
 	mov     rdi, 3
 	call    mallocArray
 	mov     qword [rsp+8*14], rax
@@ -437,27 +437,27 @@ L_365:
 	mov r9, [rsp+8*16]
 	mov qword [r9], r8
 	
-L_367:
+L_361:
 	mov r8, [rsp+8*12]
 	add r8, 1
 	mov qword [rsp+8*12],r8 
 	mov r8, [rsp+8*12]
 	sub r8, 1
 	mov qword [rsp+8*18],r8 
-	jmp L_365
+	jmp L_359
 	
-L_366:
+L_360:
 	
-L_364:
+L_358:
 	mov r8, [rsp+8*10]
 	add r8, 1
 	mov qword [rsp+8*10],r8 
 	mov r8, [rsp+8*10]
 	sub r8, 1
 	mov qword [rsp+8*19],r8 
-	jmp L_362
+	jmp L_356
 	
-L_363:
+L_357:
 	mov     rdi, 3
 	call    mallocArray
 	mov     qword [rsp+8*20], rax

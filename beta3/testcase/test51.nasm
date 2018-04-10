@@ -384,7 +384,7 @@ main:
 	mov     rdi, [rsp+8*4]
 	call    multiAddress
 	mov [rsp+8*11], rax
-	mov r8, t3725
+	mov r8, t3657
 	mov r9, [rsp+8*11]
 	mov qword [r9], r8
 	mov     rdi, 2
@@ -410,7 +410,7 @@ main:
 	mov     rdi, [rsp+8*4]
 	call    multiAddress
 	mov [rsp+8*14], rax
-	mov r8, t3737
+	mov r8, t3669
 	mov r9, [rsp+8*14]
 	mov qword [r9], r8
 	mov     rdi, 2
@@ -436,7 +436,7 @@ main:
 	mov     rdi, [rsp+8*4]
 	call    multiAddress
 	mov [rsp+8*17], rax
-	mov r8, t3749
+	mov r8, t3681
 	mov r9, [rsp+8*17]
 	mov qword [r9], r8
 	mov     rdi, 2
@@ -462,7 +462,7 @@ main:
 	mov     rdi, [rsp+8*4]
 	call    multiAddress
 	mov [rsp+8*20], rax
-	mov r8, t3761
+	mov r8, t3693
 	mov r9, [rsp+8*20]
 	mov qword [r9], r8
 	mov r8, [rsp+8*4]
@@ -618,16 +618,16 @@ formatln:
 format:
 	db  "%s",  0
 	
-t3725:
-	 db 3,"ha " ,0
-
-t3737:
+t3669:
 	 db 4,"luo " ,0
 
-t3749:
+t3657:
+	 db 3,"ha " ,0
+
+t3681:
 	 db 3,"wo " ,0
 
-t3761:
+t3693:
 	 db 2,"de" ,0
 
 

@@ -340,7 +340,7 @@ main:
 	setg [rsp+8*3]
 	mov r8, [rsp+8*3]
 	cmp r8, 0
-	je L_321
+	je L_315
 	mov r8, [gbl+8*2]
 	sub r8, 1
 	mov qword [gbl+8*2],r8 
@@ -364,7 +364,7 @@ main:
 	xor rax, rax
 	call printf
 	
-L_321:
+L_315:
 	mov rax,0
 	leave
 	ret

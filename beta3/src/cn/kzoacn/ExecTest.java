@@ -89,12 +89,32 @@ class ExecTest {
         test("test56");
     }
     @Test
-    void test63()throws Exception{
-        test("test63");
+    void test57()throws Exception{
+        test("test57");
     }
     @Test
-    void testfyd()throws Exception{
-        test("fyd");
+    void test58()throws Exception{
+        test("test58");
+    }
+    @Test
+    void test59()throws Exception{
+        test("test59");
+    }
+    @Test
+    void test60()throws Exception{
+        test("test60");
+    }
+    @Test
+    void test61()throws Exception{
+        test("test60");
+    }
+    @Test
+    void test62()throws Exception{
+        test("test60");
+    }
+    @Test
+    void test63()throws Exception{
+        test("test63");
     }
 
     void test(String name) throws Exception{

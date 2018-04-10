@@ -335,7 +335,7 @@ main:
 	mov [rsp+8*1] , rax
 	mov qword [rsp+8*2] ,0
 	
-L_286:
+L_280:
 	mov r8, [rsp+8*2]
 	mov r9, 2
 	cmp r8, r9
@@ -343,7 +343,7 @@ L_286:
 	setl [rsp+8*3]
 	mov r8, [rsp+8*3]
 	cmp r8, 0
-	je L_287
+	je L_281
 	mov r8, 8
 	add r8, 8
 	mov qword [rsp+8*4],r8 
@@ -363,16 +363,16 @@ L_286:
 	mov r9, [rsp+8*9]
 	mov qword [r9], r8
 	
-L_288:
+L_282:
 	mov r8, [rsp+8*2]
 	add r8, 1
 	mov qword [rsp+8*2],r8 
 	mov r8, [rsp+8*2]
 	sub r8, 1
 	mov qword [rsp+8*10],r8 
-	jmp L_286
+	jmp L_280
 	
-L_287:
+L_281:
 	mov qword [gbl+8*11] ,0
 	call search
 	mov [rsp+8*12] , rax
@@ -390,7 +390,7 @@ printBoard:
 	sub    rsp, 712
 	mov qword [rsp+8*13] ,0
 	
-L_267:
+L_261:
 	mov r8, [rsp+8*13]
 	mov r9, [gbl+8*14]
 	cmp r8, r9
@@ -398,10 +398,10 @@ L_267:
 	setl [rsp+8*15]
 	mov r8, [rsp+8*15]
 	cmp r8, 0
-	je L_268
+	je L_262
 	mov qword [rsp+8*16] ,0
 	
-L_270:
+L_264:
 	mov r8, [rsp+8*16]
 	mov r9, [gbl+8*14]
 	cmp r8, r9
@@ -409,7 +409,7 @@ L_270:
 	setl [rsp+8*17]
 	mov r8, [rsp+8*17]
 	cmp r8, 0
-	je L_271
+	je L_265
 	mov r8, [gbl+8*18]
 	mov qword [rsp+8*19] ,r8
 	mov     rsi, [rsp+8*13]
@@ -426,8 +426,8 @@ L_270:
 	sete [rsp+8*22]
 	mov r8, [rsp+8*22]
 	cmp r8, 0
-	je L_273
-	mov qword [gbl+8*11] ,t2130
+	je L_267
+	mov qword [gbl+8*11] ,t2062
 	mov r8, [gbl+8*11]
 	mov qword [rsp+8*23] ,r8
 	mov rdi, format
@@ -435,10 +435,10 @@ L_270:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	jmp L_274
+	jmp L_268
 	
-L_273:
-	mov qword [gbl+8*11] ,t2134
+L_267:
+	mov qword [gbl+8*11] ,t2066
 	mov r8, [gbl+8*11]
 	mov qword [rsp+8*24] ,r8
 	mov rdi, format
@@ -447,19 +447,19 @@ L_273:
 	xor rax, rax
 	call printf
 	
-L_274:
+L_268:
 	
-L_272:
+L_266:
 	mov r8, [rsp+8*16]
 	add r8, 1
 	mov qword [rsp+8*16],r8 
 	mov r8, [rsp+8*16]
 	sub r8, 1
 	mov qword [rsp+8*25],r8 
-	jmp L_270
+	jmp L_264
 	
-L_271:
-	mov qword [gbl+8*11] ,t2138
+L_265:
+	mov qword [gbl+8*11] ,t2070
 	mov r8, [gbl+8*11]
 	mov qword [rsp+8*26] ,r8
 	mov rdi, formatln
@@ -468,17 +468,17 @@ L_271:
 	xor rax, rax
 	call printf
 	
-L_269:
+L_263:
 	mov r8, [rsp+8*13]
 	add r8, 1
 	mov qword [rsp+8*13],r8 
 	mov r8, [rsp+8*13]
 	sub r8, 1
 	mov qword [rsp+8*27],r8 
-	jmp L_267
+	jmp L_261
 	
-L_268:
-	mov qword [gbl+8*11] ,t2142
+L_262:
+	mov qword [gbl+8*11] ,t2074
 	mov r8, [gbl+8*11]
 	mov qword [rsp+8*28] ,r8
 	mov rdi, formatln
@@ -503,15 +503,15 @@ search:
 	sete [rsp+8*30]
 	mov r8, [rsp+8*30]
 	cmp r8, 0
-	je L_275
+	je L_269
 	call printBoard
 	mov [rsp+8*31] , rax
-	jmp L_276
+	jmp L_270
 	
-L_275:
+L_269:
 	mov qword [rsp+8*32] ,0
 	
-L_277:
+L_271:
 	mov r8, [rsp+8*32]
 	mov r9, [gbl+8*14]
 	cmp r8, r9
@@ -519,7 +519,7 @@ L_277:
 	setl [rsp+8*33]
 	mov r8, [rsp+8*33]
 	cmp r8, 0
-	je L_278
+	je L_272
 	mov r8, [gbl+8*34]
 	mov qword [rsp+8*35] ,r8
 	mov     rsi, [rsp+8*32]
@@ -536,7 +536,7 @@ L_277:
 	sete [rsp+8*38]
 	mov r8, [rsp+8*38]
 	cmp r8, 0
-	je L_281
+	je L_275
 	mov r8, [rsp+8*32]
 	add r8, [rsp+8*29]
 	mov qword [rsp+8*39],r8 
@@ -563,7 +563,7 @@ L_277:
 	sete [rsp+8*43]
 	mov r8, [rsp+8*43]
 	cmp r8, 0
-	je L_283
+	je L_277
 	mov r8, [rsp+8*32]
 	add r8, [gbl+8*14]
 	mov qword [rsp+8*44],r8 
@@ -596,7 +596,7 @@ L_277:
 	sete [rsp+8*50]
 	mov r8, [rsp+8*50]
 	cmp r8, 0
-	je L_285
+	je L_279
 	mov r8, [rsp+8*32]
 	add r8, [gbl+8*14]
 	mov qword [rsp+8*51],r8 
@@ -726,24 +726,24 @@ L_277:
 	mov r9, [rsp+8*76]
 	mov qword [r9], r8
 	
-L_285:
-	
-L_283:
-	
-L_281:
-	
 L_279:
+	
+L_277:
+	
+L_275:
+	
+L_273:
 	mov r8, [rsp+8*32]
 	add r8, 1
 	mov qword [rsp+8*32],r8 
 	mov r8, [rsp+8*32]
 	sub r8, 1
 	mov qword [rsp+8*77],r8 
-	jmp L_277
+	jmp L_271
 	
-L_278:
+L_272:
 	
-L_276:
+L_270:
 	mov rax,0
 	leave
 	ret
@@ -785,16 +785,16 @@ formatln:
 format:
 	db  "%s",  0
 	
-t2138:
+t2070:
 	 db 0,"" ,0
 
-t2130:
+t2062:
 	 db 2," O" ,0
 
-t2142:
+t2074:
 	 db 0,"" ,0
 
-t2134:
+t2066:
 	 db 2," ." ,0
 
 

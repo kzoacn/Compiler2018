@@ -333,7 +333,7 @@ main:
 	sub    rsp, 120
 	call global_init
 	mov [rsp+8*1] , rax
-	mov qword [gbl+8*2] ,t137
+	mov qword [gbl+8*2] ,t69
 	mov r8, [gbl+8*2]
 	mov qword [rsp+8*3] ,r8
 	mov rdi, formatln
@@ -341,7 +341,7 @@ main:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov qword [gbl+8*2] ,t141
+	mov qword [gbl+8*2] ,t73
 	mov r8, [gbl+8*2]
 	mov qword [rsp+8*4] ,r8
 	mov rdi, formatln
@@ -349,7 +349,7 @@ main:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov qword [gbl+8*2] ,t145
+	mov qword [gbl+8*2] ,t77
 	mov r8, [gbl+8*2]
 	mov qword [rsp+8*5] ,r8
 	mov rdi, formatln
@@ -357,7 +357,7 @@ main:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov qword [gbl+8*2] ,t149
+	mov qword [gbl+8*2] ,t81
 	mov r8, [gbl+8*2]
 	mov qword [rsp+8*6] ,r8
 	mov rdi, formatln
@@ -391,16 +391,16 @@ formatln:
 format:
 	db  "%s",  0
 	
-t137:
-	 db 11,"Hello World" ,0
+t73:
+	 db 10,"0123456789" ,0
 
-t149:
-	 db 12,"asdfasdfasdf" ,0
-
-t145:
+t77:
 	 db 3,"adf" ,0
 
-t141:
-	 db 10,"0123456789" ,0
+t69:
+	 db 11,"Hello World" ,0
+
+t81:
+	 db 12,"asdfasdfasdf" ,0
 
 

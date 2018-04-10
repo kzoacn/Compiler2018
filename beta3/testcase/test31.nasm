@@ -335,7 +335,7 @@ main:
 	mov [rsp+8*1] , rax
 	mov qword [rsp+8*2] ,1
 	
-L_295:
+L_289:
 	mov r8, [rsp+8*2]
 	mov r9, 10
 	cmp r8, r9
@@ -343,7 +343,7 @@ L_295:
 	setle [rsp+8*3]
 	mov r8, [rsp+8*3]
 	cmp r8, 0
-	je L_296
+	je L_290
 	mov r8, [rsp+8*2]
 	mov qword [gbl+8*4] ,r8
 	call fib
@@ -365,16 +365,16 @@ L_295:
 	xor rax, rax
 	call printf
 	
-L_297:
+L_291:
 	mov r8, [rsp+8*2]
 	add r8, 1
 	mov qword [rsp+8*2],r8 
 	mov r8, [rsp+8*2]
 	sub r8, 1
 	mov qword [rsp+8*9],r8 
-	jmp L_295
+	jmp L_289
 	
-L_296:
+L_290:
 	mov rax,0
 	leave
 	ret
@@ -393,12 +393,12 @@ fib:
 	setle [rsp+8*11]
 	mov r8, [rsp+8*11]
 	cmp r8, 0
-	je L_294
+	je L_288
 	mov rax,[rsp+8*10]
 	leave
 	ret
 	
-L_294:
+L_288:
 	mov r8, [rsp+8*10]
 	sub r8, 1
 	mov qword [rsp+8*12],r8 

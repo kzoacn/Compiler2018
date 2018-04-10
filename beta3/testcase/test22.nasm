@@ -335,7 +335,7 @@ main:
 	mov [rsp+8*1] , rax
 	mov qword [rsp+8*2] ,1
 	
-L_158:
+L_152:
 	mov r8, [rsp+8*2]
 	mov r9, [gbl+8*3]
 	cmp r8, r9
@@ -343,7 +343,7 @@ L_158:
 	setle [rsp+8*4]
 	mov r8, [rsp+8*4]
 	cmp r8, 0
-	je L_159
+	je L_153
 	mov r8, [gbl+8*3]
 	add r8, 1
 	mov qword [rsp+8*5],r8 
@@ -360,16 +360,16 @@ L_158:
 	mov r9, [rsp+8*9]
 	mov qword [r9], r8
 	
-L_160:
+L_154:
 	mov r8, [rsp+8*2]
 	add r8, 1
 	mov qword [rsp+8*2],r8 
 	mov r8, [rsp+8*2]
 	sub r8, 1
 	mov qword [rsp+8*10],r8 
-	jmp L_158
+	jmp L_152
 	
-L_159:
+L_153:
 	mov r8, [gbl+8*3]
 	mov qword [gbl+8*11] ,r8
 	mov qword [gbl+8*12] ,1
@@ -377,7 +377,7 @@ L_159:
 	mov [rsp+8*13] , rax
 	mov qword [rsp+8*2] ,1
 	
-L_161:
+L_155:
 	mov r8, [rsp+8*2]
 	mov r9, [gbl+8*3]
 	cmp r8, r9
@@ -385,7 +385,7 @@ L_161:
 	setle [rsp+8*14]
 	mov r8, [rsp+8*14]
 	cmp r8, 0
-	je L_162
+	je L_156
 	mov r8, [gbl+8*7]
 	mov qword [rsp+8*15] ,r8
 	mov     rsi, [rsp+8*2]
@@ -411,7 +411,7 @@ L_161:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov qword [gbl+8*12] ,t1454
+	mov qword [gbl+8*12] ,t1386
 	mov r8, [gbl+8*12]
 	mov qword [rsp+8*21] ,r8
 	mov rdi, format
@@ -420,17 +420,17 @@ L_161:
 	xor rax, rax
 	call printf
 	
-L_163:
+L_157:
 	mov r8, [rsp+8*2]
 	add r8, 1
 	mov qword [rsp+8*2],r8 
 	mov r8, [rsp+8*2]
 	sub r8, 1
 	mov qword [rsp+8*22],r8 
-	jmp L_161
+	jmp L_155
 	
-L_162:
-	mov qword [gbl+8*12] ,t1458
+L_156:
+	mov qword [gbl+8*12] ,t1390
 	mov r8, [gbl+8*12]
 	mov qword [rsp+8*23] ,r8
 	mov rdi, formatln
@@ -479,7 +479,7 @@ qsrt:
 	mov r8, [rsp+8*32]
 	mov qword [rsp+8*33] ,r8
 	
-L_146:
+L_140:
 	mov r8, [rsp+8*26]
 	mov r9, [rsp+8*27]
 	cmp r8, r9
@@ -487,9 +487,9 @@ L_146:
 	setle [rsp+8*34]
 	mov r8, [rsp+8*34]
 	cmp r8, 0
-	je L_147
+	je L_141
 	
-L_148:
+L_142:
 	mov r8, [gbl+8*7]
 	mov qword [rsp+8*35] ,r8
 	mov     rsi, [rsp+8*26]
@@ -506,18 +506,18 @@ L_148:
 	setl [rsp+8*38]
 	mov r8, [rsp+8*38]
 	cmp r8, 0
-	je L_149
+	je L_143
 	mov r8, [rsp+8*26]
 	add r8, 1
 	mov qword [rsp+8*26],r8 
 	mov r8, [rsp+8*26]
 	sub r8, 1
 	mov qword [rsp+8*39],r8 
-	jmp L_148
+	jmp L_142
 	
-L_149:
+L_143:
 	
-L_150:
+L_144:
 	mov r8, [gbl+8*7]
 	mov qword [rsp+8*40] ,r8
 	mov     rsi, [rsp+8*27]
@@ -534,16 +534,16 @@ L_150:
 	setg [rsp+8*43]
 	mov r8, [rsp+8*43]
 	cmp r8, 0
-	je L_151
+	je L_145
 	mov r8, [rsp+8*27]
 	sub r8, 1
 	mov qword [rsp+8*27],r8 
 	mov r8, [rsp+8*27]
 	add r8, 1
 	mov qword [rsp+8*44],r8 
-	jmp L_150
+	jmp L_144
 	
-L_151:
+L_145:
 	mov r8, [rsp+8*26]
 	mov r9, [rsp+8*27]
 	cmp r8, r9
@@ -551,7 +551,7 @@ L_151:
 	setle [rsp+8*45]
 	mov r8, [rsp+8*45]
 	cmp r8, 0
-	je L_153
+	je L_147
 	mov r8, [gbl+8*7]
 	mov qword [rsp+8*46] ,r8
 	mov     rsi, [rsp+8*26]
@@ -603,10 +603,10 @@ L_151:
 	add r8, 1
 	mov qword [rsp+8*58],r8 
 	
-L_153:
-	jmp L_146
-	
 L_147:
+	jmp L_140
+	
+L_141:
 	mov r8, [rsp+8*24]
 	mov r9, [rsp+8*27]
 	cmp r8, r9
@@ -614,7 +614,7 @@ L_147:
 	setl [rsp+8*59]
 	mov r8, [rsp+8*59]
 	cmp r8, 0
-	je L_155
+	je L_149
 	mov r8, [rsp+8*27]
 	mov qword [gbl+8*11] ,r8
 	mov r8, [rsp+8*24]
@@ -622,7 +622,7 @@ L_147:
 	call qsrt
 	mov [rsp+8*60] , rax
 	
-L_155:
+L_149:
 	mov r8, [rsp+8*26]
 	mov r9, [rsp+8*25]
 	cmp r8, r9
@@ -630,7 +630,7 @@ L_155:
 	setl [rsp+8*61]
 	mov r8, [rsp+8*61]
 	cmp r8, 0
-	je L_157
+	je L_151
 	mov r8, [rsp+8*25]
 	mov qword [gbl+8*11] ,r8
 	mov r8, [rsp+8*26]
@@ -638,7 +638,7 @@ L_155:
 	call qsrt
 	mov [rsp+8*62] , rax
 	
-L_157:
+L_151:
 	mov rax,0
 	leave
 	ret
@@ -673,10 +673,10 @@ formatln:
 format:
 	db  "%s",  0
 	
-t1458:
+t1390:
 	 db 0,"" ,0
 
-t1454:
+t1386:
 	 db 1," " ,0
 
 

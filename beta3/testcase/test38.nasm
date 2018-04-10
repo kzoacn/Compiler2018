@@ -354,13 +354,13 @@ f:
 	setle [rsp+8*5]
 	mov r8, [rsp+8*5]
 	cmp r8, 0
-	je L_323
+	je L_317
 	mov rax,0
 	leave
 	ret
 	
-L_323:
-	mov qword [gbl+8*2] ,t2665
+L_317:
+	mov qword [gbl+8*2] ,t2597
 	mov r8, [gbl+8*2]
 	mov qword [rsp+8*6] ,r8
 	mov rdi, format
@@ -410,13 +410,13 @@ g:
 	setle [rsp+8*12]
 	mov r8, [rsp+8*12]
 	cmp r8, 0
-	je L_325
+	je L_319
 	mov rax,0
 	leave
 	ret
 	
-L_325:
-	mov qword [gbl+8*2] ,t2683
+L_319:
+	mov qword [gbl+8*2] ,t2615
 	mov r8, [gbl+8*2]
 	mov qword [rsp+8*13] ,r8
 	mov rdi, format
@@ -466,13 +466,13 @@ h:
 	setle [rsp+8*19]
 	mov r8, [rsp+8*19]
 	cmp r8, 0
-	je L_327
+	je L_321
 	mov rax,0
 	leave
 	ret
 	
-L_327:
-	mov qword [gbl+8*2] ,t2701
+L_321:
+	mov qword [gbl+8*2] ,t2633
 	mov r8, [gbl+8*2]
 	mov qword [rsp+8*20] ,r8
 	mov rdi, format
@@ -531,13 +531,13 @@ formatln:
 format:
 	db  "%s",  0
 	
-t2701:
+t2633:
 	 db 2,"h " ,0
 
-t2683:
+t2615:
 	 db 2,"g " ,0
 
-t2665:
+t2597:
 	 db 2,"f " ,0
 
 

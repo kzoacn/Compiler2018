@@ -342,7 +342,7 @@ main:
 	mov qword [rsp+8*5] ,0
 	mov qword [rsp+8*6] ,0
 	
-L_314:
+L_308:
 	mov r8, [rsp+8*6]
 	mov r9, [rsp+8*2]
 	cmp r8, r9
@@ -350,7 +350,7 @@ L_314:
 	setl [rsp+8*7]
 	mov r8, [rsp+8*7]
 	cmp r8, 0
-	je L_315
+	je L_309
 	mov r8, [rsp+8*5]
 	add r8, 1
 	mov qword [rsp+8*5],r8 
@@ -366,19 +366,19 @@ L_314:
 	mov r9, [rsp+8*10]
 	mov qword [r9], r8
 	
-L_316:
+L_310:
 	mov r8, [rsp+8*6]
 	add r8, 1
 	mov qword [rsp+8*6],r8 
 	mov r8, [rsp+8*6]
 	mov qword [rsp+8*11] ,r8
-	jmp L_314
+	jmp L_308
 	
-L_315:
+L_309:
 	mov qword [rsp+8*12] ,0
 	mov qword [rsp+8*6] ,0
 	
-L_317:
+L_311:
 	mov r8, [rsp+8*6]
 	mov r9, [rsp+8*2]
 	cmp r8, r9
@@ -386,7 +386,7 @@ L_317:
 	setl [rsp+8*13]
 	mov r8, [rsp+8*13]
 	cmp r8, 0
-	je L_318
+	je L_312
 	mov r8, [rsp+8*4]
 	mov qword [rsp+8*14] ,r8
 	mov     rsi, [rsp+8*6]
@@ -402,15 +402,15 @@ L_317:
 	mov r8, [rsp+8*17]
 	mov qword [rsp+8*12] ,r8
 	
-L_319:
+L_313:
 	mov r8, [rsp+8*6]
 	add r8, 1
 	mov qword [rsp+8*6],r8 
 	mov r8, [rsp+8*6]
 	mov qword [rsp+8*18] ,r8
-	jmp L_317
+	jmp L_311
 	
-L_318:
+L_312:
 	mov r8, [rsp+8*12]
 	mov qword [gbl+8*19] ,r8
 	mov r8, [gbl+8*19]

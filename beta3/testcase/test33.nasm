@@ -369,10 +369,10 @@ main:
 	sete [rsp+8*11]
 	mov r8, [rsp+8*11]
 	cmp r8, 0
-	je L_301
+	je L_295
 	mov qword [rsp+8*4] ,30
 	
-L_301:
+L_295:
 	mov r8, [rsp+8*4]
 	mov qword [gbl+8*12] ,r8
 	mov r8, [gbl+8*12]
