@@ -333,7 +333,7 @@ mAd_006:  mov     rax, qword [rbp-8H]
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 208
+	sub    rsp, 200
 	call global_init
 	mov [rsp+8*1] , rax
 	mov     rdi, 3
@@ -395,21 +395,18 @@ L_394:
 	leave
 	ret
 	jmp QED
-	mov r8, [rsp+8*14]
-	add r8, [rsp+8*14]
-	mov qword [rsp+8*14],r8 
 	
 say:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 208
+	sub    rsp, 200
 	mov r8, [gbl+8*11]
-	mov qword [rsp+8*15] ,r8
-	mov qword [gbl+8*16] ,t4195
-	mov r8, [gbl+8*16]
-	mov qword [rsp+8*17] ,r8
+	mov qword [rsp+8*14] ,r8
+	mov qword [gbl+8*15] ,t4195
+	mov r8, [gbl+8*15]
+	mov qword [rsp+8*16] ,r8
 	mov rdi, formatln
-	mov rsi,[rsp+8*17] 
+	mov rsi,[rsp+8*16] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
@@ -420,15 +417,15 @@ say:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 208
-	mov rax,[rsp+8*18]
+	sub    rsp, 200
+	mov rax,[rsp+8*17]
 	leave
 	ret
 	
 QED:
 	
 	 section   .bss
-gbl:         resb   2192
+gbl:         resb   2184
 
 	 section   .data
 

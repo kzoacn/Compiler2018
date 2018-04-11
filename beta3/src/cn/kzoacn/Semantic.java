@@ -53,7 +53,7 @@ public class Semantic {
             IR ir = visitor.visit(parseTree);
             //visitor.symbolMap.print();
             ir.modify();
-           // ir.print();
+            ir.print();
             if(visitor.symbolMap.error){
                 System.err.println("CE on name");
                 return false;

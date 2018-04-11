@@ -290,6 +290,18 @@ public interface MxstarListener extends ParseTreeListener {
 	 */
 	void exitExpressionStatement(MxstarParser.ExpressionStatementContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code emptyStatement}
+	 * labeled alternative in {@link MxstarParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterEmptyStatement(MxstarParser.EmptyStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code emptyStatement}
+	 * labeled alternative in {@link MxstarParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitEmptyStatement(MxstarParser.EmptyStatementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link MxstarParser#statementOrBlock}.
 	 * @param ctx the parse tree
 	 */
@@ -375,6 +387,18 @@ public interface MxstarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitRelationOperator(MxstarParser.RelationOperatorContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code newVariableWithoutExp}
+	 * labeled alternative in {@link MxstarParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterNewVariableWithoutExp(MxstarParser.NewVariableWithoutExpContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code newVariableWithoutExp}
+	 * labeled alternative in {@link MxstarParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitNewVariableWithoutExp(MxstarParser.NewVariableWithoutExpContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code newVariable}
 	 * labeled alternative in {@link MxstarParser#expression}.

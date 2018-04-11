@@ -60,7 +60,7 @@ int main(){
 	//test for opeartion
 	a = 1;
 	b = 2;
-	a = b = c;//be aware of the right association
+	
 
 	a + b;
 	a - b;

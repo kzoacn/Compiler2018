@@ -10,42 +10,58 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/beta3$SemanticTest_test1.coverage" NAME="SemanticTest.test1 Coverage Results" MODIFIED="1523449229968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>cn.kzoacn.*</FILTER>
+    </SUITE>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-26">
-              <caret line="1365" column="16" lean-forward="false" selection-start-line="1365" selection-start-column="16" selection-end-line="1365" selection-end-column="16" />
+            <state relative-caret-position="3660">
+              <caret line="836" column="70" lean-forward="false" selection-start-line="836" selection-start-column="65" selection-end-line="836" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#452#453#0" expanded="true" />
                 <element signature="e#508#509#0" expanded="true" />
-                <element signature="e#2659#2660#0" expanded="true" />
-                <element signature="e#2686#2687#0" expanded="true" />
-                <element signature="e#3684#3685#0" expanded="true" />
-                <element signature="e#3729#3730#0" expanded="true" />
-                <element signature="e#6645#6646#0" expanded="true" />
-                <element signature="e#6679#6680#0" expanded="true" />
-                <element signature="e#7008#7009#0" expanded="true" />
-                <element signature="e#7078#7079#0" expanded="true" />
-                <element signature="e#13187#13195#0" expanded="true" />
-                <element signature="e#13751#13752#0" expanded="true" />
-                <element signature="e#13801#13802#0" expanded="true" />
-                <element signature="e#15587#15588#0" expanded="true" />
-                <element signature="e#15633#15634#0" expanded="true" />
-                <element signature="e#15676#15677#0" expanded="true" />
-                <element signature="e#15720#15721#0" expanded="true" />
-                <element signature="e#15759#15760#0" expanded="true" />
-                <element signature="e#15803#15804#0" expanded="true" />
-                <element signature="e#20508#20509#0" expanded="true" />
-                <element signature="e#20567#20568#0" expanded="true" />
-                <element signature="e#22979#23005#0" expanded="true" />
-                <element signature="e#23046#23047#0" expanded="true" />
-                <element signature="e#23106#23107#0" expanded="true" />
-                <element signature="e#73454#73468#0" expanded="true" />
-                <element signature="e#81560#81574#0" expanded="true" />
+                <element signature="e#2804#2805#0" expanded="true" />
+                <element signature="e#2831#2832#0" expanded="true" />
+                <element signature="e#3829#3830#0" expanded="true" />
+                <element signature="e#3874#3875#0" expanded="true" />
+                <element signature="e#6790#6791#0" expanded="true" />
+                <element signature="e#6824#6825#0" expanded="true" />
+                <element signature="e#7153#7154#0" expanded="true" />
+                <element signature="e#7223#7224#0" expanded="true" />
+                <element signature="e#13332#13340#0" expanded="true" />
+                <element signature="e#13925#13926#0" expanded="true" />
+                <element signature="e#13975#13976#0" expanded="true" />
+                <element signature="e#15902#15903#0" expanded="true" />
+                <element signature="e#15948#15949#0" expanded="true" />
+                <element signature="e#15991#15992#0" expanded="true" />
+                <element signature="e#16035#16036#0" expanded="true" />
+                <element signature="e#16074#16075#0" expanded="true" />
+                <element signature="e#16118#16119#0" expanded="true" />
+                <element signature="e#20648#20649#0" expanded="true" />
+                <element signature="e#20707#20708#0" expanded="true" />
+                <element signature="e#23119#23145#0" expanded="true" />
+                <element signature="e#23186#23187#0" expanded="true" />
+                <element signature="e#23246#23247#0" expanded="true" />
+                <element signature="e#27392#27406#0" expanded="true" />
+                <element signature="e#75543#75557#0" expanded="true" />
+                <element signature="e#83657#83671#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MxstarBaseVisitor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/MxstarBaseVisitor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="183">
+              <caret line="264" column="127" lean-forward="false" selection-start-line="264" selection-start-column="4" selection-end-line="264" selection-end-column="127" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -54,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/MxstarParser.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="194">
-              <caret line="1223" column="0" lean-forward="false" selection-start-line="1223" selection-start-column="0" selection-end-line="1223" selection-end-column="0" />
+              <caret line="1031" column="0" lean-forward="false" selection-start-line="1031" selection-start-column="0" selection-end-line="1031" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -63,8 +79,8 @@
       <file leaf-file-name="Semantic.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Semantic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="57" column="46" lean-forward="false" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
+            <state relative-caret-position="665">
+              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -72,21 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Mxstar.g4" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Mxstar.g4">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="112" column="39" lean-forward="false" selection-start-line="112" selection-start-column="25" selection-end-line="112" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SemanticTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/SemanticTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+            <state relative-caret-position="183">
+              <caret line="90" column="23" lean-forward="false" selection-start-line="90" selection-start-column="18" selection-end-line="90" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -97,8 +103,18 @@
       <file leaf-file-name="IRTranslator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="105" column="50" lean-forward="false" selection-start-line="105" selection-start-column="50" selection-end-line="105" selection-end-column="50" />
+            <state relative-caret-position="3287">
+              <caret line="183" column="45" lean-forward="false" selection-start-line="183" selection-start-column="45" selection-end-line="183" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Mxstar.g4" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Mxstar.g4">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" column="5" lean-forward="false" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -115,36 +131,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>bool</find>
-      <find>newarray</find>
-      <find>tovariable</find>
-      <find>null</find>
-      <find>visitnull</find>
-      <find>NULL</find>
-      <find>defin</find>
-      <find>definitionwi</find>
-      <find>shift</find>
-      <find>variable name</find>
-      <find>variable</find>
-      <find>while</find>
-      <find>fors</find>
-      <find>symbolMap</find>
       <find>variabledef</find>
       <find>parameter</find>
       <find>type not</find>
-      <find>functionde</find>
       <find>methoddefin</find>
       <find>classdefin</find>
       <find>currentpa</find>
       <find>currentpara</find>
       <find>functioncall</find>
-      <find>functiondef</find>
       <find>putsymbol</find>
-      <find>whilesta</find>
       <find>forsy</find>
+      <find>error</find>
+      <find>print</find>
       <find>expressionList</find>
+      <find>and</find>
+      <find>type not found</find>
+      <find>functiondef</find>
+      <find>classde</find>
+      <find>typemap.add</find>
+      <find>forstat</find>
+      <find>parameter not</find>
+      <find>match</find>
+      <find>main</find>
+      <find>functionde</find>
+      <find>whilesta</find>
+      <find>ifsta</find>
+      <find>new</find>
       <find>putsy</find>
       <find>functiondefin</find>
+      <find>returntype</find>
+      <find>class</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -155,12 +171,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/cn/kzoacn/Mxstar.g4" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/MxstarBaseVisitor.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/ConstantPool.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/UnitTest.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/ExecTest.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java" />
+        <option value="$PROJECT_DIR$/src/cn/kzoacn/Mxstar.g4" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/Semantic.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/SemanticTest.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/Main.java" />
@@ -249,7 +265,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ExecTest">
+  <component name="RunManager" selected="JUnit.SemanticTest.test5">
     <configuration name="ExecTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -300,7 +316,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="SemanticTest.test28" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SemanticTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="cn.kzoacn.*" />
@@ -312,7 +328,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="cn.kzoacn" />
       <option name="MAIN_CLASS_NAME" value="cn.kzoacn.SemanticTest" />
-      <option name="METHOD_NAME" value="test28" />
+      <option name="METHOD_NAME" value="test2" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -325,7 +341,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="SemanticTest.test30" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SemanticTest.test4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="cn.kzoacn.*" />
@@ -337,7 +353,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="cn.kzoacn" />
       <option name="MAIN_CLASS_NAME" value="cn.kzoacn.SemanticTest" />
-      <option name="METHOD_NAME" value="test30" />
+      <option name="METHOD_NAME" value="test4" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -350,7 +366,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="SemanticTest.test32" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SemanticTest.test5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="cn.kzoacn.*" />
@@ -362,7 +378,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="cn.kzoacn" />
       <option name="MAIN_CLASS_NAME" value="cn.kzoacn.SemanticTest" />
-      <option name="METHOD_NAME" value="test32" />
+      <option name="METHOD_NAME" value="test5" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -393,17 +409,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.SemanticTest" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.ExecTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.SemanticTest.test28" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.SemanticTest.test30" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.SemanticTest.test32" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.SemanticTest.test2" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.SemanticTest.test4" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.SemanticTest.test5" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.ExecTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.SemanticTest.test5" />
         <item index="1" class="java.lang.String" itemvalue="JUnit.SemanticTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.SemanticTest.test32" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.SemanticTest.test30" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.SemanticTest.test28" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.SemanticTest.test4" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.SemanticTest.test2" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.ExecTest" />
       </list>
     </recent_temporary>
   </component>
@@ -424,39 +440,40 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ExecTest - 2018.04.11 at 19h 34m 13s.xml">
+    <history-entry file="ExecTest - 2018.04.11 at 20h 37m 07s.xml">
       <configuration name="ExecTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ExecTest - 2018.04.11 at 19h 34m 40s.xml">
-      <configuration name="ExecTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExecTest - 2018.04.11 at 19h 40m 37s.xml">
-      <configuration name="ExecTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SemanticTest - 2018.04.11 at 19h 34m 46s.xml">
+    <history-entry file="SemanticTest - 2018.04.11 at 20h 37m 13s.xml">
       <configuration name="SemanticTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SemanticTest - 2018.04.11 at 19h 35m 42s.xml">
+    <history-entry file="SemanticTest - 2018.04.11 at 20h 37m 28s.xml">
       <configuration name="SemanticTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SemanticTest - 2018.04.11 at 19h 36m 35s.xml">
+    <history-entry file="SemanticTest - 2018.04.11 at 20h 38m 52s.xml">
       <configuration name="SemanticTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SemanticTest - 2018.04.11 at 19h 37m 08s.xml">
+    <history-entry file="SemanticTest - 2018.04.11 at 20h 41m 38s.xml">
       <configuration name="SemanticTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SemanticTest - 2018.04.11 at 19h 38m 11s.xml">
-      <configuration name="SemanticTest" configurationId="JUnit" />
+    <history-entry file="SemanticTest_test2 - 2018.04.11 at 20h 37m 18s.xml">
+      <configuration name="SemanticTest.test2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SemanticTest - 2018.04.11 at 19h 40m 25s.xml">
-      <configuration name="SemanticTest" configurationId="JUnit" />
+    <history-entry file="SemanticTest_test4 - 2018.04.11 at 20h 38m 58s.xml">
+      <configuration name="SemanticTest.test4" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SemanticTest - 2018.04.11 at 19h 40m 29s.xml">
-      <configuration name="SemanticTest" configurationId="JUnit" />
+    <history-entry file="SemanticTest_test4 - 2018.04.11 at 20h 40m 33s.xml">
+      <configuration name="SemanticTest.test4" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SemanticTest_test4 - 2018.04.11 at 20h 41m 33s.xml">
+      <configuration name="SemanticTest.test4" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SemanticTest_test5 - 2018.04.11 at 20h 41m 41s.xml">
+      <configuration name="SemanticTest.test5" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -467,8 +484,9 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31343284" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31343284" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -496,24 +514,36 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/cn/kzoacn/Main.java</url>
-          <line>866</line>
-          <properties />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/cn/kzoacn/Main.java</url>
-          <line>1285</line>
+          <line>1310</line>
           <properties />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/cn/kzoacn/Main.java</url>
-          <line>1315</line>
+          <line>1381</line>
           <properties />
-          <option name="timeStamp" value="21" />
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/cn/kzoacn/Main.java</url>
+          <line>1893</line>
+          <properties />
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/cn/kzoacn/Main.java</url>
+          <line>1898</line>
+          <properties />
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/cn/kzoacn/Main.java</url>
+          <line>452</line>
+          <properties />
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="26" />
+      <option name="time" value="37" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -599,30 +629,31 @@
             <element signature="imports" expanded="true" />
             <element signature="e#452#453#0" expanded="true" />
             <element signature="e#508#509#0" expanded="true" />
-            <element signature="e#2659#2660#0" expanded="true" />
-            <element signature="e#2686#2687#0" expanded="true" />
-            <element signature="e#3684#3685#0" expanded="true" />
-            <element signature="e#3729#3730#0" expanded="true" />
-            <element signature="e#6645#6646#0" expanded="true" />
-            <element signature="e#6679#6680#0" expanded="true" />
-            <element signature="e#7008#7009#0" expanded="true" />
-            <element signature="e#7078#7079#0" expanded="true" />
-            <element signature="e#13187#13195#0" expanded="true" />
-            <element signature="e#13751#13752#0" expanded="true" />
-            <element signature="e#13801#13802#0" expanded="true" />
-            <element signature="e#15587#15588#0" expanded="true" />
-            <element signature="e#15633#15634#0" expanded="true" />
-            <element signature="e#15676#15677#0" expanded="true" />
-            <element signature="e#15720#15721#0" expanded="true" />
-            <element signature="e#15759#15760#0" expanded="true" />
-            <element signature="e#15803#15804#0" expanded="true" />
-            <element signature="e#20508#20509#0" expanded="true" />
-            <element signature="e#20567#20568#0" expanded="true" />
-            <element signature="e#22979#23005#0" expanded="true" />
-            <element signature="e#23046#23047#0" expanded="true" />
-            <element signature="e#23106#23107#0" expanded="true" />
-            <element signature="e#73454#73468#0" expanded="true" />
-            <element signature="e#81560#81574#0" expanded="true" />
+            <element signature="e#2804#2805#0" expanded="true" />
+            <element signature="e#2831#2832#0" expanded="true" />
+            <element signature="e#3829#3830#0" expanded="true" />
+            <element signature="e#3874#3875#0" expanded="true" />
+            <element signature="e#6790#6791#0" expanded="true" />
+            <element signature="e#6824#6825#0" expanded="true" />
+            <element signature="e#7153#7154#0" expanded="true" />
+            <element signature="e#7223#7224#0" expanded="true" />
+            <element signature="e#13332#13340#0" expanded="true" />
+            <element signature="e#13925#13926#0" expanded="true" />
+            <element signature="e#13975#13976#0" expanded="true" />
+            <element signature="e#15902#15903#0" expanded="true" />
+            <element signature="e#15948#15949#0" expanded="true" />
+            <element signature="e#15991#15992#0" expanded="true" />
+            <element signature="e#16035#16036#0" expanded="true" />
+            <element signature="e#16074#16075#0" expanded="true" />
+            <element signature="e#16118#16119#0" expanded="true" />
+            <element signature="e#20648#20649#0" expanded="true" />
+            <element signature="e#20707#20708#0" expanded="true" />
+            <element signature="e#23119#23145#0" expanded="true" />
+            <element signature="e#23186#23187#0" expanded="true" />
+            <element signature="e#23246#23247#0" expanded="true" />
+            <element signature="e#27392#27406#0" expanded="true" />
+            <element signature="e#75543#75557#0" expanded="true" />
+            <element signature="e#83657#83671#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -651,30 +682,31 @@
             <element signature="imports" expanded="true" />
             <element signature="e#452#453#0" expanded="true" />
             <element signature="e#508#509#0" expanded="true" />
-            <element signature="e#2659#2660#0" expanded="true" />
-            <element signature="e#2686#2687#0" expanded="true" />
-            <element signature="e#3684#3685#0" expanded="true" />
-            <element signature="e#3729#3730#0" expanded="true" />
-            <element signature="e#6645#6646#0" expanded="true" />
-            <element signature="e#6679#6680#0" expanded="true" />
-            <element signature="e#7008#7009#0" expanded="true" />
-            <element signature="e#7078#7079#0" expanded="true" />
-            <element signature="e#13187#13195#0" expanded="true" />
-            <element signature="e#13751#13752#0" expanded="true" />
-            <element signature="e#13801#13802#0" expanded="true" />
-            <element signature="e#15587#15588#0" expanded="true" />
-            <element signature="e#15633#15634#0" expanded="true" />
-            <element signature="e#15676#15677#0" expanded="true" />
-            <element signature="e#15720#15721#0" expanded="true" />
-            <element signature="e#15759#15760#0" expanded="true" />
-            <element signature="e#15803#15804#0" expanded="true" />
-            <element signature="e#20508#20509#0" expanded="true" />
-            <element signature="e#20567#20568#0" expanded="true" />
-            <element signature="e#22979#23005#0" expanded="true" />
-            <element signature="e#23046#23047#0" expanded="true" />
-            <element signature="e#23106#23107#0" expanded="true" />
-            <element signature="e#73454#73468#0" expanded="true" />
-            <element signature="e#81560#81574#0" expanded="true" />
+            <element signature="e#2804#2805#0" expanded="true" />
+            <element signature="e#2831#2832#0" expanded="true" />
+            <element signature="e#3829#3830#0" expanded="true" />
+            <element signature="e#3874#3875#0" expanded="true" />
+            <element signature="e#6790#6791#0" expanded="true" />
+            <element signature="e#6824#6825#0" expanded="true" />
+            <element signature="e#7153#7154#0" expanded="true" />
+            <element signature="e#7223#7224#0" expanded="true" />
+            <element signature="e#13332#13340#0" expanded="true" />
+            <element signature="e#13925#13926#0" expanded="true" />
+            <element signature="e#13975#13976#0" expanded="true" />
+            <element signature="e#15902#15903#0" expanded="true" />
+            <element signature="e#15948#15949#0" expanded="true" />
+            <element signature="e#15991#15992#0" expanded="true" />
+            <element signature="e#16035#16036#0" expanded="true" />
+            <element signature="e#16074#16075#0" expanded="true" />
+            <element signature="e#16118#16119#0" expanded="true" />
+            <element signature="e#20648#20649#0" expanded="true" />
+            <element signature="e#20707#20708#0" expanded="true" />
+            <element signature="e#23119#23145#0" expanded="true" />
+            <element signature="e#23186#23187#0" expanded="true" />
+            <element signature="e#23246#23247#0" expanded="true" />
+            <element signature="e#27392#27406#0" expanded="true" />
+            <element signature="e#75543#75557#0" expanded="true" />
+            <element signature="e#83657#83671#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -736,30 +768,31 @@
             <element signature="imports" expanded="true" />
             <element signature="e#452#453#0" expanded="true" />
             <element signature="e#508#509#0" expanded="true" />
-            <element signature="e#2659#2660#0" expanded="true" />
-            <element signature="e#2686#2687#0" expanded="true" />
-            <element signature="e#3684#3685#0" expanded="true" />
-            <element signature="e#3729#3730#0" expanded="true" />
-            <element signature="e#6645#6646#0" expanded="true" />
-            <element signature="e#6679#6680#0" expanded="true" />
-            <element signature="e#7008#7009#0" expanded="true" />
-            <element signature="e#7078#7079#0" expanded="true" />
-            <element signature="e#13187#13195#0" expanded="true" />
-            <element signature="e#13751#13752#0" expanded="true" />
-            <element signature="e#13801#13802#0" expanded="true" />
-            <element signature="e#15587#15588#0" expanded="true" />
-            <element signature="e#15633#15634#0" expanded="true" />
-            <element signature="e#15676#15677#0" expanded="true" />
-            <element signature="e#15720#15721#0" expanded="true" />
-            <element signature="e#15759#15760#0" expanded="true" />
-            <element signature="e#15803#15804#0" expanded="true" />
-            <element signature="e#20508#20509#0" expanded="true" />
-            <element signature="e#20567#20568#0" expanded="true" />
-            <element signature="e#22979#23005#0" expanded="true" />
-            <element signature="e#23046#23047#0" expanded="true" />
-            <element signature="e#23106#23107#0" expanded="true" />
-            <element signature="e#73454#73468#0" expanded="true" />
-            <element signature="e#81560#81574#0" expanded="true" />
+            <element signature="e#2804#2805#0" expanded="true" />
+            <element signature="e#2831#2832#0" expanded="true" />
+            <element signature="e#3829#3830#0" expanded="true" />
+            <element signature="e#3874#3875#0" expanded="true" />
+            <element signature="e#6790#6791#0" expanded="true" />
+            <element signature="e#6824#6825#0" expanded="true" />
+            <element signature="e#7153#7154#0" expanded="true" />
+            <element signature="e#7223#7224#0" expanded="true" />
+            <element signature="e#13332#13340#0" expanded="true" />
+            <element signature="e#13925#13926#0" expanded="true" />
+            <element signature="e#13975#13976#0" expanded="true" />
+            <element signature="e#15902#15903#0" expanded="true" />
+            <element signature="e#15948#15949#0" expanded="true" />
+            <element signature="e#15991#15992#0" expanded="true" />
+            <element signature="e#16035#16036#0" expanded="true" />
+            <element signature="e#16074#16075#0" expanded="true" />
+            <element signature="e#16118#16119#0" expanded="true" />
+            <element signature="e#20648#20649#0" expanded="true" />
+            <element signature="e#20707#20708#0" expanded="true" />
+            <element signature="e#23119#23145#0" expanded="true" />
+            <element signature="e#23186#23187#0" expanded="true" />
+            <element signature="e#23246#23247#0" expanded="true" />
+            <element signature="e#27392#27406#0" expanded="true" />
+            <element signature="e#75543#75557#0" expanded="true" />
+            <element signature="e#83657#83671#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -813,30 +846,31 @@
             <element signature="imports" expanded="true" />
             <element signature="e#452#453#0" expanded="true" />
             <element signature="e#508#509#0" expanded="true" />
-            <element signature="e#2659#2660#0" expanded="true" />
-            <element signature="e#2686#2687#0" expanded="true" />
-            <element signature="e#3684#3685#0" expanded="true" />
-            <element signature="e#3729#3730#0" expanded="true" />
-            <element signature="e#6645#6646#0" expanded="true" />
-            <element signature="e#6679#6680#0" expanded="true" />
-            <element signature="e#7008#7009#0" expanded="true" />
-            <element signature="e#7078#7079#0" expanded="true" />
-            <element signature="e#13187#13195#0" expanded="true" />
-            <element signature="e#13751#13752#0" expanded="true" />
-            <element signature="e#13801#13802#0" expanded="true" />
-            <element signature="e#15587#15588#0" expanded="true" />
-            <element signature="e#15633#15634#0" expanded="true" />
-            <element signature="e#15676#15677#0" expanded="true" />
-            <element signature="e#15720#15721#0" expanded="true" />
-            <element signature="e#15759#15760#0" expanded="true" />
-            <element signature="e#15803#15804#0" expanded="true" />
-            <element signature="e#20508#20509#0" expanded="true" />
-            <element signature="e#20567#20568#0" expanded="true" />
-            <element signature="e#22979#23005#0" expanded="true" />
-            <element signature="e#23046#23047#0" expanded="true" />
-            <element signature="e#23106#23107#0" expanded="true" />
-            <element signature="e#73454#73468#0" expanded="true" />
-            <element signature="e#81560#81574#0" expanded="true" />
+            <element signature="e#2804#2805#0" expanded="true" />
+            <element signature="e#2831#2832#0" expanded="true" />
+            <element signature="e#3829#3830#0" expanded="true" />
+            <element signature="e#3874#3875#0" expanded="true" />
+            <element signature="e#6790#6791#0" expanded="true" />
+            <element signature="e#6824#6825#0" expanded="true" />
+            <element signature="e#7153#7154#0" expanded="true" />
+            <element signature="e#7223#7224#0" expanded="true" />
+            <element signature="e#13332#13340#0" expanded="true" />
+            <element signature="e#13925#13926#0" expanded="true" />
+            <element signature="e#13975#13976#0" expanded="true" />
+            <element signature="e#15902#15903#0" expanded="true" />
+            <element signature="e#15948#15949#0" expanded="true" />
+            <element signature="e#15991#15992#0" expanded="true" />
+            <element signature="e#16035#16036#0" expanded="true" />
+            <element signature="e#16074#16075#0" expanded="true" />
+            <element signature="e#16118#16119#0" expanded="true" />
+            <element signature="e#20648#20649#0" expanded="true" />
+            <element signature="e#20707#20708#0" expanded="true" />
+            <element signature="e#23119#23145#0" expanded="true" />
+            <element signature="e#23186#23187#0" expanded="true" />
+            <element signature="e#23246#23247#0" expanded="true" />
+            <element signature="e#27392#27406#0" expanded="true" />
+            <element signature="e#75543#75557#0" expanded="true" />
+            <element signature="e#83657#83671#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1150,30 +1184,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../antlr-4.7.1-complete.jar!/org/antlr/v4/runtime/tree/AbstractParseTreeVisitor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="105" column="50" lean-forward="false" selection-start-line="105" selection-start-column="50" selection-end-line="105" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/MxstarBaseVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="243" column="33" lean-forward="false" selection-start-line="243" selection-start-column="28" selection-end-line="243" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/ExecTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-817">
@@ -1182,36 +1192,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Semantic.java">
+    <entry file="jar://$PROJECT_DIR$/../antlr-4.7.1-complete.jar!/org/antlr/v4/runtime/tree/AbstractParseTreeVisitor.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="57" column="46" lean-forward="false" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
+        <state relative-caret-position="171">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1522573820000" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1522573820000" expanded="true" signature="263:270" ph="{}" />
+            <marker date="1522573820000" expanded="true" signature="306:317" ph=" { " />
+            <marker date="1522573820000" expanded="true" signature="342:348" ph=" }" />
+            <marker date="1522573820000" expanded="true" signature="392:745" ph="{...}" />
+            <marker date="1522573820000" expanded="false" signature="792:803" ph=" { " />
+            <marker date="1522573820000" expanded="false" signature="831:837" ph=" }" />
+            <marker date="1522573820000" expanded="false" signature="882:893" ph=" { " />
+            <marker date="1522573820000" expanded="false" signature="921:927" ph=" }" />
+            <marker date="1522573820000" expanded="false" signature="960:971" ph=" { " />
+            <marker date="1522573820000" expanded="false" signature="983:989" ph=" }" />
+            <marker date="1522573820000" expanded="false" signature="1049:1060" ph=" { " />
+            <marker date="1522573820000" expanded="false" signature="1078:1084" ph=" }" />
+            <marker date="1522573820000" expanded="false" signature="1160:1171" ph=" { " />
+            <marker date="1522573820000" expanded="false" signature="1183:1189" ph=" }" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/MxstarBaseVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="264" column="127" lean-forward="false" selection-start-line="264" selection-start-column="4" selection-end-line="264" selection-end-column="127" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/MxstarParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
-          <caret line="1223" column="0" lean-forward="false" selection-start-line="1223" selection-start-column="0" selection-end-line="1223" selection-end-column="0" />
+          <caret line="1031" column="0" lean-forward="false" selection-start-line="1031" selection-start-column="0" selection-end-line="1031" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Semantic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3287">
+          <caret line="183" column="45" lean-forward="false" selection-start-line="183" selection-start-column="45" selection-end-line="183" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Mxstar.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="112" column="39" lean-forward="false" selection-start-line="112" selection-start-column="25" selection-end-line="112" selection-end-column="39" />
+        <state relative-caret-position="76">
+          <caret line="4" column="5" lean-forward="false" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/SemanticTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+        <state relative-caret-position="183">
+          <caret line="90" column="23" lean-forward="false" selection-start-line="90" selection-start-column="18" selection-end-line="90" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1220,36 +1270,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-26">
-          <caret line="1365" column="16" lean-forward="false" selection-start-line="1365" selection-start-column="16" selection-end-line="1365" selection-end-column="16" />
+        <state relative-caret-position="3660">
+          <caret line="836" column="70" lean-forward="false" selection-start-line="836" selection-start-column="65" selection-end-line="836" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#452#453#0" expanded="true" />
             <element signature="e#508#509#0" expanded="true" />
-            <element signature="e#2659#2660#0" expanded="true" />
-            <element signature="e#2686#2687#0" expanded="true" />
-            <element signature="e#3684#3685#0" expanded="true" />
-            <element signature="e#3729#3730#0" expanded="true" />
-            <element signature="e#6645#6646#0" expanded="true" />
-            <element signature="e#6679#6680#0" expanded="true" />
-            <element signature="e#7008#7009#0" expanded="true" />
-            <element signature="e#7078#7079#0" expanded="true" />
-            <element signature="e#13187#13195#0" expanded="true" />
-            <element signature="e#13751#13752#0" expanded="true" />
-            <element signature="e#13801#13802#0" expanded="true" />
-            <element signature="e#15587#15588#0" expanded="true" />
-            <element signature="e#15633#15634#0" expanded="true" />
-            <element signature="e#15676#15677#0" expanded="true" />
-            <element signature="e#15720#15721#0" expanded="true" />
-            <element signature="e#15759#15760#0" expanded="true" />
-            <element signature="e#15803#15804#0" expanded="true" />
-            <element signature="e#20508#20509#0" expanded="true" />
-            <element signature="e#20567#20568#0" expanded="true" />
-            <element signature="e#22979#23005#0" expanded="true" />
-            <element signature="e#23046#23047#0" expanded="true" />
-            <element signature="e#23106#23107#0" expanded="true" />
-            <element signature="e#73454#73468#0" expanded="true" />
-            <element signature="e#81560#81574#0" expanded="true" />
+            <element signature="e#2804#2805#0" expanded="true" />
+            <element signature="e#2831#2832#0" expanded="true" />
+            <element signature="e#3829#3830#0" expanded="true" />
+            <element signature="e#3874#3875#0" expanded="true" />
+            <element signature="e#6790#6791#0" expanded="true" />
+            <element signature="e#6824#6825#0" expanded="true" />
+            <element signature="e#7153#7154#0" expanded="true" />
+            <element signature="e#7223#7224#0" expanded="true" />
+            <element signature="e#13332#13340#0" expanded="true" />
+            <element signature="e#13925#13926#0" expanded="true" />
+            <element signature="e#13975#13976#0" expanded="true" />
+            <element signature="e#15902#15903#0" expanded="true" />
+            <element signature="e#15948#15949#0" expanded="true" />
+            <element signature="e#15991#15992#0" expanded="true" />
+            <element signature="e#16035#16036#0" expanded="true" />
+            <element signature="e#16074#16075#0" expanded="true" />
+            <element signature="e#16118#16119#0" expanded="true" />
+            <element signature="e#20648#20649#0" expanded="true" />
+            <element signature="e#20707#20708#0" expanded="true" />
+            <element signature="e#23119#23145#0" expanded="true" />
+            <element signature="e#23186#23187#0" expanded="true" />
+            <element signature="e#23246#23247#0" expanded="true" />
+            <element signature="e#27392#27406#0" expanded="true" />
+            <element signature="e#75543#75557#0" expanded="true" />
+            <element signature="e#83657#83671#0" expanded="true" />
           </folding>
         </state>
       </provider>

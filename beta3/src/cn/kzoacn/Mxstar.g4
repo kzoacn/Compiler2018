@@ -87,6 +87,7 @@ statement
     |   CONTINUE ';'                #continueStatement
     |   variableDefinition          #variableDefinitionStatement
     |   expression ';'              #expressionStatement
+    |   ';'                         #emptyStatement
     ;
 
 statementOrBlock
@@ -113,6 +114,7 @@ expression
     :   functionName '(' expressionList? ')'                                        # functionCall
     |   pointerValue '.' functionName '(' expressionList? ')'                       # methodCall
     |   NEW variableBasicType '(' expressionList? ')'                               # newVariable
+    |   NEW variableBasicType                                                       # newVariableWithoutExp
     |   NEW type=variableBasicType (index)+ (BRACKET)*                              # newArray
     |   variable ('.' variable)+                                                    # dotExpression
     |   variableName ('[' expression ']')*                                          # getValue

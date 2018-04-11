@@ -178,6 +178,13 @@ public interface MxstarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitExpressionStatement(MxstarParser.ExpressionStatementContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code emptyStatement}
+	 * labeled alternative in {@link MxstarParser#statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitEmptyStatement(MxstarParser.EmptyStatementContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link MxstarParser#statementOrBlock}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -228,6 +235,13 @@ public interface MxstarVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitRelationOperator(MxstarParser.RelationOperatorContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code newVariableWithoutExp}
+	 * labeled alternative in {@link MxstarParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNewVariableWithoutExp(MxstarParser.NewVariableWithoutExpContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code newVariable}
 	 * labeled alternative in {@link MxstarParser#expression}.
