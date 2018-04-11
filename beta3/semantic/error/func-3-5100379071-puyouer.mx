@@ -4,12 +4,13 @@ class A {
     int z;
 }
 
-B f() {
+A f() {
     int a;
     a = 1;
 }
 
 int main() {
+    A a;
+    a();
     return 0;
 }
-

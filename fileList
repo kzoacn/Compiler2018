@@ -1,0 +1,9 @@
+./beta3/src/cn/kzoacn/MxstarBaseVisitor.java
+./beta3/src/cn/kzoacn/MxstarLexer.java
+./beta3/src/cn/kzoacn/MxstarVisitor.java
+./beta3/src/cn/kzoacn/MxstarParser.java
+./beta3/src/cn/kzoacn/Semantic.java
+./beta3/src/cn/kzoacn/MxstarListener.java
+./beta3/src/cn/kzoacn/Main.java
+./beta3/src/cn/kzoacn/MxstarBaseListener.java
+./beta3/src/cn/kzoacn/ConstantPool.java

@@ -271,11 +271,11 @@ class IR{
         Quad cur=head;
 
         while(cur!=null){
-            if(cur.dest!=null&&cur.dest.type.equals(Variable.error))
+            if(cur.dest!=null&&cur.dest.type.name.equals("Error"))
                 return true;
-            if(cur.var1!=null&&cur.var1.type.equals(Variable.error))
+            if(cur.var1!=null&&cur.var1.type.name.equals("Error"))
                 return true;
-            if(cur.var2!=null&&cur.var2.type.equals(Variable.error))
+            if(cur.var2!=null&&cur.var2.type.name.equals("Error"))
                 return true;
             cur=cur.next;
         }
@@ -1222,6 +1222,10 @@ class MVisitor extends MxstarBaseVisitor<IR>{
             ir.push(Quad.quadError("Symbol not found"));
             return ir;
         }
+        /*if(!variableType.equals(exp.last.dest)){
+            ir.push(Quad.quadError("Type did not match"));
+            return ir;
+        }*/
         Variable variable = new Variable(symbolMap.renameMap.get(variableName),variableType);
         if(parameterList.size()==0){
             ir.push(new Quad(OpCode.move,exp.last.dest,Variable.empty,variable));

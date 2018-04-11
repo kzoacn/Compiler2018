@@ -4,12 +4,8 @@ class A {
     int z;
 }
 
-B f() {
-    int a;
-    a = 1;
-}
-
 int main() {
-    return 0;
+    int t;
+    A x;
+    t = x;
 }
-
