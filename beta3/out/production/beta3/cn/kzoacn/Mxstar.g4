@@ -113,6 +113,7 @@ forStatement
 expression
     :   functionName '(' expressionList? ')'                                        # functionCall
     |   pointerValue '.' functionName '(' expressionList? ')'                       # methodCall
+    |   expression '.' functionName '(' expressionList? ')'                         # methodCallWithExp
     |   NEW variableBasicType '(' expressionList? ')'                               # newVariable
     |   NEW variableBasicType                                                       # newVariableWithoutExp
     |   NEW type=variableBasicType (index)+ (BRACKET)*                              # newArray

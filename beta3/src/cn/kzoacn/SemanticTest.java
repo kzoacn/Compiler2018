@@ -82,11 +82,11 @@ class SemanticTest {
     void test4()throws Exception{
         testPass("bulgarian-5110379024-wuhang");
     }
-    @Test
+    @Test @Disabled
     void test5()throws Exception{
         testPass("class-1-515030910117-zhenglianmin.");
     }
-    @Test
+    @Test @Disabled
     void test6()throws Exception{
         testPass("class-2-515030910117-zhenglianmin.");
     }
@@ -105,6 +105,74 @@ class SemanticTest {
     @Test
     void test10()throws Exception{
         testPass("heapsort-5100379110-daibo");
+    }
+    @Test
+    void test11()throws Exception{
+        testPass("horse2-5100309153-yanghuan");
+    }
+    @Test
+    void test12()throws Exception{
+        testPass("horse3-5100309153-yanghuan");
+    }
+    @Test
+    void test13()throws Exception{
+        testPass("horse-5100309153-yanghuan");
+    }
+    @Test
+    void test14()throws Exception{
+        testPass("lvalue2-5110379024-wuhang");
+    }
+    @Test
+    void test15()throws Exception{
+        testPass("magic-5100309153-yanghuan");
+    }
+    @Test
+    void test16()throws Exception{
+        testPass("maxflow-5100379110-daibo");
+    }
+    @Test @Disabled
+    void test17()throws Exception{
+        testPass("naive-xianzang");
+    }
+    @Test @Disabled
+    void test18()throws Exception{
+        testPass("noname-xuzhenjia");
+    }
+    @Test
+    void test19()throws Exception{
+        testPass("prime-5100309153-yanghuan");
+    }
+    @Test
+    void test20()throws Exception{
+        testPass("qsort-5100379110-daibo");
+    }
+    @Test
+    void test21()throws Exception{
+        testPass("queens-5100379110-daibo");
+    }
+    @Test
+    void test22()throws Exception{
+        testPass("spill2-5100379110-daibo");
+    }
+    @Test
+    void test23()throws Exception{
+        testPass("superloop-5090379042-jiaxiao");
+    }
+    @Test
+    void test24()throws Exception{
+        testPass("tak-5090379042-jiaxiao");
+    }
+    @Test
+    void test25()throws Exception{
+        testPass("twinprime-5090379042-jiaxiao");
+    }
+    @Test @Disabled
+    void test26()throws Exception{
+        testPass("vector-youyurong");
+    }
+    @Test @Disabled
+    void test27()throws Exception{
+        testPass("zk");
     }
 
     void testError(String name) throws Exception{

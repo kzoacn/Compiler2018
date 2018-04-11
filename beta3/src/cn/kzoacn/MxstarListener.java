@@ -640,6 +640,18 @@ public interface MxstarListener extends ParseTreeListener {
 	 */
 	void exitTrue(MxstarParser.TrueContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code methodCallWithExp}
+	 * labeled alternative in {@link MxstarParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterMethodCallWithExp(MxstarParser.MethodCallWithExpContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code methodCallWithExp}
+	 * labeled alternative in {@link MxstarParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitMethodCallWithExp(MxstarParser.MethodCallWithExpContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code methodCall}
 	 * labeled alternative in {@link MxstarParser#expression}.
 	 * @param ctx the parse tree
