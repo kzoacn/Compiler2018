@@ -4,9 +4,6 @@ class List{
 }
 
 
-
-
-
 int main(){
     int n=5;
     List head = new List();
@@ -16,10 +13,12 @@ int main(){
         cur.val=i;
         cur.next=new List();
         cur=cur.next;
+        cur.next=null;
     }
     
     cur=head;
-    while(cur.next > 0){
+//    while(cur.next > 0)
+    for(i=0;i<n;i++){
         println(toString(cur.val));
         cur=cur.next;
     }

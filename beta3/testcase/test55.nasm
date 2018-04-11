@@ -333,55 +333,58 @@ mAd_006:  mov     rax, qword [rbp-8H]
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 184
+	sub    rsp, 192
 	call global_init
 	mov [rsp+8*1] , rax
 	mov     rdi, 10
 	call    mallocArray
 	mov     qword [rsp+8*2], rax
+	mov r8, [rsp+8*3]
+	add r8, [rsp+8*3]
+	mov qword [rsp+8*3],r8 
 	mov r8, [rsp+8*2]
-	mov qword [rsp+8*3] ,r8
+	mov qword [rsp+8*4] ,r8
 	mov     rdi, 6
 	call    mallocArray
-	mov     qword [rsp+8*4], rax
-	mov r8, [rsp+8*3]
-	mov qword [rsp+8*5] ,r8
-	mov     rsi, 0
-	mov     rdi, [rsp+8*5]
-	call    address
-	mov [rsp+8*6], rax
+	mov     qword [rsp+8*5], rax
 	mov r8, [rsp+8*4]
-	mov r9, [rsp+8*6]
-	mov qword [r9], r8
-	mov r8, [rsp+8*3]
-	mov qword [rsp+8*7] ,r8
+	mov qword [rsp+8*6] ,r8
 	mov     rsi, 0
-	mov     rdi, [rsp+8*7]
+	mov     rdi, [rsp+8*6]
 	call    address
-	mov [rsp+8*8], rax
+	mov [rsp+8*7], rax
+	mov r8, [rsp+8*5]
+	mov r9, [rsp+8*7]
+	mov qword [r9], r8
+	mov r8, [rsp+8*4]
+	mov qword [rsp+8*8] ,r8
+	mov     rsi, 0
+	mov     rdi, [rsp+8*8]
+	call    address
+	mov [rsp+8*9], rax
+	mov r8, [rsp+8*9]
+	mov r8, [r8]
+	mov [rsp+8*8], r8
 	mov r8, [rsp+8*8]
+	mov qword [gbl+8*10] ,r8
+	mov r8, [gbl+8*10]
+	mov qword [rsp+8*11] ,r8
+	mov r8, [rsp+8*11]
 	mov r8, [r8]
-	mov [rsp+8*7], r8
-	mov r8, [rsp+8*7]
-	mov qword [gbl+8*9] ,r8
-	mov r8, [gbl+8*9]
-	mov qword [rsp+8*10] ,r8
-	mov r8, [rsp+8*10]
-	mov r8, [r8]
-	mov [rsp+8*10], r8
-	mov r8, [rsp+8*10]
-	mov qword [gbl+8*11] ,r8
-	mov r8, [gbl+8*11]
-	mov qword [rsp+8*12] ,r8
-	mov     rdi, [rsp+8*12]
+	mov [rsp+8*11], r8
+	mov r8, [rsp+8*11]
+	mov qword [gbl+8*12] ,r8
+	mov r8, [gbl+8*12]
+	mov qword [rsp+8*13] ,r8
+	mov     rdi, [rsp+8*13]
 	call    toString
-	mov     qword[rsp+8*13], rax
-	mov r8, [rsp+8*13]
-	mov qword [gbl+8*11] ,r8
-	mov r8, [gbl+8*11]
-	mov qword [rsp+8*14] ,r8
+	mov     qword[rsp+8*14], rax
+	mov r8, [rsp+8*14]
+	mov qword [gbl+8*12] ,r8
+	mov r8, [gbl+8*12]
+	mov qword [rsp+8*15] ,r8
 	mov rdi, formatln
-	mov rsi,[rsp+8*14] 
+	mov rsi,[rsp+8*15] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
@@ -396,15 +399,15 @@ main:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 184
-	mov rax,[rsp+8*15]
+	sub    rsp, 192
+	mov rax,[rsp+8*16]
 	leave
 	ret
 	
 QED:
 	
 	 section   .bss
-gbl:         resb   2168
+gbl:         resb   2176
 
 	 section   .data
 

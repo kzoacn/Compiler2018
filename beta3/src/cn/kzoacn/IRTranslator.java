@@ -105,6 +105,8 @@ public class IRTranslator {
             return new StringBuffer(variable.name);
         if(variable.type.name.equals("const_int"))
             return new StringBuffer(Integer.toString(variable.constValue));
+        if(variable.type.name.equals("NULL"))
+            return new StringBuffer(Integer.toString(0));
         if(symbolMap.globalVariableMap.containsKey(variable.name))
             return new StringBuffer("[gbl+8*"+Integer.toString(variableIndex.get(variable))+"]");
         if(variableIndex.containsKey(variable))

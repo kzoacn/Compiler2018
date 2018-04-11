@@ -343,7 +343,7 @@ main:
 	mov qword [rsp+8*3] ,r8
 	mov qword [rsp+8*4] ,0
 	
-L_386:
+L_393:
 	mov r8, [rsp+8*4]
 	mov r9, 3
 	cmp r8, r9
@@ -351,7 +351,7 @@ L_386:
 	setl [rsp+8*5]
 	mov r8, [rsp+8*5]
 	cmp r8, 0
-	je L_387
+	je L_394
 	mov     rdi, 0
 	call    mallocArray
 	mov     qword [rsp+8*6], rax
@@ -378,16 +378,16 @@ L_386:
 	call say
 	mov [rsp+8*12] , rax
 	
-L_388:
+L_395:
 	mov r8, [rsp+8*4]
 	add r8, 1
 	mov qword [rsp+8*4],r8 
 	mov r8, [rsp+8*4]
 	sub r8, 1
 	mov qword [rsp+8*13],r8 
-	jmp L_386
+	jmp L_393
 	
-L_387:
+L_394:
 	mov rax,0
 	leave
 	ret
@@ -402,7 +402,7 @@ say:
 	sub    rsp, 200
 	mov r8, [gbl+8*11]
 	mov qword [rsp+8*14] ,r8
-	mov qword [gbl+8*15] ,t4129
+	mov qword [gbl+8*15] ,t4195
 	mov r8, [gbl+8*15]
 	mov qword [rsp+8*16] ,r8
 	mov rdi, formatln
@@ -435,7 +435,7 @@ formatln:
 format:
 	db  "%s",  0
 	
-t4129:
+t4195:
 	 db 2,"hi" ,0
 
 

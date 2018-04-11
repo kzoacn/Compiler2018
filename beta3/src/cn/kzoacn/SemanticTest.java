@@ -16,45 +16,54 @@ import java.util.Scanner;
 class SemanticTest {
 
     @Test
-    void test0()throws Exception{
+    void testTo10()throws Exception{
         testError("arrop-1-5100379071-puyouer");
-    }
-
-    @Test
-    void test1()throws Exception{
         testError("asiop-1-5100379071-puyouer");
-    }
-    @Test
-    void test2()throws Exception{
         testError("asiop-2-5100379071-puyouer");
-    }
-    @Test
-    void test3()throws Exception{
         testError("asiop-3-5120309049-liaochao");
-    }
-    @Test
-    void test4()throws Exception{
         testError("asiop-4-5120309049-liaochao");
-    }
-    @Test
-    void test5()throws Exception{
         testError("asiop-5-5100379071-puyouer");
-    }
-    @Test
-    void test6()throws Exception{
         testError("asiop-6-5100379071-puyouer");
-    }
-    @Test
-    void test7()throws Exception{
         testError("asiop-7-5120309049-liaochao");
-    }
-    @Test
-    void test8()throws Exception{
+        testError("biop-1-5100379071-puyouer");
+        testError("asiop-4-5120309049-liaochao");
         testError("biop-1-5100379071-puyouer");
     }
     @Test
-    void test9()throws Exception{
-        testError("asiop-4-5120309049-liaochao");
+    void test11()throws Exception{
+        testError("bitop-1-5120309049-liaochao");
+    }
+    @Test
+    void test13()throws Exception{
+        testError("boop-1-5120309049-liaochao");
+    }
+    @Test
+    void test14()throws Exception{
+        testError("class-1-5100379071-puyouer");
+    }
+    @Test
+    void test15()throws Exception{
+        testError("class-2-5120309049-liaochao");
+    }
+    @Test
+    void test16()throws Exception{
+        testError("class-5-515030910117-zhenglianmin");
+    }
+    @Test
+    void test17()throws Exception{
+        testError("class-6-515030910117-zhenglianmin");
+    }
+    @Test
+    void test18()throws Exception{
+        testError("class-7-515030910117-zhenglianmin.");
+    }
+    @Test
+    void test19()throws Exception{
+        testError("constructor-chenxinhao");
+    }
+    @Test
+    void test20()throws Exception{
+        testError("creator-515030910117-zhenglianmin.");
     }
 
     void testError(String name) throws Exception{

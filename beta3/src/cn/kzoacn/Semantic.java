@@ -44,7 +44,7 @@ public class Semantic {
             ParseTree parseTree = parser.program();
 
             if(errorListener.flag==1){
-                System.err.println("WA0");
+                System.err.println("CE0");
                 return false;
             }
 
@@ -55,11 +55,11 @@ public class Semantic {
             ir.modify();
            // ir.print();
             if(ir.isError()){
-                System.err.println("WA1");
+                System.err.println("CE1");
                 return false;
             }
         }catch (Exception e){
-            System.err.println("WA2");
+            System.err.println("CE2");
             return false;
         }
         return true;
