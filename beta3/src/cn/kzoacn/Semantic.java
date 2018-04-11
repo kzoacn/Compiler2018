@@ -54,6 +54,10 @@ public class Semantic {
             //visitor.symbolMap.print();
             ir.modify();
            // ir.print();
+            if(visitor.symbolMap.error){
+                System.err.println("CE on name");
+                return false;
+            }
             if(ir.isError()){
                 System.err.println("CE1");
                 return false;

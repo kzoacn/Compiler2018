@@ -16,7 +16,7 @@ import java.util.Scanner;
 class SemanticTest {
 
     @Test
-    void testTo10()throws Exception{
+    void testTo40()throws Exception{
         testError("arrop-1-5100379071-puyouer");
         testError("asiop-1-5100379071-puyouer");
         testError("asiop-2-5100379071-puyouer");
@@ -28,42 +28,51 @@ class SemanticTest {
         testError("biop-1-5100379071-puyouer");
         testError("asiop-4-5120309049-liaochao");
         testError("biop-1-5100379071-puyouer");
-    }
-    @Test
-    void test11()throws Exception{
         testError("bitop-1-5120309049-liaochao");
-    }
-    @Test
-    void test13()throws Exception{
         testError("boop-1-5120309049-liaochao");
-    }
-    @Test
-    void test14()throws Exception{
         testError("class-1-5100379071-puyouer");
-    }
-    @Test
-    void test15()throws Exception{
         testError("class-2-5120309049-liaochao");
-    }
-    @Test
-    void test16()throws Exception{
         testError("class-5-515030910117-zhenglianmin");
-    }
-    @Test
-    void test17()throws Exception{
         testError("class-6-515030910117-zhenglianmin");
-    }
-    @Test
-    void test18()throws Exception{
         testError("class-7-515030910117-zhenglianmin.");
-    }
-    @Test
-    void test19()throws Exception{
         testError("constructor-chenxinhao");
+        testError("creator-515030910117-zhenglianmin.");
+        testError("ctrflow-1-5100379071-puyouer");
+        testError("ctrflow-2-5120309049-liaochao");
+        testError("ctrflow-3-5100379071-puyouer");
+        testError("ctrflow-4-5120309049-liaochao");
+        testError("ctrflow-5-5120309049-liaochao");
+        testError("fldop-1-5120309049-liaochao");
+        testError("func-1-5100379071-puyouer");
+        testError("func-2-5120309049-liaochao");
+        testError("func-3-5100379071-puyouer");
+        testError("func-4-5100379071-puyouer");
+        testError("func-5-5100309127-hetianxing");
+        testError("func-6-5130309059-lijiajun");
+        testError("func-7-5140309552-wancheng");
+        testError("incop-1-5120309049-liaochao");
+        testError("relop-1-5120309049-liaochao");
+        testError("relop-2-5120309049-liaochao");
+        testError("scope-1-5140519064-youyurong");
+        testError("scope-1-515030910117-zhenglianmin");
+        testError("scope-2-5140519064-youyurong");
+        testError("selfref-5090379042-jiaxiao");
     }
     @Test
-    void test20()throws Exception{
-        testError("creator-515030910117-zhenglianmin.");
+    void test41()throws Exception{
+        testError("var-1-5110379024-wuhang");
+    }
+    @Test
+    void test42()throws Exception{
+        testError("var-2-5100309127-hetianxing");
+    }
+    @Test
+    void test43()throws Exception{
+        testError("var-3-5120309049-liaochao");
+    }
+    @Test
+    void test44()throws Exception{
+        testError("var-4-5140309552-wancheng");
     }
 
     void testError(String name) throws Exception{
