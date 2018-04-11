@@ -348,7 +348,7 @@ main:
 	mov r8, [rsp+8*4]
 	cmp r8, 0
 	je L_338
-	mov qword [gbl+8*5] ,t2812
+	mov qword [gbl+8*5] ,t2811
 	mov r8, [gbl+8*5]
 	mov qword [rsp+8*6] ,r8
 	mov rdi, formatln
@@ -359,7 +359,7 @@ main:
 	jmp L_339
 	
 L_338:
-	mov qword [gbl+8*5] ,t2816
+	mov qword [gbl+8*5] ,t2815
 	mov r8, [gbl+8*5]
 	mov qword [rsp+8*7] ,r8
 	mov rdi, formatln
@@ -384,7 +384,7 @@ L_339:
 	mov r8, [rsp+8*10]
 	cmp r8, 0
 	je L_340
-	mov qword [gbl+8*5] ,t2825
+	mov qword [gbl+8*5] ,t2824
 	mov r8, [gbl+8*5]
 	mov qword [rsp+8*11] ,r8
 	mov rdi, formatln
@@ -395,7 +395,7 @@ L_339:
 	jmp L_341
 	
 L_340:
-	mov qword [gbl+8*5] ,t2829
+	mov qword [gbl+8*5] ,t2828
 	mov r8, [gbl+8*5]
 	mov qword [rsp+8*12] ,r8
 	mov rdi, formatln
@@ -425,7 +425,7 @@ L_341:
 	mov r8, [rsp+8*16]
 	cmp r8, 0
 	je L_342
-	mov qword [gbl+8*5] ,t2842
+	mov qword [gbl+8*5] ,t2841
 	mov r8, [gbl+8*5]
 	mov qword [rsp+8*17] ,r8
 	mov rdi, formatln
@@ -436,7 +436,7 @@ L_341:
 	jmp L_343
 	
 L_342:
-	mov qword [gbl+8*5] ,t2846
+	mov qword [gbl+8*5] ,t2845
 	mov r8, [gbl+8*5]
 	mov qword [rsp+8*18] ,r8
 	mov rdi, formatln
@@ -472,22 +472,22 @@ formatln:
 format:
 	db  "%s",  0
 	
-t2812:
+t2811:
 	 db 5,"true1" ,0
 
-t2842:
-	 db 5,"true3" ,0
-
-t2816:
-	 db 6,"false1" ,0
-
-t2846:
+t2845:
 	 db 6,"false3" ,0
 
-t2825:
+t2815:
+	 db 6,"false1" ,0
+
+t2824:
 	 db 5,"true2" ,0
 
-t2829:
+t2828:
 	 db 6,"false2" ,0
+
+t2841:
+	 db 5,"true3" ,0
 
 

@@ -118,6 +118,7 @@ expression
     |   NEW variableBasicType                                                       # newVariableWithoutExp
     |   NEW type=variableBasicType (index)+ (BRACKET)*                              # newArray
     |   variable ('.' variable)+                                                    # dotExpression
+    |   pointerValue ('.' functionName '(' expressionList? ')' |'.' variable)+      # hyperDotExpression
     |   variableName ('[' expression ']')*                                          # getValue
     |   op=('--'|'++'|'-' |'!' |'~') expression                                     # prefixOperator
     |   expression op=('++' | '--')                                                 # suffixOperator

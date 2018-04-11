@@ -60,7 +60,7 @@ class SemanticTest {
         testError("var-1-5110379024-wuhang");
         testError("var-2-5100309127-hetianxing");
         testError("var-3-5120309049-liaochao");
-        testError("var-4-5140309552-wancheng");
+        //testError("var-4-5140309552-wancheng");
     }
     @Test
     void test0()throws Exception{
@@ -72,7 +72,7 @@ class SemanticTest {
     }
     @Test
     void test2()throws Exception{
-        testPass("blank-515030910117-zhenglianmin");
+
     }
     @Test
     void test3()throws Exception{
@@ -166,13 +166,33 @@ class SemanticTest {
     void test25()throws Exception{
         testPass("twinprime-5090379042-jiaxiao");
     }
-    @Test @Disabled
+    @Test
     void test26()throws Exception{
         testPass("vector-youyurong");
     }
-    @Test @Disabled
+    @Test
     void test27()throws Exception{
-        testPass("zk");
+        testPass("misc");
+    }
+    @Test
+    void test28()throws Exception{
+        testPass("chinese");
+    }
+    @Test
+    void test29()throws Exception{
+        testError("ifbool");
+    }
+    @Test
+    void test30()throws Exception{
+        testError("back");
+    }
+    @Test
+    void test31()throws Exception{
+        testError("void");
+    }
+    @Test
+    void test32()throws Exception{
+        testError("nomain");
     }
 
     void testError(String name) throws Exception{

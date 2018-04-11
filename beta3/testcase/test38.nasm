@@ -363,7 +363,7 @@ f:
 	ret
 	
 L_317:
-	mov qword [gbl+8*2] ,t2597
+	mov qword [gbl+8*2] ,t2596
 	mov r8, [gbl+8*2]
 	mov qword [rsp+8*6] ,r8
 	mov rdi, format
@@ -419,7 +419,7 @@ g:
 	ret
 	
 L_319:
-	mov qword [gbl+8*2] ,t2615
+	mov qword [gbl+8*2] ,t2614
 	mov r8, [gbl+8*2]
 	mov qword [rsp+8*14] ,r8
 	mov rdi, format
@@ -475,7 +475,7 @@ h:
 	ret
 	
 L_321:
-	mov qword [gbl+8*2] ,t2633
+	mov qword [gbl+8*2] ,t2632
 	mov r8, [gbl+8*2]
 	mov qword [rsp+8*22] ,r8
 	mov rdi, format
@@ -534,13 +534,13 @@ formatln:
 format:
 	db  "%s",  0
 	
-t2633:
-	 db 2,"h " ,0
-
-t2615:
+t2614:
 	 db 2,"g " ,0
 
-t2597:
+t2632:
+	 db 2,"h " ,0
+
+t2596:
 	 db 2,"f " ,0
 
 

@@ -352,6 +352,18 @@ public interface MxstarListener extends ParseTreeListener {
 	 */
 	void exitForStatement(MxstarParser.ForStatementContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code hyperDotExpression}
+	 * labeled alternative in {@link MxstarParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterHyperDotExpression(MxstarParser.HyperDotExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code hyperDotExpression}
+	 * labeled alternative in {@link MxstarParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitHyperDotExpression(MxstarParser.HyperDotExpressionContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code logicOr}
 	 * labeled alternative in {@link MxstarParser#expression}.
 	 * @param ctx the parse tree

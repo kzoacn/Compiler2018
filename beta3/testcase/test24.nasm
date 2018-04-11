@@ -529,7 +529,7 @@ L_181:
 	jmp L_179
 	
 L_180:
-	mov qword [gbl+8*35] ,t1565
+	mov qword [gbl+8*35] ,t1564
 	mov r8, [gbl+8*35]
 	mov qword [rsp+8*40] ,r8
 	mov rdi, formatln
@@ -566,7 +566,7 @@ formatln:
 format:
 	db  "%s",  0
 	
-t1565:
+t1564:
 	 db 0,"" ,0
 
 

@@ -9,6 +9,7 @@ import jdk.nashorn.internal.runtime.regexp.joni.constants.OPCode;
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.parse.*;
 import org.antlr.v4.runtime.tree.ParseTree;
+import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 
 
 import javax.lang.model.type.ArrayType;
@@ -22,9 +23,13 @@ class VariableType{
         return (this.name).hashCode()^this.level;
     }
     boolean match(VariableType other){
-        if((name.contains("int") || name.contains("string")) &&other.name.equals("null"))
+        if((name.contains("int") || name.contains("string"))&& level>0 &&other.name.equals("null"))
+            return true;
+        if((name.contains("int") || name.contains("string"))&& level==0 &&other.name.equals("null"))
             return false;
-        if((other.name.contains("int") || other.name.contains("string")) &&name.equals("null"))
+        if((other.name.contains("int") || other.name.contains("string"))&& other.level>0 &&name.equals("null"))
+            return true;
+        if((other.name.contains("int") || other.name.contains("string"))&& other.level==0 &&name.equals("null"))
             return false;
         if(other.name.equals("null") || name.equals("null"))
             return true;
@@ -450,8 +455,8 @@ class SymbolMap{
             error=true;
         }
         if(variableType.name.equals("void")) {
-            System.err.println("Variable can not be void");
-            error=true;
+//            System.err.println("Variable can not be void");
+//            error=true;
         }
         operations.push(new Operation(name,renameMap.get(name),variableMap.get(name),depthMap.get(name)));
         variableMap.put(name,variableType);
@@ -686,7 +691,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         IR ir = new IR();
         IR functionIR=new IR();
         IR classIR=new IR();
-
+        IR mainIR = new IR();
 
         Variable.isGlobal=true;
         symbolMap.global=true;
@@ -735,28 +740,18 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         globalVariableIR.push(new Quad(OpCode.label,"global_init"));
         globalVariableIR.push(new Quad(OpCode.enterFunction));
 
-        for(ParseTree child : ctx.children){
-            if(child.getClass().equals(MxstarParser.GlobalVariableDefinitionContext.class)){
-                //System.out.println("Variable");
-                Variable.isGlobal=true;
-                symbolMap.global=true;
-                globalVariableIR.concat(visit(child));
-                Variable.isGlobal=false;
-                symbolMap.global=false;
-            }
-        }
-        globalVariableIR.push(new Quad(OpCode.exitFunction));
-        globalVariableIR.push(new Quad(OpCode.ret,nextConst(0,VariableType.INT),Variable.empty,Variable.empty));
 
         for(ParseTree child : ctx.children){
+
+
             if(child.getClass().equals(MxstarParser.FunctionDefinitionContext.class)){
                 MxstarParser.FunctionDefinitionContext childContext =((MxstarParser.FunctionDefinitionContext)(Object)child);
                 String name=childContext.functionName().getText();
                // symbolMap.nextScope();
                 symbolMap.currentFunction=name;
                 VariableType returnType=VariableType.toVariableType(childContext.variableType());
-                if(returnType.name.equals("void"))
-                    returnType=VariableType.INT;
+                //if(returnType.name.equals("void"))
+                //    returnType=VariableType.INT;
                 ArrayList<VariableType>parameterList = new ArrayList<VariableType>();
                 if(childContext.parameterList()!=null) {
                     for (int i = 0; i < childContext.parameterList().parameter().size(); i++) {
@@ -779,12 +774,27 @@ class MVisitor extends MxstarBaseVisitor<IR>{
             }
         }
 
+        boolean hasMain=false;
         for(ParseTree child : ctx.children){
+
+            if(child.getClass().equals(MxstarParser.GlobalVariableDefinitionContext.class)){
+                //System.out.println("Variable");
+                Variable.isGlobal=true;
+                symbolMap.global=true;
+                globalVariableIR.concat(visit(child));
+                Variable.isGlobal=false;
+                symbolMap.global=false;
+            }
             if(child.getClass().equals(MxstarParser.FunctionDefinitionContext.class)){
                 MxstarParser.FunctionDefinitionContext childContext =((MxstarParser.FunctionDefinitionContext)(Object)child);
                 String name = childContext.functionName().getText();
-                if(name.equals("main"))
+                if(name.equals("main")) {
+                    hasMain=true;
+                    symbolMap.nextScope();
+                    mainIR.concat(visit(child));
+                    symbolMap.prevScope();
                     continue;
+                }
                // System.out.println("Function");
                 symbolMap.nextScope();
                 functionIR.concat(visit(child));
@@ -792,10 +802,13 @@ class MVisitor extends MxstarBaseVisitor<IR>{
             }
         }
 
+        if(!hasMain){
+            System.err.println("no main function!");
+            ir.push(Quad.quadError("no main function!"));
+        }
 
 
-
-        for(ParseTree child : ctx.children){
+        /*for(ParseTree child : ctx.children){
             if(child.getClass().equals(MxstarParser.FunctionDefinitionContext.class)){
                 MxstarParser.FunctionDefinitionContext childContext =((MxstarParser.FunctionDefinitionContext)(Object)child);
                 String name = childContext.functionName().getText();
@@ -803,11 +816,16 @@ class MVisitor extends MxstarBaseVisitor<IR>{
                     continue;
                 //System.out.println("Function");
                 symbolMap.nextScope();
-                ir.concat(visit(child));
+                mainIR.concat(visit(child));
                 symbolMap.prevScope();
             }
-        }
+        }*/
+        globalVariableIR.push(new Quad(OpCode.exitFunction));
+        globalVariableIR.push(new Quad(OpCode.ret,nextConst(0,VariableType.INT),Variable.empty,Variable.empty));
+
+        ir.concat(mainIR);
         ir.push(new Quad(OpCode.jmp,"QED"));
+
         ir.concat(classIR);
         ir.concat(functionIR);
         ir.concat(globalVariableIR);
@@ -850,7 +868,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         symbolMap.currentFunction=name;
         VariableType returnType=VariableType.INT;
         if(ctx.variableType()!=null)
-            VariableType.toVariableType(ctx.variableType());
+            returnType=VariableType.toVariableType(ctx.variableType());
         else{//is construct function
             if(!ctx.functionName().getText().equals(currentClass)){
                 System.err.println("construct function name incorrect");
@@ -902,9 +920,15 @@ class MVisitor extends MxstarBaseVisitor<IR>{
 
         ir.concat(stmt);
         //ir.push(new Quad(OpCode.push, nextConst(0, VariableType.CONST_INT), Variable.empty, Variable.empty));
-        Quad quad =new Quad(OpCode.ret, nextConst(0, VariableType.CONST_INT), Variable.empty, Variable.empty);
-        quad.name=function.name;
-        ir.push(quad);
+        if(returnType.equals(VariableType.VOID)){
+            Quad quad =new Quad(OpCode.ret, nextVariable(VariableType.VOID), Variable.empty, Variable.empty);
+            quad.name=function.name;
+            ir.push(quad);
+        }else{
+            Quad quad =new Quad(OpCode.ret, nextConst(0, VariableType.CONST_INT), Variable.empty, Variable.empty);
+            quad.name=function.name;
+            ir.push(quad);
+        }
         ir.push(new Quad(OpCode.exitFunction,name));
 
         //ir.modify_context(symbolMap.globalVariableMap);
@@ -1145,52 +1169,12 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         ir.concat(accIR);
         ir.push(new Quad(OpCode.load,result,Variable.empty,result));
 
-/*        ir.push(new Quad(OpCode.move,new Variable(symbolMap.renameMap.get(startName),startType),Variable.empty,start));
-        ArrayList<IR> parameterList = new ArrayList<IR>();
-
-        for(int i=0;i<ctx.variable(0).index().size();i++){
-            parameterList.add(visit(ctx.variable(0).index(i).expression()));
-            ir.concat(parameterList.get(i));
-        }
-        int used=0;
-        for(int i=0;i<parameterList.size();i++){
-            ir.push(new Quad(OpCode.address,start,parameterList.get(i).last.dest,adr));
-            //if((++used) < parameterList.size())
-                ir.push(new Quad(OpCode.load,adr,Variable.empty,start));
-            start.type.level--;
-        }
-
-        for(int i=1;i<ctx.variable().size();i++){
-            String name=ctx.variable(i).variableName().getText();
-            Variable variable=classMember.get(start.type.name).get(name);
-            Variable idx = nextConst(classMemberIndex.get(start.type.name).get(variable),VariableType.CONST_INT);
-
-            ir.push(new Quad(OpCode.address,start,idx,adr));
-            //if(! (i+1==ctx.variable().size()&&parameterList.size()==0))
-                ir.push(new Quad(OpCode.load,adr,idx,start));
-
-
-            start.type=variable.type.clone();
-
-            parameterList.clear();
-            if(ctx.variable(i).index()!=null)
-                for(int j=0;j<ctx.variable(i).index().size();j++){
-                    parameterList.add(visit(ctx.variable(i).index(j).expression()));
-                    ir.concat(parameterList.get(j));
-                }
-            used=0;
-            for(int j=0;j<parameterList.size();j++){
-                ir.push(new Quad(OpCode.address,start,parameterList.get(j).last.dest,adr));
-                //if(! (i+1==ctx.variable().size()&&j+1==parameterList.size()))
-                    ir.push(new Quad(OpCode.load,adr,Variable.empty,start));
-                start.type.level--;
-            }
-        }
-        ir.push(new Quad(OpCode.move,start,Variable.empty,start));
-
-*/
         return ir;
     }
+    @Override public IR visitHyperDotExpression(MxstarParser.HyperDotExpressionContext ctx) {
+        return visitChildren(ctx);
+    }
+
     @Override public IR visitNewVariable(MxstarParser.NewVariableContext ctx) {
         IR ir = new IR();
         VariableType variableType = VariableType.toVariableType(ctx.variableBasicType());
@@ -1509,10 +1493,12 @@ class MVisitor extends MxstarBaseVisitor<IR>{
 
 
     @Override public IR visitBlock(MxstarParser.BlockContext ctx) {
+        symbolMap.nextScope();
         IR ir = new IR();
         for(int i=0;i<ctx.getChildCount();i++){
             ir.concat(visit(ctx.getChild(i)));
         }
+        symbolMap.prevScope();
         return ir;
     }
 
@@ -1524,6 +1510,10 @@ class MVisitor extends MxstarBaseVisitor<IR>{
 
         if(!VariableType.INT.match(exp.last.dest.type))
             ir.push(Quad.quadError("exp must be INT if"));
+        if(exp.last.dest.type.name.equals("const_int")){
+            System.err.println("fake bool");
+            ir.push(Quad.quadError("exp must be bool"));
+        }
         String falseLable=nextLabel();
         String outLable=nextLabel();
 
@@ -1646,6 +1636,10 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         }else{
             ir.concat(visit(ctx.expression()));
             //ir.push(new Quad(OpCode.push,ir.last.dest,Variable.empty,Variable.empty));
+            if(ir.last.dest.type.equals(VariableType.VOID)){
+                System.err.println("No void");
+                ir.push(Quad.quadError("No void"));
+            }
             Quad quad=new Quad(OpCode.ret,ir.last.dest,Variable.empty,Variable.empty);
             quad.name=symbolMap.currentFunction;
             ir.push(quad);
@@ -2015,7 +2009,13 @@ class MVisitor extends MxstarBaseVisitor<IR>{
 
     @Override public IR visitGetValue(MxstarParser.GetValueContext ctx) {
         IR ir = new IR();
-        VariableType variableType = symbolMap.variableMap.get(ctx.variableName().getText());
+        VariableType variableType = null;
+        if(ctx.variableName().getText().equals("this")){
+            variableType=currentThis.type;
+        }else{
+            variableType=symbolMap.variableMap.get(ctx.variableName().getText());
+        }
+
 
         List<MxstarParser.ExpressionContext> tmp=ctx.expression();
 
@@ -2100,6 +2100,10 @@ class MVisitor extends MxstarBaseVisitor<IR>{
     @Override public IR visitVariableDefinitionWithoutAssignment(MxstarParser.VariableDefinitionWithoutAssignmentContext ctx) {
         symbolMap.putSymbol(ctx.variableName().getText(),VariableType.toVariableType(ctx.variableType()));
         IR ir=new IR();
+        if(VariableType.toVariableType(ctx.variableType()).equals(VariableType.VOID)){
+            System.err.println("Type can not be void");
+            ir.push(Quad.quadError("Type can not be void"));
+        }
         if(!symbolMap.typeMap.contains(VariableType.toVariableType(ctx.variableType()).name)){
             System.err.println("Type not found 5");
             ir.push(Quad.quadError("Type not found 5"));
