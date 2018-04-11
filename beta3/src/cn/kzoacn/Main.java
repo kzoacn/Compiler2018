@@ -266,6 +266,21 @@ class IR{
             cur=cur.next;
         }
     }
+    boolean isError(){
+
+        Quad cur=head;
+
+        while(cur!=null){
+            if(cur.dest!=null&&cur.dest.type.equals(Variable.error))
+                return true;
+            if(cur.var1!=null&&cur.var1.type.equals(Variable.error))
+                return true;
+            if(cur.var2!=null&&cur.var2.type.equals(Variable.error))
+                return true;
+            cur=cur.next;
+        }
+        return false;
+    }
 
 
     void modify_context(HashMap<String,VariableType>globalVariableMap){
@@ -654,7 +669,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
 
         for(ParseTree child : ctx.children){
             if(child.getClass().equals(MxstarParser.ClassDefinitionContext.class)){
-                System.out.println("Class");
+                //System.out.println("Class");
                 classIR.concat(visit(child));
             }
         }
@@ -665,7 +680,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
 
         for(ParseTree child : ctx.children){
             if(child.getClass().equals(MxstarParser.GlobalVariableDefinitionContext.class)){
-                System.out.println("Variable");
+                //System.out.println("Variable");
                 Variable.isGlobal=true;
                 symbolMap.global=true;
                 globalVariableIR.concat(visit(child));
@@ -704,7 +719,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
                 String name = childContext.functionName().getText();
                 if(name.equals("main"))
                     continue;
-                System.out.println("Function");
+               // System.out.println("Function");
                 symbolMap.nextScope();
                 functionIR.concat(visit(child));
                 symbolMap.prevScope();
@@ -720,7 +735,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
                 String name = childContext.functionName().getText();
                 if(!name.equals("main"))
                     continue;
-                System.out.println("Function");
+                //System.out.println("Function");
                 symbolMap.nextScope();
                 ir.concat(visit(child));
                 symbolMap.prevScope();
