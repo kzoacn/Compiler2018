@@ -68,6 +68,16 @@ public interface MxstarListener extends ParseTreeListener {
 	 */
 	void exitMemberDefinition(MxstarParser.MemberDefinitionContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link MxstarParser#bracket}.
+	 * @param ctx the parse tree
+	 */
+	void enterBracket(MxstarParser.BracketContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link MxstarParser#bracket}.
+	 * @param ctx the parse tree
+	 */
+	void exitBracket(MxstarParser.BracketContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code variableDefinitionWithoutAssignment}
 	 * labeled alternative in {@link MxstarParser#variableDefinition}.
 	 * @param ctx the parse tree
@@ -431,6 +441,18 @@ public interface MxstarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitNewVariableWithoutExp(MxstarParser.NewVariableWithoutExpContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code prefixLvalueOperator}
+	 * labeled alternative in {@link MxstarParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterPrefixLvalueOperator(MxstarParser.PrefixLvalueOperatorContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code prefixLvalueOperator}
+	 * labeled alternative in {@link MxstarParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitPrefixLvalueOperator(MxstarParser.PrefixLvalueOperatorContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code newVariable}
 	 * labeled alternative in {@link MxstarParser#expression}.

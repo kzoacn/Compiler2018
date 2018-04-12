@@ -336,9 +336,9 @@ main:
 	sub    rsp, 136
 	call global_init
 	mov [rsp+8*1] , rax
-	mov qword [rsp+8*2] ,t4643
-	mov qword [rsp+8*3] ,t4644
-	mov qword [rsp+8*4] ,t4645
+	mov qword [rsp+8*2] ,t2035
+	mov qword [rsp+8*3] ,t2036
+	mov qword [rsp+8*4] ,t2037
 	mov r8, [rsp+8*2]
 	mov qword [gbl+8*5] ,r8
 	mov r8, [gbl+8*5]
@@ -392,13 +392,13 @@ formatln:
 format:
 	db  "%s",  0
 	
-t4645:
+t2037:
 	 db 1,";" ,0
 
-t4644:
-	 db 1,"",92,"" ,0
-
-t4643:
+t2035:
 	 db 1,"",34,"" ,0
+
+t2036:
+	 db 1,"",92,"" ,0
 
 

@@ -333,7 +333,7 @@ mAd_006:  mov     rax, qword [rbp-8H]
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 200
+	sub    rsp, 224
 	call global_init
 	mov [rsp+8*1] , rax
 	mov qword [rsp+8*2] ,5
@@ -389,12 +389,21 @@ L_9:
 	call printf
 	
 L_11:
-	mov r8, [rsp+8*5]
+	mov     rdi, 0
+	call    mallocArray
+	mov     qword [rsp+8*16], rax
+	mov r8, [rsp+8*16]
+	mov qword [rsp+8*17] ,r8
+	mov     rsi, [rsp+8*16]
+	mov     rdi, [rsp+8*5]
+	call    multiAddress
+	mov [rsp+8*18], rax
+	mov r8, [rsp+8*18]
 	add r8, 1
-	mov qword [rsp+8*5],r8 
-	mov r8, [rsp+8*5]
+	mov qword [rsp+8*18],r8 
+	mov r8, [rsp+8*18]
 	sub r8, 1
-	mov qword [rsp+8*16],r8 
+	mov qword [rsp+8*19],r8 
 	jmp L_9
 	
 L_10:
@@ -406,15 +415,15 @@ L_10:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 200
-	mov rax,[rsp+8*17]
+	sub    rsp, 224
+	mov rax,[rsp+8*20]
 	leave
 	ret
 	
 QED:
 	
 	 section   .bss
-gbl:         resb   2184
+gbl:         resb   2208
 
 	 section   .data
 

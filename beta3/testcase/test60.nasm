@@ -343,7 +343,7 @@ main:
 	mov qword [rsp+8*3] ,r8
 	mov qword [rsp+8*4] ,0
 	
-L_408:
+L_79:
 	mov r8, [rsp+8*4]
 	mov r9, 5
 	cmp r8, r9
@@ -351,7 +351,7 @@ L_408:
 	setl [rsp+8*5]
 	mov r8, [rsp+8*5]
 	cmp r8, 0
-	je L_409
+	je L_80
 	mov     rdi, 3
 	call    mallocArray
 	mov     qword [rsp+8*6], rax
@@ -366,7 +366,7 @@ L_408:
 	mov qword [r9], r8
 	mov qword [rsp+8*9] ,0
 	
-L_411:
+L_82:
 	mov r8, [rsp+8*9]
 	mov r9, 3
 	cmp r8, r9
@@ -374,7 +374,7 @@ L_411:
 	setl [rsp+8*10]
 	mov r8, [rsp+8*10]
 	cmp r8, 0
-	je L_412
+	je L_83
 	mov     rdi, 2
 	call    mallocArray
 	mov     qword [rsp+8*11], rax
@@ -506,27 +506,27 @@ L_411:
 	xor rax, rax
 	call printf
 	
-L_413:
+L_84:
 	mov r8, [rsp+8*9]
 	add r8, 1
 	mov qword [rsp+8*9],r8 
 	mov r8, [rsp+8*9]
 	sub r8, 1
 	mov qword [rsp+8*29],r8 
-	jmp L_411
+	jmp L_82
 	
-L_412:
+L_83:
 	
-L_410:
+L_81:
 	mov r8, [rsp+8*4]
 	add r8, 1
 	mov qword [rsp+8*4],r8 
 	mov r8, [rsp+8*4]
 	sub r8, 1
 	mov qword [rsp+8*30],r8 
-	jmp L_408
+	jmp L_79
 	
-L_409:
+L_80:
 	mov rax,0
 	leave
 	ret

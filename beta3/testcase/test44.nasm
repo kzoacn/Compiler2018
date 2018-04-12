@@ -357,7 +357,7 @@ main:
 	mov     rdi, [rsp+8*3]
 	call    multiAddress
 	mov [rsp+8*6], rax
-	mov r8, t3017
+	mov r8, t406
 	mov r9, [rsp+8*6]
 	mov qword [r9], r8
 	mov     rdi, 1
@@ -400,7 +400,7 @@ main:
 	mov     rdi, [rsp+8*11]
 	call    multiAddress
 	mov [rsp+8*14], rax
-	mov r8, t3039
+	mov r8, t428
 	mov r9, [rsp+8*14]
 	mov qword [r9], r8
 	mov     rdi, 1
@@ -441,7 +441,7 @@ main:
 	mov r8, [rsp+8*20]
 	mov r8, [r8]
 	mov [rsp+8*20], r8
-	mov     rsi, t3059
+	mov     rsi, t448
 	mov     rdi, [rsp+8*20]
 	call    concat
 	mov [rsp+8*21], rax
@@ -563,13 +563,13 @@ formatln:
 format:
 	db  "%s",  0
 	
-t3017:
+t448:
+	 db 11," xiang yao " ,0
+
+t406:
 	 db 6,"kzoacn" ,0
 
-t3039:
+t428:
 	 db 10,"xiaojiejie" ,0
-
-t3059:
-	 db 11," xiang yao " ,0
 
 

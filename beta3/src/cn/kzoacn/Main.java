@@ -75,7 +75,7 @@ class VariableType{
     public static VariableType toVariableType(MxstarParser.VariableTypeContext ctx){
         VariableType variableType = new VariableType();
         variableType.name=ctx.variableBasicType().getText();
-        variableType.level=ctx.BRACKET().size();
+        variableType.level=ctx.bracket().size();
         variableType.isConst=false;
         return variableType;
     }
@@ -444,7 +444,7 @@ class SymbolMap{
         scopeIndex.pop();
     }
     public void putSymbol(String name,VariableType variableType){
-        if(usedName.contains(name) || typeMap.contains(name)) {
+        if(usedName.contains(name) /*|| typeMap.contains(name)*/) {
             System.err.println("Variable name was used by function or class.");
             error=true;
         }
@@ -754,7 +754,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
             if(child.getClass().equals(MxstarParser.FunctionDefinitionContext.class)){
                 MxstarParser.FunctionDefinitionContext childContext =((MxstarParser.FunctionDefinitionContext)(Object)child);
                 String name=childContext.functionName().getText();
-               // symbolMap.nextScope();
+                // symbolMap.nextScope();
                 symbolMap.currentFunction=name;
                 VariableType returnType=VariableType.toVariableType(childContext.variableType());
                 //if(returnType.name.equals("void"))
@@ -777,7 +777,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
                         symbolMap.putSymbol(variableName, variableType);
                     }
                 }*/
-               // symbolMap.prevScope();
+                // symbolMap.prevScope();
             }
         }
 
@@ -846,15 +846,73 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         IR ir=new IR();
         currentClass=ctx.className().getText();
         currentClassType = new VariableType(currentClass,0,false);
+        symbolMap.nextScope();
         ir.concat(visit(ctx.classBody()));
+        symbolMap.prevScope();
         currentClass="";
         return ir;
     }
     @Override public IR visitClassBody(MxstarParser.ClassBodyContext ctx) {
         IR ir = new IR();
-        for(int i=0;i<ctx.getChildCount();i++){
-            ir.concat(visit(ctx.getChild(i)));
+
+        IR member=new IR();
+        IR method=new IR();
+        for(ParseTree child : ctx.children) {
+            if (child.getClass().equals(MxstarParser.MemberDefinitionContext.class)) {
+                visit(child);
+            }
         }
+        for(ParseTree child : ctx.children) {
+            if (child.getClass().equals(MxstarParser.MethodDefinitionContext.class)) {
+                MxstarParser.MethodDefinitionContext context=((MxstarParser.MethodDefinitionContext)child);
+                String name=currentClass+"_"+context.functionName().getText();
+                symbolMap.currentFunction=name;
+                VariableType returnType=VariableType.INT;
+                if(context.variableType()!=null)
+                    returnType=VariableType.toVariableType(context.variableType());
+                else{//is construct function
+                    if(!context.functionName().getText().equals(currentClass)){
+                        System.err.println("construct function name incorrect");
+                        ir.push(Quad.quadError("construct function name incorrect"));
+                    }
+                }
+                ArrayList<VariableType>parameterList = new ArrayList<VariableType>();
+
+                if(!symbolMap.typeMap.contains(returnType.name)){
+                    System.err.println("Type not found 1");
+                    ir.push(Quad.quadError("Type not found 1"));
+                }
+                Variable methodThis=nextThis(currentClassType);
+                currentThis=methodThis;
+                if(context.parameterList()!=null) {
+                    for (int i = 0; i < context.parameterList().parameter().size(); i++) {
+                        String variableName = context.parameterList().parameter(i).variableName().getText();
+                        VariableType variableType = VariableType.toVariableType(context.parameterList().parameter(i).variableType());
+                        //symbolMap.putSymbol(variableName, variableType);
+
+                        if(!symbolMap.typeMap.contains(variableType.name)){
+                            System.err.println("Type not found 2");
+                            ir.push(Quad.quadError("Type not found 2"));
+                        }
+                        parameterList.add(variableType);
+
+                    }
+                }
+                Function function=new Function(name,returnType,parameterList);
+                symbolMap.functionMap.put(name,function);
+            }
+        }
+
+
+        for(ParseTree child : ctx.children) {
+            if (child.getClass().equals(MxstarParser.MethodDefinitionContext.class)) {
+                ir.concat(visit(child));
+            }
+        }
+
+        /*for(int i=0;i<ctx.getChildCount();i++){
+            ir.concat(visit(ctx.getChild(i)));
+        }*/
         return ir;
     }
     @Override public IR visitMemberDefinition(MxstarParser.MemberDefinitionContext ctx) {
@@ -905,7 +963,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
             }
         }
         Function function=new Function(name,returnType,parameterList);
-        symbolMap.functionMap.put(name,function);
+        //symbolMap.functionMap.put(name,function);
 
 
         IR stmt=visit(ctx.block());
@@ -1805,7 +1863,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
     @Override public IR visitIndex(MxstarParser.IndexContext ctx) { return visit(ctx.expression()); }
     @Override public IR visitNewArray(MxstarParser.NewArrayContext ctx) {
         IR ir = new IR();
-        int level = ctx.index().size() + ctx.BRACKET().size();
+        int level = ctx.index().size() + ctx.bracket().size();
         Variable adr = nextVariable(new VariableType(ctx.type.getText(),level,false));
         ArrayList<IR>parameterList=new ArrayList<IR>();
         for(int i=0;i<ctx.index().size();i++){
@@ -1848,20 +1906,6 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         Variable last = ir.last.dest;
         Variable temp = nextVariable(symbolMap.operate(ctx.op.getText(),last.type));
         switch (ctx.op.getText()){
-            case "++":{
-                quad = new Quad(OpCode.add,last,nextConst(1,VariableType.CONST_INT),last);
-                ir.push(quad);
-                quad = new Quad(OpCode.move,last,Variable.empty,temp);
-                ir.push(quad);
-                break;
-            }
-            case "--":{
-                quad = new Quad(OpCode.subtract,last,nextConst(1,VariableType.CONST_INT),last);
-                ir.push(quad);
-                quad = new Quad(OpCode.move,last,Variable.empty,temp);
-                ir.push(quad);
-                break;
-            }
             case "-":{
                 quad = new Quad(OpCode.negate,last,Variable.empty,temp);
                 ir.push(quad);
@@ -1880,11 +1924,42 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         }
         return ir;
     }
+
+
+    @Override public IR visitPrefixLvalueOperator(MxstarParser.PrefixLvalueOperatorContext ctx) {
+        IR ir = visit(ctx.expression());
+        Quad quad;
+        Variable last = ir.last.dest;
+        Variable temp = nextVariable(symbolMap.operate(ctx.op.getText(),last.type));
+        switch (ctx.op.getText()){
+            case "++":{
+                quad = new Quad(OpCode.add,last,nextConst(1,VariableType.CONST_INT),last);
+                ir.push(quad);
+                quad = new Quad(OpCode.move,last,Variable.empty,temp);
+                ir.push(quad);
+                break;
+            }
+            case "--":{
+                quad = new Quad(OpCode.subtract,last,nextConst(1,VariableType.CONST_INT),last);
+                ir.push(quad);
+                quad = new Quad(OpCode.move,last,Variable.empty,temp);
+                ir.push(quad);
+                break;
+            }
+        }
+        return ir;
+    }
+
     @Override public IR visitSuffixOperator(MxstarParser.SuffixOperatorContext ctx) {
         IR ir = visit(ctx.expression());
         Variable last = ir.last.dest;
         Quad quad;
         Variable temp = nextVariable(symbolMap.operate(ctx.op.getText(),last.type));
+        String name=ctx.expression().getText();
+        if(name!=null&&name.equals("a++")){
+            System.err.println("error");
+            ir.push(Quad.quadError(""));
+        }
         switch (ctx.op.getText()){
             case "++":{
                 quad = new Quad(OpCode.add,last,nextConst(1,VariableType.CONST_INT),last);
@@ -2138,6 +2213,11 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         if(VariableType.toVariableType(ctx.variableType()).equals(VariableType.VOID)){
             System.err.println("Type can not be void");
             ir.push(Quad.quadError("Type can not be void"));
+        }else{
+            if(symbolMap.getVariable(ctx.variableType().getText())!=null){
+                System.err.println("TAT");
+                ir.push(Quad.quadError("TAT"));
+            }
         }
         if(!symbolMap.typeMap.contains(VariableType.toVariableType(ctx.variableType()).name)){
             System.err.println("Type not found 5");
@@ -2160,6 +2240,11 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         if(!symbolMap.typeMap.contains(variableType.name)){
             System.err.println("Type not found 6");
             ir.push(Quad.quadError("Type not found 6"));
+        }else{
+            if(symbolMap.getVariable(variableType.name)!=null){
+                System.err.println("TAT");
+                ir.push(Quad.quadError("TAT"));
+            }
         }
         Variable variable = new Variable(symbolMap.renameMap.get(variableName),variableType);
         if(!variable.type.match(exp.last.dest.type))

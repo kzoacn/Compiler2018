@@ -29,6 +29,7 @@ public class Semantic {
             StringBuilder ctx = new StringBuilder();
             while (fin.hasNext()) {
                 ctx.append(fin.nextLine());
+                //System.err.println(fin.nextLine());
                 ctx.append("\n");
             }
 

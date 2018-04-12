@@ -347,8 +347,8 @@ main:
 	mov qword [rsp+8*4],r8 
 	mov r8, [rsp+8*4]
 	cmp r8, 0
-	je L_338
-	mov qword [gbl+8*5] ,t2811
+	je L_9
+	mov qword [gbl+8*5] ,t200
 	mov r8, [gbl+8*5]
 	mov qword [rsp+8*6] ,r8
 	mov rdi, formatln
@@ -356,10 +356,10 @@ main:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	jmp L_339
+	jmp L_10
 	
-L_338:
-	mov qword [gbl+8*5] ,t2815
+L_9:
+	mov qword [gbl+8*5] ,t204
 	mov r8, [gbl+8*5]
 	mov qword [rsp+8*7] ,r8
 	mov rdi, formatln
@@ -368,7 +368,7 @@ L_338:
 	xor rax, rax
 	call printf
 	
-L_339:
+L_10:
 	mov r8, [rsp+8*2]
 	mov qword [rsp+8*8], 0
 	cmp r8, 0
@@ -383,8 +383,8 @@ L_339:
 	mov qword [rsp+8*10],r8 
 	mov r8, [rsp+8*10]
 	cmp r8, 0
-	je L_340
-	mov qword [gbl+8*5] ,t2824
+	je L_11
+	mov qword [gbl+8*5] ,t213
 	mov r8, [gbl+8*5]
 	mov qword [rsp+8*11] ,r8
 	mov rdi, formatln
@@ -392,10 +392,10 @@ L_339:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	jmp L_341
+	jmp L_12
 	
-L_340:
-	mov qword [gbl+8*5] ,t2828
+L_11:
+	mov qword [gbl+8*5] ,t217
 	mov r8, [gbl+8*5]
 	mov qword [rsp+8*12] ,r8
 	mov rdi, formatln
@@ -404,7 +404,7 @@ L_340:
 	xor rax, rax
 	call printf
 	
-L_341:
+L_12:
 	mov qword [rsp+8*2] ,0
 	mov r8, 1
 	mov r9, 0
@@ -424,8 +424,8 @@ L_341:
 	mov qword [rsp+8*16],r8 
 	mov r8, [rsp+8*16]
 	cmp r8, 0
-	je L_342
-	mov qword [gbl+8*5] ,t2841
+	je L_13
+	mov qword [gbl+8*5] ,t230
 	mov r8, [gbl+8*5]
 	mov qword [rsp+8*17] ,r8
 	mov rdi, formatln
@@ -433,10 +433,10 @@ L_341:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	jmp L_343
+	jmp L_14
 	
-L_342:
-	mov qword [gbl+8*5] ,t2845
+L_13:
+	mov qword [gbl+8*5] ,t234
 	mov r8, [gbl+8*5]
 	mov qword [rsp+8*18] ,r8
 	mov rdi, formatln
@@ -445,7 +445,7 @@ L_342:
 	xor rax, rax
 	call printf
 	
-L_343:
+L_14:
 	mov rax,0
 	leave
 	ret
@@ -472,22 +472,22 @@ formatln:
 format:
 	db  "%s",  0
 	
-t2811:
-	 db 5,"true1" ,0
-
-t2845:
-	 db 6,"false3" ,0
-
-t2815:
-	 db 6,"false1" ,0
-
-t2824:
-	 db 5,"true2" ,0
-
-t2828:
+t217:
 	 db 6,"false2" ,0
 
-t2841:
+t213:
+	 db 5,"true2" ,0
+
+t204:
+	 db 6,"false1" ,0
+
+t234:
+	 db 6,"false3" ,0
+
+t200:
+	 db 5,"true1" ,0
+
+t230:
 	 db 5,"true3" ,0
 
 

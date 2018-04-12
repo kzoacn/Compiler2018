@@ -88,6 +88,18 @@ public class MxstarBaseListener implements MxstarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterBracket(MxstarParser.BracketContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitBracket(MxstarParser.BracketContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterVariableDefinitionWithoutAssignment(MxstarParser.VariableDefinitionWithoutAssignmentContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -479,6 +491,18 @@ public class MxstarBaseListener implements MxstarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitNewVariableWithoutExp(MxstarParser.NewVariableWithoutExpContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterPrefixLvalueOperator(MxstarParser.PrefixLvalueOperatorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPrefixLvalueOperator(MxstarParser.PrefixLvalueOperatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

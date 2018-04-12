@@ -47,6 +47,12 @@ public interface MxstarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitMemberDefinition(MxstarParser.MemberDefinitionContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link MxstarParser#bracket}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBracket(MxstarParser.BracketContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code variableDefinitionWithoutAssignment}
 	 * labeled alternative in {@link MxstarParser#variableDefinition}.
 	 * @param ctx the parse tree
@@ -261,6 +267,13 @@ public interface MxstarVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitNewVariableWithoutExp(MxstarParser.NewVariableWithoutExpContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code prefixLvalueOperator}
+	 * labeled alternative in {@link MxstarParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPrefixLvalueOperator(MxstarParser.PrefixLvalueOperatorContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code newVariable}
 	 * labeled alternative in {@link MxstarParser#expression}.

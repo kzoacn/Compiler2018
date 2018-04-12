@@ -343,7 +343,7 @@ main:
 	mov     rdi, [rsp+8*4]
 	call    address
 	mov [rsp+8*5], rax
-	mov r8, t4802
+	mov r8, t2194
 	mov r9, [rsp+8*5]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -352,7 +352,7 @@ main:
 	mov     rdi, [rsp+8*6]
 	call    address
 	mov [rsp+8*7], rax
-	mov r8, t4806
+	mov r8, t2198
 	mov r9, [rsp+8*7]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -361,7 +361,7 @@ main:
 	mov     rdi, [rsp+8*8]
 	call    address
 	mov [rsp+8*9], rax
-	mov r8, t4810
+	mov r8, t2202
 	mov r9, [rsp+8*9]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -370,7 +370,7 @@ main:
 	mov     rdi, [rsp+8*10]
 	call    address
 	mov [rsp+8*11], rax
-	mov r8, t4814
+	mov r8, t2206
 	mov r9, [rsp+8*11]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -379,7 +379,7 @@ main:
 	mov     rdi, [rsp+8*12]
 	call    address
 	mov [rsp+8*13], rax
-	mov r8, t4818
+	mov r8, t2210
 	mov r9, [rsp+8*13]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -388,7 +388,7 @@ main:
 	mov     rdi, [rsp+8*14]
 	call    address
 	mov [rsp+8*15], rax
-	mov r8, t4822
+	mov r8, t2214
 	mov r9, [rsp+8*15]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -397,7 +397,7 @@ main:
 	mov     rdi, [rsp+8*16]
 	call    address
 	mov [rsp+8*17], rax
-	mov r8, t4826
+	mov r8, t2218
 	mov r9, [rsp+8*17]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -406,7 +406,7 @@ main:
 	mov     rdi, [rsp+8*18]
 	call    address
 	mov [rsp+8*19], rax
-	mov r8, t4830
+	mov r8, t2222
 	mov r9, [rsp+8*19]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -415,7 +415,7 @@ main:
 	mov     rdi, [rsp+8*20]
 	call    address
 	mov [rsp+8*21], rax
-	mov r8, t4834
+	mov r8, t2226
 	mov r9, [rsp+8*21]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -424,7 +424,7 @@ main:
 	mov     rdi, [rsp+8*22]
 	call    address
 	mov [rsp+8*23], rax
-	mov r8, t4838
+	mov r8, t2230
 	mov r9, [rsp+8*23]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -433,7 +433,7 @@ main:
 	mov     rdi, [rsp+8*24]
 	call    address
 	mov [rsp+8*25], rax
-	mov r8, t4842
+	mov r8, t2234
 	mov r9, [rsp+8*25]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -442,7 +442,7 @@ main:
 	mov     rdi, [rsp+8*26]
 	call    address
 	mov [rsp+8*27], rax
-	mov r8, t4846
+	mov r8, t2238
 	mov r9, [rsp+8*27]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -451,7 +451,7 @@ main:
 	mov     rdi, [rsp+8*28]
 	call    address
 	mov [rsp+8*29], rax
-	mov r8, t4850
+	mov r8, t2242
 	mov r9, [rsp+8*29]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -460,7 +460,7 @@ main:
 	mov     rdi, [rsp+8*30]
 	call    address
 	mov [rsp+8*31], rax
-	mov r8, t4854
+	mov r8, t2246
 	mov r9, [rsp+8*31]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -469,7 +469,7 @@ main:
 	mov     rdi, [rsp+8*32]
 	call    address
 	mov [rsp+8*33], rax
-	mov r8, t4858
+	mov r8, t2250
 	mov r9, [rsp+8*33]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -478,7 +478,7 @@ main:
 	mov     rdi, [rsp+8*34]
 	call    address
 	mov [rsp+8*35], rax
-	mov r8, t4862
+	mov r8, t2254
 	mov r9, [rsp+8*35]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -487,7 +487,7 @@ main:
 	mov     rdi, [rsp+8*36]
 	call    address
 	mov [rsp+8*37], rax
-	mov r8, t4866
+	mov r8, t2258
 	mov r9, [rsp+8*37]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -496,7 +496,7 @@ main:
 	mov     rdi, [rsp+8*38]
 	call    address
 	mov [rsp+8*39], rax
-	mov r8, t4870
+	mov r8, t2262
 	mov r9, [rsp+8*39]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -505,7 +505,7 @@ main:
 	mov     rdi, [rsp+8*40]
 	call    address
 	mov [rsp+8*41], rax
-	mov r8, t4874
+	mov r8, t2266
 	mov r9, [rsp+8*41]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -514,7 +514,7 @@ main:
 	mov     rdi, [rsp+8*42]
 	call    address
 	mov [rsp+8*43], rax
-	mov r8, t4878
+	mov r8, t2270
 	mov r9, [rsp+8*43]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -523,7 +523,7 @@ main:
 	mov     rdi, [rsp+8*44]
 	call    address
 	mov [rsp+8*45], rax
-	mov r8, t4882
+	mov r8, t2274
 	mov r9, [rsp+8*45]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -532,7 +532,7 @@ main:
 	mov     rdi, [rsp+8*46]
 	call    address
 	mov [rsp+8*47], rax
-	mov r8, t4886
+	mov r8, t2278
 	mov r9, [rsp+8*47]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -541,7 +541,7 @@ main:
 	mov     rdi, [rsp+8*48]
 	call    address
 	mov [rsp+8*49], rax
-	mov r8, t4890
+	mov r8, t2282
 	mov r9, [rsp+8*49]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -550,7 +550,7 @@ main:
 	mov     rdi, [rsp+8*50]
 	call    address
 	mov [rsp+8*51], rax
-	mov r8, t4894
+	mov r8, t2286
 	mov r9, [rsp+8*51]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -559,7 +559,7 @@ main:
 	mov     rdi, [rsp+8*52]
 	call    address
 	mov [rsp+8*53], rax
-	mov r8, t4898
+	mov r8, t2290
 	mov r9, [rsp+8*53]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -568,7 +568,7 @@ main:
 	mov     rdi, [rsp+8*54]
 	call    address
 	mov [rsp+8*55], rax
-	mov r8, t4902
+	mov r8, t2294
 	mov r9, [rsp+8*55]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -577,7 +577,7 @@ main:
 	mov     rdi, [rsp+8*56]
 	call    address
 	mov [rsp+8*57], rax
-	mov r8, t4906
+	mov r8, t2298
 	mov r9, [rsp+8*57]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -586,7 +586,7 @@ main:
 	mov     rdi, [rsp+8*58]
 	call    address
 	mov [rsp+8*59], rax
-	mov r8, t4910
+	mov r8, t2302
 	mov r9, [rsp+8*59]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -595,7 +595,7 @@ main:
 	mov     rdi, [rsp+8*60]
 	call    address
 	mov [rsp+8*61], rax
-	mov r8, t4914
+	mov r8, t2306
 	mov r9, [rsp+8*61]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -604,7 +604,7 @@ main:
 	mov     rdi, [rsp+8*62]
 	call    address
 	mov [rsp+8*63], rax
-	mov r8, t4918
+	mov r8, t2310
 	mov r9, [rsp+8*63]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -613,7 +613,7 @@ main:
 	mov     rdi, [rsp+8*64]
 	call    address
 	mov [rsp+8*65], rax
-	mov r8, t4922
+	mov r8, t2314
 	mov r9, [rsp+8*65]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -622,7 +622,7 @@ main:
 	mov     rdi, [rsp+8*66]
 	call    address
 	mov [rsp+8*67], rax
-	mov r8, t4926
+	mov r8, t2318
 	mov r9, [rsp+8*67]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -631,7 +631,7 @@ main:
 	mov     rdi, [rsp+8*68]
 	call    address
 	mov [rsp+8*69], rax
-	mov r8, t4930
+	mov r8, t2322
 	mov r9, [rsp+8*69]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -640,7 +640,7 @@ main:
 	mov     rdi, [rsp+8*70]
 	call    address
 	mov [rsp+8*71], rax
-	mov r8, t4934
+	mov r8, t2326
 	mov r9, [rsp+8*71]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -649,7 +649,7 @@ main:
 	mov     rdi, [rsp+8*72]
 	call    address
 	mov [rsp+8*73], rax
-	mov r8, t4938
+	mov r8, t2330
 	mov r9, [rsp+8*73]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -658,7 +658,7 @@ main:
 	mov     rdi, [rsp+8*74]
 	call    address
 	mov [rsp+8*75], rax
-	mov r8, t4942
+	mov r8, t2334
 	mov r9, [rsp+8*75]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -667,7 +667,7 @@ main:
 	mov     rdi, [rsp+8*76]
 	call    address
 	mov [rsp+8*77], rax
-	mov r8, t4946
+	mov r8, t2338
 	mov r9, [rsp+8*77]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -676,7 +676,7 @@ main:
 	mov     rdi, [rsp+8*78]
 	call    address
 	mov [rsp+8*79], rax
-	mov r8, t4950
+	mov r8, t2342
 	mov r9, [rsp+8*79]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -685,7 +685,7 @@ main:
 	mov     rdi, [rsp+8*80]
 	call    address
 	mov [rsp+8*81], rax
-	mov r8, t4954
+	mov r8, t2346
 	mov r9, [rsp+8*81]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -694,7 +694,7 @@ main:
 	mov     rdi, [rsp+8*82]
 	call    address
 	mov [rsp+8*83], rax
-	mov r8, t4958
+	mov r8, t2350
 	mov r9, [rsp+8*83]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -703,7 +703,7 @@ main:
 	mov     rdi, [rsp+8*84]
 	call    address
 	mov [rsp+8*85], rax
-	mov r8, t4962
+	mov r8, t2354
 	mov r9, [rsp+8*85]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -712,7 +712,7 @@ main:
 	mov     rdi, [rsp+8*86]
 	call    address
 	mov [rsp+8*87], rax
-	mov r8, t4966
+	mov r8, t2358
 	mov r9, [rsp+8*87]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -721,7 +721,7 @@ main:
 	mov     rdi, [rsp+8*88]
 	call    address
 	mov [rsp+8*89], rax
-	mov r8, t4970
+	mov r8, t2362
 	mov r9, [rsp+8*89]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -730,7 +730,7 @@ main:
 	mov     rdi, [rsp+8*90]
 	call    address
 	mov [rsp+8*91], rax
-	mov r8, t4974
+	mov r8, t2366
 	mov r9, [rsp+8*91]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -739,7 +739,7 @@ main:
 	mov     rdi, [rsp+8*92]
 	call    address
 	mov [rsp+8*93], rax
-	mov r8, t4978
+	mov r8, t2370
 	mov r9, [rsp+8*93]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -748,7 +748,7 @@ main:
 	mov     rdi, [rsp+8*94]
 	call    address
 	mov [rsp+8*95], rax
-	mov r8, t4982
+	mov r8, t2374
 	mov r9, [rsp+8*95]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -757,7 +757,7 @@ main:
 	mov     rdi, [rsp+8*96]
 	call    address
 	mov [rsp+8*97], rax
-	mov r8, t4986
+	mov r8, t2378
 	mov r9, [rsp+8*97]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -766,7 +766,7 @@ main:
 	mov     rdi, [rsp+8*98]
 	call    address
 	mov [rsp+8*99], rax
-	mov r8, t4990
+	mov r8, t2382
 	mov r9, [rsp+8*99]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -775,7 +775,7 @@ main:
 	mov     rdi, [rsp+8*100]
 	call    address
 	mov [rsp+8*101], rax
-	mov r8, t4994
+	mov r8, t2386
 	mov r9, [rsp+8*101]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -784,7 +784,7 @@ main:
 	mov     rdi, [rsp+8*102]
 	call    address
 	mov [rsp+8*103], rax
-	mov r8, t4998
+	mov r8, t2390
 	mov r9, [rsp+8*103]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -793,7 +793,7 @@ main:
 	mov     rdi, [rsp+8*104]
 	call    address
 	mov [rsp+8*105], rax
-	mov r8, t5002
+	mov r8, t2394
 	mov r9, [rsp+8*105]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -802,7 +802,7 @@ main:
 	mov     rdi, [rsp+8*106]
 	call    address
 	mov [rsp+8*107], rax
-	mov r8, t5006
+	mov r8, t2398
 	mov r9, [rsp+8*107]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -811,7 +811,7 @@ main:
 	mov     rdi, [rsp+8*108]
 	call    address
 	mov [rsp+8*109], rax
-	mov r8, t5010
+	mov r8, t2402
 	mov r9, [rsp+8*109]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -820,7 +820,7 @@ main:
 	mov     rdi, [rsp+8*110]
 	call    address
 	mov [rsp+8*111], rax
-	mov r8, t5014
+	mov r8, t2406
 	mov r9, [rsp+8*111]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -829,7 +829,7 @@ main:
 	mov     rdi, [rsp+8*112]
 	call    address
 	mov [rsp+8*113], rax
-	mov r8, t5018
+	mov r8, t2410
 	mov r9, [rsp+8*113]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -838,7 +838,7 @@ main:
 	mov     rdi, [rsp+8*114]
 	call    address
 	mov [rsp+8*115], rax
-	mov r8, t5022
+	mov r8, t2414
 	mov r9, [rsp+8*115]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -847,7 +847,7 @@ main:
 	mov     rdi, [rsp+8*116]
 	call    address
 	mov [rsp+8*117], rax
-	mov r8, t5026
+	mov r8, t2418
 	mov r9, [rsp+8*117]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -856,7 +856,7 @@ main:
 	mov     rdi, [rsp+8*118]
 	call    address
 	mov [rsp+8*119], rax
-	mov r8, t5030
+	mov r8, t2422
 	mov r9, [rsp+8*119]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -865,7 +865,7 @@ main:
 	mov     rdi, [rsp+8*120]
 	call    address
 	mov [rsp+8*121], rax
-	mov r8, t5034
+	mov r8, t2426
 	mov r9, [rsp+8*121]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -874,7 +874,7 @@ main:
 	mov     rdi, [rsp+8*122]
 	call    address
 	mov [rsp+8*123], rax
-	mov r8, t5038
+	mov r8, t2430
 	mov r9, [rsp+8*123]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -883,7 +883,7 @@ main:
 	mov     rdi, [rsp+8*124]
 	call    address
 	mov [rsp+8*125], rax
-	mov r8, t5042
+	mov r8, t2434
 	mov r9, [rsp+8*125]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -892,7 +892,7 @@ main:
 	mov     rdi, [rsp+8*126]
 	call    address
 	mov [rsp+8*127], rax
-	mov r8, t5046
+	mov r8, t2438
 	mov r9, [rsp+8*127]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -901,7 +901,7 @@ main:
 	mov     rdi, [rsp+8*128]
 	call    address
 	mov [rsp+8*129], rax
-	mov r8, t5050
+	mov r8, t2442
 	mov r9, [rsp+8*129]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -910,7 +910,7 @@ main:
 	mov     rdi, [rsp+8*130]
 	call    address
 	mov [rsp+8*131], rax
-	mov r8, t5054
+	mov r8, t2446
 	mov r9, [rsp+8*131]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -919,7 +919,7 @@ main:
 	mov     rdi, [rsp+8*132]
 	call    address
 	mov [rsp+8*133], rax
-	mov r8, t5058
+	mov r8, t2450
 	mov r9, [rsp+8*133]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -928,7 +928,7 @@ main:
 	mov     rdi, [rsp+8*134]
 	call    address
 	mov [rsp+8*135], rax
-	mov r8, t5062
+	mov r8, t2454
 	mov r9, [rsp+8*135]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -937,7 +937,7 @@ main:
 	mov     rdi, [rsp+8*136]
 	call    address
 	mov [rsp+8*137], rax
-	mov r8, t5066
+	mov r8, t2458
 	mov r9, [rsp+8*137]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -946,7 +946,7 @@ main:
 	mov     rdi, [rsp+8*138]
 	call    address
 	mov [rsp+8*139], rax
-	mov r8, t5070
+	mov r8, t2462
 	mov r9, [rsp+8*139]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -955,7 +955,7 @@ main:
 	mov     rdi, [rsp+8*140]
 	call    address
 	mov [rsp+8*141], rax
-	mov r8, t5074
+	mov r8, t2466
 	mov r9, [rsp+8*141]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -964,7 +964,7 @@ main:
 	mov     rdi, [rsp+8*142]
 	call    address
 	mov [rsp+8*143], rax
-	mov r8, t5078
+	mov r8, t2470
 	mov r9, [rsp+8*143]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -973,7 +973,7 @@ main:
 	mov     rdi, [rsp+8*144]
 	call    address
 	mov [rsp+8*145], rax
-	mov r8, t5082
+	mov r8, t2474
 	mov r9, [rsp+8*145]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -982,7 +982,7 @@ main:
 	mov     rdi, [rsp+8*146]
 	call    address
 	mov [rsp+8*147], rax
-	mov r8, t5086
+	mov r8, t2478
 	mov r9, [rsp+8*147]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -991,7 +991,7 @@ main:
 	mov     rdi, [rsp+8*148]
 	call    address
 	mov [rsp+8*149], rax
-	mov r8, t5090
+	mov r8, t2482
 	mov r9, [rsp+8*149]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -1000,7 +1000,7 @@ main:
 	mov     rdi, [rsp+8*150]
 	call    address
 	mov [rsp+8*151], rax
-	mov r8, t5094
+	mov r8, t2486
 	mov r9, [rsp+8*151]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -1009,7 +1009,7 @@ main:
 	mov     rdi, [rsp+8*152]
 	call    address
 	mov [rsp+8*153], rax
-	mov r8, t5098
+	mov r8, t2490
 	mov r9, [rsp+8*153]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -1018,7 +1018,7 @@ main:
 	mov     rdi, [rsp+8*154]
 	call    address
 	mov [rsp+8*155], rax
-	mov r8, t5102
+	mov r8, t2494
 	mov r9, [rsp+8*155]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -1027,7 +1027,7 @@ main:
 	mov     rdi, [rsp+8*156]
 	call    address
 	mov [rsp+8*157], rax
-	mov r8, t5106
+	mov r8, t2498
 	mov r9, [rsp+8*157]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -1036,7 +1036,7 @@ main:
 	mov     rdi, [rsp+8*158]
 	call    address
 	mov [rsp+8*159], rax
-	mov r8, t5110
+	mov r8, t2502
 	mov r9, [rsp+8*159]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -1045,7 +1045,7 @@ main:
 	mov     rdi, [rsp+8*160]
 	call    address
 	mov [rsp+8*161], rax
-	mov r8, t5114
+	mov r8, t2506
 	mov r9, [rsp+8*161]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -1054,7 +1054,7 @@ main:
 	mov     rdi, [rsp+8*162]
 	call    address
 	mov [rsp+8*163], rax
-	mov r8, t5118
+	mov r8, t2510
 	mov r9, [rsp+8*163]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -1063,7 +1063,7 @@ main:
 	mov     rdi, [rsp+8*164]
 	call    address
 	mov [rsp+8*165], rax
-	mov r8, t5122
+	mov r8, t2514
 	mov r9, [rsp+8*165]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -1072,7 +1072,7 @@ main:
 	mov     rdi, [rsp+8*166]
 	call    address
 	mov [rsp+8*167], rax
-	mov r8, t5126
+	mov r8, t2518
 	mov r9, [rsp+8*167]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -1081,7 +1081,7 @@ main:
 	mov     rdi, [rsp+8*168]
 	call    address
 	mov [rsp+8*169], rax
-	mov r8, t5130
+	mov r8, t2522
 	mov r9, [rsp+8*169]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -1090,7 +1090,7 @@ main:
 	mov     rdi, [rsp+8*170]
 	call    address
 	mov [rsp+8*171], rax
-	mov r8, t5134
+	mov r8, t2526
 	mov r9, [rsp+8*171]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -1099,7 +1099,7 @@ main:
 	mov     rdi, [rsp+8*172]
 	call    address
 	mov [rsp+8*173], rax
-	mov r8, t5138
+	mov r8, t2530
 	mov r9, [rsp+8*173]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -1108,7 +1108,7 @@ main:
 	mov     rdi, [rsp+8*174]
 	call    address
 	mov [rsp+8*175], rax
-	mov r8, t5142
+	mov r8, t2534
 	mov r9, [rsp+8*175]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -1117,7 +1117,7 @@ main:
 	mov     rdi, [rsp+8*176]
 	call    address
 	mov [rsp+8*177], rax
-	mov r8, t5146
+	mov r8, t2538
 	mov r9, [rsp+8*177]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -1126,7 +1126,7 @@ main:
 	mov     rdi, [rsp+8*178]
 	call    address
 	mov [rsp+8*179], rax
-	mov r8, t5150
+	mov r8, t2542
 	mov r9, [rsp+8*179]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -1135,7 +1135,7 @@ main:
 	mov     rdi, [rsp+8*180]
 	call    address
 	mov [rsp+8*181], rax
-	mov r8, t5154
+	mov r8, t2546
 	mov r9, [rsp+8*181]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -1144,7 +1144,7 @@ main:
 	mov     rdi, [rsp+8*182]
 	call    address
 	mov [rsp+8*183], rax
-	mov r8, t5158
+	mov r8, t2550
 	mov r9, [rsp+8*183]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -1153,7 +1153,7 @@ main:
 	mov     rdi, [rsp+8*184]
 	call    address
 	mov [rsp+8*185], rax
-	mov r8, t5162
+	mov r8, t2554
 	mov r9, [rsp+8*185]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -1162,7 +1162,7 @@ main:
 	mov     rdi, [rsp+8*186]
 	call    address
 	mov [rsp+8*187], rax
-	mov r8, t5166
+	mov r8, t2558
 	mov r9, [rsp+8*187]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -1171,7 +1171,7 @@ main:
 	mov     rdi, [rsp+8*188]
 	call    address
 	mov [rsp+8*189], rax
-	mov r8, t5170
+	mov r8, t2562
 	mov r9, [rsp+8*189]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1180,7 +1180,7 @@ main:
 	mov     rdi, [rsp+8*191]
 	call    address
 	mov [rsp+8*192], rax
-	mov r8, t5174
+	mov r8, t2566
 	mov r9, [rsp+8*192]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1189,7 +1189,7 @@ main:
 	mov     rdi, [rsp+8*193]
 	call    address
 	mov [rsp+8*194], rax
-	mov r8, t5178
+	mov r8, t2570
 	mov r9, [rsp+8*194]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1198,7 +1198,7 @@ main:
 	mov     rdi, [rsp+8*195]
 	call    address
 	mov [rsp+8*196], rax
-	mov r8, t5182
+	mov r8, t2574
 	mov r9, [rsp+8*196]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1207,7 +1207,7 @@ main:
 	mov     rdi, [rsp+8*197]
 	call    address
 	mov [rsp+8*198], rax
-	mov r8, t5186
+	mov r8, t2578
 	mov r9, [rsp+8*198]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1216,7 +1216,7 @@ main:
 	mov     rdi, [rsp+8*199]
 	call    address
 	mov [rsp+8*200], rax
-	mov r8, t5190
+	mov r8, t2582
 	mov r9, [rsp+8*200]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1225,7 +1225,7 @@ main:
 	mov     rdi, [rsp+8*201]
 	call    address
 	mov [rsp+8*202], rax
-	mov r8, t5194
+	mov r8, t2586
 	mov r9, [rsp+8*202]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1234,7 +1234,7 @@ main:
 	mov     rdi, [rsp+8*203]
 	call    address
 	mov [rsp+8*204], rax
-	mov r8, t5198
+	mov r8, t2590
 	mov r9, [rsp+8*204]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1243,7 +1243,7 @@ main:
 	mov     rdi, [rsp+8*205]
 	call    address
 	mov [rsp+8*206], rax
-	mov r8, t5202
+	mov r8, t2594
 	mov r9, [rsp+8*206]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1252,7 +1252,7 @@ main:
 	mov     rdi, [rsp+8*207]
 	call    address
 	mov [rsp+8*208], rax
-	mov r8, t5206
+	mov r8, t2598
 	mov r9, [rsp+8*208]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1261,7 +1261,7 @@ main:
 	mov     rdi, [rsp+8*209]
 	call    address
 	mov [rsp+8*210], rax
-	mov r8, t5210
+	mov r8, t2602
 	mov r9, [rsp+8*210]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1270,7 +1270,7 @@ main:
 	mov     rdi, [rsp+8*211]
 	call    address
 	mov [rsp+8*212], rax
-	mov r8, t5214
+	mov r8, t2606
 	mov r9, [rsp+8*212]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1279,7 +1279,7 @@ main:
 	mov     rdi, [rsp+8*213]
 	call    address
 	mov [rsp+8*214], rax
-	mov r8, t5218
+	mov r8, t2610
 	mov r9, [rsp+8*214]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1288,7 +1288,7 @@ main:
 	mov     rdi, [rsp+8*215]
 	call    address
 	mov [rsp+8*216], rax
-	mov r8, t5222
+	mov r8, t2614
 	mov r9, [rsp+8*216]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1297,7 +1297,7 @@ main:
 	mov     rdi, [rsp+8*217]
 	call    address
 	mov [rsp+8*218], rax
-	mov r8, t5226
+	mov r8, t2618
 	mov r9, [rsp+8*218]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1306,7 +1306,7 @@ main:
 	mov     rdi, [rsp+8*219]
 	call    address
 	mov [rsp+8*220], rax
-	mov r8, t5230
+	mov r8, t2622
 	mov r9, [rsp+8*220]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1315,7 +1315,7 @@ main:
 	mov     rdi, [rsp+8*221]
 	call    address
 	mov [rsp+8*222], rax
-	mov r8, t5234
+	mov r8, t2626
 	mov r9, [rsp+8*222]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1324,7 +1324,7 @@ main:
 	mov     rdi, [rsp+8*223]
 	call    address
 	mov [rsp+8*224], rax
-	mov r8, t5238
+	mov r8, t2630
 	mov r9, [rsp+8*224]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1333,7 +1333,7 @@ main:
 	mov     rdi, [rsp+8*225]
 	call    address
 	mov [rsp+8*226], rax
-	mov r8, t5242
+	mov r8, t2634
 	mov r9, [rsp+8*226]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1342,7 +1342,7 @@ main:
 	mov     rdi, [rsp+8*227]
 	call    address
 	mov [rsp+8*228], rax
-	mov r8, t5246
+	mov r8, t2638
 	mov r9, [rsp+8*228]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1351,7 +1351,7 @@ main:
 	mov     rdi, [rsp+8*229]
 	call    address
 	mov [rsp+8*230], rax
-	mov r8, t5250
+	mov r8, t2642
 	mov r9, [rsp+8*230]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1360,7 +1360,7 @@ main:
 	mov     rdi, [rsp+8*231]
 	call    address
 	mov [rsp+8*232], rax
-	mov r8, t5254
+	mov r8, t2646
 	mov r9, [rsp+8*232]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1369,7 +1369,7 @@ main:
 	mov     rdi, [rsp+8*233]
 	call    address
 	mov [rsp+8*234], rax
-	mov r8, t5258
+	mov r8, t2650
 	mov r9, [rsp+8*234]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1378,7 +1378,7 @@ main:
 	mov     rdi, [rsp+8*235]
 	call    address
 	mov [rsp+8*236], rax
-	mov r8, t5262
+	mov r8, t2654
 	mov r9, [rsp+8*236]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1387,7 +1387,7 @@ main:
 	mov     rdi, [rsp+8*237]
 	call    address
 	mov [rsp+8*238], rax
-	mov r8, t5266
+	mov r8, t2658
 	mov r9, [rsp+8*238]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1396,7 +1396,7 @@ main:
 	mov     rdi, [rsp+8*239]
 	call    address
 	mov [rsp+8*240], rax
-	mov r8, t5270
+	mov r8, t2662
 	mov r9, [rsp+8*240]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1405,7 +1405,7 @@ main:
 	mov     rdi, [rsp+8*241]
 	call    address
 	mov [rsp+8*242], rax
-	mov r8, t5274
+	mov r8, t2666
 	mov r9, [rsp+8*242]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1414,7 +1414,7 @@ main:
 	mov     rdi, [rsp+8*243]
 	call    address
 	mov [rsp+8*244], rax
-	mov r8, t5278
+	mov r8, t2670
 	mov r9, [rsp+8*244]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1423,7 +1423,7 @@ main:
 	mov     rdi, [rsp+8*245]
 	call    address
 	mov [rsp+8*246], rax
-	mov r8, t5282
+	mov r8, t2674
 	mov r9, [rsp+8*246]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1432,7 +1432,7 @@ main:
 	mov     rdi, [rsp+8*247]
 	call    address
 	mov [rsp+8*248], rax
-	mov r8, t5286
+	mov r8, t2678
 	mov r9, [rsp+8*248]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1441,7 +1441,7 @@ main:
 	mov     rdi, [rsp+8*249]
 	call    address
 	mov [rsp+8*250], rax
-	mov r8, t5290
+	mov r8, t2682
 	mov r9, [rsp+8*250]
 	mov qword [r9], r8
 	mov r8, [gbl+8*190]
@@ -1450,7 +1450,7 @@ main:
 	mov     rdi, [rsp+8*251]
 	call    address
 	mov [rsp+8*252], rax
-	mov r8, t5294
+	mov r8, t2686
 	mov r9, [rsp+8*252]
 	mov qword [r9], r8
 	mov r8, [gbl+8*3]
@@ -7684,7 +7684,7 @@ main:
 	call printf
 	mov qword [rsp+8*2] ,0
 	
-L_444:
+L_115:
 	mov r8, [rsp+8*2]
 	mov r9, 93
 	cmp r8, r9
@@ -7692,7 +7692,7 @@ L_444:
 	setl [rsp+8*2122]
 	mov r8, [rsp+8*2122]
 	cmp r8, 0
-	je L_445
+	je L_116
 	mov r8, [rsp+8*2]
 	mov qword [gbl+8*328] ,r8
 	call c2
@@ -7732,19 +7732,19 @@ L_444:
 	xor rax, rax
 	call printf
 	
-L_446:
+L_117:
 	mov r8, [rsp+8*2]
 	add r8, 1
 	mov qword [rsp+8*2],r8 
 	mov r8, [rsp+8*2]
 	sub r8, 1
 	mov qword [rsp+8*2133],r8 
-	jmp L_444
+	jmp L_115
 	
-L_445:
+L_116:
 	mov qword [rsp+8*2] ,0
 	
-L_447:
+L_118:
 	mov r8, [rsp+8*2]
 	mov r9, 31
 	cmp r8, r9
@@ -7752,7 +7752,7 @@ L_447:
 	setl [rsp+8*2134]
 	mov r8, [rsp+8*2134]
 	cmp r8, 0
-	je L_448
+	je L_119
 	mov r8, [rsp+8*2]
 	mov qword [gbl+8*328] ,r8
 	call s2
@@ -7792,19 +7792,19 @@ L_447:
 	xor rax, rax
 	call printf
 	
-L_449:
+L_120:
 	mov r8, [rsp+8*2]
 	add r8, 1
 	mov qword [rsp+8*2],r8 
 	mov r8, [rsp+8*2]
 	sub r8, 1
 	mov qword [rsp+8*2144],r8 
-	jmp L_447
+	jmp L_118
 	
-L_448:
+L_119:
 	mov qword [rsp+8*2] ,1
 	
-L_450:
+L_121:
 	mov r8, [rsp+8*2]
 	mov r9, 31
 	cmp r8, r9
@@ -7812,7 +7812,7 @@ L_450:
 	setl [rsp+8*2145]
 	mov r8, [rsp+8*2145]
 	cmp r8, 0
-	je L_451
+	je L_122
 	mov r8, [gbl+8*190]
 	mov qword [rsp+8*2146] ,r8
 	mov     rsi, [rsp+8*2]
@@ -7832,16 +7832,16 @@ L_450:
 	xor rax, rax
 	call printf
 	
-L_452:
+L_123:
 	mov r8, [rsp+8*2]
 	add r8, 1
 	mov qword [rsp+8*2],r8 
 	mov r8, [rsp+8*2]
 	sub r8, 1
 	mov qword [rsp+8*2150],r8 
-	jmp L_450
+	jmp L_121
 	
-L_451:
+L_122:
 	mov rax,0
 	leave
 	ret
@@ -7860,12 +7860,12 @@ digt:
 	sete [rsp+8*2152]
 	mov r8, [rsp+8*2152]
 	cmp r8, 0
-	je L_421
-	mov rax,t4719
+	je L_92
+	mov rax,t2111
 	leave
 	ret
 	
-L_421:
+L_92:
 	mov r8, [rsp+8*2151]
 	mov r9, 1
 	cmp r8, r9
@@ -7873,12 +7873,12 @@ L_421:
 	sete [rsp+8*2153]
 	mov r8, [rsp+8*2153]
 	cmp r8, 0
-	je L_423
-	mov rax,t4722
+	je L_94
+	mov rax,t2114
 	leave
 	ret
 	
-L_423:
+L_94:
 	mov r8, [rsp+8*2151]
 	mov r9, 2
 	cmp r8, r9
@@ -7886,12 +7886,12 @@ L_423:
 	sete [rsp+8*2154]
 	mov r8, [rsp+8*2154]
 	cmp r8, 0
-	je L_425
-	mov rax,t4725
+	je L_96
+	mov rax,t2117
 	leave
 	ret
 	
-L_425:
+L_96:
 	mov r8, [rsp+8*2151]
 	mov r9, 3
 	cmp r8, r9
@@ -7899,12 +7899,12 @@ L_425:
 	sete [rsp+8*2155]
 	mov r8, [rsp+8*2155]
 	cmp r8, 0
-	je L_427
-	mov rax,t4728
+	je L_98
+	mov rax,t2120
 	leave
 	ret
 	
-L_427:
+L_98:
 	mov r8, [rsp+8*2151]
 	mov r9, 4
 	cmp r8, r9
@@ -7912,12 +7912,12 @@ L_427:
 	sete [rsp+8*2156]
 	mov r8, [rsp+8*2156]
 	cmp r8, 0
-	je L_429
-	mov rax,t4731
+	je L_100
+	mov rax,t2123
 	leave
 	ret
 	
-L_429:
+L_100:
 	mov r8, [rsp+8*2151]
 	mov r9, 5
 	cmp r8, r9
@@ -7925,12 +7925,12 @@ L_429:
 	sete [rsp+8*2157]
 	mov r8, [rsp+8*2157]
 	cmp r8, 0
-	je L_431
-	mov rax,t4734
+	je L_102
+	mov rax,t2126
 	leave
 	ret
 	
-L_431:
+L_102:
 	mov r8, [rsp+8*2151]
 	mov r9, 6
 	cmp r8, r9
@@ -7938,12 +7938,12 @@ L_431:
 	sete [rsp+8*2158]
 	mov r8, [rsp+8*2158]
 	cmp r8, 0
-	je L_433
-	mov rax,t4737
+	je L_104
+	mov rax,t2129
 	leave
 	ret
 	
-L_433:
+L_104:
 	mov r8, [rsp+8*2151]
 	mov r9, 7
 	cmp r8, r9
@@ -7951,12 +7951,12 @@ L_433:
 	sete [rsp+8*2159]
 	mov r8, [rsp+8*2159]
 	cmp r8, 0
-	je L_435
-	mov rax,t4740
+	je L_106
+	mov rax,t2132
 	leave
 	ret
 	
-L_435:
+L_106:
 	mov r8, [rsp+8*2151]
 	mov r9, 8
 	cmp r8, r9
@@ -7964,12 +7964,12 @@ L_435:
 	sete [rsp+8*2160]
 	mov r8, [rsp+8*2160]
 	cmp r8, 0
-	je L_437
-	mov rax,t4743
+	je L_108
+	mov rax,t2135
 	leave
 	ret
 	
-L_437:
+L_108:
 	mov r8, [rsp+8*2151]
 	mov r9, 9
 	cmp r8, r9
@@ -7977,12 +7977,12 @@ L_437:
 	sete [rsp+8*2161]
 	mov r8, [rsp+8*2161]
 	cmp r8, 0
-	je L_439
-	mov rax,t4746
+	je L_110
+	mov rax,t2138
 	leave
 	ret
 	
-L_439:
+L_110:
 	mov rax,0
 	leave
 	ret
@@ -8000,16 +8000,16 @@ s2:
 	setle [rsp+8*2163]
 	mov r8, [rsp+8*2163]
 	cmp r8, 0
-	je L_441
+	je L_112
 	mov r8, [rsp+8*2162]
 	mov qword [gbl+8*328] ,r8
 	call digt
 	mov [rsp+8*2164] , rax
 	mov     rsi, [rsp+8*2164]
-	mov     rdi, t4756
+	mov     rdi, t2148
 	call    concat
 	mov [rsp+8*2165], rax
-	mov     rsi, t4760
+	mov     rsi, t2152
 	mov     rdi, [rsp+8*2165]
 	call    concat
 	mov [rsp+8*2166], rax
@@ -8017,7 +8017,7 @@ s2:
 	leave
 	ret
 	
-L_441:
+L_112:
 	xor rdx, rdx
 	mov rax, [rsp+8*2162]
 	mov rbx, 10
@@ -8029,7 +8029,7 @@ L_441:
 	call digt
 	mov [rsp+8*2168] , rax
 	mov     rsi, [rsp+8*2168]
-	mov     rdi, t4762
+	mov     rdi, t2154
 	call    concat
 	mov [rsp+8*2169], rax
 	xor rdx, rdx
@@ -8046,7 +8046,7 @@ L_441:
 	mov     rdi, [rsp+8*2169]
 	call    concat
 	mov [rsp+8*2172], rax
-	mov     rsi, t4773
+	mov     rsi, t2165
 	mov     rdi, [rsp+8*2172]
 	call    concat
 	mov [rsp+8*2173], rax
@@ -8070,16 +8070,16 @@ c2:
 	setle [rsp+8*2175]
 	mov r8, [rsp+8*2175]
 	cmp r8, 0
-	je L_443
+	je L_114
 	mov r8, [rsp+8*2174]
 	mov qword [gbl+8*328] ,r8
 	call digt
 	mov [rsp+8*2176] , rax
 	mov     rsi, [rsp+8*2176]
-	mov     rdi, t4778
+	mov     rdi, t2170
 	call    concat
 	mov [rsp+8*2177], rax
-	mov     rsi, t4782
+	mov     rsi, t2174
 	mov     rdi, [rsp+8*2177]
 	call    concat
 	mov [rsp+8*2178], rax
@@ -8087,7 +8087,7 @@ c2:
 	leave
 	ret
 	
-L_443:
+L_114:
 	xor rdx, rdx
 	mov rax, [rsp+8*2174]
 	mov rbx, 10
@@ -8099,7 +8099,7 @@ L_443:
 	call digt
 	mov [rsp+8*2180] , rax
 	mov     rsi, [rsp+8*2180]
-	mov     rdi, t4784
+	mov     rdi, t2176
 	call    concat
 	mov [rsp+8*2181], rax
 	xor rdx, rdx
@@ -8116,7 +8116,7 @@ L_443:
 	mov     rdi, [rsp+8*2181]
 	call    concat
 	mov [rsp+8*2184], rax
-	mov     rsi, t4795
+	mov     rsi, t2187
 	mov     rdi, [rsp+8*2184]
 	call    concat
 	mov [rsp+8*2185], rax
@@ -8141,9 +8141,9 @@ global_init:
 	mov     qword [gbl+8*2187], rax
 	mov r8, [gbl+8*2187]
 	mov qword [gbl+8*3] ,r8
-	mov qword [gbl+8*2130] ,t4798
-	mov qword [gbl+8*389] ,t4799
-	mov qword [gbl+8*2057] ,t4800
+	mov qword [gbl+8*2130] ,t2190
+	mov qword [gbl+8*389] ,t2191
+	mov qword [gbl+8*2057] ,t2192
 	mov rax,[rsp+8*2188]
 	leave
 	ret
@@ -8161,439 +8161,439 @@ formatln:
 format:
 	db  "%s",  0
 	
-t4725:
-	 db 1,"2" ,0
-
-t4846:
-	 db 1,"," ,0
-
-t4966:
-	 db 1,"J" ,0
-
-t4728:
-	 db 1,"3" ,0
-
-t5014:
-	 db 1,"V" ,0
-
-t5134:
-	 db 1,"u" ,0
-
-t5254:
-	 db 206,"println(c[71]+c[68]+c[7]+c[65]+c[65]+c[27]+c[28]+c[24]+c[8]+c[80]+c[67]+c[82]+c[83]+c[80]+c[76]+c[0]+a2q+c[65]+c[58]+a2q+c[10]+c[66]+c[71]+c[69]+c[82]+c[7]+c[65]+c[65]+c[8]+c[10]+a2q+c[59]+c[28]+a2q+c[26]);" ,0
-
-t4722:
-	 db 1,"1" ,0
-
-t4842:
-	 db 1,"+" ,0
-
-t5018:
-	 db 1,"W" ,0
-
-t4962:
-	 db 1,"I" ,0
-
-t5138:
-	 db 1,"v" ,0
-
-t5258:
-	 db 241,"println(c[80]+c[67]+c[82]+c[83]+c[80]+c[76]+c[0]+a2q+c[65]+c[58]+a2q+c[10]+c[66]+c[71]+c[69]+c[82]+c[7]+c[65]+c[65]+c[14]+c[16]+c[15]+c[8]+c[10]+c[66]+c[71]+c[69]+c[82]+c[7]+c[65]+c[65]+c[4]+c[16]+c[15]+c[8]+c[10]+a2q+c[59]+c[28]+a2q+c[26]);" ,0
-
-t5094:
-	 db 1,"k" ,0
-
-t5010:
-	 db 1,"U" ,0
-
-t5098:
-	 db 1,"l" ,0
-
-t5130:
-	 db 1,"t" ,0
-
-t5250:
-	 db 113,"println(c[81]+c[82]+c[80]+c[71]+c[76]+c[69]+c[0]+c[65]+c[17]+c[7]+c[71]+c[76]+c[82]+c[0]+c[65]+c[65]+c[8]+c[89]);" ,0
-
-t5090:
-	 db 1,"j" ,0
-
-t4834:
-	 db 1,")" ,0
-
-t4954:
-	 db 1,"G" ,0
-
-t4719:
-	 db 1,"0" ,0
-
-t4838:
-	 db 1,"*" ,0
-
-t4958:
-	 db 1,"H" ,0
-
-t4795:
-	 db 2,"]=" ,0
-
-t5246:
-	 db 15,"println(c[91]);" ,0
-
-t5002:
-	 db 1,"S" ,0
-
-t5122:
-	 db 1,"r" ,0
-
-t4799:
-	 db 1,"",34,"" ,0
-
-t4798:
-	 db 1,";" ,0
-
-t4830:
-	 db 1,"(" ,0
-
-t5006:
-	 db 1,"T" ,0
-
-t4950:
-	 db 1,"F" ,0
-
-t5126:
-	 db 1,"s" ,0
-
-t5082:
-	 db 1,"h" ,0
-
-t5242:
-	 db 241,"println(c[80]+c[67]+c[82]+c[83]+c[80]+c[76]+c[0]+a2q+c[81]+c[58]+a2q+c[10]+c[66]+c[71]+c[69]+c[82]+c[7]+c[81]+c[81]+c[14]+c[16]+c[15]+c[8]+c[10]+c[66]+c[71]+c[69]+c[82]+c[7]+c[81]+c[81]+c[4]+c[16]+c[15]+c[8]+c[10]+a2q+c[59]+c[28]+a2q+c[26]);" ,0
-
-t5086:
-	 db 1,"i" ,0
-
-t4946:
-	 db 1,"E" ,0
-
-t4822:
-	 db 1,"&" ,0
-
-t4826:
-	 db 1,"'" ,0
-
-t4784:
-	 db 2,"c[" ,0
-
-t5114:
-	 db 1,"p" ,0
-
-t5234:
-	 db 113,"println(c[81]+c[82]+c[80]+c[71]+c[76]+c[69]+c[0]+c[81]+c[17]+c[7]+c[71]+c[76]+c[82]+c[0]+c[81]+c[81]+c[8]+c[89]);" ,0
-
-t4782:
-	 db 2,"]=" ,0
-
-t5078:
-	 db 1,"g" ,0
-
-t4942:
-	 db 1,"D" ,0
-
-t5118:
-	 db 1,"q" ,0
-
-t5238:
-	 db 206,"println(c[71]+c[68]+c[7]+c[81]+c[81]+c[27]+c[28]+c[24]+c[8]+c[80]+c[67]+c[82]+c[83]+c[80]+c[76]+c[0]+a2q+c[81]+c[58]+a2q+c[10]+c[66]+c[71]+c[69]+c[82]+c[7]+c[81]+c[81]+c[8]+c[10]+a2q+c[59]+c[28]+a2q+c[26]);" ,0
-
-t5194:
-	 db 116,"println(c[71]+c[68]+c[7]+c[86]+c[28]+c[28]+c[18]+c[8]+c[80]+c[67]+c[82]+c[83]+c[80]+c[76]+c[0]+a2q+c[18]+a2q+c[26]);" ,0
-
-t5070:
-	 db 1,"e" ,0
-
-t5110:
-	 db 1,"o" ,0
-
-t5198:
-	 db 116,"println(c[71]+c[68]+c[7]+c[86]+c[28]+c[28]+c[19]+c[8]+c[80]+c[67]+c[82]+c[83]+c[80]+c[76]+c[0]+a2q+c[19]+a2q+c[26]);" ,0
-
-t5230:
-	 db 169,"println(c[81]+c[82]+c[80]+c[71]+c[76]+c[69]+c[58]+c[59]+c[0]+c[65]+c[28]+c[76]+c[67]+c[85]+c[0]+c[81]+c[82]+c[80]+c[71]+c[76]+c[69]+c[58]+c[17]+c[20]+c[21]+c[59]+c[26]);" ,0
-
-t5074:
-	 db 1,"f" ,0
-
-t5190:
-	 db 116,"println(c[71]+c[68]+c[7]+c[86]+c[28]+c[28]+c[17]+c[8]+c[80]+c[67]+c[82]+c[83]+c[80]+c[76]+c[0]+a2q+c[17]+a2q+c[26]);" ,0
-
-t4814:
-	 db 1,"$" ,0
-
-t4934:
-	 db 1,"B" ,0
-
-t4778:
-	 db 2,"c[" ,0
-
-t4818:
-	 db 1,"%" ,0
-
-t4938:
-	 db 1,"C" ,0
-
-t4773:
-	 db 2,"]=" ,0
-
-t4894:
-	 db 1,"8" ,0
-
-t5102:
-	 db 1,"m" ,0
-
-t5222:
-	 db 15,"println(c[91]);" ,0
-
-t4810:
-	 db 1,"#" ,0
-
-t4898:
-	 db 1,"9" ,0
-
-t4930:
-	 db 1,"A" ,0
-
-t5106:
-	 db 1,"n" ,0
-
-t5226:
-	 db 169,"println(c[81]+c[82]+c[80]+c[71]+c[76]+c[69]+c[58]+c[59]+c[0]+c[81]+c[28]+c[76]+c[67]+c[85]+c[0]+c[81]+c[82]+c[80]+c[71]+c[76]+c[69]+c[58]+c[17]+c[20]+c[21]+c[59]+c[26]);" ,0
-
-t5062:
-	 db 1,"c" ,0
-
-t5182:
-	 db 116,"println(c[71]+c[68]+c[7]+c[86]+c[28]+c[28]+c[15]+c[8]+c[80]+c[67]+c[82]+c[83]+c[80]+c[76]+c[0]+a2q+c[15]+a2q+c[26]);" ,0
-
-t4890:
-	 db 1,"7" ,0
-
-t5066:
-	 db 1,"d" ,0
-
-t5186:
-	 db 116,"println(c[71]+c[68]+c[7]+c[86]+c[28]+c[28]+c[16]+c[8]+c[80]+c[67]+c[82]+c[83]+c[80]+c[76]+c[0]+a2q+c[16]+a2q+c[26]);" ,0
-
-t4802:
-	 db 1," " ,0
-
-t4922:
-	 db 1,"?" ,0
-
-t4800:
-	 db 1,"",92,"" ,0
-
-t5218:
-	 db 116,"println(c[71]+c[68]+c[7]+c[86]+c[28]+c[28]+c[24]+c[8]+c[80]+c[67]+c[82]+c[83]+c[80]+c[76]+c[0]+a2q+c[24]+a2q+c[26]);" ,0
-
-t4806:
-	 db 1,"!" ,0
-
-t4926:
-	 db 1,"@" ,0
-
-t4762:
-	 db 2,"s[" ,0
-
-t4882:
-	 db 1,"5" ,0
-
-t5058:
-	 db 1,"b" ,0
-
-t4760:
-	 db 2,"]=" ,0
-
-t5178:
-	 db 119,"println(c[81]+c[82]+c[80]+c[71]+c[76]+c[69]+c[0]+c[66]+c[71]+c[69]+c[82]+c[7]+c[71]+c[76]+c[82]+c[0]+c[86]+c[8]+c[89]);" ,0
-
-t5210:
-	 db 116,"println(c[71]+c[68]+c[7]+c[86]+c[28]+c[28]+c[22]+c[8]+c[80]+c[67]+c[82]+c[83]+c[80]+c[76]+c[0]+a2q+c[22]+a2q+c[26]);" ,0
-
-t4886:
-	 db 1,"6" ,0
-
-t5214:
-	 db 116,"println(c[71]+c[68]+c[7]+c[86]+c[28]+c[28]+c[23]+c[8]+c[80]+c[67]+c[82]+c[83]+c[80]+c[76]+c[0]+a2q+c[23]+a2q+c[26]);" ,0
-
-t5050:
-	 db 1,"`" ,0
-
-t5170:
-	 db 1,"~" ,0
-
-t5290:
-	 db 31,"for(i=1;i<31;i++)println(s[i]);" ,0
-
-t5054:
-	 db 1,"a" ,0
-
-t5174:
-	 db 19,"int main(){int i=0;" ,0
-
-t5294:
-	 db 1,"}" ,0
-
-t4918:
-	 db 1,">" ,0
-
-t4878:
-	 db 1,"4" ,0
-
-t4756:
-	 db 2,"s[" ,0
-
-t4910:
-	 db 1,"<" ,0
-
-t4998:
-	 db 1,"R" ,0
-
-t4914:
-	 db 1,"=" ,0
-
-t5202:
-	 db 116,"println(c[71]+c[68]+c[7]+c[86]+c[28]+c[28]+c[20]+c[8]+c[80]+c[67]+c[82]+c[83]+c[80]+c[76]+c[0]+a2q+c[20]+a2q+c[26]);" ,0
-
-t4870:
-	 db 1,"2" ,0
-
-t5046:
-	 db 1,"_" ,0
-
-t4990:
-	 db 1,"P" ,0
-
-t5166:
-	 db 1,"}" ,0
-
-t5206:
-	 db 116,"println(c[71]+c[68]+c[7]+c[86]+c[28]+c[28]+c[21]+c[8]+c[80]+c[67]+c[82]+c[83]+c[80]+c[76]+c[0]+a2q+c[21]+a2q+c[26]);" ,0
-
-t4874:
-	 db 1,"3" ,0
-
-t4994:
-	 db 1,"Q" ,0
-
-t5282:
-	 db 48,"for(i=0;i<93;i++)println(c2(i)+a2q+c[i]+a2q+co);" ,0
-
-t5286:
-	 db 48,"for(i=0;i<31;i++)println(s2(i)+a2q+s[i]+a2q+co);" ,0
-
-t5042:
-	 db 1,"^" ,0
-
-t5162:
-	 db 1,"|" ,0
-
-t4902:
-	 db 1,":" ,0
-
-t4746:
-	 db 1,"9" ,0
-
-t4866:
-	 db 1,"1" ,0
-
-t4906:
-	 db 1,";" ,0
-
-t4740:
-	 db 1,"7" ,0
-
-t4982:
-	 db 1,"N" ,0
-
-t5158:
-	 db 1,"{" ,0
-
-t5278:
-	 db 14,"println(s[0]);" ,0
-
-t5034:
+t2426:
 	 db 1,"[" ,0
 
-t4986:
-	 db 1,"O" ,0
+t2306:
+	 db 1,"=" ,0
 
-t4743:
-	 db 1,"8" ,0
-
-t4862:
-	 db 1,"0" ,0
-
-t5038:
-	 db 1,"]" ,0
-
-t5150:
-	 db 1,"y" ,0
-
-t5270:
-	 db 96,"println(c[81]+c[82]+c[80]+c[71]+c[76]+c[69]+c[0]+c[63]+c[17]+c[79]+c[28]+a2q+a2b+a2q+a2q+c[26]);" ,0
-
-t5154:
-	 db 1,"z" ,0
-
-t5274:
+t2666:
 	 db 96,"println(c[81]+c[82]+c[80]+c[71]+c[76]+c[69]+c[0]+c[63]+c[17]+c[64]+c[28]+a2q+a2b+a2b+a2q+c[26]);" ,0
 
-t5030:
+t2546:
+	 db 1,"z" ,0
+
+t2386:
+	 db 1,"Q" ,0
+
+t2262:
+	 db 1,"2" ,0
+
+t2422:
 	 db 1,"Z" ,0
 
-t4737:
-	 db 1,"6" ,0
+t2148:
+	 db 2,"s[" ,0
 
-t4858:
-	 db 1,"/" ,0
+t2302:
+	 db 1,"<" ,0
 
-t4978:
-	 db 1,"M" ,0
+t2266:
+	 db 1,"3" ,0
 
-t4734:
-	 db 1,"5" ,0
+t2662:
+	 db 96,"println(c[81]+c[82]+c[80]+c[71]+c[76]+c[69]+c[0]+c[63]+c[17]+c[79]+c[28]+a2q+a2b+a2q+a2q+c[26]);" ,0
 
-t4850:
-	 db 1,"-" ,0
+t2542:
+	 db 1,"y" ,0
 
-t5026:
-	 db 1,"Y" ,0
+t2382:
+	 db 1,"P" ,0
 
-t4970:
-	 db 1,"K" ,0
-
-t5146:
-	 db 1,"x" ,0
-
-t5266:
+t2658:
 	 db 88,"println(c[81]+c[82]+c[80]+c[71]+c[76]+c[69]+c[0]+c[65]+c[77]+c[28]+a2q+c[26]+a2q+c[26]);" ,0
 
-t4854:
-	 db 1,"." ,0
+t2138:
+	 db 1,"9" ,0
 
-t4974:
-	 db 1,"L" ,0
-
-t4731:
-	 db 1,"4" ,0
-
-t5022:
-	 db 1,"X" ,0
-
-t5142:
+t2534:
 	 db 1,"w" ,0
 
-t5262:
+t2414:
+	 db 1,"X" ,0
+
+t2538:
+	 db 1,"x" ,0
+
+t2418:
+	 db 1,"Y" ,0
+
+t2132:
+	 db 1,"7" ,0
+
+t2374:
+	 db 1,"N" ,0
+
+t2254:
+	 db 1,"0" ,0
+
+t2650:
+	 db 241,"println(c[80]+c[67]+c[82]+c[83]+c[80]+c[76]+c[0]+a2q+c[65]+c[58]+a2q+c[10]+c[66]+c[71]+c[69]+c[82]+c[7]+c[65]+c[65]+c[14]+c[16]+c[15]+c[8]+c[10]+c[66]+c[71]+c[69]+c[82]+c[7]+c[65]+c[65]+c[4]+c[16]+c[15]+c[8]+c[10]+a2q+c[59]+c[28]+a2q+c[26]);" ,0
+
+t2494:
+	 db 1,"m" ,0
+
+t2378:
+	 db 1,"O" ,0
+
+t2258:
+	 db 1,"1" ,0
+
+t2654:
 	 db 15,"println(c[91]);" ,0
+
+t2530:
+	 db 1,"v" ,0
+
+t2135:
+	 db 1,"8" ,0
+
+t2410:
+	 db 1,"W" ,0
+
+t2498:
+	 db 1,"n" ,0
+
+t2370:
+	 db 1,"M" ,0
+
+t2250:
+	 db 1,"/" ,0
+
+t2490:
+	 db 1,"l" ,0
+
+t2129:
+	 db 1,"6" ,0
+
+t2646:
+	 db 206,"println(c[71]+c[68]+c[7]+c[65]+c[65]+c[27]+c[28]+c[24]+c[8]+c[80]+c[67]+c[82]+c[83]+c[80]+c[76]+c[0]+a2q+c[65]+c[58]+a2q+c[10]+c[66]+c[71]+c[69]+c[82]+c[7]+c[65]+c[65]+c[8]+c[10]+a2q+c[59]+c[28]+a2q+c[26]);" ,0
+
+t2526:
+	 db 1,"u" ,0
+
+t2402:
+	 db 1,"U" ,0
+
+t2406:
+	 db 1,"V" ,0
+
+t2242:
+	 db 1,"-" ,0
+
+t2482:
+	 db 1,"j" ,0
+
+t2120:
+	 db 1,"3" ,0
+
+t2362:
+	 db 1,"K" ,0
+
+t2246:
+	 db 1,"." ,0
+
+t2642:
+	 db 113,"println(c[81]+c[82]+c[80]+c[71]+c[76]+c[69]+c[0]+c[65]+c[17]+c[7]+c[71]+c[76]+c[82]+c[0]+c[65]+c[65]+c[8]+c[89]);" ,0
+
+t2126:
+	 db 1,"5" ,0
+
+t2522:
+	 db 1,"t" ,0
+
+t2123:
+	 db 1,"4" ,0
+
+t2486:
+	 db 1,"k" ,0
+
+t2366:
+	 db 1,"L" ,0
+
+t2514:
+	 db 1,"r" ,0
+
+t2358:
+	 db 1,"J" ,0
+
+t2117:
+	 db 1,"2" ,0
+
+t2238:
+	 db 1,"," ,0
+
+t2634:
+	 db 241,"println(c[80]+c[67]+c[82]+c[83]+c[80]+c[76]+c[0]+a2q+c[81]+c[58]+a2q+c[10]+c[66]+c[71]+c[69]+c[82]+c[7]+c[81]+c[81]+c[14]+c[16]+c[15]+c[8]+c[10]+c[66]+c[71]+c[69]+c[82]+c[7]+c[81]+c[81]+c[4]+c[16]+c[15]+c[8]+c[10]+a2q+c[59]+c[28]+a2q+c[26]);" ,0
+
+t2518:
+	 db 1,"s" ,0
+
+t2638:
+	 db 15,"println(c[91]);" ,0
+
+t2198:
+	 db 1,"!" ,0
+
+t2594:
+	 db 116,"println(c[71]+c[68]+c[7]+c[86]+c[28]+c[28]+c[20]+c[8]+c[80]+c[67]+c[82]+c[83]+c[80]+c[76]+c[0]+a2q+c[20]+a2q+c[26]);" ,0
+
+t2111:
+	 db 1,"0" ,0
+
+t2474:
+	 db 1,"h" ,0
+
+t2350:
+	 db 1,"H" ,0
+
+t2230:
+	 db 1,"*" ,0
+
+t2114:
+	 db 1,"1" ,0
+
+t2510:
+	 db 1,"q" ,0
+
+t2598:
+	 db 116,"println(c[71]+c[68]+c[7]+c[86]+c[28]+c[28]+c[21]+c[8]+c[80]+c[67]+c[82]+c[83]+c[80]+c[76]+c[0]+a2q+c[21]+a2q+c[26]);" ,0
+
+t2478:
+	 db 1,"i" ,0
+
+t2354:
+	 db 1,"I" ,0
+
+t2234:
+	 db 1,"+" ,0
+
+t2630:
+	 db 206,"println(c[71]+c[68]+c[7]+c[81]+c[81]+c[27]+c[28]+c[24]+c[8]+c[80]+c[67]+c[82]+c[83]+c[80]+c[76]+c[0]+a2q+c[81]+c[58]+a2q+c[10]+c[66]+c[71]+c[69]+c[82]+c[7]+c[81]+c[81]+c[8]+c[10]+a2q+c[59]+c[28]+a2q+c[26]);" ,0
+
+t2190:
+	 db 1,";" ,0
+
+t2191:
+	 db 1,"",34,"" ,0
+
+t2194:
+	 db 1," " ,0
+
+t2590:
+	 db 116,"println(c[71]+c[68]+c[7]+c[86]+c[28]+c[28]+c[19]+c[8]+c[80]+c[67]+c[82]+c[83]+c[80]+c[76]+c[0]+a2q+c[19]+a2q+c[26]);" ,0
+
+t2470:
+	 db 1,"g" ,0
+
+t2192:
+	 db 1,"",92,"" ,0
+
+t2226:
+	 db 1,")" ,0
+
+t2622:
+	 db 169,"println(c[81]+c[82]+c[80]+c[71]+c[76]+c[69]+c[58]+c[59]+c[0]+c[65]+c[28]+c[76]+c[67]+c[85]+c[0]+c[81]+c[82]+c[80]+c[71]+c[76]+c[69]+c[58]+c[17]+c[20]+c[21]+c[59]+c[26]);" ,0
+
+t2502:
+	 db 1,"o" ,0
+
+t2626:
+	 db 113,"println(c[81]+c[82]+c[80]+c[71]+c[76]+c[69]+c[0]+c[81]+c[17]+c[7]+c[71]+c[76]+c[82]+c[0]+c[81]+c[81]+c[8]+c[89]);" ,0
+
+t2506:
+	 db 1,"p" ,0
+
+t2187:
+	 db 2,"]=" ,0
+
+t2462:
+	 db 1,"e" ,0
+
+t2342:
+	 db 1,"F" ,0
+
+t2582:
+	 db 116,"println(c[71]+c[68]+c[7]+c[86]+c[28]+c[28]+c[17]+c[8]+c[80]+c[67]+c[82]+c[83]+c[80]+c[76]+c[0]+a2q+c[17]+a2q+c[26]);" ,0
+
+t2466:
+	 db 1,"f" ,0
+
+t2346:
+	 db 1,"G" ,0
+
+t2222:
+	 db 1,"(" ,0
+
+t2586:
+	 db 116,"println(c[71]+c[68]+c[7]+c[86]+c[28]+c[28]+c[18]+c[8]+c[80]+c[67]+c[82]+c[83]+c[80]+c[76]+c[0]+a2q+c[18]+a2q+c[26]);" ,0
+
+t2338:
+	 db 1,"E" ,0
+
+t2218:
+	 db 1,"'" ,0
+
+t2614:
+	 db 15,"println(c[91]);" ,0
+
+t2578:
+	 db 116,"println(c[71]+c[68]+c[7]+c[86]+c[28]+c[28]+c[16]+c[8]+c[80]+c[67]+c[82]+c[83]+c[80]+c[76]+c[0]+a2q+c[16]+a2q+c[26]);" ,0
+
+t2458:
+	 db 1,"d" ,0
+
+t2618:
+	 db 169,"println(c[81]+c[82]+c[80]+c[71]+c[76]+c[69]+c[58]+c[59]+c[0]+c[81]+c[28]+c[76]+c[67]+c[85]+c[0]+c[81]+c[82]+c[80]+c[71]+c[76]+c[69]+c[58]+c[17]+c[20]+c[21]+c[59]+c[26]);" ,0
+
+t2176:
+	 db 2,"c[" ,0
+
+t2330:
+	 db 1,"C" ,0
+
+t2210:
+	 db 1,"%" ,0
+
+t2298:
+	 db 1,";" ,0
+
+t2174:
+	 db 2,"]=" ,0
+
+t2570:
+	 db 119,"println(c[81]+c[82]+c[80]+c[71]+c[76]+c[69]+c[0]+c[66]+c[71]+c[69]+c[82]+c[7]+c[71]+c[76]+c[82]+c[0]+c[86]+c[8]+c[89]);" ,0
+
+t2450:
+	 db 1,"b" ,0
+
+t2334:
+	 db 1,"D" ,0
+
+t2214:
+	 db 1,"&" ,0
+
+t2610:
+	 db 116,"println(c[71]+c[68]+c[7]+c[86]+c[28]+c[28]+c[24]+c[8]+c[80]+c[67]+c[82]+c[83]+c[80]+c[76]+c[0]+a2q+c[24]+a2q+c[26]);" ,0
+
+t2574:
+	 db 116,"println(c[71]+c[68]+c[7]+c[86]+c[28]+c[28]+c[15]+c[8]+c[80]+c[67]+c[82]+c[83]+c[80]+c[76]+c[0]+a2q+c[15]+a2q+c[26]);" ,0
+
+t2454:
+	 db 1,"c" ,0
+
+t2290:
+	 db 1,"9" ,0
+
+t2294:
+	 db 1,":" ,0
+
+t2170:
+	 db 2,"c[" ,0
+
+t2206:
+	 db 1,"$" ,0
+
+t2602:
+	 db 116,"println(c[71]+c[68]+c[7]+c[86]+c[28]+c[28]+c[22]+c[8]+c[80]+c[67]+c[82]+c[83]+c[80]+c[76]+c[0]+a2q+c[22]+a2q+c[26]);" ,0
+
+t2446:
+	 db 1,"a" ,0
+
+t2326:
+	 db 1,"B" ,0
+
+t2606:
+	 db 116,"println(c[71]+c[68]+c[7]+c[86]+c[28]+c[28]+c[23]+c[8]+c[80]+c[67]+c[82]+c[83]+c[80]+c[76]+c[0]+a2q+c[23]+a2q+c[26]);" ,0
+
+t2165:
+	 db 2,"]=" ,0
+
+t2286:
+	 db 1,"8" ,0
+
+t2682:
+	 db 31,"for(i=1;i<31;i++)println(s[i]);" ,0
+
+t2562:
+	 db 1,"~" ,0
+
+t2202:
+	 db 1,"#" ,0
+
+t2686:
+	 db 1,"}" ,0
+
+t2566:
+	 db 19,"int main(){int i=0;" ,0
+
+t2442:
+	 db 1,"`" ,0
+
+t2322:
+	 db 1,"A" ,0
+
+t2282:
+	 db 1,"7" ,0
+
+t2558:
+	 db 1,"}" ,0
+
+t2438:
+	 db 1,"_" ,0
+
+t2314:
+	 db 1,"?" ,0
+
+t2678:
+	 db 48,"for(i=0;i<31;i++)println(s2(i)+a2q+s[i]+a2q+co);" ,0
+
+t2318:
+	 db 1,"@" ,0
+
+t2154:
+	 db 2,"s[" ,0
+
+t2550:
+	 db 1,"{" ,0
+
+t2430:
+	 db 1,"]" ,0
+
+t2152:
+	 db 2,"]=" ,0
+
+t2394:
+	 db 1,"S" ,0
+
+t2274:
+	 db 1,"5" ,0
+
+t2670:
+	 db 14,"println(s[0]);" ,0
+
+t2554:
+	 db 1,"|" ,0
+
+t2434:
+	 db 1,"^" ,0
+
+t2310:
+	 db 1,">" ,0
+
+t2398:
+	 db 1,"T" ,0
+
+t2278:
+	 db 1,"6" ,0
+
+t2674:
+	 db 48,"for(i=0;i<93;i++)println(c2(i)+a2q+c[i]+a2q+co);" ,0
+
+t2390:
+	 db 1,"R" ,0
+
+t2270:
+	 db 1,"4" ,0
 
 

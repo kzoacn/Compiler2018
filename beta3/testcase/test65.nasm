@@ -338,10 +338,10 @@ main:
 	mov [rsp+8*1] , rax
 	mov qword [rsp+8*2] ,100
 	mov qword [rsp+8*3] ,0
-	mov qword [rsp+8*4] ,t4676
+	mov qword [rsp+8*4] ,t2068
 	mov qword [rsp+8*3] ,0
 	
-L_414:
+L_85:
 	mov r8, [rsp+8*3]
 	mov r9, [rsp+8*2]
 	cmp r8, r9
@@ -349,24 +349,24 @@ L_414:
 	setl [rsp+8*5]
 	mov r8, [rsp+8*5]
 	cmp r8, 0
-	je L_415
-	mov     rsi, t4682
+	je L_86
+	mov     rsi, t2074
 	mov     rdi, [rsp+8*4]
 	call    concat
 	mov [rsp+8*6], rax
 	mov r8, [rsp+8*6]
 	mov qword [rsp+8*4] ,r8
 	
-L_416:
+L_87:
 	mov r8, [rsp+8*3]
 	add r8, 1
 	mov qword [rsp+8*3],r8 
 	mov r8, [rsp+8*3]
 	sub r8, 1
 	mov qword [rsp+8*7],r8 
-	jmp L_414
+	jmp L_85
 	
-L_415:
+L_86:
 	mov r8, [rsp+8*4]
 	mov qword [gbl+8*8] ,r8
 	mov r8, [gbl+8*8]
@@ -378,7 +378,7 @@ L_415:
 	call printf
 	mov qword [rsp+8*3] ,0
 	
-L_417:
+L_88:
 	mov r8, [rsp+8*3]
 	mov r9, [rsp+8*2]
 	cmp r8, r9
@@ -386,24 +386,24 @@ L_417:
 	setl [rsp+8*10]
 	mov r8, [rsp+8*10]
 	cmp r8, 0
-	je L_418
-	mov     rsi, t4692
+	je L_89
+	mov     rsi, t2084
 	mov     rdi, [rsp+8*4]
 	call    concat
 	mov [rsp+8*11], rax
 	mov r8, [rsp+8*11]
 	mov qword [rsp+8*4] ,r8
 	
-L_419:
+L_90:
 	mov r8, [rsp+8*3]
 	add r8, 1
 	mov qword [rsp+8*3],r8 
 	mov r8, [rsp+8*3]
 	sub r8, 1
 	mov qword [rsp+8*12],r8 
-	jmp L_417
+	jmp L_88
 	
-L_418:
+L_89:
 	mov r8, [rsp+8*4]
 	mov qword [gbl+8*8] ,r8
 	mov r8, [gbl+8*8]
@@ -442,13 +442,13 @@ formatln:
 format:
 	db  "%s",  0
 	
-t4692:
+t2084:
 	 db 1,"0" ,0
 
-t4682:
+t2074:
 	 db 1,"0" ,0
 
-t4676:
+t2068:
 	 db 0,"" ,0
 
 

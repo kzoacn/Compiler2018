@@ -25,6 +25,10 @@ memberDefinition
     :   variableType variableName  ';'
     ;
 
+bracket
+    :   '[' ']'
+    |   '[]'
+    ;
 variableDefinition
     :   variableType variableName  ';'                  # variableDefinitionWithoutAssignment
     |   variableType variableName '=' expression ';'    # variableDefinitionWithAssignment
@@ -32,7 +36,7 @@ variableDefinition
 
 
 variableType
-    :   variableBasicType ( BRACKET )*
+    :   variableBasicType ( bracket )*
     ;
 
 variableBasicType
@@ -72,7 +76,6 @@ variableName
 globalVariableDefinition
     :   variableDefinition
     ;
-
 
 
 block
@@ -122,11 +125,12 @@ expression
     |   expression '.' functionName '(' expressionList? ')'                         # methodCallWithExp
     |   NEW variableBasicType '(' expressionList? ')'                               # newVariable
     |   NEW variableBasicType                                                       # newVariableWithoutExp
-    |   NEW type=variableBasicType (index)+ (BRACKET)*                              # newArray
+    |   NEW type=variableBasicType (index)+ (bracket)*                              # newArray
     |   variable ('.' variable)+                                                    # dotExpression
     |   dotAtom ('.' dotAtom)+                                                      # hyperDotExpression
     |   variableName ('[' expression ']')*                                          # getValue
-    |   op=('--'|'++'|'-' |'!' |'~') expression                                     # prefixOperator
+    |   op=('!' |'~'|'-') expression                                                # prefixOperator
+    |   op=('--'|'++' ) expression                                                  # prefixLvalueOperator
     |   expression op=('++' | '--')                                                 # suffixOperator
     |   expression op=('*' | '/' | '%') expression                                  # mulDivMod
     |   expression op=('+' | '-') expression                                        # addSubtract
