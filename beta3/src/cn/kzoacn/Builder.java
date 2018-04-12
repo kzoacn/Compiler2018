@@ -45,9 +45,9 @@ public class Builder {
         MVisitor visitor = new MVisitor();
         visitor.recursionVisitor.visit(parseTree);
         IR ir = visitor.visit(parseTree);
-        visitor.symbolMap.print();
+      //  visitor.symbolMap.print();
         ir.modify();
-        ir.print();
+       // ir.print();
 
         for(Map.Entry cst : visitor.constStringPool.entrySet()){
             System.out.println(cst.getKey()+" : "+cst.getValue());

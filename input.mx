@@ -1,15 +1,12 @@
-class A {
-    int x;
-    int y;
-    int z;
-}
-
-B f() {
-    int a;
-    a = 1;
-}
-
 int main() {
-    return 0;
+    int n = 5;
+    int sum = 0;
+    int i;
+    int j;
+    for (i = 1; i <= n; ++i) {
+        for (j = 1; j <= n; ++j)
+            sum = sum + i;
+        sum = sum + 1;
+    }
+    return sum;
 }
-
