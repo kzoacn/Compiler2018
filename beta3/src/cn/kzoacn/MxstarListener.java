@@ -362,6 +362,16 @@ public interface MxstarListener extends ParseTreeListener {
 	 */
 	void exitForStatement(MxstarParser.ForStatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link MxstarParser#dotAtom}.
+	 * @param ctx the parse tree
+	 */
+	void enterDotAtom(MxstarParser.DotAtomContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link MxstarParser#dotAtom}.
+	 * @param ctx the parse tree
+	 */
+	void exitDotAtom(MxstarParser.DotAtomContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code hyperDotExpression}
 	 * labeled alternative in {@link MxstarParser#expression}.
 	 * @param ctx the parse tree

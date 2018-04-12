@@ -365,7 +365,7 @@ main:
 	mov qword [gbl+8*8] ,3
 	mov r8, [rsp+8*7]
 	mov qword [gbl+8*9] ,r8
-	call add
+	call Adder_add
 	mov [rsp+8*10] , rax
 	mov r8, [rsp+8*10]
 	mov qword [gbl+8*8] ,r8
@@ -388,7 +388,7 @@ main:
 	ret
 	jmp QED
 	
-add:
+Adder_add:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 224

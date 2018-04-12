@@ -375,7 +375,7 @@ L_393:
 	mov [rsp+8*9], r8
 	mov r8, [rsp+8*9]
 	mov qword [gbl+8*11] ,r8
-	call say
+	call Hello_say
 	mov [rsp+8*12] , rax
 	
 L_395:
@@ -396,7 +396,7 @@ L_394:
 	ret
 	jmp QED
 	
-say:
+Hello_say:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 208

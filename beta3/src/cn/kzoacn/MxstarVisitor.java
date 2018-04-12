@@ -221,6 +221,12 @@ public interface MxstarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitForStatement(MxstarParser.ForStatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link MxstarParser#dotAtom}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDotAtom(MxstarParser.DotAtomContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code hyperDotExpression}
 	 * labeled alternative in {@link MxstarParser#expression}.
 	 * @param ctx the parse tree

@@ -871,7 +871,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
     @Override public IR visitMethodDefinition(MxstarParser.MethodDefinitionContext ctx) {
         symbolMap.nextScope();
         IR ir = new IR();
-        String name=ctx.functionName().getText();
+        String name=currentClass+"_"+ctx.functionName().getText();
         symbolMap.currentFunction=name;
         VariableType returnType=VariableType.INT;
         if(ctx.variableType()!=null)
@@ -996,13 +996,9 @@ class MVisitor extends MxstarBaseVisitor<IR>{
 
     @Override public IR visitMethodCall(MxstarParser.MethodCallContext ctx) {
         IR ir=new IR();
-        String functionName=ctx.functionName().getText();
-        Function function=symbolMap.functionMap.get(functionName);
-
-        ArrayList<String> local = null;
 
 
-        if(!recursionVisitor.isSafe(symbolMap.currentFunction,functionName)
+        /*if(!recursionVisitor.isSafe(symbolMap.currentFunction,functionName)
                 &&function!=null && symbolMap.localVariable.get(symbolMap.currentFunction)!=null ){
             local = (ArrayList<String>) symbolMap.localVariable.get(symbolMap.currentFunction).clone();
             ir.push(new Quad(OpCode.saveContext));
@@ -1010,8 +1006,15 @@ class MVisitor extends MxstarBaseVisitor<IR>{
                 // ir.push(new Quad(OpCode.push,new Variable(variable,VariableType.INT),Variable.empty,Variable.empty));
             }
             ir.push(new Quad(OpCode.endContext));
-        }
+        }*/
         IR left=visit(ctx.pointerValue());
+
+        String functionName=ctx.functionName().getText();
+        Function function=symbolMap.functionMap.get(left.last.dest.type.name+"_"+functionName);
+
+        ArrayList<String> local = null;
+
+
         ir.concat(left);
         if(ctx.expressionList()!=null) {
             ir.concat(visit(ctx.expressionList()));
@@ -1034,8 +1037,9 @@ class MVisitor extends MxstarBaseVisitor<IR>{
                     ir.push(new Quad(OpCode.getString,Variable.empty,Variable.empty,nextVariable(VariableType.STRING)));
                     break;
                 case "ord"://TODO
-                    ir.push(new Quad(OpCode.pop,Variable.empty,Variable.empty,temp));
-                    ir.push(new Quad(OpCode.print,temp,Variable.empty,Variable.empty));
+                    ir.push(new Quad(OpCode.move,argList.get(15),Variable.empty,tmp));
+                    ir.push(new Quad(OpCode.load,tmp,Variable.empty,tmp));
+                    //ir.push(new Quad(OpCode.print,temp,Variable.empty,Variable.empty));
                     break;
                 case "size":
                     ir.push(new Quad(OpCode.move,argList.get(15),Variable.empty,tmp));
@@ -1067,14 +1071,14 @@ class MVisitor extends MxstarBaseVisitor<IR>{
 
     @Override public IR visitMethodCallWithExp(MxstarParser.MethodCallWithExpContext ctx) {
         IR ir=new IR();
-        String functionName=ctx.functionName().getText();
-        Function function=symbolMap.functionMap.get(functionName);
 
         ArrayList<String> local = null;
 
 
 
         IR left=visit(ctx.expression());
+        String functionName=ctx.functionName().getText();
+        Function function=symbolMap.functionMap.get(left.last.dest.type.name+"_"+functionName);
         ir.concat(left);
         if(ctx.expressionList()!=null) {
             ir.concat(visit(ctx.expressionList()));
@@ -1179,7 +1183,11 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         return ir;
     }
     @Override public IR visitHyperDotExpression(MxstarParser.HyperDotExpressionContext ctx) {
-        return visitChildren(ctx);
+        IR ir = new IR();
+        Variable tmp=nextVariable(VariableType.INT);
+        ir.push(new Quad(OpCode.move,tmp,Variable.empty,tmp));
+        //TODO
+        return ir;
     }
 
     @Override public IR visitNewVariable(MxstarParser.NewVariableContext ctx) {
@@ -1941,7 +1949,15 @@ class MVisitor extends MxstarBaseVisitor<IR>{
     @Override public IR visitFunctionCall(MxstarParser.FunctionCallContext ctx) {
         IR ir=new IR();
         String functionName=ctx.functionName().getText();
-        Function function=symbolMap.functionMap.get(functionName);
+        Function function=null;
+        if(!currentClass.equals("")){
+            function=symbolMap.functionMap.get(currentClass+"_"+functionName);
+            if(function==null){
+                function=symbolMap.functionMap.get(functionName);
+            }
+        }else{
+            function=symbolMap.functionMap.get(functionName);
+        }
 
         ArrayList<String> local = null;
 
@@ -2038,7 +2054,12 @@ class MVisitor extends MxstarBaseVisitor<IR>{
             return ir;
         }
         ArrayList<IR> parameterList =  new ArrayList<IR>();
-        Variable variable = new Variable(symbolMap.renameMap.get(ctx.variableName().getText()),variableType);
+        Variable variable = null;
+        if(ctx.variableName().getText().equals("this")){
+            variable = currentThis;
+        }else{
+            variable = new Variable(symbolMap.renameMap.get(ctx.variableName().getText()),variableType);
+        }
         if(variableType.level == 0){
             ir.push(new Quad(OpCode.move,variable,Variable.empty,variable));
         }else{
@@ -2152,6 +2173,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         IR ir=new IR();
         ArrayList<Variable>arrayList=new ArrayList<Variable>();
         ArrayList<VariableType>parameterList=new ArrayList<VariableType>();
+        if(ctx.expression()!=null)
         for(int i=0;i<ctx.expression().size();i++){
             IR tmpIR=visit(ctx.expression(i));
             ir.concat(tmpIR);
