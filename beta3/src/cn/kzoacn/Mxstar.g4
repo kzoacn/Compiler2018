@@ -157,6 +157,7 @@ index
 
 variable
     :   variableName index*
+    |   '(' NEW type=variableBasicType (index)+ ')'
     ;
 
 pointerValue
