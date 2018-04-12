@@ -23,8 +23,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="2199" column="0" lean-forward="false" selection-start-line="2199" selection-start-column="0" selection-end-line="2199" selection-end-column="0" />
+            <state relative-caret-position="413">
+              <caret line="1259" column="34" lean-forward="false" selection-start-line="1259" selection-start-column="34" selection-end-line="1259" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#498#499#0" expanded="true" />
@@ -53,7 +53,7 @@
                 <element signature="e#27768#27782#0" expanded="true" />
                 <element signature="e#33200#33214#0" expanded="true" />
                 <element signature="e#35388#35402#0" expanded="true" />
-                <element signature="e#64442#64456#0" expanded="true" />
+                <element signature="e#64666#64680#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -145,8 +145,8 @@
       <file leaf-file-name="SemanticTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/SemanticTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="139" column="30" lean-forward="false" selection-start-line="139" selection-start-column="30" selection-end-line="139" selection-end-column="30" />
+            <state relative-caret-position="375">
+              <caret line="145" column="20" lean-forward="false" selection-start-line="145" selection-start-column="20" selection-end-line="145" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -204,7 +204,6 @@
       <find>functiondefin</find>
       <find>methodCall Error</find>
       <find>method</find>
-      <find>type</find>
       <find>type not found 2</find>
       <find>methoddefin</find>
       <find>memberdefin</find>
@@ -213,8 +212,9 @@
       <find>member</find>
       <find>memberdef</find>
       <find>assign</find>
-      <find>GetValue Error</find>
       <find>err</find>
+      <find>GetValue Error</find>
+      <find>type</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -231,8 +231,8 @@
         <option value="$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/ExecTest.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/Mxstar.g4" />
-        <option value="$PROJECT_DIR$/src/cn/kzoacn/SemanticTest.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/Semantic.java" />
+        <option value="$PROJECT_DIR$/src/cn/kzoacn/SemanticTest.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/Main.java" />
       </list>
     </option>
@@ -371,31 +371,6 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="SemanticTest.hard1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="cn.kzoacn.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="beta3" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="cn.kzoacn" />
-      <option name="MAIN_CLASS_NAME" value="cn.kzoacn.SemanticTest" />
-      <option name="METHOD_NAME" value="hard1" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
     <configuration name="SemanticTest.hard11" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -446,6 +421,31 @@
       <envs />
       <patterns />
     </configuration>
+    <configuration name="SemanticTest.la" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="cn.kzoacn.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="beta3" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="cn.kzoacn" />
+      <option name="MAIN_CLASS_NAME" value="cn.kzoacn.SemanticTest" />
+      <option name="METHOD_NAME" value="la" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -465,16 +465,16 @@
       <item index="0" class="java.lang.String" itemvalue="JUnit.SemanticTest" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.ExecTest" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.SemanticTest.hard11" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.SemanticTest.hard1" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.SemanticTest.hard7" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.SemanticTest.hard7" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.SemanticTest.la" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.SemanticTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ExecTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.SemanticTest.hard11" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.SemanticTest.hard7" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.SemanticTest.hard1" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.SemanticTest.la" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ExecTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.SemanticTest.hard11" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.SemanticTest.hard7" />
       </list>
     </recent_temporary>
   </component>
@@ -501,20 +501,14 @@
     <history-entry file="SemanticTest - 2018.04.12 at 22h 53m 16s.xml">
       <configuration name="SemanticTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SemanticTest_hard11 - 2018.04.12 at 22h 50m 06s.xml">
-      <configuration name="SemanticTest.hard11" configurationId="JUnit" />
+    <history-entry file="SemanticTest - 2018.04.12 at 23h 23m 06s.xml">
+      <configuration name="SemanticTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SemanticTest_hard11 - 2018.04.12 at 22h 51m 04s.xml">
-      <configuration name="SemanticTest.hard11" configurationId="JUnit" />
+    <history-entry file="SemanticTest - 2018.04.12 at 23h 23m 56s.xml">
+      <configuration name="SemanticTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SemanticTest_hard11 - 2018.04.12 at 22h 51m 17s.xml">
-      <configuration name="SemanticTest.hard11" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SemanticTest_hard11 - 2018.04.12 at 22h 51m 20s.xml">
-      <configuration name="SemanticTest.hard11" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SemanticTest_hard11 - 2018.04.12 at 22h 51m 49s.xml">
-      <configuration name="SemanticTest.hard11" configurationId="JUnit" />
+    <history-entry file="SemanticTest - 2018.04.12 at 23h 24m 38s.xml">
+      <configuration name="SemanticTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="SemanticTest_hard11 - 2018.04.12 at 22h 52m 00s.xml">
       <configuration name="SemanticTest.hard11" configurationId="JUnit" />
@@ -525,10 +519,15 @@
     <history-entry file="SemanticTest_hard11 - 2018.04.12 at 22h 53m 01s.xml">
       <configuration name="SemanticTest.hard11" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="SemanticTest_la - 2018.04.12 at 23h 24m 01s.xml">
+      <configuration name="SemanticTest.la" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SemanticTest_la - 2018.04.12 at 23h 24m 34s.xml">
+      <configuration name="SemanticTest.la" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -612,13 +611,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/cn/kzoacn/Main.java</url>
-          <line>2160</line>
+          <line>2166</line>
           <properties />
           <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/cn/kzoacn/Main.java</url>
-          <line>2193</line>
+          <line>2199</line>
           <properties />
           <option name="timeStamp" value="96" />
         </line-breakpoint>
@@ -702,7 +701,7 @@
             <element signature="e#27768#27782#0" expanded="true" />
             <element signature="e#33200#33214#0" expanded="true" />
             <element signature="e#35388#35402#0" expanded="true" />
-            <element signature="e#64442#64456#0" expanded="true" />
+            <element signature="e#64666#64680#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -755,7 +754,7 @@
             <element signature="e#27768#27782#0" expanded="true" />
             <element signature="e#33200#33214#0" expanded="true" />
             <element signature="e#35388#35402#0" expanded="true" />
-            <element signature="e#64442#64456#0" expanded="true" />
+            <element signature="e#64666#64680#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -839,7 +838,7 @@
             <element signature="e#27768#27782#0" expanded="true" />
             <element signature="e#33200#33214#0" expanded="true" />
             <element signature="e#35388#35402#0" expanded="true" />
-            <element signature="e#64442#64456#0" expanded="true" />
+            <element signature="e#64666#64680#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -915,7 +914,7 @@
             <element signature="e#27768#27782#0" expanded="true" />
             <element signature="e#33200#33214#0" expanded="true" />
             <element signature="e#35388#35402#0" expanded="true" />
-            <element signature="e#64442#64456#0" expanded="true" />
+            <element signature="e#64666#64680#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1068,6 +1067,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
           <caret line="554" column="13" lean-forward="false" selection-start-line="554" selection-start-column="13" selection-end-line="554" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1092,16 +1092,6 @@
         <state relative-caret-position="185">
           <caret line="182" column="22" lean-forward="false" selection-start-line="182" selection-start-column="19" selection-end-line="182" selection-end-column="22" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/SemanticTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="139" column="30" lean-forward="false" selection-start-line="139" selection-start-column="30" selection-end-line="139" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1158,10 +1148,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/SemanticTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="145" column="20" lean-forward="false" selection-start-line="145" selection-start-column="20" selection-end-line="145" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="2199" column="0" lean-forward="false" selection-start-line="2199" selection-start-column="0" selection-end-line="2199" selection-end-column="0" />
+        <state relative-caret-position="413">
+          <caret line="1259" column="34" lean-forward="false" selection-start-line="1259" selection-start-column="34" selection-end-line="1259" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#498#499#0" expanded="true" />
@@ -1190,7 +1190,7 @@
             <element signature="e#27768#27782#0" expanded="true" />
             <element signature="e#33200#33214#0" expanded="true" />
             <element signature="e#35388#35402#0" expanded="true" />
-            <element signature="e#64442#64456#0" expanded="true" />
+            <element signature="e#64666#64680#0" expanded="true" />
           </folding>
         </state>
       </provider>

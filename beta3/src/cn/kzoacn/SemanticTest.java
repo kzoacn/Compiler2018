@@ -141,6 +141,11 @@ class SemanticTest {
         testPass("hard11");
     }
 
+    @Test
+    void la()throws Exception{
+        testPass("la");
+    }
+
     void testError(String name) throws Exception{
 
         Scanner cin = new Scanner(System.in);

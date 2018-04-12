@@ -1245,6 +1245,9 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         if(startName.equals("this"))
             startName=currentThis.name;
         VariableType startType = symbolMap.getVariable(startName);
+        if(startType==null){
+            startType=classMember.get(currentClass).get(startName).type;
+        }
         Variable start = nextVariable(startType.clone());
         Variable adr=nextVariable(VariableType.INT);
 
@@ -1389,6 +1392,9 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         if(startName.equals("this"))
             startName=currentThis.name;
         VariableType startType = symbolMap.getVariable(startName);
+        if(startType==null){
+            startType=classMember.get(currentClass).get(startName).type;
+        }
         Variable start = nextVariable(startType.clone());
         start.name=startName;
         Variable cur = nextVariable(startType.clone());
