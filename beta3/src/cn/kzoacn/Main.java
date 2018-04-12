@@ -23,13 +23,13 @@ class VariableType{
         return (this.name).hashCode()^this.level;
     }
     boolean match(VariableType other){
-        if((name.contains("int") || name.contains("string"))&& level>0 &&other.name.equals("null"))
+        if((name.contains("int") || name.contains("bool") || name.contains("string"))&& level>0 &&other.name.equals("null"))
             return true;
-        if((name.contains("int") || name.contains("string"))&& level==0 &&other.name.equals("null"))
+        if((name.contains("int") || name.contains("bool") ||name.contains("string"))&& level==0 &&other.name.equals("null"))
             return false;
-        if((other.name.contains("int") || other.name.contains("string"))&& other.level>0 &&name.equals("null"))
+        if((other.name.contains("int") || other.name.contains("bool") ||other.name.contains("string"))&& other.level>0 &&name.equals("null"))
             return true;
-        if((other.name.contains("int") || other.name.contains("string"))&& other.level==0 &&name.equals("null"))
+        if((other.name.contains("int") || other.name.contains("bool") ||other.name.contains("string"))&& other.level==0 &&name.equals("null"))
             return false;
         if(other.name.equals("null") || name.equals("null"))
             return true;
@@ -38,6 +38,8 @@ class VariableType{
         if(name.equals(other))
             return true;
         if(name.contains("int")&&other.name.contains("int"))
+            return true;
+        if(name.contains("bool")&&other.name.contains("bool"))
             return true;
         if(name.contains("string")&&other.name.contains("string"))
             return true;
@@ -73,7 +75,6 @@ class VariableType{
     public static VariableType toVariableType(MxstarParser.VariableTypeContext ctx){
         VariableType variableType = new VariableType();
         variableType.name=ctx.variableBasicType().getText();
-        if(variableType.name.equals("bool"))variableType.name="int";
         variableType.level=ctx.BRACKET().size();
         variableType.isConst=false;
         return variableType;
@@ -81,7 +82,6 @@ class VariableType{
     public static VariableType toVariableType(MxstarParser.VariableBasicTypeContext ctx){
         VariableType variableType = new VariableType();
         variableType.name=ctx.getText();
-        if(variableType.name.equals("bool"))variableType.name="int";
         variableType.level=0;
         variableType.isConst=false;
         return variableType;
@@ -90,10 +90,10 @@ class VariableType{
         return name;
     }
     static final VariableType INT = new VariableType("int",0,false);
-
+    static final VariableType BOOL = new VariableType("bool",0,false);
     static final VariableType STRING = new VariableType("string",0,false);
     static final VariableType CONST_INT = new VariableType("const_int",0,true);
-
+    static final VariableType CONST_BOOL = new VariableType("const_bool",0,true);
     static final VariableType CONST_STRING = new VariableType("const_string",0,true);
     static final VariableType ERROR = new VariableType("Error",0,true);
     static final VariableType VOID = new VariableType("void",0,true);
@@ -114,6 +114,8 @@ class Variable{
     @Override
     public String toString(){
         if(type.name.equals("const_int"))
+            return Integer.toString(constValue);
+        if(type.name.equals("const_bool"))
             return Integer.toString(constValue);
         if(this.equals(empty))
             return "";
@@ -507,7 +509,7 @@ class SymbolMap{
                 return VariableType.ERROR;
             }
             case "!":{
-                if(type.equals(VariableType.INT) || type.equals(VariableType.CONST_INT))
+                if(type.name.contains("bool"))
                     return (type);
                 return VariableType.ERROR;
             }
@@ -547,7 +549,7 @@ class SymbolMap{
 
         if(type1.equals(VariableType.NULL) || type2.equals(VariableType.NULL)){
             if(operator.equals("==")||operator.equals("!="))
-                return VariableType.INT;
+                return VariableType.BOOL;
             return VariableType.ERROR;
         }
         if((type1.equals(VariableType.INT) || type1.equals(VariableType.CONST_INT))
@@ -559,8 +561,8 @@ class SymbolMap{
                 return VariableType.INT;
 
             if(operator.equals(">")||operator.equals("<")||operator.equals(">=")||operator.equals("<=")
-                    ||operator.equals("==")||operator.equals("!=")||operator.equals("||") || operator.equals("&&"))
-                return VariableType.INT;
+                    ||operator.equals("==")||operator.equals("!="))
+                return VariableType.BOOL;
             if(operator.equals("=")){
                 if (type1.equals(VariableType.INT))
                     return VariableType.INT;
@@ -573,7 +575,12 @@ class SymbolMap{
                 return VariableType.STRING;
             if(operator.equals(">")||operator.equals("<")||operator.equals(">=")||operator.equals("<=")
                     ||operator.equals("==")||operator.equals("!="))
-                return VariableType.INT;
+                return VariableType.BOOL;
+            return VariableType.ERROR;
+        }
+        if(type1.name.contains("bool")&&type1.name.contains("bool")){
+            if(operator.equals("&&")||operator.equals("||"))
+                return VariableType.BOOL;
             return VariableType.ERROR;
         }
 
@@ -1508,12 +1515,9 @@ class MVisitor extends MxstarBaseVisitor<IR>{
 
         ir.concat(exp);
 
-        if(!VariableType.INT.match(exp.last.dest.type))
-            ir.push(Quad.quadError("exp must be INT if"));
-        if(exp.last.dest.type.name.equals("const_int")){
-            System.err.println("fake bool");
-            ir.push(Quad.quadError("exp must be bool"));
-        }
+        if(!VariableType.BOOL.match(exp.last.dest.type))
+            ir.push(Quad.quadError("exp must be bool if"));
+
         String falseLable=nextLabel();
         String outLable=nextLabel();
 
@@ -1565,8 +1569,8 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         symbolMap.prevScope();
         ir.push(new Quad(OpCode.label,startLabel));
         ir.concat(exp);
-        if(!VariableType.INT.match(exp.last.dest.type))
-            ir.push(Quad.quadError("exp must be INT while"));
+        if(!VariableType.BOOL.match(exp.last.dest.type))
+            ir.push(Quad.quadError("exp must be bool while"));
         Quad quad = new Quad(OpCode.jz,exp.last.dest,Variable.empty,Variable.empty);
         quad.name=endLabel;
         ir.push(quad);
@@ -1604,8 +1608,8 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         ir.push(new Quad(OpCode.label,startLabel));
         ir.concat(B);
         if(B!=null) {
-            if(!VariableType.INT.match(B.last.dest.type))
-                ir.push(Quad.quadError("exp must be INT for"));
+            if(!VariableType.BOOL.match(B.last.dest.type))
+                ir.push(Quad.quadError("exp must be bool for"));
             Quad quad = new Quad(OpCode.jz, B.last.dest, Variable.empty, Variable.empty);
             quad.name = endLabel;
             ir.push(quad);
@@ -1811,7 +1815,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         }
 
         String name=ctx.type.getText();
-        if(name.equals("bool"))name="int";
+
         adr.type=new VariableType(name,level,false);
         ir.push(new Quad(OpCode.move,adr,Variable.empty,adr));
 
@@ -2077,14 +2081,14 @@ class MVisitor extends MxstarBaseVisitor<IR>{
     }
     @Override public IR visitTrue(MxstarParser.TrueContext ctx) {
         IR ir = new IR();
-        Variable temp = nextVariable(VariableType.CONST_INT);
+        Variable temp = nextVariable(VariableType.CONST_BOOL);
         temp.constValue=1;
         ir.push(new Quad(OpCode.move,temp,Variable.empty,temp));
         return ir;
     }
     @Override public IR visitFalse(MxstarParser.FalseContext ctx) {
         IR ir = new IR();
-        Variable temp = nextVariable(VariableType.CONST_INT);
+        Variable temp = nextVariable(VariableType.CONST_BOOL);
         temp.constValue=0;
         ir.push(new Quad(OpCode.move,temp,Variable.empty,temp));
         return ir;

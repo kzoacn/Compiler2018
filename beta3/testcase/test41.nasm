@@ -333,7 +333,7 @@ mAd_006:  mov     rax, qword [rbp-8H]
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 184
+	sub    rsp, 192
 	call global_init
 	mov [rsp+8*1] , rax
 	mov qword [gbl+8*2] ,5
@@ -363,13 +363,16 @@ main:
 dfs:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 184
+	sub    rsp, 192
 	mov r8, [gbl+8*2]
 	mov qword [rsp+8*7] ,r8
 	mov qword [rsp+8*8] ,0
 	mov qword [rsp+8*9] ,1
 	
 L_344:
+	mov r8, [rsp+8*10]
+	add r8, [rsp+8*10]
+	mov qword [rsp+8*10],r8 
 	mov r8, 1
 	cmp r8, 0
 	je L_345
@@ -378,18 +381,18 @@ L_344:
 	mov qword [rsp+8*9],r8 
 	mov r8, [rsp+8*9]
 	sub r8, 1
-	mov qword [rsp+8*10],r8 
+	mov qword [rsp+8*11],r8 
 	mov r8, [rsp+8*8]
 	add r8, [rsp+8*9]
-	mov qword [rsp+8*11],r8 
-	mov r8, [rsp+8*11]
+	mov qword [rsp+8*12],r8 
+	mov r8, [rsp+8*12]
 	mov qword [rsp+8*8] ,r8
 	mov r8, [rsp+8*9]
 	mov r9, [rsp+8*7]
 	cmp r8, r9
-	mov qword [rsp+8*12], 0
-	sete [rsp+8*12]
-	mov r8, [rsp+8*12]
+	mov qword [rsp+8*13], 0
+	sete [rsp+8*13]
+	mov r8, [rsp+8*13]
 	cmp r8, 0
 	je L_347
 	mov rax,[rsp+8*8]
@@ -399,11 +402,11 @@ L_344:
 L_347:
 	mov r8, [rsp+8*7]
 	sub r8, 1
-	mov qword [rsp+8*13],r8 
-	mov r8, [rsp+8*13]
+	mov qword [rsp+8*14],r8 
+	mov r8, [rsp+8*14]
 	mov qword [gbl+8*2] ,r8
 	call dfs
-	mov [rsp+8*14] , rax
+	mov [rsp+8*15] , rax
 	jmp L_344
 	
 L_345:
@@ -417,15 +420,15 @@ L_345:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 184
-	mov rax,[rsp+8*15]
+	sub    rsp, 192
+	mov rax,[rsp+8*16]
 	leave
 	ret
 	
 QED:
 	
 	 section   .bss
-gbl:         resb   2168
+gbl:         resb   2176
 
 	 section   .data
 

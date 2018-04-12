@@ -1,4 +1,4 @@
-string miracle = "\"orange________\"";
+/*string miracle = "\"orange________\"";
 
 class moment_ring
 {
@@ -24,21 +24,21 @@ void another_fun()
 		//fun();
 		fun(2017);
 }
-
+*/
 class test
 {
 	string txt;
 	test init()
 	{
-		txt = "you should pass this one";
+		//txt = "you should pass this one";
 		return this;
 	}
-	test init2(test t)
+	/*test init2(test t)
 	{
 		t.txt = "TAT";
 		this.txt = t.txt;
 		return t;
-	}
+	}*/
 }
 
 int main()
@@ -57,14 +57,14 @@ int main()
 	;
 	return toString(fun(10).ord(0)).ord(0);*/
 }
-
+/*
 string fun(int pos)
 {
 	if(pos < 0)
 		return "";
 	return fun(pos - 1) + toString(miracle.ord(pos));
 }
-
+*/
 
 
 /*!! metadata:
