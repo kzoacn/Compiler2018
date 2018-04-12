@@ -1,8 +1,5 @@
 package cn.kzoacn;
 
-import com.sun.corba.se.impl.orbutil.closure.Constant;
-import sun.invoke.util.VerifyAccess;
-import sun.util.resources.cldr.zh.CalendarData_zh_Hans_HK;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -486,7 +483,7 @@ public class IRTranslator {
 
 
         result=head.append("\n").append(text).append("\n").append(bss).append("\n").append(data).append("\n");
-        PrintWriter output = new PrintWriter(new FileOutputStream(new File("./testcase/" + fileName+".nasm")));
+        PrintWriter output = new PrintWriter(new FileOutputStream(new File(fileName)));
         output.println(result.toString());
         output.close();
         return ;

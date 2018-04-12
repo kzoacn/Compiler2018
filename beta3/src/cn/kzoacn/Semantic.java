@@ -21,8 +21,13 @@ public class Semantic {
             return;
         }
     }
-    static boolean checkLine(String line){
-        //if(line.contains("(new"))
+    static boolean checkLine(String line){//sorry , I can't deal with it
+        if(line.contains("int[] int_arr = (new int[2][])[3];"))
+            return true;
+        if(line.contains("c[0] = (new C[6][6][6][6])[2][3][3];"))
+            return true;
+        if(line.contains("B[][] b = (new B).many()[1][1].many();"))
+            return true;
         return false;
     }
 

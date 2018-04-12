@@ -176,7 +176,7 @@ class ExecTest {
         IRTranslator irTranslator = new IRTranslator();
         irTranslator.setSimulator(ir,visitor.constStringPool,visitor.symbolMap);
 
-        irTranslator.run(name);
+        irTranslator.run("./testcase/" + name+".nasm");
         Process p = Runtime.getRuntime().exec("nasm -felf64 "+"./testcase/"+name+".nasm");
         p.waitFor();
         if (p.exitValue() != 0) {

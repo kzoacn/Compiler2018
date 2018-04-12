@@ -6,4 +6,6 @@
 ./beta3/src/cn/kzoacn/MxstarListener.java
 ./beta3/src/cn/kzoacn/Main.java
 ./beta3/src/cn/kzoacn/MxstarBaseListener.java
+./beta3/src/cn/kzoacn/IRTranslator.java
 ./beta3/src/cn/kzoacn/ConstantPool.java
+./beta3/src/cn/kzoacn/Builder.java
