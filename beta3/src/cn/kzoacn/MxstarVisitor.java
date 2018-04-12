@@ -79,6 +79,12 @@ public interface MxstarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFunctionDefinition(MxstarParser.FunctionDefinitionContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link MxstarParser#functionBody}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFunctionBody(MxstarParser.FunctionBodyContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link MxstarParser#functionName}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

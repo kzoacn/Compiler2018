@@ -1462,7 +1462,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         //symbolMap.functionMap.put(name,function);
 
 
-        IR stmt=visit(ctx.block());
+        IR stmt=visit(ctx.functionBody());
 
 
         ir.push(new Quad(OpCode.label,name));
@@ -1500,6 +1500,16 @@ class MVisitor extends MxstarBaseVisitor<IR>{
 
 
     @Override public IR visitBlock(MxstarParser.BlockContext ctx) {
+        symbolMap.nextScope();
+        IR ir = new IR();
+        for(int i=0;i<ctx.getChildCount();i++){
+            ir.concat(visit(ctx.getChild(i)));
+        }
+        symbolMap.prevScope();
+        return ir;
+    }
+
+    @Override public IR visitFunctionBody(MxstarParser.FunctionBodyContext ctx) {
         //symbolMap.nextScope();
         IR ir = new IR();
         for(int i=0;i<ctx.getChildCount();i++){

@@ -122,6 +122,16 @@ public interface MxstarListener extends ParseTreeListener {
 	 */
 	void exitFunctionDefinition(MxstarParser.FunctionDefinitionContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link MxstarParser#functionBody}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunctionBody(MxstarParser.FunctionBodyContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link MxstarParser#functionBody}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunctionBody(MxstarParser.FunctionBodyContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link MxstarParser#functionName}.
 	 * @param ctx the parse tree
 	 */

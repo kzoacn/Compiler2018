@@ -47,9 +47,11 @@ variableBasicType
 
 
 functionDefinition
-    :   variableType functionName '(' parameterList? ')' block
+    :   variableType functionName '(' parameterList? ')' functionBody
     ;
-
+functionBody
+    : '{' statement* '}'
+    ;
 
 
 functionName

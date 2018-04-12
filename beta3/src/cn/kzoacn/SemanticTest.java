@@ -60,7 +60,7 @@ class SemanticTest {
         testError("var-1-5110379024-wuhang");
         testError("var-2-5100309127-hetianxing");
         testError("var-3-5120309049-liaochao");
-        //testError("var-4-5140309552-wancheng");
+        testError("var-4-5140309552-wancheng");
     }
     @Test
     void test0()throws Exception{
