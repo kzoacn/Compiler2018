@@ -24,13 +24,13 @@ public class Semantic {
 
     public static boolean semantic(FileInputStream fileInputStream){
         Scanner fin = new Scanner(fileInputStream);
-        try {
+        //try {
 
             StringBuilder ctx = new StringBuilder();
             while (fin.hasNext()) {
                 String line = fin.nextLine();
                 ctx.append(line);
-                System.err.println(line);
+                //System.err.println(line);
                 ctx.append("\n");
             }
 
@@ -64,10 +64,10 @@ public class Semantic {
                 System.err.println("CE1");
                 return false;
             }
-        }catch (Exception e){
-            System.err.println("CE2");
-            return false;
-        }
+        //}catch (Exception e){
+        //    System.err.println("CE2");
+        //    return false;
+        //}
         return true;
     }
 

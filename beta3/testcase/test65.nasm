@@ -338,7 +338,7 @@ main:
 	mov [rsp+8*1] , rax
 	mov qword [rsp+8*2] ,100
 	mov qword [rsp+8*3] ,0
-	mov qword [rsp+8*4] ,t2068
+	mov qword [rsp+8*4] ,t2071
 	mov qword [rsp+8*3] ,0
 	
 L_85:
@@ -350,7 +350,7 @@ L_85:
 	mov r8, [rsp+8*5]
 	cmp r8, 0
 	je L_86
-	mov     rsi, t2074
+	mov     rsi, t2077
 	mov     rdi, [rsp+8*4]
 	call    concat
 	mov [rsp+8*6], rax
@@ -387,7 +387,7 @@ L_88:
 	mov r8, [rsp+8*10]
 	cmp r8, 0
 	je L_89
-	mov     rsi, t2084
+	mov     rsi, t2087
 	mov     rdi, [rsp+8*4]
 	call    concat
 	mov [rsp+8*11], rax
@@ -442,13 +442,13 @@ formatln:
 format:
 	db  "%s",  0
 	
-t2084:
-	 db 1,"0" ,0
-
-t2074:
-	 db 1,"0" ,0
-
-t2068:
+t2071:
 	 db 0,"" ,0
+
+t2077:
+	 db 1,"0" ,0
+
+t2087:
+	 db 1,"0" ,0
 
 

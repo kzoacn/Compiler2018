@@ -402,7 +402,7 @@ Hello_say:
 	sub    rsp, 208
 	mov r8, [gbl+8*11]
 	mov qword [rsp+8*14] ,r8
-	mov qword [gbl+8*15] ,t1586
+	mov qword [gbl+8*15] ,t1588
 	mov r8, [gbl+8*15]
 	mov qword [rsp+8*16] ,r8
 	mov rdi, formatln
@@ -435,7 +435,7 @@ formatln:
 format:
 	db  "%s",  0
 	
-t1586:
+t1588:
 	 db 2,"hi" ,0
 
 

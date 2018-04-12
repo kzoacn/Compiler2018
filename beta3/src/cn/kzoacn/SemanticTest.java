@@ -128,7 +128,7 @@ class SemanticTest {
     void hard8()throws Exception{
         testPass("hard8");
     }
-    @Test @Disabled
+    @Test
     void hard9()throws Exception{
         testPass("hard9");
     }
