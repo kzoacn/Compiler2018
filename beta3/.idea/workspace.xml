@@ -20,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="1259" column="34" lean-forward="false" selection-start-line="1259" selection-start-column="34" selection-end-line="1259" selection-end-column="34" />
+            <state relative-caret-position="185">
+              <caret line="1256" column="54" lean-forward="false" selection-start-line="1256" selection-start-column="54" selection-end-line="1256" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#498#499#0" expanded="true" />
@@ -104,37 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractParseTreeVisitor.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/../antlr-4.7.1-complete.jar!/org/antlr/v4/runtime/tree/AbstractParseTreeVisitor.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-              <folding>
-                <marker date="1522573820000" expanded="false" signature="0:104" ph="/.../" />
-                <marker date="1522573820000" expanded="true" signature="263:270" ph="{}" />
-                <marker date="1522573820000" expanded="true" signature="306:317" ph=" { " />
-                <marker date="1522573820000" expanded="true" signature="342:348" ph=" }" />
-                <marker date="1522573820000" expanded="true" signature="392:745" ph="{...}" />
-                <marker date="1522573820000" expanded="false" signature="792:803" ph=" { " />
-                <marker date="1522573820000" expanded="false" signature="831:837" ph=" }" />
-                <marker date="1522573820000" expanded="false" signature="882:893" ph=" { " />
-                <marker date="1522573820000" expanded="false" signature="921:927" ph=" }" />
-                <marker date="1522573820000" expanded="false" signature="960:971" ph=" { " />
-                <marker date="1522573820000" expanded="false" signature="983:989" ph=" }" />
-                <marker date="1522573820000" expanded="false" signature="1049:1060" ph=" { " />
-                <marker date="1522573820000" expanded="false" signature="1078:1084" ph=" }" />
-                <marker date="1522573820000" expanded="false" signature="1160:1171" ph=" { " />
-                <marker date="1522573820000" expanded="false" signature="1183:1189" ph=" }" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Semantic.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Semantic.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Semantic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="635">
-              <caret line="66" column="10" lean-forward="false" selection-start-line="66" selection-start-column="10" selection-end-line="66" selection-end-column="10" />
+            <state relative-caret-position="236">
+              <caret line="24" column="10" lean-forward="false" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -213,8 +187,8 @@
       <find>memberdef</find>
       <find>assign</find>
       <find>err</find>
-      <find>GetValue Error</find>
       <find>type</find>
+      <find>GetValue Error</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -231,9 +205,9 @@
         <option value="$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/ExecTest.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/Mxstar.g4" />
-        <option value="$PROJECT_DIR$/src/cn/kzoacn/Semantic.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/SemanticTest.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/Main.java" />
+        <option value="$PROJECT_DIR$/src/cn/kzoacn/Semantic.java" />
       </list>
     </option>
   </component>
@@ -471,8 +445,8 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.SemanticTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.SemanticTest.la" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ExecTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ExecTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.SemanticTest.la" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.SemanticTest.hard11" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.SemanticTest.hard7" />
       </list>
@@ -498,6 +472,9 @@
     <history-entry file="ExecTest - 2018.04.12 at 22h 53m 09s.xml">
       <configuration name="ExecTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ExecTest - 2018.04.12 at 23h 26m 07s.xml">
+      <configuration name="ExecTest" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="SemanticTest - 2018.04.12 at 22h 53m 16s.xml">
       <configuration name="SemanticTest" configurationId="JUnit" />
     </history-entry>
@@ -510,11 +487,8 @@
     <history-entry file="SemanticTest - 2018.04.12 at 23h 24m 38s.xml">
       <configuration name="SemanticTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SemanticTest_hard11 - 2018.04.12 at 22h 52m 00s.xml">
-      <configuration name="SemanticTest.hard11" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SemanticTest_hard11 - 2018.04.12 at 22h 52m 58s.xml">
-      <configuration name="SemanticTest.hard11" configurationId="JUnit" />
+    <history-entry file="SemanticTest - 2018.04.12 at 23h 26m 15s.xml">
+      <configuration name="SemanticTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="SemanticTest_hard11 - 2018.04.12 at 22h 53m 01s.xml">
       <configuration name="SemanticTest.hard11" configurationId="JUnit" />
@@ -528,6 +502,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -538,7 +513,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30597016" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30597016" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1103,16 +1078,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Semantic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="635">
-          <caret line="66" column="10" lean-forward="false" selection-start-line="66" selection-start-column="10" selection-end-line="66" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/MxstarParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
@@ -1160,8 +1125,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="1259" column="34" lean-forward="false" selection-start-line="1259" selection-start-column="34" selection-end-line="1259" selection-end-column="34" />
+        <state relative-caret-position="185">
+          <caret line="1256" column="54" lean-forward="false" selection-start-line="1256" selection-start-column="54" selection-end-line="1256" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#498#499#0" expanded="true" />
@@ -1191,6 +1156,16 @@
             <element signature="e#33200#33214#0" expanded="true" />
             <element signature="e#35388#35402#0" expanded="true" />
             <element signature="e#64666#64680#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Semantic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="24" column="10" lean-forward="false" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

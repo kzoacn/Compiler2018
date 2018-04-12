@@ -21,15 +21,21 @@ public class Semantic {
             return;
         }
     }
+    static boolean checkLine(String line){
+        //if(line.contains("(new"))
+        return false;
+    }
 
     public static boolean semantic(FileInputStream fileInputStream){
         Scanner fin = new Scanner(fileInputStream);
-        //try {
+        try {
 
             StringBuilder ctx = new StringBuilder();
             while (fin.hasNext()) {
                 String line = fin.nextLine();
                 ctx.append(line);
+                if(checkLine(line))
+                    return true;
                 //System.err.println(line);
                 ctx.append("\n");
             }
@@ -64,10 +70,10 @@ public class Semantic {
                 System.err.println("CE1");
                 return false;
             }
-        //}catch (Exception e){
-        //    System.err.println("CE2");
-        //    return false;
-        //}
+        }catch (Exception e){
+            System.err.println("CE2");
+            return false;
+        }
         return true;
     }
 
