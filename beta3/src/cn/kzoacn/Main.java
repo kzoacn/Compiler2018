@@ -1500,12 +1500,12 @@ class MVisitor extends MxstarBaseVisitor<IR>{
 
 
     @Override public IR visitBlock(MxstarParser.BlockContext ctx) {
-        symbolMap.nextScope();
+        //symbolMap.nextScope();
         IR ir = new IR();
         for(int i=0;i<ctx.getChildCount();i++){
             ir.concat(visit(ctx.getChild(i)));
         }
-        symbolMap.prevScope();
+        //symbolMap.prevScope();
         return ir;
     }
 
