@@ -686,7 +686,6 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         }
         return str.toString();
     }
-    
     Variable nextVariable(VariableType type){
         Variable variable = new Variable("tmpVariable"+randomString(),type);
         variable.isTemp=true;
