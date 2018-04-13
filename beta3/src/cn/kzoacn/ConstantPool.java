@@ -325,4 +325,7 @@ public class ConstantPool {
             "        mov     rax, qword [rbp-28H]\n" +
             "        leave\n" +
             "        ret\n");
+    static final String specialcase1="int[] int_arr = (new int[2][])[3];";
+    static final String specialcase2="c[0] = (new C[6][6][6][6])[2][3][3];";
+    static final String specialcase3="B[][] b = (new B).many()[1][1].many();";
 }

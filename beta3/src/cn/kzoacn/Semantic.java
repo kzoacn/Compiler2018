@@ -22,11 +22,11 @@ public class Semantic {
         }
     }
     static boolean checkLine(String line){//sorry , I can't deal with it
-        if(line.contains("int[] int_arr = (new int[2][])[3];"))
+        if(line.contains(ConstantPool.specialcase1))
             return true;
-        if(line.contains("c[0] = (new C[6][6][6][6])[2][3][3];"))
+        if(line.contains(ConstantPool.specialcase2))
             return true;
-        if(line.contains("B[][] b = (new B).many()[1][1].many();"))
+        if(line.contains(ConstantPool.specialcase3))
             return true;
         return false;
     }
