@@ -7,7 +7,6 @@ int main(){
     }
     
     
-    
     if(!bl || 1>0){
         println("true2");
     }else{
