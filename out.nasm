@@ -333,26 +333,106 @@ mAd_006:  mov     rax, qword [rbp-8H]
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 112
+	sub    rsp, 208
 	call global_init
 	mov [rsp+8*1] , rax
-	mov qword [rsp+8*2] ,10
-	mov r8, [rsp+8*2]
-	mov qword [rsp+8*3] ,r8
-	mov r8, [rsp+8*2]
-	mov r9, 10
+	mov qword [rsp+8*2] ,5
+	mov qword [rsp+8*3] ,0
+	mov r8, [rsp+8*3]
+	mov r9, 0
 	cmp r8, r9
 	mov qword [rsp+8*4], 0
-	sete [rsp+8*4]
+	setne [rsp+8*4]
 	mov r8, [rsp+8*4]
 	cmp r8, 0
-	je L_1
-	mov qword [rsp+8*5] ,20
-	mov r8, [rsp+8*5]
-	mov qword [rsp+8*3] ,r8
+	jne L_0
+	mov qword [rsp+8*5] ,0
+	jmp L_1
+	
+L_0:
+	xor rdx, rdx
+	mov rax, [rsp+8*2]
+	mov rbx, [rsp+8*3]
+	cdq
+	idiv rbx
+	mov [rsp+8*6], rax
+	mov r8, [rsp+8*6]
+	mov r9, 1
+	cmp r8, r9
+	mov qword [rsp+8*7], 0
+	setne [rsp+8*7]
+	mov r8, [rsp+8*7]
+	mov qword [rsp+8*5] ,r8
 	
 L_1:
-	mov rax,[rsp+8*3]
+	mov r8, [rsp+8*5]
+	mov qword [rsp+8*8] ,r8
+	mov r8, [rsp+8*8]
+	cmp r8, 0
+	je L_2
+	mov qword [rsp+8*9] ,10
+	jmp L_3
+	
+L_2:
+	mov qword [rsp+8*9] ,20
+	
+L_3:
+	mov r8, [rsp+8*9]
+	mov r9, 10
+	cmp r8, r9
+	mov qword [rsp+8*10], 0
+	sete [rsp+8*10]
+	mov r8, [rsp+8*10]
+	cmp r8, 0
+	jne L_4
+	mov qword [rsp+8*11] ,0
+	jmp L_5
+	
+L_4:
+	xor rdx, rdx
+	mov rax, [rsp+8*2]
+	mov rbx, [rsp+8*3]
+	cdq
+	idiv rbx
+	mov [rsp+8*12], rax
+	mov r8, [rsp+8*12]
+	mov r9, 0
+	cmp r8, r9
+	mov qword [rsp+8*13], 0
+	sete [rsp+8*13]
+	mov r8, [rsp+8*13]
+	mov qword [rsp+8*11] ,r8
+	
+L_5:
+	mov r8, [rsp+8*11]
+	cmp r8, 0
+	jne L_6
+	mov qword [rsp+8*14] ,0
+	jmp L_7
+	
+L_6:
+	mov r8, [rsp+8*2]
+	mov r9, 5
+	cmp r8, r9
+	mov qword [rsp+8*15], 0
+	sete [rsp+8*15]
+	mov r8, [rsp+8*15]
+	mov qword [rsp+8*14] ,r8
+	
+L_7:
+	mov r8, [rsp+8*14]
+	mov qword [rsp+8*16], 0
+	cmp r8, 0
+	sete [rsp+8*16]
+	mov r8, [rsp+8*16]
+	mov qword [rsp+8*17] ,r8
+	mov r8, [rsp+8*17]
+	cmp r8, 0
+	je L_9
+	mov qword [rsp+8*9] ,30
+	
+L_9:
+	mov rax,[rsp+8*9]
 	leave
 	ret
 	mov rax,0
@@ -363,15 +443,15 @@ L_1:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 112
-	mov rax,[rsp+8*6]
+	sub    rsp, 208
+	mov rax,[rsp+8*18]
 	leave
 	ret
 	
 QED:
 	
 	 section   .bss
-gbl:         resb   2096
+gbl:         resb   2192
 
 	 section   .data
 
