@@ -345,7 +345,7 @@ main:
 	call    toString
 	mov     qword[rsp+8*5], rax
 	mov     rsi, [rsp+8*5]
-	mov     rdi, tmpVariable305
+	mov     rdi, tmpVariabletnzzoqfvey
 	call    concat
 	mov [rsp+8*6], rax
 	mov r8, [rsp+8*6]
@@ -386,7 +386,7 @@ formatln:
 format:
 	db  "%s",  0
 	
-tmpVariable305:
+tmpVariabletnzzoqfvey:
 	 db 6,"Hello " ,0
 
 

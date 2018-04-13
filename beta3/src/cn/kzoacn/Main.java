@@ -676,8 +676,18 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         return "L_"+Integer.toString(labelCounter++);
     }
     private static int counter=0;
+
+    String alphaSet="qwertyuioplkjhgfdsazxcvbnm";
+    String randomString(){
+        StringBuffer str=new StringBuffer();
+        for(int i=0;i<10;i++){
+            char c=alphaSet.charAt((int)(alphaSet.length()*Math.random()));
+            str.append(c);
+        }
+        return str.toString();
+    }
     Variable nextVariable(VariableType type){
-        Variable variable = new Variable("tmpVariable"+Integer.toString(counter++),type);
+        Variable variable = new Variable("tmpVariable"+randomString(),type);
         variable.isTemp=true;
         symbolMap.putSymbol(variable.name,variable.type);
         return variable;

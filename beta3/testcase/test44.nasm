@@ -357,7 +357,7 @@ main:
 	mov     rdi, [rsp+8*3]
 	call    multiAddress
 	mov [rsp+8*6], rax
-	mov r8, tmpVariable411
+	mov r8, tmpVariableydhqyahtsv
 	mov r9, [rsp+8*6]
 	mov qword [r9], r8
 	mov     rdi, 1
@@ -400,7 +400,7 @@ main:
 	mov     rdi, [rsp+8*11]
 	call    multiAddress
 	mov [rsp+8*14], rax
-	mov r8, tmpVariable433
+	mov r8, tmpVariablenbkpkqckld
 	mov r9, [rsp+8*14]
 	mov qword [r9], r8
 	mov     rdi, 1
@@ -441,7 +441,7 @@ main:
 	mov r8, [rsp+8*20]
 	mov r8, [r8]
 	mov [rsp+8*20], r8
-	mov     rsi, tmpVariable453
+	mov     rsi, tmpVariablebjgovrqbgm
 	mov     rdi, [rsp+8*20]
 	call    concat
 	mov [rsp+8*21], rax
@@ -563,13 +563,13 @@ formatln:
 format:
 	db  "%s",  0
 	
-tmpVariable411:
-	 db 6,"kzoacn" ,0
-
-tmpVariable433:
+tmpVariablenbkpkqckld:
 	 db 10,"xiaojiejie" ,0
 
-tmpVariable453:
+tmpVariablebjgovrqbgm:
 	 db 11," xiang yao " ,0
+
+tmpVariableydhqyahtsv:
+	 db 6,"kzoacn" ,0
 
 

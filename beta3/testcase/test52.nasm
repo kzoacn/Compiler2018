@@ -618,7 +618,7 @@ L_75:
 	jmp L_79
 	
 L_78:
-	mov qword [gbl+8*2] ,tmpVariable1375
+	mov qword [gbl+8*2] ,tmpVariableaohlslrgko
 	mov r8, [gbl+8*2]
 	mov qword [rsp+8*70] ,r8
 	mov rdi, formatln
@@ -928,7 +928,7 @@ formatln:
 format:
 	db  "%s",  0
 	
-tmpVariable1375:
+tmpVariableaohlslrgko:
 	 db 12,"no solution!" ,0
 
 

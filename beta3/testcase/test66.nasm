@@ -368,7 +368,7 @@ L_108:
 	mov r8, [rsp+8*5]
 	cmp r8, 0
 	je L_109
-	mov qword [gbl+8*8] ,tmpVariable2129
+	mov qword [gbl+8*8] ,tmpVariablekrzkqgqfii
 	mov r8, [gbl+8*8]
 	mov qword [rsp+8*9] ,r8
 	mov rdi, formatln
@@ -379,7 +379,7 @@ L_108:
 	jmp L_110
 	
 L_109:
-	mov qword [gbl+8*8] ,tmpVariable2133
+	mov qword [gbl+8*8] ,tmpVariablehiviajliqz
 	mov r8, [gbl+8*8]
 	mov qword [rsp+8*10] ,r8
 	mov rdi, formatln
@@ -418,10 +418,10 @@ formatln:
 format:
 	db  "%s",  0
 	
-tmpVariable2129:
-	 db 5,"error" ,0
-
-tmpVariable2133:
+tmpVariablehiviajliqz:
 	 db 5,"logic" ,0
+
+tmpVariablekrzkqgqfii:
+	 db 5,"error" ,0
 
 
