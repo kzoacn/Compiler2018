@@ -6,6 +6,7 @@ int main(){
         println("false1");
     }
     
+    
     if(!bl || 1>0){
         println("true2");
     }else{
