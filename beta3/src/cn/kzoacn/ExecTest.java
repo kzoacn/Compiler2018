@@ -132,6 +132,10 @@ class ExecTest {
     void quine()throws Exception{
         test("quine");
     }
+    @Test
+    void test66()throws Exception{
+        test("test66");
+    }
 
     void test(String name) throws Exception{
 

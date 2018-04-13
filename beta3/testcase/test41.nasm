@@ -369,10 +369,10 @@ dfs:
 	mov qword [rsp+8*8] ,0
 	mov qword [rsp+8*9] ,1
 	
-L_15:
+L_25:
 	mov r8, 1
 	cmp r8, 0
-	je L_16
+	je L_26
 	mov r8, [rsp+8*9]
 	add r8, 1
 	mov qword [rsp+8*9],r8 
@@ -391,12 +391,12 @@ L_15:
 	sete [rsp+8*12]
 	mov r8, [rsp+8*12]
 	cmp r8, 0
-	je L_18
+	je L_28
 	mov rax,[rsp+8*8]
 	leave
 	ret
 	
-L_18:
+L_28:
 	mov r8, [rsp+8*7]
 	sub r8, 1
 	mov qword [rsp+8*13],r8 
@@ -404,9 +404,9 @@ L_18:
 	mov qword [gbl+8*2] ,r8
 	call dfs
 	mov [rsp+8*14] , rax
-	jmp L_15
+	jmp L_25
 	
-L_16:
+L_26:
 	mov rax,0
 	leave
 	ret

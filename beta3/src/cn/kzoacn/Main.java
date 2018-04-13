@@ -1821,22 +1821,48 @@ class MVisitor extends MxstarBaseVisitor<IR>{
 
 
     @Override public IR visitLogicOr(MxstarParser.LogicOrContext ctx) {
+        IR ir = new IR();
         IR ir0=visit(ctx.expression(0));
         IR ir1=visit(ctx.expression(1));
+
+        String falseLabel=nextLabel();
+        String endLabel=nextLabel();
         Variable temp = nextVariable(symbolMap.operate(ir0.last.dest.type,"||",ir1.last.dest.type) );
-        Quad quad = new Quad(OpCode.or,ir0.last.dest,ir1.last.dest,temp);
-        ir0.concat(ir1);
-        ir0.push(quad);
-        return ir0;
+
+        ir.concat(ir0);
+        Quad quad=new Quad(OpCode.jz,ir0.last.dest,Variable.empty,Variable.empty);
+        quad.name=falseLabel;
+        ir.push(quad);
+        ir.push(new Quad(OpCode.move,nextConst(1,VariableType.CONST_BOOL),Variable.empty,temp));
+        ir.push(new Quad(OpCode.jmp,endLabel));
+        ir.push(new Quad(OpCode.label,falseLabel));
+        ir.concat(ir1);
+        ir.push(new Quad(OpCode.move,ir1.last.dest,Variable.empty,temp));
+        ir.push(new Quad(OpCode.label,endLabel));
+        ir.push(new Quad(OpCode.move,temp,Variable.empty,temp));
+        return ir;
     }
     @Override public IR visitLogicAnd(MxstarParser.LogicAndContext ctx) {
+        IR ir = new IR();
         IR ir0=visit(ctx.expression(0));
         IR ir1=visit(ctx.expression(1));
+
+        String trueLabel=nextLabel();
+        String endLabel=nextLabel();
         Variable temp = nextVariable(symbolMap.operate(ir0.last.dest.type,"&&",ir1.last.dest.type) );
-        Quad quad = new Quad(OpCode.and,ir0.last.dest,ir1.last.dest,temp);
-        ir0.concat(ir1);
-        ir0.push(quad);
-        return ir0;
+
+        ir.concat(ir0);
+        Quad quad=new Quad(OpCode.jnz,ir0.last.dest,Variable.empty,Variable.empty);
+        quad.name=trueLabel;
+        ir.push(quad);
+        ir.push(new Quad(OpCode.move,nextConst(0,VariableType.CONST_BOOL),Variable.empty,temp));
+        ir.push(new Quad(OpCode.jmp,endLabel));
+        ir.push(new Quad(OpCode.label,trueLabel));
+        ir.concat(ir1);
+        ir.push(new Quad(OpCode.move,ir1.last.dest,Variable.empty,temp));
+        ir.push(new Quad(OpCode.label,endLabel));
+        ir.push(new Quad(OpCode.move,temp,Variable.empty,temp));
+        return ir;
     }
     @Override public IR visitRelationOperator(MxstarParser.RelationOperatorContext ctx) {
         IR ir0=visit(ctx.expression(0));

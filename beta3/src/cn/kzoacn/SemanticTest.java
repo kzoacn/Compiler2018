@@ -17,7 +17,7 @@ class SemanticTest {
 
     @Test
     void testTo44()throws Exception{
-        /*testError("arrop-1-5100379071-puyouer");
+        testError("arrop-1-5100379071-puyouer");
         testError("asiop-1-5100379071-puyouer");
         testError("asiop-2-5100379071-puyouer");
         testError("asiop-3-5120309049-liaochao");
@@ -33,9 +33,9 @@ class SemanticTest {
         testError("class-1-5100379071-puyouer");
         testError("class-2-5120309049-liaochao");
         testError("class-5-515030910117-zhenglianmin");
-        testError("class-6-515030910117-zhenglianmin");*/
+        testError("class-6-515030910117-zhenglianmin");
         testError("class-7-515030910117-zhenglianmin.");
-        /*testError("constructor-chenxinhao");
+        testError("constructor-chenxinhao");
         testError("creator-515030910117-zhenglianmin.");
         testError("ctrflow-1-5100379071-puyouer");
         testError("ctrflow-2-5120309049-liaochao");
@@ -60,13 +60,13 @@ class SemanticTest {
         testError("var-1-5110379024-wuhang");
         testError("var-2-5100309127-hetianxing");
         testError("var-3-5120309049-liaochao");
-        testError("var-4-5140309552-wancheng");*/
+        testError("var-4-5140309552-wancheng");
     }
     @Test
     void testEasy()throws Exception{
         testPass("basicopt1-5100309127-hetianxing");
         testPass("basic_test-yurongyou");
-        /*testPass("bulgarian-5110379024-wuhang");
+        testPass("bulgarian-5110379024-wuhang");
         testPass("expr-5110309085-jintianxing");
         testPass("hanoi-5100379110-daibo");
         testPass("hashmap-5100309127-hetianxing");
@@ -90,7 +90,7 @@ class SemanticTest {
         testError("ifbool");
         testError("back");
         testError("void");
-        testError("nomain");*/
+        testError("nomain");
     }
     @Test
     void hard0()throws Exception{

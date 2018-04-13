@@ -344,22 +344,30 @@ main:
 	cmp r8, r9
 	mov qword [rsp+8*5], 0
 	setg [rsp+8*5]
-	mov r8, [rsp+8*2]
-	mov r9, [rsp+8*4]
-	cmp r8, r9
-	mov qword [rsp+8*6], 0
-	setg [rsp+8*6]
 	mov r8, [rsp+8*5]
-	and r8, [rsp+8*6]
-	mov qword [rsp+8*7],r8 
-	mov r8, [rsp+8*7]
 	cmp r8, 0
-	je L_5
-	mov r8, [rsp+8*2]
-	mov qword [rsp+8*8] ,r8
+	jne L_5
+	mov qword [rsp+8*6] ,0
 	jmp L_6
 	
 L_5:
+	mov r8, [rsp+8*2]
+	mov r9, [rsp+8*4]
+	cmp r8, r9
+	mov qword [rsp+8*7], 0
+	setg [rsp+8*7]
+	mov r8, [rsp+8*7]
+	mov qword [rsp+8*6] ,r8
+	
+L_6:
+	mov r8, [rsp+8*6]
+	cmp r8, 0
+	je L_7
+	mov r8, [rsp+8*2]
+	mov qword [rsp+8*8] ,r8
+	jmp L_8
+	
+L_7:
 	mov r8, [rsp+8*3]
 	mov r9, [rsp+8*4]
 	cmp r8, r9
@@ -367,18 +375,18 @@ L_5:
 	setg [rsp+8*9]
 	mov r8, [rsp+8*9]
 	cmp r8, 0
-	je L_7
+	je L_9
 	mov r8, [rsp+8*3]
 	mov qword [rsp+8*8] ,r8
-	jmp L_8
+	jmp L_10
 	
-L_7:
+L_9:
 	mov r8, [rsp+8*4]
 	mov qword [rsp+8*8] ,r8
 	
-L_8:
+L_10:
 	
-L_6:
+L_8:
 	mov r8, [rsp+8*8]
 	mov qword [gbl+8*10] ,r8
 	mov r8, [gbl+8*10]
