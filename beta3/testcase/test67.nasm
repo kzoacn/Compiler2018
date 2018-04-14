@@ -438,7 +438,7 @@ L_120:
 	mov     rdi, [rsp+8*24]
 	call    toString
 	mov     qword[rsp+8*25], rax
-	mov     rsi, tmpVariableebdwqdoibs
+	mov     rsi, tmpVariableimpstzzwjj
 	mov     rdi, [rsp+8*25]
 	call    concat
 	mov [rsp+8*26], rax
@@ -519,7 +519,7 @@ L_115:
 	call    toString
 	mov     qword[rsp+8*39], rax
 	mov     rsi, [rsp+8*39]
-	mov     rdi, tmpVariablexprgpfgikp
+	mov     rdi, tmpVariableslxnahhiid
 	call    concat
 	mov [rsp+8*40], rax
 	mov r8, [rsp+8*40]
@@ -567,10 +567,10 @@ formatln:
 format:
 	db  "%s",  0
 	
-tmpVariableebdwqdoibs:
+tmpVariableimpstzzwjj:
 	 db 1," " ,0
 
-tmpVariablexprgpfgikp:
+tmpVariableslxnahhiid:
 	 db 7,"Total: " ,0
 
 

@@ -336,7 +336,7 @@ main:
 	sub    rsp, 96
 	call global_init
 	mov [rsp+8*1] , rax
-	mov qword [gbl+8*2] ,tmpVariablemqnjweijql
+	mov qword [gbl+8*2] ,tmpVariableuejlfbbxee
 	mov r8, [gbl+8*2]
 	mov qword [rsp+8*3] ,r8
 	mov rdi, formatln
@@ -370,7 +370,7 @@ formatln:
 format:
 	db  "%s",  0
 	
-tmpVariablemqnjweijql:
+tmpVariableuejlfbbxee:
 	 db 11,"Hello World" ,0
 
 

@@ -338,7 +338,7 @@ main:
 	mov [rsp+8*1] , rax
 	mov qword [rsp+8*2] ,100
 	mov qword [rsp+8*3] ,0
-	mov qword [rsp+8*4] ,tmpVariableeyurzpxxze
+	mov qword [rsp+8*4] ,tmpVariablernkujtjkum
 	mov qword [rsp+8*3] ,0
 	
 L_101:
@@ -350,7 +350,7 @@ L_101:
 	mov r8, [rsp+8*5]
 	cmp r8, 0
 	je L_102
-	mov     rsi, tmpVariablejjytkdgdqw
+	mov     rsi, tmpVariableorodhmsoug
 	mov     rdi, [rsp+8*4]
 	call    concat
 	mov [rsp+8*6], rax
@@ -387,7 +387,7 @@ L_104:
 	mov r8, [rsp+8*10]
 	cmp r8, 0
 	je L_105
-	mov     rsi, tmpVariablegrkdhoxvwb
+	mov     rsi, tmpVariableubjvzvxiwq
 	mov     rdi, [rsp+8*4]
 	call    concat
 	mov [rsp+8*11], rax
@@ -442,13 +442,13 @@ formatln:
 format:
 	db  "%s",  0
 	
-tmpVariablejjytkdgdqw:
-	 db 1,"0" ,0
-
-tmpVariableeyurzpxxze:
+tmpVariablernkujtjkum:
 	 db 0,"" ,0
 
-tmpVariablegrkdhoxvwb:
+tmpVariableubjvzvxiwq:
+	 db 1,"0" ,0
+
+tmpVariableorodhmsoug:
 	 db 1,"0" ,0
 
 

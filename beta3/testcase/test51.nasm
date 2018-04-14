@@ -387,7 +387,7 @@ main:
 	mov     rdi, [rsp+8*4]
 	call    multiAddress
 	mov [rsp+8*11], rax
-	mov r8, tmpVariablexvggedwdjt
+	mov r8, tmpVariablepgmluxvyoi
 	mov r9, [rsp+8*11]
 	mov qword [r9], r8
 	mov     rdi, 2
@@ -413,7 +413,7 @@ main:
 	mov     rdi, [rsp+8*4]
 	call    multiAddress
 	mov [rsp+8*14], rax
-	mov r8, tmpVariablebgjfpkkvtd
+	mov r8, tmpVariableiezsnnnbjc
 	mov r9, [rsp+8*14]
 	mov qword [r9], r8
 	mov     rdi, 2
@@ -439,7 +439,7 @@ main:
 	mov     rdi, [rsp+8*4]
 	call    multiAddress
 	mov [rsp+8*17], rax
-	mov r8, tmpVariableljjztbmezy
+	mov r8, tmpVariablevhsyxxqipy
 	mov r9, [rsp+8*17]
 	mov qword [r9], r8
 	mov     rdi, 2
@@ -465,7 +465,7 @@ main:
 	mov     rdi, [rsp+8*4]
 	call    multiAddress
 	mov [rsp+8*20], rax
-	mov r8, tmpVariablejhhmzqdvlw
+	mov r8, tmpVariableefnkgncyix
 	mov r9, [rsp+8*20]
 	mov qword [r9], r8
 	mov r8, [rsp+8*4]
@@ -621,16 +621,16 @@ formatln:
 format:
 	db  "%s",  0
 	
-tmpVariableljjztbmezy:
-	 db 3,"wo " ,0
-
-tmpVariablejhhmzqdvlw:
-	 db 2,"de" ,0
-
-tmpVariablebgjfpkkvtd:
+tmpVariableiezsnnnbjc:
 	 db 4,"luo " ,0
 
-tmpVariablexvggedwdjt:
+tmpVariableefnkgncyix:
+	 db 2,"de" ,0
+
+tmpVariablevhsyxxqipy:
+	 db 3,"wo " ,0
+
+tmpVariablepgmluxvyoi:
 	 db 3,"ha " ,0
 
 

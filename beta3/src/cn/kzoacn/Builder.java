@@ -49,9 +49,9 @@ public class Builder {
         ir.modify();
        // ir.print();
 ////ad
-        for(Map.Entry cst : visitor.constStringPool.entrySet()){
-            System.out.println(cst.getKey()+" : "+cst.getValue());
-        }
+       // for(Map.Entry cst : visitor.constStringPool.entrySet()){
+        //    System.out.println(cst.getKey()+" : "+cst.getValue());
+       // }
 
         //IRSimulator irSimulator = new IRSimulator();
         IRTranslator irTranslator = new IRTranslator();

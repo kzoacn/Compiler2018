@@ -336,7 +336,7 @@ main:
 	sub    rsp, 120
 	call global_init
 	mov [rsp+8*1] , rax
-	mov qword [gbl+8*2] ,tmpVariablekfyqylsjhf
+	mov qword [gbl+8*2] ,tmpVariablesaweoyilrc
 	mov r8, [gbl+8*2]
 	mov qword [rsp+8*3] ,r8
 	mov rdi, formatln
@@ -344,7 +344,7 @@ main:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov qword [gbl+8*2] ,tmpVariablexgdlstxiwi
+	mov qword [gbl+8*2] ,tmpVariableeudvvrhwcz
 	mov r8, [gbl+8*2]
 	mov qword [rsp+8*4] ,r8
 	mov rdi, formatln
@@ -352,7 +352,7 @@ main:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov qword [gbl+8*2] ,tmpVariableleiukrfgfb
+	mov qword [gbl+8*2] ,tmpVariablejamluvsncn
 	mov r8, [gbl+8*2]
 	mov qword [rsp+8*5] ,r8
 	mov rdi, formatln
@@ -360,7 +360,7 @@ main:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov qword [gbl+8*2] ,tmpVariablejdhdkdigbg
+	mov qword [gbl+8*2] ,tmpVariablexqzclnzqsv
 	mov r8, [gbl+8*2]
 	mov qword [rsp+8*6] ,r8
 	mov rdi, formatln
@@ -394,16 +394,16 @@ formatln:
 format:
 	db  "%s",  0
 	
-tmpVariableleiukrfgfb:
+tmpVariablejamluvsncn:
 	 db 3,"adf" ,0
 
-tmpVariablekfyqylsjhf:
+tmpVariablesaweoyilrc:
 	 db 11,"Hello World" ,0
 
-tmpVariablexgdlstxiwi:
+tmpVariableeudvvrhwcz:
 	 db 10,"0123456789" ,0
 
-tmpVariablejdhdkdigbg:
+tmpVariablexqzclnzqsv:
 	 db 12,"asdfasdfasdf" ,0
 
 
