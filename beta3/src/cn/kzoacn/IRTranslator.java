@@ -486,7 +486,7 @@ public class IRTranslator {
         PrintWriter output = new PrintWriter(new FileOutputStream(new File(fileName)));
         output.println(result.toString());
         output.close();
-        System.err.println(result);
+        //System.err.println(result);
         return ;
     }
 

@@ -146,8 +146,8 @@
       <file leaf-file-name="IRTranslator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="706">
-              <caret line="489" column="16" lean-forward="true" selection-start-line="489" selection-start-column="16" selection-end-line="489" selection-end-column="16" />
+            <state relative-caret-position="687">
+              <caret line="488" column="10" lean-forward="false" selection-start-line="488" selection-start-column="10" selection-end-line="488" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1139,8 +1139,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="706">
-          <caret line="489" column="16" lean-forward="true" selection-start-line="489" selection-start-column="16" selection-end-line="489" selection-end-column="16" />
+        <state relative-caret-position="687">
+          <caret line="488" column="10" lean-forward="false" selection-start-line="488" selection-start-column="10" selection-end-line="488" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
