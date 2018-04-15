@@ -409,7 +409,7 @@ L_12:
 	mov r8, [rsp+8*3]
 	cmp r8, 0
 	je L_13
-	mov qword [gbl+8*5] ,tmpVariabletofljzuwjm
+	mov qword [gbl+8*5] ,tmpVariabletmnbmujcgn
 	mov r8, [gbl+8*5]
 	mov qword [rsp+8*6] ,r8
 	mov rdi, formatln
@@ -420,7 +420,7 @@ L_12:
 	jmp L_14
 	
 L_13:
-	mov qword [gbl+8*5] ,tmpVariableadyzmzogha
+	mov qword [gbl+8*5] ,tmpVariablevwxtnttyrx
 	mov r8, [gbl+8*5]
 	mov qword [rsp+8*7] ,r8
 	mov rdi, formatln
@@ -453,7 +453,7 @@ L_16:
 	mov r8, [rsp+8*9]
 	cmp r8, 0
 	je L_17
-	mov qword [gbl+8*5] ,tmpVariablemhwvqrivnv
+	mov qword [gbl+8*5] ,tmpVariableandxhvxziu
 	mov r8, [gbl+8*5]
 	mov qword [rsp+8*11] ,r8
 	mov rdi, formatln
@@ -464,7 +464,7 @@ L_16:
 	jmp L_18
 	
 L_17:
-	mov qword [gbl+8*5] ,tmpVariablecwgevrssze
+	mov qword [gbl+8*5] ,tmpVariablegntbsrcqwc
 	mov r8, [gbl+8*5]
 	mov qword [rsp+8*12] ,r8
 	mov rdi, formatln
@@ -510,7 +510,7 @@ L_22:
 	mov r8, [rsp+8*15]
 	cmp r8, 0
 	je L_23
-	mov qword [gbl+8*5] ,tmpVariableetgppvwagz
+	mov qword [gbl+8*5] ,tmpVariablevhtzeakjhn
 	mov r8, [gbl+8*5]
 	mov qword [rsp+8*17] ,r8
 	mov rdi, formatln
@@ -521,7 +521,7 @@ L_22:
 	jmp L_24
 	
 L_23:
-	mov qword [gbl+8*5] ,tmpVariabledegdqafcox
+	mov qword [gbl+8*5] ,tmpVariablewxqxymnfam
 	mov r8, [gbl+8*5]
 	mov qword [rsp+8*18] ,r8
 	mov rdi, formatln
@@ -565,22 +565,22 @@ GS_31:
 GS_32:
 	db 25H, 73H, 00H
 	
-tmpVariableadyzmzogha:
-	 db 6,"false1" ,0
-
-tmpVariabledegdqafcox:
-	 db 6,"false3" ,0
-
-tmpVariabletofljzuwjm:
-	 db 5,"true1" ,0
-
-tmpVariablemhwvqrivnv:
-	 db 5,"true2" ,0
-
-tmpVariableetgppvwagz:
+tmpVariablevhtzeakjhn:
 	 db 5,"true3" ,0
 
-tmpVariablecwgevrssze:
+tmpVariablegntbsrcqwc:
 	 db 6,"false2" ,0
+
+tmpVariablewxqxymnfam:
+	 db 6,"false3" ,0
+
+tmpVariablevwxtnttyrx:
+	 db 6,"false1" ,0
+
+tmpVariabletmnbmujcgn:
+	 db 5,"true1" ,0
+
+tmpVariableandxhvxziu:
+	 db 5,"true2" ,0
 
 

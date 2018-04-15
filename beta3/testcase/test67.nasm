@@ -491,7 +491,7 @@ L_120:
 	mov     rdi, [rsp+8*24]
 	call    toString
 	mov     qword[rsp+8*25], rax
-	mov     rsi, tmpVariableuymbubwaib
+	mov     rsi, tmpVariablehskunaurci
 	mov     rdi, [rsp+8*25]
 	call    concat
 	mov [rsp+8*26], rax
@@ -572,7 +572,7 @@ L_115:
 	call    toString
 	mov     qword[rsp+8*39], rax
 	mov     rsi, [rsp+8*39]
-	mov     rdi, tmpVariablelultcjvgzr
+	mov     rdi, tmpVariableoodmebhmwq
 	call    concat
 	mov [rsp+8*40], rax
 	mov r8, [rsp+8*40]
@@ -628,10 +628,10 @@ GS_31:
 GS_32:
 	db 25H, 73H, 00H
 	
-tmpVariablelultcjvgzr:
+tmpVariableoodmebhmwq:
 	 db 7,"Total: " ,0
 
-tmpVariableuymbubwaib:
+tmpVariablehskunaurci:
 	 db 1," " ,0
 
 

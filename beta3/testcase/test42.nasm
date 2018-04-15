@@ -398,7 +398,7 @@ main:
 	call    toString
 	mov     qword[rsp+8*5], rax
 	mov     rsi, [rsp+8*5]
-	mov     rdi, tmpVariablehttifnspqv
+	mov     rdi, tmpVariableqlkyqkxeob
 	call    concat
 	mov [rsp+8*6], rax
 	mov r8, [rsp+8*6]
@@ -447,7 +447,7 @@ GS_31:
 GS_32:
 	db 25H, 73H, 00H
 	
-tmpVariablehttifnspqv:
+tmpVariableqlkyqkxeob:
 	 db 6,"Hello " ,0
 
 

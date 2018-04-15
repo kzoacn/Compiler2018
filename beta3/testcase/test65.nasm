@@ -391,7 +391,7 @@ main:
 	mov [rsp+8*1] , rax
 	mov qword [rsp+8*2] ,100
 	mov qword [rsp+8*3] ,0
-	mov qword [rsp+8*4] ,tmpVariablelesotfrfrh
+	mov qword [rsp+8*4] ,tmpVariablebxqpfysxuh
 	mov qword [rsp+8*3] ,0
 	
 L_101:
@@ -403,7 +403,7 @@ L_101:
 	mov r8, [rsp+8*5]
 	cmp r8, 0
 	je L_102
-	mov     rsi, tmpVariablezvrijydcfl
+	mov     rsi, tmpVariablerogcjcrrxz
 	mov     rdi, [rsp+8*4]
 	call    concat
 	mov [rsp+8*6], rax
@@ -440,7 +440,7 @@ L_104:
 	mov r8, [rsp+8*10]
 	cmp r8, 0
 	je L_105
-	mov     rsi, tmpVariablecxfwgbjwpi
+	mov     rsi, tmpVariablezyqipaniai
 	mov     rdi, [rsp+8*4]
 	call    concat
 	mov [rsp+8*11], rax
@@ -503,13 +503,13 @@ GS_31:
 GS_32:
 	db 25H, 73H, 00H
 	
-tmpVariablezvrijydcfl:
-	 db 1,"0" ,0
-
-tmpVariablelesotfrfrh:
+tmpVariablebxqpfysxuh:
 	 db 0,"" ,0
 
-tmpVariablecxfwgbjwpi:
+tmpVariablerogcjcrrxz:
+	 db 1,"0" ,0
+
+tmpVariablezyqipaniai:
 	 db 1,"0" ,0
 
 

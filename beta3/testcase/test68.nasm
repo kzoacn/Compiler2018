@@ -386,41 +386,28 @@ GS_20:  mov     rax, qword [rbp-8H]
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 120
+	sub    rsp, 104
 	call global_init
 	mov [rsp+8*1] , rax
-	mov qword [gbl+8*2] ,tmpVariablebyktyhcxpx
+	mov qword [gbl+8*2] ,tmpVariablepizwjrrsyl
 	mov r8, [gbl+8*2]
 	mov qword [rsp+8*3] ,r8
-	mov rdi, formatln
+	mov rdi, format
 	mov rsi,[rsp+8*3] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov qword [gbl+8*2] ,tmpVariablejytlfkzslo
+	mov qword [gbl+8*2] ,tmpVariablepcelconbnl
 	mov r8, [gbl+8*2]
 	mov qword [rsp+8*4] ,r8
-	mov rdi, formatln
+	mov rdi, format
 	mov rsi,[rsp+8*4] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov qword [gbl+8*2] ,tmpVariablevubrstyckn
-	mov r8, [gbl+8*2]
-	mov qword [rsp+8*5] ,r8
-	mov rdi, formatln
-	mov rsi,[rsp+8*5] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
-	mov qword [gbl+8*2] ,tmpVariabletpcoqrezyc
-	mov r8, [gbl+8*2]
-	mov qword [rsp+8*6] ,r8
-	mov rdi, formatln
-	mov rsi,[rsp+8*6] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rax,0
+	leave
+	ret
 	mov rax,0
 	leave
 	ret
@@ -429,15 +416,15 @@ main:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 120
-	mov rax,[rsp+8*7]
+	sub    rsp, 104
+	mov rax,[rsp+8*5]
 	leave
 	ret
 	
 QED:
 	
 	 section   .bss
-gbl:         resb   2104
+gbl:         resb   2088
 buff.1788:
         resb    256
 
@@ -455,16 +442,10 @@ GS_31:
 GS_32:
 	db 25H, 73H, 00H
 	
-tmpVariablebyktyhcxpx:
-	 db 11,"Hello World" ,0
+tmpVariablepcelconbnl:
+	 db 2,"b",10,"" ,0
 
-tmpVariablejytlfkzslo:
-	 db 10,"0123456789" ,0
-
-tmpVariablevubrstyckn:
-	 db 3,"adf" ,0
-
-tmpVariabletpcoqrezyc:
-	 db 12,"asdfasdfasdf" ,0
+tmpVariablepizwjrrsyl:
+	 db 2,"a",10,"" ,0
 
 

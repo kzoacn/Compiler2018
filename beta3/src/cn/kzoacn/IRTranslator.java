@@ -145,7 +145,10 @@ public class IRTranslator {
             if(s.charAt(i)=='\\'){
                 res+="\"";
                 res+=",";
-                res+=Integer.toString(s.charAt(i+1));
+                if(s.charAt(i+1)=='n')
+                    res+=Integer.toString(10);
+                else
+                    res+=Integer.toString(s.charAt(i+1));
                 res+=",";
                 res+="\"";
                 i++;

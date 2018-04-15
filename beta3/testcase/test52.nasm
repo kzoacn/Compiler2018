@@ -671,7 +671,7 @@ L_75:
 	jmp L_79
 	
 L_78:
-	mov qword [gbl+8*2] ,tmpVariablecmbufmbiha
+	mov qword [gbl+8*2] ,tmpVariabledntcbydqge
 	mov r8, [gbl+8*2]
 	mov qword [rsp+8*70] ,r8
 	mov rdi, formatln
@@ -989,7 +989,7 @@ GS_31:
 GS_32:
 	db 25H, 73H, 00H
 	
-tmpVariablecmbufmbiha:
+tmpVariabledntcbydqge:
 	 db 12,"no solution!" ,0
 
 

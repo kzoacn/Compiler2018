@@ -389,9 +389,9 @@ main:
 	sub    rsp, 136
 	call global_init
 	mov [rsp+8*1] , rax
-	mov qword [rsp+8*2] ,tmpVariablecxwpzotxor
-	mov qword [rsp+8*3] ,tmpVariablembifzgvyte
-	mov qword [rsp+8*4] ,tmpVariabletqrgqkhrvi
+	mov qword [rsp+8*2] ,tmpVariableqcurknmnqz
+	mov qword [rsp+8*3] ,tmpVariablezuyixlodpv
+	mov qword [rsp+8*4] ,tmpVariableebtxydrmhu
 	mov r8, [rsp+8*2]
 	mov qword [gbl+8*5] ,r8
 	mov r8, [gbl+8*5]
@@ -453,13 +453,13 @@ GS_31:
 GS_32:
 	db 25H, 73H, 00H
 	
-tmpVariabletqrgqkhrvi:
+tmpVariableqcurknmnqz:
+	 db 1,"",34,"" ,0
+
+tmpVariableebtxydrmhu:
 	 db 1,";" ,0
 
-tmpVariablembifzgvyte:
+tmpVariablezuyixlodpv:
 	 db 1,"",92,"" ,0
-
-tmpVariablecxwpzotxor:
-	 db 1,"",34,"" ,0
 
 

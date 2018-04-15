@@ -455,7 +455,7 @@ Hello_say:
 	sub    rsp, 208
 	mov r8, [gbl+8*11]
 	mov qword [rsp+8*14] ,r8
-	mov qword [gbl+8*15] ,tmpVariableufepoxktmh
+	mov qword [gbl+8*15] ,tmpVariablejolylfigpd
 	mov r8, [gbl+8*15]
 	mov qword [rsp+8*16] ,r8
 	mov rdi, formatln
@@ -496,7 +496,7 @@ GS_31:
 GS_32:
 	db 25H, 73H, 00H
 	
-tmpVariableufepoxktmh:
+tmpVariablejolylfigpd:
 	 db 2,"hi" ,0
 
 

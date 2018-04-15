@@ -5,7 +5,7 @@
 
 Bug
 
-1. IO getInt getString
+1. IO getInt getString [done]
 2. 内建函数 ord size
 3. 数组之间的赋值似乎有问题
 4. '\n' 未支持

@@ -389,7 +389,7 @@ main:
 	sub    rsp, 96
 	call global_init
 	mov [rsp+8*1] , rax
-	mov qword [gbl+8*2] ,tmpVariablefxvkmnjrzg
+	mov qword [gbl+8*2] ,tmpVariableihoemirmer
 	mov r8, [gbl+8*2]
 	mov qword [rsp+8*3] ,r8
 	mov rdi, formatln
@@ -431,7 +431,7 @@ GS_31:
 GS_32:
 	db 25H, 73H, 00H
 	
-tmpVariablefxvkmnjrzg:
+tmpVariableihoemirmer:
 	 db 11,"Hello World" ,0
 
 
