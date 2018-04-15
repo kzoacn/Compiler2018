@@ -2252,7 +2252,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         }else{
             variable = new Variable(symbolMap.renameMap.get(ctx.variableName().getText()),variableType);
         }
-        if(variableType.level == 0){
+        if(ctx.expression().size()==0){
             ir.push(new Quad(OpCode.move,variable,Variable.empty,variable));
         }else{
             for(int i=0;i<ctx.expression().size();i++){
