@@ -3,6 +3,7 @@
 	 extern    printf
 	 extern    scanf
 	 extern    malloc
+	 extern    strlen
 
 	 section   .text
 toString:
@@ -329,6 +330,58 @@ mAd_006:  mov     rax, qword [rbp-8H]
         mov     rax, qword [rbp-10H]
         leave
         ret
+getInt:
+        push    rbp
+        mov     rbp, rsp
+        sub     rsp, 16
+        lea     rax, [rbp-8H]
+        mov     rsi, rax
+        mov     edi, GS_31
+        mov     eax, 0
+        call    scanf
+        mov     rax, qword [rbp-8H]
+        leave
+        ret
+
+getString:
+        push    rbp
+        mov     rbp, rsp
+        sub     rsp, 32
+        mov     esi, buff.1788
+        mov     edi, GS_32
+        mov     eax, 0
+        call    scanf
+        mov     edi, buff.1788
+        call    strlen
+        mov     qword [rbp-10H], rax
+        mov     rax, qword [rbp-10H]
+        add     rax, 2
+        mov     rdi, rax
+        call    malloc
+        mov     qword [rbp-18H], rax
+        mov     rax, qword [rbp-10H]
+        mov     edx, eax
+        mov     rax, qword [rbp-18H]
+        mov     byte [rax], dl
+        mov     qword [rbp-8H], 1
+        jmp     GS_20
+
+GS_19:  mov     rdx, qword [rbp-8H]
+        mov     rax, qword [rbp-18H]
+        add     rdx, rax
+        mov     rax, qword [rbp-8H]
+        sub     rax, 1
+
+        movzx   eax, byte [abs buff.1788+rax]
+        mov     byte [rdx], al
+        add     qword [rbp-8H], 1
+GS_20:  mov     rax, qword [rbp-8H]
+        cmp     rax, qword [rbp-10H]
+        jle     GS_19
+        mov     rax, qword [rbp-18H]
+        leave
+        ret
+
 
 main:
 	push   rbp
@@ -387,7 +440,7 @@ main:
 	mov     rdi, [rsp+8*4]
 	call    multiAddress
 	mov [rsp+8*11], rax
-	mov r8, tmpVariablepgmluxvyoi
+	mov r8, tmpVariableovyegvpdek
 	mov r9, [rsp+8*11]
 	mov qword [r9], r8
 	mov     rdi, 2
@@ -413,7 +466,7 @@ main:
 	mov     rdi, [rsp+8*4]
 	call    multiAddress
 	mov [rsp+8*14], rax
-	mov r8, tmpVariableiezsnnnbjc
+	mov r8, tmpVariablexmkfvpphix
 	mov r9, [rsp+8*14]
 	mov qword [r9], r8
 	mov     rdi, 2
@@ -439,7 +492,7 @@ main:
 	mov     rdi, [rsp+8*4]
 	call    multiAddress
 	mov [rsp+8*17], rax
-	mov r8, tmpVariablevhsyxxqipy
+	mov r8, tmpVariablehpyacbjiqw
 	mov r9, [rsp+8*17]
 	mov qword [r9], r8
 	mov     rdi, 2
@@ -465,7 +518,7 @@ main:
 	mov     rdi, [rsp+8*4]
 	call    multiAddress
 	mov [rsp+8*20], rax
-	mov r8, tmpVariableefnkgncyix
+	mov r8, tmpVariabledrhnmnsero
 	mov r9, [rsp+8*20]
 	mov qword [r9], r8
 	mov r8, [rsp+8*4]
@@ -612,6 +665,8 @@ QED:
 	
 	 section   .bss
 gbl:         resb   2360
+buff.1788:
+        resb    256
 
 	 section   .data
 
@@ -621,16 +676,22 @@ formatln:
 format:
 	db  "%s",  0
 	
-tmpVariableiezsnnnbjc:
+GS_31:
+	db 25H, 6CH, 64H, 00H
+	
+GS_32:
+	db 25H, 73H, 00H
+	
+tmpVariablexmkfvpphix:
 	 db 4,"luo " ,0
 
-tmpVariableefnkgncyix:
-	 db 2,"de" ,0
-
-tmpVariablevhsyxxqipy:
+tmpVariablehpyacbjiqw:
 	 db 3,"wo " ,0
 
-tmpVariablepgmluxvyoi:
+tmpVariableovyegvpdek:
 	 db 3,"ha " ,0
+
+tmpVariabledrhnmnsero:
+	 db 2,"de" ,0
 
 

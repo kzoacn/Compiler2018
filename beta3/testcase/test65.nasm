@@ -3,6 +3,7 @@
 	 extern    printf
 	 extern    scanf
 	 extern    malloc
+	 extern    strlen
 
 	 section   .text
 toString:
@@ -329,6 +330,58 @@ mAd_006:  mov     rax, qword [rbp-8H]
         mov     rax, qword [rbp-10H]
         leave
         ret
+getInt:
+        push    rbp
+        mov     rbp, rsp
+        sub     rsp, 16
+        lea     rax, [rbp-8H]
+        mov     rsi, rax
+        mov     edi, GS_31
+        mov     eax, 0
+        call    scanf
+        mov     rax, qword [rbp-8H]
+        leave
+        ret
+
+getString:
+        push    rbp
+        mov     rbp, rsp
+        sub     rsp, 32
+        mov     esi, buff.1788
+        mov     edi, GS_32
+        mov     eax, 0
+        call    scanf
+        mov     edi, buff.1788
+        call    strlen
+        mov     qword [rbp-10H], rax
+        mov     rax, qword [rbp-10H]
+        add     rax, 2
+        mov     rdi, rax
+        call    malloc
+        mov     qword [rbp-18H], rax
+        mov     rax, qword [rbp-10H]
+        mov     edx, eax
+        mov     rax, qword [rbp-18H]
+        mov     byte [rax], dl
+        mov     qword [rbp-8H], 1
+        jmp     GS_20
+
+GS_19:  mov     rdx, qword [rbp-8H]
+        mov     rax, qword [rbp-18H]
+        add     rdx, rax
+        mov     rax, qword [rbp-8H]
+        sub     rax, 1
+
+        movzx   eax, byte [abs buff.1788+rax]
+        mov     byte [rdx], al
+        add     qword [rbp-8H], 1
+GS_20:  mov     rax, qword [rbp-8H]
+        cmp     rax, qword [rbp-10H]
+        jle     GS_19
+        mov     rax, qword [rbp-18H]
+        leave
+        ret
+
 
 main:
 	push   rbp
@@ -338,7 +391,7 @@ main:
 	mov [rsp+8*1] , rax
 	mov qword [rsp+8*2] ,100
 	mov qword [rsp+8*3] ,0
-	mov qword [rsp+8*4] ,tmpVariablernkujtjkum
+	mov qword [rsp+8*4] ,tmpVariablelesotfrfrh
 	mov qword [rsp+8*3] ,0
 	
 L_101:
@@ -350,7 +403,7 @@ L_101:
 	mov r8, [rsp+8*5]
 	cmp r8, 0
 	je L_102
-	mov     rsi, tmpVariableorodhmsoug
+	mov     rsi, tmpVariablezvrijydcfl
 	mov     rdi, [rsp+8*4]
 	call    concat
 	mov [rsp+8*6], rax
@@ -387,7 +440,7 @@ L_104:
 	mov r8, [rsp+8*10]
 	cmp r8, 0
 	je L_105
-	mov     rsi, tmpVariableubjvzvxiwq
+	mov     rsi, tmpVariablecxfwgbjwpi
 	mov     rdi, [rsp+8*4]
 	call    concat
 	mov [rsp+8*11], rax
@@ -433,6 +486,8 @@ QED:
 	
 	 section   .bss
 gbl:         resb   2160
+buff.1788:
+        resb    256
 
 	 section   .data
 
@@ -442,13 +497,19 @@ formatln:
 format:
 	db  "%s",  0
 	
-tmpVariablernkujtjkum:
-	 db 0,"" ,0
-
-tmpVariableubjvzvxiwq:
+GS_31:
+	db 25H, 6CH, 64H, 00H
+	
+GS_32:
+	db 25H, 73H, 00H
+	
+tmpVariablezvrijydcfl:
 	 db 1,"0" ,0
 
-tmpVariableorodhmsoug:
+tmpVariablelesotfrfrh:
+	 db 0,"" ,0
+
+tmpVariablecxfwgbjwpi:
 	 db 1,"0" ,0
 
 

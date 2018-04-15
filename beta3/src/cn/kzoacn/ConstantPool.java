@@ -328,4 +328,55 @@ public class ConstantPool {
     static final String specialcase1="int[] int_arr = (new int[2][])[3];";
     static final String specialcase2="c[0] = (new C[6][6][6][6])[2][3][3];";
     static final String specialcase3="B[][] b = (new B).many()[1][1].many();";
+
+    static final StringBuffer getIntFunction=new StringBuffer("getInt:\n" +
+            "        push    rbp\n" +
+            "        mov     rbp, rsp\n" +
+            "        sub     rsp, 16\n" +
+            "        lea     rax, [rbp-8H]\n" +
+            "        mov     rsi, rax\n" +
+            "        mov     edi, GS_31\n" +
+            "        mov     eax, 0\n" +
+            "        call    scanf\n" +
+            "        mov     rax, qword [rbp-8H]\n" +
+            "        leave\n" +
+            "        ret\n");
+    static final StringBuffer getStringFunction=new StringBuffer("getString:\n" +
+            "        push    rbp\n" +
+            "        mov     rbp, rsp\n" +
+            "        sub     rsp, 32\n" +
+            "        mov     esi, buff.1788\n" +
+            "        mov     edi, GS_32\n" +
+            "        mov     eax, 0\n" +
+            "        call    scanf\n" +
+            "        mov     edi, buff.1788\n" +
+            "        call    strlen\n" +
+            "        mov     qword [rbp-10H], rax\n" +
+            "        mov     rax, qword [rbp-10H]\n" +
+            "        add     rax, 2\n" +
+            "        mov     rdi, rax\n" +
+            "        call    malloc\n" +
+            "        mov     qword [rbp-18H], rax\n" +
+            "        mov     rax, qword [rbp-10H]\n" +
+            "        mov     edx, eax\n" +
+            "        mov     rax, qword [rbp-18H]\n" +
+            "        mov     byte [rax], dl\n" +
+            "        mov     qword [rbp-8H], 1\n" +
+            "        jmp     GS_20\n" +
+            "\n" +
+            "GS_19:  mov     rdx, qword [rbp-8H]\n" +
+            "        mov     rax, qword [rbp-18H]\n" +
+            "        add     rdx, rax\n" +
+            "        mov     rax, qword [rbp-8H]\n" +
+            "        sub     rax, 1\n" +
+            "\n" +
+            "        movzx   eax, byte [abs buff.1788+rax]\n" +
+            "        mov     byte [rdx], al\n" +
+            "        add     qword [rbp-8H], 1\n" +
+            "GS_20:  mov     rax, qword [rbp-8H]\n" +
+            "        cmp     rax, qword [rbp-10H]\n" +
+            "        jle     GS_19\n" +
+            "        mov     rax, qword [rbp-18H]\n" +
+            "        leave\n" +
+            "        ret\n");
 }

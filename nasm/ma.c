@@ -87,6 +87,22 @@ unsigned char* toString(long x){
     return s;
 }
 
+long getInt(){
+    long x;
+    scanf("%ld",&x);
+    return x;
+}
+char* getString(){
+    static char buff[256];
+    scanf("%s",buff);
+    long len=strlen(buff),i;
+    char *s=malloc(len+2);
+    *s=len;
+    for(i=1;i<=len;i++)
+        *(s+i)=buff[i-1];
+    *(s+len+1)=0;
+    return s;
+}
 
 void test(){
     long* a=mallocArray(2);
@@ -116,6 +132,8 @@ void test(){
 
 
 int main(){
+    puts(toString(getInt())+1);
+    puts(getString()+1);
     unsigned char *one=toString(1);
     unsigned char *zero=toString(0);
     int len=126;

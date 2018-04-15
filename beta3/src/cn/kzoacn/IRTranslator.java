@@ -181,6 +181,7 @@ public class IRTranslator {
         head.append("\t extern    printf\n");
         head.append("\t extern    scanf\n");
         head.append("\t extern    malloc\n");
+        head.append("\t extern    strlen\n");
         text.append("\t section   .text\n");
         bss.append("\t section   .bss\n");
         data.append("\t section   .data\n");
@@ -192,11 +193,17 @@ public class IRTranslator {
         }
 
         bss.append("gbl:         resb   "+Integer.toString(variableIndex.size()*8+2048)+"\n");
+        bss.append("buff.1788:\n" +
+                "        resb    256\n");
 
         data.append(new StringBuffer("\nformatln:\n\t"));
         data.append(new StringBuffer("db  \"%s\", 10, 0\n\t"));
         data.append(new StringBuffer("\nformat:\n\t"));
         data.append(new StringBuffer("db  \"%s\",  0\n\t"));
+        data.append(new StringBuffer("\nGS_31:\n\t"));
+        data.append(new StringBuffer("db 25H, 6CH, 64H, 00H\n\t"));
+        data.append(new StringBuffer("\nGS_32:\n\t"));
+        data.append(new StringBuffer("db 25H, 73H, 00H\n\t"));
 
         for(Map.Entry<Variable,String> entry : constStringPool.entrySet()){
             String string=entry.getValue();
@@ -210,6 +217,8 @@ public class IRTranslator {
         text.append(ConstantPool.addressFunction).append("\n");
         text.append(ConstantPool.multiArrayFunction).append("\n");
         text.append(ConstantPool.multiAddressFunction).append("\n");
+        text.append(ConstantPool.getIntFunction).append("\n");
+        text.append(ConstantPool.getStringFunction).append("\n");
        // text.append("start:\n\t");
        // text.append("jmp main\n\t");
 
@@ -222,11 +231,7 @@ public class IRTranslator {
             Variable var2=cur.var2;
             Variable dest=cur.dest;
             String name=cur.name;
-            System.err.println(cur.opCode);
-            if(line==120){
-                System.err.println(cur.opCode);
-
-            }
+            //System.err.println(cur.opCode);
             if(cur.opCode.equals(OpCode.saveContext))
                 skipCounter++;
             if(cur.opCode.equals(OpCode.resumeContext))
@@ -443,8 +448,12 @@ public class IRTranslator {
                     text.append(println(var1));
                     break;
                 case getString:
+                    text.append(new StringBuffer("call    getString\n\t" +
+                            "mov     "+ varName(dest) +", rax\n\t"));
                     break;
                 case getInt:
+                    text.append(new StringBuffer("call    getInt\n\t" +
+                                                "mov     "+ varName(dest) +", rax\n\t"));
                     break;
                 case toString:
                     text.append(new StringBuffer(
