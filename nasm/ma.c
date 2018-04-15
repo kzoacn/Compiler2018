@@ -104,6 +104,33 @@ char* getString(){
     return s;
 }
 
+
+char* substring(long left,long right){
+    unsigned char *sthis=(unsigned char*)0xffffff;
+    char *t=malloc(right-left+1+2);
+    *t=right-left+1;
+    long i,j=0;
+    for(i=left;i<=right;i++)
+        t[++j]=sthis[i+1];
+    t[++j]=0;
+    return t;
+}
+long parseInt(){
+    unsigned char *sthis=(unsigned char*)0xffffff;
+    long i,x=0;
+    for(i=1;i<=*sthis;i++){
+        if('0'<=sthis[i]&&sthis[i]<='9'){
+            x=x*10+(sthis[i]-'0');
+        }else  
+            return x;
+    }
+    return x;
+}
+long ord(long x){
+    unsigned char *sthis=(unsigned char*)0xffffff;
+    return (long)*(sthis+1+x);
+}
+
 void test(){
     long* a=mallocArray(2);
     *address(a,0)=4;
@@ -132,8 +159,6 @@ void test(){
 
 
 int main(){
-    puts(toString(getInt())+1);
-    puts(getString()+1);
     unsigned char *one=toString(1);
     unsigned char *zero=toString(0);
     int len=126;

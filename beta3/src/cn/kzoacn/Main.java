@@ -189,6 +189,7 @@ enum OpCode{
     malloc,mallocArray,multiArray,concat,
     load,store,address,multiAddress,
     print,println,getString,getInt,toString,
+    parseInt,substring,ord,
     saveContext,resumeContext,
     endContext,
     enterFunction,exitFunction,
@@ -404,6 +405,7 @@ class SymbolMap{
     private Stack<Integer>scopeIndex = new Stack<Integer>();
     private HashMap<String,VariableType> allVariableMap = new HashMap<String, VariableType>();
     HashMap<String,VariableType> globalVariableMap = new HashMap<String, VariableType>();
+    HashMap<String,VariableType> argVariableMap = new HashMap<String, VariableType>();
     HashMap<String,String> renameMap = new HashMap<String, String>();
     int functionCounter=0;
     private int variableCounter=0;
@@ -687,7 +689,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         return str.toString();
     }
     Variable nextVariable(VariableType type){
-        Variable variable = new Variable("tmpVariable"+randomString(),type);
+        Variable variable = new Variable("t"+Integer.toString(counter++),type);
         variable.isTemp=true;
         symbolMap.putSymbol(variable.name,variable.type);
         return variable;
@@ -713,9 +715,12 @@ class MVisitor extends MxstarBaseVisitor<IR>{
 
         Variable.isGlobal=true;
         symbolMap.global=true;
+        counter=0;
         for(int i=0;i<16;i++) {
             Variable variable=nextVariable(VariableType.INT);
+            variable.constValue=i;
             argList.add(variable);
+            symbolMap.argVariableMap.put(variable.name,variable.type);
             //symbolMap.putSymbol(variable.name,variable.type);
         }
         symbolMap.global=false;
@@ -1139,8 +1144,10 @@ class MVisitor extends MxstarBaseVisitor<IR>{
 
 
         ir.concat(left);
+        IR exp=new IR();
         if(ctx.expressionList()!=null) {
-            ir.concat(visit(ctx.expressionList()));
+            exp=visit(ctx.expressionList());
+            ir.concat(exp);
         }
         ir.push(new Quad(OpCode.move,left.last.dest,Variable.empty,argList.get(15)));
 
@@ -1154,15 +1161,14 @@ class MVisitor extends MxstarBaseVisitor<IR>{
             Variable tmp = nextVariable(VariableType.INT);
             switch (functionName){
                 case "parseInt"://TODO
-                    ir.push(new Quad(OpCode.getInt,Variable.empty,Variable.empty,nextVariable(VariableType.INT)));
+
+                    ir.push(new Quad(OpCode.parseInt,Variable.empty,Variable.empty,nextVariable(VariableType.INT)));
                     break;
                 case "substring"://TODO
-                    ir.push(new Quad(OpCode.getString,Variable.empty,Variable.empty,nextVariable(VariableType.STRING)));
+                    ir.push(new Quad(OpCode.substring,argList.get(0),argList.get(1),nextVariable(VariableType.STRING)));
                     break;
                 case "ord"://TODO
-                    ir.push(new Quad(OpCode.move,argList.get(15),Variable.empty,tmp));
-                    ir.push(new Quad(OpCode.load,tmp,Variable.empty,tmp));
-                    //ir.push(new Quad(OpCode.print,temp,Variable.empty,Variable.empty));
+                    ir.push(new Quad(OpCode.ord,argList.get(0),Variable.empty,nextVariable(VariableType.INT)));
                     break;
                 case "size":
                     ir.push(new Quad(OpCode.move,argList.get(15),Variable.empty,tmp));

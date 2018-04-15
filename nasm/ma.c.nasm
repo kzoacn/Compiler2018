@@ -15,6 +15,9 @@ global multiArray
 global toString
 global getInt
 global getString
+global substring
+global parseInt
+global ord
 global test
 global main
 
@@ -74,9 +77,9 @@ concat:
         mov     qword [rbp-8H], 0
         mov     qword [rbp-10H], 0
         mov     qword [rbp-8H], 0
-        jmp     L_002
+        jmp     PSL_002
 
-L_001:  add     qword [rbp-10H], 1
+PSL_001:  add     qword [rbp-10H], 1
         mov     rdx, qword [rbp-10H]
         mov     rax, qword [rbp-18H]
         add     rdx, rax
@@ -87,15 +90,15 @@ L_001:  add     qword [rbp-10H], 1
         movzx   eax, byte [rax]
         mov     byte [rdx], al
         add     qword [rbp-8H], 1
-L_002:  mov     rax, qword [rbp-28H]
+PSL_002:  mov     rax, qword [rbp-28H]
         movzx   eax, byte [rax]
         movzx   eax, al
         cmp     rax, qword [rbp-8H]
-        jg      L_001
+        jg      PSL_001
         mov     qword [rbp-8H], 0
-        jmp     L_004
+        jmp     PSL_004
 
-L_003:  add     qword [rbp-10H], 1
+PSL_003:  add     qword [rbp-10H], 1
         mov     rdx, qword [rbp-10H]
         mov     rax, qword [rbp-18H]
         add     rdx, rax
@@ -106,11 +109,11 @@ L_003:  add     qword [rbp-10H], 1
         movzx   eax, byte [rax]
         mov     byte [rdx], al
         add     qword [rbp-8H], 1
-L_004:  mov     rax, qword [rbp-30H]
+PSL_004:  mov     rax, qword [rbp-30H]
         movzx   eax, byte [rax]
         movzx   eax, al
         cmp     rax, qword [rbp-8H]
-        jg      L_003
+        jg      PSL_003
         add     qword [rbp-10H], 1
         mov     rdx, qword [rbp-10H]
         mov     rax, qword [rbp-18H]
@@ -148,9 +151,9 @@ multiAddress:
         mov     rax, qword [rbp-28H]
         mov     qword [rbp-10H], rax
         mov     qword [rbp-8H], 1
-        jmp     L_006
+        jmp     PSL_006
 
-L_005:  mov     rax, qword [rbp-8H]
+PSL_005:  mov     rax, qword [rbp-8H]
         lea     rdx, [rax-1H]
         mov     rax, qword [rbp-30H]
         mov     rsi, rdx
@@ -164,9 +167,9 @@ L_005:  mov     rax, qword [rbp-8H]
         mov     rax, qword [rax]
         mov     qword [rbp-10H], rax
         add     qword [rbp-8H], 1
-L_006:  mov     rax, qword [rbp-8H]
+PSL_006:  mov     rax, qword [rbp-8H]
         cmp     rax, qword [rbp-18H]
-        jl      L_005
+        jl      PSL_005
         mov     rax, qword [rbp-18H]
         lea     rdx, [rax-1H]
         mov     rax, qword [rbp-30H]
@@ -197,7 +200,7 @@ _multiArray:
         mov     rax, qword [rbp-40H]
         mov     rax, qword [rax]
         cmp     rdx, rax
-        jnz     L_007
+        jnz     PSL_007
         mov     eax, dword [rbp-34H]
         movsxd  rdx, eax
         mov     rax, qword [rbp-40H]
@@ -207,9 +210,9 @@ _multiArray:
         mov     rax, qword [rax]
         mov     rdi, rax
         call    mallocArray
-        jmp     L_010
+        jmp     PSL_010
 
-L_007:  mov     eax, dword [rbp-34H]
+PSL_007:  mov     eax, dword [rbp-34H]
         movsxd  rdx, eax
         mov     rax, qword [rbp-40H]
         mov     rsi, rdx
@@ -222,9 +225,9 @@ L_007:  mov     eax, dword [rbp-34H]
         call    mallocArray
         mov     qword [rbp-28H], rax
         mov     dword [rbp-14H], 0
-        jmp     L_009
+        jmp     PSL_009
 
-L_008:  mov     eax, dword [rbp-14H]
+PSL_008:  mov     eax, dword [rbp-14H]
         movsxd  rdx, eax
         mov     rax, qword [rbp-28H]
         mov     rsi, rdx
@@ -239,12 +242,12 @@ L_008:  mov     eax, dword [rbp-14H]
         call    _multiArray
         mov     qword [rbx], rax
         add     dword [rbp-14H], 1
-L_009:  mov     eax, dword [rbp-14H]
+PSL_009:  mov     eax, dword [rbp-14H]
         cdqe
         cmp     rax, qword [rbp-20H]
-        jl      L_008
+        jl      PSL_008
         mov     rax, qword [rbp-28H]
-L_010:  add     rsp, 56
+PSL_010:  add     rsp, 56
         pop     rbx
         pop     rbp
         ret
@@ -271,18 +274,18 @@ toString:
         mov     qword [rbp-8H], 0
         mov     qword [rbp-10H], 1
         cmp     qword [rbp-38H], 0
-        jnz     L_011
+        jnz     PSL_011
         mov     qword [rbp-8H], 1
-L_011:  cmp     qword [rbp-38H], 0
-        jns     L_012
+PSL_011:  cmp     qword [rbp-38H], 0
+        jns     PSL_012
         neg     qword [rbp-38H]
         mov     qword [rbp-10H], -1
         add     qword [rbp-8H], 1
-L_012:  mov     rax, qword [rbp-38H]
+PSL_012:  mov     rax, qword [rbp-38H]
         mov     qword [rbp-18H], rax
-        jmp     L_014
+        jmp     PSL_014
 
-L_013:  add     qword [rbp-8H], 1
+PSL_013:  add     qword [rbp-8H], 1
         mov     rcx, qword [rbp-18H]
         mov     rdx, qword 6666666666666667H
         mov     rax, rcx
@@ -293,8 +296,8 @@ L_013:  add     qword [rbp-8H], 1
         sub     rdx, rax
         mov     rax, rdx
         mov     qword [rbp-18H], rax
-L_014:  cmp     qword [rbp-18H], 0
-        jg      L_013
+PSL_014:  cmp     qword [rbp-18H], 0
+        jg      PSL_013
         mov     rax, qword [rbp-8H]
         add     rax, 2
         mov     rdi, rax
@@ -313,22 +316,22 @@ L_014:  cmp     qword [rbp-18H], 0
         mov     byte [rax], dl
         add     qword [rbp-20H], 1
         cmp     qword [rbp-10H], -1
-        jnz     L_015
+        jnz     PSL_015
         mov     rax, qword [rbp-20H]
         mov     byte [rax], 45
-L_015:  mov     rdx, qword [rbp-8H]
+PSL_015:  mov     rdx, qword [rbp-8H]
         mov     rax, qword [rbp-28H]
         add     rax, rdx
         mov     qword [rbp-20H], rax
         cmp     qword [rbp-38H], 0
-        jnz     L_016
+        jnz     PSL_016
         mov     rax, qword [rbp-20H]
         mov     byte [rax], 48
-        jmp     L_018
+        jmp     PSL_018
 
-L_016:  jmp     L_018
+PSL_016:  jmp     PSL_018
 
-L_017:  mov     rcx, qword [rbp-38H]
+PSL_017:  mov     rcx, qword [rbp-38H]
         mov     rdx, qword 6666666666666667H
         mov     rax, rcx
         imul    rdx
@@ -357,8 +360,8 @@ L_017:  mov     rcx, qword [rbp-38H]
         sub     rdx, rax
         mov     rax, rdx
         mov     qword [rbp-38H], rax
-L_018:  cmp     qword [rbp-38H], 0
-        jg      L_017
+PSL_018:  cmp     qword [rbp-38H], 0
+        jg      PSL_017
         mov     rax, qword [rbp-28H]
         leave
         ret
@@ -370,7 +373,7 @@ getInt:
         sub     rsp, 16
         lea     rax, [rbp-8H]
         mov     rsi, rax
-        mov     edi, L_031
+        mov     edi, PSL_037
         mov     eax, 0
         call    scanf
         mov     rax, qword [rbp-8H]
@@ -383,7 +386,7 @@ getString:
         mov     rbp, rsp
         sub     rsp, 32
         mov     esi, buff.1788
-        mov     edi, L_032
+        mov     edi, PSL_038
         mov     eax, 0
         call    scanf
         mov     edi, buff.1788
@@ -399,9 +402,9 @@ getString:
         mov     rax, qword [rbp-18H]
         mov     byte [rax], dl
         mov     qword [rbp-8H], 1
-        jmp     L_020
+        jmp     PSL_020
 
-L_019:  mov     rdx, qword [rbp-8H]
+PSL_019:  mov     rdx, qword [rbp-8H]
         mov     rax, qword [rbp-18H]
         add     rdx, rax
         mov     rax, qword [rbp-8H]
@@ -410,9 +413,9 @@ L_019:  mov     rdx, qword [rbp-8H]
         movzx   eax, byte [abs buff.1788+rax]
         mov     byte [rdx], al
         add     qword [rbp-8H], 1
-L_020:  mov     rax, qword [rbp-8H]
+PSL_020:  mov     rax, qword [rbp-8H]
         cmp     rax, qword [rbp-10H]
-        jle     L_019
+        jle     PSL_019
         mov     rax, qword [rbp-10H]
         lea     rdx, [rax+1H]
         mov     rax, qword [rbp-18H]
@@ -420,6 +423,128 @@ L_020:  mov     rax, qword [rbp-8H]
         mov     byte [rax], 0
         mov     rax, qword [rbp-18H]
         leave
+        ret
+
+
+substring:
+        push    rbp
+        mov     rbp, rsp
+        sub     rsp, 48
+        mov     qword [rbp-28H], rdi
+        mov     qword [rbp-30H], rsi
+        mov     r8,qword [arg+8*15]
+        mov     qword [rbp-18H], r8
+        mov     rax, qword [rbp-28H]
+        mov     rdx, qword [rbp-30H]
+        sub     rdx, rax
+        mov     rax, rdx
+        add     rax, 3
+        mov     rdi, rax
+        call    malloc
+        mov     qword [rbp-20H], rax
+        mov     rax, qword [rbp-30H]
+        mov     edx, eax
+        mov     rax, qword [rbp-28H]
+        sub     edx, eax
+        mov     eax, edx
+        add     eax, 1
+        mov     edx, eax
+        mov     rax, qword [rbp-20H]
+        mov     byte [rax], dl
+        mov     qword [rbp-10H], 0
+        mov     rax, qword [rbp-28H]
+        mov     qword [rbp-8H], rax
+        jmp     PSL_022
+
+PSL_021:  add     qword [rbp-10H], 1
+        mov     rdx, qword [rbp-10H]
+        mov     rax, qword [rbp-20H]
+        add     rdx, rax
+        mov     rax, qword [rbp-8H]
+        lea     rcx, [rax+1H]
+        mov     rax, qword [rbp-18H]
+        add     rax, rcx
+        movzx   eax, byte [rax]
+        mov     byte [rdx], al
+        add     qword [rbp-8H], 1
+PSL_022:  mov     rax, qword [rbp-8H]
+        cmp     rax, qword [rbp-30H]
+        jle     PSL_021
+        add     qword [rbp-10H], 1
+        mov     rdx, qword [rbp-10H]
+        mov     rax, qword [rbp-20H]
+        add     rax, rdx
+        mov     byte [rax], 0
+        mov     rax, qword [rbp-20H]
+        leave
+        ret
+
+
+parseInt:
+        push    rbp
+        mov     rbp, rsp
+        mov     r8,qword [arg+8*15]
+        mov     qword [rbp-18H], r8
+        mov     qword [rbp-10H], 0
+        mov     qword [rbp-8H], 1
+        jmp     PSL_025
+
+PSL_023:  mov     rdx, qword [rbp-8H]
+        mov     rax, qword [rbp-18H]
+        add     rax, rdx
+        movzx   eax, byte [rax]
+        cmp     al, 47
+        jbe     PSL_024
+        mov     rdx, qword [rbp-8H]
+        mov     rax, qword [rbp-18H]
+        add     rax, rdx
+        movzx   eax, byte [rax]
+        cmp     al, 57
+        ja      PSL_024
+        mov     rdx, qword [rbp-10H]
+        mov     rax, rdx
+        shl     rax, 2
+        add     rax, rdx
+        add     rax, rax
+        mov     rdx, rax
+        mov     rcx, qword [rbp-8H]
+        mov     rax, qword [rbp-18H]
+        add     rax, rcx
+        movzx   eax, byte [rax]
+        movzx   eax, al
+        sub     eax, 48
+        cdqe
+        add     rax, rdx
+        mov     qword [rbp-10H], rax
+        add     qword [rbp-8H], 1
+        jmp     PSL_025
+
+PSL_024:  mov     rax, qword [rbp-10H]
+        jmp     PSL_026
+
+PSL_025:  mov     rax, qword [rbp-18H]
+        movzx   eax, byte [rax]
+        movzx   eax, al
+        cmp     rax, qword [rbp-8H]
+        jge     PSL_023
+        mov     rax, qword [rbp-10H]
+PSL_026:  pop     rbp
+        ret
+
+
+ord:
+        push    rbp
+        mov     rbp, rsp
+        mov     qword [rbp-18H], rdi
+        mov     r8,qword [arg+8*15]
+        mov     qword [rbp-8H], r8
+        mov     rax, qword [rbp-18H]
+        lea     rdx, [rax+1H]
+        mov     rax, qword [rbp-8H]
+        add     rax, rdx
+        movzx   eax, byte [rax]
+        movzx   eax, al
+        pop     rbp
         ret
 
 
@@ -447,9 +572,9 @@ test:
         mov     qword [rbp-38H], rax
         mov     qword [rbp-28H], 0
         mov     qword [rbp-18H], 0
-        jmp     L_024
+        jmp     PSL_030
 
-L_021:  mov     rax, qword [rbp-38H]
+PSL_027:  mov     rax, qword [rbp-38H]
         mov     rdx, qword [rbp-18H]
         mov     rsi, rdx
         mov     rdi, rax
@@ -457,9 +582,9 @@ L_021:  mov     rax, qword [rbp-38H]
         mov     rax, qword [rax]
         mov     qword [rbp-40H], rax
         mov     qword [rbp-20H], 0
-        jmp     L_023
+        jmp     PSL_029
 
-L_022:  mov     rax, qword [rbp-40H]
+PSL_028:  mov     rax, qword [rbp-40H]
         mov     rdx, qword [rbp-20H]
         mov     rsi, rdx
         mov     rdi, rax
@@ -468,15 +593,15 @@ L_022:  mov     rax, qword [rbp-40H]
         mov     rdx, qword [rbp-28H]
         mov     qword [rax], rdx
         add     qword [rbp-20H], 1
-L_023:  cmp     qword [rbp-20H], 4
-        jle     L_022
+PSL_029:  cmp     qword [rbp-20H], 4
+        jle     PSL_028
         add     qword [rbp-18H], 1
-L_024:  cmp     qword [rbp-18H], 3
-        jle     L_021
+PSL_030:  cmp     qword [rbp-18H], 3
+        jle     PSL_027
         mov     qword [rbp-18H], 0
-        jmp     L_028
+        jmp     PSL_034
 
-L_025:  mov     rax, qword [rbp-38H]
+PSL_031:  mov     rax, qword [rbp-38H]
         mov     rdx, qword [rbp-18H]
         mov     rsi, rdx
         mov     rdi, rax
@@ -484,14 +609,14 @@ L_025:  mov     rax, qword [rbp-38H]
         mov     rax, qword [rax]
         mov     qword [rbp-48H], rax
         mov     qword [rbp-20H], 0
-        jmp     L_027
+        jmp     PSL_033
 
-L_026:  cmp     qword [rbp-20H], 4
+PSL_032:  cmp     qword [rbp-20H], 4
         sete    al
         movzx   eax, al
         cdqe
 
-        movzx   eax, byte [abs L_034+rax]
+        movzx   eax, byte [abs PSL_040+rax]
         movsx   ebx, al
         mov     rax, qword [rbp-48H]
         mov     rdx, qword [rbp-20H]
@@ -501,15 +626,15 @@ L_026:  cmp     qword [rbp-20H], 4
         mov     rax, qword [rax]
         mov     edx, ebx
         mov     rsi, rax
-        mov     edi, L_033
+        mov     edi, PSL_039
         mov     eax, 0
         call    printf
         add     qword [rbp-20H], 1
-L_027:  cmp     qword [rbp-20H], 4
-        jle     L_026
+PSL_033:  cmp     qword [rbp-20H], 4
+        jle     PSL_032
         add     qword [rbp-18H], 1
-L_028:  cmp     qword [rbp-18H], 3
-        jle     L_025
+PSL_034:  cmp     qword [rbp-18H], 3
+        jle     PSL_031
         add     rsp, 72
         pop     rbx
         pop     rbp
@@ -520,18 +645,6 @@ main:
         push    rbp
         mov     rbp, rsp
         sub     rsp, 48
-        mov     eax, 0
-        call    getInt
-        mov     rdi, rax
-        call    toString
-        add     rax, 1
-        mov     rdi, rax
-        call    puts
-        mov     eax, 0
-        call    getString
-        add     rax, 1
-        mov     rdi, rax
-        call    puts
         mov     edi, 1
         call    toString
         mov     qword [rbp-20H], rax
@@ -547,9 +660,9 @@ main:
         mov     qword [rbp-10H], rax
         mov     dword [rbp-14H], 0
         mov     dword [rbp-14H], 0
-        jmp     L_030
+        jmp     PSL_036
 
-L_029:  mov     rdx, qword [rbp-20H]
+PSL_035:  mov     rdx, qword [rbp-20H]
         mov     rax, qword [rbp-8H]
         mov     rsi, rdx
         mov     rdi, rax
@@ -562,9 +675,9 @@ L_029:  mov     rdx, qword [rbp-20H]
         call    concat
         mov     qword [rbp-10H], rax
         add     dword [rbp-14H], 1
-L_030:  mov     eax, dword [rbp-14H]
+PSL_036:  mov     eax, dword [rbp-14H]
         cmp     eax, dword [rbp-2CH]
-        jl      L_029
+        jl      PSL_035
         mov     rax, qword [rbp-8H]
         add     rax, 1
         mov     rdi, rax
@@ -593,19 +706,19 @@ SECTION .bss    align=32
 
 buff.1788:
         resb    256
-
+arg:    resb    1024
 
 SECTION .rodata 
 
-L_031:
+PSL_037:
         db 25H, 6CH, 64H, 00H
 
-L_032:
+PSL_038:
         db 25H, 73H, 00H
 
-L_033:
+PSL_039:
         db 25H, 64H, 25H, 63H, 00H
 
-L_034:  db 20H, 0AH, 00H
+PSL_040:  db 20H, 0AH, 00H
 
 

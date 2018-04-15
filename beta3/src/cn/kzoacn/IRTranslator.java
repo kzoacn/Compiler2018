@@ -106,6 +106,8 @@ public class IRTranslator {
             return new StringBuffer(Integer.toString(variable.constValue));
         if(variable.type.name.equals("NULL"))
             return new StringBuffer(Integer.toString(0));
+        if(symbolMap.argVariableMap.containsKey(variable.name))
+            return new StringBuffer("[arg+8*"+Integer.toString(variable.constValue)+"]");
         if(symbolMap.globalVariableMap.containsKey(variable.name))
             return new StringBuffer("[gbl+8*"+Integer.toString(variableIndex.get(variable))+"]");
         if(variableIndex.containsKey(variable))
@@ -198,6 +200,8 @@ public class IRTranslator {
         bss.append("gbl:         resb   "+Integer.toString(variableIndex.size()*8+2048)+"\n");
         bss.append("buff.1788:\n" +
                 "        resb    256\n");
+        bss.append("arg:\n" +
+                "        resb    1024\n");
 
         data.append(new StringBuffer("\nformatln:\n\t"));
         data.append(new StringBuffer("db  \"%s\", 10, 0\n\t"));
@@ -222,6 +226,9 @@ public class IRTranslator {
         text.append(ConstantPool.multiAddressFunction).append("\n");
         text.append(ConstantPool.getIntFunction).append("\n");
         text.append(ConstantPool.getStringFunction).append("\n");
+        text.append(ConstantPool.parseIntFunction).append("\n");
+        text.append(ConstantPool.substringFunction).append("\n");
+        text.append(ConstantPool.ordFunction).append("\n");
        // text.append("start:\n\t");
        // text.append("jmp main\n\t");
 
@@ -489,6 +496,27 @@ public class IRTranslator {
                                     "mov     rdi, "+varName(var1)+"\n\t" +
                                     "call    multiAddress\n\t") +
                                     "mov "+varName(dest)+", rax\n\t");
+                    break;
+                case substring:
+                    text.append(new StringBuffer(
+                                    "mov     rsi, "+varName(var2)+"\n\t" +
+                                    "mov     rdi, "+varName(var1)+"\n\t" +
+                                    "call    substring\n\t") +
+                                    "mov "+varName(dest)+", rax\n\t");
+
+                    break;
+                case parseInt:
+                    text.append(new StringBuffer(
+                                    "call    parseInt\n\t"+
+                                    "mov     qword "+varName(dest)+", rax\n\t"));
+
+                    break;
+                case ord:
+                    text.append(new StringBuffer(
+                                    "mov     rdi, "+varName(var1)+"\n\t" +
+                                    "call    ord\n\t"+
+                                    "mov     qword "+varName(dest)+", rax\n\t"));
+
                     break;
             }
         }

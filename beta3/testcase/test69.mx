@@ -1,0 +1,10 @@
+int main(){
+    string s="123afdsdff";
+    int[] a=new int[11];
+    println(toString(s.parseInt()));
+    println(s.substring(2,5));
+    println(toString(s.ord(6)));
+    println(toString(s.length()));
+    println(toString(a.size()));
+    return 0;
+}

@@ -379,4 +379,123 @@ public class ConstantPool {
             "        mov     rax, qword [rbp-18H]\n" +
             "        leave\n" +
             "        ret\n");
+
+
+    static final StringBuffer substringFunction=new StringBuffer("substring:\n" +
+            "        push    rbp\n" +
+            "        mov     rbp, rsp\n" +
+            "        sub     rsp, 48\n" +
+            "        mov     qword [rbp-28H], rdi\n" +
+            "        mov     qword [rbp-30H], rsi\n" +
+            "        mov     r8,qword [arg+8*15]\n" +
+            "        mov     qword [rbp-18H], r8\n" +
+            "        mov     rax, qword [rbp-28H]\n" +
+            "        mov     rdx, qword [rbp-30H]\n" +
+            "        sub     rdx, rax\n" +
+            "        mov     rax, rdx\n" +
+            "        add     rax, 3\n" +
+            "        mov     rdi, rax\n" +
+            "        call    malloc\n" +
+            "        mov     qword [rbp-20H], rax\n" +
+            "        mov     rax, qword [rbp-30H]\n" +
+            "        mov     edx, eax\n" +
+            "        mov     rax, qword [rbp-28H]\n" +
+            "        sub     edx, eax\n" +
+            "        mov     eax, edx\n" +
+            "        add     eax, 1\n" +
+            "        mov     edx, eax\n" +
+            "        mov     rax, qword [rbp-20H]\n" +
+            "        mov     byte [rax], dl\n" +
+            "        mov     qword [rbp-10H], 0\n" +
+            "        mov     rax, qword [rbp-28H]\n" +
+            "        mov     qword [rbp-8H], rax\n" +
+            "        jmp     PSL_022\n" +
+            "\n" +
+            "PSL_021:  add     qword [rbp-10H], 1\n" +
+            "        mov     rdx, qword [rbp-10H]\n" +
+            "        mov     rax, qword [rbp-20H]\n" +
+            "        add     rdx, rax\n" +
+            "        mov     rax, qword [rbp-8H]\n" +
+            "        lea     rcx, [rax+1H]\n" +
+            "        mov     rax, qword [rbp-18H]\n" +
+            "        add     rax, rcx\n" +
+            "        movzx   eax, byte [rax]\n" +
+            "        mov     byte [rdx], al\n" +
+            "        add     qword [rbp-8H], 1\n" +
+            "PSL_022:  mov     rax, qword [rbp-8H]\n" +
+            "        cmp     rax, qword [rbp-30H]\n" +
+            "        jle     PSL_021\n" +
+            "        add     qword [rbp-10H], 1\n" +
+            "        mov     rdx, qword [rbp-10H]\n" +
+            "        mov     rax, qword [rbp-20H]\n" +
+            "        add     rax, rdx\n" +
+            "        mov     byte [rax], 0\n" +
+            "        mov     rax, qword [rbp-20H]\n" +
+            "        leave\n" +
+            "        ret\n");
+
+    static final StringBuffer parseIntFunction=new StringBuffer("parseInt:\n" +
+            "        push    rbp\n" +
+            "        mov     rbp, rsp\n" +
+            "        mov     r8,qword [arg+8*15]\n" +
+            "        mov     qword [rbp-18H], r8\n" +
+            "        mov     qword [rbp-10H], 0\n" +
+            "        mov     qword [rbp-8H], 1\n" +
+            "        jmp     PSL_025\n" +
+            "\n" +
+            "PSL_023:  mov     rdx, qword [rbp-8H]\n" +
+            "        mov     rax, qword [rbp-18H]\n" +
+            "        add     rax, rdx\n" +
+            "        movzx   eax, byte [rax]\n" +
+            "        cmp     al, 47\n" +
+            "        jbe     PSL_024\n" +
+            "        mov     rdx, qword [rbp-8H]\n" +
+            "        mov     rax, qword [rbp-18H]\n" +
+            "        add     rax, rdx\n" +
+            "        movzx   eax, byte [rax]\n" +
+            "        cmp     al, 57\n" +
+            "        ja      PSL_024\n" +
+            "        mov     rdx, qword [rbp-10H]\n" +
+            "        mov     rax, rdx\n" +
+            "        shl     rax, 2\n" +
+            "        add     rax, rdx\n" +
+            "        add     rax, rax\n" +
+            "        mov     rdx, rax\n" +
+            "        mov     rcx, qword [rbp-8H]\n" +
+            "        mov     rax, qword [rbp-18H]\n" +
+            "        add     rax, rcx\n" +
+            "        movzx   eax, byte [rax]\n" +
+            "        movzx   eax, al\n" +
+            "        sub     eax, 48\n" +
+            "        cdqe\n" +
+            "        add     rax, rdx\n" +
+            "        mov     qword [rbp-10H], rax\n" +
+            "        add     qword [rbp-8H], 1\n" +
+            "        jmp     PSL_025\n" +
+            "\n" +
+            "PSL_024:  mov     rax, qword [rbp-10H]\n" +
+            "        jmp     PSL_026\n" +
+            "\n" +
+            "PSL_025:  mov     rax, qword [rbp-18H]\n" +
+            "        movzx   eax, byte [rax]\n" +
+            "        movzx   eax, al\n" +
+            "        cmp     rax, qword [rbp-8H]\n" +
+            "        jge     PSL_023\n" +
+            "        mov     rax, qword [rbp-10H]\n" +
+            "PSL_026:  pop     rbp\n" +
+            "        ret\n");
+    static final StringBuffer ordFunction=new StringBuffer("ord:\n" +
+            "        push    rbp\n" +
+            "        mov     rbp, rsp\n" +
+            "        mov     qword [rbp-18H], rdi\n" +
+            "        mov     r8,qword [arg+8*15]\n" +
+            "        mov     qword [rbp-8H], r8\n" +
+            "        mov     rax, qword [rbp-18H]\n" +
+            "        lea     rdx, [rax+1H]\n" +
+            "        mov     rax, qword [rbp-8H]\n" +
+            "        add     rax, rdx\n" +
+            "        movzx   eax, byte [rax]\n" +
+            "        movzx   eax, al\n" +
+            "        pop     rbp\n" +
+            "        ret\n");
 }

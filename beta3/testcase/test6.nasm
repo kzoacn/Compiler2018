@@ -3,6 +3,7 @@
 	 extern    printf
 	 extern    scanf
 	 extern    malloc
+	 extern    strlen
 
 	 section   .text
 toString:
@@ -329,6 +330,177 @@ mAd_006:  mov     rax, qword [rbp-8H]
         mov     rax, qword [rbp-10H]
         leave
         ret
+getInt:
+        push    rbp
+        mov     rbp, rsp
+        sub     rsp, 16
+        lea     rax, [rbp-8H]
+        mov     rsi, rax
+        mov     edi, GS_31
+        mov     eax, 0
+        call    scanf
+        mov     rax, qword [rbp-8H]
+        leave
+        ret
+
+getString:
+        push    rbp
+        mov     rbp, rsp
+        sub     rsp, 32
+        mov     esi, buff.1788
+        mov     edi, GS_32
+        mov     eax, 0
+        call    scanf
+        mov     edi, buff.1788
+        call    strlen
+        mov     qword [rbp-10H], rax
+        mov     rax, qword [rbp-10H]
+        add     rax, 2
+        mov     rdi, rax
+        call    malloc
+        mov     qword [rbp-18H], rax
+        mov     rax, qword [rbp-10H]
+        mov     edx, eax
+        mov     rax, qword [rbp-18H]
+        mov     byte [rax], dl
+        mov     qword [rbp-8H], 1
+        jmp     GS_20
+
+GS_19:  mov     rdx, qword [rbp-8H]
+        mov     rax, qword [rbp-18H]
+        add     rdx, rax
+        mov     rax, qword [rbp-8H]
+        sub     rax, 1
+
+        movzx   eax, byte [abs buff.1788+rax]
+        mov     byte [rdx], al
+        add     qword [rbp-8H], 1
+GS_20:  mov     rax, qword [rbp-8H]
+        cmp     rax, qword [rbp-10H]
+        jle     GS_19
+        mov     rax, qword [rbp-18H]
+        leave
+        ret
+
+parseInt:
+        push    rbp
+        mov     rbp, rsp
+        mov     r8,qword [arg+8*15]
+        mov     qword [rbp-18H], r8
+        mov     qword [rbp-10H], 0
+        mov     qword [rbp-8H], 1
+        jmp     PSL_025
+
+PSL_023:  mov     rdx, qword [rbp-8H]
+        mov     rax, qword [rbp-18H]
+        add     rax, rdx
+        movzx   eax, byte [rax]
+        cmp     al, 47
+        jbe     PSL_024
+        mov     rdx, qword [rbp-8H]
+        mov     rax, qword [rbp-18H]
+        add     rax, rdx
+        movzx   eax, byte [rax]
+        cmp     al, 57
+        ja      PSL_024
+        mov     rdx, qword [rbp-10H]
+        mov     rax, rdx
+        shl     rax, 2
+        add     rax, rdx
+        add     rax, rax
+        mov     rdx, rax
+        mov     rcx, qword [rbp-8H]
+        mov     rax, qword [rbp-18H]
+        add     rax, rcx
+        movzx   eax, byte [rax]
+        movzx   eax, al
+        sub     eax, 48
+        cdqe
+        add     rax, rdx
+        mov     qword [rbp-10H], rax
+        add     qword [rbp-8H], 1
+        jmp     PSL_025
+
+PSL_024:  mov     rax, qword [rbp-10H]
+        jmp     PSL_026
+
+PSL_025:  mov     rax, qword [rbp-18H]
+        movzx   eax, byte [rax]
+        movzx   eax, al
+        cmp     rax, qword [rbp-8H]
+        jge     PSL_023
+        mov     rax, qword [rbp-10H]
+PSL_026:  pop     rbp
+        ret
+
+substring:
+        push    rbp
+        mov     rbp, rsp
+        sub     rsp, 48
+        mov     qword [rbp-28H], rdi
+        mov     qword [rbp-30H], rsi
+        mov     r8,qword [arg+8*15]
+        mov     qword [rbp-18H], r8
+        mov     rax, qword [rbp-28H]
+        mov     rdx, qword [rbp-30H]
+        sub     rdx, rax
+        mov     rax, rdx
+        add     rax, 3
+        mov     rdi, rax
+        call    malloc
+        mov     qword [rbp-20H], rax
+        mov     rax, qword [rbp-30H]
+        mov     edx, eax
+        mov     rax, qword [rbp-28H]
+        sub     edx, eax
+        mov     eax, edx
+        add     eax, 1
+        mov     edx, eax
+        mov     rax, qword [rbp-20H]
+        mov     byte [rax], dl
+        mov     qword [rbp-10H], 0
+        mov     rax, qword [rbp-28H]
+        mov     qword [rbp-8H], rax
+        jmp     PSL_022
+
+PSL_021:  add     qword [rbp-10H], 1
+        mov     rdx, qword [rbp-10H]
+        mov     rax, qword [rbp-20H]
+        add     rdx, rax
+        mov     rax, qword [rbp-8H]
+        lea     rcx, [rax+1H]
+        mov     rax, qword [rbp-18H]
+        add     rax, rcx
+        movzx   eax, byte [rax]
+        mov     byte [rdx], al
+        add     qword [rbp-8H], 1
+PSL_022:  mov     rax, qword [rbp-8H]
+        cmp     rax, qword [rbp-30H]
+        jle     PSL_021
+        add     qword [rbp-10H], 1
+        mov     rdx, qword [rbp-10H]
+        mov     rax, qword [rbp-20H]
+        add     rax, rdx
+        mov     byte [rax], 0
+        mov     rax, qword [rbp-20H]
+        leave
+        ret
+
+ord:
+        push    rbp
+        mov     rbp, rsp
+        mov     qword [rbp-18H], rdi
+        mov     r8,qword [arg+8*15]
+        mov     qword [rbp-8H], r8
+        mov     rax, qword [rbp-18H]
+        lea     rdx, [rax+1H]
+        mov     rax, qword [rbp-8H]
+        add     rax, rdx
+        movzx   eax, byte [rax]
+        movzx   eax, al
+        pop     rbp
+        ret
+
 
 main:
 	push   rbp
@@ -342,15 +514,15 @@ main:
 	add r8, [rsp+8*3]
 	mov qword [rsp+8*4],r8 
 	mov r8, [rsp+8*4]
-	mov qword [gbl+8*5] ,r8
-	mov r8, [gbl+8*5]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
 	mov qword [rsp+8*6] ,r8
 	mov     rdi, [rsp+8*6]
 	call    toString
 	mov     qword[rsp+8*7], rax
 	mov r8, [rsp+8*7]
-	mov qword [gbl+8*5] ,r8
-	mov r8, [gbl+8*5]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
 	mov qword [rsp+8*8] ,r8
 	mov rdi, formatln
 	mov rsi,[rsp+8*8] 
@@ -361,15 +533,15 @@ main:
 	sub r8, [rsp+8*3]
 	mov qword [rsp+8*9],r8 
 	mov r8, [rsp+8*9]
-	mov qword [gbl+8*5] ,r8
-	mov r8, [gbl+8*5]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
 	mov qword [rsp+8*10] ,r8
 	mov     rdi, [rsp+8*10]
 	call    toString
 	mov     qword[rsp+8*11], rax
 	mov r8, [rsp+8*11]
-	mov qword [gbl+8*5] ,r8
-	mov r8, [gbl+8*5]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
 	mov qword [rsp+8*12] ,r8
 	mov rdi, formatln
 	mov rsi,[rsp+8*12] 
@@ -380,15 +552,15 @@ main:
 	imul r8, [rsp+8*3]
 	mov qword [rsp+8*13],r8 
 	mov r8, [rsp+8*13]
-	mov qword [gbl+8*5] ,r8
-	mov r8, [gbl+8*5]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
 	mov qword [rsp+8*14] ,r8
 	mov     rdi, [rsp+8*14]
 	call    toString
 	mov     qword[rsp+8*15], rax
 	mov r8, [rsp+8*15]
-	mov qword [gbl+8*5] ,r8
-	mov r8, [gbl+8*5]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
 	mov qword [rsp+8*16] ,r8
 	mov rdi, formatln
 	mov rsi,[rsp+8*16] 
@@ -402,15 +574,15 @@ main:
 	idiv rbx
 	mov [rsp+8*17], rax
 	mov r8, [rsp+8*17]
-	mov qword [gbl+8*5] ,r8
-	mov r8, [gbl+8*5]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
 	mov qword [rsp+8*18] ,r8
 	mov     rdi, [rsp+8*18]
 	call    toString
 	mov     qword[rsp+8*19], rax
 	mov r8, [rsp+8*19]
-	mov qword [gbl+8*5] ,r8
-	mov r8, [gbl+8*5]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
 	mov qword [rsp+8*20] ,r8
 	mov rdi, formatln
 	mov rsi,[rsp+8*20] 
@@ -424,15 +596,15 @@ main:
 	idiv rbx
 	mov [rsp+8*21], rdx
 	mov r8, [rsp+8*21]
-	mov qword [gbl+8*5] ,r8
-	mov r8, [gbl+8*5]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
 	mov qword [rsp+8*22] ,r8
 	mov     rdi, [rsp+8*22]
 	call    toString
 	mov     qword[rsp+8*23], rax
 	mov r8, [rsp+8*23]
-	mov qword [gbl+8*5] ,r8
-	mov r8, [gbl+8*5]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
 	mov qword [rsp+8*24] ,r8
 	mov rdi, formatln
 	mov rsi,[rsp+8*24] 
@@ -443,15 +615,15 @@ main:
 	and r8, [rsp+8*3]
 	mov qword [rsp+8*25],r8 
 	mov r8, [rsp+8*25]
-	mov qword [gbl+8*5] ,r8
-	mov r8, [gbl+8*5]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
 	mov qword [rsp+8*26] ,r8
 	mov     rdi, [rsp+8*26]
 	call    toString
 	mov     qword[rsp+8*27], rax
 	mov r8, [rsp+8*27]
-	mov qword [gbl+8*5] ,r8
-	mov r8, [gbl+8*5]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
 	mov qword [rsp+8*28] ,r8
 	mov rdi, formatln
 	mov rsi,[rsp+8*28] 
@@ -462,15 +634,15 @@ main:
 	or r8, [rsp+8*3]
 	mov qword [rsp+8*29],r8 
 	mov r8, [rsp+8*29]
-	mov qword [gbl+8*5] ,r8
-	mov r8, [gbl+8*5]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
 	mov qword [rsp+8*30] ,r8
 	mov     rdi, [rsp+8*30]
 	call    toString
 	mov     qword[rsp+8*31], rax
 	mov r8, [rsp+8*31]
-	mov qword [gbl+8*5] ,r8
-	mov r8, [gbl+8*5]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
 	mov qword [rsp+8*32] ,r8
 	mov rdi, formatln
 	mov rsi,[rsp+8*32] 
@@ -481,15 +653,15 @@ main:
 	xor r8, [rsp+8*3]
 	mov qword [rsp+8*33],r8 
 	mov r8, [rsp+8*33]
-	mov qword [gbl+8*5] ,r8
-	mov r8, [gbl+8*5]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
 	mov qword [rsp+8*34] ,r8
 	mov     rdi, [rsp+8*34]
 	call    toString
 	mov     qword[rsp+8*35], rax
 	mov r8, [rsp+8*35]
-	mov qword [gbl+8*5] ,r8
-	mov r8, [gbl+8*5]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
 	mov qword [rsp+8*36] ,r8
 	mov rdi, formatln
 	mov rsi,[rsp+8*36] 
@@ -501,15 +673,15 @@ main:
 	cmp r8, 0
 	sete [rsp+8*37]
 	mov r8, [rsp+8*37]
-	mov qword [gbl+8*5] ,r8
-	mov r8, [gbl+8*5]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
 	mov qword [rsp+8*38] ,r8
 	mov     rdi, [rsp+8*38]
 	call    toString
 	mov     qword[rsp+8*39], rax
 	mov r8, [rsp+8*39]
-	mov qword [gbl+8*5] ,r8
-	mov r8, [gbl+8*5]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
 	mov qword [rsp+8*40] ,r8
 	mov rdi, formatln
 	mov rsi,[rsp+8*40] 
@@ -520,15 +692,15 @@ main:
 	neg r8
 	mov [rsp+8*41], r8
 	mov r8, [rsp+8*41]
-	mov qword [gbl+8*5] ,r8
-	mov r8, [gbl+8*5]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
 	mov qword [rsp+8*42] ,r8
 	mov     rdi, [rsp+8*42]
 	call    toString
 	mov     qword[rsp+8*43], rax
 	mov r8, [rsp+8*43]
-	mov qword [gbl+8*5] ,r8
-	mov r8, [gbl+8*5]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
 	mov qword [rsp+8*44] ,r8
 	mov rdi, formatln
 	mov rsi,[rsp+8*44] 
@@ -539,15 +711,15 @@ main:
 	not r8
 	mov [rsp+8*45], r8
 	mov r8, [rsp+8*45]
-	mov qword [gbl+8*5] ,r8
-	mov r8, [gbl+8*5]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
 	mov qword [rsp+8*46] ,r8
 	mov     rdi, [rsp+8*46]
 	call    toString
 	mov     qword[rsp+8*47], rax
 	mov r8, [rsp+8*47]
-	mov qword [gbl+8*5] ,r8
-	mov r8, [gbl+8*5]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
 	mov qword [rsp+8*48] ,r8
 	mov rdi, formatln
 	mov rsi,[rsp+8*48] 
@@ -571,6 +743,10 @@ QED:
 	
 	 section   .bss
 gbl:         resb   2440
+buff.1788:
+        resb    256
+arg:
+        resb    1024
 
 	 section   .data
 
@@ -579,5 +755,11 @@ formatln:
 	
 format:
 	db  "%s",  0
+	
+GS_31:
+	db 25H, 6CH, 64H, 00H
+	
+GS_32:
+	db 25H, 73H, 00H
 	
 
