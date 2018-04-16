@@ -304,12 +304,17 @@ multiAddress:
         mov     rax, qword [rbp-30H]
         mov     rax, qword [rax]
         mov     qword [rbp-18H], rax
+        cmp     qword [rbp-18H], 0
+        jnz     mAd_005
         mov     rax, qword [rbp-28H]
+        jmp     mAd_008
+
+mAd_005:  mov     rax, qword [rbp-28H]
         mov     qword [rbp-10H], rax
         mov     qword [rbp-8H], 1
-        jmp     mAd_006
+        jmp     mAd_007
 
-mAd_005:  mov     rax, qword [rbp-8H]
+mAd_006:  mov     rax, qword [rbp-8H]
         lea     rdx, [rax-1H]
         mov     rax, qword [rbp-30H]
         mov     rsi, rdx
@@ -323,9 +328,9 @@ mAd_005:  mov     rax, qword [rbp-8H]
         mov     rax, qword [rax]
         mov     qword [rbp-10H], rax
         add     qword [rbp-8H], 1
-mAd_006:  mov     rax, qword [rbp-8H]
+mAd_007:  mov     rax, qword [rbp-8H]
         cmp     rax, qword [rbp-18H]
-        jl      mAd_005
+        jl      mAd_006
         mov     rax, qword [rbp-18H]
         lea     rdx, [rax-1H]
         mov     rax, qword [rbp-30H]
@@ -339,8 +344,9 @@ mAd_006:  mov     rax, qword [rbp-8H]
         call    address
         mov     qword [rbp-10H], rax
         mov     rax, qword [rbp-10H]
-        leave
+mAd_008:  leave
         ret
+
 getInt:
         push    rbp
         mov     rbp, rsp

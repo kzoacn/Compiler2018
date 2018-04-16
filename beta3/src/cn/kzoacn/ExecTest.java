@@ -209,6 +209,15 @@ class ExecTest {
         test("test81");
     }
 
+    @Test
+    void test82()throws Exception{
+        test("test82");
+    }
+    @Test
+    void test83()throws Exception{
+        test("test83");
+    }
+
     void test(String name) throws Exception{
 
         Scanner cin = new Scanner(System.in);

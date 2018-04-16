@@ -1,0 +1,17 @@
+class point{
+    int x;
+    int y;
+    
+    void set(int ax,int ay){
+        x=ax;
+        y=ay;
+    }
+}
+
+int main(){
+    point p=new point();
+    p.set(1,2);
+    println(toString(p.x));
+    println(toString(p.y));
+    return 0;
+}

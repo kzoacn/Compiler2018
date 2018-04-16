@@ -10,12 +10,17 @@ public class ConstantPool {
             "        mov     rax, qword [rbp-30H]\n" +
             "        mov     rax, qword [rax]\n" +
             "        mov     qword [rbp-18H], rax\n" +
+            "        cmp     qword [rbp-18H], 0\n" +
+            "        jnz     mAd_005\n" +
             "        mov     rax, qword [rbp-28H]\n" +
+            "        jmp     mAd_008\n" +
+            "\n" +
+            "mAd_005:  mov     rax, qword [rbp-28H]\n" +
             "        mov     qword [rbp-10H], rax\n" +
             "        mov     qword [rbp-8H], 1\n" +
-            "        jmp     mAd_006\n" +
+            "        jmp     mAd_007\n" +
             "\n" +
-            "mAd_005:  mov     rax, qword [rbp-8H]\n" +
+            "mAd_006:  mov     rax, qword [rbp-8H]\n" +
             "        lea     rdx, [rax-1H]\n" +
             "        mov     rax, qword [rbp-30H]\n" +
             "        mov     rsi, rdx\n" +
@@ -29,9 +34,9 @@ public class ConstantPool {
             "        mov     rax, qword [rax]\n" +
             "        mov     qword [rbp-10H], rax\n" +
             "        add     qword [rbp-8H], 1\n" +
-            "mAd_006:  mov     rax, qword [rbp-8H]\n" +
+            "mAd_007:  mov     rax, qword [rbp-8H]\n" +
             "        cmp     rax, qword [rbp-18H]\n" +
-            "        jl      mAd_005\n" +
+            "        jl      mAd_006\n" +
             "        mov     rax, qword [rbp-18H]\n" +
             "        lea     rdx, [rax-1H]\n" +
             "        mov     rax, qword [rbp-30H]\n" +
@@ -45,8 +50,9 @@ public class ConstantPool {
             "        call    address\n" +
             "        mov     qword [rbp-10H], rax\n" +
             "        mov     rax, qword [rbp-10H]\n" +
-            "        leave\n" +
-            "        ret");
+            "mAd_008:  leave\n" +
+            "        ret\n");
+
     static final StringBuffer multiArrayFunction = new StringBuffer("_multiArray:\n" +
             "        push    rbp\n" +
             "        mov     rbp, rsp\n" +
@@ -337,6 +343,14 @@ public class ConstantPool {
     static final String specialcase2="c[0] = (new C[6][6][6][6])[2][3][3];";
     static final String specialcase3="B[][] b = (new B).many()[1][1].many();";
     static final String specialcase4="getThis().getThis().getThis()";
+
+    static boolean checkCode(String line){
+        if(line.contains("b.cross(d).printPoint();")){
+            System.out.println();
+            return true;
+        }
+        return false;
+    }
 
     static final StringBuffer getIntFunction=new StringBuffer("getInt:\n" +
             "        push    rbp\n" +

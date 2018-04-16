@@ -1484,7 +1484,6 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         if(hiddenThis){
             int ind=classMemberIndex.get(currentClass).get(start);
             ir.push(new Quad(OpCode.address,currentThis,nextConst(ind,VariableType.CONST_INT),start));
-            ir.push(new Quad(OpCode.load,start,Variable.empty,start));
         }
 
         Variable arr = nextVariable(VariableType.INT);

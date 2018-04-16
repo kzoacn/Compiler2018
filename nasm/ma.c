@@ -26,6 +26,7 @@ long* address(long st,long pos){
 
 long* multiAddress(unsigned char* st,long* a){
     long size=*a,i;
+    if(size==0)return st;
     unsigned char *cur=st;
     for(i=1;i<size;i++){
         cur=*address((long)cur,*address(a,i-1));

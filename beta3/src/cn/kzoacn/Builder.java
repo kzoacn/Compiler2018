@@ -13,6 +13,7 @@ import java.util.Scanner;
 public class Builder {
 
 
+
     public static void main(String[] arg) throws Exception{
 
         String name="test.mx";
@@ -25,7 +26,8 @@ public class Builder {
 
         StringBuilder ctx=new StringBuilder();
         while (fin.hasNext()){
-            ctx.append(fin.nextLine());
+            String line=fin.nextLine();
+            ctx.append(line);
             ctx.append("\n");
         }
         //System.out.println(ctx);
