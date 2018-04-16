@@ -639,11 +639,10 @@ main:
 	mov [rsp+8*1] , rax
 	mov qword [rsp+8*2] ,5
 	mov r8, [rsp+8*2]
+	mov qword [rsp+8*3] ,r8
+	mov r8, [rsp+8*2]
 	add r8, 1
 	mov qword [rsp+8*2],r8 
-	mov r8, [rsp+8*2]
-	sub r8, 1
-	mov qword [rsp+8*3],r8 
 	mov r8, [rsp+8*3]
 	mov qword [rsp+8*4] ,r8
 	mov r8, [rsp+8*4]

@@ -646,11 +646,10 @@ main:
 	cmp r8, 0
 	je L_367
 	mov r8, [gbl+8*2]
+	mov qword [rsp+8*4] ,r8
+	mov r8, [gbl+8*2]
 	sub r8, 1
 	mov qword [gbl+8*2],r8 
-	mov r8, [gbl+8*2]
-	add r8, 1
-	mov qword [rsp+8*4],r8 
 	mov r8, [rsp+8*4]
 	mov qword [arg+8*0] ,r8
 	mov r8, [arg+8*0]

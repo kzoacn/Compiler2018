@@ -777,11 +777,10 @@ L_116:
 	
 L_118:
 	mov r8, [rsp+8*12]
+	mov qword [rsp+8*26] ,r8
+	mov r8, [rsp+8*12]
 	add r8, 1
 	mov qword [rsp+8*12],r8 
-	mov r8, [rsp+8*12]
-	sub r8, 1
-	mov qword [rsp+8*26],r8 
 	jmp L_116
 	
 L_117:

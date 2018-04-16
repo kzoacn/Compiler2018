@@ -740,11 +740,10 @@ L_429:
 	
 L_431:
 	mov r8, [rsp+8*6]
+	mov qword [rsp+8*22] ,r8
+	mov r8, [rsp+8*6]
 	add r8, 1
 	mov qword [rsp+8*6],r8 
-	mov r8, [rsp+8*6]
-	sub r8, 1
-	mov qword [rsp+8*22],r8 
 	jmp L_429
 	
 L_430:
@@ -820,11 +819,10 @@ L_432:
 	
 L_434:
 	mov r8, [rsp+8*6]
+	mov qword [rsp+8*34] ,r8
+	mov r8, [rsp+8*6]
 	add r8, 1
 	mov qword [rsp+8*6],r8 
-	mov r8, [rsp+8*6]
-	sub r8, 1
-	mov qword [rsp+8*34],r8 
 	jmp L_432
 	
 L_433:

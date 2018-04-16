@@ -723,22 +723,20 @@ L_40:
 	
 L_38:
 	mov r8, [rsp+8*14]
+	mov qword [rsp+8*23] ,r8
+	mov r8, [rsp+8*14]
 	add r8, 1
 	mov qword [rsp+8*14],r8 
-	mov r8, [rsp+8*14]
-	sub r8, 1
-	mov qword [rsp+8*23],r8 
 	jmp L_36
 	
 L_37:
 	
 L_35:
 	mov r8, [rsp+8*8]
+	mov qword [rsp+8*24] ,r8
+	mov r8, [rsp+8*8]
 	add r8, 1
 	mov qword [rsp+8*8],r8 
-	mov r8, [rsp+8*8]
-	sub r8, 1
-	mov qword [rsp+8*24],r8 
 	jmp L_33
 	
 L_34:
@@ -754,11 +752,10 @@ L_42:
 	
 L_32:
 	mov r8, [rsp+8*6]
+	mov qword [rsp+8*26] ,r8
+	mov r8, [rsp+8*6]
 	add r8, 1
 	mov qword [rsp+8*6],r8 
-	mov r8, [rsp+8*6]
-	sub r8, 1
-	mov qword [rsp+8*26],r8 
 	jmp L_30
 	
 L_31:
@@ -865,22 +862,20 @@ L_50:
 	
 L_48:
 	mov r8, [rsp+8*14]
+	mov qword [rsp+8*51] ,r8
+	mov r8, [rsp+8*14]
 	add r8, 1
 	mov qword [rsp+8*14],r8 
-	mov r8, [rsp+8*14]
-	sub r8, 1
-	mov qword [rsp+8*51],r8 
 	jmp L_46
 	
 L_47:
 	
 L_45:
 	mov r8, [rsp+8*8]
+	mov qword [rsp+8*52] ,r8
+	mov r8, [rsp+8*8]
 	add r8, 1
 	mov qword [rsp+8*8],r8 
-	mov r8, [rsp+8*8]
-	sub r8, 1
-	mov qword [rsp+8*52],r8 
 	jmp L_43
 	
 L_44:
@@ -923,11 +918,10 @@ L_51:
 	
 L_53:
 	mov r8, [rsp+8*8]
+	mov qword [rsp+8*61] ,r8
+	mov r8, [rsp+8*8]
 	add r8, 1
 	mov qword [rsp+8*8],r8 
-	mov r8, [rsp+8*8]
-	sub r8, 1
-	mov qword [rsp+8*61],r8 
 	jmp L_51
 	
 L_52:

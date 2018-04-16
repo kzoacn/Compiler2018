@@ -791,22 +791,20 @@ L_21:
 	
 L_19:
 	mov r8, [rsp+8*17]
+	mov qword [rsp+8*41] ,r8
+	mov r8, [rsp+8*17]
 	add r8, 1
 	mov qword [rsp+8*17],r8 
-	mov r8, [rsp+8*17]
-	sub r8, 1
-	mov qword [rsp+8*41],r8 
 	jmp L_17
 	
 L_18:
 	
 L_16:
 	mov r8, [rsp+8*15]
+	mov qword [rsp+8*42] ,r8
+	mov r8, [rsp+8*15]
 	add r8, 1
 	mov qword [rsp+8*15],r8 
-	mov r8, [rsp+8*15]
-	sub r8, 1
-	mov qword [rsp+8*42],r8 
 	jmp L_14
 	
 L_15:
@@ -849,11 +847,10 @@ L_22:
 	
 L_24:
 	mov r8, [rsp+8*15]
+	mov qword [rsp+8*51] ,r8
+	mov r8, [rsp+8*15]
 	add r8, 1
 	mov qword [rsp+8*15],r8 
-	mov r8, [rsp+8*15]
-	sub r8, 1
-	mov qword [rsp+8*51],r8 
 	jmp L_22
 	
 L_23:

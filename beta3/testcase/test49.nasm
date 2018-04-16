@@ -743,22 +743,20 @@ L_447:
 	
 L_449:
 	mov r8, [rsp+8*12]
+	mov qword [rsp+8*18] ,r8
+	mov r8, [rsp+8*12]
 	add r8, 1
 	mov qword [rsp+8*12],r8 
-	mov r8, [rsp+8*12]
-	sub r8, 1
-	mov qword [rsp+8*18],r8 
 	jmp L_447
 	
 L_448:
 	
 L_446:
 	mov r8, [rsp+8*10]
+	mov qword [rsp+8*19] ,r8
+	mov r8, [rsp+8*10]
 	add r8, 1
 	mov qword [rsp+8*10],r8 
-	mov r8, [rsp+8*10]
-	sub r8, 1
-	mov qword [rsp+8*19],r8 
 	jmp L_444
 	
 L_445:

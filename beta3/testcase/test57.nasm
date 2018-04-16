@@ -681,11 +681,10 @@ L_480:
 	
 L_482:
 	mov r8, [rsp+8*4]
+	mov qword [rsp+8*13] ,r8
+	mov r8, [rsp+8*4]
 	add r8, 1
 	mov qword [rsp+8*4],r8 
-	mov r8, [rsp+8*4]
-	sub r8, 1
-	mov qword [rsp+8*13],r8 
 	jmp L_480
 	
 L_481:

@@ -684,11 +684,10 @@ f:
 	mov    rbp, rsp
 	sub    rsp, 176
 	mov r8, [rsp+8*12]
+	mov qword [rsp+8*13] ,r8
+	mov r8, [rsp+8*12]
 	add r8, 1
 	mov qword [rsp+8*12],r8 
-	mov r8, [rsp+8*12]
-	sub r8, 1
-	mov qword [rsp+8*13],r8 
 	mov rax,0
 	leave
 	ret

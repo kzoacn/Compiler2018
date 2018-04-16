@@ -634,15 +634,27 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 104
+	sub    rsp, 128
 	call global_init
 	mov [rsp+8*1] , rax
+	call f
+	mov [rsp+8*2] , rax
+	mov qword [arg+8*1] ,2
+	mov qword [arg+8*0] ,0
+	mov r8, [rsp+8*2]
+	mov qword [arg+8*15] ,r8
+	mov     rsi, [arg+8*1]
+	mov     rdi, [arg+8*0]
+	call    substring
+	mov [rsp+8*6], rax
+	mov r8, [rsp+8*6]
+	mov qword [rsp+8*2] ,r8
 	mov r8, [rsp+8*2]
 	mov qword [arg+8*0] ,r8
 	mov r8, [arg+8*0]
-	mov qword [rsp+8*4] ,r8
+	mov qword [rsp+8*7] ,r8
 	mov rdi, formatln
-	mov rsi,[rsp+8*4] 
+	mov rsi,[rsp+8*7] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
@@ -657,7 +669,7 @@ main:
 f:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 104
+	sub    rsp, 128
 	mov rax,t16
 	leave
 	ret
@@ -668,15 +680,15 @@ f:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 104
-	mov rax,[rsp+8*5]
+	sub    rsp, 128
+	mov rax,[rsp+8*8]
 	leave
 	ret
 	
 QED:
 	
 	 section   .bss
-gbl:         resb   2088
+gbl:         resb   2112
 buff.1788:
         resb    256
 arg:

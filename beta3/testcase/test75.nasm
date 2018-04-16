@@ -665,11 +665,10 @@ L_547:
 	
 L_549:
 	mov r8, [rsp+8*4]
+	mov qword [rsp+8*10] ,r8
+	mov r8, [rsp+8*4]
 	add r8, 1
 	mov qword [rsp+8*4],r8 
-	mov r8, [rsp+8*4]
-	sub r8, 1
-	mov qword [rsp+8*10],r8 
 	jmp L_547
 	
 L_548:
@@ -693,11 +692,10 @@ L_550:
 	
 L_552:
 	mov r8, [rsp+8*4]
+	mov qword [rsp+8*15] ,r8
+	mov r8, [rsp+8*4]
 	add r8, 1
 	mov qword [rsp+8*4],r8 
-	mov r8, [rsp+8*4]
-	sub r8, 1
-	mov qword [rsp+8*15],r8 
 	jmp L_550
 	
 L_551:
@@ -735,11 +733,10 @@ L_553:
 	
 L_555:
 	mov r8, [rsp+8*4]
+	mov qword [rsp+8*21] ,r8
+	mov r8, [rsp+8*4]
 	add r8, 1
 	mov qword [rsp+8*4],r8 
-	mov r8, [rsp+8*4]
-	sub r8, 1
-	mov qword [rsp+8*21],r8 
 	jmp L_553
 	
 L_554:

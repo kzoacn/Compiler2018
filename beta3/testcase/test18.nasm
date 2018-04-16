@@ -903,33 +903,30 @@ L_139:
 	
 L_133:
 	mov r8, [rsp+8*14]
+	mov qword [rsp+8*39] ,r8
+	mov r8, [rsp+8*14]
 	add r8, 1
 	mov qword [rsp+8*14],r8 
-	mov r8, [rsp+8*14]
-	sub r8, 1
-	mov qword [rsp+8*39],r8 
 	jmp L_131
 	
 L_132:
 	
 L_130:
 	mov r8, [rsp+8*12]
+	mov qword [rsp+8*40] ,r8
+	mov r8, [rsp+8*12]
 	add r8, 1
 	mov qword [rsp+8*12],r8 
-	mov r8, [rsp+8*12]
-	sub r8, 1
-	mov qword [rsp+8*40],r8 
 	jmp L_128
 	
 L_129:
 	
 L_127:
 	mov r8, [rsp+8*10]
+	mov qword [rsp+8*41] ,r8
+	mov r8, [rsp+8*10]
 	add r8, 1
 	mov qword [rsp+8*10],r8 
-	mov r8, [rsp+8*10]
-	sub r8, 1
-	mov qword [rsp+8*41],r8 
 	jmp L_125
 	
 L_126:

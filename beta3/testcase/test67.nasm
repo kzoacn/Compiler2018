@@ -660,11 +660,10 @@ L_511:
 	
 L_513:
 	mov r8, [rsp+8*2]
+	mov qword [rsp+8*8] ,r8
+	mov r8, [rsp+8*2]
 	add r8, 1
 	mov qword [rsp+8*2],r8 
-	mov r8, [rsp+8*2]
-	sub r8, 1
-	mov qword [rsp+8*8],r8 
 	jmp L_511
 	
 L_512:
@@ -724,11 +723,10 @@ L_520:
 	cmp r8, 0
 	je L_522
 	mov r8, [gbl+8*20]
+	mov qword [rsp+8*21] ,r8
+	mov r8, [gbl+8*20]
 	add r8, 1
 	mov qword [gbl+8*20],r8 
-	mov r8, [gbl+8*20]
-	sub r8, 1
-	mov qword [rsp+8*21],r8 
 	mov r8, [rsp+8*2]
 	sub r8, 2
 	mov qword [rsp+8*22],r8 
@@ -739,7 +737,7 @@ L_520:
 	mov     rdi, [rsp+8*24]
 	call    toString
 	mov     qword[rsp+8*25], rax
-	mov     rsi, t55
+	mov     rsi, t52
 	mov     rdi, [rsp+8*25]
 	call    concat
 	mov [rsp+8*26], rax
@@ -791,11 +789,10 @@ L_523:
 	mov r9, [rsp+8*35]
 	mov qword [r9], r8
 	mov r8, [rsp+8*13]
+	mov qword [rsp+8*36] ,r8
+	mov r8, [rsp+8*13]
 	add r8, 1
 	mov qword [rsp+8*13],r8 
-	mov r8, [rsp+8*13]
-	sub r8, 1
-	mov qword [rsp+8*36],r8 
 	jmp L_523
 	
 L_524:
@@ -804,11 +801,10 @@ L_518:
 	
 L_516:
 	mov r8, [rsp+8*2]
+	mov qword [rsp+8*37] ,r8
+	mov r8, [rsp+8*2]
 	add r8, 1
 	mov qword [rsp+8*2],r8 
-	mov r8, [rsp+8*2]
-	sub r8, 1
-	mov qword [rsp+8*37],r8 
 	jmp L_514
 	
 L_515:
@@ -820,7 +816,7 @@ L_515:
 	call    toString
 	mov     qword[rsp+8*39], rax
 	mov     rsi, [rsp+8*39]
-	mov     rdi, t73
+	mov     rdi, t69
 	call    concat
 	mov [rsp+8*40], rax
 	mov r8, [rsp+8*40]
@@ -878,10 +874,10 @@ GS_31:
 GS_32:
 	db 25H, 73H, 00H
 	
-t73:
-	 db 7,"Total: " ,0
-
-t55:
+t52:
 	 db 1," " ,0
+
+t69:
+	 db 7,"Total: " ,0
 
 

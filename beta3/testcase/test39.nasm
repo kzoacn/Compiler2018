@@ -681,11 +681,10 @@ f:
 	
 L_375:
 	mov r8, [gbl+8*4]
+	mov qword [rsp+8*10] ,r8
+	mov r8, [gbl+8*4]
 	add r8, 1
 	mov qword [gbl+8*4],r8 
-	mov r8, [gbl+8*4]
-	sub r8, 1
-	mov qword [rsp+8*10],r8 
 	mov r8, [rsp+8*8]
 	sub r8, 1
 	mov qword [rsp+8*8],r8 
@@ -694,11 +693,10 @@ L_375:
 	call f
 	mov [rsp+8*11] , rax
 	mov r8, [gbl+8*4]
+	mov qword [rsp+8*12] ,r8
+	mov r8, [gbl+8*4]
 	add r8, 1
 	mov qword [gbl+8*4],r8 
-	mov r8, [gbl+8*4]
-	sub r8, 1
-	mov qword [rsp+8*12],r8 
 	mov rax,0
 	leave
 	ret

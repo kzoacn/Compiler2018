@@ -651,7 +651,7 @@ L_501:
 	mov r8, [rsp+8*5]
 	cmp r8, 0
 	je L_502
-	mov     rsi, t24
+	mov     rsi, t23
 	mov     rdi, [rsp+8*4]
 	call    concat
 	mov [rsp+8*6], rax
@@ -660,11 +660,10 @@ L_501:
 	
 L_503:
 	mov r8, [rsp+8*3]
+	mov qword [rsp+8*7] ,r8
+	mov r8, [rsp+8*3]
 	add r8, 1
 	mov qword [rsp+8*3],r8 
-	mov r8, [rsp+8*3]
-	sub r8, 1
-	mov qword [rsp+8*7],r8 
 	jmp L_501
 	
 L_502:
@@ -688,7 +687,7 @@ L_504:
 	mov r8, [rsp+8*10]
 	cmp r8, 0
 	je L_505
-	mov     rsi, t34
+	mov     rsi, t32
 	mov     rdi, [rsp+8*4]
 	call    concat
 	mov [rsp+8*11], rax
@@ -697,11 +696,10 @@ L_504:
 	
 L_506:
 	mov r8, [rsp+8*3]
+	mov qword [rsp+8*12] ,r8
+	mov r8, [rsp+8*3]
 	add r8, 1
 	mov qword [rsp+8*3],r8 
-	mov r8, [rsp+8*3]
-	sub r8, 1
-	mov qword [rsp+8*12],r8 
 	jmp L_504
 	
 L_505:
@@ -753,10 +751,10 @@ GS_31:
 GS_32:
 	db 25H, 73H, 00H
 	
-t34:
+t32:
 	 db 1,"0" ,0
 
-t24:
+t23:
 	 db 1,"0" ,0
 
 t18:

@@ -669,11 +669,10 @@ L_328:
 	
 L_330:
 	mov r8, [rsp+8*2]
+	mov qword [rsp+8*10] ,r8
+	mov r8, [rsp+8*2]
 	add r8, 1
 	mov qword [rsp+8*2],r8 
-	mov r8, [rsp+8*2]
-	sub r8, 1
-	mov qword [rsp+8*10],r8 
 	jmp L_328
 	
 L_329:
@@ -731,7 +730,7 @@ L_312:
 	mov r8, [rsp+8*22]
 	cmp r8, 0
 	je L_315
-	mov qword [arg+8*0] ,t40
+	mov qword [arg+8*0] ,t38
 	mov r8, [arg+8*0]
 	mov qword [rsp+8*23] ,r8
 	mov rdi, format
@@ -742,7 +741,7 @@ L_312:
 	jmp L_316
 	
 L_315:
-	mov qword [arg+8*0] ,t44
+	mov qword [arg+8*0] ,t42
 	mov r8, [arg+8*0]
 	mov qword [rsp+8*24] ,r8
 	mov rdi, format
@@ -755,15 +754,14 @@ L_316:
 	
 L_314:
 	mov r8, [rsp+8*16]
+	mov qword [rsp+8*25] ,r8
+	mov r8, [rsp+8*16]
 	add r8, 1
 	mov qword [rsp+8*16],r8 
-	mov r8, [rsp+8*16]
-	sub r8, 1
-	mov qword [rsp+8*25],r8 
 	jmp L_312
 	
 L_313:
-	mov qword [arg+8*0] ,t48
+	mov qword [arg+8*0] ,t46
 	mov r8, [arg+8*0]
 	mov qword [rsp+8*26] ,r8
 	mov rdi, formatln
@@ -774,15 +772,14 @@ L_313:
 	
 L_311:
 	mov r8, [rsp+8*13]
+	mov qword [rsp+8*27] ,r8
+	mov r8, [rsp+8*13]
 	add r8, 1
 	mov qword [rsp+8*13],r8 
-	mov r8, [rsp+8*13]
-	sub r8, 1
-	mov qword [rsp+8*27],r8 
 	jmp L_309
 	
 L_310:
-	mov qword [arg+8*0] ,t52
+	mov qword [arg+8*0] ,t50
 	mov r8, [arg+8*0]
 	mov qword [rsp+8*28] ,r8
 	mov rdi, formatln
@@ -1038,11 +1035,10 @@ L_323:
 	
 L_321:
 	mov r8, [rsp+8*32]
+	mov qword [rsp+8*77] ,r8
+	mov r8, [rsp+8*32]
 	add r8, 1
 	mov qword [rsp+8*32],r8 
-	mov r8, [rsp+8*32]
-	sub r8, 1
-	mov qword [rsp+8*77],r8 
 	jmp L_319
 	
 L_320:
@@ -1099,16 +1095,16 @@ GS_31:
 GS_32:
 	db 25H, 73H, 00H
 	
-t52:
-	 db 0,"" ,0
-
-t40:
-	 db 2," O" ,0
-
-t44:
+t42:
 	 db 2," ." ,0
 
-t48:
+t46:
+	 db 0,"" ,0
+
+t38:
+	 db 2," O" ,0
+
+t50:
 	 db 0,"" ,0
 
 

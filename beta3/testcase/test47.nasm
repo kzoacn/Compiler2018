@@ -852,33 +852,30 @@ L_441:
 	
 L_443:
 	mov r8, [rsp+8*24]
+	mov qword [rsp+8*31] ,r8
+	mov r8, [rsp+8*24]
 	add r8, 1
 	mov qword [rsp+8*24],r8 
-	mov r8, [rsp+8*24]
-	sub r8, 1
-	mov qword [rsp+8*31],r8 
 	jmp L_441
 	
 L_442:
 	
 L_440:
 	mov r8, [rsp+8*14]
+	mov qword [rsp+8*32] ,r8
+	mov r8, [rsp+8*14]
 	add r8, 1
 	mov qword [rsp+8*14],r8 
-	mov r8, [rsp+8*14]
-	sub r8, 1
-	mov qword [rsp+8*32],r8 
 	jmp L_438
 	
 L_439:
 	
 L_437:
 	mov r8, [rsp+8*5]
+	mov qword [rsp+8*33] ,r8
+	mov r8, [rsp+8*5]
 	add r8, 1
 	mov qword [rsp+8*5],r8 
-	mov r8, [rsp+8*5]
-	sub r8, 1
-	mov qword [rsp+8*33],r8 
 	jmp L_435
 	
 L_436:

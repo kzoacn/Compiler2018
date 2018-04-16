@@ -690,11 +690,10 @@ L_211:
 	
 L_213:
 	mov r8, [rsp+8*18]
+	mov qword [rsp+8*23] ,r8
+	mov r8, [rsp+8*18]
 	add r8, 1
 	mov qword [rsp+8*18],r8 
-	mov r8, [rsp+8*18]
-	sub r8, 1
-	mov qword [rsp+8*23],r8 
 	jmp L_211
 	
 L_212:
@@ -732,11 +731,10 @@ L_214:
 	
 L_216:
 	mov r8, [rsp+8*18]
+	mov qword [rsp+8*31] ,r8
+	mov r8, [rsp+8*18]
 	add r8, 1
 	mov qword [rsp+8*18],r8 
-	mov r8, [rsp+8*18]
-	sub r8, 1
-	mov qword [rsp+8*31],r8 
 	jmp L_214
 	
 L_215:
@@ -801,22 +799,20 @@ L_220:
 	
 L_222:
 	mov r8, [rsp+8*38]
+	mov qword [rsp+8*43] ,r8
+	mov r8, [rsp+8*38]
 	add r8, 1
 	mov qword [rsp+8*38],r8 
-	mov r8, [rsp+8*38]
-	sub r8, 1
-	mov qword [rsp+8*43],r8 
 	jmp L_220
 	
 L_221:
 	
 L_219:
 	mov r8, [rsp+8*18]
+	mov qword [rsp+8*44] ,r8
+	mov r8, [rsp+8*18]
 	add r8, 1
 	mov qword [rsp+8*18],r8 
-	mov r8, [rsp+8*18]
-	sub r8, 1
-	mov qword [rsp+8*44],r8 
 	jmp L_217
 	
 L_218:
@@ -2194,7 +2190,7 @@ L_224:
 	jmp L_308
 	
 L_307:
-	mov qword [arg+8*0] ,t409
+	mov qword [arg+8*0] ,t405
 	mov r8, [arg+8*0]
 	mov qword [rsp+8*288] ,r8
 	mov rdi, formatln
@@ -2279,7 +2275,7 @@ GS_31:
 GS_32:
 	db 25H, 73H, 00H
 	
-t409:
+t405:
 	 db 12,"no solution!" ,0
 
 

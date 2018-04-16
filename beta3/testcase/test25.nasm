@@ -659,11 +659,10 @@ L_203:
 	sub r8, [rsp+8*6]
 	mov qword [rsp+8*8],r8 
 	mov r8, [rsp+8*5]
+	mov qword [rsp+8*9] ,r8
+	mov r8, [rsp+8*5]
 	add r8, 1
 	mov qword [rsp+8*5],r8 
-	mov r8, [rsp+8*5]
-	sub r8, 1
-	mov qword [rsp+8*9],r8 
 	mov r8, [rsp+8*4]
 	mov qword [rsp+8*10] ,r8
 	mov     rsi, [rsp+8*9]
@@ -676,11 +675,10 @@ L_203:
 	
 L_205:
 	mov r8, [rsp+8*6]
+	mov qword [rsp+8*12] ,r8
+	mov r8, [rsp+8*6]
 	add r8, 1
 	mov qword [rsp+8*6],r8 
-	mov r8, [rsp+8*6]
-	sub r8, 1
-	mov qword [rsp+8*12],r8 
 	jmp L_203
 	
 L_204:
@@ -723,11 +721,10 @@ L_206:
 	
 L_208:
 	mov r8, [rsp+8*6]
+	mov qword [rsp+8*21] ,r8
+	mov r8, [rsp+8*6]
 	add r8, 1
 	mov qword [rsp+8*6],r8 
-	mov r8, [rsp+8*6]
-	sub r8, 1
-	mov qword [rsp+8*21],r8 
 	jmp L_206
 	
 L_207:

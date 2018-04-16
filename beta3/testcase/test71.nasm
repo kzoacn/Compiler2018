@@ -634,15 +634,15 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 20640
+	sub    rsp, 20648
 	call global_init
 	mov [rsp+8*1] , rax
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword [rsp+8*2], rax
 	mov r8, [rsp+8*2]
-	mov qword [rsp+8*3] ,r8
-	mov r8, [rsp+8*3]
+	mov qword [gbl+8*3] ,r8
+	mov r8, [gbl+8*3]
 	mov qword [rsp+8*4] ,r8
 	mov     rsi, 0
 	mov     rdi, [rsp+8*4]
@@ -651,1537 +651,1537 @@ main:
 	mov r8, 0
 	mov r9, [rsp+8*5]
 	mov qword [r9], r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*7] , rax
 	mov r8, [rsp+8*7]
 	mov qword [rsp+8*8] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*9] , rax
 	mov r8, [rsp+8*9]
 	mov qword [rsp+8*10] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*11] , rax
 	mov r8, [rsp+8*11]
 	mov qword [rsp+8*12] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*13] , rax
 	mov r8, [rsp+8*13]
 	mov qword [rsp+8*14] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*15] , rax
 	mov r8, [rsp+8*15]
 	mov qword [rsp+8*16] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*17] , rax
 	mov r8, [rsp+8*17]
 	mov qword [rsp+8*18] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*19] , rax
 	mov r8, [rsp+8*19]
 	mov qword [rsp+8*20] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*21] , rax
 	mov r8, [rsp+8*21]
 	mov qword [rsp+8*22] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*23] , rax
 	mov r8, [rsp+8*23]
 	mov qword [rsp+8*24] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*25] , rax
 	mov r8, [rsp+8*25]
 	mov qword [rsp+8*26] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*27] , rax
 	mov r8, [rsp+8*27]
 	mov qword [rsp+8*28] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*29] , rax
 	mov r8, [rsp+8*29]
 	mov qword [rsp+8*30] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*31] , rax
 	mov r8, [rsp+8*31]
 	mov qword [rsp+8*32] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*33] , rax
 	mov r8, [rsp+8*33]
 	mov qword [rsp+8*34] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*35] , rax
 	mov r8, [rsp+8*35]
 	mov qword [rsp+8*36] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*37] , rax
 	mov r8, [rsp+8*37]
 	mov qword [rsp+8*38] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*39] , rax
 	mov r8, [rsp+8*39]
 	mov qword [rsp+8*40] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*41] , rax
 	mov r8, [rsp+8*41]
 	mov qword [rsp+8*42] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*43] , rax
 	mov r8, [rsp+8*43]
 	mov qword [rsp+8*44] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*45] , rax
 	mov r8, [rsp+8*45]
 	mov qword [rsp+8*46] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*47] , rax
 	mov r8, [rsp+8*47]
 	mov qword [rsp+8*48] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*49] , rax
 	mov r8, [rsp+8*49]
 	mov qword [rsp+8*50] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*51] , rax
 	mov r8, [rsp+8*51]
 	mov qword [rsp+8*52] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*53] , rax
 	mov r8, [rsp+8*53]
 	mov qword [rsp+8*54] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*55] , rax
 	mov r8, [rsp+8*55]
 	mov qword [rsp+8*56] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*57] , rax
 	mov r8, [rsp+8*57]
 	mov qword [rsp+8*58] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*59] , rax
 	mov r8, [rsp+8*59]
 	mov qword [rsp+8*60] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*61] , rax
 	mov r8, [rsp+8*61]
 	mov qword [rsp+8*62] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*63] , rax
 	mov r8, [rsp+8*63]
 	mov qword [rsp+8*64] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*65] , rax
 	mov r8, [rsp+8*65]
 	mov qword [rsp+8*66] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*67] , rax
 	mov r8, [rsp+8*67]
 	mov qword [rsp+8*68] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*69] , rax
 	mov r8, [rsp+8*69]
 	mov qword [rsp+8*70] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*71] , rax
 	mov r8, [rsp+8*71]
 	mov qword [rsp+8*72] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*73] , rax
 	mov r8, [rsp+8*73]
 	mov qword [rsp+8*74] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*75] , rax
 	mov r8, [rsp+8*75]
 	mov qword [rsp+8*76] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*77] , rax
 	mov r8, [rsp+8*77]
 	mov qword [rsp+8*78] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*79] , rax
 	mov r8, [rsp+8*79]
 	mov qword [rsp+8*80] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*81] , rax
 	mov r8, [rsp+8*81]
 	mov qword [rsp+8*82] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*83] , rax
 	mov r8, [rsp+8*83]
 	mov qword [rsp+8*84] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*85] , rax
 	mov r8, [rsp+8*85]
 	mov qword [rsp+8*86] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*87] , rax
 	mov r8, [rsp+8*87]
 	mov qword [rsp+8*88] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*89] , rax
 	mov r8, [rsp+8*89]
 	mov qword [rsp+8*90] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*91] , rax
 	mov r8, [rsp+8*91]
 	mov qword [rsp+8*92] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*93] , rax
 	mov r8, [rsp+8*93]
 	mov qword [rsp+8*94] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*95] , rax
 	mov r8, [rsp+8*95]
 	mov qword [rsp+8*96] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*97] , rax
 	mov r8, [rsp+8*97]
 	mov qword [rsp+8*98] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*99] , rax
 	mov r8, [rsp+8*99]
 	mov qword [rsp+8*100] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*101] , rax
 	mov r8, [rsp+8*101]
 	mov qword [rsp+8*102] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*103] , rax
 	mov r8, [rsp+8*103]
 	mov qword [rsp+8*104] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*105] , rax
 	mov r8, [rsp+8*105]
 	mov qword [rsp+8*106] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*107] , rax
 	mov r8, [rsp+8*107]
 	mov qword [rsp+8*108] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*109] , rax
 	mov r8, [rsp+8*109]
 	mov qword [rsp+8*110] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*111] , rax
 	mov r8, [rsp+8*111]
 	mov qword [rsp+8*112] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*113] , rax
 	mov r8, [rsp+8*113]
 	mov qword [rsp+8*114] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*115] , rax
 	mov r8, [rsp+8*115]
 	mov qword [rsp+8*116] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*117] , rax
 	mov r8, [rsp+8*117]
 	mov qword [rsp+8*118] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*119] , rax
 	mov r8, [rsp+8*119]
 	mov qword [rsp+8*120] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*121] , rax
 	mov r8, [rsp+8*121]
 	mov qword [rsp+8*122] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*123] , rax
 	mov r8, [rsp+8*123]
 	mov qword [rsp+8*124] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*125] , rax
 	mov r8, [rsp+8*125]
 	mov qword [rsp+8*126] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*127] , rax
 	mov r8, [rsp+8*127]
 	mov qword [rsp+8*128] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*129] , rax
 	mov r8, [rsp+8*129]
 	mov qword [rsp+8*130] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*131] , rax
 	mov r8, [rsp+8*131]
 	mov qword [rsp+8*132] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*133] , rax
 	mov r8, [rsp+8*133]
 	mov qword [rsp+8*134] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*135] , rax
 	mov r8, [rsp+8*135]
 	mov qword [rsp+8*136] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*137] , rax
 	mov r8, [rsp+8*137]
 	mov qword [rsp+8*138] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*139] , rax
 	mov r8, [rsp+8*139]
 	mov qword [rsp+8*140] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*141] , rax
 	mov r8, [rsp+8*141]
 	mov qword [rsp+8*142] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*143] , rax
 	mov r8, [rsp+8*143]
 	mov qword [rsp+8*144] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*145] , rax
 	mov r8, [rsp+8*145]
 	mov qword [rsp+8*146] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*147] , rax
 	mov r8, [rsp+8*147]
 	mov qword [rsp+8*148] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*149] , rax
 	mov r8, [rsp+8*149]
 	mov qword [rsp+8*150] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*151] , rax
 	mov r8, [rsp+8*151]
 	mov qword [rsp+8*152] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*153] , rax
 	mov r8, [rsp+8*153]
 	mov qword [rsp+8*154] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*155] , rax
 	mov r8, [rsp+8*155]
 	mov qword [rsp+8*156] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*157] , rax
 	mov r8, [rsp+8*157]
 	mov qword [rsp+8*158] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*159] , rax
 	mov r8, [rsp+8*159]
 	mov qword [rsp+8*160] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*161] , rax
 	mov r8, [rsp+8*161]
 	mov qword [rsp+8*162] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*163] , rax
 	mov r8, [rsp+8*163]
 	mov qword [rsp+8*164] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*165] , rax
 	mov r8, [rsp+8*165]
 	mov qword [rsp+8*166] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*167] , rax
 	mov r8, [rsp+8*167]
 	mov qword [rsp+8*168] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*169] , rax
 	mov r8, [rsp+8*169]
 	mov qword [rsp+8*170] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*171] , rax
 	mov r8, [rsp+8*171]
 	mov qword [rsp+8*172] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*173] , rax
 	mov r8, [rsp+8*173]
 	mov qword [rsp+8*174] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*175] , rax
 	mov r8, [rsp+8*175]
 	mov qword [rsp+8*176] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*177] , rax
 	mov r8, [rsp+8*177]
 	mov qword [rsp+8*178] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*179] , rax
 	mov r8, [rsp+8*179]
 	mov qword [rsp+8*180] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*181] , rax
 	mov r8, [rsp+8*181]
 	mov qword [rsp+8*182] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*183] , rax
 	mov r8, [rsp+8*183]
 	mov qword [rsp+8*184] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*185] , rax
 	mov r8, [rsp+8*185]
 	mov qword [rsp+8*186] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*187] , rax
 	mov r8, [rsp+8*187]
 	mov qword [rsp+8*188] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*189] , rax
 	mov r8, [rsp+8*189]
 	mov qword [rsp+8*190] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*191] , rax
 	mov r8, [rsp+8*191]
 	mov qword [rsp+8*192] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*193] , rax
 	mov r8, [rsp+8*193]
 	mov qword [rsp+8*194] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*195] , rax
 	mov r8, [rsp+8*195]
 	mov qword [rsp+8*196] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*197] , rax
 	mov r8, [rsp+8*197]
 	mov qword [rsp+8*198] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*199] , rax
 	mov r8, [rsp+8*199]
 	mov qword [rsp+8*200] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*201] , rax
 	mov r8, [rsp+8*201]
 	mov qword [rsp+8*202] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*203] , rax
 	mov r8, [rsp+8*203]
 	mov qword [rsp+8*204] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*205] , rax
 	mov r8, [rsp+8*205]
 	mov qword [rsp+8*206] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*207] , rax
 	mov r8, [rsp+8*207]
 	mov qword [rsp+8*208] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*209] , rax
 	mov r8, [rsp+8*209]
 	mov qword [rsp+8*210] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*211] , rax
 	mov r8, [rsp+8*211]
 	mov qword [rsp+8*212] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*213] , rax
 	mov r8, [rsp+8*213]
 	mov qword [rsp+8*214] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*215] , rax
 	mov r8, [rsp+8*215]
 	mov qword [rsp+8*216] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*217] , rax
 	mov r8, [rsp+8*217]
 	mov qword [rsp+8*218] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*219] , rax
 	mov r8, [rsp+8*219]
 	mov qword [rsp+8*220] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*221] , rax
 	mov r8, [rsp+8*221]
 	mov qword [rsp+8*222] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*223] , rax
 	mov r8, [rsp+8*223]
 	mov qword [rsp+8*224] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*225] , rax
 	mov r8, [rsp+8*225]
 	mov qword [rsp+8*226] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*227] , rax
 	mov r8, [rsp+8*227]
 	mov qword [rsp+8*228] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*229] , rax
 	mov r8, [rsp+8*229]
 	mov qword [rsp+8*230] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*231] , rax
 	mov r8, [rsp+8*231]
 	mov qword [rsp+8*232] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*233] , rax
 	mov r8, [rsp+8*233]
 	mov qword [rsp+8*234] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*235] , rax
 	mov r8, [rsp+8*235]
 	mov qword [rsp+8*236] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*237] , rax
 	mov r8, [rsp+8*237]
 	mov qword [rsp+8*238] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*239] , rax
 	mov r8, [rsp+8*239]
 	mov qword [rsp+8*240] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*241] , rax
 	mov r8, [rsp+8*241]
 	mov qword [rsp+8*242] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*243] , rax
 	mov r8, [rsp+8*243]
 	mov qword [rsp+8*244] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*245] , rax
 	mov r8, [rsp+8*245]
 	mov qword [rsp+8*246] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*247] , rax
 	mov r8, [rsp+8*247]
 	mov qword [rsp+8*248] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*249] , rax
 	mov r8, [rsp+8*249]
 	mov qword [rsp+8*250] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*251] , rax
 	mov r8, [rsp+8*251]
 	mov qword [rsp+8*252] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*253] , rax
 	mov r8, [rsp+8*253]
 	mov qword [rsp+8*254] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*255] , rax
 	mov r8, [rsp+8*255]
 	mov qword [rsp+8*256] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*257] , rax
 	mov r8, [rsp+8*257]
 	mov qword [rsp+8*258] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*259] , rax
 	mov r8, [rsp+8*259]
 	mov qword [rsp+8*260] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*261] , rax
 	mov r8, [rsp+8*261]
 	mov qword [rsp+8*262] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*263] , rax
 	mov r8, [rsp+8*263]
 	mov qword [rsp+8*264] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*265] , rax
 	mov r8, [rsp+8*265]
 	mov qword [rsp+8*266] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*267] , rax
 	mov r8, [rsp+8*267]
 	mov qword [rsp+8*268] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*269] , rax
 	mov r8, [rsp+8*269]
 	mov qword [rsp+8*270] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*271] , rax
 	mov r8, [rsp+8*271]
 	mov qword [rsp+8*272] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*273] , rax
 	mov r8, [rsp+8*273]
 	mov qword [rsp+8*274] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*275] , rax
 	mov r8, [rsp+8*275]
 	mov qword [rsp+8*276] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*277] , rax
 	mov r8, [rsp+8*277]
 	mov qword [rsp+8*278] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*279] , rax
 	mov r8, [rsp+8*279]
 	mov qword [rsp+8*280] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*281] , rax
 	mov r8, [rsp+8*281]
 	mov qword [rsp+8*282] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*283] , rax
 	mov r8, [rsp+8*283]
 	mov qword [rsp+8*284] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*285] , rax
 	mov r8, [rsp+8*285]
 	mov qword [rsp+8*286] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*287] , rax
 	mov r8, [rsp+8*287]
 	mov qword [rsp+8*288] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*289] , rax
 	mov r8, [rsp+8*289]
 	mov qword [rsp+8*290] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*291] , rax
 	mov r8, [rsp+8*291]
 	mov qword [rsp+8*292] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*293] , rax
 	mov r8, [rsp+8*293]
 	mov qword [rsp+8*294] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*295] , rax
 	mov r8, [rsp+8*295]
 	mov qword [rsp+8*296] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*297] , rax
 	mov r8, [rsp+8*297]
 	mov qword [rsp+8*298] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*299] , rax
 	mov r8, [rsp+8*299]
 	mov qword [rsp+8*300] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*301] , rax
 	mov r8, [rsp+8*301]
 	mov qword [rsp+8*302] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*303] , rax
 	mov r8, [rsp+8*303]
 	mov qword [rsp+8*304] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*305] , rax
 	mov r8, [rsp+8*305]
 	mov qword [rsp+8*306] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*307] , rax
 	mov r8, [rsp+8*307]
 	mov qword [rsp+8*308] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*309] , rax
 	mov r8, [rsp+8*309]
 	mov qword [rsp+8*310] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*311] , rax
 	mov r8, [rsp+8*311]
 	mov qword [rsp+8*312] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*313] , rax
 	mov r8, [rsp+8*313]
 	mov qword [rsp+8*314] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*315] , rax
 	mov r8, [rsp+8*315]
 	mov qword [rsp+8*316] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*317] , rax
 	mov r8, [rsp+8*317]
 	mov qword [rsp+8*318] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*319] , rax
 	mov r8, [rsp+8*319]
 	mov qword [rsp+8*320] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*321] , rax
 	mov r8, [rsp+8*321]
 	mov qword [rsp+8*322] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*323] , rax
 	mov r8, [rsp+8*323]
 	mov qword [rsp+8*324] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*325] , rax
 	mov r8, [rsp+8*325]
 	mov qword [rsp+8*326] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*327] , rax
 	mov r8, [rsp+8*327]
 	mov qword [rsp+8*328] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*329] , rax
 	mov r8, [rsp+8*329]
 	mov qword [rsp+8*330] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*331] , rax
 	mov r8, [rsp+8*331]
 	mov qword [rsp+8*332] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*333] , rax
 	mov r8, [rsp+8*333]
 	mov qword [rsp+8*334] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*335] , rax
 	mov r8, [rsp+8*335]
 	mov qword [rsp+8*336] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*337] , rax
 	mov r8, [rsp+8*337]
 	mov qword [rsp+8*338] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*339] , rax
 	mov r8, [rsp+8*339]
 	mov qword [rsp+8*340] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*341] , rax
 	mov r8, [rsp+8*341]
 	mov qword [rsp+8*342] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*343] , rax
 	mov r8, [rsp+8*343]
 	mov qword [rsp+8*344] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*345] , rax
 	mov r8, [rsp+8*345]
 	mov qword [rsp+8*346] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*347] , rax
 	mov r8, [rsp+8*347]
 	mov qword [rsp+8*348] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*349] , rax
 	mov r8, [rsp+8*349]
 	mov qword [rsp+8*350] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*351] , rax
 	mov r8, [rsp+8*351]
 	mov qword [rsp+8*352] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*353] , rax
 	mov r8, [rsp+8*353]
 	mov qword [rsp+8*354] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*355] , rax
 	mov r8, [rsp+8*355]
 	mov qword [rsp+8*356] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*357] , rax
 	mov r8, [rsp+8*357]
 	mov qword [rsp+8*358] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*359] , rax
 	mov r8, [rsp+8*359]
 	mov qword [rsp+8*360] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*361] , rax
 	mov r8, [rsp+8*361]
 	mov qword [rsp+8*362] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*363] , rax
 	mov r8, [rsp+8*363]
 	mov qword [rsp+8*364] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*365] , rax
 	mov r8, [rsp+8*365]
 	mov qword [rsp+8*366] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*367] , rax
 	mov r8, [rsp+8*367]
 	mov qword [rsp+8*368] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*369] , rax
 	mov r8, [rsp+8*369]
 	mov qword [rsp+8*370] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*371] , rax
 	mov r8, [rsp+8*371]
 	mov qword [rsp+8*372] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*373] , rax
 	mov r8, [rsp+8*373]
 	mov qword [rsp+8*374] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*375] , rax
 	mov r8, [rsp+8*375]
 	mov qword [rsp+8*376] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*377] , rax
 	mov r8, [rsp+8*377]
 	mov qword [rsp+8*378] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*379] , rax
 	mov r8, [rsp+8*379]
 	mov qword [rsp+8*380] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*381] , rax
 	mov r8, [rsp+8*381]
 	mov qword [rsp+8*382] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*383] , rax
 	mov r8, [rsp+8*383]
 	mov qword [rsp+8*384] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*385] , rax
 	mov r8, [rsp+8*385]
 	mov qword [rsp+8*386] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*387] , rax
 	mov r8, [rsp+8*387]
 	mov qword [rsp+8*388] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*389] , rax
 	mov r8, [rsp+8*389]
 	mov qword [rsp+8*390] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*391] , rax
 	mov r8, [rsp+8*391]
 	mov qword [rsp+8*392] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*393] , rax
 	mov r8, [rsp+8*393]
 	mov qword [rsp+8*394] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*395] , rax
 	mov r8, [rsp+8*395]
 	mov qword [rsp+8*396] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*397] , rax
 	mov r8, [rsp+8*397]
 	mov qword [rsp+8*398] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*399] , rax
 	mov r8, [rsp+8*399]
 	mov qword [rsp+8*400] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*401] , rax
 	mov r8, [rsp+8*401]
 	mov qword [rsp+8*402] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*403] , rax
 	mov r8, [rsp+8*403]
 	mov qword [rsp+8*404] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*405] , rax
 	mov r8, [rsp+8*405]
 	mov qword [rsp+8*406] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*407] , rax
 	mov r8, [rsp+8*407]
 	mov qword [rsp+8*408] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*409] , rax
 	mov r8, [rsp+8*409]
 	mov qword [rsp+8*410] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*411] , rax
 	mov r8, [rsp+8*411]
 	mov qword [rsp+8*412] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*413] , rax
 	mov r8, [rsp+8*413]
 	mov qword [rsp+8*414] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*415] , rax
 	mov r8, [rsp+8*415]
 	mov qword [rsp+8*416] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*417] , rax
 	mov r8, [rsp+8*417]
 	mov qword [rsp+8*418] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*419] , rax
 	mov r8, [rsp+8*419]
 	mov qword [rsp+8*420] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*421] , rax
 	mov r8, [rsp+8*421]
 	mov qword [rsp+8*422] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*423] , rax
 	mov r8, [rsp+8*423]
 	mov qword [rsp+8*424] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*425] , rax
 	mov r8, [rsp+8*425]
 	mov qword [rsp+8*426] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*427] , rax
 	mov r8, [rsp+8*427]
 	mov qword [rsp+8*428] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*429] , rax
 	mov r8, [rsp+8*429]
 	mov qword [rsp+8*430] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*431] , rax
 	mov r8, [rsp+8*431]
 	mov qword [rsp+8*432] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*433] , rax
 	mov r8, [rsp+8*433]
 	mov qword [rsp+8*434] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*435] , rax
 	mov r8, [rsp+8*435]
 	mov qword [rsp+8*436] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*437] , rax
 	mov r8, [rsp+8*437]
 	mov qword [rsp+8*438] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*439] , rax
 	mov r8, [rsp+8*439]
 	mov qword [rsp+8*440] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*441] , rax
 	mov r8, [rsp+8*441]
 	mov qword [rsp+8*442] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*443] , rax
 	mov r8, [rsp+8*443]
 	mov qword [rsp+8*444] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*445] , rax
 	mov r8, [rsp+8*445]
 	mov qword [rsp+8*446] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*447] , rax
 	mov r8, [rsp+8*447]
 	mov qword [rsp+8*448] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*449] , rax
 	mov r8, [rsp+8*449]
 	mov qword [rsp+8*450] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*451] , rax
 	mov r8, [rsp+8*451]
 	mov qword [rsp+8*452] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*453] , rax
 	mov r8, [rsp+8*453]
 	mov qword [rsp+8*454] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*455] , rax
 	mov r8, [rsp+8*455]
 	mov qword [rsp+8*456] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*457] , rax
 	mov r8, [rsp+8*457]
 	mov qword [rsp+8*458] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*459] , rax
 	mov r8, [rsp+8*459]
 	mov qword [rsp+8*460] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*461] , rax
 	mov r8, [rsp+8*461]
 	mov qword [rsp+8*462] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*463] , rax
 	mov r8, [rsp+8*463]
 	mov qword [rsp+8*464] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*465] , rax
 	mov r8, [rsp+8*465]
 	mov qword [rsp+8*466] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*467] , rax
 	mov r8, [rsp+8*467]
 	mov qword [rsp+8*468] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*469] , rax
 	mov r8, [rsp+8*469]
 	mov qword [rsp+8*470] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*471] , rax
 	mov r8, [rsp+8*471]
 	mov qword [rsp+8*472] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*473] , rax
 	mov r8, [rsp+8*473]
 	mov qword [rsp+8*474] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*475] , rax
 	mov r8, [rsp+8*475]
 	mov qword [rsp+8*476] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*477] , rax
 	mov r8, [rsp+8*477]
 	mov qword [rsp+8*478] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*479] , rax
 	mov r8, [rsp+8*479]
 	mov qword [rsp+8*480] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*481] , rax
 	mov r8, [rsp+8*481]
 	mov qword [rsp+8*482] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*483] , rax
 	mov r8, [rsp+8*483]
 	mov qword [rsp+8*484] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*485] , rax
 	mov r8, [rsp+8*485]
 	mov qword [rsp+8*486] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*487] , rax
 	mov r8, [rsp+8*487]
 	mov qword [rsp+8*488] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*489] , rax
 	mov r8, [rsp+8*489]
 	mov qword [rsp+8*490] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*491] , rax
 	mov r8, [rsp+8*491]
 	mov qword [rsp+8*492] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*493] , rax
 	mov r8, [rsp+8*493]
 	mov qword [rsp+8*494] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*495] , rax
 	mov r8, [rsp+8*495]
 	mov qword [rsp+8*496] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*497] , rax
 	mov r8, [rsp+8*497]
 	mov qword [rsp+8*498] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*499] , rax
 	mov r8, [rsp+8*499]
 	mov qword [rsp+8*500] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*501] , rax
 	mov r8, [rsp+8*501]
 	mov qword [rsp+8*502] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*503] , rax
 	mov r8, [rsp+8*503]
 	mov qword [rsp+8*504] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*505] , rax
 	mov r8, [rsp+8*505]
 	mov qword [rsp+8*506] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*507] , rax
 	mov r8, [rsp+8*507]
 	mov qword [rsp+8*508] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*509] , rax
 	mov r8, [rsp+8*509]
 	mov qword [rsp+8*510] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*511] , rax
 	mov r8, [rsp+8*511]
 	mov qword [rsp+8*512] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*513] , rax
 	mov r8, [rsp+8*513]
 	mov qword [rsp+8*514] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*515] , rax
 	mov r8, [rsp+8*515]
 	mov qword [rsp+8*516] ,r8
-	mov r8, [rsp+8*3]
+	mov r8, [gbl+8*3]
 	mov qword [arg+8*0] ,r8
 	call getcount
 	mov [rsp+8*517] , rax
@@ -12454,25 +12454,25 @@ main:
 getcount:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 20640
+	sub    rsp, 20648
 	mov r8, [arg+8*0]
-	mov qword [rsp+8*3] ,r8
-	mov r8, [rsp+8*3]
 	mov qword [rsp+8*2569] ,r8
+	mov r8, [rsp+8*2569]
+	mov qword [rsp+8*2570] ,r8
 	mov     rsi, 0
-	mov     rdi, [rsp+8*2569]
+	mov     rdi, [rsp+8*2570]
 	call    address
-	mov [rsp+8*2570], rax
-	mov r8, [rsp+8*2570]
+	mov [rsp+8*2571], rax
+	mov r8, [rsp+8*2571]
 	mov r8, [r8]
-	mov [rsp+8*2571], r8
-	mov r8, [rsp+8*2571]
+	mov [rsp+8*2572], r8
+	mov r8, [rsp+8*2572]
 	add r8, 1
-	mov qword [rsp+8*2571],r8 
-	mov r8, [rsp+8*2571]
-	mov r9, [rsp+8*2570]
+	mov qword [rsp+8*2572],r8 
+	mov r8, [rsp+8*2572]
+	mov r9, [rsp+8*2571]
 	mov qword [r9], r8
-	mov rax,[rsp+8*2571]
+	mov rax,[rsp+8*2572]
 	leave
 	ret
 	mov rax,0
@@ -12482,15 +12482,15 @@ getcount:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 20640
-	mov rax,[rsp+8*2572]
+	sub    rsp, 20648
+	mov rax,[rsp+8*2573]
 	leave
 	ret
 	
 QED:
 	
 	 section   .bss
-gbl:         resb   22624
+gbl:         resb   22632
 buff.1788:
         resb    256
 arg:

@@ -668,11 +668,10 @@ L_412:
 	idiv rbx
 	mov [rsp+8*12], rax
 	mov r8, [rsp+8*3]
+	mov qword [rsp+8*13] ,r8
+	mov r8, [rsp+8*3]
 	add r8, 1
 	mov qword [rsp+8*3],r8 
-	mov r8, [rsp+8*3]
-	sub r8, 1
-	mov qword [rsp+8*13],r8 
 	mov r8, [rsp+8*8]
 	mov qword [rsp+8*14] ,r8
 	mov     rsi, [rsp+8*13]
@@ -746,11 +745,10 @@ L_420:
 	mov r9, [rsp+8*25]
 	mov qword [r9], r8
 	mov r8, [rsp+8*9]
+	mov qword [rsp+8*26] ,r8
+	mov r8, [rsp+8*9]
 	sub r8, 1
 	mov qword [rsp+8*9],r8 
-	mov r8, [rsp+8*9]
-	add r8, 1
-	mov qword [rsp+8*26],r8 
 	xor rdx, rdx
 	mov rax, [rsp+8*5]
 	mov rbx, [rsp+8*26]
@@ -826,7 +824,7 @@ L_417:
 	jmp L_415
 	
 L_416:
-	mov qword [arg+8*0] ,t68
+	mov qword [arg+8*0] ,t66
 	mov r8, [arg+8*0]
 	mov qword [rsp+8*38] ,r8
 	mov rdi, formatln
@@ -873,7 +871,7 @@ GS_31:
 GS_32:
 	db 25H, 73H, 00H
 	
-t68:
+t66:
 	 db 0,"" ,0
 
 

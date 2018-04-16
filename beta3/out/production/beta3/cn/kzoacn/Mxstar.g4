@@ -114,6 +114,7 @@ forStatement
     :   FOR '(' A=expression? ';' B=expression? ';' C=expression? ')' statementOrBlock
     ;
 
+
 dotAtom
     :   functionName '(' expressionList? ')'
     |   variable
@@ -131,7 +132,7 @@ expression
     |   variableName ('[' expression ']')*                                          # getValue
     |   op=('!' |'~'|'-') expression                                                # prefixOperator
     |   op=('--'|'++' ) leftValue                                                   # prefixLvalueOperator
-    |   expression op=('++' | '--')                                                 # suffixOperator
+    |   leftValue op=('++' | '--')                                                  # suffixOperator
     |   expression op=('*' | '/' | '%') expression                                  # mulDivMod
     |   expression op=('+' | '-') expression                                        # addSubtract
     |   expression op=('>>' | '<<') expression                                      # shift

@@ -729,11 +729,10 @@ L_29:
 	
 L_27:
 	mov r8, [rsp+8*17]
+	mov qword [rsp+8*23] ,r8
+	mov r8, [rsp+8*17]
 	add r8, 1
 	mov qword [rsp+8*17],r8 
-	mov r8, [rsp+8*17]
-	sub r8, 1
-	mov qword [rsp+8*23],r8 
 	jmp L_25
 	
 L_26:

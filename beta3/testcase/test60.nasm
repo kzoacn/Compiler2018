@@ -809,22 +809,20 @@ L_498:
 	
 L_500:
 	mov r8, [rsp+8*9]
+	mov qword [rsp+8*29] ,r8
+	mov r8, [rsp+8*9]
 	add r8, 1
 	mov qword [rsp+8*9],r8 
-	mov r8, [rsp+8*9]
-	sub r8, 1
-	mov qword [rsp+8*29],r8 
 	jmp L_498
 	
 L_499:
 	
 L_497:
 	mov r8, [rsp+8*4]
+	mov qword [rsp+8*30] ,r8
+	mov r8, [rsp+8*4]
 	add r8, 1
 	mov qword [rsp+8*4],r8 
-	mov r8, [rsp+8*4]
-	sub r8, 1
-	mov qword [rsp+8*30],r8 
 	jmp L_495
 	
 L_496:

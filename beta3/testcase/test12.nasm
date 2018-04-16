@@ -727,11 +727,10 @@ L_78:
 	
 L_80:
 	mov r8, [rsp+8*15]
+	mov qword [rsp+8*24] ,r8
+	mov r8, [rsp+8*15]
 	add r8, 1
 	mov qword [rsp+8*15],r8 
-	mov r8, [rsp+8*15]
-	sub r8, 1
-	mov qword [rsp+8*24],r8 
 	jmp L_78
 	
 L_79:

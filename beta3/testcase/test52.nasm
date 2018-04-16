@@ -692,22 +692,20 @@ L_471:
 	
 L_473:
 	mov r8, [gbl+8*10]
+	mov qword [rsp+8*16] ,r8
+	mov r8, [gbl+8*10]
 	add r8, 1
 	mov qword [gbl+8*10],r8 
-	mov r8, [gbl+8*10]
-	sub r8, 1
-	mov qword [rsp+8*16],r8 
 	jmp L_471
 	
 L_472:
 	
 L_470:
 	mov r8, [gbl+8*8]
+	mov qword [rsp+8*17] ,r8
+	mov r8, [gbl+8*8]
 	add r8, 1
 	mov qword [gbl+8*8],r8 
-	mov r8, [gbl+8*8]
-	sub r8, 1
-	mov qword [rsp+8*17],r8 
 	jmp L_468
 	
 L_469:
@@ -919,7 +917,7 @@ L_475:
 	jmp L_479
 	
 L_478:
-	mov qword [arg+8*0] ,t169
+	mov qword [arg+8*0] ,t165
 	mov r8, [arg+8*0]
 	mov qword [rsp+8*70] ,r8
 	mov rdi, formatln
@@ -1001,22 +999,20 @@ L_453:
 	
 L_455:
 	mov r8, [gbl+8*10]
+	mov qword [rsp+8*80] ,r8
+	mov r8, [gbl+8*10]
 	add r8, 1
 	mov qword [gbl+8*10],r8 
-	mov r8, [gbl+8*10]
-	sub r8, 1
-	mov qword [rsp+8*80],r8 
 	jmp L_453
 	
 L_454:
 	
 L_452:
 	mov r8, [gbl+8*8]
+	mov qword [rsp+8*81] ,r8
+	mov r8, [gbl+8*8]
 	add r8, 1
 	mov qword [gbl+8*8],r8 
-	mov r8, [gbl+8*8]
-	sub r8, 1
-	mov qword [rsp+8*81],r8 
 	jmp L_450
 	
 L_451:
@@ -1239,7 +1235,7 @@ GS_31:
 GS_32:
 	db 25H, 73H, 00H
 	
-t169:
+t165:
 	 db 12,"no solution!" ,0
 
 

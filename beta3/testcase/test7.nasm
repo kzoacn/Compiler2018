@@ -691,11 +691,10 @@ L_11:
 	
 L_13:
 	mov r8, [rsp+8*5]
+	mov qword [rsp+8*16] ,r8
+	mov r8, [rsp+8*5]
 	add r8, 1
 	mov qword [rsp+8*5],r8 
-	mov r8, [rsp+8*5]
-	sub r8, 1
-	mov qword [rsp+8*16],r8 
 	jmp L_11
 	
 L_12:

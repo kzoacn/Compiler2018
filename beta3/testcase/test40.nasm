@@ -670,11 +670,10 @@ L_387:
 	
 L_389:
 	mov r8, [rsp+8*6]
+	mov qword [rsp+8*11] ,r8
+	mov r8, [rsp+8*6]
 	add r8, 1
 	mov qword [rsp+8*6],r8 
-	mov r8, [rsp+8*6]
-	sub r8, 1
-	mov qword [rsp+8*11],r8 
 	jmp L_387
 	
 L_388:
@@ -893,11 +892,10 @@ L_384:
 	
 L_386:
 	mov r8, [rsp+8*42]
+	mov qword [rsp+8*49] ,r8
+	mov r8, [rsp+8*42]
 	add r8, 1
 	mov qword [rsp+8*42],r8 
-	mov r8, [rsp+8*42]
-	sub r8, 1
-	mov qword [rsp+8*49],r8 
 	jmp L_384
 	
 L_385:

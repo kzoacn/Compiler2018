@@ -675,11 +675,10 @@ L_425:
 	cmp r8, 0
 	je L_426
 	mov r8, [rsp+8*9]
+	mov qword [rsp+8*10] ,r8
+	mov r8, [rsp+8*9]
 	add r8, 1
 	mov qword [rsp+8*9],r8 
-	mov r8, [rsp+8*9]
-	sub r8, 1
-	mov qword [rsp+8*10],r8 
 	mov r8, [rsp+8*8]
 	add r8, [rsp+8*9]
 	mov qword [rsp+8*11],r8 
