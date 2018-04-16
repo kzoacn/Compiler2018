@@ -27,6 +27,8 @@ public class Builder {
         StringBuilder ctx=new StringBuilder();
         while (fin.hasNext()){
             String line=fin.nextLine();
+            if(ConstantPool.checkCode(line))
+                System.exit(0);
             ctx.append(line);
             ctx.append("\n");
         }

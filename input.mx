@@ -1,74 +1,142 @@
-int n;
-int[] a;
+//
+// Naive vector class for Mx*.
+// Without any guarantee for robustness.
+//
+class vector{
+	int[] data;
+	void init(int[] vec){
+		// init the vector from an array
+		if (vec == null) return;
+		data = new int[vec.size()];
+		int i;
+		for (i = 0; i < vec.size(); ++i)
+		{
+			data[i] = vec[i];
+		}
+	}
 
-void exchange(int x,int y)
-{
-    int t=a[x];
-    a[x]=a[y];
-    a[y]=t;
+	int getDim(){
+		if (data == null) return 0;
+		return data.size();
+	}
+
+	int dot(vector rhs){
+		int i = 0;
+		int result = 0;
+		while(i < getDim()){
+			//result = data[i] * rhs[i];
+			result = data[i] * rhs.data[i];
+			++i;
+		}
+		return result;
+	}
+
+	vector scalarInPlaceMultiply(int c){
+		if (data == null) return null;
+		int i;
+		for (i = 0; i < getDim(); ++i) {
+			this.data[i] = c * this.data[i];
+		}
+		return this;
+	}
+
+	vector add(vector rhs){
+		if (getDim() != rhs.getDim() || getDim() == 0)
+			return null;
+		vector temp = new vector;
+		int i;
+		temp.data = new int[getDim()];
+		for (i = 0; i < getDim(); ++i){
+			temp.data[i] = data[i] + rhs.data[i];
+		}
+		return temp;
+	}
+
+	bool set(int idx, int value){
+		if (getDim() < idx) return false;
+		data[idx] = value;
+		return true;
+	}
+
+	string tostring(){
+		string temp = "( ";
+		if (getDim() > 0) {
+			temp = temp + toString(data[0]);
+		}
+		int i;
+		for (i = 1; i < getDim(); ++i) {
+			temp = temp + ", " + toString(data[i]);
+		}
+		temp = temp + " )";
+		return temp;
+	}
+
+	bool copy(vector rhs){
+		if (rhs == null) return false;
+		if (rhs.getDim() == 0) {
+			data = null;
+		} else {
+			data = new int[rhs.getDim()];
+			int i;
+			for (i = 0; i < getDim(); ++i) {
+				data[i] = rhs.data[i];
+			}
+		}
+		return true;
+	}
 }
 
-int makeHeap() {
-    int i;
-    int t;
-    int j;
-    i = (n - 1) / 2;
-    t = 0;
-    j = 0;
-    while (i >= 0) {
-        j = i * 2;
-        if (i*2+1<n && a[i*2+1]<a[i*2]) j = i*2+1;
-        if (a[i] > a[j]) {
-            exchange(i,j);
-        }
-        i = i - 1;
-    }
-    return 0;
+int main(){
+	vector x = new vector;
+	int[] a = new int[10];
+	int i;
+	for (i = 0; i < 10; ++i){
+		a[i] = 9 - i;
+	}
+	x.init(a);
+	print("vector x: ");
+	println(x.tostring());
+
+	vector y = new vector;
+	y.copy(x);
+	if (y.set(3, 817)){
+		println("excited!");
+	}
+	print("vector y: ");
+	println(y.tostring());
+	print("x + y: ");
+	println((x.add(y)).tostring());
+	print("x * y: ");
+	println(toString(x.dot(y)));
+	print("(1 << 3) * y: ");
+	println(y.scalarInPlaceMultiply(1 << 3).tostring());
+	return 0;
 }
 
-int adjustHeap(int n) {
-    int i = 0;
-    int j = 0;
-    int t = 0;
-    while (i * 2 < n) {
-        j = i*2;
-        if (i*2+1<n && a[i*2+1] < a[i*2]) j = i*2+1;
-        if (a[i] > a[j]) {
-            int t = a[i];
-            a[i] = a[j];
-            a[j] = t;
-            i = j;
-        }
-        else break;
-    }
-    return 0;
-}
 
-int heapSort() {
-    int t;
-    int k;
-    t = 0;
-    for (k = 0; k < n; k = k + 1) {
-        t = a[0];
-        a[0] = a[n-k-1];
-        a[n-k-1] = t;
-        adjustHeap(n-k-1);
-    }
-    return 0;
-}
 
-int main() {
-    int i;
-	n = getString().parseInt();
-	a = new int[n];
+/*!! metadata:
+=== comment ===
+vector-5140519064-youyurong.txt
+Naive vector class for Mx*.
+Without any guarantee for robustness.
+=== input ===
 
-    for (i = 0; i < a.size(); i = i + 1)
-		a[i] = i;
-    makeHeap();
-    heapSort();
-    for (i = 0; i < a.size(); i = i + 1)
-        print(toString(a[i]) + " ");
-	print("\n");
-    return 0;
-}
+=== assert ===
+output
+=== timeout ===
+0.1
+=== output ===
+vector x: ( 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 )
+excited!
+vector y: ( 9, 8, 7, 817, 5, 4, 3, 2, 1, 0 )
+x + y: ( 18, 16, 14, 823, 10, 8, 6, 4, 2, 0 )
+x * y: 0
+(1 << 3) * y: ( 72, 64, 56, 6536, 40, 32, 24, 16, 8, 0 )
+=== phase ===
+codegen pretest
+=== is_public ===
+True
+
+!!*/
 

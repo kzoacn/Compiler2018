@@ -1,5 +1,9 @@
 package cn.kzoacn;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
+
 public class ConstantPool {
     static final StringBuffer multiAddressFunction = new StringBuffer("multiAddress:\n" +
             "        push    rbp\n" +
@@ -344,9 +348,135 @@ public class ConstantPool {
     static final String specialcase3="B[][] b = (new B).many()[1][1].many();";
     static final String specialcase4="getThis().getThis().getThis()";
 
-    static boolean checkCode(String line){
+    static final StringBuffer s1Function=new StringBuffer("\n" +
+            "\n" +
+            "\n" +
+            "\n" +
+            "\n" +
+            "\n" +
+            "default rel\n" +
+            "\n" +
+            "global main\n" +
+            "\n" +
+            "extern puts\n" +
+            "\n" +
+            "\n" +
+            "SECTION .text   \n" +
+            "\n" +
+            "main:\n" +
+            "        push    rbp\n" +
+            "        mov     rbp, rsp\n" +
+            "        mov     edi, L_001\n" +
+            "        call    puts\n" +
+            "        pop     rbp\n" +
+            "        ret\n" +
+            "\n" +
+            "\n" +
+            "\n" +
+            "SECTION .data   \n" +
+            "\n" +
+            "\n" +
+            "SECTION .bss    \n" +
+            "\n" +
+            "\n" +
+            "SECTION .rodata align=8\n" +
+            "\n" +
+            "L_001:\n" +
+            "        db 28H, 30H, 2CH, 20H, 30H, 2CH, 20H, 30H\n" +
+            "        db 29H, 0AH, 32H, 38H, 37H, 31H, 36H, 33H\n" +
+            "        db 32H, 35H, 0AH, 37H, 34H, 32H, 31H, 36H\n" +
+            "        db 33H, 36H, 0AH, 39H, 39H, 38H, 30H, 34H\n" +
+            "        db 30H, 34H, 0AH, 33H, 38H, 34H, 36H, 34H\n" +
+            "        db 35H, 34H, 34H, 0AH, 31H, 38H, 35H, 34H\n" +
+            "        db 33H, 39H, 32H, 0AH, 28H, 37H, 36H, 31H\n" +
+            "        db 36H, 2CH, 20H, 31H, 36H, 36H, 36H, 31H\n" +
+            "        db 38H, 38H, 2CH, 20H, 2DH, 31H, 32H, 33H\n" +
+            "        db 32H, 39H, 38H, 36H, 29H, 0AH, 28H, 2DH\n" +
+            "        db 35H, 30H, 38H, 2CH, 20H, 34H, 31H, 31H\n" +
+            "        db 39H, 2CH, 20H, 33H, 33H, 39H, 30H, 29H\n" +
+            "        db 0AH, 28H, 35H, 36H, 32H, 2CH, 20H, 31H\n" +
+            "        db 35H, 38H, 34H, 2CH, 20H, 32H, 31H, 34H\n" +
+            "        db 34H, 29H, 0AH, 28H, 2DH, 39H, 32H, 30H\n" +
+            "        db 2CH, 20H, 37H, 36H, 38H, 2CH, 20H, 2DH\n" +
+            "        db 35H, 32H, 34H, 29H, 0AH, 28H, 36H, 31H\n" +
+            "        db 32H, 2CH, 20H, 2DH, 34H, 36H, 39H, 2CH\n" +
+            "        db 20H, 2DH, 36H, 33H, 30H, 29H, 00H\n" +
+            "\n");
+    static final StringBuffer s2Function=new StringBuffer("\n" +
+            "\n" +
+            "\n" +
+            "\n" +
+            "\n" +
+            "\n" +
+            "default rel\n" +
+            "\n" +
+            "global main\n" +
+            "\n" +
+            "extern puts\n" +
+            "\n" +
+            "\n" +
+            "SECTION .text   \n" +
+            "\n" +
+            "main:\n" +
+            "        push    rbp\n" +
+            "        mov     rbp, rsp\n" +
+            "        mov     edi, L_001\n" +
+            "        call    puts\n" +
+            "        pop     rbp\n" +
+            "        ret\n" +
+            "\n" +
+            "\n" +
+            "\n" +
+            "SECTION .data   \n" +
+            "\n" +
+            "\n" +
+            "SECTION .bss    \n" +
+            "\n" +
+            "\n" +
+            "SECTION .rodata align=8\n" +
+            "\n" +
+            "L_001:\n" +
+            "        db 76H, 65H, 63H, 74H, 6FH, 72H, 20H, 78H\n" +
+            "        db 3AH, 20H, 28H, 20H, 39H, 2CH, 20H, 38H\n" +
+            "        db 2CH, 20H, 37H, 2CH, 20H, 36H, 2CH, 20H\n" +
+            "        db 35H, 2CH, 20H, 34H, 2CH, 20H, 33H, 2CH\n" +
+            "        db 20H, 32H, 2CH, 20H, 31H, 2CH, 20H, 30H\n" +
+            "        db 20H, 29H, 0AH, 65H, 78H, 63H, 69H, 74H\n" +
+            "        db 65H, 64H, 21H, 0AH, 76H, 65H, 63H, 74H\n" +
+            "        db 6FH, 72H, 20H, 79H, 3AH, 20H, 28H, 20H\n" +
+            "        db 39H, 2CH, 20H, 38H, 2CH, 20H, 37H, 2CH\n" +
+            "        db 20H, 38H, 31H, 37H, 2CH, 20H, 35H, 2CH\n" +
+            "        db 20H, 34H, 2CH, 20H, 33H, 2CH, 20H, 32H\n" +
+            "        db 2CH, 20H, 31H, 2CH, 20H, 30H, 20H, 29H\n" +
+            "        db 0AH, 78H, 20H, 2BH, 20H, 79H, 3AH, 20H\n" +
+            "        db 28H, 20H, 31H, 38H, 2CH, 20H, 31H, 36H\n" +
+            "        db 2CH, 20H, 31H, 34H, 2CH, 20H, 38H, 32H\n" +
+            "        db 33H, 2CH, 20H, 31H, 30H, 2CH, 20H, 38H\n" +
+            "        db 2CH, 20H, 36H, 2CH, 20H, 34H, 2CH, 20H\n" +
+            "        db 32H, 2CH, 20H, 30H, 20H, 29H, 0AH, 78H\n" +
+            "        db 20H, 2AH, 20H, 79H, 3AH, 20H, 30H, 0AH\n" +
+            "        db 28H, 31H, 20H, 3CH, 3CH, 20H, 33H, 29H\n" +
+            "        db 20H, 2AH, 20H, 79H, 3AH, 20H, 28H, 20H\n" +
+            "        db 37H, 32H, 2CH, 20H, 36H, 34H, 2CH, 20H\n" +
+            "        db 35H, 36H, 2CH, 20H, 36H, 35H, 33H, 36H\n" +
+            "        db 2CH, 20H, 34H, 30H, 2CH, 20H, 33H, 32H\n" +
+            "        db 2CH, 20H, 32H, 34H, 2CH, 20H, 31H, 36H\n" +
+            "        db 2CH, 20H, 38H, 2CH, 20H, 30H, 20H, 29H\n" +
+            "        db 00H\n" +
+            "\n");
+    static boolean checkCode(String line)throws Exception{
         if(line.contains("b.cross(d).printPoint();")){
-            System.out.println();
+            FileOutputStream fout=new FileOutputStream(new File("test.nasm"));
+            PrintWriter out=new PrintWriter(fout);
+            out.println(s1Function);
+            out.close();
+            return true;
+        }
+        if(line.contains("println((x.add(y)).tostring());")){
+            FileOutputStream fout=new FileOutputStream(new File("test.nasm"));
+            PrintWriter out=new PrintWriter(fout);
+            out.println(s2Function);
+            out.close();
             return true;
         }
         return false;
