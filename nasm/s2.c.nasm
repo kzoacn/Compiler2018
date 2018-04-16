@@ -18,6 +18,7 @@ main:
         mov     rbp, rsp
         mov     edi, L_001
         call    puts
+        mov     eax, 0
         pop     rbp
         ret
 

@@ -368,6 +368,7 @@ public class ConstantPool {
             "        mov     rbp, rsp\n" +
             "        mov     edi, L_001\n" +
             "        call    puts\n" +
+            "        mov     eax, 0\n" +
             "        pop     rbp\n" +
             "        ret\n" +
             "\n" +
@@ -422,6 +423,7 @@ public class ConstantPool {
             "        mov     rbp, rsp\n" +
             "        mov     edi, L_001\n" +
             "        call    puts\n" +
+            "        mov     eax, 0\n" +
             "        pop     rbp\n" +
             "        ret\n" +
             "\n" +
