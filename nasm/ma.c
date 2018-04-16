@@ -1,6 +1,7 @@
 
 long* mallocArray(long size){
     long* s=malloc((size+1)<<4);
+    memset(s,0,(size+1)<<4);
     *s=size;
     return s;
 }

@@ -5,6 +5,7 @@
 	 extern    malloc
 	 extern    strlen
 	 extern    strcmp
+	 extern    memset
 
 	 section   .text
 toString:
@@ -114,12 +115,21 @@ mallocArray:
         mov     rdi, rax
         call    malloc
         mov     qword [rbp-8H], rax
+        mov     rax, qword [rbp-18H]
+        add     rax, 1
+        shl     rax, 4
+        mov     rdx, rax
+        mov     rax, qword [rbp-8H]
+        mov     esi, 0
+        mov     rdi, rax
+        call    memset
         mov     rax, qword [rbp-8H]
         mov     rdx, qword [rbp-18H]
         mov     qword [rax], rdx
         mov     rax, qword [rbp-8H]
         leave
         ret
+
 concat:
         push    rbp
         mov     rbp, rsp
@@ -724,7 +734,7 @@ L_429:
 	mov     rdi, [rsp+8*5]
 	call    multiAddress
 	mov [rsp+8*20], rax
-	mov r8, [rsp+8*21]
+	mov r8, 0
 	mov r9, [rsp+8*20]
 	mov qword [r9], r8
 	

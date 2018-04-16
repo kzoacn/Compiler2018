@@ -1,0 +1,50 @@
+int hashsize = 100;
+class node {
+	int key;
+    int data;
+	node next;
+}
+node[] table;
+int getHash(int n) {
+	return (n * 237) % hashsize;
+}
+void put(int key, int data) {
+	int p;
+	node ptr = null;
+	p = getHash(key);
+	if (table[p] == null) {
+		table[p] = new node;
+		table[p].key = key;
+		table[p].data = data;
+		table[p].next = null;
+		return;
+	}
+}
+int main() {
+	int i;
+	table = new node[100];
+	for (i = 0;i < hashsize;i++)
+		table[i] = null;
+		
+	put(1,2);
+	
+	
+	node ptr = null;
+	ptr = table[getHash(1)];
+	int x=ptr.data;
+	println(toString(x));
+	
+	
+/*	node ptr2 = table[getHash(1)];
+	int x2=ptr2.data;
+	println(toString(x2));
+	
+	
+	
+	int x3=table[getHash(1)].data;
+	println(toString(x3));*/
+	//println(toString(1) + " " + toString(get(1)));
+	
+	return 0;
+}
+

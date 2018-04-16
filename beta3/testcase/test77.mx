@@ -1,0 +1,13 @@
+
+void f(){
+    int x;
+    x++;
+}
+int main(){
+    int x=1;
+    
+    f();
+    println(toString(x));
+    f();
+    println(toString(x));
+}

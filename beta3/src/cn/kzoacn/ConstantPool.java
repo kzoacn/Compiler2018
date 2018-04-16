@@ -223,12 +223,20 @@ public class ConstantPool {
             "        mov     rdi, rax\n" +
             "        call    malloc\n" +
             "        mov     qword [rbp-8H], rax\n" +
+            "        mov     rax, qword [rbp-18H]\n" +
+            "        add     rax, 1\n" +
+            "        shl     rax, 4\n" +
+            "        mov     rdx, rax\n" +
+            "        mov     rax, qword [rbp-8H]\n" +
+            "        mov     esi, 0\n" +
+            "        mov     rdi, rax\n" +
+            "        call    memset\n" +
             "        mov     rax, qword [rbp-8H]\n" +
             "        mov     rdx, qword [rbp-18H]\n" +
             "        mov     qword [rax], rdx\n" +
             "        mov     rax, qword [rbp-8H]\n" +
             "        leave\n" +
-            "        ret");
+            "        ret\n");
 
     static final StringBuffer toStringFunction=new StringBuffer("toString:\n" +
             "        push    rbp\n" +

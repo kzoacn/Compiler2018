@@ -5,6 +5,7 @@
 	 extern    malloc
 	 extern    strlen
 	 extern    strcmp
+	 extern    memset
 
 	 section   .text
 toString:
@@ -114,12 +115,21 @@ mallocArray:
         mov     rdi, rax
         call    malloc
         mov     qword [rbp-8H], rax
+        mov     rax, qword [rbp-18H]
+        add     rax, 1
+        shl     rax, 4
+        mov     rdx, rax
+        mov     rax, qword [rbp-8H]
+        mov     esi, 0
+        mov     rdi, rax
+        call    memset
         mov     rax, qword [rbp-8H]
         mov     rdx, qword [rbp-18H]
         mov     qword [rax], rdx
         mov     rax, qword [rbp-8H]
         leave
         ret
+
 concat:
         push    rbp
         mov     rbp, rsp
@@ -7975,7 +7985,7 @@ main:
 	call printf
 	mov qword [rsp+8*2] ,0
 	
-L_563:
+L_585:
 	mov r8, [rsp+8*2]
 	mov r9, 93
 	cmp r8, r9
@@ -7983,7 +7993,7 @@ L_563:
 	setl [rsp+8*2122]
 	mov r8, [rsp+8*2122]
 	cmp r8, 0
-	je L_564
+	je L_586
 	mov r8, [rsp+8*2]
 	mov qword [arg+8*0] ,r8
 	call c2
@@ -8023,19 +8033,19 @@ L_563:
 	xor rax, rax
 	call printf
 	
-L_565:
+L_587:
 	mov r8, [rsp+8*2]
 	add r8, 1
 	mov qword [rsp+8*2],r8 
 	mov r8, [rsp+8*2]
 	sub r8, 1
 	mov qword [rsp+8*2133],r8 
-	jmp L_563
+	jmp L_585
 	
-L_564:
+L_586:
 	mov qword [rsp+8*2] ,0
 	
-L_566:
+L_588:
 	mov r8, [rsp+8*2]
 	mov r9, 31
 	cmp r8, r9
@@ -8043,7 +8053,7 @@ L_566:
 	setl [rsp+8*2134]
 	mov r8, [rsp+8*2134]
 	cmp r8, 0
-	je L_567
+	je L_589
 	mov r8, [rsp+8*2]
 	mov qword [arg+8*0] ,r8
 	call s2
@@ -8083,19 +8093,19 @@ L_566:
 	xor rax, rax
 	call printf
 	
-L_568:
+L_590:
 	mov r8, [rsp+8*2]
 	add r8, 1
 	mov qword [rsp+8*2],r8 
 	mov r8, [rsp+8*2]
 	sub r8, 1
 	mov qword [rsp+8*2144],r8 
-	jmp L_566
+	jmp L_588
 	
-L_567:
+L_589:
 	mov qword [rsp+8*2] ,1
 	
-L_569:
+L_591:
 	mov r8, [rsp+8*2]
 	mov r9, 31
 	cmp r8, r9
@@ -8103,7 +8113,7 @@ L_569:
 	setl [rsp+8*2145]
 	mov r8, [rsp+8*2145]
 	cmp r8, 0
-	je L_570
+	je L_592
 	mov r8, [gbl+8*190]
 	mov qword [rsp+8*2146] ,r8
 	mov     rsi, [rsp+8*2]
@@ -8123,16 +8133,16 @@ L_569:
 	xor rax, rax
 	call printf
 	
-L_571:
+L_593:
 	mov r8, [rsp+8*2]
 	add r8, 1
 	mov qword [rsp+8*2],r8 
 	mov r8, [rsp+8*2]
 	sub r8, 1
 	mov qword [rsp+8*2150],r8 
-	jmp L_569
+	jmp L_591
 	
-L_570:
+L_592:
 	mov rax,0
 	leave
 	ret
@@ -8151,12 +8161,12 @@ digt:
 	sete [rsp+8*2152]
 	mov r8, [rsp+8*2152]
 	cmp r8, 0
-	je L_540
+	je L_562
 	mov rax,t18
 	leave
 	ret
 	
-L_540:
+L_562:
 	mov r8, [rsp+8*2151]
 	mov r9, 1
 	cmp r8, r9
@@ -8164,12 +8174,12 @@ L_540:
 	sete [rsp+8*2153]
 	mov r8, [rsp+8*2153]
 	cmp r8, 0
-	je L_542
+	je L_564
 	mov rax,t21
 	leave
 	ret
 	
-L_542:
+L_564:
 	mov r8, [rsp+8*2151]
 	mov r9, 2
 	cmp r8, r9
@@ -8177,12 +8187,12 @@ L_542:
 	sete [rsp+8*2154]
 	mov r8, [rsp+8*2154]
 	cmp r8, 0
-	je L_544
+	je L_566
 	mov rax,t24
 	leave
 	ret
 	
-L_544:
+L_566:
 	mov r8, [rsp+8*2151]
 	mov r9, 3
 	cmp r8, r9
@@ -8190,12 +8200,12 @@ L_544:
 	sete [rsp+8*2155]
 	mov r8, [rsp+8*2155]
 	cmp r8, 0
-	je L_546
+	je L_568
 	mov rax,t27
 	leave
 	ret
 	
-L_546:
+L_568:
 	mov r8, [rsp+8*2151]
 	mov r9, 4
 	cmp r8, r9
@@ -8203,12 +8213,12 @@ L_546:
 	sete [rsp+8*2156]
 	mov r8, [rsp+8*2156]
 	cmp r8, 0
-	je L_548
+	je L_570
 	mov rax,t30
 	leave
 	ret
 	
-L_548:
+L_570:
 	mov r8, [rsp+8*2151]
 	mov r9, 5
 	cmp r8, r9
@@ -8216,12 +8226,12 @@ L_548:
 	sete [rsp+8*2157]
 	mov r8, [rsp+8*2157]
 	cmp r8, 0
-	je L_550
+	je L_572
 	mov rax,t33
 	leave
 	ret
 	
-L_550:
+L_572:
 	mov r8, [rsp+8*2151]
 	mov r9, 6
 	cmp r8, r9
@@ -8229,12 +8239,12 @@ L_550:
 	sete [rsp+8*2158]
 	mov r8, [rsp+8*2158]
 	cmp r8, 0
-	je L_552
+	je L_574
 	mov rax,t36
 	leave
 	ret
 	
-L_552:
+L_574:
 	mov r8, [rsp+8*2151]
 	mov r9, 7
 	cmp r8, r9
@@ -8242,12 +8252,12 @@ L_552:
 	sete [rsp+8*2159]
 	mov r8, [rsp+8*2159]
 	cmp r8, 0
-	je L_554
+	je L_576
 	mov rax,t39
 	leave
 	ret
 	
-L_554:
+L_576:
 	mov r8, [rsp+8*2151]
 	mov r9, 8
 	cmp r8, r9
@@ -8255,12 +8265,12 @@ L_554:
 	sete [rsp+8*2160]
 	mov r8, [rsp+8*2160]
 	cmp r8, 0
-	je L_556
+	je L_578
 	mov rax,t42
 	leave
 	ret
 	
-L_556:
+L_578:
 	mov r8, [rsp+8*2151]
 	mov r9, 9
 	cmp r8, r9
@@ -8268,12 +8278,12 @@ L_556:
 	sete [rsp+8*2161]
 	mov r8, [rsp+8*2161]
 	cmp r8, 0
-	je L_558
+	je L_580
 	mov rax,t45
 	leave
 	ret
 	
-L_558:
+L_580:
 	mov rax,0
 	leave
 	ret
@@ -8291,7 +8301,7 @@ s2:
 	setle [rsp+8*2163]
 	mov r8, [rsp+8*2163]
 	cmp r8, 0
-	je L_560
+	je L_582
 	mov r8, [rsp+8*2162]
 	mov qword [arg+8*0] ,r8
 	call digt
@@ -8308,7 +8318,7 @@ s2:
 	leave
 	ret
 	
-L_560:
+L_582:
 	xor rdx, rdx
 	mov rax, [rsp+8*2162]
 	mov rbx, 10
@@ -8361,7 +8371,7 @@ c2:
 	setle [rsp+8*2175]
 	mov r8, [rsp+8*2175]
 	cmp r8, 0
-	je L_562
+	je L_584
 	mov r8, [rsp+8*2174]
 	mov qword [arg+8*0] ,r8
 	call digt
@@ -8378,7 +8388,7 @@ c2:
 	leave
 	ret
 	
-L_562:
+L_584:
 	xor rdx, rdx
 	mov rax, [rsp+8*2174]
 	mov rbx, 10

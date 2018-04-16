@@ -104,7 +104,7 @@ public class IRTranslator {
             return new StringBuffer(Integer.toString(variable.constValue));
         if(variable.type.name.equals("const_bool"))
             return new StringBuffer(Integer.toString(variable.constValue));
-        if(variable.type.name.equals("NULL"))
+        if(variable.type.name.equals("null"))
             return new StringBuffer(Integer.toString(0));
         if(symbolMap.argVariableMap.containsKey(variable.name))
             return new StringBuffer("[arg+8*"+Integer.toString(variable.constValue)+"]");
@@ -188,6 +188,7 @@ public class IRTranslator {
         head.append("\t extern    malloc\n");
         head.append("\t extern    strlen\n");
         head.append("\t extern    strcmp\n");
+        head.append("\t extern    memset\n");
         text.append("\t section   .text\n");
         bss.append("\t section   .bss\n");
         data.append("\t section   .data\n");

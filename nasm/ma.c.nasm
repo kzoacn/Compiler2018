@@ -32,6 +32,7 @@ extern strcmp
 extern printf
 extern strlen
 extern scanf
+extern memset
 extern malloc
 
 
@@ -48,6 +49,14 @@ mallocArray:
         mov     rdi, rax
         call    malloc
         mov     qword [rbp-8H], rax
+        mov     rax, qword [rbp-18H]
+        add     rax, 1
+        shl     rax, 4
+        mov     rdx, rax
+        mov     rax, qword [rbp-8H]
+        mov     esi, 0
+        mov     rdi, rax
+        call    memset
         mov     rax, qword [rbp-8H]
         mov     rdx, qword [rbp-18H]
         mov     qword [rax], rdx
@@ -392,11 +401,11 @@ getString:
         push    rbp
         mov     rbp, rsp
         sub     rsp, 32
-        mov     esi, buff.1788
+        mov     esi, buff.1789
         mov     edi, L_038
         mov     eax, 0
         call    scanf
-        mov     edi, buff.1788
+        mov     edi, buff.1789
         call    strlen
         mov     qword [rbp-10H], rax
         mov     rax, qword [rbp-10H]
@@ -417,7 +426,7 @@ L_019:  mov     rdx, qword [rbp-8H]
         mov     rax, qword [rbp-8H]
         sub     rax, 1
 
-        movzx   eax, byte [abs buff.1788+rax]
+        movzx   eax, byte [abs buff.1789+rax]
         mov     byte [rdx], al
         add     qword [rbp-8H], 1
 L_020:  mov     rax, qword [rbp-8H]
@@ -836,7 +845,7 @@ SECTION .data
 
 SECTION .bss    align=32
 
-buff.1788:
+buff.1789:
         resb    256
 
 

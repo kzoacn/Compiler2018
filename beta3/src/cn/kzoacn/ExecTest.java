@@ -180,6 +180,18 @@ class ExecTest {
     void test74()throws Exception{
         test("test74");
     }
+    @Test
+    void test75()throws Exception{
+        test("test75");
+    }
+    @Test
+    void test76()throws Exception{
+        test("test76");
+    }
+    @Test
+    void test77()throws Exception{
+        test("test77");
+    }
 
     void test(String name) throws Exception{
 

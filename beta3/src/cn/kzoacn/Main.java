@@ -1268,7 +1268,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         Variable start = nextVariable(startType.clone());
         Variable adr=nextVariable(VariableType.INT);
 
-        start.name=startName;
+        start.name=symbolMap.renameMap.get(startName);
         Variable cur = nextVariable(startType.clone());
 
         Variable arr = nextVariable(VariableType.INT);
