@@ -1199,7 +1199,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         return ir;
     }
 
-    @Override public IR visitMethodCallWithExp(MxstarParser.MethodCallWithExpContext ctx) {
+    /*@Override public IR visitMethodCallWithExp(MxstarParser.MethodCallWithExpContext ctx) {
         IR ir=new IR();
 
         ArrayList<String> local = null;
@@ -1253,7 +1253,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
 
         return ir;
     }
-
+*/
 
 
     @Override public IR visitDotExpression(MxstarParser.DotExpressionContext ctx) {
@@ -1550,7 +1550,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
 
     }
 
-    
+
 
     IR assign(String variableName,IR exp,ArrayList<IR> parameterList){
         IR ir = new IR();

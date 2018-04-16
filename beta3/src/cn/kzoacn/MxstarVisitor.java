@@ -415,13 +415,6 @@ public interface MxstarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitTrue(MxstarParser.TrueContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code methodCallWithExp}
-	 * labeled alternative in {@link MxstarParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitMethodCallWithExp(MxstarParser.MethodCallWithExpContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code methodCall}
 	 * labeled alternative in {@link MxstarParser#expression}.
 	 * @param ctx the parse tree

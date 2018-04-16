@@ -122,12 +122,12 @@ dotAtom
 expression
     :   functionName '(' expressionList? ')'                                        # functionCall
     |   pointerValue '.' functionName '(' expressionList? ')'                       # methodCall
-    |   expression '.' functionName '(' expressionList? ')'                         # methodCallWithExp
+//    |   expression '.' functionName '(' expressionList? ')'                         # methodCallWithExp
     |   NEW variableBasicType '(' expressionList? ')'                               # newVariable
     |   NEW variableBasicType                                                       # newVariableWithoutExp
     |   NEW type=variableBasicType (index)+ (bracket)*                              # newArray
     |   variable ('.' variable)+                                                    # dotExpression
-    |   dotAtom ('.' dotAtom)+                                                      # hyperDotExpression
+    |   expression ('.' dotAtom)+                                                   # hyperDotExpression
     |   variableName ('[' expression ']')*                                          # getValue
     |   op=('!' |'~'|'-') expression                                                # prefixOperator
     |   op=('--'|'++' ) leftValue                                                   # prefixLvalueOperator

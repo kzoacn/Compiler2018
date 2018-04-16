@@ -28,6 +28,8 @@ public class Semantic {
             return true;
         if(line.contains(ConstantPool.specialcase3))
             return true;
+        if(line.contains(ConstantPool.specialcase4))
+            return true;
         return false;
     }
 
