@@ -157,10 +157,19 @@ void test(){
 
 }
 
+long strls(char *a,char *b){return strcmp(a+1,b+1)<0;}
+long strle(char *a,char *b){return strcmp(a+1,b+1)<=0;}
+long streq(char *a,char *b){return strcmp(a+1,b+1)==0;}
+long strge(char *a,char *b){return strcmp(a+1,b+1)>=0;}
+long strgt(char *a,char *b){return strcmp(a+1,b+1)>0;}
+long strne(char *a,char *b){return strcmp(a+1,b+1)!=0;}
 
 int main(){
     unsigned char *one=toString(1);
     unsigned char *zero=toString(0);
+    
+    printf("%ld\n",strne(one,zero));
+    
     int len=126;
     unsigned char *s1=toString(0),*s2=toString(0);
     int i=0;

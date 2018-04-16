@@ -187,6 +187,7 @@ public class IRTranslator {
         head.append("\t extern    scanf\n");
         head.append("\t extern    malloc\n");
         head.append("\t extern    strlen\n");
+        head.append("\t extern    strcmp\n");
         text.append("\t section   .text\n");
         bss.append("\t section   .bss\n");
         data.append("\t section   .data\n");
@@ -229,6 +230,7 @@ public class IRTranslator {
         text.append(ConstantPool.parseIntFunction).append("\n");
         text.append(ConstantPool.substringFunction).append("\n");
         text.append(ConstantPool.ordFunction).append("\n");
+        text.append(ConstantPool.strcmpFunction).append("\n");
        // text.append("start:\n\t");
        // text.append("jmp main\n\t");
 
@@ -396,6 +398,42 @@ public class IRTranslator {
                     text.append(new StringBuffer("mov qword "+varName(dest)+", 0\n\t"));
                     text.append(new StringBuffer("setg "+varName(dest)+"\n\t"));
                     break;
+                case strless:
+                    text.append(new StringBuffer("mov rdi, "+varName(var1)+"\n\t"));
+                    text.append(new StringBuffer("mov rsi, "+varName(var2)+"\n\t"));
+                    text.append(new StringBuffer("call    strls\n\t"));
+                    text.append(new StringBuffer("mov qword "+varName(dest)+", rax\n\t"));
+                    break;
+                case strleq:
+                    text.append(new StringBuffer("mov rdi, "+varName(var1)+"\n\t"));
+                    text.append(new StringBuffer("mov rsi, "+varName(var2)+"\n\t"));
+                    text.append(new StringBuffer("call    strle\n\t"));
+                    text.append(new StringBuffer("mov qword "+varName(dest)+", rax\n\t"));
+                    break;
+                case strequal:
+                    text.append(new StringBuffer("mov rdi, "+varName(var1)+"\n\t"));
+                    text.append(new StringBuffer("mov rsi, "+varName(var2)+"\n\t"));
+                    text.append(new StringBuffer("call    streq\n\t"));
+                    text.append(new StringBuffer("mov qword "+varName(dest)+", rax\n\t"));
+                    break;
+                case strinequal:
+                    text.append(new StringBuffer("mov rdi, "+varName(var1)+"\n\t"));
+                    text.append(new StringBuffer("mov rsi, "+varName(var2)+"\n\t"));
+                    text.append(new StringBuffer("call    strne\n\t"));
+                    text.append(new StringBuffer("mov qword "+varName(dest)+", rax\n\t"));
+                    break;
+                case strgeq:
+                    text.append(new StringBuffer("mov rdi, "+varName(var1)+"\n\t"));
+                    text.append(new StringBuffer("mov rsi, "+varName(var2)+"\n\t"));
+                    text.append(new StringBuffer("call    strge\n\t"));
+                    text.append(new StringBuffer("mov qword "+varName(dest)+", rax\n\t"));
+                    break;
+                case strgreater:
+                    text.append(new StringBuffer("mov rdi, "+varName(var1)+"\n\t"));
+                    text.append(new StringBuffer("mov rsi, "+varName(var2)+"\n\t"));
+                    text.append(new StringBuffer("call    strgt\n\t"));
+                    text.append(new StringBuffer("mov qword "+varName(dest)+", rax\n\t"));
+                    break;
                 case jmp:
                     text.append(new StringBuffer("jmp "+name+"\n\t"));
                     break;
@@ -518,6 +556,7 @@ public class IRTranslator {
                                     "mov     qword "+varName(dest)+", rax\n\t"));
 
                     break;
+
             }
         }
 

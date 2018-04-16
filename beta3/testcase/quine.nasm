@@ -4,6 +4,7 @@
 	 extern    scanf
 	 extern    malloc
 	 extern    strlen
+	 extern    strcmp
 
 	 section   .text
 toString:
@@ -499,6 +500,124 @@ ord:
         movzx   eax, byte [rax]
         movzx   eax, al
         pop     rbp
+        ret
+
+strls:
+        push    rbp
+        mov     rbp, rsp
+        sub     rsp, 16
+        mov     qword [rbp-8H], rdi
+        mov     qword [rbp-10H], rsi
+        mov     rax, qword [rbp-10H]
+        lea     rdx, [rax+1H]
+        mov     rax, qword [rbp-8H]
+        add     rax, 1
+        mov     rsi, rdx
+        mov     rdi, rax
+        call    strcmp
+        shr     eax, 31
+        movzx   eax, al
+        leave
+        ret
+
+
+strle:
+        push    rbp
+        mov     rbp, rsp
+        sub     rsp, 16
+        mov     qword [rbp-8H], rdi
+        mov     qword [rbp-10H], rsi
+        mov     rax, qword [rbp-10H]
+        lea     rdx, [rax+1H]
+        mov     rax, qword [rbp-8H]
+        add     rax, 1
+        mov     rsi, rdx
+        mov     rdi, rax
+        call    strcmp
+        test    eax, eax
+        setle   al
+        movzx   eax, al
+        leave
+        ret
+
+
+streq:
+        push    rbp
+        mov     rbp, rsp
+        sub     rsp, 16
+        mov     qword [rbp-8H], rdi
+        mov     qword [rbp-10H], rsi
+        mov     rax, qword [rbp-10H]
+        lea     rdx, [rax+1H]
+        mov     rax, qword [rbp-8H]
+        add     rax, 1
+        mov     rsi, rdx
+        mov     rdi, rax
+        call    strcmp
+        test    eax, eax
+        sete    al
+        movzx   eax, al
+        leave
+        ret
+
+
+strge:
+        push    rbp
+        mov     rbp, rsp
+        sub     rsp, 16
+        mov     qword [rbp-8H], rdi
+        mov     qword [rbp-10H], rsi
+        mov     rax, qword [rbp-10H]
+        lea     rdx, [rax+1H]
+        mov     rax, qword [rbp-8H]
+        add     rax, 1
+        mov     rsi, rdx
+        mov     rdi, rax
+        call    strcmp
+        not     eax
+        shr     eax, 31
+        movzx   eax, al
+        leave
+        ret
+
+
+strgt:
+        push    rbp
+        mov     rbp, rsp
+        sub     rsp, 16
+        mov     qword [rbp-8H], rdi
+        mov     qword [rbp-10H], rsi
+        mov     rax, qword [rbp-10H]
+        lea     rdx, [rax+1H]
+        mov     rax, qword [rbp-8H]
+        add     rax, 1
+        mov     rsi, rdx
+        mov     rdi, rax
+        call    strcmp
+        test    eax, eax
+        setg    al
+        movzx   eax, al
+        leave
+        ret
+
+
+strne:
+        push    rbp
+        mov     rbp, rsp
+        sub     rsp, 16
+        mov     qword [rbp-8H], rdi
+        mov     qword [rbp-10H], rsi
+        mov     rax, qword [rbp-10H]
+        lea     rdx, [rax+1H]
+        mov     rax, qword [rbp-8H]
+        add     rax, 1
+        mov     rsi, rdx
+        mov     rdi, rax
+        call    strcmp
+        test    eax, eax
+        setne   al
+        movzx   eax, al
+        leave
         ret
 
 
@@ -7856,7 +7975,7 @@ main:
 	call printf
 	mov qword [rsp+8*2] ,0
 	
-L_549:
+L_563:
 	mov r8, [rsp+8*2]
 	mov r9, 93
 	cmp r8, r9
@@ -7864,7 +7983,7 @@ L_549:
 	setl [rsp+8*2122]
 	mov r8, [rsp+8*2122]
 	cmp r8, 0
-	je L_550
+	je L_564
 	mov r8, [rsp+8*2]
 	mov qword [arg+8*0] ,r8
 	call c2
@@ -7904,19 +8023,19 @@ L_549:
 	xor rax, rax
 	call printf
 	
-L_551:
+L_565:
 	mov r8, [rsp+8*2]
 	add r8, 1
 	mov qword [rsp+8*2],r8 
 	mov r8, [rsp+8*2]
 	sub r8, 1
 	mov qword [rsp+8*2133],r8 
-	jmp L_549
+	jmp L_563
 	
-L_550:
+L_564:
 	mov qword [rsp+8*2] ,0
 	
-L_552:
+L_566:
 	mov r8, [rsp+8*2]
 	mov r9, 31
 	cmp r8, r9
@@ -7924,7 +8043,7 @@ L_552:
 	setl [rsp+8*2134]
 	mov r8, [rsp+8*2134]
 	cmp r8, 0
-	je L_553
+	je L_567
 	mov r8, [rsp+8*2]
 	mov qword [arg+8*0] ,r8
 	call s2
@@ -7964,19 +8083,19 @@ L_552:
 	xor rax, rax
 	call printf
 	
-L_554:
+L_568:
 	mov r8, [rsp+8*2]
 	add r8, 1
 	mov qword [rsp+8*2],r8 
 	mov r8, [rsp+8*2]
 	sub r8, 1
 	mov qword [rsp+8*2144],r8 
-	jmp L_552
+	jmp L_566
 	
-L_553:
+L_567:
 	mov qword [rsp+8*2] ,1
 	
-L_555:
+L_569:
 	mov r8, [rsp+8*2]
 	mov r9, 31
 	cmp r8, r9
@@ -7984,7 +8103,7 @@ L_555:
 	setl [rsp+8*2145]
 	mov r8, [rsp+8*2145]
 	cmp r8, 0
-	je L_556
+	je L_570
 	mov r8, [gbl+8*190]
 	mov qword [rsp+8*2146] ,r8
 	mov     rsi, [rsp+8*2]
@@ -8004,16 +8123,16 @@ L_555:
 	xor rax, rax
 	call printf
 	
-L_557:
+L_571:
 	mov r8, [rsp+8*2]
 	add r8, 1
 	mov qword [rsp+8*2],r8 
 	mov r8, [rsp+8*2]
 	sub r8, 1
 	mov qword [rsp+8*2150],r8 
-	jmp L_555
+	jmp L_569
 	
-L_556:
+L_570:
 	mov rax,0
 	leave
 	ret
@@ -8032,12 +8151,12 @@ digt:
 	sete [rsp+8*2152]
 	mov r8, [rsp+8*2152]
 	cmp r8, 0
-	je L_526
+	je L_540
 	mov rax,t18
 	leave
 	ret
 	
-L_526:
+L_540:
 	mov r8, [rsp+8*2151]
 	mov r9, 1
 	cmp r8, r9
@@ -8045,12 +8164,12 @@ L_526:
 	sete [rsp+8*2153]
 	mov r8, [rsp+8*2153]
 	cmp r8, 0
-	je L_528
+	je L_542
 	mov rax,t21
 	leave
 	ret
 	
-L_528:
+L_542:
 	mov r8, [rsp+8*2151]
 	mov r9, 2
 	cmp r8, r9
@@ -8058,12 +8177,12 @@ L_528:
 	sete [rsp+8*2154]
 	mov r8, [rsp+8*2154]
 	cmp r8, 0
-	je L_530
+	je L_544
 	mov rax,t24
 	leave
 	ret
 	
-L_530:
+L_544:
 	mov r8, [rsp+8*2151]
 	mov r9, 3
 	cmp r8, r9
@@ -8071,12 +8190,12 @@ L_530:
 	sete [rsp+8*2155]
 	mov r8, [rsp+8*2155]
 	cmp r8, 0
-	je L_532
+	je L_546
 	mov rax,t27
 	leave
 	ret
 	
-L_532:
+L_546:
 	mov r8, [rsp+8*2151]
 	mov r9, 4
 	cmp r8, r9
@@ -8084,12 +8203,12 @@ L_532:
 	sete [rsp+8*2156]
 	mov r8, [rsp+8*2156]
 	cmp r8, 0
-	je L_534
+	je L_548
 	mov rax,t30
 	leave
 	ret
 	
-L_534:
+L_548:
 	mov r8, [rsp+8*2151]
 	mov r9, 5
 	cmp r8, r9
@@ -8097,12 +8216,12 @@ L_534:
 	sete [rsp+8*2157]
 	mov r8, [rsp+8*2157]
 	cmp r8, 0
-	je L_536
+	je L_550
 	mov rax,t33
 	leave
 	ret
 	
-L_536:
+L_550:
 	mov r8, [rsp+8*2151]
 	mov r9, 6
 	cmp r8, r9
@@ -8110,12 +8229,12 @@ L_536:
 	sete [rsp+8*2158]
 	mov r8, [rsp+8*2158]
 	cmp r8, 0
-	je L_538
+	je L_552
 	mov rax,t36
 	leave
 	ret
 	
-L_538:
+L_552:
 	mov r8, [rsp+8*2151]
 	mov r9, 7
 	cmp r8, r9
@@ -8123,12 +8242,12 @@ L_538:
 	sete [rsp+8*2159]
 	mov r8, [rsp+8*2159]
 	cmp r8, 0
-	je L_540
+	je L_554
 	mov rax,t39
 	leave
 	ret
 	
-L_540:
+L_554:
 	mov r8, [rsp+8*2151]
 	mov r9, 8
 	cmp r8, r9
@@ -8136,12 +8255,12 @@ L_540:
 	sete [rsp+8*2160]
 	mov r8, [rsp+8*2160]
 	cmp r8, 0
-	je L_542
+	je L_556
 	mov rax,t42
 	leave
 	ret
 	
-L_542:
+L_556:
 	mov r8, [rsp+8*2151]
 	mov r9, 9
 	cmp r8, r9
@@ -8149,12 +8268,12 @@ L_542:
 	sete [rsp+8*2161]
 	mov r8, [rsp+8*2161]
 	cmp r8, 0
-	je L_544
+	je L_558
 	mov rax,t45
 	leave
 	ret
 	
-L_544:
+L_558:
 	mov rax,0
 	leave
 	ret
@@ -8172,7 +8291,7 @@ s2:
 	setle [rsp+8*2163]
 	mov r8, [rsp+8*2163]
 	cmp r8, 0
-	je L_546
+	je L_560
 	mov r8, [rsp+8*2162]
 	mov qword [arg+8*0] ,r8
 	call digt
@@ -8189,7 +8308,7 @@ s2:
 	leave
 	ret
 	
-L_546:
+L_560:
 	xor rdx, rdx
 	mov rax, [rsp+8*2162]
 	mov rbx, 10
@@ -8242,7 +8361,7 @@ c2:
 	setle [rsp+8*2175]
 	mov r8, [rsp+8*2175]
 	cmp r8, 0
-	je L_548
+	je L_562
 	mov r8, [rsp+8*2174]
 	mov qword [arg+8*0] ,r8
 	call digt
@@ -8259,7 +8378,7 @@ c2:
 	leave
 	ret
 	
-L_548:
+L_562:
 	xor rdx, rdx
 	mov rax, [rsp+8*2174]
 	mov rbx, 10

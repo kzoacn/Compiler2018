@@ -185,6 +185,7 @@ enum OpCode{
     call,ret,
     label,
     less,leq,equal,inequal,geq,greater,
+    strless,strleq,strequal,strinequal,strgeq,strgreater,
     jmp,jz,jnz,jne,
     malloc,mallocArray,multiArray,concat,
     load,store,address,multiAddress,
@@ -1936,27 +1937,49 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         IR ir0=visit(ctx.expression(0));
         IR ir1=visit(ctx.expression(1));
         Variable temp = nextVariable(symbolMap.operate(ir0.last.dest.type,ctx.op.getText(),ir1.last.dest.type) );
-        OpCode opCode=OpCode.less;
-        if(ctx.op.getText().equals("<"))
-            opCode=OpCode.less;
-        if(ctx.op.getText().equals("<="))
-            opCode=OpCode.leq;
-        if(ctx.op.getText().equals(">"))
-            opCode=OpCode.greater;
-        if(ctx.op.getText().equals(">="))
-            opCode=OpCode.geq;
-        Quad quad = new Quad(opCode,ir0.last.dest,ir1.last.dest,temp);
-        ir0.concat(ir1);
-        ir0.push(quad);
+
+        if(ir0.last.dest.type.name.contains("string")){
+            OpCode opCode = OpCode.strless;
+            if (ctx.op.getText().equals("<"))
+                opCode = OpCode.strless;
+            if (ctx.op.getText().equals("<="))
+                opCode = OpCode.strleq;
+            if (ctx.op.getText().equals(">"))
+                opCode = OpCode.strgreater;
+            if (ctx.op.getText().equals(">="))
+                opCode = OpCode.strgeq;
+            Quad quad = new Quad(opCode, ir0.last.dest, ir1.last.dest, temp);
+            ir0.concat(ir1);
+            ir0.push(quad);
+        }else {
+            OpCode opCode = OpCode.less;
+            if (ctx.op.getText().equals("<"))
+                opCode = OpCode.less;
+            if (ctx.op.getText().equals("<="))
+                opCode = OpCode.leq;
+            if (ctx.op.getText().equals(">"))
+                opCode = OpCode.greater;
+            if (ctx.op.getText().equals(">="))
+                opCode = OpCode.geq;
+            Quad quad = new Quad(opCode, ir0.last.dest, ir1.last.dest, temp);
+            ir0.concat(ir1);
+            ir0.push(quad);
+        }
         return ir0;
     }
     @Override public IR visitEqualOrNot(MxstarParser.EqualOrNotContext ctx) {
         IR ir0=visit(ctx.expression(0));
         IR ir1=visit(ctx.expression(1));
         Variable temp = nextVariable(symbolMap.operate(ir0.last.dest.type,ctx.op.getText(),ir1.last.dest.type) );
-        Quad quad = new Quad(ctx.op.getText().equals("==") ? OpCode.equal : OpCode.inequal,ir0.last.dest,ir1.last.dest,temp);
-        ir0.concat(ir1);
-        ir0.push(quad);
+        if(ir0.last.dest.type.name.contains("string")){
+            Quad quad = new Quad(ctx.op.getText().equals("==") ? OpCode.strequal : OpCode.strinequal, ir0.last.dest, ir1.last.dest, temp);
+            ir0.concat(ir1);
+            ir0.push(quad);
+        }else {
+            Quad quad = new Quad(ctx.op.getText().equals("==") ? OpCode.equal : OpCode.inequal, ir0.last.dest, ir1.last.dest, temp);
+            ir0.concat(ir1);
+            ir0.push(quad);
+        }
         return ir0;
     }
 

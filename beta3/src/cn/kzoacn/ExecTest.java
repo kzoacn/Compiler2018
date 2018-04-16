@@ -172,6 +172,14 @@ class ExecTest {
     void test72()throws Exception{
         test("test72");
     }
+    @Test
+    void test73()throws Exception{
+        test("test73");
+    }
+    @Test
+    void test74()throws Exception{
+        test("test74");
+    }
 
     void test(String name) throws Exception{
 

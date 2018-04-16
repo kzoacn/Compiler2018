@@ -498,4 +498,121 @@ public class ConstantPool {
             "        movzx   eax, al\n" +
             "        pop     rbp\n" +
             "        ret\n");
+    static final StringBuffer strcmpFunction=new StringBuffer("strls:\n" +
+            "        push    rbp\n" +
+            "        mov     rbp, rsp\n" +
+            "        sub     rsp, 16\n" +
+            "        mov     qword [rbp-8H], rdi\n" +
+            "        mov     qword [rbp-10H], rsi\n" +
+            "        mov     rax, qword [rbp-10H]\n" +
+            "        lea     rdx, [rax+1H]\n" +
+            "        mov     rax, qword [rbp-8H]\n" +
+            "        add     rax, 1\n" +
+            "        mov     rsi, rdx\n" +
+            "        mov     rdi, rax\n" +
+            "        call    strcmp\n" +
+            "        shr     eax, 31\n" +
+            "        movzx   eax, al\n" +
+            "        leave\n" +
+            "        ret\n" +
+            "\n" +
+            "\n" +
+            "strle:\n" +
+            "        push    rbp\n" +
+            "        mov     rbp, rsp\n" +
+            "        sub     rsp, 16\n" +
+            "        mov     qword [rbp-8H], rdi\n" +
+            "        mov     qword [rbp-10H], rsi\n" +
+            "        mov     rax, qword [rbp-10H]\n" +
+            "        lea     rdx, [rax+1H]\n" +
+            "        mov     rax, qword [rbp-8H]\n" +
+            "        add     rax, 1\n" +
+            "        mov     rsi, rdx\n" +
+            "        mov     rdi, rax\n" +
+            "        call    strcmp\n" +
+            "        test    eax, eax\n" +
+            "        setle   al\n" +
+            "        movzx   eax, al\n" +
+            "        leave\n" +
+            "        ret\n" +
+            "\n" +
+            "\n" +
+            "streq:\n" +
+            "        push    rbp\n" +
+            "        mov     rbp, rsp\n" +
+            "        sub     rsp, 16\n" +
+            "        mov     qword [rbp-8H], rdi\n" +
+            "        mov     qword [rbp-10H], rsi\n" +
+            "        mov     rax, qword [rbp-10H]\n" +
+            "        lea     rdx, [rax+1H]\n" +
+            "        mov     rax, qword [rbp-8H]\n" +
+            "        add     rax, 1\n" +
+            "        mov     rsi, rdx\n" +
+            "        mov     rdi, rax\n" +
+            "        call    strcmp\n" +
+            "        test    eax, eax\n" +
+            "        sete    al\n" +
+            "        movzx   eax, al\n" +
+            "        leave\n" +
+            "        ret\n" +
+            "\n" +
+            "\n" +
+            "strge:\n" +
+            "        push    rbp\n" +
+            "        mov     rbp, rsp\n" +
+            "        sub     rsp, 16\n" +
+            "        mov     qword [rbp-8H], rdi\n" +
+            "        mov     qword [rbp-10H], rsi\n" +
+            "        mov     rax, qword [rbp-10H]\n" +
+            "        lea     rdx, [rax+1H]\n" +
+            "        mov     rax, qword [rbp-8H]\n" +
+            "        add     rax, 1\n" +
+            "        mov     rsi, rdx\n" +
+            "        mov     rdi, rax\n" +
+            "        call    strcmp\n" +
+            "        not     eax\n" +
+            "        shr     eax, 31\n" +
+            "        movzx   eax, al\n" +
+            "        leave\n" +
+            "        ret\n" +
+            "\n" +
+            "\n" +
+            "strgt:\n" +
+            "        push    rbp\n" +
+            "        mov     rbp, rsp\n" +
+            "        sub     rsp, 16\n" +
+            "        mov     qword [rbp-8H], rdi\n" +
+            "        mov     qword [rbp-10H], rsi\n" +
+            "        mov     rax, qword [rbp-10H]\n" +
+            "        lea     rdx, [rax+1H]\n" +
+            "        mov     rax, qword [rbp-8H]\n" +
+            "        add     rax, 1\n" +
+            "        mov     rsi, rdx\n" +
+            "        mov     rdi, rax\n" +
+            "        call    strcmp\n" +
+            "        test    eax, eax\n" +
+            "        setg    al\n" +
+            "        movzx   eax, al\n" +
+            "        leave\n" +
+            "        ret\n" +
+            "\n" +
+            "\n" +
+            "strne:\n" +
+            "        push    rbp\n" +
+            "        mov     rbp, rsp\n" +
+            "        sub     rsp, 16\n" +
+            "        mov     qword [rbp-8H], rdi\n" +
+            "        mov     qword [rbp-10H], rsi\n" +
+            "        mov     rax, qword [rbp-10H]\n" +
+            "        lea     rdx, [rax+1H]\n" +
+            "        mov     rax, qword [rbp-8H]\n" +
+            "        add     rax, 1\n" +
+            "        mov     rsi, rdx\n" +
+            "        mov     rdi, rax\n" +
+            "        call    strcmp\n" +
+            "        test    eax, eax\n" +
+            "        setne   al\n" +
+            "        movzx   eax, al\n" +
+            "        leave\n" +
+            "        ret\n");
 }

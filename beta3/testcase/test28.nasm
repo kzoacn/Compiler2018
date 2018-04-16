@@ -4,6 +4,7 @@
 	 extern    scanf
 	 extern    malloc
 	 extern    strlen
+	 extern    strcmp
 
 	 section   .text
 toString:
@@ -499,6 +500,124 @@ ord:
         movzx   eax, byte [rax]
         movzx   eax, al
         pop     rbp
+        ret
+
+strls:
+        push    rbp
+        mov     rbp, rsp
+        sub     rsp, 16
+        mov     qword [rbp-8H], rdi
+        mov     qword [rbp-10H], rsi
+        mov     rax, qword [rbp-10H]
+        lea     rdx, [rax+1H]
+        mov     rax, qword [rbp-8H]
+        add     rax, 1
+        mov     rsi, rdx
+        mov     rdi, rax
+        call    strcmp
+        shr     eax, 31
+        movzx   eax, al
+        leave
+        ret
+
+
+strle:
+        push    rbp
+        mov     rbp, rsp
+        sub     rsp, 16
+        mov     qword [rbp-8H], rdi
+        mov     qword [rbp-10H], rsi
+        mov     rax, qword [rbp-10H]
+        lea     rdx, [rax+1H]
+        mov     rax, qword [rbp-8H]
+        add     rax, 1
+        mov     rsi, rdx
+        mov     rdi, rax
+        call    strcmp
+        test    eax, eax
+        setle   al
+        movzx   eax, al
+        leave
+        ret
+
+
+streq:
+        push    rbp
+        mov     rbp, rsp
+        sub     rsp, 16
+        mov     qword [rbp-8H], rdi
+        mov     qword [rbp-10H], rsi
+        mov     rax, qword [rbp-10H]
+        lea     rdx, [rax+1H]
+        mov     rax, qword [rbp-8H]
+        add     rax, 1
+        mov     rsi, rdx
+        mov     rdi, rax
+        call    strcmp
+        test    eax, eax
+        sete    al
+        movzx   eax, al
+        leave
+        ret
+
+
+strge:
+        push    rbp
+        mov     rbp, rsp
+        sub     rsp, 16
+        mov     qword [rbp-8H], rdi
+        mov     qword [rbp-10H], rsi
+        mov     rax, qword [rbp-10H]
+        lea     rdx, [rax+1H]
+        mov     rax, qword [rbp-8H]
+        add     rax, 1
+        mov     rsi, rdx
+        mov     rdi, rax
+        call    strcmp
+        not     eax
+        shr     eax, 31
+        movzx   eax, al
+        leave
+        ret
+
+
+strgt:
+        push    rbp
+        mov     rbp, rsp
+        sub     rsp, 16
+        mov     qword [rbp-8H], rdi
+        mov     qword [rbp-10H], rsi
+        mov     rax, qword [rbp-10H]
+        lea     rdx, [rax+1H]
+        mov     rax, qword [rbp-8H]
+        add     rax, 1
+        mov     rsi, rdx
+        mov     rdi, rax
+        call    strcmp
+        test    eax, eax
+        setg    al
+        movzx   eax, al
+        leave
+        ret
+
+
+strne:
+        push    rbp
+        mov     rbp, rsp
+        sub     rsp, 16
+        mov     qword [rbp-8H], rdi
+        mov     qword [rbp-10H], rsi
+        mov     rax, qword [rbp-10H]
+        lea     rdx, [rax+1H]
+        mov     rax, qword [rbp-8H]
+        add     rax, 1
+        mov     rsi, rdx
+        mov     rdi, rax
+        call    strcmp
+        test    eax, eax
+        setne   al
+        movzx   eax, al
+        leave
         ret
 
 
