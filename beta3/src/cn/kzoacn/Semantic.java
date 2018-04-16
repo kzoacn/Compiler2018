@@ -35,7 +35,7 @@ public class Semantic {
 
     public static boolean semantic(FileInputStream fileInputStream){
         Scanner fin = new Scanner(fileInputStream);
-        try {
+        //try {
 
             StringBuilder ctx = new StringBuilder();
             while (fin.hasNext()) {
@@ -77,10 +77,10 @@ public class Semantic {
                 System.err.println("CE1");
                 return false;
             }
-        }catch (Exception e){
-            System.err.println("CE2");
-            return false;
-        }
+        //}catch (Exception e){
+        //    System.err.println("CE2");
+        //    return false;
+        //}
         return true;
     }
 

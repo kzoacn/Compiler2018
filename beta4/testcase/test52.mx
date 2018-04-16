@@ -1,0 +1,68 @@
+int N;
+int head;
+int startx;
+int starty;
+int targetx;
+int targety;
+int x;
+int y;
+int[] xlist = new int[12000];
+int[] ylist = new int[12000];
+int tail;
+int ok;
+int now;
+int[][] step;
+int i;
+int j;
+
+void origin(int N1)
+{
+	step = new int[N1][];
+    for (i = 0; i < N1; i ++ ) {
+		step[i] = new int[N1];
+        for (j = 0; j < N1; j ++ )
+        step[i][j] = 0;
+    }	
+}
+
+bool check(int a2, int N2) {
+    return ((a2 < N2) && (a2 >= 0));
+}
+
+void addList(int x3, int y3) {
+    if (check(x3, N) && check(y3, N) ) if( step[x3][y3] == -1) {
+        tail = tail + 1;
+        xlist[tail] = x3;
+        ylist[tail] = y3;
+        step[x3][y3] = now + 1;
+        if ((x3 == targetx) && (y3 == targety)) ok = 1;
+    }
+}
+
+int main() {
+	origin(106);
+    N = 101;
+    targety  = N - 1;
+    targetx = targety;
+    for (i = 0; i < N; i ++)
+        for (j = 0; j < N; j ++)
+        step[i][j] = -1;
+    while (head <= tail) {
+        x = xlist[head];
+        y = ylist[head];
+        now = step[x][y];
+        addList(x-1, y-2);
+        addList(x-1, y+2);
+        addList(x+1, y-2);
+        addList(x+1, y+2);
+        addList(x-2, y-1);
+        addList(x-2, y+1);
+        addList(x+2, y-1);
+        addList(x+2, y+1);
+        if (ok == 1) break;
+        head = head + 1;
+    }
+    if (ok == 1) println(toString(step[targetx][targety]));
+    else println("no solution!");
+    return 0;
+}

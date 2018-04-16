@@ -1,0 +1,24 @@
+int main(){
+    int n=7;
+    int[][] c;
+    c=new int[n][];
+    int i;int j;
+    
+    
+    c[0]=new int[2];
+    c[0][0]=1;
+    c[0][1]=0;
+    for(i=1;i<n;++i){
+        c[i]=new int[i+2];
+        c[i][0]=1;
+        for(j=1;j<=i;j++){
+            c[i][j]=c[i-1][j]+c[i-1][j-1];
+    //        print(toString(c[i][j]));
+  //          print(" ");
+        }
+//        println("");
+    }
+  println(toString(c[6][3]));
+    
+    return 0;
+}

@@ -1,0 +1,9 @@
+int main(){
+    int n=6;
+    int[][] c=new int[n][n];
+    int i;int j;
+    c[0][0]=2;
+    println(toString(c[0][0]));
+    
+    return 0;
+}

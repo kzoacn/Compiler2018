@@ -1,0 +1,18 @@
+class pair{
+    int first;
+    int second;
+}
+
+pair func(int n2){
+    pair pr2 = new pair();
+    pr2.first=n2*n2;
+    pr2.second=n2+1;
+    return pr2;
+}
+
+int main(){
+    int n=4;
+    pair pr = func(n);
+    println(toString(pr.first));
+    println(toString(pr.second));
+}

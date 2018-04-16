@@ -1,0 +1,17 @@
+class matrix{
+    int[][] a;
+}
+
+int main(){
+    int n=3;
+    matrix m = new matrix();
+    m.a=new int[n][n];
+    int i;
+    int j;
+    for(i=0;i<n;i++){
+        for(j=0;j<n;j++)
+            m.a[i][j]=(i^j);
+    }
+    println(toString(m.a[2][1]));
+    return 0;
+}

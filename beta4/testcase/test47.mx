@@ -1,0 +1,28 @@
+
+class A{
+    int[] a;
+}
+
+class B{
+    A[] b;
+}
+
+int main(){
+    int n=5;
+    B[] barray = new B[n];
+    int i;
+    for(i=0;i<n;i++){
+        barray[i]=new B();
+        barray[i].b=new A[n];
+        int j;
+        for(j=0;j<n;j++){
+            barray[i].b[j]=new A();
+            barray[i].b[j].a=new int[n];
+            int k;
+            for(k=0;k<n;k++){
+                barray[i].b[j].a[k]=(i^j^k);    
+            }
+        }
+    }
+    println(toString(barray[3].b[1].a[4]));
+}

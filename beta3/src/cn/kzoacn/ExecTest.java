@@ -192,7 +192,7 @@ class ExecTest {
     void test77()throws Exception{
         test("test77");
     }
-    @Test 
+    @Test
     void test78()throws Exception{
         test("test78");
     }

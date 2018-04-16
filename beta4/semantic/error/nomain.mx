@@ -1,0 +1,6 @@
+int f()
+{
+	println("No main function.");
+	return 0;
+}
+

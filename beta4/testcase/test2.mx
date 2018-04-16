@@ -1,0 +1,6 @@
+int main(){
+    println("Hello World");
+    println("0123456789");
+    println("adf");
+    println("asdfasdfasdf");
+}

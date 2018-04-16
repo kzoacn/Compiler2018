@@ -1,0 +1,9 @@
+int main(){
+    string s="123afdsdff";
+    int[] a=new int[10];
+    println(toString(s.parseInt()));
+    println(s.substring(2,5));
+    println(s.ord(6));
+    println(s.length());
+    println(a.size());
+}

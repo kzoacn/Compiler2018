@@ -1,0 +1,13 @@
+class Adder{
+    int c;
+    int add(int x){
+        return this.c + x;
+    }
+}
+
+int main(){
+    Adder adder= new Adder();
+    
+    adder.c=4;
+    println(toString(adder.add(3)));
+}
