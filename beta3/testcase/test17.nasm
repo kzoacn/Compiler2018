@@ -505,7 +505,7 @@ ord:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 408
+	sub    rsp, 400
 	call global_init
 	mov [rsp+8*1] , rax
 	mov qword [rsp+8*2] ,7
@@ -687,40 +687,38 @@ L_121:
 	mov r8, [rsp+8*12]
 	add r8, 1
 	mov qword [rsp+8*12],r8 
-	mov r8, [rsp+8*12]
-	mov qword [rsp+8*35] ,r8
 	jmp L_119
 	
 L_120:
 	mov r8, [rsp+8*4]
-	mov qword [rsp+8*36] ,r8
+	mov qword [rsp+8*35] ,r8
 	mov     rsi, 6
-	mov     rdi, [rsp+8*36]
+	mov     rdi, [rsp+8*35]
 	call    address
-	mov [rsp+8*37], rax
-	mov r8, [rsp+8*37]
+	mov [rsp+8*36], rax
+	mov r8, [rsp+8*36]
 	mov r8, [r8]
-	mov [rsp+8*36], r8
+	mov [rsp+8*35], r8
 	mov     rsi, 3
-	mov     rdi, [rsp+8*36]
+	mov     rdi, [rsp+8*35]
 	call    address
-	mov [rsp+8*37], rax
-	mov r8, [rsp+8*37]
+	mov [rsp+8*36], rax
+	mov r8, [rsp+8*36]
 	mov r8, [r8]
-	mov [rsp+8*38], r8
-	mov r8, [rsp+8*38]
+	mov [rsp+8*37], r8
+	mov r8, [rsp+8*37]
 	mov qword [arg+8*0] ,r8
 	mov r8, [arg+8*0]
-	mov qword [rsp+8*40] ,r8
-	mov     rdi, [rsp+8*40]
+	mov qword [rsp+8*39] ,r8
+	mov     rdi, [rsp+8*39]
 	call    toString
-	mov     qword[rsp+8*41], rax
-	mov r8, [rsp+8*41]
+	mov     qword[rsp+8*40], rax
+	mov r8, [rsp+8*40]
 	mov qword [arg+8*0] ,r8
 	mov r8, [arg+8*0]
-	mov qword [rsp+8*42] ,r8
+	mov qword [rsp+8*41] ,r8
 	mov rdi, formatln
-	mov rsi,[rsp+8*42] 
+	mov rsi,[rsp+8*41] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
@@ -735,15 +733,15 @@ L_120:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 408
-	mov rax,[rsp+8*43]
+	sub    rsp, 400
+	mov rax,[rsp+8*42]
 	leave
 	ret
 	
 QED:
 	
 	 section   .bss
-gbl:         resb   2392
+gbl:         resb   2384
 buff.1788:
         resb    256
 arg:

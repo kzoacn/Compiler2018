@@ -2088,8 +2088,8 @@ public class MxstarParser extends Parser {
 	}
 	public static class PrefixLvalueOperatorContext extends ExpressionContext {
 		public Token op;
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
+		public LeftValueContext leftValue() {
+			return getRuleContext(LeftValueContext.class,0);
 		}
 		public PrefixLvalueOperatorContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
@@ -2886,7 +2886,7 @@ public class MxstarParser extends Parser {
 					consume();
 				}
 				setState(304);
-				expression(19);
+				leftValue();
 				}
 				break;
 			case 11:
@@ -3455,27 +3455,29 @@ public class MxstarParser extends Parser {
 	public final LeftValueContext leftValue() throws RecognitionException {
 		LeftValueContext _localctx = new LeftValueContext(_ctx, getState());
 		enterRule(_localctx, 58, RULE_leftValue);
-		int _la;
 		try {
+			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(397);
 			variable();
 			setState(402);
 			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==T__9) {
-				{
-				{
-				setState(398);
-				match(T__9);
-				setState(399);
-				variable();
-				}
+			_alt = getInterpreter().adaptivePredict(_input,38,_ctx);
+			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+				if ( _alt==1 ) {
+					{
+					{
+					setState(398);
+					match(T__9);
+					setState(399);
+					variable();
+					}
+					} 
 				}
 				setState(404);
 				_errHandler.sync(this);
-				_la = _input.LA(1);
+				_alt = getInterpreter().adaptivePredict(_input,38,_ctx);
 			}
 			}
 		}
@@ -3703,12 +3705,12 @@ public class MxstarParser extends Parser {
 		"\33\2\u0128\u0129\7\t\2\2\u0129\u012b\3\2\2\2\u012a\u0126\3\2\2\2\u012b"+
 		"\u012e\3\2\2\2\u012c\u012a\3\2\2\2\u012c\u012d\3\2\2\2\u012d\u0141\3\2"+
 		"\2\2\u012e\u012c\3\2\2\2\u012f\u0130\t\4\2\2\u0130\u0141\5\64\33\26\u0131"+
-		"\u0132\t\5\2\2\u0132\u0141\5\64\33\25\u0133\u0141\7\65\2\2\u0134\u0141"+
-		"\7\66\2\2\u0135\u0141\7.\2\2\u0136\u0141\7\62\2\2\u0137\u0141\7\61\2\2"+
-		"\u0138\u0139\7\5\2\2\u0139\u013a\5\64\33\2\u013a\u013b\7\6\2\2\u013b\u0141"+
-		"\3\2\2\2\u013c\u013d\5<\37\2\u013d\u013e\7\n\2\2\u013e\u013f\5\64\33\3"+
-		"\u013f\u0141\3\2\2\2\u0140\u00ef\3\2\2\2\u0140\u00f7\3\2\2\2\u0140\u0100"+
-		"\3\2\2\2\u0140\u0108\3\2\2\2\u0140\u010a\3\2\2\2\u0140\u0117\3\2\2\2\u0140"+
+		"\u0132\t\5\2\2\u0132\u0141\5<\37\2\u0133\u0141\7\65\2\2\u0134\u0141\7"+
+		"\66\2\2\u0135\u0141\7.\2\2\u0136\u0141\7\62\2\2\u0137\u0141\7\61\2\2\u0138"+
+		"\u0139\7\5\2\2\u0139\u013a\5\64\33\2\u013a\u013b\7\6\2\2\u013b\u0141\3"+
+		"\2\2\2\u013c\u013d\5<\37\2\u013d\u013e\7\n\2\2\u013e\u013f\5\64\33\3\u013f"+
+		"\u0141\3\2\2\2\u0140\u00ef\3\2\2\2\u0140\u00f7\3\2\2\2\u0140\u0100\3\2"+
+		"\2\2\u0140\u0108\3\2\2\2\u0140\u010a\3\2\2\2\u0140\u0117\3\2\2\2\u0140"+
 		"\u011e\3\2\2\2\u0140\u0125\3\2\2\2\u0140\u012f\3\2\2\2\u0140\u0131\3\2"+
 		"\2\2\u0140\u0133\3\2\2\2\u0140\u0134\3\2\2\2\u0140\u0135\3\2\2\2\u0140"+
 		"\u0136\3\2\2\2\u0140\u0137\3\2\2\2\u0140\u0138\3\2\2\2\u0140\u013c\3\2"+

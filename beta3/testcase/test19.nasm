@@ -511,11 +511,11 @@ main:
 	mov qword [rsp+8*2] ,1
 	mov r8, [rsp+8*2]
 	cmp r8, 0
-	jne L_390
+	jne L_398
 	mov qword [rsp+8*3] ,0
-	jmp L_391
+	jmp L_399
 	
-L_390:
+L_398:
 	mov r8, 1
 	mov r9, 0
 	cmp r8, r9
@@ -524,10 +524,10 @@ L_390:
 	mov r8, [rsp+8*4]
 	mov qword [rsp+8*3] ,r8
 	
-L_391:
+L_399:
 	mov r8, [rsp+8*3]
 	cmp r8, 0
-	je L_392
+	je L_400
 	mov qword [arg+8*0] ,t22
 	mov r8, [arg+8*0]
 	mov qword [rsp+8*6] ,r8
@@ -536,9 +536,9 @@ L_391:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	jmp L_393
+	jmp L_401
 	
-L_392:
+L_400:
 	mov qword [arg+8*0] ,t26
 	mov r8, [arg+8*0]
 	mov qword [rsp+8*7] ,r8
@@ -548,18 +548,18 @@ L_392:
 	xor rax, rax
 	call printf
 	
-L_393:
+L_401:
 	mov r8, [rsp+8*2]
 	mov qword [rsp+8*8], 0
 	cmp r8, 0
 	sete [rsp+8*8]
 	mov r8, [rsp+8*8]
 	cmp r8, 0
-	je L_394
+	je L_402
 	mov qword [rsp+8*9] ,1
-	jmp L_395
+	jmp L_403
 	
-L_394:
+L_402:
 	mov r8, 1
 	mov r9, 0
 	cmp r8, r9
@@ -568,10 +568,10 @@ L_394:
 	mov r8, [rsp+8*10]
 	mov qword [rsp+8*9] ,r8
 	
-L_395:
+L_403:
 	mov r8, [rsp+8*9]
 	cmp r8, 0
-	je L_396
+	je L_404
 	mov qword [arg+8*0] ,t36
 	mov r8, [arg+8*0]
 	mov qword [rsp+8*11] ,r8
@@ -580,9 +580,9 @@ L_395:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	jmp L_397
+	jmp L_405
 	
-L_396:
+L_404:
 	mov qword [arg+8*0] ,t40
 	mov r8, [arg+8*0]
 	mov qword [rsp+8*12] ,r8
@@ -592,15 +592,15 @@ L_396:
 	xor rax, rax
 	call printf
 	
-L_397:
+L_405:
 	mov qword [rsp+8*2] ,0
 	mov r8, [rsp+8*2]
 	cmp r8, 0
-	jne L_398
+	jne L_406
 	mov qword [rsp+8*13] ,0
-	jmp L_399
+	jmp L_407
 	
-L_398:
+L_406:
 	mov r8, 1
 	mov r9, 0
 	cmp r8, r9
@@ -609,14 +609,14 @@ L_398:
 	mov r8, [rsp+8*14]
 	mov qword [rsp+8*13] ,r8
 	
-L_399:
+L_407:
 	mov r8, [rsp+8*13]
 	cmp r8, 0
-	jne L_400
+	jne L_408
 	mov qword [rsp+8*15] ,0
-	jmp L_401
+	jmp L_409
 	
-L_400:
+L_408:
 	mov r8, 2
 	mov r9, 4
 	cmp r8, r9
@@ -625,10 +625,10 @@ L_400:
 	mov r8, [rsp+8*16]
 	mov qword [rsp+8*15] ,r8
 	
-L_401:
+L_409:
 	mov r8, [rsp+8*15]
 	cmp r8, 0
-	je L_402
+	je L_410
 	mov qword [arg+8*0] ,t55
 	mov r8, [arg+8*0]
 	mov qword [rsp+8*17] ,r8
@@ -637,9 +637,9 @@ L_401:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	jmp L_403
+	jmp L_411
 	
-L_402:
+L_410:
 	mov qword [arg+8*0] ,t59
 	mov r8, [arg+8*0]
 	mov qword [rsp+8*18] ,r8
@@ -649,7 +649,7 @@ L_402:
 	xor rax, rax
 	call printf
 	
-L_403:
+L_411:
 	mov rax,0
 	leave
 	ret

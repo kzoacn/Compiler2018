@@ -6,9 +6,10 @@
 Bug
 
 1. IO getInt getString [done]
-2. 内建函数 ord size
-3. 数组之间的赋值似乎有问题
+2. 内建函数 ord size [done]
+3. 数组之间的赋值似乎有问题 [done]
 4. '\n' 未支持 [done]
+5. 隐式类成员
 ## 2018-04-01
 编译器的大厦已经建成，就只有几十朵乌云还……
 

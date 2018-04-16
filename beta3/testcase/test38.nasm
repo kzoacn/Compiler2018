@@ -505,7 +505,7 @@ ord:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 296
+	sub    rsp, 272
 	call global_init
 	mov [rsp+8*1] , rax
 	mov qword [arg+8*0] ,5
@@ -519,7 +519,7 @@ main:
 f:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 296
+	sub    rsp, 272
 	mov r8, [arg+8*0]
 	mov qword [rsp+8*4] ,r8
 	mov r8, [rsp+8*4]
@@ -563,11 +563,9 @@ L_369:
 	sub r8, 1
 	mov qword [rsp+8*4],r8 
 	mov r8, [rsp+8*4]
-	mov qword [rsp+8*10] ,r8
-	mov r8, [rsp+8*4]
 	mov qword [arg+8*0] ,r8
 	call g
-	mov [rsp+8*11] , rax
+	mov [rsp+8*10] , rax
 	mov rax,0
 	leave
 	ret
@@ -575,15 +573,15 @@ L_369:
 g:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 296
+	sub    rsp, 272
 	mov r8, [arg+8*0]
-	mov qword [rsp+8*12] ,r8
-	mov r8, [rsp+8*12]
+	mov qword [rsp+8*11] ,r8
+	mov r8, [rsp+8*11]
 	mov r9, 0
 	cmp r8, r9
-	mov qword [rsp+8*13], 0
-	setle [rsp+8*13]
-	mov r8, [rsp+8*13]
+	mov qword [rsp+8*12], 0
+	setle [rsp+8*12]
+	mov r8, [rsp+8*12]
 	cmp r8, 0
 	je L_371
 	mov rax,0
@@ -591,39 +589,37 @@ g:
 	ret
 	
 L_371:
-	mov qword [arg+8*0] ,t38
+	mov qword [arg+8*0] ,t37
+	mov r8, [arg+8*0]
+	mov qword [rsp+8*13] ,r8
+	mov rdi, format
+	mov rsi,[rsp+8*13] 
+	add rsi, 1 
+	xor rax, rax
+	call printf
+	mov r8, [rsp+8*11]
+	mov qword [arg+8*0] ,r8
 	mov r8, [arg+8*0]
 	mov qword [rsp+8*14] ,r8
-	mov rdi, format
-	mov rsi,[rsp+8*14] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
-	mov r8, [rsp+8*12]
-	mov qword [arg+8*0] ,r8
-	mov r8, [arg+8*0]
-	mov qword [rsp+8*15] ,r8
-	mov     rdi, [rsp+8*15]
+	mov     rdi, [rsp+8*14]
 	call    toString
-	mov     qword[rsp+8*16], rax
-	mov r8, [rsp+8*16]
+	mov     qword[rsp+8*15], rax
+	mov r8, [rsp+8*15]
 	mov qword [arg+8*0] ,r8
 	mov r8, [arg+8*0]
-	mov qword [rsp+8*17] ,r8
+	mov qword [rsp+8*16] ,r8
 	mov rdi, formatln
-	mov rsi,[rsp+8*17] 
+	mov rsi,[rsp+8*16] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov r8, [rsp+8*12]
+	mov r8, [rsp+8*11]
 	sub r8, 1
-	mov qword [rsp+8*12],r8 
-	mov r8, [rsp+8*12]
-	mov qword [rsp+8*18] ,r8
-	mov r8, [rsp+8*12]
+	mov qword [rsp+8*11],r8 
+	mov r8, [rsp+8*11]
 	mov qword [arg+8*0] ,r8
 	call h
-	mov [rsp+8*19] , rax
+	mov [rsp+8*17] , rax
 	mov rax,0
 	leave
 	ret
@@ -631,15 +627,15 @@ L_371:
 h:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 296
+	sub    rsp, 272
 	mov r8, [arg+8*0]
-	mov qword [rsp+8*20] ,r8
-	mov r8, [rsp+8*20]
+	mov qword [rsp+8*18] ,r8
+	mov r8, [rsp+8*18]
 	mov r9, 0
 	cmp r8, r9
-	mov qword [rsp+8*21], 0
-	setle [rsp+8*21]
-	mov r8, [rsp+8*21]
+	mov qword [rsp+8*19], 0
+	setle [rsp+8*19]
+	mov r8, [rsp+8*19]
 	cmp r8, 0
 	je L_373
 	mov rax,0
@@ -647,39 +643,37 @@ h:
 	ret
 	
 L_373:
-	mov qword [arg+8*0] ,t56
+	mov qword [arg+8*0] ,t54
 	mov r8, [arg+8*0]
-	mov qword [rsp+8*22] ,r8
+	mov qword [rsp+8*20] ,r8
 	mov rdi, format
-	mov rsi,[rsp+8*22] 
+	mov rsi,[rsp+8*20] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov r8, [rsp+8*20]
+	mov r8, [rsp+8*18]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
+	mov qword [rsp+8*21] ,r8
+	mov     rdi, [rsp+8*21]
+	call    toString
+	mov     qword[rsp+8*22], rax
+	mov r8, [rsp+8*22]
 	mov qword [arg+8*0] ,r8
 	mov r8, [arg+8*0]
 	mov qword [rsp+8*23] ,r8
-	mov     rdi, [rsp+8*23]
-	call    toString
-	mov     qword[rsp+8*24], rax
-	mov r8, [rsp+8*24]
-	mov qword [arg+8*0] ,r8
-	mov r8, [arg+8*0]
-	mov qword [rsp+8*25] ,r8
 	mov rdi, formatln
-	mov rsi,[rsp+8*25] 
+	mov rsi,[rsp+8*23] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov r8, [rsp+8*20]
+	mov r8, [rsp+8*18]
 	sub r8, 1
-	mov qword [rsp+8*20],r8 
-	mov r8, [rsp+8*20]
-	mov qword [rsp+8*26] ,r8
-	mov r8, [rsp+8*20]
+	mov qword [rsp+8*18],r8 
+	mov r8, [rsp+8*18]
 	mov qword [arg+8*0] ,r8
 	call f
-	mov [rsp+8*27] , rax
+	mov [rsp+8*24] , rax
 	mov rax,0
 	leave
 	ret
@@ -687,16 +681,16 @@ L_373:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 296
-	mov qword [gbl+8*28] ,40
-	mov rax,[rsp+8*29]
+	sub    rsp, 272
+	mov qword [gbl+8*25] ,40
+	mov rax,[rsp+8*26]
 	leave
 	ret
 	
 QED:
 	
 	 section   .bss
-gbl:         resb   2280
+gbl:         resb   2256
 buff.1788:
         resb    256
 arg:
@@ -716,13 +710,13 @@ GS_31:
 GS_32:
 	db 25H, 73H, 00H
 	
+t54:
+	 db 2,"h " ,0
+
 t20:
 	 db 2,"f " ,0
 
-t56:
-	 db 2,"h " ,0
-
-t38:
+t37:
 	 db 2,"g " ,0
 
 

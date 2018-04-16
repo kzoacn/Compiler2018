@@ -505,81 +505,115 @@ ord:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 184
+	sub    rsp, 256
 	call global_init
 	mov [rsp+8*1] , rax
-	mov qword [rsp+8*2] ,10
-	mov qword [rsp+8*3] ,0
-	mov qword [rsp+8*4] ,1
-	
-L_348:
-	mov r8, [rsp+8*4]
-	mov r9, [rsp+8*2]
-	cmp r8, r9
-	mov qword [rsp+8*5], 0
-	setle [rsp+8*5]
-	mov r8, [rsp+8*5]
-	cmp r8, 0
-	je L_349
+	mov qword [rsp+8*2] ,0
+	mov     rdi, 5
+	call    mallocArray
+	mov     qword [rsp+8*3], rax
 	mov r8, [rsp+8*3]
-	add r8, [rsp+8*4]
-	mov qword [rsp+8*6],r8 
-	mov r8, [rsp+8*6]
-	mov qword [rsp+8*3] ,r8
-	
-L_350:
-	mov r8, [rsp+8*4]
+	mov qword [rsp+8*4] ,r8
+	mov r8, [rsp+8*2]
 	add r8, 1
-	mov qword [rsp+8*4],r8 
-	jmp L_348
-	
-L_349:
-	mov qword [rsp+8*7] ,1
-	
-L_351:
-	mov r8, [rsp+8*7]
-	mov r9, [rsp+8*2]
-	cmp r8, r9
-	mov qword [rsp+8*8], 0
-	setle [rsp+8*8]
-	mov r8, [rsp+8*8]
-	cmp r8, 0
-	je L_352
-	mov r8, [rsp+8*3]
-	add r8, 10
-	mov qword [rsp+8*9],r8 
-	mov r8, [rsp+8*9]
-	add r8, [rsp+8*7]
-	mov qword [rsp+8*10],r8 
-	mov r8, [rsp+8*10]
-	mov qword [rsp+8*3] ,r8
-	
-L_353:
-	mov r8, [rsp+8*7]
-	add r8, 1
-	mov qword [rsp+8*7],r8 
-	jmp L_351
-	
-L_352:
-	mov r8, [rsp+8*3]
+	mov qword [rsp+8*2],r8 
+	mov r8, [rsp+8*2]
 	mov qword [arg+8*0] ,r8
 	mov r8, [arg+8*0]
-	mov qword [rsp+8*12] ,r8
-	mov     rdi, [rsp+8*12]
+	mov qword [rsp+8*6] ,r8
+	mov     rdi, [rsp+8*6]
 	call    toString
-	mov     qword[rsp+8*13], rax
-	mov r8, [rsp+8*13]
+	mov     qword[rsp+8*7], rax
+	mov r8, [rsp+8*7]
 	mov qword [arg+8*0] ,r8
 	mov r8, [arg+8*0]
-	mov qword [rsp+8*14] ,r8
+	mov qword [rsp+8*8] ,r8
 	mov rdi, formatln
-	mov rsi,[rsp+8*14] 
+	mov rsi,[rsp+8*8] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov rax,0
-	leave
-	ret
+	mov r8, [rsp+8*2]
+	add r8, 1
+	mov qword [rsp+8*2],r8 
+	mov r8, [rsp+8*2]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
+	mov qword [rsp+8*9] ,r8
+	mov     rdi, [rsp+8*9]
+	call    toString
+	mov     qword[rsp+8*10], rax
+	mov r8, [rsp+8*10]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
+	mov qword [rsp+8*11] ,r8
+	mov rdi, formatln
+	mov rsi,[rsp+8*11] 
+	add rsi, 1 
+	xor rax, rax
+	call printf
+	mov r8, [rsp+8*4]
+	mov qword [rsp+8*12] ,r8
+	mov     rsi, 0
+	mov     rdi, [rsp+8*12]
+	call    address
+	mov [rsp+8*13], rax
+	mov r8, [rsp+8*13]
+	mov r8, [r8]
+	mov [rsp+8*14], r8
+	mov r8, [rsp+8*14]
+	add r8, 1
+	mov qword [rsp+8*14],r8 
+	mov r8, [rsp+8*14]
+	mov r9, [rsp+8*13]
+	mov qword [r9], r8
+	mov r8, [rsp+8*14]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
+	mov qword [rsp+8*15] ,r8
+	mov     rdi, [rsp+8*15]
+	call    toString
+	mov     qword[rsp+8*16], rax
+	mov r8, [rsp+8*16]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
+	mov qword [rsp+8*17] ,r8
+	mov rdi, formatln
+	mov rsi,[rsp+8*17] 
+	add rsi, 1 
+	xor rax, rax
+	call printf
+	mov r8, [rsp+8*4]
+	mov qword [rsp+8*18] ,r8
+	mov     rsi, 0
+	mov     rdi, [rsp+8*18]
+	call    address
+	mov [rsp+8*19], rax
+	mov r8, [rsp+8*19]
+	mov r8, [r8]
+	mov [rsp+8*20], r8
+	mov r8, [rsp+8*20]
+	add r8, 1
+	mov qword [rsp+8*20],r8 
+	mov r8, [rsp+8*20]
+	mov r9, [rsp+8*19]
+	mov qword [r9], r8
+	mov r8, [rsp+8*20]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
+	mov qword [rsp+8*21] ,r8
+	mov     rdi, [rsp+8*21]
+	call    toString
+	mov     qword[rsp+8*22], rax
+	mov r8, [rsp+8*22]
+	mov qword [arg+8*0] ,r8
+	mov r8, [arg+8*0]
+	mov qword [rsp+8*23] ,r8
+	mov rdi, formatln
+	mov rsi,[rsp+8*23] 
+	add rsi, 1 
+	xor rax, rax
+	call printf
 	mov rax,0
 	leave
 	ret
@@ -588,15 +622,15 @@ L_352:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 184
-	mov rax,[rsp+8*15]
+	sub    rsp, 256
+	mov rax,[rsp+8*24]
 	leave
 	ret
 	
 QED:
 	
 	 section   .bss
-gbl:         resb   2168
+gbl:         resb   2240
 buff.1788:
         resb    256
 arg:

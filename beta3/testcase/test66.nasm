@@ -517,11 +517,11 @@ main:
 	setne [rsp+8*4]
 	mov r8, [rsp+8*4]
 	cmp r8, 0
-	jne L_486
+	jne L_507
 	mov qword [rsp+8*5] ,0
-	jmp L_487
+	jmp L_508
 	
-L_486:
+L_507:
 	xor rdx, rdx
 	mov rax, [rsp+8*2]
 	mov rbx, [rsp+8*3]
@@ -536,10 +536,10 @@ L_486:
 	mov r8, [rsp+8*7]
 	mov qword [rsp+8*5] ,r8
 	
-L_487:
+L_508:
 	mov r8, [rsp+8*5]
 	cmp r8, 0
-	je L_488
+	je L_509
 	mov qword [arg+8*0] ,t25
 	mov r8, [arg+8*0]
 	mov qword [rsp+8*9] ,r8
@@ -548,9 +548,9 @@ L_487:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	jmp L_489
+	jmp L_510
 	
-L_488:
+L_509:
 	mov qword [arg+8*0] ,t29
 	mov r8, [arg+8*0]
 	mov qword [rsp+8*10] ,r8
@@ -560,7 +560,7 @@ L_488:
 	xor rax, rax
 	call printf
 	
-L_489:
+L_510:
 	mov rax,0
 	leave
 	ret

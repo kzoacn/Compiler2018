@@ -505,7 +505,7 @@ ord:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 176
+	sub    rsp, 168
 	call global_init
 	mov [rsp+8*1] , rax
 	mov qword [arg+8*0] ,5
@@ -535,7 +535,7 @@ main:
 f:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 176
+	sub    rsp, 168
 	mov r8, [arg+8*0]
 	mov qword [rsp+8*8] ,r8
 	mov r8, [rsp+8*8]
@@ -561,17 +561,15 @@ L_375:
 	sub r8, 1
 	mov qword [rsp+8*8],r8 
 	mov r8, [rsp+8*8]
-	mov qword [rsp+8*11] ,r8
-	mov r8, [rsp+8*11]
 	mov qword [arg+8*0] ,r8
 	call f
-	mov [rsp+8*12] , rax
+	mov [rsp+8*11] , rax
 	mov r8, [gbl+8*4]
 	add r8, 1
 	mov qword [gbl+8*4],r8 
 	mov r8, [gbl+8*4]
 	sub r8, 1
-	mov qword [rsp+8*13],r8 
+	mov qword [rsp+8*12],r8 
 	mov rax,0
 	leave
 	ret
@@ -579,16 +577,16 @@ L_375:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 176
+	sub    rsp, 168
 	mov qword [gbl+8*4] ,0
-	mov rax,[rsp+8*14]
+	mov rax,[rsp+8*13]
 	leave
 	ret
 	
 QED:
 	
 	 section   .bss
-gbl:         resb   2160
+gbl:         resb   2152
 buff.1788:
         resb    256
 arg:

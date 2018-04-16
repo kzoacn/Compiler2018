@@ -29,8 +29,16 @@ class ExecTest {
         test("test1");
     }
     @Test
+    void test14()throws Exception{
+        test("test14");
+    }
+    @Test
     void test19()throws Exception{
         test("test19");
+    }
+    @Test
+    void test24()throws Exception{
+        test("test24");
     }
     @Test
     void test41()throws Exception{
@@ -155,6 +163,14 @@ class ExecTest {
     @Test
     void test70()throws Exception{
         test("test70");
+    }
+    @Test
+    void test71()throws Exception{
+        test("test71");
+    }
+    @Test
+    void test72()throws Exception{
+        test("test72");
     }
 
     void test(String name) throws Exception{

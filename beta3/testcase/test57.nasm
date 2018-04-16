@@ -515,7 +515,7 @@ main:
 	mov qword [rsp+8*3] ,r8
 	mov qword [rsp+8*4] ,0
 	
-L_459:
+L_480:
 	mov r8, [rsp+8*4]
 	mov r9, 3
 	cmp r8, r9
@@ -523,7 +523,7 @@ L_459:
 	setl [rsp+8*5]
 	mov r8, [rsp+8*5]
 	cmp r8, 0
-	je L_460
+	je L_481
 	mov     rdi, 0
 	call    mallocArray
 	mov     qword [rsp+8*6], rax
@@ -550,16 +550,16 @@ L_459:
 	call Hello_say
 	mov [rsp+8*12] , rax
 	
-L_461:
+L_482:
 	mov r8, [rsp+8*4]
 	add r8, 1
 	mov qword [rsp+8*4],r8 
 	mov r8, [rsp+8*4]
 	sub r8, 1
 	mov qword [rsp+8*13],r8 
-	jmp L_459
+	jmp L_480
 	
-L_460:
+L_481:
 	mov rax,0
 	leave
 	ret

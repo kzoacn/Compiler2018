@@ -1500,6 +1500,56 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         return ir;
     }
 
+
+    IR getAddress(String variableName,ArrayList<IR> parameterList){
+        IR ir = new IR();
+
+
+        VariableType variableType = symbolMap.getVariable(variableName);
+        if(variableType==null) {
+            variableType=classMember.get(currentClass).get(variableName).type;
+        }
+        if(variableType==null) {
+            ir.push(Quad.quadError("Symbol not found"));
+            return ir;
+        }
+
+        Variable variable = new Variable(symbolMap.renameMap.get(variableName),variableType);
+        if(parameterList.size()==0){
+           ir.push(new Quad(OpCode.move,variable,Variable.empty,variable));
+        }else{
+            for(IR tmpIR : parameterList){
+                Variable dest=tmpIR.last.dest;
+                if(!dest.type.equals(VariableType.INT) && !dest.type.equals(VariableType.CONST_INT)){
+                    ir.push(Quad.quadError("ArrayIndex is not an integer."));
+                    return ir;
+                }
+                ir.concat(tmpIR);
+            }
+
+            Variable adr = nextVariable(VariableType.INT);
+            Variable start = nextVariable(variableType.clone());
+            ir.push(new Quad(OpCode.move,variable,Variable.empty,start));
+            int used=0;
+            for(IR tmpIR : parameterList){
+                Variable dest=tmpIR.last.dest;
+                Quad quad5=null;
+                if( (++used) < parameterList.size()) {
+                    quad5 = new Quad(OpCode.load, adr, Variable.empty, start);
+                }
+
+                ir.push(new Quad(OpCode.address,start,dest,adr));
+                ir.push(quad5);
+                start.type.level--;
+            }
+
+            ir.push(new Quad(OpCode.move,adr,Variable.empty,adr));
+        }
+        return ir;
+
+    }
+
+
     IR assign(String variableName,IR exp,ArrayList<IR> parameterList){
         IR ir = new IR();
 
@@ -1560,6 +1610,8 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         return ir;
 
     }
+
+
     @Override public IR visitAssign(MxstarParser.AssignContext ctx) {
         if(ctx.leftValue().variable().size()==1) {
             String variableName = ctx.leftValue().variable(0).variableName().getText();
@@ -2040,7 +2092,36 @@ class MVisitor extends MxstarBaseVisitor<IR>{
 
 
     @Override public IR visitPrefixLvalueOperator(MxstarParser.PrefixLvalueOperatorContext ctx) {
-        IR ir = visit(ctx.expression());
+        IR ir=new IR();
+        OpCode opCode=ctx.op.getText().equals("++") ? OpCode.add :OpCode.subtract;
+        if(ctx.leftValue().variable().size()==1) {
+            String variableName = ctx.leftValue().variable(0).variableName().getText();
+            ArrayList<IR> parameterList = new ArrayList<IR>();
+            for (int i = 0; i < ctx.leftValue().variable(0).index().size(); i++) {
+                parameterList.add(visit(ctx.leftValue().variable(0).index().get(i)));
+            }
+            IR adr = getAddress(variableName,parameterList);
+            ir.concat(adr);
+            if(parameterList.size()==0){
+                ir.push(new Quad(opCode,adr.last.dest,nextConst(1,VariableType.CONST_INT),adr.last.dest));
+            }else{
+                Variable tmp=nextVariable(VariableType.INT);
+                ir.push(new Quad(OpCode.load,adr.last.dest,Variable.empty,tmp));
+                ir.push(new Quad(opCode,tmp,nextConst(1,VariableType.CONST_INT),tmp));
+                ir.push(new Quad(OpCode.store,tmp,Variable.empty,adr.last.dest));
+                ir.push(new Quad(OpCode.move,tmp,Variable.empty,tmp));
+            }
+        }else{
+            IR left=visit(ctx.leftValue());
+            ir.concat(left);
+            Variable tmp=nextVariable(VariableType.INT);
+            ir.push(new Quad(OpCode.load,left.last.dest,Variable.empty,tmp));
+            ir.push(new Quad(opCode,tmp,nextConst(1,VariableType.CONST_INT),tmp));
+            ir.push(new Quad(OpCode.store,tmp,Variable.empty,left.last.dest));
+            ir.push(new Quad(OpCode.move,tmp,Variable.empty,tmp));
+        }
+        return ir;
+        /*IR ir = visit(ctx.expression());
         Quad quad;
         Variable last = ir.last.dest;
         Variable temp = nextVariable(symbolMap.operate(ctx.op.getText(),last.type));
@@ -2060,7 +2141,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
                 break;
             }
         }
-        return ir;
+        return ir;*/
     }
 
     @Override public IR visitSuffixOperator(MxstarParser.SuffixOperatorContext ctx) {

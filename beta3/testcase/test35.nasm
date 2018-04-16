@@ -505,7 +505,7 @@ ord:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 192
+	sub    rsp, 176
 	call global_init
 	mov [rsp+8*1] , rax
 	mov qword [rsp+8*2] ,5
@@ -542,39 +542,35 @@ L_359:
 	mov r8, [rsp+8*6]
 	add r8, 1
 	mov qword [rsp+8*6],r8 
-	mov r8, [rsp+8*6]
-	mov qword [rsp+8*9] ,r8
 	jmp L_357
 	
 L_358:
 	mov r8, [rsp+8*3]
 	add r8, 1
-	mov qword [rsp+8*10],r8 
-	mov r8, [rsp+8*10]
+	mov qword [rsp+8*9],r8 
+	mov r8, [rsp+8*9]
 	mov qword [rsp+8*3] ,r8
 	
 L_356:
 	mov r8, [rsp+8*4]
 	add r8, 1
 	mov qword [rsp+8*4],r8 
-	mov r8, [rsp+8*4]
-	mov qword [rsp+8*11] ,r8
 	jmp L_354
 	
 L_355:
 	mov r8, [rsp+8*3]
 	mov qword [arg+8*0] ,r8
 	mov r8, [arg+8*0]
-	mov qword [rsp+8*13] ,r8
-	mov     rdi, [rsp+8*13]
+	mov qword [rsp+8*11] ,r8
+	mov     rdi, [rsp+8*11]
 	call    toString
-	mov     qword[rsp+8*14], rax
-	mov r8, [rsp+8*14]
+	mov     qword[rsp+8*12], rax
+	mov r8, [rsp+8*12]
 	mov qword [arg+8*0] ,r8
 	mov r8, [arg+8*0]
-	mov qword [rsp+8*15] ,r8
+	mov qword [rsp+8*13] ,r8
 	mov rdi, formatln
-	mov rsi,[rsp+8*15] 
+	mov rsi,[rsp+8*13] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
@@ -589,15 +585,15 @@ L_355:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 192
-	mov rax,[rsp+8*16]
+	sub    rsp, 176
+	mov rax,[rsp+8*14]
 	leave
 	ret
 	
 QED:
 	
 	 section   .bss
-gbl:         resb   2176
+gbl:         resb   2160
 buff.1788:
         resb    256
 arg:

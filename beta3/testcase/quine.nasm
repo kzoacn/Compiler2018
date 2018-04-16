@@ -7856,7 +7856,7 @@ main:
 	call printf
 	mov qword [rsp+8*2] ,0
 	
-L_528:
+L_549:
 	mov r8, [rsp+8*2]
 	mov r9, 93
 	cmp r8, r9
@@ -7864,7 +7864,7 @@ L_528:
 	setl [rsp+8*2122]
 	mov r8, [rsp+8*2122]
 	cmp r8, 0
-	je L_529
+	je L_550
 	mov r8, [rsp+8*2]
 	mov qword [arg+8*0] ,r8
 	call c2
@@ -7904,19 +7904,19 @@ L_528:
 	xor rax, rax
 	call printf
 	
-L_530:
+L_551:
 	mov r8, [rsp+8*2]
 	add r8, 1
 	mov qword [rsp+8*2],r8 
 	mov r8, [rsp+8*2]
 	sub r8, 1
 	mov qword [rsp+8*2133],r8 
-	jmp L_528
+	jmp L_549
 	
-L_529:
+L_550:
 	mov qword [rsp+8*2] ,0
 	
-L_531:
+L_552:
 	mov r8, [rsp+8*2]
 	mov r9, 31
 	cmp r8, r9
@@ -7924,7 +7924,7 @@ L_531:
 	setl [rsp+8*2134]
 	mov r8, [rsp+8*2134]
 	cmp r8, 0
-	je L_532
+	je L_553
 	mov r8, [rsp+8*2]
 	mov qword [arg+8*0] ,r8
 	call s2
@@ -7964,19 +7964,19 @@ L_531:
 	xor rax, rax
 	call printf
 	
-L_533:
+L_554:
 	mov r8, [rsp+8*2]
 	add r8, 1
 	mov qword [rsp+8*2],r8 
 	mov r8, [rsp+8*2]
 	sub r8, 1
 	mov qword [rsp+8*2144],r8 
-	jmp L_531
+	jmp L_552
 	
-L_532:
+L_553:
 	mov qword [rsp+8*2] ,1
 	
-L_534:
+L_555:
 	mov r8, [rsp+8*2]
 	mov r9, 31
 	cmp r8, r9
@@ -7984,7 +7984,7 @@ L_534:
 	setl [rsp+8*2145]
 	mov r8, [rsp+8*2145]
 	cmp r8, 0
-	je L_535
+	je L_556
 	mov r8, [gbl+8*190]
 	mov qword [rsp+8*2146] ,r8
 	mov     rsi, [rsp+8*2]
@@ -8004,16 +8004,16 @@ L_534:
 	xor rax, rax
 	call printf
 	
-L_536:
+L_557:
 	mov r8, [rsp+8*2]
 	add r8, 1
 	mov qword [rsp+8*2],r8 
 	mov r8, [rsp+8*2]
 	sub r8, 1
 	mov qword [rsp+8*2150],r8 
-	jmp L_534
+	jmp L_555
 	
-L_535:
+L_556:
 	mov rax,0
 	leave
 	ret
@@ -8032,12 +8032,12 @@ digt:
 	sete [rsp+8*2152]
 	mov r8, [rsp+8*2152]
 	cmp r8, 0
-	je L_505
+	je L_526
 	mov rax,t18
 	leave
 	ret
 	
-L_505:
+L_526:
 	mov r8, [rsp+8*2151]
 	mov r9, 1
 	cmp r8, r9
@@ -8045,12 +8045,12 @@ L_505:
 	sete [rsp+8*2153]
 	mov r8, [rsp+8*2153]
 	cmp r8, 0
-	je L_507
+	je L_528
 	mov rax,t21
 	leave
 	ret
 	
-L_507:
+L_528:
 	mov r8, [rsp+8*2151]
 	mov r9, 2
 	cmp r8, r9
@@ -8058,12 +8058,12 @@ L_507:
 	sete [rsp+8*2154]
 	mov r8, [rsp+8*2154]
 	cmp r8, 0
-	je L_509
+	je L_530
 	mov rax,t24
 	leave
 	ret
 	
-L_509:
+L_530:
 	mov r8, [rsp+8*2151]
 	mov r9, 3
 	cmp r8, r9
@@ -8071,12 +8071,12 @@ L_509:
 	sete [rsp+8*2155]
 	mov r8, [rsp+8*2155]
 	cmp r8, 0
-	je L_511
+	je L_532
 	mov rax,t27
 	leave
 	ret
 	
-L_511:
+L_532:
 	mov r8, [rsp+8*2151]
 	mov r9, 4
 	cmp r8, r9
@@ -8084,12 +8084,12 @@ L_511:
 	sete [rsp+8*2156]
 	mov r8, [rsp+8*2156]
 	cmp r8, 0
-	je L_513
+	je L_534
 	mov rax,t30
 	leave
 	ret
 	
-L_513:
+L_534:
 	mov r8, [rsp+8*2151]
 	mov r9, 5
 	cmp r8, r9
@@ -8097,12 +8097,12 @@ L_513:
 	sete [rsp+8*2157]
 	mov r8, [rsp+8*2157]
 	cmp r8, 0
-	je L_515
+	je L_536
 	mov rax,t33
 	leave
 	ret
 	
-L_515:
+L_536:
 	mov r8, [rsp+8*2151]
 	mov r9, 6
 	cmp r8, r9
@@ -8110,12 +8110,12 @@ L_515:
 	sete [rsp+8*2158]
 	mov r8, [rsp+8*2158]
 	cmp r8, 0
-	je L_517
+	je L_538
 	mov rax,t36
 	leave
 	ret
 	
-L_517:
+L_538:
 	mov r8, [rsp+8*2151]
 	mov r9, 7
 	cmp r8, r9
@@ -8123,12 +8123,12 @@ L_517:
 	sete [rsp+8*2159]
 	mov r8, [rsp+8*2159]
 	cmp r8, 0
-	je L_519
+	je L_540
 	mov rax,t39
 	leave
 	ret
 	
-L_519:
+L_540:
 	mov r8, [rsp+8*2151]
 	mov r9, 8
 	cmp r8, r9
@@ -8136,12 +8136,12 @@ L_519:
 	sete [rsp+8*2160]
 	mov r8, [rsp+8*2160]
 	cmp r8, 0
-	je L_521
+	je L_542
 	mov rax,t42
 	leave
 	ret
 	
-L_521:
+L_542:
 	mov r8, [rsp+8*2151]
 	mov r9, 9
 	cmp r8, r9
@@ -8149,12 +8149,12 @@ L_521:
 	sete [rsp+8*2161]
 	mov r8, [rsp+8*2161]
 	cmp r8, 0
-	je L_523
+	je L_544
 	mov rax,t45
 	leave
 	ret
 	
-L_523:
+L_544:
 	mov rax,0
 	leave
 	ret
@@ -8172,7 +8172,7 @@ s2:
 	setle [rsp+8*2163]
 	mov r8, [rsp+8*2163]
 	cmp r8, 0
-	je L_525
+	je L_546
 	mov r8, [rsp+8*2162]
 	mov qword [arg+8*0] ,r8
 	call digt
@@ -8189,7 +8189,7 @@ s2:
 	leave
 	ret
 	
-L_525:
+L_546:
 	xor rdx, rdx
 	mov rax, [rsp+8*2162]
 	mov rbx, 10
@@ -8242,7 +8242,7 @@ c2:
 	setle [rsp+8*2175]
 	mov r8, [rsp+8*2175]
 	cmp r8, 0
-	je L_527
+	je L_548
 	mov r8, [rsp+8*2174]
 	mov qword [arg+8*0] ,r8
 	call digt
@@ -8259,7 +8259,7 @@ c2:
 	leave
 	ret
 	
-L_527:
+L_548:
 	xor rdx, rdx
 	mov rax, [rsp+8*2174]
 	mov rbx, 10

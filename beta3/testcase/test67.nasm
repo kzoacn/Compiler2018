@@ -510,7 +510,7 @@ main:
 	mov [rsp+8*1] , rax
 	mov qword [rsp+8*2] ,1
 	
-L_490:
+L_511:
 	mov r8, [rsp+8*2]
 	mov r9, [gbl+8*3]
 	cmp r8, r9
@@ -518,7 +518,7 @@ L_490:
 	setle [rsp+8*4]
 	mov r8, [rsp+8*4]
 	cmp r8, 0
-	je L_491
+	je L_512
 	mov r8, [gbl+8*5]
 	mov qword [rsp+8*6] ,r8
 	mov     rsi, [rsp+8*2]
@@ -529,19 +529,19 @@ L_490:
 	mov r9, [rsp+8*7]
 	mov qword [r9], r8
 	
-L_492:
+L_513:
 	mov r8, [rsp+8*2]
 	add r8, 1
 	mov qword [rsp+8*2],r8 
 	mov r8, [rsp+8*2]
 	sub r8, 1
 	mov qword [rsp+8*8],r8 
-	jmp L_490
+	jmp L_511
 	
-L_491:
+L_512:
 	mov qword [rsp+8*2] ,2
 	
-L_493:
+L_514:
 	mov r8, [rsp+8*2]
 	mov r9, [gbl+8*3]
 	cmp r8, r9
@@ -549,7 +549,7 @@ L_493:
 	setle [rsp+8*9]
 	mov r8, [rsp+8*9]
 	cmp r8, 0
-	je L_494
+	je L_515
 	mov r8, [gbl+8*5]
 	mov qword [rsp+8*10] ,r8
 	mov     rsi, [rsp+8*2]
@@ -561,7 +561,7 @@ L_493:
 	mov [rsp+8*12], r8
 	mov r8, [rsp+8*12]
 	cmp r8, 0
-	je L_497
+	je L_518
 	mov qword [rsp+8*13] ,2
 	mov r8, [rsp+8*2]
 	mov r9, 3
@@ -570,11 +570,11 @@ L_493:
 	setg [rsp+8*14]
 	mov r8, [rsp+8*14]
 	cmp r8, 0
-	jne L_498
+	jne L_519
 	mov qword [rsp+8*15] ,0
-	jmp L_499
+	jmp L_520
 	
-L_498:
+L_519:
 	mov r8, [rsp+8*2]
 	sub r8, 2
 	mov qword [rsp+8*16],r8 
@@ -590,10 +590,10 @@ L_498:
 	mov r8, [rsp+8*19]
 	mov qword [rsp+8*15] ,r8
 	
-L_499:
+L_520:
 	mov r8, [rsp+8*15]
 	cmp r8, 0
-	je L_501
+	je L_522
 	mov r8, [gbl+8*20]
 	add r8, 1
 	mov qword [gbl+8*20],r8 
@@ -635,9 +635,9 @@ L_499:
 	xor rax, rax
 	call printf
 	
-L_501:
+L_522:
 	
-L_502:
+L_523:
 	mov r8, [rsp+8*2]
 	imul r8, [rsp+8*13]
 	mov qword [rsp+8*31],r8 
@@ -648,7 +648,7 @@ L_502:
 	setle [rsp+8*32]
 	mov r8, [rsp+8*32]
 	cmp r8, 0
-	je L_503
+	je L_524
 	mov r8, [rsp+8*2]
 	imul r8, [rsp+8*13]
 	mov qword [rsp+8*33],r8 
@@ -667,22 +667,22 @@ L_502:
 	mov r8, [rsp+8*13]
 	sub r8, 1
 	mov qword [rsp+8*36],r8 
-	jmp L_502
+	jmp L_523
 	
-L_503:
+L_524:
 	
-L_497:
+L_518:
 	
-L_495:
+L_516:
 	mov r8, [rsp+8*2]
 	add r8, 1
 	mov qword [rsp+8*2],r8 
 	mov r8, [rsp+8*2]
 	sub r8, 1
 	mov qword [rsp+8*37],r8 
-	jmp L_493
+	jmp L_514
 	
-L_494:
+L_515:
 	mov r8, [gbl+8*20]
 	mov qword [arg+8*0] ,r8
 	mov r8, [arg+8*0]

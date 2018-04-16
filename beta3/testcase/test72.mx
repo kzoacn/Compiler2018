@@ -1,0 +1,8 @@
+int main(){
+    int a=0;
+    int[] b=new int[5];
+    println(toString(++a));
+    println(toString(++a));
+    println(toString(++b[0]));
+    println(toString(++b[0]));
+}

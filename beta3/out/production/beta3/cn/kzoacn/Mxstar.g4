@@ -130,7 +130,7 @@ expression
     |   dotAtom ('.' dotAtom)+                                                      # hyperDotExpression
     |   variableName ('[' expression ']')*                                          # getValue
     |   op=('!' |'~'|'-') expression                                                # prefixOperator
-    |   op=('--'|'++' ) expression                                                  # prefixLvalueOperator
+    |   op=('--'|'++' ) leftValue                                                   # prefixLvalueOperator
     |   expression op=('++' | '--')                                                 # suffixOperator
     |   expression op=('*' | '/' | '%') expression                                  # mulDivMod
     |   expression op=('+' | '-') expression                                        # addSubtract

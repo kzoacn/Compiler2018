@@ -541,10 +541,10 @@ dfs:
 	mov qword [rsp+8*8] ,0
 	mov qword [rsp+8*9] ,1
 	
-L_404:
+L_425:
 	mov r8, 1
 	cmp r8, 0
-	je L_405
+	je L_426
 	mov r8, [rsp+8*9]
 	add r8, 1
 	mov qword [rsp+8*9],r8 
@@ -563,12 +563,12 @@ L_404:
 	sete [rsp+8*12]
 	mov r8, [rsp+8*12]
 	cmp r8, 0
-	je L_407
+	je L_428
 	mov rax,[rsp+8*8]
 	leave
 	ret
 	
-L_407:
+L_428:
 	mov r8, [rsp+8*7]
 	sub r8, 1
 	mov qword [rsp+8*13],r8 
@@ -576,9 +576,9 @@ L_407:
 	mov qword [arg+8*0] ,r8
 	call dfs
 	mov [rsp+8*14] , rax
-	jmp L_404
+	jmp L_425
 	
-L_405:
+L_426:
 	mov rax,0
 	leave
 	ret

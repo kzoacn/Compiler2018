@@ -513,7 +513,7 @@ main:
 	mov qword [rsp+8*4] ,t18
 	mov qword [rsp+8*3] ,0
 	
-L_480:
+L_501:
 	mov r8, [rsp+8*3]
 	mov r9, [rsp+8*2]
 	cmp r8, r9
@@ -521,7 +521,7 @@ L_480:
 	setl [rsp+8*5]
 	mov r8, [rsp+8*5]
 	cmp r8, 0
-	je L_481
+	je L_502
 	mov     rsi, t24
 	mov     rdi, [rsp+8*4]
 	call    concat
@@ -529,16 +529,16 @@ L_480:
 	mov r8, [rsp+8*6]
 	mov qword [rsp+8*4] ,r8
 	
-L_482:
+L_503:
 	mov r8, [rsp+8*3]
 	add r8, 1
 	mov qword [rsp+8*3],r8 
 	mov r8, [rsp+8*3]
 	sub r8, 1
 	mov qword [rsp+8*7],r8 
-	jmp L_480
+	jmp L_501
 	
-L_481:
+L_502:
 	mov r8, [rsp+8*4]
 	mov qword [arg+8*0] ,r8
 	mov r8, [arg+8*0]
@@ -550,7 +550,7 @@ L_481:
 	call printf
 	mov qword [rsp+8*3] ,0
 	
-L_483:
+L_504:
 	mov r8, [rsp+8*3]
 	mov r9, [rsp+8*2]
 	cmp r8, r9
@@ -558,7 +558,7 @@ L_483:
 	setl [rsp+8*10]
 	mov r8, [rsp+8*10]
 	cmp r8, 0
-	je L_484
+	je L_505
 	mov     rsi, t34
 	mov     rdi, [rsp+8*4]
 	call    concat
@@ -566,16 +566,16 @@ L_483:
 	mov r8, [rsp+8*11]
 	mov qword [rsp+8*4] ,r8
 	
-L_485:
+L_506:
 	mov r8, [rsp+8*3]
 	add r8, 1
 	mov qword [rsp+8*3],r8 
 	mov r8, [rsp+8*3]
 	sub r8, 1
 	mov qword [rsp+8*12],r8 
-	jmp L_483
+	jmp L_504
 	
-L_484:
+L_505:
 	mov r8, [rsp+8*4]
 	mov qword [arg+8*0] ,r8
 	mov r8, [arg+8*0]
