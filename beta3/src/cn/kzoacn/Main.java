@@ -1328,7 +1328,9 @@ class MVisitor extends MxstarBaseVisitor<IR>{
                 //TODO
             }else{//function
                 String functionName=ctx.dotAtom(i).functionName().getText();
-                IR expList=visit(ctx.dotAtom(i).expressionList());
+                IR expList=new IR();
+                if(ctx.dotAtom(i).expressionList()!=null)
+                    expList=visit(ctx.dotAtom(i).expressionList());
                 ir.concat(expList);
                 ir.push(new Quad(OpCode.move,start,Variable.empty,argList.get(15)));
                 Function function=symbolMap.functionMap.get(start.type.name+"_"+functionName);
