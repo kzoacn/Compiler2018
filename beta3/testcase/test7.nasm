@@ -662,7 +662,7 @@ main:
 	mov r10,r11
 	mov qword [rsp+8*5],r10
 	
-L_657:
+L_664:
 	mov r10, qword [rsp+8*5]
 	mov r11, qword [rsp+8*2]
 	cmp r10,r11
@@ -675,7 +675,7 @@ L_657:
 	mov r10, qword [rsp+8*6]
 	cmp r10, 0
 	mov qword [rsp+8*6],r10
-	je L_658
+	je L_665
 	mov r10, qword [rsp+8*7]
 	mov r11, qword [rsp+8*4]
 	mov r10,r11
@@ -733,7 +733,7 @@ L_657:
 	xor rax, rax
 	call printf
 	
-L_659:
+L_666:
 	mov r10, qword [rsp+8*16]
 	mov r11, qword [rsp+8*5]
 	mov r10,r11
@@ -744,9 +744,9 @@ L_659:
 	mov r11,1
 	add r10,r11
 	mov qword [rsp+8*5],r10
-	jmp L_657
+	jmp L_664
 	
-L_658:
+L_665:
 	mov r10,0
 	mov rax,r10
 	leave

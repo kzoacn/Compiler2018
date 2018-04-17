@@ -10926,7 +10926,7 @@ main:
 	mov r10,r11
 	mov qword [rsp+8*2],r10
 	
-L_648:
+L_655:
 	mov r10, qword [rsp+8*2]
 	mov r11,93
 	cmp r10,r11
@@ -10938,7 +10938,7 @@ L_648:
 	mov r10, qword [rsp+8*2122]
 	cmp r10, 0
 	mov qword [rsp+8*2122],r10
-	je L_649
+	je L_656
 	mov r10, qword [arg+8*0]
 	mov r11, qword [rsp+8*2]
 	mov r10,r11
@@ -10994,7 +10994,7 @@ L_648:
 	xor rax, rax
 	call printf
 	
-L_650:
+L_657:
 	mov r10, qword [rsp+8*2133]
 	mov r11, qword [rsp+8*2]
 	mov r10,r11
@@ -11005,15 +11005,15 @@ L_650:
 	mov r11,1
 	add r10,r11
 	mov qword [rsp+8*2],r10
-	jmp L_648
+	jmp L_655
 	
-L_649:
+L_656:
 	mov r10, qword [rsp+8*2]
 	mov r11,0
 	mov r10,r11
 	mov qword [rsp+8*2],r10
 	
-L_651:
+L_658:
 	mov r10, qword [rsp+8*2]
 	mov r11,31
 	cmp r10,r11
@@ -11025,7 +11025,7 @@ L_651:
 	mov r10, qword [rsp+8*2134]
 	cmp r10, 0
 	mov qword [rsp+8*2134],r10
-	je L_652
+	je L_659
 	mov r10, qword [arg+8*0]
 	mov r11, qword [rsp+8*2]
 	mov r10,r11
@@ -11081,7 +11081,7 @@ L_651:
 	xor rax, rax
 	call printf
 	
-L_653:
+L_660:
 	mov r10, qword [rsp+8*2144]
 	mov r11, qword [rsp+8*2]
 	mov r10,r11
@@ -11092,15 +11092,15 @@ L_653:
 	mov r11,1
 	add r10,r11
 	mov qword [rsp+8*2],r10
-	jmp L_651
+	jmp L_658
 	
-L_652:
+L_659:
 	mov r10, qword [rsp+8*2]
 	mov r11,1
 	mov r10,r11
 	mov qword [rsp+8*2],r10
 	
-L_654:
+L_661:
 	mov r10, qword [rsp+8*2]
 	mov r11,31
 	cmp r10,r11
@@ -11112,7 +11112,7 @@ L_654:
 	mov r10, qword [rsp+8*2145]
 	cmp r10, 0
 	mov qword [rsp+8*2145],r10
-	je L_655
+	je L_662
 	mov r10, qword [rsp+8*2146]
 	mov r11, qword [gbl+8*190]
 	mov r10,r11
@@ -11143,7 +11143,7 @@ L_654:
 	xor rax, rax
 	call printf
 	
-L_656:
+L_663:
 	mov r10, qword [rsp+8*2150]
 	mov r11, qword [rsp+8*2]
 	mov r10,r11
@@ -11154,9 +11154,9 @@ L_656:
 	mov r11,1
 	add r10,r11
 	mov qword [rsp+8*2],r10
-	jmp L_654
+	jmp L_661
 	
-L_655:
+L_662:
 	mov r10,0
 	mov rax,r10
 	leave
@@ -11183,13 +11183,13 @@ digt:
 	mov r10, qword [rsp+8*2152]
 	cmp r10, 0
 	mov qword [rsp+8*2152],r10
-	je L_625
+	je L_632
 	mov r10,t18
 	mov rax,r10
 	leave
 	ret
 	
-L_625:
+L_632:
 	mov r10, qword [rsp+8*2151]
 	mov r11,1
 	cmp r10,r11
@@ -11201,13 +11201,13 @@ L_625:
 	mov r10, qword [rsp+8*2153]
 	cmp r10, 0
 	mov qword [rsp+8*2153],r10
-	je L_627
+	je L_634
 	mov r10,t21
 	mov rax,r10
 	leave
 	ret
 	
-L_627:
+L_634:
 	mov r10, qword [rsp+8*2151]
 	mov r11,2
 	cmp r10,r11
@@ -11219,13 +11219,13 @@ L_627:
 	mov r10, qword [rsp+8*2154]
 	cmp r10, 0
 	mov qword [rsp+8*2154],r10
-	je L_629
+	je L_636
 	mov r10,t24
 	mov rax,r10
 	leave
 	ret
 	
-L_629:
+L_636:
 	mov r10, qword [rsp+8*2151]
 	mov r11,3
 	cmp r10,r11
@@ -11237,13 +11237,13 @@ L_629:
 	mov r10, qword [rsp+8*2155]
 	cmp r10, 0
 	mov qword [rsp+8*2155],r10
-	je L_631
+	je L_638
 	mov r10,t27
 	mov rax,r10
 	leave
 	ret
 	
-L_631:
+L_638:
 	mov r10, qword [rsp+8*2151]
 	mov r11,4
 	cmp r10,r11
@@ -11255,13 +11255,13 @@ L_631:
 	mov r10, qword [rsp+8*2156]
 	cmp r10, 0
 	mov qword [rsp+8*2156],r10
-	je L_633
+	je L_640
 	mov r10,t30
 	mov rax,r10
 	leave
 	ret
 	
-L_633:
+L_640:
 	mov r10, qword [rsp+8*2151]
 	mov r11,5
 	cmp r10,r11
@@ -11273,13 +11273,13 @@ L_633:
 	mov r10, qword [rsp+8*2157]
 	cmp r10, 0
 	mov qword [rsp+8*2157],r10
-	je L_635
+	je L_642
 	mov r10,t33
 	mov rax,r10
 	leave
 	ret
 	
-L_635:
+L_642:
 	mov r10, qword [rsp+8*2151]
 	mov r11,6
 	cmp r10,r11
@@ -11291,13 +11291,13 @@ L_635:
 	mov r10, qword [rsp+8*2158]
 	cmp r10, 0
 	mov qword [rsp+8*2158],r10
-	je L_637
+	je L_644
 	mov r10,t36
 	mov rax,r10
 	leave
 	ret
 	
-L_637:
+L_644:
 	mov r10, qword [rsp+8*2151]
 	mov r11,7
 	cmp r10,r11
@@ -11309,13 +11309,13 @@ L_637:
 	mov r10, qword [rsp+8*2159]
 	cmp r10, 0
 	mov qword [rsp+8*2159],r10
-	je L_639
+	je L_646
 	mov r10,t39
 	mov rax,r10
 	leave
 	ret
 	
-L_639:
+L_646:
 	mov r10, qword [rsp+8*2151]
 	mov r11,8
 	cmp r10,r11
@@ -11327,13 +11327,13 @@ L_639:
 	mov r10, qword [rsp+8*2160]
 	cmp r10, 0
 	mov qword [rsp+8*2160],r10
-	je L_641
+	je L_648
 	mov r10,t42
 	mov rax,r10
 	leave
 	ret
 	
-L_641:
+L_648:
 	mov r10, qword [rsp+8*2151]
 	mov r11,9
 	cmp r10,r11
@@ -11345,13 +11345,13 @@ L_641:
 	mov r10, qword [rsp+8*2161]
 	cmp r10, 0
 	mov qword [rsp+8*2161],r10
-	je L_643
+	je L_650
 	mov r10,t45
 	mov rax,r10
 	leave
 	ret
 	
-L_643:
+L_650:
 	mov r10,0
 	mov rax,r10
 	leave
@@ -11377,7 +11377,7 @@ s2:
 	mov r10, qword [rsp+8*2163]
 	cmp r10, 0
 	mov qword [rsp+8*2163],r10
-	je L_645
+	je L_652
 	mov r10, qword [arg+8*0]
 	mov r11, qword [rsp+8*2162]
 	mov r10,r11
@@ -11401,7 +11401,7 @@ s2:
 	leave
 	ret
 	
-L_645:
+L_652:
 	xor rdx, rdx
 	mov r10, qword [rsp+8*2162]
 	mov rax, r10
@@ -11484,7 +11484,7 @@ c2:
 	mov r10, qword [rsp+8*2175]
 	cmp r10, 0
 	mov qword [rsp+8*2175],r10
-	je L_647
+	je L_654
 	mov r10, qword [arg+8*0]
 	mov r11, qword [rsp+8*2174]
 	mov r10,r11
@@ -11508,7 +11508,7 @@ c2:
 	leave
 	ret
 	
-L_647:
+L_654:
 	xor rdx, rdx
 	mov r10, qword [rsp+8*2174]
 	mov rax, r10
