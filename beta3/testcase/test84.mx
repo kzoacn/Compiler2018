@@ -31,6 +31,10 @@ void init(){
     son = new int[100];
     maxson = new int[100];
     head = new int[100];
+    
+    for (i = 0; i <100; ++ i)    
+        e[i]=new Edge();
+        
     for (i = 0; i <= n; ++ i){
         visit[i] = false;
         son[i] = 0;
@@ -63,17 +67,26 @@ void dfs(int u){
        }
 }
 
+int[] eu=new int[7];
+int[] ev=new int[7];
+
 int main(){
+    eu[0]=2;ev[0]=6;
+    eu[1]=1;ev[1]=2;
+    eu[2]=2;ev[2]=4;
+    eu[3]=4;ev[3]=5;
+    eu[4]=3;ev[4]=7;
+    eu[5]=3;ev[5]=1;
     int t;
-    t = getInt();
+    t = 1;
     while((t--) != 0){
-        n = getInt();
+        n = 7;
         init();
         for (i = 0; i < n-1; ++i){
             int u;
             int v;
-            u = getInt();
-            v = getInt();
+            u = eu[i];
+            v = ev[i];
             add(u,v);
             add(v,u);
         }

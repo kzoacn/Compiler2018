@@ -582,8 +582,8 @@ class SymbolMap{
                 return VariableType.BOOL;
             return VariableType.ERROR;
         }
-        if(type1.name.contains("bool")&&type1.name.contains("bool")){
-            if(operator.equals("&&")||operator.equals("||"))
+        if(type1.name.contains("bool")&&type2.name.contains("bool")){
+            if(operator.equals("&&")||operator.equals("||")||operator.equals("!=")||operator.equals("=="))
                 return VariableType.BOOL;
             return VariableType.ERROR;
         }
@@ -2588,8 +2588,6 @@ public class Main {
 
 
     public static void main(String [] args) throws Exception {
-
-
        /* Scanner cin = new Scanner(System.in);
 
         FileInputStream fileInputStream = new FileInputStream(new File("./testcase/test7.mx"));

@@ -209,13 +209,17 @@ class ExecTest {
         test("test81");
     }
 
-    @Test
+    @Test @Disabled
     void test82()throws Exception{
         test("test82");
     }
     @Test
     void test83()throws Exception{
         test("test83");
+    }
+    @Test @Disabled
+    void test84()throws Exception{
+        test("test84");
     }
 
     void test(String name) throws Exception{
