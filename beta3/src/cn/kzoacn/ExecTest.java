@@ -25,8 +25,24 @@ class ExecTest {
         }
     }
     @Test
+    void test0()throws Exception{
+        test("test0");
+    }
+    @Test
     void test1()throws Exception{
         test("test1");
+    }
+    @Test
+    void test6()throws Exception{
+        test("test6");
+    }
+    @Test
+    void test7()throws Exception{
+        test("test7");
+    }
+    @Test
+    void test8()throws Exception{
+        test("test8");
     }
     @Test
     void test14()throws Exception{
@@ -220,6 +236,10 @@ class ExecTest {
     @Test @Disabled
     void test84()throws Exception{
         test("test84");
+    }
+    @Test
+    void test85()throws Exception{
+        test("test85");
     }
 
     void test(String name) throws Exception{

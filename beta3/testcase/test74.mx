@@ -1,7 +1,7 @@
 int main(){
-    string a="abc";
     string b="acc";
-    if(b==a){
+    string a="abc";
+    if(a<b){
         println("ls");
     }else{
         println("not ls");

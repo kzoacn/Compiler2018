@@ -642,19 +642,34 @@ main:
 	mov    rbp, rsp
 	sub    rsp, 128
 	call global_init
-	mov [rsp+8*1] , rax
-	mov qword [rsp+8*2] ,t16
-	mov qword [rsp+8*3] ,t17
+	mov r10, qword [rsp+8*1]
+	mov r10 , rax
+	mov qword [rsp+8*1],r10
+	mov r10, qword [rsp+8*2]
+	mov r11,t16
+	mov r10,r11
+	mov qword [rsp+8*2],r10
+	mov r10, qword [rsp+8*3]
+	mov r11,t17
+	mov r10,r11
+	mov qword [rsp+8*3],r10
 	mov rdi, [rsp+8*3]
 	mov rsi, [rsp+8*2]
-	call    streq
+	call    strls
 	mov qword [rsp+8*4], rax
-	mov r8, [rsp+8*4]
-	cmp r8, 0
+	mov r10, qword [rsp+8*4]
+	cmp r10, 0
+	mov qword [rsp+8*4],r10
 	je L_537
-	mov qword [arg+8*0] ,t19
-	mov r8, [arg+8*0]
-	mov qword [rsp+8*6] ,r8
+	mov r10, qword [arg+8*0]
+	mov r11,t19
+	mov r10,r11
+	mov qword [arg+8*0],r10
+	mov r10, qword [rsp+8*6]
+	mov r11, qword [arg+8*0]
+	mov r10,r11
+	mov qword [rsp+8*6],r10
+	mov qword [arg+8*0],r11
 	mov rdi, formatln
 	mov rsi,[rsp+8*6] 
 	add rsi, 1 
@@ -663,9 +678,15 @@ main:
 	jmp L_538
 	
 L_537:
-	mov qword [arg+8*0] ,t23
-	mov r8, [arg+8*0]
-	mov qword [rsp+8*7] ,r8
+	mov r10, qword [arg+8*0]
+	mov r11,t23
+	mov r10,r11
+	mov qword [arg+8*0],r10
+	mov r10, qword [rsp+8*7]
+	mov r11, qword [arg+8*0]
+	mov r10,r11
+	mov qword [rsp+8*7],r10
+	mov qword [arg+8*0],r11
 	mov rdi, formatln
 	mov rsi,[rsp+8*7] 
 	add rsi, 1 
@@ -673,10 +694,12 @@ L_537:
 	call printf
 	
 L_538:
-	mov rax,0
+	mov r10,0
+	mov rax,r10
 	leave
 	ret
-	mov rax,0
+	mov r10,0
+	mov rax,r10
 	leave
 	ret
 	jmp QED
@@ -685,7 +708,9 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 128
-	mov rax,[rsp+8*8]
+	mov r10, qword [rsp+8*8]
+	mov rax,r10
+	mov qword [rsp+8*8],r10
 	leave
 	ret
 	
@@ -716,10 +741,10 @@ t23:
 	 db 6,"not ls" ,0
 
 t16:
-	 db 3,"abc" ,0
+	 db 3,"acc" ,0
 
 t17:
-	 db 3,"acc" ,0
+	 db 3,"abc" ,0
 
 t19:
 	 db 2,"ls" ,0

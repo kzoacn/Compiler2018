@@ -642,10 +642,15 @@ main:
 	mov    rbp, rsp
 	sub    rsp, 104
 	call global_init
-	mov [rsp+8*1] , rax
+	mov r10, qword [rsp+8*1]
+	mov r10 , rax
+	mov qword [rsp+8*1],r10
 	call hello
-	mov [rsp+8*2] , rax
-	mov rax,0
+	mov r10, qword [rsp+8*2]
+	mov r10 , rax
+	mov qword [rsp+8*2],r10
+	mov r10,0
+	mov rax,r10
 	leave
 	ret
 	jmp QED
@@ -654,18 +659,26 @@ hello:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 104
-	mov qword [arg+8*0] ,t16
-	mov r8, [arg+8*0]
-	mov qword [rsp+8*4] ,r8
+	mov r10, qword [arg+8*0]
+	mov r11,t16
+	mov r10,r11
+	mov qword [arg+8*0],r10
+	mov r10, qword [rsp+8*4]
+	mov r11, qword [arg+8*0]
+	mov r10,r11
+	mov qword [rsp+8*4],r10
+	mov qword [arg+8*0],r11
 	mov rdi, formatln
 	mov rsi,[rsp+8*4] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov rax,0
+	mov r10,0
+	mov rax,r10
 	leave
 	ret
-	mov rax,0
+	mov r10,0
+	mov rax,r10
 	leave
 	ret
 	
@@ -673,7 +686,9 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 104
-	mov rax,[rsp+8*5]
+	mov r10, qword [rsp+8*5]
+	mov rax,r10
+	mov qword [rsp+8*5],r10
 	leave
 	ret
 	

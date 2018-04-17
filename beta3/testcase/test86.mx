@@ -1,0 +1,29 @@
+
+string A;
+string B;
+string C;
+int N;
+
+string calc(string A)
+{
+    
+	string L = calc(A.substring(0,mid-1));
+	string R = calc(A.substring(mid,len-1));
+	if (L < R){
+	    return L + R;
+	}else{
+	    return R + L;
+	}
+	
+}
+
+int main()
+{
+	A = "DCBAE";
+	B = "4ssfsdf";
+	N = B.parseInt();
+	
+	C = calc(A.substring(0,N-1));
+	println(C);
+	return 0;
+}

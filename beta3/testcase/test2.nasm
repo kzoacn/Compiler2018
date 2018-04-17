@@ -642,40 +642,67 @@ main:
 	mov    rbp, rsp
 	sub    rsp, 120
 	call global_init
-	mov [rsp+8*1] , rax
-	mov qword [arg+8*0] ,t16
-	mov r8, [arg+8*0]
-	mov qword [rsp+8*3] ,r8
+	mov r10, qword [rsp+8*1]
+	mov r10 , rax
+	mov qword [rsp+8*1],r10
+	mov r10, qword [arg+8*0]
+	mov r11,t16
+	mov r10,r11
+	mov qword [arg+8*0],r10
+	mov r10, qword [rsp+8*3]
+	mov r11, qword [arg+8*0]
+	mov r10,r11
+	mov qword [rsp+8*3],r10
+	mov qword [arg+8*0],r11
 	mov rdi, formatln
 	mov rsi,[rsp+8*3] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov qword [arg+8*0] ,t20
-	mov r8, [arg+8*0]
-	mov qword [rsp+8*4] ,r8
+	mov r10, qword [arg+8*0]
+	mov r11,t20
+	mov r10,r11
+	mov qword [arg+8*0],r10
+	mov r10, qword [rsp+8*4]
+	mov r11, qword [arg+8*0]
+	mov r10,r11
+	mov qword [rsp+8*4],r10
+	mov qword [arg+8*0],r11
 	mov rdi, formatln
 	mov rsi,[rsp+8*4] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov qword [arg+8*0] ,t24
-	mov r8, [arg+8*0]
-	mov qword [rsp+8*5] ,r8
+	mov r10, qword [arg+8*0]
+	mov r11,t24
+	mov r10,r11
+	mov qword [arg+8*0],r10
+	mov r10, qword [rsp+8*5]
+	mov r11, qword [arg+8*0]
+	mov r10,r11
+	mov qword [rsp+8*5],r10
+	mov qword [arg+8*0],r11
 	mov rdi, formatln
 	mov rsi,[rsp+8*5] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov qword [arg+8*0] ,t28
-	mov r8, [arg+8*0]
-	mov qword [rsp+8*6] ,r8
+	mov r10, qword [arg+8*0]
+	mov r11,t28
+	mov r10,r11
+	mov qword [arg+8*0],r10
+	mov r10, qword [rsp+8*6]
+	mov r11, qword [arg+8*0]
+	mov r10,r11
+	mov qword [rsp+8*6],r10
+	mov qword [arg+8*0],r11
 	mov rdi, formatln
 	mov rsi,[rsp+8*6] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov rax,0
+	mov r10,0
+	mov rax,r10
 	leave
 	ret
 	jmp QED
@@ -684,7 +711,9 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 120
-	mov rax,[rsp+8*7]
+	mov r10, qword [rsp+8*7]
+	mov rax,r10
+	mov qword [rsp+8*7],r10
 	leave
 	ret
 	
