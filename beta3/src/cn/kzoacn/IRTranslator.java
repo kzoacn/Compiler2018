@@ -392,6 +392,7 @@ public class IRTranslator {
                     text.append(new StringBuffer("mov "+getReg(dest)+","+getReg(var1)+"\n\t"));
                     text.append(new StringBuffer("add "+getReg(dest)+","+getReg(var2)+"\n\t"));
                     kickAll();
+                    
                     //text.append(new StringBuffer("mov r8, "+varName(var1)+"\n\t"));
                     //text.append(new StringBuffer("add r8, "+varName(var2)+"\n\t"));
                     //text.append(new StringBuffer("mov qword "+varName(dest)+",r8 \n\t"));
