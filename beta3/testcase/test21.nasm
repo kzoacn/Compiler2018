@@ -708,12 +708,10 @@ add:
 	mov r10,r11
 	mov r12, qword [rsp+8*9]
 	add r10,r12
+	mov rax,r10
 	mov qword [rsp+8*10],r10
 	mov qword [rsp+8*8],r11
 	mov qword [rsp+8*9],r12
-	mov r10, qword [rsp+8*10]
-	mov rax,r10
-	mov qword [rsp+8*10],r10
 	leave
 	ret
 	mov r10,0

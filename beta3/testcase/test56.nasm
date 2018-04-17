@@ -731,12 +731,10 @@ Adder_add:
 	mov r10,r11
 	mov r12, qword [rsp+8*14]
 	add r10,r12
+	mov rax,r10
 	mov qword [rsp+8*15],r10
 	mov qword [rsp+8*13],r11
 	mov qword [rsp+8*14],r12
-	mov r10, qword [rsp+8*15]
-	mov rax,r10
-	mov qword [rsp+8*15],r10
 	leave
 	ret
 	mov r10,0

@@ -268,6 +268,13 @@ public class IRTranslator {
             }
         }
         int pos=reserveRegister();
+        if(isConst(var)){
+            text.append(new StringBuffer("mov r"+Integer.toString(pos)+","+varName(var)+"\n\t"));
+        }else{
+            text.append(new StringBuffer("mov r"+Integer.toString(pos)+", qword "+varName(var)+"\n\t"));
+        }
+        free[pos]=false;
+        occ[pos]=var;
         ban[pos]=true;
         return pos;
     }
@@ -391,7 +398,7 @@ public class IRTranslator {
                 case add:
                     text.append(new StringBuffer("mov "+getReg(dest)+","+getReg(var1)+"\n\t"));
                     text.append(new StringBuffer("add "+getReg(dest)+","+getReg(var2)+"\n\t"));
-                    kickAll();
+                    //kickAll();
 
                     //text.append(new StringBuffer("mov r8, "+varName(var1)+"\n\t"));
                     //text.append(new StringBuffer("add r8, "+varName(var2)+"\n\t"));
@@ -400,7 +407,7 @@ public class IRTranslator {
                 case subtract:
                     text.append(new StringBuffer("mov "+getReg(dest)+","+getReg(var1)+"\n\t"));
                     text.append(new StringBuffer("sub "+getReg(dest)+","+getReg(var2)+"\n\t"));
-                    kickAll();
+                    //kickAll();
                     //text.append(new StringBuffer("mov r8, "+varName(var1)+"\n\t"));
                     //text.append(new StringBuffer("sub r8, "+varName(var2)+"\n\t"));
                     //text.append(new StringBuffer("mov qword "+varName(dest)+",r8 \n\t"));

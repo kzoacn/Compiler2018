@@ -677,14 +677,10 @@ L_348:
 	mov r10,r11
 	mov r12, qword [rsp+8*4]
 	add r10,r12
+	mov r11,r10
 	mov qword [rsp+8*6],r10
 	mov qword [rsp+8*3],r11
 	mov qword [rsp+8*4],r12
-	mov r10, qword [rsp+8*3]
-	mov r11, qword [rsp+8*6]
-	mov r10,r11
-	mov qword [rsp+8*3],r10
-	mov qword [rsp+8*6],r11
 	
 L_350:
 	mov r10, qword [rsp+8*4]
@@ -719,21 +715,15 @@ L_351:
 	mov r10,r11
 	mov r12,10
 	add r10,r12
+	mov r13, qword [rsp+8*10]
+	mov r13,r10
+	mov r14, qword [rsp+8*7]
+	add r13,r14
+	mov r11,r13
 	mov qword [rsp+8*9],r10
 	mov qword [rsp+8*3],r11
-	mov r10, qword [rsp+8*10]
-	mov r11, qword [rsp+8*9]
-	mov r10,r11
-	mov r12, qword [rsp+8*7]
-	add r10,r12
-	mov qword [rsp+8*10],r10
-	mov qword [rsp+8*9],r11
-	mov qword [rsp+8*7],r12
-	mov r10, qword [rsp+8*3]
-	mov r11, qword [rsp+8*10]
-	mov r10,r11
-	mov qword [rsp+8*3],r10
-	mov qword [rsp+8*10],r11
+	mov qword [rsp+8*10],r13
+	mov qword [rsp+8*7],r14
 	
 L_353:
 	mov r10, qword [rsp+8*7]

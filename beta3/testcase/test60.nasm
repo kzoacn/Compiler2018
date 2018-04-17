@@ -863,14 +863,12 @@ L_498:
 	mov r10,r11
 	mov r12, qword [rsp+8*23]
 	add r10,r12
+	mov r13, qword [arg+8*0]
+	mov r13,r10
 	mov qword [rsp+8*24],r10
 	mov qword [rsp+8*20],r11
 	mov qword [rsp+8*23],r12
-	mov r10, qword [arg+8*0]
-	mov r11, qword [rsp+8*24]
-	mov r10,r11
-	mov qword [arg+8*0],r10
-	mov qword [rsp+8*24],r11
+	mov qword [arg+8*0],r13
 	mov r10, qword [rsp+8*26]
 	mov r11, qword [arg+8*0]
 	mov r10,r11

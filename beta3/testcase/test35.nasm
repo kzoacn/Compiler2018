@@ -696,14 +696,10 @@ L_357:
 	mov r10,r11
 	mov r12, qword [rsp+8*4]
 	add r10,r12
+	mov r11,r10
 	mov qword [rsp+8*8],r10
 	mov qword [rsp+8*3],r11
 	mov qword [rsp+8*4],r12
-	mov r10, qword [rsp+8*3]
-	mov r11, qword [rsp+8*8]
-	mov r10,r11
-	mov qword [rsp+8*3],r10
-	mov qword [rsp+8*8],r11
 	
 L_359:
 	mov r10, qword [rsp+8*6]
@@ -719,13 +715,9 @@ L_358:
 	mov r10,r11
 	mov r12,1
 	add r10,r12
+	mov r11,r10
 	mov qword [rsp+8*9],r10
 	mov qword [rsp+8*3],r11
-	mov r10, qword [rsp+8*3]
-	mov r11, qword [rsp+8*9]
-	mov r10,r11
-	mov qword [rsp+8*3],r10
-	mov qword [rsp+8*9],r11
 	
 L_356:
 	mov r10, qword [rsp+8*4]

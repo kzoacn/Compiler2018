@@ -842,13 +842,11 @@ func:
 	mov r10,r11
 	mov r12,1
 	add r10,r12
+	mov r13, qword [rsp+8*27]
+	mov [r13],r10
 	mov qword [rsp+8*28],r10
 	mov qword [rsp+8*18],r11
-	mov r10, qword [rsp+8*27]
-	mov r11, qword [rsp+8*28]
-	mov [r10],r11
-	mov qword [rsp+8*27],r10
-	mov qword [rsp+8*28],r11
+	mov qword [rsp+8*27],r13
 	mov r10, qword [rsp+8*20]
 	mov rax,r10
 	mov qword [rsp+8*20],r10

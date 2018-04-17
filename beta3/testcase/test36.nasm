@@ -684,12 +684,12 @@ L_360:
 	mov r10,r10
 	mov r11,1
 	add r10,r11
+	mov r12, qword [rsp+8*8]
+	mov r13, qword [rsp+8*4]
+	mov r12,r13
 	mov qword [rsp+8*5],r10
-	mov r10, qword [rsp+8*8]
-	mov r11, qword [rsp+8*4]
-	mov r10,r11
-	mov qword [rsp+8*8],r10
-	mov qword [rsp+8*4],r11
+	mov qword [rsp+8*8],r12
+	mov qword [rsp+8*4],r13
 	mov     rsi, [rsp+8*6]
 	mov     rdi, [rsp+8*8]
 	call    address
@@ -751,14 +751,10 @@ L_363:
 	mov r10,r11
 	mov r12, qword [rsp+8*14]
 	add r10,r12
+	mov r11,r10
 	mov qword [rsp+8*15],r10
 	mov qword [rsp+8*10],r11
 	mov qword [rsp+8*14],r12
-	mov r10, qword [rsp+8*10]
-	mov r11, qword [rsp+8*15]
-	mov r10,r11
-	mov qword [rsp+8*10],r10
-	mov qword [rsp+8*15],r11
 	
 L_365:
 	mov r10, qword [rsp+8*6]

@@ -719,12 +719,12 @@ L_394:
 	mov r10,r10
 	mov r11,1
 	add r10,r11
+	mov r12, qword [rsp+8*12]
+	mov r13, qword [gbl+8*4]
+	mov r12,r13
 	mov qword [rsp+8*5],r10
-	mov r10, qword [rsp+8*12]
-	mov r11, qword [gbl+8*4]
-	mov r10,r11
-	mov qword [rsp+8*12],r10
-	mov qword [gbl+8*4],r11
+	mov qword [rsp+8*12],r12
+	mov qword [gbl+8*4],r13
 	mov     rsi, [rsp+8*6]
 	mov     rdi, [rsp+8*12]
 	call    address

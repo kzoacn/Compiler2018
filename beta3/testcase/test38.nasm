@@ -732,12 +732,10 @@ L_369:
 	mov r10,r10
 	mov r11,1
 	sub r10,r11
+	mov r12, qword [arg+8*0]
+	mov r12,r10
 	mov qword [rsp+8*4],r10
-	mov r10, qword [arg+8*0]
-	mov r11, qword [rsp+8*4]
-	mov r10,r11
-	mov qword [arg+8*0],r10
-	mov qword [rsp+8*4],r11
+	mov qword [arg+8*0],r12
 	call g
 	mov r10, qword [rsp+8*10]
 	mov r10 , rax
@@ -820,12 +818,10 @@ L_371:
 	mov r10,r10
 	mov r11,1
 	sub r10,r11
+	mov r12, qword [arg+8*0]
+	mov r12,r10
 	mov qword [rsp+8*11],r10
-	mov r10, qword [arg+8*0]
-	mov r11, qword [rsp+8*11]
-	mov r10,r11
-	mov qword [arg+8*0],r10
-	mov qword [rsp+8*11],r11
+	mov qword [arg+8*0],r12
 	call h
 	mov r10, qword [rsp+8*17]
 	mov r10 , rax
@@ -908,12 +904,10 @@ L_373:
 	mov r10,r10
 	mov r11,1
 	sub r10,r11
+	mov r12, qword [arg+8*0]
+	mov r12,r10
 	mov qword [rsp+8*18],r10
-	mov r10, qword [arg+8*0]
-	mov r11, qword [rsp+8*18]
-	mov r10,r11
-	mov qword [arg+8*0],r10
-	mov qword [rsp+8*18],r11
+	mov qword [arg+8*0],r12
 	call f
 	mov r10, qword [rsp+8*24]
 	mov r10 , rax

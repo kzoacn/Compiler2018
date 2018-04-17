@@ -670,25 +670,21 @@ main:
 	mov r10,r11
 	mov r12,1
 	sub r10,r12
+	mov r13, qword [rsp+8*8]
+	mov r13,r10
 	mov qword [rsp+8*7],r10
 	mov qword [rsp+8*2],r11
-	mov r10, qword [rsp+8*8]
-	mov r11, qword [rsp+8*7]
-	mov r10,r11
-	mov qword [rsp+8*8],r10
-	mov qword [rsp+8*7],r11
+	mov qword [rsp+8*8],r13
 	mov r10, qword [rsp+8*9]
 	mov r11, qword [rsp+8*2]
 	mov r10,r11
 	mov r12,1
 	sub r10,r12
+	mov r13, qword [rsp+8*10]
+	mov r13,r10
 	mov qword [rsp+8*9],r10
 	mov qword [rsp+8*2],r11
-	mov r10, qword [rsp+8*10]
-	mov r11, qword [rsp+8*9]
-	mov r10,r11
-	mov qword [rsp+8*10],r10
-	mov qword [rsp+8*9],r11
+	mov qword [rsp+8*10],r13
 	mov r10, qword [rsp+8*11]
 	mov r11,0
 	mov r10,r11
@@ -1100,13 +1096,11 @@ L_223:
 	mov r10,r11
 	mov r12,1
 	sub r10,r12
+	mov r13, qword [rsp+8*11]
+	mov r13,r10
 	mov qword [rsp+8*64],r10
 	mov qword [rsp+8*63],r11
-	mov r10, qword [rsp+8*11]
-	mov r11, qword [rsp+8*64]
-	mov r10,r11
-	mov qword [rsp+8*11],r10
-	mov qword [rsp+8*64],r11
+	mov qword [rsp+8*11],r13
 	mov r10, qword [rsp+8*65]
 	mov r11, qword [rsp+8*26]
 	mov r10,r11
@@ -1126,13 +1120,11 @@ L_223:
 	mov r10,r11
 	mov r12,2
 	sub r10,r12
+	mov r13, qword [rsp+8*12]
+	mov r13,r10
 	mov qword [rsp+8*68],r10
 	mov qword [rsp+8*67],r11
-	mov r10, qword [rsp+8*12]
-	mov r11, qword [rsp+8*68]
-	mov r10,r11
-	mov qword [rsp+8*12],r10
-	mov qword [rsp+8*68],r11
+	mov qword [rsp+8*12],r13
 	mov r10, qword [arg+8*1]
 	mov r11, qword [rsp+8*2]
 	mov r10,r11
@@ -1225,13 +1217,9 @@ L_226:
 	mov r10,r11
 	mov r12,1
 	add r10,r12
+	mov r11,r10
 	mov qword [rsp+8*79],r10
 	mov qword [rsp+8*4],r11
-	mov r10, qword [rsp+8*4]
-	mov r11, qword [rsp+8*79]
-	mov r10,r11
-	mov qword [rsp+8*4],r10
-	mov qword [rsp+8*79],r11
 	mov r10, qword [rsp+8*80]
 	mov r11, qword [rsp+8*17]
 	mov r10,r11
@@ -1265,13 +1253,13 @@ L_226:
 	mov r10,r11
 	mov r12,1
 	add r10,r12
+	mov r13, qword [rsp+8*85]
+	mov r14, qword [rsp+8*33]
+	mov r13,r14
 	mov qword [rsp+8*84],r10
 	mov qword [rsp+8*13],r11
-	mov r10, qword [rsp+8*85]
-	mov r11, qword [rsp+8*33]
-	mov r10,r11
-	mov qword [rsp+8*85],r10
-	mov qword [rsp+8*33],r11
+	mov qword [rsp+8*85],r13
+	mov qword [rsp+8*33],r14
 	mov     rsi, [rsp+8*11]
 	mov     rdi, [rsp+8*85]
 	call    address
@@ -1359,13 +1347,11 @@ L_228:
 	mov r10,r11
 	mov r12,1
 	sub r10,r12
+	mov r13, qword [rsp+8*11]
+	mov r13,r10
 	mov qword [rsp+8*93],r10
 	mov qword [rsp+8*92],r11
-	mov r10, qword [rsp+8*11]
-	mov r11, qword [rsp+8*93]
-	mov r10,r11
-	mov qword [rsp+8*11],r10
-	mov qword [rsp+8*93],r11
+	mov qword [rsp+8*11],r13
 	mov r10, qword [rsp+8*94]
 	mov r11, qword [rsp+8*26]
 	mov r10,r11
@@ -1385,13 +1371,11 @@ L_228:
 	mov r10,r11
 	mov r12,2
 	add r10,r12
+	mov r13, qword [rsp+8*12]
+	mov r13,r10
 	mov qword [rsp+8*97],r10
 	mov qword [rsp+8*96],r11
-	mov r10, qword [rsp+8*12]
-	mov r11, qword [rsp+8*97]
-	mov r10,r11
-	mov qword [rsp+8*12],r10
-	mov qword [rsp+8*97],r11
+	mov qword [rsp+8*12],r13
 	mov r10, qword [arg+8*1]
 	mov r11, qword [rsp+8*2]
 	mov r10,r11
@@ -1484,13 +1468,9 @@ L_236:
 	mov r10,r11
 	mov r12,1
 	add r10,r12
+	mov r11,r10
 	mov qword [rsp+8*106],r10
 	mov qword [rsp+8*4],r11
-	mov r10, qword [rsp+8*4]
-	mov r11, qword [rsp+8*106]
-	mov r10,r11
-	mov qword [rsp+8*4],r10
-	mov qword [rsp+8*106],r11
 	mov r10, qword [rsp+8*107]
 	mov r11, qword [rsp+8*17]
 	mov r10,r11
@@ -1524,13 +1504,13 @@ L_236:
 	mov r10,r11
 	mov r12,1
 	add r10,r12
+	mov r13, qword [rsp+8*112]
+	mov r14, qword [rsp+8*33]
+	mov r13,r14
 	mov qword [rsp+8*111],r10
 	mov qword [rsp+8*13],r11
-	mov r10, qword [rsp+8*112]
-	mov r11, qword [rsp+8*33]
-	mov r10,r11
-	mov qword [rsp+8*112],r10
-	mov qword [rsp+8*33],r11
+	mov qword [rsp+8*112],r13
+	mov qword [rsp+8*33],r14
 	mov     rsi, [rsp+8*11]
 	mov     rdi, [rsp+8*112]
 	call    address
@@ -1618,13 +1598,11 @@ L_238:
 	mov r10,r11
 	mov r12,1
 	add r10,r12
+	mov r13, qword [rsp+8*11]
+	mov r13,r10
 	mov qword [rsp+8*120],r10
 	mov qword [rsp+8*119],r11
-	mov r10, qword [rsp+8*11]
-	mov r11, qword [rsp+8*120]
-	mov r10,r11
-	mov qword [rsp+8*11],r10
-	mov qword [rsp+8*120],r11
+	mov qword [rsp+8*11],r13
 	mov r10, qword [rsp+8*121]
 	mov r11, qword [rsp+8*26]
 	mov r10,r11
@@ -1644,13 +1622,11 @@ L_238:
 	mov r10,r11
 	mov r12,2
 	sub r10,r12
+	mov r13, qword [rsp+8*12]
+	mov r13,r10
 	mov qword [rsp+8*124],r10
 	mov qword [rsp+8*123],r11
-	mov r10, qword [rsp+8*12]
-	mov r11, qword [rsp+8*124]
-	mov r10,r11
-	mov qword [rsp+8*12],r10
-	mov qword [rsp+8*124],r11
+	mov qword [rsp+8*12],r13
 	mov r10, qword [arg+8*1]
 	mov r11, qword [rsp+8*2]
 	mov r10,r11
@@ -1743,13 +1719,9 @@ L_246:
 	mov r10,r11
 	mov r12,1
 	add r10,r12
+	mov r11,r10
 	mov qword [rsp+8*133],r10
 	mov qword [rsp+8*4],r11
-	mov r10, qword [rsp+8*4]
-	mov r11, qword [rsp+8*133]
-	mov r10,r11
-	mov qword [rsp+8*4],r10
-	mov qword [rsp+8*133],r11
 	mov r10, qword [rsp+8*134]
 	mov r11, qword [rsp+8*17]
 	mov r10,r11
@@ -1783,13 +1755,13 @@ L_246:
 	mov r10,r11
 	mov r12,1
 	add r10,r12
+	mov r13, qword [rsp+8*139]
+	mov r14, qword [rsp+8*33]
+	mov r13,r14
 	mov qword [rsp+8*138],r10
 	mov qword [rsp+8*13],r11
-	mov r10, qword [rsp+8*139]
-	mov r11, qword [rsp+8*33]
-	mov r10,r11
-	mov qword [rsp+8*139],r10
-	mov qword [rsp+8*33],r11
+	mov qword [rsp+8*139],r13
+	mov qword [rsp+8*33],r14
 	mov     rsi, [rsp+8*11]
 	mov     rdi, [rsp+8*139]
 	call    address
@@ -1877,13 +1849,11 @@ L_248:
 	mov r10,r11
 	mov r12,1
 	add r10,r12
+	mov r13, qword [rsp+8*11]
+	mov r13,r10
 	mov qword [rsp+8*147],r10
 	mov qword [rsp+8*146],r11
-	mov r10, qword [rsp+8*11]
-	mov r11, qword [rsp+8*147]
-	mov r10,r11
-	mov qword [rsp+8*11],r10
-	mov qword [rsp+8*147],r11
+	mov qword [rsp+8*11],r13
 	mov r10, qword [rsp+8*148]
 	mov r11, qword [rsp+8*26]
 	mov r10,r11
@@ -1903,13 +1873,11 @@ L_248:
 	mov r10,r11
 	mov r12,2
 	add r10,r12
+	mov r13, qword [rsp+8*12]
+	mov r13,r10
 	mov qword [rsp+8*151],r10
 	mov qword [rsp+8*150],r11
-	mov r10, qword [rsp+8*12]
-	mov r11, qword [rsp+8*151]
-	mov r10,r11
-	mov qword [rsp+8*12],r10
-	mov qword [rsp+8*151],r11
+	mov qword [rsp+8*12],r13
 	mov r10, qword [arg+8*1]
 	mov r11, qword [rsp+8*2]
 	mov r10,r11
@@ -2002,13 +1970,9 @@ L_256:
 	mov r10,r11
 	mov r12,1
 	add r10,r12
+	mov r11,r10
 	mov qword [rsp+8*160],r10
 	mov qword [rsp+8*4],r11
-	mov r10, qword [rsp+8*4]
-	mov r11, qword [rsp+8*160]
-	mov r10,r11
-	mov qword [rsp+8*4],r10
-	mov qword [rsp+8*160],r11
 	mov r10, qword [rsp+8*161]
 	mov r11, qword [rsp+8*17]
 	mov r10,r11
@@ -2042,13 +2006,13 @@ L_256:
 	mov r10,r11
 	mov r12,1
 	add r10,r12
+	mov r13, qword [rsp+8*166]
+	mov r14, qword [rsp+8*33]
+	mov r13,r14
 	mov qword [rsp+8*165],r10
 	mov qword [rsp+8*13],r11
-	mov r10, qword [rsp+8*166]
-	mov r11, qword [rsp+8*33]
-	mov r10,r11
-	mov qword [rsp+8*166],r10
-	mov qword [rsp+8*33],r11
+	mov qword [rsp+8*166],r13
+	mov qword [rsp+8*33],r14
 	mov     rsi, [rsp+8*11]
 	mov     rdi, [rsp+8*166]
 	call    address
@@ -2136,13 +2100,11 @@ L_258:
 	mov r10,r11
 	mov r12,2
 	sub r10,r12
+	mov r13, qword [rsp+8*11]
+	mov r13,r10
 	mov qword [rsp+8*174],r10
 	mov qword [rsp+8*173],r11
-	mov r10, qword [rsp+8*11]
-	mov r11, qword [rsp+8*174]
-	mov r10,r11
-	mov qword [rsp+8*11],r10
-	mov qword [rsp+8*174],r11
+	mov qword [rsp+8*11],r13
 	mov r10, qword [rsp+8*175]
 	mov r11, qword [rsp+8*26]
 	mov r10,r11
@@ -2162,13 +2124,11 @@ L_258:
 	mov r10,r11
 	mov r12,1
 	sub r10,r12
+	mov r13, qword [rsp+8*12]
+	mov r13,r10
 	mov qword [rsp+8*178],r10
 	mov qword [rsp+8*177],r11
-	mov r10, qword [rsp+8*12]
-	mov r11, qword [rsp+8*178]
-	mov r10,r11
-	mov qword [rsp+8*12],r10
-	mov qword [rsp+8*178],r11
+	mov qword [rsp+8*12],r13
 	mov r10, qword [arg+8*1]
 	mov r11, qword [rsp+8*2]
 	mov r10,r11
@@ -2261,13 +2221,9 @@ L_266:
 	mov r10,r11
 	mov r12,1
 	add r10,r12
+	mov r11,r10
 	mov qword [rsp+8*187],r10
 	mov qword [rsp+8*4],r11
-	mov r10, qword [rsp+8*4]
-	mov r11, qword [rsp+8*187]
-	mov r10,r11
-	mov qword [rsp+8*4],r10
-	mov qword [rsp+8*187],r11
 	mov r10, qword [rsp+8*188]
 	mov r11, qword [rsp+8*17]
 	mov r10,r11
@@ -2301,13 +2257,13 @@ L_266:
 	mov r10,r11
 	mov r12,1
 	add r10,r12
+	mov r13, qword [rsp+8*193]
+	mov r14, qword [rsp+8*33]
+	mov r13,r14
 	mov qword [rsp+8*192],r10
 	mov qword [rsp+8*13],r11
-	mov r10, qword [rsp+8*193]
-	mov r11, qword [rsp+8*33]
-	mov r10,r11
-	mov qword [rsp+8*193],r10
-	mov qword [rsp+8*33],r11
+	mov qword [rsp+8*193],r13
+	mov qword [rsp+8*33],r14
 	mov     rsi, [rsp+8*11]
 	mov     rdi, [rsp+8*193]
 	call    address
@@ -2395,13 +2351,11 @@ L_268:
 	mov r10,r11
 	mov r12,2
 	sub r10,r12
+	mov r13, qword [rsp+8*11]
+	mov r13,r10
 	mov qword [rsp+8*201],r10
 	mov qword [rsp+8*200],r11
-	mov r10, qword [rsp+8*11]
-	mov r11, qword [rsp+8*201]
-	mov r10,r11
-	mov qword [rsp+8*11],r10
-	mov qword [rsp+8*201],r11
+	mov qword [rsp+8*11],r13
 	mov r10, qword [rsp+8*202]
 	mov r11, qword [rsp+8*26]
 	mov r10,r11
@@ -2421,13 +2375,11 @@ L_268:
 	mov r10,r11
 	mov r12,1
 	add r10,r12
+	mov r13, qword [rsp+8*12]
+	mov r13,r10
 	mov qword [rsp+8*205],r10
 	mov qword [rsp+8*204],r11
-	mov r10, qword [rsp+8*12]
-	mov r11, qword [rsp+8*205]
-	mov r10,r11
-	mov qword [rsp+8*12],r10
-	mov qword [rsp+8*205],r11
+	mov qword [rsp+8*12],r13
 	mov r10, qword [arg+8*1]
 	mov r11, qword [rsp+8*2]
 	mov r10,r11
@@ -2520,13 +2472,9 @@ L_276:
 	mov r10,r11
 	mov r12,1
 	add r10,r12
+	mov r11,r10
 	mov qword [rsp+8*214],r10
 	mov qword [rsp+8*4],r11
-	mov r10, qword [rsp+8*4]
-	mov r11, qword [rsp+8*214]
-	mov r10,r11
-	mov qword [rsp+8*4],r10
-	mov qword [rsp+8*214],r11
 	mov r10, qword [rsp+8*215]
 	mov r11, qword [rsp+8*17]
 	mov r10,r11
@@ -2560,13 +2508,13 @@ L_276:
 	mov r10,r11
 	mov r12,1
 	add r10,r12
+	mov r13, qword [rsp+8*220]
+	mov r14, qword [rsp+8*33]
+	mov r13,r14
 	mov qword [rsp+8*219],r10
 	mov qword [rsp+8*13],r11
-	mov r10, qword [rsp+8*220]
-	mov r11, qword [rsp+8*33]
-	mov r10,r11
-	mov qword [rsp+8*220],r10
-	mov qword [rsp+8*33],r11
+	mov qword [rsp+8*220],r13
+	mov qword [rsp+8*33],r14
 	mov     rsi, [rsp+8*11]
 	mov     rdi, [rsp+8*220]
 	call    address
@@ -2654,13 +2602,11 @@ L_278:
 	mov r10,r11
 	mov r12,2
 	add r10,r12
+	mov r13, qword [rsp+8*11]
+	mov r13,r10
 	mov qword [rsp+8*228],r10
 	mov qword [rsp+8*227],r11
-	mov r10, qword [rsp+8*11]
-	mov r11, qword [rsp+8*228]
-	mov r10,r11
-	mov qword [rsp+8*11],r10
-	mov qword [rsp+8*228],r11
+	mov qword [rsp+8*11],r13
 	mov r10, qword [rsp+8*229]
 	mov r11, qword [rsp+8*26]
 	mov r10,r11
@@ -2680,13 +2626,11 @@ L_278:
 	mov r10,r11
 	mov r12,1
 	sub r10,r12
+	mov r13, qword [rsp+8*12]
+	mov r13,r10
 	mov qword [rsp+8*232],r10
 	mov qword [rsp+8*231],r11
-	mov r10, qword [rsp+8*12]
-	mov r11, qword [rsp+8*232]
-	mov r10,r11
-	mov qword [rsp+8*12],r10
-	mov qword [rsp+8*232],r11
+	mov qword [rsp+8*12],r13
 	mov r10, qword [arg+8*1]
 	mov r11, qword [rsp+8*2]
 	mov r10,r11
@@ -2779,13 +2723,9 @@ L_286:
 	mov r10,r11
 	mov r12,1
 	add r10,r12
+	mov r11,r10
 	mov qword [rsp+8*241],r10
 	mov qword [rsp+8*4],r11
-	mov r10, qword [rsp+8*4]
-	mov r11, qword [rsp+8*241]
-	mov r10,r11
-	mov qword [rsp+8*4],r10
-	mov qword [rsp+8*241],r11
 	mov r10, qword [rsp+8*242]
 	mov r11, qword [rsp+8*17]
 	mov r10,r11
@@ -2819,13 +2759,13 @@ L_286:
 	mov r10,r11
 	mov r12,1
 	add r10,r12
+	mov r13, qword [rsp+8*247]
+	mov r14, qword [rsp+8*33]
+	mov r13,r14
 	mov qword [rsp+8*246],r10
 	mov qword [rsp+8*13],r11
-	mov r10, qword [rsp+8*247]
-	mov r11, qword [rsp+8*33]
-	mov r10,r11
-	mov qword [rsp+8*247],r10
-	mov qword [rsp+8*33],r11
+	mov qword [rsp+8*247],r13
+	mov qword [rsp+8*33],r14
 	mov     rsi, [rsp+8*11]
 	mov     rdi, [rsp+8*247]
 	call    address
@@ -2913,13 +2853,11 @@ L_288:
 	mov r10,r11
 	mov r12,2
 	add r10,r12
+	mov r13, qword [rsp+8*11]
+	mov r13,r10
 	mov qword [rsp+8*255],r10
 	mov qword [rsp+8*254],r11
-	mov r10, qword [rsp+8*11]
-	mov r11, qword [rsp+8*255]
-	mov r10,r11
-	mov qword [rsp+8*11],r10
-	mov qword [rsp+8*255],r11
+	mov qword [rsp+8*11],r13
 	mov r10, qword [rsp+8*256]
 	mov r11, qword [rsp+8*26]
 	mov r10,r11
@@ -2939,13 +2877,11 @@ L_288:
 	mov r10,r11
 	mov r12,1
 	add r10,r12
+	mov r13, qword [rsp+8*12]
+	mov r13,r10
 	mov qword [rsp+8*259],r10
 	mov qword [rsp+8*258],r11
-	mov r10, qword [rsp+8*12]
-	mov r11, qword [rsp+8*259]
-	mov r10,r11
-	mov qword [rsp+8*12],r10
-	mov qword [rsp+8*259],r11
+	mov qword [rsp+8*12],r13
 	mov r10, qword [arg+8*1]
 	mov r11, qword [rsp+8*2]
 	mov r10,r11
@@ -3038,13 +2974,9 @@ L_296:
 	mov r10,r11
 	mov r12,1
 	add r10,r12
+	mov r11,r10
 	mov qword [rsp+8*268],r10
 	mov qword [rsp+8*4],r11
-	mov r10, qword [rsp+8*4]
-	mov r11, qword [rsp+8*268]
-	mov r10,r11
-	mov qword [rsp+8*4],r10
-	mov qword [rsp+8*268],r11
 	mov r10, qword [rsp+8*269]
 	mov r11, qword [rsp+8*17]
 	mov r10,r11
@@ -3078,13 +3010,13 @@ L_296:
 	mov r10,r11
 	mov r12,1
 	add r10,r12
+	mov r13, qword [rsp+8*274]
+	mov r14, qword [rsp+8*33]
+	mov r13,r14
 	mov qword [rsp+8*273],r10
 	mov qword [rsp+8*13],r11
-	mov r10, qword [rsp+8*274]
-	mov r11, qword [rsp+8*33]
-	mov r10,r11
-	mov qword [rsp+8*274],r10
-	mov qword [rsp+8*33],r11
+	mov qword [rsp+8*274],r13
+	mov qword [rsp+8*33],r14
 	mov     rsi, [rsp+8*11]
 	mov     rdi, [rsp+8*274]
 	call    address
@@ -3173,13 +3105,9 @@ L_306:
 	mov r10,r11
 	mov r12,1
 	add r10,r12
+	mov r11,r10
 	mov qword [rsp+8*280],r10
 	mov qword [rsp+8*3],r11
-	mov r10, qword [rsp+8*3]
-	mov r11, qword [rsp+8*280]
-	mov r10,r11
-	mov qword [rsp+8*3],r10
-	mov qword [rsp+8*280],r11
 	jmp L_223
 	
 L_224:

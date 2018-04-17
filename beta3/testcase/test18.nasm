@@ -883,13 +883,13 @@ L_138:
 	mov r10,r11
 	mov r12,1
 	sub r10,r12
+	mov r13, qword [rsp+8*24]
+	mov r14, qword [rsp+8*7]
+	mov r13,r14
 	mov qword [rsp+8*23],r10
 	mov qword [rsp+8*10],r11
-	mov r10, qword [rsp+8*24]
-	mov r11, qword [rsp+8*7]
-	mov r10,r11
-	mov qword [rsp+8*24],r10
-	mov qword [rsp+8*7],r11
+	mov qword [rsp+8*24],r13
+	mov qword [rsp+8*7],r14
 	mov     rsi, [rsp+8*23]
 	mov     rdi, [rsp+8*24]
 	call    address
@@ -922,13 +922,13 @@ L_138:
 	mov r10,r11
 	mov r12,1
 	sub r10,r12
+	mov r13, qword [rsp+8*28]
+	mov r14, qword [rsp+8*7]
+	mov r13,r14
 	mov qword [rsp+8*27],r10
 	mov qword [rsp+8*12],r11
-	mov r10, qword [rsp+8*28]
-	mov r11, qword [rsp+8*7]
-	mov r10,r11
-	mov qword [rsp+8*28],r10
-	mov qword [rsp+8*7],r11
+	mov qword [rsp+8*28],r13
+	mov qword [rsp+8*7],r14
 	mov     rsi, [rsp+8*10]
 	mov     rdi, [rsp+8*28]
 	call    address
@@ -961,21 +961,21 @@ L_138:
 	mov r10,r11
 	mov r12, qword [rsp+8*30]
 	add r10,r12
+	mov r13, qword [rsp+8*32]
+	mov r14, qword [rsp+8*14]
+	mov r13,r14
+	mov r15,1
+	sub r13,r15
+	mov qword [rsp+8*14],r14
+	mov r14, qword [rsp+8*33]
+	mov r15, qword [rsp+8*7]
+	mov r14,r15
 	mov qword [rsp+8*31],r10
 	mov qword [rsp+8*26],r11
 	mov qword [rsp+8*30],r12
-	mov r10, qword [rsp+8*32]
-	mov r11, qword [rsp+8*14]
-	mov r10,r11
-	mov r12,1
-	sub r10,r12
-	mov qword [rsp+8*32],r10
-	mov qword [rsp+8*14],r11
-	mov r10, qword [rsp+8*33]
-	mov r11, qword [rsp+8*7]
-	mov r10,r11
-	mov qword [rsp+8*33],r10
-	mov qword [rsp+8*7],r11
+	mov qword [rsp+8*32],r13
+	mov qword [rsp+8*33],r14
+	mov qword [rsp+8*7],r15
 	mov     rsi, [rsp+8*10]
 	mov     rdi, [rsp+8*33]
 	call    address
@@ -1008,14 +1008,14 @@ L_138:
 	mov r10,r11
 	mov r12, qword [rsp+8*35]
 	add r10,r12
+	mov r13, qword [rsp+8*37]
+	mov r14, qword [rsp+8*7]
+	mov r13,r14
 	mov qword [rsp+8*36],r10
 	mov qword [rsp+8*31],r11
 	mov qword [rsp+8*35],r12
-	mov r10, qword [rsp+8*37]
-	mov r11, qword [rsp+8*7]
-	mov r10,r11
-	mov qword [rsp+8*37],r10
-	mov qword [rsp+8*7],r11
+	mov qword [rsp+8*37],r13
+	mov qword [rsp+8*7],r14
 	mov     rsi, [rsp+8*10]
 	mov     rdi, [rsp+8*37]
 	call    address

@@ -658,12 +658,12 @@ main:
 	mov r10,r10
 	mov r11,1
 	add r10,r11
+	mov r12, qword [rsp+8*4]
+	mov r13, qword [rsp+8*3]
+	mov r12,r13
 	mov qword [rsp+8*2],r10
-	mov r10, qword [rsp+8*4]
-	mov r11, qword [rsp+8*3]
-	mov r10,r11
-	mov qword [rsp+8*4],r10
-	mov qword [rsp+8*3],r11
+	mov qword [rsp+8*4],r12
+	mov qword [rsp+8*3],r13
 	mov r10, qword [rsp+8*5]
 	mov r11, qword [rsp+8*4]
 	mov r10,r11

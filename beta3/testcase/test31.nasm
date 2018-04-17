@@ -752,13 +752,11 @@ L_336:
 	mov r10,r11
 	mov r12,1
 	sub r10,r12
+	mov r13, qword [arg+8*0]
+	mov r13,r10
 	mov qword [rsp+8*12],r10
 	mov qword [rsp+8*10],r11
-	mov r10, qword [arg+8*0]
-	mov r11, qword [rsp+8*12]
-	mov r10,r11
-	mov qword [arg+8*0],r10
-	mov qword [rsp+8*12],r11
+	mov qword [arg+8*0],r13
 	call fib
 	mov r10, qword [rsp+8*13]
 	mov r10 , rax
@@ -767,14 +765,12 @@ L_336:
 	mov r11,r12
 	mov r13,2
 	sub r11,r13
+	mov r14, qword [arg+8*0]
+	mov r14,r11
 	mov qword [rsp+8*13],r10
 	mov qword [rsp+8*14],r11
 	mov qword [rsp+8*10],r12
-	mov r10, qword [arg+8*0]
-	mov r11, qword [rsp+8*14]
-	mov r10,r11
-	mov qword [arg+8*0],r10
-	mov qword [rsp+8*14],r11
+	mov qword [arg+8*0],r14
 	call fib
 	mov r10, qword [rsp+8*15]
 	mov r10 , rax
@@ -782,12 +778,10 @@ L_336:
 	mov r12, qword [rsp+8*13]
 	mov r11,r12
 	add r11,r10
+	mov rax,r11
 	mov qword [rsp+8*15],r10
 	mov qword [rsp+8*16],r11
 	mov qword [rsp+8*13],r12
-	mov r10, qword [rsp+8*16]
-	mov rax,r10
-	mov qword [rsp+8*16],r10
 	leave
 	ret
 	mov r10,0

@@ -700,14 +700,12 @@ L_2:
 	mov r10,r11
 	mov r12, qword [rsp+8*3]
 	add r10,r12
+	mov r13, qword [rsp+8*10]
+	mov r13,r10
 	mov qword [rsp+8*9],r10
 	mov qword [rsp+8*2],r11
 	mov qword [rsp+8*3],r12
-	mov r10, qword [rsp+8*10]
-	mov r11, qword [rsp+8*9]
-	mov r10,r11
-	mov qword [rsp+8*10],r10
-	mov qword [rsp+8*9],r11
+	mov qword [rsp+8*10],r13
 	mov r10, qword [rsp+8*2]
 	mov r11, qword [rsp+8*3]
 	mov r10,r11

@@ -757,13 +757,13 @@ L_519:
 	mov r10,r11
 	mov r12,2
 	sub r10,r12
+	mov r13, qword [rsp+8*17]
+	mov r14, qword [gbl+8*5]
+	mov r13,r14
 	mov qword [rsp+8*16],r10
 	mov qword [rsp+8*2],r11
-	mov r10, qword [rsp+8*17]
-	mov r11, qword [gbl+8*5]
-	mov r10,r11
-	mov qword [rsp+8*17],r10
-	mov qword [gbl+8*5],r11
+	mov qword [rsp+8*17],r13
+	mov qword [gbl+8*5],r14
 	mov     rsi, [rsp+8*16]
 	mov     rdi, [rsp+8*17]
 	call    address
@@ -793,19 +793,17 @@ L_520:
 	mov r10,r10
 	mov r11,1
 	add r10,r11
+	mov r12, qword [rsp+8*22]
+	mov r13, qword [rsp+8*2]
+	mov r12,r13
+	mov r14,2
+	sub r12,r14
+	mov r15, qword [arg+8*0]
+	mov r15,r12
 	mov qword [gbl+8*20],r10
-	mov r10, qword [rsp+8*22]
-	mov r11, qword [rsp+8*2]
-	mov r10,r11
-	mov r12,2
-	sub r10,r12
-	mov qword [rsp+8*22],r10
-	mov qword [rsp+8*2],r11
-	mov r10, qword [arg+8*0]
-	mov r11, qword [rsp+8*22]
-	mov r10,r11
-	mov qword [arg+8*0],r10
-	mov qword [rsp+8*22],r11
+	mov qword [rsp+8*22],r12
+	mov qword [rsp+8*2],r13
+	mov qword [arg+8*0],r15
 	mov r10, qword [rsp+8*24]
 	mov r11, qword [arg+8*0]
 	mov r10,r11

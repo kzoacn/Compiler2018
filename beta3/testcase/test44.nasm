@@ -877,14 +877,12 @@ main:
 	mov r10,r11
 	mov r12, qword [rsp+8*33]
 	sub r10,r12
+	mov r13, qword [arg+8*0]
+	mov r13,r10
 	mov qword [rsp+8*34],r10
 	mov qword [rsp+8*30],r11
 	mov qword [rsp+8*33],r12
-	mov r10, qword [arg+8*0]
-	mov r11, qword [rsp+8*34]
-	mov r10,r11
-	mov qword [arg+8*0],r10
-	mov qword [rsp+8*34],r11
+	mov qword [arg+8*0],r13
 	mov r10, qword [rsp+8*35]
 	mov r11, qword [arg+8*0]
 	mov r10,r11

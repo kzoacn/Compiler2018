@@ -649,13 +649,11 @@ main:
 	mov r11,r12
 	mov r13,3
 	add r11,r13
+	mov r14, qword [arg+8*0]
+	mov r14,r11
 	mov qword [rsp+8*1],r10
 	mov qword [rsp+8*2],r11
-	mov r10, qword [arg+8*0]
-	mov r11, qword [rsp+8*2]
-	mov r10,r11
-	mov qword [arg+8*0],r10
-	mov qword [rsp+8*2],r11
+	mov qword [arg+8*0],r14
 	mov r10, qword [rsp+8*4]
 	mov r11, qword [arg+8*0]
 	mov r10,r11

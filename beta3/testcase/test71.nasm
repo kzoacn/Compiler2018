@@ -20187,12 +20187,10 @@ getcount:
 	mov r10,r10
 	mov r11,1
 	add r10,r11
+	mov r12, qword [rsp+8*2571]
+	mov [r12],r10
 	mov qword [rsp+8*2572],r10
-	mov r10, qword [rsp+8*2571]
-	mov r11, qword [rsp+8*2572]
-	mov [r10],r11
-	mov qword [rsp+8*2571],r10
-	mov qword [rsp+8*2572],r11
+	mov qword [rsp+8*2571],r12
 	mov r10, qword [rsp+8*2572]
 	mov rax,r10
 	mov qword [rsp+8*2572],r10

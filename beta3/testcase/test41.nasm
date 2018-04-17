@@ -716,20 +716,14 @@ L_425:
 	mov r10,r10
 	mov r11,1
 	add r10,r11
+	mov r12, qword [rsp+8*11]
+	mov r13, qword [rsp+8*8]
+	mov r12,r13
+	add r12,r10
+	mov r13,r12
 	mov qword [rsp+8*9],r10
-	mov r10, qword [rsp+8*11]
-	mov r11, qword [rsp+8*8]
-	mov r10,r11
-	mov r12, qword [rsp+8*9]
-	add r10,r12
-	mov qword [rsp+8*11],r10
-	mov qword [rsp+8*8],r11
-	mov qword [rsp+8*9],r12
-	mov r10, qword [rsp+8*8]
-	mov r11, qword [rsp+8*11]
-	mov r10,r11
-	mov qword [rsp+8*8],r10
-	mov qword [rsp+8*11],r11
+	mov qword [rsp+8*11],r12
+	mov qword [rsp+8*8],r13
 	mov r10, qword [rsp+8*9]
 	mov r11, qword [rsp+8*7]
 	cmp r10,r11
@@ -755,13 +749,11 @@ L_428:
 	mov r10,r11
 	mov r12,1
 	sub r10,r12
+	mov r13, qword [arg+8*0]
+	mov r13,r10
 	mov qword [rsp+8*13],r10
 	mov qword [rsp+8*7],r11
-	mov r10, qword [arg+8*0]
-	mov r11, qword [rsp+8*13]
-	mov r10,r11
-	mov qword [arg+8*0],r10
-	mov qword [rsp+8*13],r11
+	mov qword [arg+8*0],r13
 	call dfs
 	mov r10, qword [rsp+8*14]
 	mov r10 , rax

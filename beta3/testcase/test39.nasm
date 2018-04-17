@@ -723,17 +723,15 @@ L_375:
 	mov r10,r10
 	mov r11,1
 	add r10,r11
+	mov r12, qword [rsp+8*8]
+	mov r12,r12
+	mov r13,1
+	sub r12,r13
+	mov r14, qword [arg+8*0]
+	mov r14,r12
 	mov qword [gbl+8*4],r10
-	mov r10, qword [rsp+8*8]
-	mov r10,r10
-	mov r11,1
-	sub r10,r11
-	mov qword [rsp+8*8],r10
-	mov r10, qword [arg+8*0]
-	mov r11, qword [rsp+8*8]
-	mov r10,r11
-	mov qword [arg+8*0],r10
-	mov qword [rsp+8*8],r11
+	mov qword [rsp+8*8],r12
+	mov qword [arg+8*0],r14
 	call f
 	mov r10, qword [rsp+8*11]
 	mov r10 , rax
@@ -747,9 +745,9 @@ L_375:
 	mov r10,r10
 	mov r11,1
 	add r10,r11
+	mov r12,0
+	mov rax,r12
 	mov qword [gbl+8*4],r10
-	mov r10,0
-	mov rax,r10
 	leave
 	ret
 	

@@ -666,12 +666,12 @@ main:
 	mov r10,r10
 	mov r11,1
 	sub r10,r11
+	mov r12, qword [arg+8*0]
+	mov r13, qword [rsp+8*4]
+	mov r12,r13
 	mov qword [gbl+8*2],r10
-	mov r10, qword [arg+8*0]
-	mov r11, qword [rsp+8*4]
-	mov r10,r11
-	mov qword [arg+8*0],r10
-	mov qword [rsp+8*4],r11
+	mov qword [arg+8*0],r12
+	mov qword [rsp+8*4],r13
 	mov r10, qword [rsp+8*6]
 	mov r11, qword [arg+8*0]
 	mov r10,r11
