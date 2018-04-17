@@ -642,69 +642,57 @@ main:
 	mov    rbp, rsp
 	sub    rsp, 152
 	call global_init
-	mov r10, qword [rsp+8*1]
-	mov r10 , rax
-	mov qword [rsp+8*1],r10
+	mov r8, qword [rsp+8*1]
+	mov r8 , rax
+	mov qword [rsp+8*1],r8
 	mov     rdi, 10
 	call    mallocArray
 	mov     qword [rsp+8*2], rax
-	mov r10, qword [rsp+8*3]
-	mov r11, qword [rsp+8*2]
-	mov r10,r11
-	mov qword [rsp+8*3],r10
-	mov qword [rsp+8*2],r11
+	mov r8, qword [rsp+8*3]
+	mov r9, qword [rsp+8*2]
+	mov r8,r9
 	mov r10, qword [rsp+8*4]
-	mov r11, qword [rsp+8*3]
-	mov r10,r11
-	mov qword [rsp+8*4],r10
-	mov qword [rsp+8*3],r11
-	mov r10, qword [arg+8*15]
-	mov r11, qword [rsp+8*4]
-	mov r10,r11
-	mov qword [arg+8*15],r10
-	mov qword [rsp+8*4],r11
-	mov r10, qword [rsp+8*6]
+	mov r10,r8
 	mov r11, qword [arg+8*15]
-	mov r10,r11
-	mov qword [rsp+8*6],r10
+	mov r11,r10
+	mov r12, qword [rsp+8*6]
+	mov r12,r11
+	mov r12, [r12]
+	mov qword [rsp+8*3],r8
+	mov qword [rsp+8*2],r9
+	mov qword [rsp+8*4],r10
 	mov qword [arg+8*15],r11
-	mov r10, qword [rsp+8*6]
-	mov r10, [r10]
-	mov qword [rsp+8*6],r10
-	mov r10, qword [arg+8*0]
-	mov r11, qword [rsp+8*6]
-	mov r10,r11
-	mov qword [arg+8*0],r10
-	mov qword [rsp+8*6],r11
+	mov qword [rsp+8*6],r12
+	mov r8, qword [arg+8*0]
+	mov r9, qword [rsp+8*6]
+	mov r8,r9
 	mov r10, qword [rsp+8*8]
-	mov r11, qword [arg+8*0]
-	mov r10,r11
+	mov r10,r8
+	mov qword [arg+8*0],r8
+	mov qword [rsp+8*6],r9
 	mov qword [rsp+8*8],r10
-	mov qword [arg+8*0],r11
 	mov     rdi, [rsp+8*8]
 	call    toString
 	mov     qword[rsp+8*9], rax
-	mov r10, qword [arg+8*0]
-	mov r11, qword [rsp+8*9]
-	mov r10,r11
-	mov qword [arg+8*0],r10
-	mov qword [rsp+8*9],r11
+	mov r8, qword [arg+8*0]
+	mov r9, qword [rsp+8*9]
+	mov r8,r9
 	mov r10, qword [rsp+8*10]
-	mov r11, qword [arg+8*0]
-	mov r10,r11
+	mov r10,r8
+	mov qword [arg+8*0],r8
+	mov qword [rsp+8*9],r9
 	mov qword [rsp+8*10],r10
-	mov qword [arg+8*0],r11
 	mov rdi, formatln
 	mov rsi,[rsp+8*10] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov r10,0
-	mov rax,r10
+	mov r8,0
+	mov rax,r8
 	leave
 	ret
-	mov r10,0
-	mov rax,r10
+	mov r8,0
+	mov rax,r8
 	leave
 	ret
 	jmp QED
@@ -713,9 +701,9 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 152
-	mov r10, qword [rsp+8*11]
-	mov rax,r10
-	mov qword [rsp+8*11],r10
+	mov r8, qword [rsp+8*11]
+	mov rax,r8
+	mov qword [rsp+8*11],r8
 	leave
 	ret
 	
