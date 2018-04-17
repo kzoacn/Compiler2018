@@ -674,12 +674,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*7]
 	mov r10 , rax
+	mov r11, qword [rsp+8*8]
+	mov r11,r10
 	mov qword [rsp+8*7],r10
-	mov r10, qword [rsp+8*8]
-	mov r11, qword [rsp+8*7]
-	mov r10,r11
-	mov qword [rsp+8*8],r10
-	mov qword [rsp+8*7],r11
+	mov qword [rsp+8*8],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -688,12 +686,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*9]
 	mov r10 , rax
+	mov r11, qword [rsp+8*10]
+	mov r11,r10
 	mov qword [rsp+8*9],r10
-	mov r10, qword [rsp+8*10]
-	mov r11, qword [rsp+8*9]
-	mov r10,r11
-	mov qword [rsp+8*10],r10
-	mov qword [rsp+8*9],r11
+	mov qword [rsp+8*10],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -702,12 +698,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*11]
 	mov r10 , rax
+	mov r11, qword [rsp+8*12]
+	mov r11,r10
 	mov qword [rsp+8*11],r10
-	mov r10, qword [rsp+8*12]
-	mov r11, qword [rsp+8*11]
-	mov r10,r11
-	mov qword [rsp+8*12],r10
-	mov qword [rsp+8*11],r11
+	mov qword [rsp+8*12],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -716,12 +710,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*13]
 	mov r10 , rax
+	mov r11, qword [rsp+8*14]
+	mov r11,r10
 	mov qword [rsp+8*13],r10
-	mov r10, qword [rsp+8*14]
-	mov r11, qword [rsp+8*13]
-	mov r10,r11
-	mov qword [rsp+8*14],r10
-	mov qword [rsp+8*13],r11
+	mov qword [rsp+8*14],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -730,12 +722,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*15]
 	mov r10 , rax
+	mov r11, qword [rsp+8*16]
+	mov r11,r10
 	mov qword [rsp+8*15],r10
-	mov r10, qword [rsp+8*16]
-	mov r11, qword [rsp+8*15]
-	mov r10,r11
-	mov qword [rsp+8*16],r10
-	mov qword [rsp+8*15],r11
+	mov qword [rsp+8*16],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -744,12 +734,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*17]
 	mov r10 , rax
+	mov r11, qword [rsp+8*18]
+	mov r11,r10
 	mov qword [rsp+8*17],r10
-	mov r10, qword [rsp+8*18]
-	mov r11, qword [rsp+8*17]
-	mov r10,r11
-	mov qword [rsp+8*18],r10
-	mov qword [rsp+8*17],r11
+	mov qword [rsp+8*18],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -758,12 +746,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*19]
 	mov r10 , rax
+	mov r11, qword [rsp+8*20]
+	mov r11,r10
 	mov qword [rsp+8*19],r10
-	mov r10, qword [rsp+8*20]
-	mov r11, qword [rsp+8*19]
-	mov r10,r11
-	mov qword [rsp+8*20],r10
-	mov qword [rsp+8*19],r11
+	mov qword [rsp+8*20],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -772,12 +758,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*21]
 	mov r10 , rax
+	mov r11, qword [rsp+8*22]
+	mov r11,r10
 	mov qword [rsp+8*21],r10
-	mov r10, qword [rsp+8*22]
-	mov r11, qword [rsp+8*21]
-	mov r10,r11
-	mov qword [rsp+8*22],r10
-	mov qword [rsp+8*21],r11
+	mov qword [rsp+8*22],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -786,12 +770,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*23]
 	mov r10 , rax
+	mov r11, qword [rsp+8*24]
+	mov r11,r10
 	mov qword [rsp+8*23],r10
-	mov r10, qword [rsp+8*24]
-	mov r11, qword [rsp+8*23]
-	mov r10,r11
-	mov qword [rsp+8*24],r10
-	mov qword [rsp+8*23],r11
+	mov qword [rsp+8*24],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -800,12 +782,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*25]
 	mov r10 , rax
+	mov r11, qword [rsp+8*26]
+	mov r11,r10
 	mov qword [rsp+8*25],r10
-	mov r10, qword [rsp+8*26]
-	mov r11, qword [rsp+8*25]
-	mov r10,r11
-	mov qword [rsp+8*26],r10
-	mov qword [rsp+8*25],r11
+	mov qword [rsp+8*26],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -814,12 +794,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*27]
 	mov r10 , rax
+	mov r11, qword [rsp+8*28]
+	mov r11,r10
 	mov qword [rsp+8*27],r10
-	mov r10, qword [rsp+8*28]
-	mov r11, qword [rsp+8*27]
-	mov r10,r11
-	mov qword [rsp+8*28],r10
-	mov qword [rsp+8*27],r11
+	mov qword [rsp+8*28],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -828,12 +806,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*29]
 	mov r10 , rax
+	mov r11, qword [rsp+8*30]
+	mov r11,r10
 	mov qword [rsp+8*29],r10
-	mov r10, qword [rsp+8*30]
-	mov r11, qword [rsp+8*29]
-	mov r10,r11
-	mov qword [rsp+8*30],r10
-	mov qword [rsp+8*29],r11
+	mov qword [rsp+8*30],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -842,12 +818,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*31]
 	mov r10 , rax
+	mov r11, qword [rsp+8*32]
+	mov r11,r10
 	mov qword [rsp+8*31],r10
-	mov r10, qword [rsp+8*32]
-	mov r11, qword [rsp+8*31]
-	mov r10,r11
-	mov qword [rsp+8*32],r10
-	mov qword [rsp+8*31],r11
+	mov qword [rsp+8*32],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -856,12 +830,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*33]
 	mov r10 , rax
+	mov r11, qword [rsp+8*34]
+	mov r11,r10
 	mov qword [rsp+8*33],r10
-	mov r10, qword [rsp+8*34]
-	mov r11, qword [rsp+8*33]
-	mov r10,r11
-	mov qword [rsp+8*34],r10
-	mov qword [rsp+8*33],r11
+	mov qword [rsp+8*34],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -870,12 +842,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*35]
 	mov r10 , rax
+	mov r11, qword [rsp+8*36]
+	mov r11,r10
 	mov qword [rsp+8*35],r10
-	mov r10, qword [rsp+8*36]
-	mov r11, qword [rsp+8*35]
-	mov r10,r11
-	mov qword [rsp+8*36],r10
-	mov qword [rsp+8*35],r11
+	mov qword [rsp+8*36],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -884,12 +854,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*37]
 	mov r10 , rax
+	mov r11, qword [rsp+8*38]
+	mov r11,r10
 	mov qword [rsp+8*37],r10
-	mov r10, qword [rsp+8*38]
-	mov r11, qword [rsp+8*37]
-	mov r10,r11
-	mov qword [rsp+8*38],r10
-	mov qword [rsp+8*37],r11
+	mov qword [rsp+8*38],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -898,12 +866,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*39]
 	mov r10 , rax
+	mov r11, qword [rsp+8*40]
+	mov r11,r10
 	mov qword [rsp+8*39],r10
-	mov r10, qword [rsp+8*40]
-	mov r11, qword [rsp+8*39]
-	mov r10,r11
-	mov qword [rsp+8*40],r10
-	mov qword [rsp+8*39],r11
+	mov qword [rsp+8*40],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -912,12 +878,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*41]
 	mov r10 , rax
+	mov r11, qword [rsp+8*42]
+	mov r11,r10
 	mov qword [rsp+8*41],r10
-	mov r10, qword [rsp+8*42]
-	mov r11, qword [rsp+8*41]
-	mov r10,r11
-	mov qword [rsp+8*42],r10
-	mov qword [rsp+8*41],r11
+	mov qword [rsp+8*42],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -926,12 +890,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*43]
 	mov r10 , rax
+	mov r11, qword [rsp+8*44]
+	mov r11,r10
 	mov qword [rsp+8*43],r10
-	mov r10, qword [rsp+8*44]
-	mov r11, qword [rsp+8*43]
-	mov r10,r11
-	mov qword [rsp+8*44],r10
-	mov qword [rsp+8*43],r11
+	mov qword [rsp+8*44],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -940,12 +902,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*45]
 	mov r10 , rax
+	mov r11, qword [rsp+8*46]
+	mov r11,r10
 	mov qword [rsp+8*45],r10
-	mov r10, qword [rsp+8*46]
-	mov r11, qword [rsp+8*45]
-	mov r10,r11
-	mov qword [rsp+8*46],r10
-	mov qword [rsp+8*45],r11
+	mov qword [rsp+8*46],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -954,12 +914,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*47]
 	mov r10 , rax
+	mov r11, qword [rsp+8*48]
+	mov r11,r10
 	mov qword [rsp+8*47],r10
-	mov r10, qword [rsp+8*48]
-	mov r11, qword [rsp+8*47]
-	mov r10,r11
-	mov qword [rsp+8*48],r10
-	mov qword [rsp+8*47],r11
+	mov qword [rsp+8*48],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -968,12 +926,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*49]
 	mov r10 , rax
+	mov r11, qword [rsp+8*50]
+	mov r11,r10
 	mov qword [rsp+8*49],r10
-	mov r10, qword [rsp+8*50]
-	mov r11, qword [rsp+8*49]
-	mov r10,r11
-	mov qword [rsp+8*50],r10
-	mov qword [rsp+8*49],r11
+	mov qword [rsp+8*50],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -982,12 +938,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*51]
 	mov r10 , rax
+	mov r11, qword [rsp+8*52]
+	mov r11,r10
 	mov qword [rsp+8*51],r10
-	mov r10, qword [rsp+8*52]
-	mov r11, qword [rsp+8*51]
-	mov r10,r11
-	mov qword [rsp+8*52],r10
-	mov qword [rsp+8*51],r11
+	mov qword [rsp+8*52],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -996,12 +950,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*53]
 	mov r10 , rax
+	mov r11, qword [rsp+8*54]
+	mov r11,r10
 	mov qword [rsp+8*53],r10
-	mov r10, qword [rsp+8*54]
-	mov r11, qword [rsp+8*53]
-	mov r10,r11
-	mov qword [rsp+8*54],r10
-	mov qword [rsp+8*53],r11
+	mov qword [rsp+8*54],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1010,12 +962,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*55]
 	mov r10 , rax
+	mov r11, qword [rsp+8*56]
+	mov r11,r10
 	mov qword [rsp+8*55],r10
-	mov r10, qword [rsp+8*56]
-	mov r11, qword [rsp+8*55]
-	mov r10,r11
-	mov qword [rsp+8*56],r10
-	mov qword [rsp+8*55],r11
+	mov qword [rsp+8*56],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1024,12 +974,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*57]
 	mov r10 , rax
+	mov r11, qword [rsp+8*58]
+	mov r11,r10
 	mov qword [rsp+8*57],r10
-	mov r10, qword [rsp+8*58]
-	mov r11, qword [rsp+8*57]
-	mov r10,r11
-	mov qword [rsp+8*58],r10
-	mov qword [rsp+8*57],r11
+	mov qword [rsp+8*58],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1038,12 +986,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*59]
 	mov r10 , rax
+	mov r11, qword [rsp+8*60]
+	mov r11,r10
 	mov qword [rsp+8*59],r10
-	mov r10, qword [rsp+8*60]
-	mov r11, qword [rsp+8*59]
-	mov r10,r11
-	mov qword [rsp+8*60],r10
-	mov qword [rsp+8*59],r11
+	mov qword [rsp+8*60],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1052,12 +998,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*61]
 	mov r10 , rax
+	mov r11, qword [rsp+8*62]
+	mov r11,r10
 	mov qword [rsp+8*61],r10
-	mov r10, qword [rsp+8*62]
-	mov r11, qword [rsp+8*61]
-	mov r10,r11
-	mov qword [rsp+8*62],r10
-	mov qword [rsp+8*61],r11
+	mov qword [rsp+8*62],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1066,12 +1010,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*63]
 	mov r10 , rax
+	mov r11, qword [rsp+8*64]
+	mov r11,r10
 	mov qword [rsp+8*63],r10
-	mov r10, qword [rsp+8*64]
-	mov r11, qword [rsp+8*63]
-	mov r10,r11
-	mov qword [rsp+8*64],r10
-	mov qword [rsp+8*63],r11
+	mov qword [rsp+8*64],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1080,12 +1022,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*65]
 	mov r10 , rax
+	mov r11, qword [rsp+8*66]
+	mov r11,r10
 	mov qword [rsp+8*65],r10
-	mov r10, qword [rsp+8*66]
-	mov r11, qword [rsp+8*65]
-	mov r10,r11
-	mov qword [rsp+8*66],r10
-	mov qword [rsp+8*65],r11
+	mov qword [rsp+8*66],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1094,12 +1034,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*67]
 	mov r10 , rax
+	mov r11, qword [rsp+8*68]
+	mov r11,r10
 	mov qword [rsp+8*67],r10
-	mov r10, qword [rsp+8*68]
-	mov r11, qword [rsp+8*67]
-	mov r10,r11
-	mov qword [rsp+8*68],r10
-	mov qword [rsp+8*67],r11
+	mov qword [rsp+8*68],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1108,12 +1046,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*69]
 	mov r10 , rax
+	mov r11, qword [rsp+8*70]
+	mov r11,r10
 	mov qword [rsp+8*69],r10
-	mov r10, qword [rsp+8*70]
-	mov r11, qword [rsp+8*69]
-	mov r10,r11
-	mov qword [rsp+8*70],r10
-	mov qword [rsp+8*69],r11
+	mov qword [rsp+8*70],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1122,12 +1058,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*71]
 	mov r10 , rax
+	mov r11, qword [rsp+8*72]
+	mov r11,r10
 	mov qword [rsp+8*71],r10
-	mov r10, qword [rsp+8*72]
-	mov r11, qword [rsp+8*71]
-	mov r10,r11
-	mov qword [rsp+8*72],r10
-	mov qword [rsp+8*71],r11
+	mov qword [rsp+8*72],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1136,12 +1070,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*73]
 	mov r10 , rax
+	mov r11, qword [rsp+8*74]
+	mov r11,r10
 	mov qword [rsp+8*73],r10
-	mov r10, qword [rsp+8*74]
-	mov r11, qword [rsp+8*73]
-	mov r10,r11
-	mov qword [rsp+8*74],r10
-	mov qword [rsp+8*73],r11
+	mov qword [rsp+8*74],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1150,12 +1082,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*75]
 	mov r10 , rax
+	mov r11, qword [rsp+8*76]
+	mov r11,r10
 	mov qword [rsp+8*75],r10
-	mov r10, qword [rsp+8*76]
-	mov r11, qword [rsp+8*75]
-	mov r10,r11
-	mov qword [rsp+8*76],r10
-	mov qword [rsp+8*75],r11
+	mov qword [rsp+8*76],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1164,12 +1094,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*77]
 	mov r10 , rax
+	mov r11, qword [rsp+8*78]
+	mov r11,r10
 	mov qword [rsp+8*77],r10
-	mov r10, qword [rsp+8*78]
-	mov r11, qword [rsp+8*77]
-	mov r10,r11
-	mov qword [rsp+8*78],r10
-	mov qword [rsp+8*77],r11
+	mov qword [rsp+8*78],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1178,12 +1106,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*79]
 	mov r10 , rax
+	mov r11, qword [rsp+8*80]
+	mov r11,r10
 	mov qword [rsp+8*79],r10
-	mov r10, qword [rsp+8*80]
-	mov r11, qword [rsp+8*79]
-	mov r10,r11
-	mov qword [rsp+8*80],r10
-	mov qword [rsp+8*79],r11
+	mov qword [rsp+8*80],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1192,12 +1118,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*81]
 	mov r10 , rax
+	mov r11, qword [rsp+8*82]
+	mov r11,r10
 	mov qword [rsp+8*81],r10
-	mov r10, qword [rsp+8*82]
-	mov r11, qword [rsp+8*81]
-	mov r10,r11
-	mov qword [rsp+8*82],r10
-	mov qword [rsp+8*81],r11
+	mov qword [rsp+8*82],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1206,12 +1130,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*83]
 	mov r10 , rax
+	mov r11, qword [rsp+8*84]
+	mov r11,r10
 	mov qword [rsp+8*83],r10
-	mov r10, qword [rsp+8*84]
-	mov r11, qword [rsp+8*83]
-	mov r10,r11
-	mov qword [rsp+8*84],r10
-	mov qword [rsp+8*83],r11
+	mov qword [rsp+8*84],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1220,12 +1142,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*85]
 	mov r10 , rax
+	mov r11, qword [rsp+8*86]
+	mov r11,r10
 	mov qword [rsp+8*85],r10
-	mov r10, qword [rsp+8*86]
-	mov r11, qword [rsp+8*85]
-	mov r10,r11
-	mov qword [rsp+8*86],r10
-	mov qword [rsp+8*85],r11
+	mov qword [rsp+8*86],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1234,12 +1154,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*87]
 	mov r10 , rax
+	mov r11, qword [rsp+8*88]
+	mov r11,r10
 	mov qword [rsp+8*87],r10
-	mov r10, qword [rsp+8*88]
-	mov r11, qword [rsp+8*87]
-	mov r10,r11
-	mov qword [rsp+8*88],r10
-	mov qword [rsp+8*87],r11
+	mov qword [rsp+8*88],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1248,12 +1166,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*89]
 	mov r10 , rax
+	mov r11, qword [rsp+8*90]
+	mov r11,r10
 	mov qword [rsp+8*89],r10
-	mov r10, qword [rsp+8*90]
-	mov r11, qword [rsp+8*89]
-	mov r10,r11
-	mov qword [rsp+8*90],r10
-	mov qword [rsp+8*89],r11
+	mov qword [rsp+8*90],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1262,12 +1178,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*91]
 	mov r10 , rax
+	mov r11, qword [rsp+8*92]
+	mov r11,r10
 	mov qword [rsp+8*91],r10
-	mov r10, qword [rsp+8*92]
-	mov r11, qword [rsp+8*91]
-	mov r10,r11
-	mov qword [rsp+8*92],r10
-	mov qword [rsp+8*91],r11
+	mov qword [rsp+8*92],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1276,12 +1190,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*93]
 	mov r10 , rax
+	mov r11, qword [rsp+8*94]
+	mov r11,r10
 	mov qword [rsp+8*93],r10
-	mov r10, qword [rsp+8*94]
-	mov r11, qword [rsp+8*93]
-	mov r10,r11
-	mov qword [rsp+8*94],r10
-	mov qword [rsp+8*93],r11
+	mov qword [rsp+8*94],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1290,12 +1202,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*95]
 	mov r10 , rax
+	mov r11, qword [rsp+8*96]
+	mov r11,r10
 	mov qword [rsp+8*95],r10
-	mov r10, qword [rsp+8*96]
-	mov r11, qword [rsp+8*95]
-	mov r10,r11
-	mov qword [rsp+8*96],r10
-	mov qword [rsp+8*95],r11
+	mov qword [rsp+8*96],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1304,12 +1214,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*97]
 	mov r10 , rax
+	mov r11, qword [rsp+8*98]
+	mov r11,r10
 	mov qword [rsp+8*97],r10
-	mov r10, qword [rsp+8*98]
-	mov r11, qword [rsp+8*97]
-	mov r10,r11
-	mov qword [rsp+8*98],r10
-	mov qword [rsp+8*97],r11
+	mov qword [rsp+8*98],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1318,12 +1226,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*99]
 	mov r10 , rax
+	mov r11, qword [rsp+8*100]
+	mov r11,r10
 	mov qword [rsp+8*99],r10
-	mov r10, qword [rsp+8*100]
-	mov r11, qword [rsp+8*99]
-	mov r10,r11
-	mov qword [rsp+8*100],r10
-	mov qword [rsp+8*99],r11
+	mov qword [rsp+8*100],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1332,12 +1238,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*101]
 	mov r10 , rax
+	mov r11, qword [rsp+8*102]
+	mov r11,r10
 	mov qword [rsp+8*101],r10
-	mov r10, qword [rsp+8*102]
-	mov r11, qword [rsp+8*101]
-	mov r10,r11
-	mov qword [rsp+8*102],r10
-	mov qword [rsp+8*101],r11
+	mov qword [rsp+8*102],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1346,12 +1250,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*103]
 	mov r10 , rax
+	mov r11, qword [rsp+8*104]
+	mov r11,r10
 	mov qword [rsp+8*103],r10
-	mov r10, qword [rsp+8*104]
-	mov r11, qword [rsp+8*103]
-	mov r10,r11
-	mov qword [rsp+8*104],r10
-	mov qword [rsp+8*103],r11
+	mov qword [rsp+8*104],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1360,12 +1262,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*105]
 	mov r10 , rax
+	mov r11, qword [rsp+8*106]
+	mov r11,r10
 	mov qword [rsp+8*105],r10
-	mov r10, qword [rsp+8*106]
-	mov r11, qword [rsp+8*105]
-	mov r10,r11
-	mov qword [rsp+8*106],r10
-	mov qword [rsp+8*105],r11
+	mov qword [rsp+8*106],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1374,12 +1274,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*107]
 	mov r10 , rax
+	mov r11, qword [rsp+8*108]
+	mov r11,r10
 	mov qword [rsp+8*107],r10
-	mov r10, qword [rsp+8*108]
-	mov r11, qword [rsp+8*107]
-	mov r10,r11
-	mov qword [rsp+8*108],r10
-	mov qword [rsp+8*107],r11
+	mov qword [rsp+8*108],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1388,12 +1286,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*109]
 	mov r10 , rax
+	mov r11, qword [rsp+8*110]
+	mov r11,r10
 	mov qword [rsp+8*109],r10
-	mov r10, qword [rsp+8*110]
-	mov r11, qword [rsp+8*109]
-	mov r10,r11
-	mov qword [rsp+8*110],r10
-	mov qword [rsp+8*109],r11
+	mov qword [rsp+8*110],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1402,12 +1298,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*111]
 	mov r10 , rax
+	mov r11, qword [rsp+8*112]
+	mov r11,r10
 	mov qword [rsp+8*111],r10
-	mov r10, qword [rsp+8*112]
-	mov r11, qword [rsp+8*111]
-	mov r10,r11
-	mov qword [rsp+8*112],r10
-	mov qword [rsp+8*111],r11
+	mov qword [rsp+8*112],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1416,12 +1310,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*113]
 	mov r10 , rax
+	mov r11, qword [rsp+8*114]
+	mov r11,r10
 	mov qword [rsp+8*113],r10
-	mov r10, qword [rsp+8*114]
-	mov r11, qword [rsp+8*113]
-	mov r10,r11
-	mov qword [rsp+8*114],r10
-	mov qword [rsp+8*113],r11
+	mov qword [rsp+8*114],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1430,12 +1322,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*115]
 	mov r10 , rax
+	mov r11, qword [rsp+8*116]
+	mov r11,r10
 	mov qword [rsp+8*115],r10
-	mov r10, qword [rsp+8*116]
-	mov r11, qword [rsp+8*115]
-	mov r10,r11
-	mov qword [rsp+8*116],r10
-	mov qword [rsp+8*115],r11
+	mov qword [rsp+8*116],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1444,12 +1334,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*117]
 	mov r10 , rax
+	mov r11, qword [rsp+8*118]
+	mov r11,r10
 	mov qword [rsp+8*117],r10
-	mov r10, qword [rsp+8*118]
-	mov r11, qword [rsp+8*117]
-	mov r10,r11
-	mov qword [rsp+8*118],r10
-	mov qword [rsp+8*117],r11
+	mov qword [rsp+8*118],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1458,12 +1346,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*119]
 	mov r10 , rax
+	mov r11, qword [rsp+8*120]
+	mov r11,r10
 	mov qword [rsp+8*119],r10
-	mov r10, qword [rsp+8*120]
-	mov r11, qword [rsp+8*119]
-	mov r10,r11
-	mov qword [rsp+8*120],r10
-	mov qword [rsp+8*119],r11
+	mov qword [rsp+8*120],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1472,12 +1358,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*121]
 	mov r10 , rax
+	mov r11, qword [rsp+8*122]
+	mov r11,r10
 	mov qword [rsp+8*121],r10
-	mov r10, qword [rsp+8*122]
-	mov r11, qword [rsp+8*121]
-	mov r10,r11
-	mov qword [rsp+8*122],r10
-	mov qword [rsp+8*121],r11
+	mov qword [rsp+8*122],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1486,12 +1370,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*123]
 	mov r10 , rax
+	mov r11, qword [rsp+8*124]
+	mov r11,r10
 	mov qword [rsp+8*123],r10
-	mov r10, qword [rsp+8*124]
-	mov r11, qword [rsp+8*123]
-	mov r10,r11
-	mov qword [rsp+8*124],r10
-	mov qword [rsp+8*123],r11
+	mov qword [rsp+8*124],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1500,12 +1382,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*125]
 	mov r10 , rax
+	mov r11, qword [rsp+8*126]
+	mov r11,r10
 	mov qword [rsp+8*125],r10
-	mov r10, qword [rsp+8*126]
-	mov r11, qword [rsp+8*125]
-	mov r10,r11
-	mov qword [rsp+8*126],r10
-	mov qword [rsp+8*125],r11
+	mov qword [rsp+8*126],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1514,12 +1394,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*127]
 	mov r10 , rax
+	mov r11, qword [rsp+8*128]
+	mov r11,r10
 	mov qword [rsp+8*127],r10
-	mov r10, qword [rsp+8*128]
-	mov r11, qword [rsp+8*127]
-	mov r10,r11
-	mov qword [rsp+8*128],r10
-	mov qword [rsp+8*127],r11
+	mov qword [rsp+8*128],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1528,12 +1406,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*129]
 	mov r10 , rax
+	mov r11, qword [rsp+8*130]
+	mov r11,r10
 	mov qword [rsp+8*129],r10
-	mov r10, qword [rsp+8*130]
-	mov r11, qword [rsp+8*129]
-	mov r10,r11
-	mov qword [rsp+8*130],r10
-	mov qword [rsp+8*129],r11
+	mov qword [rsp+8*130],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1542,12 +1418,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*131]
 	mov r10 , rax
+	mov r11, qword [rsp+8*132]
+	mov r11,r10
 	mov qword [rsp+8*131],r10
-	mov r10, qword [rsp+8*132]
-	mov r11, qword [rsp+8*131]
-	mov r10,r11
-	mov qword [rsp+8*132],r10
-	mov qword [rsp+8*131],r11
+	mov qword [rsp+8*132],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1556,12 +1430,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*133]
 	mov r10 , rax
+	mov r11, qword [rsp+8*134]
+	mov r11,r10
 	mov qword [rsp+8*133],r10
-	mov r10, qword [rsp+8*134]
-	mov r11, qword [rsp+8*133]
-	mov r10,r11
-	mov qword [rsp+8*134],r10
-	mov qword [rsp+8*133],r11
+	mov qword [rsp+8*134],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1570,12 +1442,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*135]
 	mov r10 , rax
+	mov r11, qword [rsp+8*136]
+	mov r11,r10
 	mov qword [rsp+8*135],r10
-	mov r10, qword [rsp+8*136]
-	mov r11, qword [rsp+8*135]
-	mov r10,r11
-	mov qword [rsp+8*136],r10
-	mov qword [rsp+8*135],r11
+	mov qword [rsp+8*136],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1584,12 +1454,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*137]
 	mov r10 , rax
+	mov r11, qword [rsp+8*138]
+	mov r11,r10
 	mov qword [rsp+8*137],r10
-	mov r10, qword [rsp+8*138]
-	mov r11, qword [rsp+8*137]
-	mov r10,r11
-	mov qword [rsp+8*138],r10
-	mov qword [rsp+8*137],r11
+	mov qword [rsp+8*138],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1598,12 +1466,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*139]
 	mov r10 , rax
+	mov r11, qword [rsp+8*140]
+	mov r11,r10
 	mov qword [rsp+8*139],r10
-	mov r10, qword [rsp+8*140]
-	mov r11, qword [rsp+8*139]
-	mov r10,r11
-	mov qword [rsp+8*140],r10
-	mov qword [rsp+8*139],r11
+	mov qword [rsp+8*140],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1612,12 +1478,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*141]
 	mov r10 , rax
+	mov r11, qword [rsp+8*142]
+	mov r11,r10
 	mov qword [rsp+8*141],r10
-	mov r10, qword [rsp+8*142]
-	mov r11, qword [rsp+8*141]
-	mov r10,r11
-	mov qword [rsp+8*142],r10
-	mov qword [rsp+8*141],r11
+	mov qword [rsp+8*142],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1626,12 +1490,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*143]
 	mov r10 , rax
+	mov r11, qword [rsp+8*144]
+	mov r11,r10
 	mov qword [rsp+8*143],r10
-	mov r10, qword [rsp+8*144]
-	mov r11, qword [rsp+8*143]
-	mov r10,r11
-	mov qword [rsp+8*144],r10
-	mov qword [rsp+8*143],r11
+	mov qword [rsp+8*144],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1640,12 +1502,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*145]
 	mov r10 , rax
+	mov r11, qword [rsp+8*146]
+	mov r11,r10
 	mov qword [rsp+8*145],r10
-	mov r10, qword [rsp+8*146]
-	mov r11, qword [rsp+8*145]
-	mov r10,r11
-	mov qword [rsp+8*146],r10
-	mov qword [rsp+8*145],r11
+	mov qword [rsp+8*146],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1654,12 +1514,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*147]
 	mov r10 , rax
+	mov r11, qword [rsp+8*148]
+	mov r11,r10
 	mov qword [rsp+8*147],r10
-	mov r10, qword [rsp+8*148]
-	mov r11, qword [rsp+8*147]
-	mov r10,r11
-	mov qword [rsp+8*148],r10
-	mov qword [rsp+8*147],r11
+	mov qword [rsp+8*148],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1668,12 +1526,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*149]
 	mov r10 , rax
+	mov r11, qword [rsp+8*150]
+	mov r11,r10
 	mov qword [rsp+8*149],r10
-	mov r10, qword [rsp+8*150]
-	mov r11, qword [rsp+8*149]
-	mov r10,r11
-	mov qword [rsp+8*150],r10
-	mov qword [rsp+8*149],r11
+	mov qword [rsp+8*150],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1682,12 +1538,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*151]
 	mov r10 , rax
+	mov r11, qword [rsp+8*152]
+	mov r11,r10
 	mov qword [rsp+8*151],r10
-	mov r10, qword [rsp+8*152]
-	mov r11, qword [rsp+8*151]
-	mov r10,r11
-	mov qword [rsp+8*152],r10
-	mov qword [rsp+8*151],r11
+	mov qword [rsp+8*152],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1696,12 +1550,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*153]
 	mov r10 , rax
+	mov r11, qword [rsp+8*154]
+	mov r11,r10
 	mov qword [rsp+8*153],r10
-	mov r10, qword [rsp+8*154]
-	mov r11, qword [rsp+8*153]
-	mov r10,r11
-	mov qword [rsp+8*154],r10
-	mov qword [rsp+8*153],r11
+	mov qword [rsp+8*154],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1710,12 +1562,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*155]
 	mov r10 , rax
+	mov r11, qword [rsp+8*156]
+	mov r11,r10
 	mov qword [rsp+8*155],r10
-	mov r10, qword [rsp+8*156]
-	mov r11, qword [rsp+8*155]
-	mov r10,r11
-	mov qword [rsp+8*156],r10
-	mov qword [rsp+8*155],r11
+	mov qword [rsp+8*156],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1724,12 +1574,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*157]
 	mov r10 , rax
+	mov r11, qword [rsp+8*158]
+	mov r11,r10
 	mov qword [rsp+8*157],r10
-	mov r10, qword [rsp+8*158]
-	mov r11, qword [rsp+8*157]
-	mov r10,r11
-	mov qword [rsp+8*158],r10
-	mov qword [rsp+8*157],r11
+	mov qword [rsp+8*158],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1738,12 +1586,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*159]
 	mov r10 , rax
+	mov r11, qword [rsp+8*160]
+	mov r11,r10
 	mov qword [rsp+8*159],r10
-	mov r10, qword [rsp+8*160]
-	mov r11, qword [rsp+8*159]
-	mov r10,r11
-	mov qword [rsp+8*160],r10
-	mov qword [rsp+8*159],r11
+	mov qword [rsp+8*160],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1752,12 +1598,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*161]
 	mov r10 , rax
+	mov r11, qword [rsp+8*162]
+	mov r11,r10
 	mov qword [rsp+8*161],r10
-	mov r10, qword [rsp+8*162]
-	mov r11, qword [rsp+8*161]
-	mov r10,r11
-	mov qword [rsp+8*162],r10
-	mov qword [rsp+8*161],r11
+	mov qword [rsp+8*162],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1766,12 +1610,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*163]
 	mov r10 , rax
+	mov r11, qword [rsp+8*164]
+	mov r11,r10
 	mov qword [rsp+8*163],r10
-	mov r10, qword [rsp+8*164]
-	mov r11, qword [rsp+8*163]
-	mov r10,r11
-	mov qword [rsp+8*164],r10
-	mov qword [rsp+8*163],r11
+	mov qword [rsp+8*164],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1780,12 +1622,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*165]
 	mov r10 , rax
+	mov r11, qword [rsp+8*166]
+	mov r11,r10
 	mov qword [rsp+8*165],r10
-	mov r10, qword [rsp+8*166]
-	mov r11, qword [rsp+8*165]
-	mov r10,r11
-	mov qword [rsp+8*166],r10
-	mov qword [rsp+8*165],r11
+	mov qword [rsp+8*166],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1794,12 +1634,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*167]
 	mov r10 , rax
+	mov r11, qword [rsp+8*168]
+	mov r11,r10
 	mov qword [rsp+8*167],r10
-	mov r10, qword [rsp+8*168]
-	mov r11, qword [rsp+8*167]
-	mov r10,r11
-	mov qword [rsp+8*168],r10
-	mov qword [rsp+8*167],r11
+	mov qword [rsp+8*168],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1808,12 +1646,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*169]
 	mov r10 , rax
+	mov r11, qword [rsp+8*170]
+	mov r11,r10
 	mov qword [rsp+8*169],r10
-	mov r10, qword [rsp+8*170]
-	mov r11, qword [rsp+8*169]
-	mov r10,r11
-	mov qword [rsp+8*170],r10
-	mov qword [rsp+8*169],r11
+	mov qword [rsp+8*170],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1822,12 +1658,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*171]
 	mov r10 , rax
+	mov r11, qword [rsp+8*172]
+	mov r11,r10
 	mov qword [rsp+8*171],r10
-	mov r10, qword [rsp+8*172]
-	mov r11, qword [rsp+8*171]
-	mov r10,r11
-	mov qword [rsp+8*172],r10
-	mov qword [rsp+8*171],r11
+	mov qword [rsp+8*172],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1836,12 +1670,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*173]
 	mov r10 , rax
+	mov r11, qword [rsp+8*174]
+	mov r11,r10
 	mov qword [rsp+8*173],r10
-	mov r10, qword [rsp+8*174]
-	mov r11, qword [rsp+8*173]
-	mov r10,r11
-	mov qword [rsp+8*174],r10
-	mov qword [rsp+8*173],r11
+	mov qword [rsp+8*174],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1850,12 +1682,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*175]
 	mov r10 , rax
+	mov r11, qword [rsp+8*176]
+	mov r11,r10
 	mov qword [rsp+8*175],r10
-	mov r10, qword [rsp+8*176]
-	mov r11, qword [rsp+8*175]
-	mov r10,r11
-	mov qword [rsp+8*176],r10
-	mov qword [rsp+8*175],r11
+	mov qword [rsp+8*176],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1864,12 +1694,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*177]
 	mov r10 , rax
+	mov r11, qword [rsp+8*178]
+	mov r11,r10
 	mov qword [rsp+8*177],r10
-	mov r10, qword [rsp+8*178]
-	mov r11, qword [rsp+8*177]
-	mov r10,r11
-	mov qword [rsp+8*178],r10
-	mov qword [rsp+8*177],r11
+	mov qword [rsp+8*178],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1878,12 +1706,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*179]
 	mov r10 , rax
+	mov r11, qword [rsp+8*180]
+	mov r11,r10
 	mov qword [rsp+8*179],r10
-	mov r10, qword [rsp+8*180]
-	mov r11, qword [rsp+8*179]
-	mov r10,r11
-	mov qword [rsp+8*180],r10
-	mov qword [rsp+8*179],r11
+	mov qword [rsp+8*180],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1892,12 +1718,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*181]
 	mov r10 , rax
+	mov r11, qword [rsp+8*182]
+	mov r11,r10
 	mov qword [rsp+8*181],r10
-	mov r10, qword [rsp+8*182]
-	mov r11, qword [rsp+8*181]
-	mov r10,r11
-	mov qword [rsp+8*182],r10
-	mov qword [rsp+8*181],r11
+	mov qword [rsp+8*182],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1906,12 +1730,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*183]
 	mov r10 , rax
+	mov r11, qword [rsp+8*184]
+	mov r11,r10
 	mov qword [rsp+8*183],r10
-	mov r10, qword [rsp+8*184]
-	mov r11, qword [rsp+8*183]
-	mov r10,r11
-	mov qword [rsp+8*184],r10
-	mov qword [rsp+8*183],r11
+	mov qword [rsp+8*184],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1920,12 +1742,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*185]
 	mov r10 , rax
+	mov r11, qword [rsp+8*186]
+	mov r11,r10
 	mov qword [rsp+8*185],r10
-	mov r10, qword [rsp+8*186]
-	mov r11, qword [rsp+8*185]
-	mov r10,r11
-	mov qword [rsp+8*186],r10
-	mov qword [rsp+8*185],r11
+	mov qword [rsp+8*186],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1934,12 +1754,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*187]
 	mov r10 , rax
+	mov r11, qword [rsp+8*188]
+	mov r11,r10
 	mov qword [rsp+8*187],r10
-	mov r10, qword [rsp+8*188]
-	mov r11, qword [rsp+8*187]
-	mov r10,r11
-	mov qword [rsp+8*188],r10
-	mov qword [rsp+8*187],r11
+	mov qword [rsp+8*188],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1948,12 +1766,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*189]
 	mov r10 , rax
+	mov r11, qword [rsp+8*190]
+	mov r11,r10
 	mov qword [rsp+8*189],r10
-	mov r10, qword [rsp+8*190]
-	mov r11, qword [rsp+8*189]
-	mov r10,r11
-	mov qword [rsp+8*190],r10
-	mov qword [rsp+8*189],r11
+	mov qword [rsp+8*190],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1962,12 +1778,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*191]
 	mov r10 , rax
+	mov r11, qword [rsp+8*192]
+	mov r11,r10
 	mov qword [rsp+8*191],r10
-	mov r10, qword [rsp+8*192]
-	mov r11, qword [rsp+8*191]
-	mov r10,r11
-	mov qword [rsp+8*192],r10
-	mov qword [rsp+8*191],r11
+	mov qword [rsp+8*192],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1976,12 +1790,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*193]
 	mov r10 , rax
+	mov r11, qword [rsp+8*194]
+	mov r11,r10
 	mov qword [rsp+8*193],r10
-	mov r10, qword [rsp+8*194]
-	mov r11, qword [rsp+8*193]
-	mov r10,r11
-	mov qword [rsp+8*194],r10
-	mov qword [rsp+8*193],r11
+	mov qword [rsp+8*194],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -1990,12 +1802,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*195]
 	mov r10 , rax
+	mov r11, qword [rsp+8*196]
+	mov r11,r10
 	mov qword [rsp+8*195],r10
-	mov r10, qword [rsp+8*196]
-	mov r11, qword [rsp+8*195]
-	mov r10,r11
-	mov qword [rsp+8*196],r10
-	mov qword [rsp+8*195],r11
+	mov qword [rsp+8*196],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2004,12 +1814,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*197]
 	mov r10 , rax
+	mov r11, qword [rsp+8*198]
+	mov r11,r10
 	mov qword [rsp+8*197],r10
-	mov r10, qword [rsp+8*198]
-	mov r11, qword [rsp+8*197]
-	mov r10,r11
-	mov qword [rsp+8*198],r10
-	mov qword [rsp+8*197],r11
+	mov qword [rsp+8*198],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2018,12 +1826,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*199]
 	mov r10 , rax
+	mov r11, qword [rsp+8*200]
+	mov r11,r10
 	mov qword [rsp+8*199],r10
-	mov r10, qword [rsp+8*200]
-	mov r11, qword [rsp+8*199]
-	mov r10,r11
-	mov qword [rsp+8*200],r10
-	mov qword [rsp+8*199],r11
+	mov qword [rsp+8*200],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2032,12 +1838,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*201]
 	mov r10 , rax
+	mov r11, qword [rsp+8*202]
+	mov r11,r10
 	mov qword [rsp+8*201],r10
-	mov r10, qword [rsp+8*202]
-	mov r11, qword [rsp+8*201]
-	mov r10,r11
-	mov qword [rsp+8*202],r10
-	mov qword [rsp+8*201],r11
+	mov qword [rsp+8*202],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2046,12 +1850,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*203]
 	mov r10 , rax
+	mov r11, qword [rsp+8*204]
+	mov r11,r10
 	mov qword [rsp+8*203],r10
-	mov r10, qword [rsp+8*204]
-	mov r11, qword [rsp+8*203]
-	mov r10,r11
-	mov qword [rsp+8*204],r10
-	mov qword [rsp+8*203],r11
+	mov qword [rsp+8*204],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2060,12 +1862,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*205]
 	mov r10 , rax
+	mov r11, qword [rsp+8*206]
+	mov r11,r10
 	mov qword [rsp+8*205],r10
-	mov r10, qword [rsp+8*206]
-	mov r11, qword [rsp+8*205]
-	mov r10,r11
-	mov qword [rsp+8*206],r10
-	mov qword [rsp+8*205],r11
+	mov qword [rsp+8*206],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2074,12 +1874,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*207]
 	mov r10 , rax
+	mov r11, qword [rsp+8*208]
+	mov r11,r10
 	mov qword [rsp+8*207],r10
-	mov r10, qword [rsp+8*208]
-	mov r11, qword [rsp+8*207]
-	mov r10,r11
-	mov qword [rsp+8*208],r10
-	mov qword [rsp+8*207],r11
+	mov qword [rsp+8*208],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2088,12 +1886,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*209]
 	mov r10 , rax
+	mov r11, qword [rsp+8*210]
+	mov r11,r10
 	mov qword [rsp+8*209],r10
-	mov r10, qword [rsp+8*210]
-	mov r11, qword [rsp+8*209]
-	mov r10,r11
-	mov qword [rsp+8*210],r10
-	mov qword [rsp+8*209],r11
+	mov qword [rsp+8*210],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2102,12 +1898,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*211]
 	mov r10 , rax
+	mov r11, qword [rsp+8*212]
+	mov r11,r10
 	mov qword [rsp+8*211],r10
-	mov r10, qword [rsp+8*212]
-	mov r11, qword [rsp+8*211]
-	mov r10,r11
-	mov qword [rsp+8*212],r10
-	mov qword [rsp+8*211],r11
+	mov qword [rsp+8*212],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2116,12 +1910,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*213]
 	mov r10 , rax
+	mov r11, qword [rsp+8*214]
+	mov r11,r10
 	mov qword [rsp+8*213],r10
-	mov r10, qword [rsp+8*214]
-	mov r11, qword [rsp+8*213]
-	mov r10,r11
-	mov qword [rsp+8*214],r10
-	mov qword [rsp+8*213],r11
+	mov qword [rsp+8*214],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2130,12 +1922,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*215]
 	mov r10 , rax
+	mov r11, qword [rsp+8*216]
+	mov r11,r10
 	mov qword [rsp+8*215],r10
-	mov r10, qword [rsp+8*216]
-	mov r11, qword [rsp+8*215]
-	mov r10,r11
-	mov qword [rsp+8*216],r10
-	mov qword [rsp+8*215],r11
+	mov qword [rsp+8*216],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2144,12 +1934,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*217]
 	mov r10 , rax
+	mov r11, qword [rsp+8*218]
+	mov r11,r10
 	mov qword [rsp+8*217],r10
-	mov r10, qword [rsp+8*218]
-	mov r11, qword [rsp+8*217]
-	mov r10,r11
-	mov qword [rsp+8*218],r10
-	mov qword [rsp+8*217],r11
+	mov qword [rsp+8*218],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2158,12 +1946,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*219]
 	mov r10 , rax
+	mov r11, qword [rsp+8*220]
+	mov r11,r10
 	mov qword [rsp+8*219],r10
-	mov r10, qword [rsp+8*220]
-	mov r11, qword [rsp+8*219]
-	mov r10,r11
-	mov qword [rsp+8*220],r10
-	mov qword [rsp+8*219],r11
+	mov qword [rsp+8*220],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2172,12 +1958,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*221]
 	mov r10 , rax
+	mov r11, qword [rsp+8*222]
+	mov r11,r10
 	mov qword [rsp+8*221],r10
-	mov r10, qword [rsp+8*222]
-	mov r11, qword [rsp+8*221]
-	mov r10,r11
-	mov qword [rsp+8*222],r10
-	mov qword [rsp+8*221],r11
+	mov qword [rsp+8*222],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2186,12 +1970,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*223]
 	mov r10 , rax
+	mov r11, qword [rsp+8*224]
+	mov r11,r10
 	mov qword [rsp+8*223],r10
-	mov r10, qword [rsp+8*224]
-	mov r11, qword [rsp+8*223]
-	mov r10,r11
-	mov qword [rsp+8*224],r10
-	mov qword [rsp+8*223],r11
+	mov qword [rsp+8*224],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2200,12 +1982,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*225]
 	mov r10 , rax
+	mov r11, qword [rsp+8*226]
+	mov r11,r10
 	mov qword [rsp+8*225],r10
-	mov r10, qword [rsp+8*226]
-	mov r11, qword [rsp+8*225]
-	mov r10,r11
-	mov qword [rsp+8*226],r10
-	mov qword [rsp+8*225],r11
+	mov qword [rsp+8*226],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2214,12 +1994,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*227]
 	mov r10 , rax
+	mov r11, qword [rsp+8*228]
+	mov r11,r10
 	mov qword [rsp+8*227],r10
-	mov r10, qword [rsp+8*228]
-	mov r11, qword [rsp+8*227]
-	mov r10,r11
-	mov qword [rsp+8*228],r10
-	mov qword [rsp+8*227],r11
+	mov qword [rsp+8*228],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2228,12 +2006,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*229]
 	mov r10 , rax
+	mov r11, qword [rsp+8*230]
+	mov r11,r10
 	mov qword [rsp+8*229],r10
-	mov r10, qword [rsp+8*230]
-	mov r11, qword [rsp+8*229]
-	mov r10,r11
-	mov qword [rsp+8*230],r10
-	mov qword [rsp+8*229],r11
+	mov qword [rsp+8*230],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2242,12 +2018,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*231]
 	mov r10 , rax
+	mov r11, qword [rsp+8*232]
+	mov r11,r10
 	mov qword [rsp+8*231],r10
-	mov r10, qword [rsp+8*232]
-	mov r11, qword [rsp+8*231]
-	mov r10,r11
-	mov qword [rsp+8*232],r10
-	mov qword [rsp+8*231],r11
+	mov qword [rsp+8*232],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2256,12 +2030,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*233]
 	mov r10 , rax
+	mov r11, qword [rsp+8*234]
+	mov r11,r10
 	mov qword [rsp+8*233],r10
-	mov r10, qword [rsp+8*234]
-	mov r11, qword [rsp+8*233]
-	mov r10,r11
-	mov qword [rsp+8*234],r10
-	mov qword [rsp+8*233],r11
+	mov qword [rsp+8*234],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2270,12 +2042,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*235]
 	mov r10 , rax
+	mov r11, qword [rsp+8*236]
+	mov r11,r10
 	mov qword [rsp+8*235],r10
-	mov r10, qword [rsp+8*236]
-	mov r11, qword [rsp+8*235]
-	mov r10,r11
-	mov qword [rsp+8*236],r10
-	mov qword [rsp+8*235],r11
+	mov qword [rsp+8*236],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2284,12 +2054,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*237]
 	mov r10 , rax
+	mov r11, qword [rsp+8*238]
+	mov r11,r10
 	mov qword [rsp+8*237],r10
-	mov r10, qword [rsp+8*238]
-	mov r11, qword [rsp+8*237]
-	mov r10,r11
-	mov qword [rsp+8*238],r10
-	mov qword [rsp+8*237],r11
+	mov qword [rsp+8*238],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2298,12 +2066,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*239]
 	mov r10 , rax
+	mov r11, qword [rsp+8*240]
+	mov r11,r10
 	mov qword [rsp+8*239],r10
-	mov r10, qword [rsp+8*240]
-	mov r11, qword [rsp+8*239]
-	mov r10,r11
-	mov qword [rsp+8*240],r10
-	mov qword [rsp+8*239],r11
+	mov qword [rsp+8*240],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2312,12 +2078,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*241]
 	mov r10 , rax
+	mov r11, qword [rsp+8*242]
+	mov r11,r10
 	mov qword [rsp+8*241],r10
-	mov r10, qword [rsp+8*242]
-	mov r11, qword [rsp+8*241]
-	mov r10,r11
-	mov qword [rsp+8*242],r10
-	mov qword [rsp+8*241],r11
+	mov qword [rsp+8*242],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2326,12 +2090,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*243]
 	mov r10 , rax
+	mov r11, qword [rsp+8*244]
+	mov r11,r10
 	mov qword [rsp+8*243],r10
-	mov r10, qword [rsp+8*244]
-	mov r11, qword [rsp+8*243]
-	mov r10,r11
-	mov qword [rsp+8*244],r10
-	mov qword [rsp+8*243],r11
+	mov qword [rsp+8*244],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2340,12 +2102,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*245]
 	mov r10 , rax
+	mov r11, qword [rsp+8*246]
+	mov r11,r10
 	mov qword [rsp+8*245],r10
-	mov r10, qword [rsp+8*246]
-	mov r11, qword [rsp+8*245]
-	mov r10,r11
-	mov qword [rsp+8*246],r10
-	mov qword [rsp+8*245],r11
+	mov qword [rsp+8*246],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2354,12 +2114,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*247]
 	mov r10 , rax
+	mov r11, qword [rsp+8*248]
+	mov r11,r10
 	mov qword [rsp+8*247],r10
-	mov r10, qword [rsp+8*248]
-	mov r11, qword [rsp+8*247]
-	mov r10,r11
-	mov qword [rsp+8*248],r10
-	mov qword [rsp+8*247],r11
+	mov qword [rsp+8*248],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2368,12 +2126,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*249]
 	mov r10 , rax
+	mov r11, qword [rsp+8*250]
+	mov r11,r10
 	mov qword [rsp+8*249],r10
-	mov r10, qword [rsp+8*250]
-	mov r11, qword [rsp+8*249]
-	mov r10,r11
-	mov qword [rsp+8*250],r10
-	mov qword [rsp+8*249],r11
+	mov qword [rsp+8*250],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2382,12 +2138,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*251]
 	mov r10 , rax
+	mov r11, qword [rsp+8*252]
+	mov r11,r10
 	mov qword [rsp+8*251],r10
-	mov r10, qword [rsp+8*252]
-	mov r11, qword [rsp+8*251]
-	mov r10,r11
-	mov qword [rsp+8*252],r10
-	mov qword [rsp+8*251],r11
+	mov qword [rsp+8*252],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2396,12 +2150,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*253]
 	mov r10 , rax
+	mov r11, qword [rsp+8*254]
+	mov r11,r10
 	mov qword [rsp+8*253],r10
-	mov r10, qword [rsp+8*254]
-	mov r11, qword [rsp+8*253]
-	mov r10,r11
-	mov qword [rsp+8*254],r10
-	mov qword [rsp+8*253],r11
+	mov qword [rsp+8*254],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2410,12 +2162,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*255]
 	mov r10 , rax
+	mov r11, qword [rsp+8*256]
+	mov r11,r10
 	mov qword [rsp+8*255],r10
-	mov r10, qword [rsp+8*256]
-	mov r11, qword [rsp+8*255]
-	mov r10,r11
-	mov qword [rsp+8*256],r10
-	mov qword [rsp+8*255],r11
+	mov qword [rsp+8*256],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2424,12 +2174,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*257]
 	mov r10 , rax
+	mov r11, qword [rsp+8*258]
+	mov r11,r10
 	mov qword [rsp+8*257],r10
-	mov r10, qword [rsp+8*258]
-	mov r11, qword [rsp+8*257]
-	mov r10,r11
-	mov qword [rsp+8*258],r10
-	mov qword [rsp+8*257],r11
+	mov qword [rsp+8*258],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2438,12 +2186,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*259]
 	mov r10 , rax
+	mov r11, qword [rsp+8*260]
+	mov r11,r10
 	mov qword [rsp+8*259],r10
-	mov r10, qword [rsp+8*260]
-	mov r11, qword [rsp+8*259]
-	mov r10,r11
-	mov qword [rsp+8*260],r10
-	mov qword [rsp+8*259],r11
+	mov qword [rsp+8*260],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2452,12 +2198,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*261]
 	mov r10 , rax
+	mov r11, qword [rsp+8*262]
+	mov r11,r10
 	mov qword [rsp+8*261],r10
-	mov r10, qword [rsp+8*262]
-	mov r11, qword [rsp+8*261]
-	mov r10,r11
-	mov qword [rsp+8*262],r10
-	mov qword [rsp+8*261],r11
+	mov qword [rsp+8*262],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2466,12 +2210,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*263]
 	mov r10 , rax
+	mov r11, qword [rsp+8*264]
+	mov r11,r10
 	mov qword [rsp+8*263],r10
-	mov r10, qword [rsp+8*264]
-	mov r11, qword [rsp+8*263]
-	mov r10,r11
-	mov qword [rsp+8*264],r10
-	mov qword [rsp+8*263],r11
+	mov qword [rsp+8*264],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2480,12 +2222,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*265]
 	mov r10 , rax
+	mov r11, qword [rsp+8*266]
+	mov r11,r10
 	mov qword [rsp+8*265],r10
-	mov r10, qword [rsp+8*266]
-	mov r11, qword [rsp+8*265]
-	mov r10,r11
-	mov qword [rsp+8*266],r10
-	mov qword [rsp+8*265],r11
+	mov qword [rsp+8*266],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2494,12 +2234,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*267]
 	mov r10 , rax
+	mov r11, qword [rsp+8*268]
+	mov r11,r10
 	mov qword [rsp+8*267],r10
-	mov r10, qword [rsp+8*268]
-	mov r11, qword [rsp+8*267]
-	mov r10,r11
-	mov qword [rsp+8*268],r10
-	mov qword [rsp+8*267],r11
+	mov qword [rsp+8*268],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2508,12 +2246,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*269]
 	mov r10 , rax
+	mov r11, qword [rsp+8*270]
+	mov r11,r10
 	mov qword [rsp+8*269],r10
-	mov r10, qword [rsp+8*270]
-	mov r11, qword [rsp+8*269]
-	mov r10,r11
-	mov qword [rsp+8*270],r10
-	mov qword [rsp+8*269],r11
+	mov qword [rsp+8*270],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2522,12 +2258,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*271]
 	mov r10 , rax
+	mov r11, qword [rsp+8*272]
+	mov r11,r10
 	mov qword [rsp+8*271],r10
-	mov r10, qword [rsp+8*272]
-	mov r11, qword [rsp+8*271]
-	mov r10,r11
-	mov qword [rsp+8*272],r10
-	mov qword [rsp+8*271],r11
+	mov qword [rsp+8*272],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2536,12 +2270,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*273]
 	mov r10 , rax
+	mov r11, qword [rsp+8*274]
+	mov r11,r10
 	mov qword [rsp+8*273],r10
-	mov r10, qword [rsp+8*274]
-	mov r11, qword [rsp+8*273]
-	mov r10,r11
-	mov qword [rsp+8*274],r10
-	mov qword [rsp+8*273],r11
+	mov qword [rsp+8*274],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2550,12 +2282,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*275]
 	mov r10 , rax
+	mov r11, qword [rsp+8*276]
+	mov r11,r10
 	mov qword [rsp+8*275],r10
-	mov r10, qword [rsp+8*276]
-	mov r11, qword [rsp+8*275]
-	mov r10,r11
-	mov qword [rsp+8*276],r10
-	mov qword [rsp+8*275],r11
+	mov qword [rsp+8*276],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2564,12 +2294,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*277]
 	mov r10 , rax
+	mov r11, qword [rsp+8*278]
+	mov r11,r10
 	mov qword [rsp+8*277],r10
-	mov r10, qword [rsp+8*278]
-	mov r11, qword [rsp+8*277]
-	mov r10,r11
-	mov qword [rsp+8*278],r10
-	mov qword [rsp+8*277],r11
+	mov qword [rsp+8*278],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2578,12 +2306,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*279]
 	mov r10 , rax
+	mov r11, qword [rsp+8*280]
+	mov r11,r10
 	mov qword [rsp+8*279],r10
-	mov r10, qword [rsp+8*280]
-	mov r11, qword [rsp+8*279]
-	mov r10,r11
-	mov qword [rsp+8*280],r10
-	mov qword [rsp+8*279],r11
+	mov qword [rsp+8*280],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2592,12 +2318,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*281]
 	mov r10 , rax
+	mov r11, qword [rsp+8*282]
+	mov r11,r10
 	mov qword [rsp+8*281],r10
-	mov r10, qword [rsp+8*282]
-	mov r11, qword [rsp+8*281]
-	mov r10,r11
-	mov qword [rsp+8*282],r10
-	mov qword [rsp+8*281],r11
+	mov qword [rsp+8*282],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2606,12 +2330,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*283]
 	mov r10 , rax
+	mov r11, qword [rsp+8*284]
+	mov r11,r10
 	mov qword [rsp+8*283],r10
-	mov r10, qword [rsp+8*284]
-	mov r11, qword [rsp+8*283]
-	mov r10,r11
-	mov qword [rsp+8*284],r10
-	mov qword [rsp+8*283],r11
+	mov qword [rsp+8*284],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2620,12 +2342,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*285]
 	mov r10 , rax
+	mov r11, qword [rsp+8*286]
+	mov r11,r10
 	mov qword [rsp+8*285],r10
-	mov r10, qword [rsp+8*286]
-	mov r11, qword [rsp+8*285]
-	mov r10,r11
-	mov qword [rsp+8*286],r10
-	mov qword [rsp+8*285],r11
+	mov qword [rsp+8*286],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2634,12 +2354,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*287]
 	mov r10 , rax
+	mov r11, qword [rsp+8*288]
+	mov r11,r10
 	mov qword [rsp+8*287],r10
-	mov r10, qword [rsp+8*288]
-	mov r11, qword [rsp+8*287]
-	mov r10,r11
-	mov qword [rsp+8*288],r10
-	mov qword [rsp+8*287],r11
+	mov qword [rsp+8*288],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2648,12 +2366,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*289]
 	mov r10 , rax
+	mov r11, qword [rsp+8*290]
+	mov r11,r10
 	mov qword [rsp+8*289],r10
-	mov r10, qword [rsp+8*290]
-	mov r11, qword [rsp+8*289]
-	mov r10,r11
-	mov qword [rsp+8*290],r10
-	mov qword [rsp+8*289],r11
+	mov qword [rsp+8*290],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2662,12 +2378,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*291]
 	mov r10 , rax
+	mov r11, qword [rsp+8*292]
+	mov r11,r10
 	mov qword [rsp+8*291],r10
-	mov r10, qword [rsp+8*292]
-	mov r11, qword [rsp+8*291]
-	mov r10,r11
-	mov qword [rsp+8*292],r10
-	mov qword [rsp+8*291],r11
+	mov qword [rsp+8*292],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2676,12 +2390,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*293]
 	mov r10 , rax
+	mov r11, qword [rsp+8*294]
+	mov r11,r10
 	mov qword [rsp+8*293],r10
-	mov r10, qword [rsp+8*294]
-	mov r11, qword [rsp+8*293]
-	mov r10,r11
-	mov qword [rsp+8*294],r10
-	mov qword [rsp+8*293],r11
+	mov qword [rsp+8*294],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2690,12 +2402,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*295]
 	mov r10 , rax
+	mov r11, qword [rsp+8*296]
+	mov r11,r10
 	mov qword [rsp+8*295],r10
-	mov r10, qword [rsp+8*296]
-	mov r11, qword [rsp+8*295]
-	mov r10,r11
-	mov qword [rsp+8*296],r10
-	mov qword [rsp+8*295],r11
+	mov qword [rsp+8*296],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2704,12 +2414,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*297]
 	mov r10 , rax
+	mov r11, qword [rsp+8*298]
+	mov r11,r10
 	mov qword [rsp+8*297],r10
-	mov r10, qword [rsp+8*298]
-	mov r11, qword [rsp+8*297]
-	mov r10,r11
-	mov qword [rsp+8*298],r10
-	mov qword [rsp+8*297],r11
+	mov qword [rsp+8*298],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2718,12 +2426,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*299]
 	mov r10 , rax
+	mov r11, qword [rsp+8*300]
+	mov r11,r10
 	mov qword [rsp+8*299],r10
-	mov r10, qword [rsp+8*300]
-	mov r11, qword [rsp+8*299]
-	mov r10,r11
-	mov qword [rsp+8*300],r10
-	mov qword [rsp+8*299],r11
+	mov qword [rsp+8*300],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2732,12 +2438,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*301]
 	mov r10 , rax
+	mov r11, qword [rsp+8*302]
+	mov r11,r10
 	mov qword [rsp+8*301],r10
-	mov r10, qword [rsp+8*302]
-	mov r11, qword [rsp+8*301]
-	mov r10,r11
-	mov qword [rsp+8*302],r10
-	mov qword [rsp+8*301],r11
+	mov qword [rsp+8*302],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2746,12 +2450,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*303]
 	mov r10 , rax
+	mov r11, qword [rsp+8*304]
+	mov r11,r10
 	mov qword [rsp+8*303],r10
-	mov r10, qword [rsp+8*304]
-	mov r11, qword [rsp+8*303]
-	mov r10,r11
-	mov qword [rsp+8*304],r10
-	mov qword [rsp+8*303],r11
+	mov qword [rsp+8*304],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2760,12 +2462,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*305]
 	mov r10 , rax
+	mov r11, qword [rsp+8*306]
+	mov r11,r10
 	mov qword [rsp+8*305],r10
-	mov r10, qword [rsp+8*306]
-	mov r11, qword [rsp+8*305]
-	mov r10,r11
-	mov qword [rsp+8*306],r10
-	mov qword [rsp+8*305],r11
+	mov qword [rsp+8*306],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2774,12 +2474,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*307]
 	mov r10 , rax
+	mov r11, qword [rsp+8*308]
+	mov r11,r10
 	mov qword [rsp+8*307],r10
-	mov r10, qword [rsp+8*308]
-	mov r11, qword [rsp+8*307]
-	mov r10,r11
-	mov qword [rsp+8*308],r10
-	mov qword [rsp+8*307],r11
+	mov qword [rsp+8*308],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2788,12 +2486,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*309]
 	mov r10 , rax
+	mov r11, qword [rsp+8*310]
+	mov r11,r10
 	mov qword [rsp+8*309],r10
-	mov r10, qword [rsp+8*310]
-	mov r11, qword [rsp+8*309]
-	mov r10,r11
-	mov qword [rsp+8*310],r10
-	mov qword [rsp+8*309],r11
+	mov qword [rsp+8*310],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2802,12 +2498,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*311]
 	mov r10 , rax
+	mov r11, qword [rsp+8*312]
+	mov r11,r10
 	mov qword [rsp+8*311],r10
-	mov r10, qword [rsp+8*312]
-	mov r11, qword [rsp+8*311]
-	mov r10,r11
-	mov qword [rsp+8*312],r10
-	mov qword [rsp+8*311],r11
+	mov qword [rsp+8*312],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2816,12 +2510,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*313]
 	mov r10 , rax
+	mov r11, qword [rsp+8*314]
+	mov r11,r10
 	mov qword [rsp+8*313],r10
-	mov r10, qword [rsp+8*314]
-	mov r11, qword [rsp+8*313]
-	mov r10,r11
-	mov qword [rsp+8*314],r10
-	mov qword [rsp+8*313],r11
+	mov qword [rsp+8*314],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2830,12 +2522,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*315]
 	mov r10 , rax
+	mov r11, qword [rsp+8*316]
+	mov r11,r10
 	mov qword [rsp+8*315],r10
-	mov r10, qword [rsp+8*316]
-	mov r11, qword [rsp+8*315]
-	mov r10,r11
-	mov qword [rsp+8*316],r10
-	mov qword [rsp+8*315],r11
+	mov qword [rsp+8*316],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2844,12 +2534,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*317]
 	mov r10 , rax
+	mov r11, qword [rsp+8*318]
+	mov r11,r10
 	mov qword [rsp+8*317],r10
-	mov r10, qword [rsp+8*318]
-	mov r11, qword [rsp+8*317]
-	mov r10,r11
-	mov qword [rsp+8*318],r10
-	mov qword [rsp+8*317],r11
+	mov qword [rsp+8*318],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2858,12 +2546,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*319]
 	mov r10 , rax
+	mov r11, qword [rsp+8*320]
+	mov r11,r10
 	mov qword [rsp+8*319],r10
-	mov r10, qword [rsp+8*320]
-	mov r11, qword [rsp+8*319]
-	mov r10,r11
-	mov qword [rsp+8*320],r10
-	mov qword [rsp+8*319],r11
+	mov qword [rsp+8*320],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2872,12 +2558,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*321]
 	mov r10 , rax
+	mov r11, qword [rsp+8*322]
+	mov r11,r10
 	mov qword [rsp+8*321],r10
-	mov r10, qword [rsp+8*322]
-	mov r11, qword [rsp+8*321]
-	mov r10,r11
-	mov qword [rsp+8*322],r10
-	mov qword [rsp+8*321],r11
+	mov qword [rsp+8*322],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2886,12 +2570,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*323]
 	mov r10 , rax
+	mov r11, qword [rsp+8*324]
+	mov r11,r10
 	mov qword [rsp+8*323],r10
-	mov r10, qword [rsp+8*324]
-	mov r11, qword [rsp+8*323]
-	mov r10,r11
-	mov qword [rsp+8*324],r10
-	mov qword [rsp+8*323],r11
+	mov qword [rsp+8*324],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2900,12 +2582,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*325]
 	mov r10 , rax
+	mov r11, qword [rsp+8*326]
+	mov r11,r10
 	mov qword [rsp+8*325],r10
-	mov r10, qword [rsp+8*326]
-	mov r11, qword [rsp+8*325]
-	mov r10,r11
-	mov qword [rsp+8*326],r10
-	mov qword [rsp+8*325],r11
+	mov qword [rsp+8*326],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2914,12 +2594,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*327]
 	mov r10 , rax
+	mov r11, qword [rsp+8*328]
+	mov r11,r10
 	mov qword [rsp+8*327],r10
-	mov r10, qword [rsp+8*328]
-	mov r11, qword [rsp+8*327]
-	mov r10,r11
-	mov qword [rsp+8*328],r10
-	mov qword [rsp+8*327],r11
+	mov qword [rsp+8*328],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2928,12 +2606,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*329]
 	mov r10 , rax
+	mov r11, qword [rsp+8*330]
+	mov r11,r10
 	mov qword [rsp+8*329],r10
-	mov r10, qword [rsp+8*330]
-	mov r11, qword [rsp+8*329]
-	mov r10,r11
-	mov qword [rsp+8*330],r10
-	mov qword [rsp+8*329],r11
+	mov qword [rsp+8*330],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2942,12 +2618,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*331]
 	mov r10 , rax
+	mov r11, qword [rsp+8*332]
+	mov r11,r10
 	mov qword [rsp+8*331],r10
-	mov r10, qword [rsp+8*332]
-	mov r11, qword [rsp+8*331]
-	mov r10,r11
-	mov qword [rsp+8*332],r10
-	mov qword [rsp+8*331],r11
+	mov qword [rsp+8*332],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2956,12 +2630,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*333]
 	mov r10 , rax
+	mov r11, qword [rsp+8*334]
+	mov r11,r10
 	mov qword [rsp+8*333],r10
-	mov r10, qword [rsp+8*334]
-	mov r11, qword [rsp+8*333]
-	mov r10,r11
-	mov qword [rsp+8*334],r10
-	mov qword [rsp+8*333],r11
+	mov qword [rsp+8*334],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2970,12 +2642,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*335]
 	mov r10 , rax
+	mov r11, qword [rsp+8*336]
+	mov r11,r10
 	mov qword [rsp+8*335],r10
-	mov r10, qword [rsp+8*336]
-	mov r11, qword [rsp+8*335]
-	mov r10,r11
-	mov qword [rsp+8*336],r10
-	mov qword [rsp+8*335],r11
+	mov qword [rsp+8*336],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2984,12 +2654,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*337]
 	mov r10 , rax
+	mov r11, qword [rsp+8*338]
+	mov r11,r10
 	mov qword [rsp+8*337],r10
-	mov r10, qword [rsp+8*338]
-	mov r11, qword [rsp+8*337]
-	mov r10,r11
-	mov qword [rsp+8*338],r10
-	mov qword [rsp+8*337],r11
+	mov qword [rsp+8*338],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -2998,12 +2666,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*339]
 	mov r10 , rax
+	mov r11, qword [rsp+8*340]
+	mov r11,r10
 	mov qword [rsp+8*339],r10
-	mov r10, qword [rsp+8*340]
-	mov r11, qword [rsp+8*339]
-	mov r10,r11
-	mov qword [rsp+8*340],r10
-	mov qword [rsp+8*339],r11
+	mov qword [rsp+8*340],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3012,12 +2678,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*341]
 	mov r10 , rax
+	mov r11, qword [rsp+8*342]
+	mov r11,r10
 	mov qword [rsp+8*341],r10
-	mov r10, qword [rsp+8*342]
-	mov r11, qword [rsp+8*341]
-	mov r10,r11
-	mov qword [rsp+8*342],r10
-	mov qword [rsp+8*341],r11
+	mov qword [rsp+8*342],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3026,12 +2690,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*343]
 	mov r10 , rax
+	mov r11, qword [rsp+8*344]
+	mov r11,r10
 	mov qword [rsp+8*343],r10
-	mov r10, qword [rsp+8*344]
-	mov r11, qword [rsp+8*343]
-	mov r10,r11
-	mov qword [rsp+8*344],r10
-	mov qword [rsp+8*343],r11
+	mov qword [rsp+8*344],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3040,12 +2702,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*345]
 	mov r10 , rax
+	mov r11, qword [rsp+8*346]
+	mov r11,r10
 	mov qword [rsp+8*345],r10
-	mov r10, qword [rsp+8*346]
-	mov r11, qword [rsp+8*345]
-	mov r10,r11
-	mov qword [rsp+8*346],r10
-	mov qword [rsp+8*345],r11
+	mov qword [rsp+8*346],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3054,12 +2714,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*347]
 	mov r10 , rax
+	mov r11, qword [rsp+8*348]
+	mov r11,r10
 	mov qword [rsp+8*347],r10
-	mov r10, qword [rsp+8*348]
-	mov r11, qword [rsp+8*347]
-	mov r10,r11
-	mov qword [rsp+8*348],r10
-	mov qword [rsp+8*347],r11
+	mov qword [rsp+8*348],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3068,12 +2726,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*349]
 	mov r10 , rax
+	mov r11, qword [rsp+8*350]
+	mov r11,r10
 	mov qword [rsp+8*349],r10
-	mov r10, qword [rsp+8*350]
-	mov r11, qword [rsp+8*349]
-	mov r10,r11
-	mov qword [rsp+8*350],r10
-	mov qword [rsp+8*349],r11
+	mov qword [rsp+8*350],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3082,12 +2738,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*351]
 	mov r10 , rax
+	mov r11, qword [rsp+8*352]
+	mov r11,r10
 	mov qword [rsp+8*351],r10
-	mov r10, qword [rsp+8*352]
-	mov r11, qword [rsp+8*351]
-	mov r10,r11
-	mov qword [rsp+8*352],r10
-	mov qword [rsp+8*351],r11
+	mov qword [rsp+8*352],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3096,12 +2750,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*353]
 	mov r10 , rax
+	mov r11, qword [rsp+8*354]
+	mov r11,r10
 	mov qword [rsp+8*353],r10
-	mov r10, qword [rsp+8*354]
-	mov r11, qword [rsp+8*353]
-	mov r10,r11
-	mov qword [rsp+8*354],r10
-	mov qword [rsp+8*353],r11
+	mov qword [rsp+8*354],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3110,12 +2762,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*355]
 	mov r10 , rax
+	mov r11, qword [rsp+8*356]
+	mov r11,r10
 	mov qword [rsp+8*355],r10
-	mov r10, qword [rsp+8*356]
-	mov r11, qword [rsp+8*355]
-	mov r10,r11
-	mov qword [rsp+8*356],r10
-	mov qword [rsp+8*355],r11
+	mov qword [rsp+8*356],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3124,12 +2774,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*357]
 	mov r10 , rax
+	mov r11, qword [rsp+8*358]
+	mov r11,r10
 	mov qword [rsp+8*357],r10
-	mov r10, qword [rsp+8*358]
-	mov r11, qword [rsp+8*357]
-	mov r10,r11
-	mov qword [rsp+8*358],r10
-	mov qword [rsp+8*357],r11
+	mov qword [rsp+8*358],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3138,12 +2786,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*359]
 	mov r10 , rax
+	mov r11, qword [rsp+8*360]
+	mov r11,r10
 	mov qword [rsp+8*359],r10
-	mov r10, qword [rsp+8*360]
-	mov r11, qword [rsp+8*359]
-	mov r10,r11
-	mov qword [rsp+8*360],r10
-	mov qword [rsp+8*359],r11
+	mov qword [rsp+8*360],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3152,12 +2798,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*361]
 	mov r10 , rax
+	mov r11, qword [rsp+8*362]
+	mov r11,r10
 	mov qword [rsp+8*361],r10
-	mov r10, qword [rsp+8*362]
-	mov r11, qword [rsp+8*361]
-	mov r10,r11
-	mov qword [rsp+8*362],r10
-	mov qword [rsp+8*361],r11
+	mov qword [rsp+8*362],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3166,12 +2810,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*363]
 	mov r10 , rax
+	mov r11, qword [rsp+8*364]
+	mov r11,r10
 	mov qword [rsp+8*363],r10
-	mov r10, qword [rsp+8*364]
-	mov r11, qword [rsp+8*363]
-	mov r10,r11
-	mov qword [rsp+8*364],r10
-	mov qword [rsp+8*363],r11
+	mov qword [rsp+8*364],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3180,12 +2822,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*365]
 	mov r10 , rax
+	mov r11, qword [rsp+8*366]
+	mov r11,r10
 	mov qword [rsp+8*365],r10
-	mov r10, qword [rsp+8*366]
-	mov r11, qword [rsp+8*365]
-	mov r10,r11
-	mov qword [rsp+8*366],r10
-	mov qword [rsp+8*365],r11
+	mov qword [rsp+8*366],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3194,12 +2834,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*367]
 	mov r10 , rax
+	mov r11, qword [rsp+8*368]
+	mov r11,r10
 	mov qword [rsp+8*367],r10
-	mov r10, qword [rsp+8*368]
-	mov r11, qword [rsp+8*367]
-	mov r10,r11
-	mov qword [rsp+8*368],r10
-	mov qword [rsp+8*367],r11
+	mov qword [rsp+8*368],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3208,12 +2846,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*369]
 	mov r10 , rax
+	mov r11, qword [rsp+8*370]
+	mov r11,r10
 	mov qword [rsp+8*369],r10
-	mov r10, qword [rsp+8*370]
-	mov r11, qword [rsp+8*369]
-	mov r10,r11
-	mov qword [rsp+8*370],r10
-	mov qword [rsp+8*369],r11
+	mov qword [rsp+8*370],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3222,12 +2858,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*371]
 	mov r10 , rax
+	mov r11, qword [rsp+8*372]
+	mov r11,r10
 	mov qword [rsp+8*371],r10
-	mov r10, qword [rsp+8*372]
-	mov r11, qword [rsp+8*371]
-	mov r10,r11
-	mov qword [rsp+8*372],r10
-	mov qword [rsp+8*371],r11
+	mov qword [rsp+8*372],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3236,12 +2870,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*373]
 	mov r10 , rax
+	mov r11, qword [rsp+8*374]
+	mov r11,r10
 	mov qword [rsp+8*373],r10
-	mov r10, qword [rsp+8*374]
-	mov r11, qword [rsp+8*373]
-	mov r10,r11
-	mov qword [rsp+8*374],r10
-	mov qword [rsp+8*373],r11
+	mov qword [rsp+8*374],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3250,12 +2882,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*375]
 	mov r10 , rax
+	mov r11, qword [rsp+8*376]
+	mov r11,r10
 	mov qword [rsp+8*375],r10
-	mov r10, qword [rsp+8*376]
-	mov r11, qword [rsp+8*375]
-	mov r10,r11
-	mov qword [rsp+8*376],r10
-	mov qword [rsp+8*375],r11
+	mov qword [rsp+8*376],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3264,12 +2894,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*377]
 	mov r10 , rax
+	mov r11, qword [rsp+8*378]
+	mov r11,r10
 	mov qword [rsp+8*377],r10
-	mov r10, qword [rsp+8*378]
-	mov r11, qword [rsp+8*377]
-	mov r10,r11
-	mov qword [rsp+8*378],r10
-	mov qword [rsp+8*377],r11
+	mov qword [rsp+8*378],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3278,12 +2906,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*379]
 	mov r10 , rax
+	mov r11, qword [rsp+8*380]
+	mov r11,r10
 	mov qword [rsp+8*379],r10
-	mov r10, qword [rsp+8*380]
-	mov r11, qword [rsp+8*379]
-	mov r10,r11
-	mov qword [rsp+8*380],r10
-	mov qword [rsp+8*379],r11
+	mov qword [rsp+8*380],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3292,12 +2918,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*381]
 	mov r10 , rax
+	mov r11, qword [rsp+8*382]
+	mov r11,r10
 	mov qword [rsp+8*381],r10
-	mov r10, qword [rsp+8*382]
-	mov r11, qword [rsp+8*381]
-	mov r10,r11
-	mov qword [rsp+8*382],r10
-	mov qword [rsp+8*381],r11
+	mov qword [rsp+8*382],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3306,12 +2930,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*383]
 	mov r10 , rax
+	mov r11, qword [rsp+8*384]
+	mov r11,r10
 	mov qword [rsp+8*383],r10
-	mov r10, qword [rsp+8*384]
-	mov r11, qword [rsp+8*383]
-	mov r10,r11
-	mov qword [rsp+8*384],r10
-	mov qword [rsp+8*383],r11
+	mov qword [rsp+8*384],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3320,12 +2942,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*385]
 	mov r10 , rax
+	mov r11, qword [rsp+8*386]
+	mov r11,r10
 	mov qword [rsp+8*385],r10
-	mov r10, qword [rsp+8*386]
-	mov r11, qword [rsp+8*385]
-	mov r10,r11
-	mov qword [rsp+8*386],r10
-	mov qword [rsp+8*385],r11
+	mov qword [rsp+8*386],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3334,12 +2954,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*387]
 	mov r10 , rax
+	mov r11, qword [rsp+8*388]
+	mov r11,r10
 	mov qword [rsp+8*387],r10
-	mov r10, qword [rsp+8*388]
-	mov r11, qword [rsp+8*387]
-	mov r10,r11
-	mov qword [rsp+8*388],r10
-	mov qword [rsp+8*387],r11
+	mov qword [rsp+8*388],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3348,12 +2966,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*389]
 	mov r10 , rax
+	mov r11, qword [rsp+8*390]
+	mov r11,r10
 	mov qword [rsp+8*389],r10
-	mov r10, qword [rsp+8*390]
-	mov r11, qword [rsp+8*389]
-	mov r10,r11
-	mov qword [rsp+8*390],r10
-	mov qword [rsp+8*389],r11
+	mov qword [rsp+8*390],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3362,12 +2978,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*391]
 	mov r10 , rax
+	mov r11, qword [rsp+8*392]
+	mov r11,r10
 	mov qword [rsp+8*391],r10
-	mov r10, qword [rsp+8*392]
-	mov r11, qword [rsp+8*391]
-	mov r10,r11
-	mov qword [rsp+8*392],r10
-	mov qword [rsp+8*391],r11
+	mov qword [rsp+8*392],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3376,12 +2990,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*393]
 	mov r10 , rax
+	mov r11, qword [rsp+8*394]
+	mov r11,r10
 	mov qword [rsp+8*393],r10
-	mov r10, qword [rsp+8*394]
-	mov r11, qword [rsp+8*393]
-	mov r10,r11
-	mov qword [rsp+8*394],r10
-	mov qword [rsp+8*393],r11
+	mov qword [rsp+8*394],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3390,12 +3002,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*395]
 	mov r10 , rax
+	mov r11, qword [rsp+8*396]
+	mov r11,r10
 	mov qword [rsp+8*395],r10
-	mov r10, qword [rsp+8*396]
-	mov r11, qword [rsp+8*395]
-	mov r10,r11
-	mov qword [rsp+8*396],r10
-	mov qword [rsp+8*395],r11
+	mov qword [rsp+8*396],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3404,12 +3014,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*397]
 	mov r10 , rax
+	mov r11, qword [rsp+8*398]
+	mov r11,r10
 	mov qword [rsp+8*397],r10
-	mov r10, qword [rsp+8*398]
-	mov r11, qword [rsp+8*397]
-	mov r10,r11
-	mov qword [rsp+8*398],r10
-	mov qword [rsp+8*397],r11
+	mov qword [rsp+8*398],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3418,12 +3026,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*399]
 	mov r10 , rax
+	mov r11, qword [rsp+8*400]
+	mov r11,r10
 	mov qword [rsp+8*399],r10
-	mov r10, qword [rsp+8*400]
-	mov r11, qword [rsp+8*399]
-	mov r10,r11
-	mov qword [rsp+8*400],r10
-	mov qword [rsp+8*399],r11
+	mov qword [rsp+8*400],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3432,12 +3038,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*401]
 	mov r10 , rax
+	mov r11, qword [rsp+8*402]
+	mov r11,r10
 	mov qword [rsp+8*401],r10
-	mov r10, qword [rsp+8*402]
-	mov r11, qword [rsp+8*401]
-	mov r10,r11
-	mov qword [rsp+8*402],r10
-	mov qword [rsp+8*401],r11
+	mov qword [rsp+8*402],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3446,12 +3050,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*403]
 	mov r10 , rax
+	mov r11, qword [rsp+8*404]
+	mov r11,r10
 	mov qword [rsp+8*403],r10
-	mov r10, qword [rsp+8*404]
-	mov r11, qword [rsp+8*403]
-	mov r10,r11
-	mov qword [rsp+8*404],r10
-	mov qword [rsp+8*403],r11
+	mov qword [rsp+8*404],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3460,12 +3062,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*405]
 	mov r10 , rax
+	mov r11, qword [rsp+8*406]
+	mov r11,r10
 	mov qword [rsp+8*405],r10
-	mov r10, qword [rsp+8*406]
-	mov r11, qword [rsp+8*405]
-	mov r10,r11
-	mov qword [rsp+8*406],r10
-	mov qword [rsp+8*405],r11
+	mov qword [rsp+8*406],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3474,12 +3074,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*407]
 	mov r10 , rax
+	mov r11, qword [rsp+8*408]
+	mov r11,r10
 	mov qword [rsp+8*407],r10
-	mov r10, qword [rsp+8*408]
-	mov r11, qword [rsp+8*407]
-	mov r10,r11
-	mov qword [rsp+8*408],r10
-	mov qword [rsp+8*407],r11
+	mov qword [rsp+8*408],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3488,12 +3086,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*409]
 	mov r10 , rax
+	mov r11, qword [rsp+8*410]
+	mov r11,r10
 	mov qword [rsp+8*409],r10
-	mov r10, qword [rsp+8*410]
-	mov r11, qword [rsp+8*409]
-	mov r10,r11
-	mov qword [rsp+8*410],r10
-	mov qword [rsp+8*409],r11
+	mov qword [rsp+8*410],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3502,12 +3098,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*411]
 	mov r10 , rax
+	mov r11, qword [rsp+8*412]
+	mov r11,r10
 	mov qword [rsp+8*411],r10
-	mov r10, qword [rsp+8*412]
-	mov r11, qword [rsp+8*411]
-	mov r10,r11
-	mov qword [rsp+8*412],r10
-	mov qword [rsp+8*411],r11
+	mov qword [rsp+8*412],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3516,12 +3110,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*413]
 	mov r10 , rax
+	mov r11, qword [rsp+8*414]
+	mov r11,r10
 	mov qword [rsp+8*413],r10
-	mov r10, qword [rsp+8*414]
-	mov r11, qword [rsp+8*413]
-	mov r10,r11
-	mov qword [rsp+8*414],r10
-	mov qword [rsp+8*413],r11
+	mov qword [rsp+8*414],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3530,12 +3122,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*415]
 	mov r10 , rax
+	mov r11, qword [rsp+8*416]
+	mov r11,r10
 	mov qword [rsp+8*415],r10
-	mov r10, qword [rsp+8*416]
-	mov r11, qword [rsp+8*415]
-	mov r10,r11
-	mov qword [rsp+8*416],r10
-	mov qword [rsp+8*415],r11
+	mov qword [rsp+8*416],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3544,12 +3134,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*417]
 	mov r10 , rax
+	mov r11, qword [rsp+8*418]
+	mov r11,r10
 	mov qword [rsp+8*417],r10
-	mov r10, qword [rsp+8*418]
-	mov r11, qword [rsp+8*417]
-	mov r10,r11
-	mov qword [rsp+8*418],r10
-	mov qword [rsp+8*417],r11
+	mov qword [rsp+8*418],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3558,12 +3146,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*419]
 	mov r10 , rax
+	mov r11, qword [rsp+8*420]
+	mov r11,r10
 	mov qword [rsp+8*419],r10
-	mov r10, qword [rsp+8*420]
-	mov r11, qword [rsp+8*419]
-	mov r10,r11
-	mov qword [rsp+8*420],r10
-	mov qword [rsp+8*419],r11
+	mov qword [rsp+8*420],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3572,12 +3158,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*421]
 	mov r10 , rax
+	mov r11, qword [rsp+8*422]
+	mov r11,r10
 	mov qword [rsp+8*421],r10
-	mov r10, qword [rsp+8*422]
-	mov r11, qword [rsp+8*421]
-	mov r10,r11
-	mov qword [rsp+8*422],r10
-	mov qword [rsp+8*421],r11
+	mov qword [rsp+8*422],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3586,12 +3170,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*423]
 	mov r10 , rax
+	mov r11, qword [rsp+8*424]
+	mov r11,r10
 	mov qword [rsp+8*423],r10
-	mov r10, qword [rsp+8*424]
-	mov r11, qword [rsp+8*423]
-	mov r10,r11
-	mov qword [rsp+8*424],r10
-	mov qword [rsp+8*423],r11
+	mov qword [rsp+8*424],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3600,12 +3182,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*425]
 	mov r10 , rax
+	mov r11, qword [rsp+8*426]
+	mov r11,r10
 	mov qword [rsp+8*425],r10
-	mov r10, qword [rsp+8*426]
-	mov r11, qword [rsp+8*425]
-	mov r10,r11
-	mov qword [rsp+8*426],r10
-	mov qword [rsp+8*425],r11
+	mov qword [rsp+8*426],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3614,12 +3194,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*427]
 	mov r10 , rax
+	mov r11, qword [rsp+8*428]
+	mov r11,r10
 	mov qword [rsp+8*427],r10
-	mov r10, qword [rsp+8*428]
-	mov r11, qword [rsp+8*427]
-	mov r10,r11
-	mov qword [rsp+8*428],r10
-	mov qword [rsp+8*427],r11
+	mov qword [rsp+8*428],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3628,12 +3206,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*429]
 	mov r10 , rax
+	mov r11, qword [rsp+8*430]
+	mov r11,r10
 	mov qword [rsp+8*429],r10
-	mov r10, qword [rsp+8*430]
-	mov r11, qword [rsp+8*429]
-	mov r10,r11
-	mov qword [rsp+8*430],r10
-	mov qword [rsp+8*429],r11
+	mov qword [rsp+8*430],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3642,12 +3218,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*431]
 	mov r10 , rax
+	mov r11, qword [rsp+8*432]
+	mov r11,r10
 	mov qword [rsp+8*431],r10
-	mov r10, qword [rsp+8*432]
-	mov r11, qword [rsp+8*431]
-	mov r10,r11
-	mov qword [rsp+8*432],r10
-	mov qword [rsp+8*431],r11
+	mov qword [rsp+8*432],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3656,12 +3230,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*433]
 	mov r10 , rax
+	mov r11, qword [rsp+8*434]
+	mov r11,r10
 	mov qword [rsp+8*433],r10
-	mov r10, qword [rsp+8*434]
-	mov r11, qword [rsp+8*433]
-	mov r10,r11
-	mov qword [rsp+8*434],r10
-	mov qword [rsp+8*433],r11
+	mov qword [rsp+8*434],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3670,12 +3242,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*435]
 	mov r10 , rax
+	mov r11, qword [rsp+8*436]
+	mov r11,r10
 	mov qword [rsp+8*435],r10
-	mov r10, qword [rsp+8*436]
-	mov r11, qword [rsp+8*435]
-	mov r10,r11
-	mov qword [rsp+8*436],r10
-	mov qword [rsp+8*435],r11
+	mov qword [rsp+8*436],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3684,12 +3254,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*437]
 	mov r10 , rax
+	mov r11, qword [rsp+8*438]
+	mov r11,r10
 	mov qword [rsp+8*437],r10
-	mov r10, qword [rsp+8*438]
-	mov r11, qword [rsp+8*437]
-	mov r10,r11
-	mov qword [rsp+8*438],r10
-	mov qword [rsp+8*437],r11
+	mov qword [rsp+8*438],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3698,12 +3266,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*439]
 	mov r10 , rax
+	mov r11, qword [rsp+8*440]
+	mov r11,r10
 	mov qword [rsp+8*439],r10
-	mov r10, qword [rsp+8*440]
-	mov r11, qword [rsp+8*439]
-	mov r10,r11
-	mov qword [rsp+8*440],r10
-	mov qword [rsp+8*439],r11
+	mov qword [rsp+8*440],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3712,12 +3278,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*441]
 	mov r10 , rax
+	mov r11, qword [rsp+8*442]
+	mov r11,r10
 	mov qword [rsp+8*441],r10
-	mov r10, qword [rsp+8*442]
-	mov r11, qword [rsp+8*441]
-	mov r10,r11
-	mov qword [rsp+8*442],r10
-	mov qword [rsp+8*441],r11
+	mov qword [rsp+8*442],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3726,12 +3290,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*443]
 	mov r10 , rax
+	mov r11, qword [rsp+8*444]
+	mov r11,r10
 	mov qword [rsp+8*443],r10
-	mov r10, qword [rsp+8*444]
-	mov r11, qword [rsp+8*443]
-	mov r10,r11
-	mov qword [rsp+8*444],r10
-	mov qword [rsp+8*443],r11
+	mov qword [rsp+8*444],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3740,12 +3302,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*445]
 	mov r10 , rax
+	mov r11, qword [rsp+8*446]
+	mov r11,r10
 	mov qword [rsp+8*445],r10
-	mov r10, qword [rsp+8*446]
-	mov r11, qword [rsp+8*445]
-	mov r10,r11
-	mov qword [rsp+8*446],r10
-	mov qword [rsp+8*445],r11
+	mov qword [rsp+8*446],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3754,12 +3314,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*447]
 	mov r10 , rax
+	mov r11, qword [rsp+8*448]
+	mov r11,r10
 	mov qword [rsp+8*447],r10
-	mov r10, qword [rsp+8*448]
-	mov r11, qword [rsp+8*447]
-	mov r10,r11
-	mov qword [rsp+8*448],r10
-	mov qword [rsp+8*447],r11
+	mov qword [rsp+8*448],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3768,12 +3326,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*449]
 	mov r10 , rax
+	mov r11, qword [rsp+8*450]
+	mov r11,r10
 	mov qword [rsp+8*449],r10
-	mov r10, qword [rsp+8*450]
-	mov r11, qword [rsp+8*449]
-	mov r10,r11
-	mov qword [rsp+8*450],r10
-	mov qword [rsp+8*449],r11
+	mov qword [rsp+8*450],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3782,12 +3338,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*451]
 	mov r10 , rax
+	mov r11, qword [rsp+8*452]
+	mov r11,r10
 	mov qword [rsp+8*451],r10
-	mov r10, qword [rsp+8*452]
-	mov r11, qword [rsp+8*451]
-	mov r10,r11
-	mov qword [rsp+8*452],r10
-	mov qword [rsp+8*451],r11
+	mov qword [rsp+8*452],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3796,12 +3350,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*453]
 	mov r10 , rax
+	mov r11, qword [rsp+8*454]
+	mov r11,r10
 	mov qword [rsp+8*453],r10
-	mov r10, qword [rsp+8*454]
-	mov r11, qword [rsp+8*453]
-	mov r10,r11
-	mov qword [rsp+8*454],r10
-	mov qword [rsp+8*453],r11
+	mov qword [rsp+8*454],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3810,12 +3362,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*455]
 	mov r10 , rax
+	mov r11, qword [rsp+8*456]
+	mov r11,r10
 	mov qword [rsp+8*455],r10
-	mov r10, qword [rsp+8*456]
-	mov r11, qword [rsp+8*455]
-	mov r10,r11
-	mov qword [rsp+8*456],r10
-	mov qword [rsp+8*455],r11
+	mov qword [rsp+8*456],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3824,12 +3374,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*457]
 	mov r10 , rax
+	mov r11, qword [rsp+8*458]
+	mov r11,r10
 	mov qword [rsp+8*457],r10
-	mov r10, qword [rsp+8*458]
-	mov r11, qword [rsp+8*457]
-	mov r10,r11
-	mov qword [rsp+8*458],r10
-	mov qword [rsp+8*457],r11
+	mov qword [rsp+8*458],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3838,12 +3386,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*459]
 	mov r10 , rax
+	mov r11, qword [rsp+8*460]
+	mov r11,r10
 	mov qword [rsp+8*459],r10
-	mov r10, qword [rsp+8*460]
-	mov r11, qword [rsp+8*459]
-	mov r10,r11
-	mov qword [rsp+8*460],r10
-	mov qword [rsp+8*459],r11
+	mov qword [rsp+8*460],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3852,12 +3398,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*461]
 	mov r10 , rax
+	mov r11, qword [rsp+8*462]
+	mov r11,r10
 	mov qword [rsp+8*461],r10
-	mov r10, qword [rsp+8*462]
-	mov r11, qword [rsp+8*461]
-	mov r10,r11
-	mov qword [rsp+8*462],r10
-	mov qword [rsp+8*461],r11
+	mov qword [rsp+8*462],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3866,12 +3410,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*463]
 	mov r10 , rax
+	mov r11, qword [rsp+8*464]
+	mov r11,r10
 	mov qword [rsp+8*463],r10
-	mov r10, qword [rsp+8*464]
-	mov r11, qword [rsp+8*463]
-	mov r10,r11
-	mov qword [rsp+8*464],r10
-	mov qword [rsp+8*463],r11
+	mov qword [rsp+8*464],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3880,12 +3422,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*465]
 	mov r10 , rax
+	mov r11, qword [rsp+8*466]
+	mov r11,r10
 	mov qword [rsp+8*465],r10
-	mov r10, qword [rsp+8*466]
-	mov r11, qword [rsp+8*465]
-	mov r10,r11
-	mov qword [rsp+8*466],r10
-	mov qword [rsp+8*465],r11
+	mov qword [rsp+8*466],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3894,12 +3434,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*467]
 	mov r10 , rax
+	mov r11, qword [rsp+8*468]
+	mov r11,r10
 	mov qword [rsp+8*467],r10
-	mov r10, qword [rsp+8*468]
-	mov r11, qword [rsp+8*467]
-	mov r10,r11
-	mov qword [rsp+8*468],r10
-	mov qword [rsp+8*467],r11
+	mov qword [rsp+8*468],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3908,12 +3446,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*469]
 	mov r10 , rax
+	mov r11, qword [rsp+8*470]
+	mov r11,r10
 	mov qword [rsp+8*469],r10
-	mov r10, qword [rsp+8*470]
-	mov r11, qword [rsp+8*469]
-	mov r10,r11
-	mov qword [rsp+8*470],r10
-	mov qword [rsp+8*469],r11
+	mov qword [rsp+8*470],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3922,12 +3458,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*471]
 	mov r10 , rax
+	mov r11, qword [rsp+8*472]
+	mov r11,r10
 	mov qword [rsp+8*471],r10
-	mov r10, qword [rsp+8*472]
-	mov r11, qword [rsp+8*471]
-	mov r10,r11
-	mov qword [rsp+8*472],r10
-	mov qword [rsp+8*471],r11
+	mov qword [rsp+8*472],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3936,12 +3470,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*473]
 	mov r10 , rax
+	mov r11, qword [rsp+8*474]
+	mov r11,r10
 	mov qword [rsp+8*473],r10
-	mov r10, qword [rsp+8*474]
-	mov r11, qword [rsp+8*473]
-	mov r10,r11
-	mov qword [rsp+8*474],r10
-	mov qword [rsp+8*473],r11
+	mov qword [rsp+8*474],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3950,12 +3482,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*475]
 	mov r10 , rax
+	mov r11, qword [rsp+8*476]
+	mov r11,r10
 	mov qword [rsp+8*475],r10
-	mov r10, qword [rsp+8*476]
-	mov r11, qword [rsp+8*475]
-	mov r10,r11
-	mov qword [rsp+8*476],r10
-	mov qword [rsp+8*475],r11
+	mov qword [rsp+8*476],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3964,12 +3494,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*477]
 	mov r10 , rax
+	mov r11, qword [rsp+8*478]
+	mov r11,r10
 	mov qword [rsp+8*477],r10
-	mov r10, qword [rsp+8*478]
-	mov r11, qword [rsp+8*477]
-	mov r10,r11
-	mov qword [rsp+8*478],r10
-	mov qword [rsp+8*477],r11
+	mov qword [rsp+8*478],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3978,12 +3506,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*479]
 	mov r10 , rax
+	mov r11, qword [rsp+8*480]
+	mov r11,r10
 	mov qword [rsp+8*479],r10
-	mov r10, qword [rsp+8*480]
-	mov r11, qword [rsp+8*479]
-	mov r10,r11
-	mov qword [rsp+8*480],r10
-	mov qword [rsp+8*479],r11
+	mov qword [rsp+8*480],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -3992,12 +3518,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*481]
 	mov r10 , rax
+	mov r11, qword [rsp+8*482]
+	mov r11,r10
 	mov qword [rsp+8*481],r10
-	mov r10, qword [rsp+8*482]
-	mov r11, qword [rsp+8*481]
-	mov r10,r11
-	mov qword [rsp+8*482],r10
-	mov qword [rsp+8*481],r11
+	mov qword [rsp+8*482],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -4006,12 +3530,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*483]
 	mov r10 , rax
+	mov r11, qword [rsp+8*484]
+	mov r11,r10
 	mov qword [rsp+8*483],r10
-	mov r10, qword [rsp+8*484]
-	mov r11, qword [rsp+8*483]
-	mov r10,r11
-	mov qword [rsp+8*484],r10
-	mov qword [rsp+8*483],r11
+	mov qword [rsp+8*484],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -4020,12 +3542,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*485]
 	mov r10 , rax
+	mov r11, qword [rsp+8*486]
+	mov r11,r10
 	mov qword [rsp+8*485],r10
-	mov r10, qword [rsp+8*486]
-	mov r11, qword [rsp+8*485]
-	mov r10,r11
-	mov qword [rsp+8*486],r10
-	mov qword [rsp+8*485],r11
+	mov qword [rsp+8*486],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -4034,12 +3554,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*487]
 	mov r10 , rax
+	mov r11, qword [rsp+8*488]
+	mov r11,r10
 	mov qword [rsp+8*487],r10
-	mov r10, qword [rsp+8*488]
-	mov r11, qword [rsp+8*487]
-	mov r10,r11
-	mov qword [rsp+8*488],r10
-	mov qword [rsp+8*487],r11
+	mov qword [rsp+8*488],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -4048,12 +3566,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*489]
 	mov r10 , rax
+	mov r11, qword [rsp+8*490]
+	mov r11,r10
 	mov qword [rsp+8*489],r10
-	mov r10, qword [rsp+8*490]
-	mov r11, qword [rsp+8*489]
-	mov r10,r11
-	mov qword [rsp+8*490],r10
-	mov qword [rsp+8*489],r11
+	mov qword [rsp+8*490],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -4062,12 +3578,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*491]
 	mov r10 , rax
+	mov r11, qword [rsp+8*492]
+	mov r11,r10
 	mov qword [rsp+8*491],r10
-	mov r10, qword [rsp+8*492]
-	mov r11, qword [rsp+8*491]
-	mov r10,r11
-	mov qword [rsp+8*492],r10
-	mov qword [rsp+8*491],r11
+	mov qword [rsp+8*492],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -4076,12 +3590,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*493]
 	mov r10 , rax
+	mov r11, qword [rsp+8*494]
+	mov r11,r10
 	mov qword [rsp+8*493],r10
-	mov r10, qword [rsp+8*494]
-	mov r11, qword [rsp+8*493]
-	mov r10,r11
-	mov qword [rsp+8*494],r10
-	mov qword [rsp+8*493],r11
+	mov qword [rsp+8*494],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -4090,12 +3602,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*495]
 	mov r10 , rax
+	mov r11, qword [rsp+8*496]
+	mov r11,r10
 	mov qword [rsp+8*495],r10
-	mov r10, qword [rsp+8*496]
-	mov r11, qword [rsp+8*495]
-	mov r10,r11
-	mov qword [rsp+8*496],r10
-	mov qword [rsp+8*495],r11
+	mov qword [rsp+8*496],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -4104,12 +3614,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*497]
 	mov r10 , rax
+	mov r11, qword [rsp+8*498]
+	mov r11,r10
 	mov qword [rsp+8*497],r10
-	mov r10, qword [rsp+8*498]
-	mov r11, qword [rsp+8*497]
-	mov r10,r11
-	mov qword [rsp+8*498],r10
-	mov qword [rsp+8*497],r11
+	mov qword [rsp+8*498],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -4118,12 +3626,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*499]
 	mov r10 , rax
+	mov r11, qword [rsp+8*500]
+	mov r11,r10
 	mov qword [rsp+8*499],r10
-	mov r10, qword [rsp+8*500]
-	mov r11, qword [rsp+8*499]
-	mov r10,r11
-	mov qword [rsp+8*500],r10
-	mov qword [rsp+8*499],r11
+	mov qword [rsp+8*500],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -4132,12 +3638,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*501]
 	mov r10 , rax
+	mov r11, qword [rsp+8*502]
+	mov r11,r10
 	mov qword [rsp+8*501],r10
-	mov r10, qword [rsp+8*502]
-	mov r11, qword [rsp+8*501]
-	mov r10,r11
-	mov qword [rsp+8*502],r10
-	mov qword [rsp+8*501],r11
+	mov qword [rsp+8*502],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -4146,12 +3650,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*503]
 	mov r10 , rax
+	mov r11, qword [rsp+8*504]
+	mov r11,r10
 	mov qword [rsp+8*503],r10
-	mov r10, qword [rsp+8*504]
-	mov r11, qword [rsp+8*503]
-	mov r10,r11
-	mov qword [rsp+8*504],r10
-	mov qword [rsp+8*503],r11
+	mov qword [rsp+8*504],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -4160,12 +3662,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*505]
 	mov r10 , rax
+	mov r11, qword [rsp+8*506]
+	mov r11,r10
 	mov qword [rsp+8*505],r10
-	mov r10, qword [rsp+8*506]
-	mov r11, qword [rsp+8*505]
-	mov r10,r11
-	mov qword [rsp+8*506],r10
-	mov qword [rsp+8*505],r11
+	mov qword [rsp+8*506],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -4174,12 +3674,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*507]
 	mov r10 , rax
+	mov r11, qword [rsp+8*508]
+	mov r11,r10
 	mov qword [rsp+8*507],r10
-	mov r10, qword [rsp+8*508]
-	mov r11, qword [rsp+8*507]
-	mov r10,r11
-	mov qword [rsp+8*508],r10
-	mov qword [rsp+8*507],r11
+	mov qword [rsp+8*508],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -4188,12 +3686,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*509]
 	mov r10 , rax
+	mov r11, qword [rsp+8*510]
+	mov r11,r10
 	mov qword [rsp+8*509],r10
-	mov r10, qword [rsp+8*510]
-	mov r11, qword [rsp+8*509]
-	mov r10,r11
-	mov qword [rsp+8*510],r10
-	mov qword [rsp+8*509],r11
+	mov qword [rsp+8*510],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -4202,12 +3698,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*511]
 	mov r10 , rax
+	mov r11, qword [rsp+8*512]
+	mov r11,r10
 	mov qword [rsp+8*511],r10
-	mov r10, qword [rsp+8*512]
-	mov r11, qword [rsp+8*511]
-	mov r10,r11
-	mov qword [rsp+8*512],r10
-	mov qword [rsp+8*511],r11
+	mov qword [rsp+8*512],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -4216,12 +3710,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*513]
 	mov r10 , rax
+	mov r11, qword [rsp+8*514]
+	mov r11,r10
 	mov qword [rsp+8*513],r10
-	mov r10, qword [rsp+8*514]
-	mov r11, qword [rsp+8*513]
-	mov r10,r11
-	mov qword [rsp+8*514],r10
-	mov qword [rsp+8*513],r11
+	mov qword [rsp+8*514],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -4230,12 +3722,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*515]
 	mov r10 , rax
+	mov r11, qword [rsp+8*516]
+	mov r11,r10
 	mov qword [rsp+8*515],r10
-	mov r10, qword [rsp+8*516]
-	mov r11, qword [rsp+8*515]
-	mov r10,r11
-	mov qword [rsp+8*516],r10
-	mov qword [rsp+8*515],r11
+	mov qword [rsp+8*516],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11
@@ -4244,12 +3734,10 @@ main:
 	call getcount
 	mov r10, qword [rsp+8*517]
 	mov r10 , rax
+	mov r11, qword [rsp+8*518]
+	mov r11,r10
 	mov qword [rsp+8*517],r10
-	mov r10, qword [rsp+8*518]
-	mov r11, qword [rsp+8*517]
-	mov r10,r11
-	mov qword [rsp+8*518],r10
-	mov qword [rsp+8*517],r11
+	mov qword [rsp+8*518],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [rsp+8*8]
 	mov r10,r11

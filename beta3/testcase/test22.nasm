@@ -644,11 +644,11 @@ main:
 	call global_init
 	mov r10, qword [rsp+8*1]
 	mov r10 , rax
+	mov r11, qword [rsp+8*2]
+	mov r12,1
+	mov r11,r12
 	mov qword [rsp+8*1],r10
-	mov r10, qword [rsp+8*2]
-	mov r11,1
-	mov r10,r11
-	mov qword [rsp+8*2],r10
+	mov qword [rsp+8*2],r11
 	
 L_166:
 	mov r10, qword [rsp+8*2]
@@ -720,11 +720,11 @@ L_167:
 	call qsrt
 	mov r10, qword [rsp+8*13]
 	mov r10 , rax
+	mov r11, qword [rsp+8*2]
+	mov r12,1
+	mov r11,r12
 	mov qword [rsp+8*13],r10
-	mov r10, qword [rsp+8*2]
-	mov r11,1
-	mov r10,r11
-	mov qword [rsp+8*2],r10
+	mov qword [rsp+8*2],r11
 	
 L_169:
 	mov r10, qword [rsp+8*2]

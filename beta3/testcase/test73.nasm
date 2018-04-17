@@ -644,11 +644,11 @@ main:
 	call global_init
 	mov r10, qword [rsp+8*1]
 	mov r10 , rax
+	mov r11, qword [gbl+8*2]
+	mov r12,t74
+	mov r11,r12
 	mov qword [rsp+8*1],r10
-	mov r10, qword [gbl+8*2]
-	mov r11,t74
-	mov r10,r11
-	mov qword [gbl+8*2],r10
+	mov qword [gbl+8*2],r11
 	mov r10, qword [gbl+8*3]
 	mov r11,t75
 	mov r10,r11
@@ -764,12 +764,10 @@ L_536:
 	call calc
 	mov r10, qword [rsp+8*17]
 	mov r10 , rax
+	mov r11, qword [gbl+8*18]
+	mov r11,r10
 	mov qword [rsp+8*17],r10
-	mov r10, qword [gbl+8*18]
-	mov r11, qword [rsp+8*17]
-	mov r10,r11
-	mov qword [gbl+8*18],r10
-	mov qword [rsp+8*17],r11
+	mov qword [gbl+8*18],r11
 	mov r10, qword [arg+8*0]
 	mov r11, qword [gbl+8*18]
 	mov r10,r11
@@ -905,12 +903,10 @@ L_526:
 	call calc
 	mov r10, qword [rsp+8*30]
 	mov r10 , rax
+	mov r11, qword [rsp+8*31]
+	mov r11,r10
 	mov qword [rsp+8*30],r10
-	mov r10, qword [rsp+8*31]
-	mov r11, qword [rsp+8*30]
-	mov r10,r11
-	mov qword [rsp+8*31],r10
-	mov qword [rsp+8*30],r11
+	mov qword [rsp+8*31],r11
 	mov r10, qword [rsp+8*32]
 	mov r11, qword [rsp+8*20]
 	mov r10,r11
@@ -950,12 +946,10 @@ L_526:
 	call calc
 	mov r10, qword [rsp+8*35]
 	mov r10 , rax
+	mov r11, qword [rsp+8*36]
+	mov r11,r10
 	mov qword [rsp+8*35],r10
-	mov r10, qword [rsp+8*36]
-	mov r11, qword [rsp+8*35]
-	mov r10,r11
-	mov qword [rsp+8*36],r10
-	mov qword [rsp+8*35],r11
+	mov qword [rsp+8*36],r11
 	mov rdi, [rsp+8*31]
 	mov rsi, [rsp+8*36]
 	call    strls

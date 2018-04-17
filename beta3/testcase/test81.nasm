@@ -644,11 +644,11 @@ main:
 	call global_init
 	mov r10, qword [rsp+8*1]
 	mov r10 , rax
+	mov r11, qword [gbl+8*2]
+	mov r12,10
+	mov r11,r12
 	mov qword [rsp+8*1],r10
-	mov r10, qword [gbl+8*2]
-	mov r11,10
-	mov r10,r11
-	mov qword [gbl+8*2],r10
+	mov qword [gbl+8*2],r11
 	mov r10, qword [arg+8*0]
 	mov r11,20
 	mov r10,r11
@@ -656,12 +656,10 @@ main:
 	call f
 	mov r10, qword [rsp+8*4]
 	mov r10 , rax
+	mov r11, qword [arg+8*0]
+	mov r11,r10
 	mov qword [rsp+8*4],r10
-	mov r10, qword [arg+8*0]
-	mov r11, qword [rsp+8*4]
-	mov r10,r11
-	mov qword [arg+8*0],r10
-	mov qword [rsp+8*4],r11
+	mov qword [arg+8*0],r11
 	mov r10, qword [rsp+8*5]
 	mov r11, qword [arg+8*0]
 	mov r10,r11

@@ -644,19 +644,19 @@ main:
 	call global_init
 	mov r10, qword [rsp+8*1]
 	mov r10 , rax
+	mov r11, qword [arg+8*0]
+	mov r12,110
+	mov r11,r12
 	mov qword [rsp+8*1],r10
-	mov r10, qword [arg+8*0]
-	mov r11,110
-	mov r10,r11
-	mov qword [arg+8*0],r10
+	mov qword [arg+8*0],r11
 	call origin
 	mov r10, qword [rsp+8*3]
 	mov r10 , rax
+	mov r11, qword [rsp+8*4]
+	mov r12,0
+	mov r11,r12
 	mov qword [rsp+8*3],r10
-	mov r10, qword [rsp+8*4]
-	mov r11,0
-	mov r10,r11
-	mov qword [rsp+8*4],r10
+	mov qword [rsp+8*4],r11
 	mov r10, qword [rsp+8*5]
 	mov r11,99
 	mov r10,r11
@@ -703,8 +703,6 @@ L_597:
 	call find
 	mov r10, qword [rsp+8*11]
 	mov r10 , rax
-	mov qword [rsp+8*11],r10
-	mov r10, qword [rsp+8*11]
 	mov r11,0
 	cmp r10,r11
 	mov r12, qword [rsp+8*12]

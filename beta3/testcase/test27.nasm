@@ -644,11 +644,11 @@ main:
 	call global_init
 	mov r10, qword [rsp+8*1]
 	mov r10 , rax
+	mov r11, qword [rsp+8*2]
+	mov r12,0
+	mov r11,r12
 	mov qword [rsp+8*1],r10
-	mov r10, qword [rsp+8*2]
-	mov r11,0
-	mov r10,r11
-	mov qword [rsp+8*2],r10
+	mov qword [rsp+8*2],r11
 	
 L_328:
 	mov r10, qword [rsp+8*2]
@@ -715,9 +715,9 @@ L_329:
 	call search
 	mov r10, qword [rsp+8*12]
 	mov r10 , rax
+	mov r11,0
+	mov rax,r11
 	mov qword [rsp+8*12],r10
-	mov r10,0
-	mov rax,r10
 	leave
 	ret
 	mov r10,0
@@ -1183,11 +1183,11 @@ L_319:
 	call search
 	mov r10, qword [rsp+8*64]
 	mov r10 , rax
+	mov r11, qword [arg+8*0]
+	mov r12,1
+	mov r11,r12
 	mov qword [rsp+8*64],r10
-	mov r10, qword [arg+8*0]
-	mov r11,1
-	mov r10,r11
-	mov qword [arg+8*0],r10
+	mov qword [arg+8*0],r11
 	mov r10, qword [rsp+8*65]
 	mov r11, qword [arg+8*0]
 	mov r10,r11

@@ -648,9 +648,9 @@ main:
 	call hello
 	mov r10, qword [rsp+8*2]
 	mov r10 , rax
+	mov r11,0
+	mov rax,r11
 	mov qword [rsp+8*2],r10
-	mov r10,0
-	mov rax,r10
 	leave
 	ret
 	jmp QED

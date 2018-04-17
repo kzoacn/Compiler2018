@@ -644,11 +644,11 @@ main:
 	call global_init
 	mov r10, qword [rsp+8*1]
 	mov r10 , rax
+	mov r11, qword [rsp+8*2]
+	mov r12,102
+	mov r11,r12
 	mov qword [rsp+8*1],r10
-	mov r10, qword [rsp+8*2]
-	mov r11,102
-	mov r10,r11
-	mov qword [rsp+8*2],r10
+	mov qword [rsp+8*2],r11
 	mov r10, qword [rsp+8*3]
 	mov r11,0
 	mov r10,r11
@@ -1146,8 +1146,6 @@ L_223:
 	call check
 	mov r10, qword [rsp+8*71]
 	mov r10 , rax
-	mov qword [rsp+8*71],r10
-	mov r10, qword [rsp+8*71]
 	cmp r10, 0
 	mov qword [rsp+8*71],r10
 	jne L_225
@@ -1171,12 +1169,10 @@ L_225:
 	call check
 	mov r10, qword [rsp+8*73]
 	mov r10 , rax
+	mov r11, qword [rsp+8*72]
+	mov r11,r10
 	mov qword [rsp+8*73],r10
-	mov r10, qword [rsp+8*72]
-	mov r11, qword [rsp+8*73]
-	mov r10,r11
-	mov qword [rsp+8*72],r10
-	mov qword [rsp+8*73],r11
+	mov qword [rsp+8*72],r11
 	
 L_226:
 	mov r10, qword [rsp+8*72]
@@ -1409,8 +1405,6 @@ L_228:
 	call check
 	mov r10, qword [rsp+8*98]
 	mov r10 , rax
-	mov qword [rsp+8*98],r10
-	mov r10, qword [rsp+8*98]
 	cmp r10, 0
 	mov qword [rsp+8*98],r10
 	jne L_235
@@ -1434,12 +1428,10 @@ L_235:
 	call check
 	mov r10, qword [rsp+8*100]
 	mov r10 , rax
+	mov r11, qword [rsp+8*99]
+	mov r11,r10
 	mov qword [rsp+8*100],r10
-	mov r10, qword [rsp+8*99]
-	mov r11, qword [rsp+8*100]
-	mov r10,r11
-	mov qword [rsp+8*99],r10
-	mov qword [rsp+8*100],r11
+	mov qword [rsp+8*99],r11
 	
 L_236:
 	mov r10, qword [rsp+8*99]
@@ -1672,8 +1664,6 @@ L_238:
 	call check
 	mov r10, qword [rsp+8*125]
 	mov r10 , rax
-	mov qword [rsp+8*125],r10
-	mov r10, qword [rsp+8*125]
 	cmp r10, 0
 	mov qword [rsp+8*125],r10
 	jne L_245
@@ -1697,12 +1687,10 @@ L_245:
 	call check
 	mov r10, qword [rsp+8*127]
 	mov r10 , rax
+	mov r11, qword [rsp+8*126]
+	mov r11,r10
 	mov qword [rsp+8*127],r10
-	mov r10, qword [rsp+8*126]
-	mov r11, qword [rsp+8*127]
-	mov r10,r11
-	mov qword [rsp+8*126],r10
-	mov qword [rsp+8*127],r11
+	mov qword [rsp+8*126],r11
 	
 L_246:
 	mov r10, qword [rsp+8*126]
@@ -1935,8 +1923,6 @@ L_248:
 	call check
 	mov r10, qword [rsp+8*152]
 	mov r10 , rax
-	mov qword [rsp+8*152],r10
-	mov r10, qword [rsp+8*152]
 	cmp r10, 0
 	mov qword [rsp+8*152],r10
 	jne L_255
@@ -1960,12 +1946,10 @@ L_255:
 	call check
 	mov r10, qword [rsp+8*154]
 	mov r10 , rax
+	mov r11, qword [rsp+8*153]
+	mov r11,r10
 	mov qword [rsp+8*154],r10
-	mov r10, qword [rsp+8*153]
-	mov r11, qword [rsp+8*154]
-	mov r10,r11
-	mov qword [rsp+8*153],r10
-	mov qword [rsp+8*154],r11
+	mov qword [rsp+8*153],r11
 	
 L_256:
 	mov r10, qword [rsp+8*153]
@@ -2198,8 +2182,6 @@ L_258:
 	call check
 	mov r10, qword [rsp+8*179]
 	mov r10 , rax
-	mov qword [rsp+8*179],r10
-	mov r10, qword [rsp+8*179]
 	cmp r10, 0
 	mov qword [rsp+8*179],r10
 	jne L_265
@@ -2223,12 +2205,10 @@ L_265:
 	call check
 	mov r10, qword [rsp+8*181]
 	mov r10 , rax
+	mov r11, qword [rsp+8*180]
+	mov r11,r10
 	mov qword [rsp+8*181],r10
-	mov r10, qword [rsp+8*180]
-	mov r11, qword [rsp+8*181]
-	mov r10,r11
-	mov qword [rsp+8*180],r10
-	mov qword [rsp+8*181],r11
+	mov qword [rsp+8*180],r11
 	
 L_266:
 	mov r10, qword [rsp+8*180]
@@ -2461,8 +2441,6 @@ L_268:
 	call check
 	mov r10, qword [rsp+8*206]
 	mov r10 , rax
-	mov qword [rsp+8*206],r10
-	mov r10, qword [rsp+8*206]
 	cmp r10, 0
 	mov qword [rsp+8*206],r10
 	jne L_275
@@ -2486,12 +2464,10 @@ L_275:
 	call check
 	mov r10, qword [rsp+8*208]
 	mov r10 , rax
+	mov r11, qword [rsp+8*207]
+	mov r11,r10
 	mov qword [rsp+8*208],r10
-	mov r10, qword [rsp+8*207]
-	mov r11, qword [rsp+8*208]
-	mov r10,r11
-	mov qword [rsp+8*207],r10
-	mov qword [rsp+8*208],r11
+	mov qword [rsp+8*207],r11
 	
 L_276:
 	mov r10, qword [rsp+8*207]
@@ -2724,8 +2700,6 @@ L_278:
 	call check
 	mov r10, qword [rsp+8*233]
 	mov r10 , rax
-	mov qword [rsp+8*233],r10
-	mov r10, qword [rsp+8*233]
 	cmp r10, 0
 	mov qword [rsp+8*233],r10
 	jne L_285
@@ -2749,12 +2723,10 @@ L_285:
 	call check
 	mov r10, qword [rsp+8*235]
 	mov r10 , rax
+	mov r11, qword [rsp+8*234]
+	mov r11,r10
 	mov qword [rsp+8*235],r10
-	mov r10, qword [rsp+8*234]
-	mov r11, qword [rsp+8*235]
-	mov r10,r11
-	mov qword [rsp+8*234],r10
-	mov qword [rsp+8*235],r11
+	mov qword [rsp+8*234],r11
 	
 L_286:
 	mov r10, qword [rsp+8*234]
@@ -2987,8 +2959,6 @@ L_288:
 	call check
 	mov r10, qword [rsp+8*260]
 	mov r10 , rax
-	mov qword [rsp+8*260],r10
-	mov r10, qword [rsp+8*260]
 	cmp r10, 0
 	mov qword [rsp+8*260],r10
 	jne L_295
@@ -3012,12 +2982,10 @@ L_295:
 	call check
 	mov r10, qword [rsp+8*262]
 	mov r10 , rax
+	mov r11, qword [rsp+8*261]
+	mov r11,r10
 	mov qword [rsp+8*262],r10
-	mov r10, qword [rsp+8*261]
-	mov r11, qword [rsp+8*262]
-	mov r10,r11
-	mov qword [rsp+8*261],r10
-	mov qword [rsp+8*262],r11
+	mov qword [rsp+8*261],r11
 	
 L_296:
 	mov r10, qword [rsp+8*261]

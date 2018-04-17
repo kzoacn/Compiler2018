@@ -711,11 +711,11 @@ L_559:
 	call put
 	mov r10, qword [rsp+8*13]
 	mov r10 , rax
+	mov r11, qword [rsp+8*15]
+	mov r12,0
+	mov r11,r12
 	mov qword [rsp+8*13],r10
-	mov r10, qword [rsp+8*15]
-	mov r11,0
-	mov r10,r11
-	mov qword [rsp+8*15],r10
+	mov qword [rsp+8*15],r11
 	mov r10, qword [arg+8*0]
 	mov r11,1
 	mov r10,r11
@@ -723,12 +723,12 @@ L_559:
 	call getHash
 	mov r10, qword [rsp+8*16]
 	mov r10 , rax
+	mov r11, qword [rsp+8*17]
+	mov r12, qword [gbl+8*3]
+	mov r11,r12
 	mov qword [rsp+8*16],r10
-	mov r10, qword [rsp+8*17]
-	mov r11, qword [gbl+8*3]
-	mov r10,r11
-	mov qword [rsp+8*17],r10
-	mov qword [gbl+8*3],r11
+	mov qword [rsp+8*17],r11
+	mov qword [gbl+8*3],r12
 	mov     rsi, [rsp+8*16]
 	mov     rdi, [rsp+8*17]
 	call    address
@@ -873,12 +873,10 @@ put:
 	call getHash
 	mov r10, qword [rsp+8*34]
 	mov r10 , rax
+	mov r11, qword [rsp+8*35]
+	mov r11,r10
 	mov qword [rsp+8*34],r10
-	mov r10, qword [rsp+8*35]
-	mov r11, qword [rsp+8*34]
-	mov r10,r11
-	mov qword [rsp+8*35],r10
-	mov qword [rsp+8*34],r11
+	mov qword [rsp+8*35],r11
 	mov r10, qword [rsp+8*36]
 	mov r11, qword [gbl+8*3]
 	mov r10,r11

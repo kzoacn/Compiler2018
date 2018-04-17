@@ -644,14 +644,14 @@ main:
 	call global_init
 	mov r10, qword [rsp+8*1]
 	mov r10 , rax
+	mov r11, qword [rsp+8*3]
+	mov r12, qword [gbl+8*2]
+	mov r11,r12
+	mov r13,1
+	add r11,r13
 	mov qword [rsp+8*1],r10
-	mov r10, qword [rsp+8*3]
-	mov r11, qword [gbl+8*2]
-	mov r10,r11
-	mov r12,1
-	add r10,r12
-	mov qword [rsp+8*3],r10
-	mov qword [gbl+8*2],r11
+	mov qword [rsp+8*3],r11
+	mov qword [gbl+8*2],r12
 	mov     rdi, [rsp+8*3]
 	call    mallocArray
 	mov     qword [rsp+8*4], rax
@@ -682,12 +682,12 @@ L_387:
 	call rnd
 	mov r10, qword [rsp+8*8]
 	mov r10 , rax
+	mov r11, qword [rsp+8*9]
+	mov r12, qword [gbl+8*5]
+	mov r11,r12
 	mov qword [rsp+8*8],r10
-	mov r10, qword [rsp+8*9]
-	mov r11, qword [gbl+8*5]
-	mov r10,r11
-	mov qword [rsp+8*9],r10
-	mov qword [gbl+8*5],r11
+	mov qword [rsp+8*9],r11
+	mov qword [gbl+8*5],r12
 	mov     rsi, [rsp+8*6]
 	mov     rdi, [rsp+8*9]
 	call    address
@@ -724,12 +724,10 @@ L_388:
 	call dp
 	mov r10, qword [rsp+8*14]
 	mov r10 , rax
+	mov r11, qword [arg+8*0]
+	mov r11,r10
 	mov qword [rsp+8*14],r10
-	mov r10, qword [arg+8*0]
-	mov r11, qword [rsp+8*14]
-	mov r10,r11
-	mov qword [arg+8*0],r10
-	mov qword [rsp+8*14],r11
+	mov qword [arg+8*0],r11
 	mov r10, qword [rsp+8*15]
 	mov r11, qword [arg+8*0]
 	mov r10,r11
@@ -1027,14 +1025,14 @@ L_384:
 	call dp
 	mov r10, qword [rsp+8*44]
 	mov r10 , rax
+	mov r11, qword [rsp+8*45]
+	mov r12, qword [rsp+8*42]
+	mov r11,r12
+	mov r13,2
+	add r11,r13
 	mov qword [rsp+8*44],r10
-	mov r10, qword [rsp+8*45]
-	mov r11, qword [rsp+8*42]
-	mov r10,r11
-	mov r12,2
-	add r10,r12
-	mov qword [rsp+8*45],r10
-	mov qword [rsp+8*42],r11
+	mov qword [rsp+8*45],r11
+	mov qword [rsp+8*42],r12
 	mov r10, qword [arg+8*1]
 	mov r11, qword [rsp+8*27]
 	mov r10,r11
@@ -1048,15 +1046,13 @@ L_384:
 	call dp
 	mov r10, qword [rsp+8*46]
 	mov r10 , rax
+	mov r11, qword [rsp+8*47]
+	mov r12, qword [rsp+8*44]
+	mov r11,r12
+	add r11,r10
 	mov qword [rsp+8*46],r10
-	mov r10, qword [rsp+8*47]
-	mov r11, qword [rsp+8*44]
-	mov r10,r11
-	mov r12, qword [rsp+8*46]
-	add r10,r12
-	mov qword [rsp+8*47],r10
-	mov qword [rsp+8*44],r11
-	mov qword [rsp+8*46],r12
+	mov qword [rsp+8*47],r11
+	mov qword [rsp+8*44],r12
 	mov r10, qword [arg+8*1]
 	mov r11, qword [rsp+8*47]
 	mov r10,r11
@@ -1070,12 +1066,10 @@ L_384:
 	call max
 	mov r10, qword [rsp+8*48]
 	mov r10 , rax
+	mov r11, qword [rsp+8*41]
+	mov r11,r10
 	mov qword [rsp+8*48],r10
-	mov r10, qword [rsp+8*41]
-	mov r11, qword [rsp+8*48]
-	mov r10,r11
-	mov qword [rsp+8*41],r10
-	mov qword [rsp+8*48],r11
+	mov qword [rsp+8*41],r11
 	
 L_386:
 	mov r10, qword [rsp+8*49]

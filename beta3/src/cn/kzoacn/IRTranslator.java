@@ -220,6 +220,11 @@ public class IRTranslator {
         for(int i=0;i<16;i++)if(!free[i])
             kick(i);
     }
+    void clearAll(){
+        for(int i=0;i<16;i++){
+            free[i]=true;
+        }
+    }
 
     void unlock(){
         for(int i=10;i<16;i++){
@@ -465,9 +470,11 @@ public class IRTranslator {
                     //text.append(new StringBuffer("pop qword "+varName(dest)+"\n\t"));
                     break;
                 case call:
-                    text.append(new StringBuffer("call "+name+"\n\t"));
-                    text.append(new StringBuffer("mov "+getReg(dest)+" , rax\n\t"));
                     kickAll();
+                    text.append(new StringBuffer("call "+name+"\n\t"));
+                    clearAll();
+                    text.append(new StringBuffer("mov "+getReg(dest)+" , rax\n\t"));
+
                     break;
                 case ret:
                     text.append(new StringBuffer("mov rax," +getReg(var1)+"\n\t"));
@@ -624,7 +631,7 @@ public class IRTranslator {
                                     "mov     rdi, "+getReg(var1)+"\n\t" +
                                     "call    malloc\n\t"+
                                     "mov     qword "+getReg(dest)+", rax\n\t"));
-                    kickAll();
+                    clearAll();
                     break;
                 case mallocArray:
 
@@ -633,7 +640,7 @@ public class IRTranslator {
                                     "mov     rdi, "+varName(var1)+"\n\t" +
                                     "call    mallocArray\n\t"+
                                     "mov     qword "+varName(dest)+", rax\n\t"));
-                    kickAll();
+                    clearAll();
                     break;
                 case concat:
                     kickAll();
@@ -642,6 +649,7 @@ public class IRTranslator {
                             "mov     rdi, "+varName(var1)+"\n\t" +
                             "call    concat\n\t") +
                             "mov "+varName(dest)+", rax\n\t");
+                    clearAll();
                     break;
                 case load:
                     text.append(new StringBuffer("mov "+getReg(dest)+", ["+getReg(var1)+"]\n\t"));
@@ -664,22 +672,29 @@ public class IRTranslator {
                                     "mov     rdi, "+varName(var1)+"\n\t" +
                                     "call    address\n\t") +
                                     "mov "+varName(dest)+", rax\n\t");
+                    clearAll();
                     break;
                 case print:
+                    kickAll();
                     text.append(print(var1));
+                    clearAll();
                     break;
                 case println:
+                    kickAll();
                     text.append(println(var1));
+                    clearAll();
                     break;
                 case getString:
                     kickAll();
                     text.append(new StringBuffer("call    getString\n\t" +
                             "mov     "+ varName(dest) +", rax\n\t"));
+                    clearAll();
                     break;
                 case getInt:
                     kickAll();
                     text.append(new StringBuffer("call    getInt\n\t" +
                                                 "mov     "+ varName(dest) +", rax\n\t"));
+                    clearAll();
                     break;
                 case toString:
                     kickAll();
@@ -687,6 +702,7 @@ public class IRTranslator {
                             "mov     rdi, "+varName(var1)+"\n\t" +
                             "call    toString\n\t"+
                             "mov     qword"+varName(dest)+", rax\n\t"));
+                    clearAll();
                     break;
                 case saveContext:
                     break;
@@ -709,6 +725,7 @@ public class IRTranslator {
                                     "mov     rdi, "+varName(var1)+"\n\t" +
                                     "call    multiArray\n\t"+
                                     "mov     qword "+varName(dest)+", rax\n\t"));
+                    clearAll();
                     break;
                 case multiAddress:
                     kickAll();
@@ -717,6 +734,7 @@ public class IRTranslator {
                                     "mov     rdi, "+varName(var1)+"\n\t" +
                                     "call    multiAddress\n\t") +
                                     "mov "+varName(dest)+", rax\n\t");
+                    clearAll();
                     break;
                 case substring:
                     kickAll();
@@ -725,14 +743,14 @@ public class IRTranslator {
                                     "mov     rdi, "+varName(var1)+"\n\t" +
                                     "call    substring\n\t") +
                                     "mov "+varName(dest)+", rax\n\t");
-
+                    clearAll();
                     break;
                 case parseInt:
                     kickAll();
                     text.append(new StringBuffer(
                                     "call    parseInt\n\t"+
                                     "mov     qword "+varName(dest)+", rax\n\t"));
-
+                    clearAll();
                     break;
                 case ord:
                     kickAll();
@@ -740,7 +758,7 @@ public class IRTranslator {
                                     "mov     rdi, "+varName(var1)+"\n\t" +
                                     "call    ord\n\t"+
                                     "mov     qword "+varName(dest)+", rax\n\t"));
-
+                    clearAll();
                     break;
 
             }

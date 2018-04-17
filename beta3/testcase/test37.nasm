@@ -644,15 +644,15 @@ main:
 	call global_init
 	mov r10, qword [rsp+8*1]
 	mov r10 , rax
+	mov r11, qword [gbl+8*2]
+	mov r12,0
+	cmp r11,r12
+	mov r13, qword [rsp+8*3]
+	mov r13, 0
+	setg r13B
 	mov qword [rsp+8*1],r10
-	mov r10, qword [gbl+8*2]
-	mov r11,0
-	cmp r10,r11
-	mov r12, qword [rsp+8*3]
-	mov r12, 0
-	setg r12B
-	mov qword [gbl+8*2],r10
-	mov qword [rsp+8*3],r12
+	mov qword [gbl+8*2],r11
+	mov qword [rsp+8*3],r13
 	mov r10, qword [rsp+8*3]
 	cmp r10, 0
 	mov qword [rsp+8*3],r10

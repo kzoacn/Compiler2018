@@ -644,11 +644,11 @@ main:
 	call global_init
 	mov r10, qword [rsp+8*1]
 	mov r10 , rax
+	mov r11, qword [rsp+8*2]
+	mov r12,1
+	mov r11,r12
 	mov qword [rsp+8*1],r10
-	mov r10, qword [rsp+8*2]
-	mov r11,1
-	mov r10,r11
-	mov qword [rsp+8*2],r10
+	mov qword [rsp+8*2],r11
 	
 L_337:
 	mov r10, qword [rsp+8*2]
@@ -671,12 +671,10 @@ L_337:
 	call fib
 	mov r10, qword [rsp+8*5]
 	mov r10 , rax
+	mov r11, qword [arg+8*0]
+	mov r11,r10
 	mov qword [rsp+8*5],r10
-	mov r10, qword [arg+8*0]
-	mov r11, qword [rsp+8*5]
-	mov r10,r11
-	mov qword [arg+8*0],r10
-	mov qword [rsp+8*5],r11
+	mov qword [arg+8*0],r11
 	mov r10, qword [rsp+8*6]
 	mov r11, qword [arg+8*0]
 	mov r10,r11
@@ -764,14 +762,14 @@ L_336:
 	call fib
 	mov r10, qword [rsp+8*13]
 	mov r10 , rax
+	mov r11, qword [rsp+8*14]
+	mov r12, qword [rsp+8*10]
+	mov r11,r12
+	mov r13,2
+	sub r11,r13
 	mov qword [rsp+8*13],r10
-	mov r10, qword [rsp+8*14]
-	mov r11, qword [rsp+8*10]
-	mov r10,r11
-	mov r12,2
-	sub r10,r12
-	mov qword [rsp+8*14],r10
-	mov qword [rsp+8*10],r11
+	mov qword [rsp+8*14],r11
+	mov qword [rsp+8*10],r12
 	mov r10, qword [arg+8*0]
 	mov r11, qword [rsp+8*14]
 	mov r10,r11
@@ -780,15 +778,13 @@ L_336:
 	call fib
 	mov r10, qword [rsp+8*15]
 	mov r10 , rax
+	mov r11, qword [rsp+8*16]
+	mov r12, qword [rsp+8*13]
+	mov r11,r12
+	add r11,r10
 	mov qword [rsp+8*15],r10
-	mov r10, qword [rsp+8*16]
-	mov r11, qword [rsp+8*13]
-	mov r10,r11
-	mov r12, qword [rsp+8*15]
-	add r10,r12
-	mov qword [rsp+8*16],r10
-	mov qword [rsp+8*13],r11
-	mov qword [rsp+8*15],r12
+	mov qword [rsp+8*16],r11
+	mov qword [rsp+8*13],r12
 	mov r10, qword [rsp+8*16]
 	mov rax,r10
 	mov qword [rsp+8*16],r10

@@ -1389,7 +1389,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         IR ir = new IR();
         VariableType variableType = VariableType.toVariableType(ctx.variableBasicType());
         Variable temp = nextVariable(VariableType.toVariableType(ctx.variableBasicType()));
-        if(variableType.name.contains("int") || variableType.name.contains("bool"))
+        if(variableType.name.equals("int") || variableType.name.contains("bool"))
             ir.push(new Quad(OpCode.malloc,nextConst(8,VariableType.CONST_INT),Variable.empty,temp));
         else {
             int size=classMember.get(variableType.name).size();
@@ -1402,7 +1402,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         IR ir = new IR();
         VariableType variableType = VariableType.toVariableType(ctx.variableBasicType());
         Variable temp = nextVariable(VariableType.toVariableType(ctx.variableBasicType()));
-        if(variableType.name.contains("int") || variableType.name.contains("bool"))
+        if(variableType.name.equals("int") || variableType.name.contains("bool"))
             ir.push(new Quad(OpCode.malloc,nextConst(8,VariableType.CONST_INT),Variable.empty,temp));
         else {
             int size=classMember.get(variableType.name).size();
