@@ -654,7 +654,6 @@ main:
 	mov r11,r9
 	mov qword [rsp+8*3],r8
 	mov qword [arg+8*0],r9
-	mov qword [gbl+8*4],r10
 	mov qword [rsp+8*5],r11
 	mov     rdi, [rsp+8*5]
 	call    toString
@@ -663,7 +662,6 @@ main:
 	mov r8,r9
 	mov r10,r8
 	mov qword [arg+8*0],r8
-	mov qword [rsp+8*6],r9
 	mov qword [rsp+8*7],r10
 	mov rdi, formatln
 	mov rsi,[rsp+8*7] 
@@ -687,11 +685,9 @@ f:
 	mov r11, 0
 	sete r11B
 	mov qword [rsp+8*8],r8
-	mov qword [arg+8*0],r9
 	mov qword [rsp+8*9],r11
 	mov r8, qword [rsp+8*9]
 	cmp r8, 0
-	mov qword [rsp+8*9],r8
 	je L_375
 	mov r8,0
 	mov rax,r8
@@ -737,7 +733,6 @@ global_init:
 	mov qword [gbl+8*4],r8
 	mov r8, qword [rsp+8*13]
 	mov rax,r8
-	mov qword [rsp+8*13],r8
 	leave
 	ret
 	

@@ -656,9 +656,7 @@ main:
 	mov r10,r11
 	mov r12,r10
 	mov qword [rsp+8*4],r8
-	mov qword [rsp+8*3],r9
 	mov qword [rsp+8*5],r10
-	mov qword [rsp+8*2],r11
 	mov qword [arg+8*63],r12
 	call    parseInt
 	mov     qword [rsp+8*7], rax
@@ -666,7 +664,6 @@ main:
 	mov r8,r9
 	mov r10,r8
 	mov qword [arg+8*0],r8
-	mov qword [rsp+8*7],r9
 	mov qword [rsp+8*9],r10
 	mov     rdi, [rsp+8*9]
 	call    toString
@@ -675,7 +672,6 @@ main:
 	mov r8,r9
 	mov r10,r8
 	mov qword [arg+8*0],r8
-	mov qword [rsp+8*10],r9
 	mov qword [rsp+8*11],r10
 	mov rdi, formatln
 	mov rsi,[rsp+8*11] 
@@ -690,7 +686,6 @@ main:
 	mov r12,r13
 	mov r14,r8
 	mov qword [rsp+8*12],r8
-	mov qword [rsp+8*2],r9
 	mov qword [arg+8*1],r10
 	mov qword [arg+8*0],r12
 	mov qword [arg+8*63],r14
@@ -702,7 +697,6 @@ main:
 	mov r8,r9
 	mov r10,r8
 	mov qword [arg+8*0],r8
-	mov qword [rsp+8*14],r9
 	mov qword [rsp+8*15],r10
 	mov rdi, formatln
 	mov rsi,[rsp+8*15] 
@@ -715,7 +709,6 @@ main:
 	mov r10,r11
 	mov r12,r8
 	mov qword [rsp+8*16],r8
-	mov qword [rsp+8*2],r9
 	mov qword [arg+8*0],r10
 	mov qword [arg+8*63],r12
 	mov     rdi, [arg+8*0]
@@ -725,7 +718,6 @@ main:
 	mov r8,r9
 	mov r10,r8
 	mov qword [arg+8*0],r8
-	mov qword [rsp+8*17],r9
 	mov qword [rsp+8*18],r10
 	mov     rdi, [rsp+8*18]
 	call    toString
@@ -734,7 +726,6 @@ main:
 	mov r8,r9
 	mov r10,r8
 	mov qword [arg+8*0],r8
-	mov qword [rsp+8*19],r9
 	mov qword [rsp+8*20],r10
 	mov rdi, formatln
 	mov rsi,[rsp+8*20] 
@@ -752,7 +743,6 @@ main:
 	mov r13,r11
 	mov r14,r13
 	mov qword [rsp+8*21],r8
-	mov qword [rsp+8*2],r9
 	mov qword [arg+8*63],r10
 	mov qword [rsp+8*22],r11
 	mov qword [arg+8*0],r13
@@ -764,7 +754,6 @@ main:
 	mov r8,r9
 	mov r10,r8
 	mov qword [arg+8*0],r8
-	mov qword [rsp+8*24],r9
 	mov qword [rsp+8*25],r10
 	mov rdi, formatln
 	mov rsi,[rsp+8*25] 
@@ -779,7 +768,6 @@ main:
 	mov r12,r11
 	mov r13,r12
 	mov qword [rsp+8*26],r8
-	mov qword [rsp+8*4],r9
 	mov qword [arg+8*63],r10
 	mov qword [rsp+8*27],r11
 	mov qword [arg+8*0],r12
@@ -791,7 +779,6 @@ main:
 	mov r8,r9
 	mov r10,r8
 	mov qword [arg+8*0],r8
-	mov qword [rsp+8*29],r9
 	mov qword [rsp+8*30],r10
 	mov rdi, formatln
 	mov rsi,[rsp+8*30] 
@@ -814,7 +801,6 @@ global_init:
 	sub    rsp, 312
 	mov r8, qword [rsp+8*31]
 	mov rax,r8
-	mov qword [rsp+8*31],r8
 	leave
 	ret
 	

@@ -662,12 +662,9 @@ L_501:
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
-	mov qword [rsp+8*3],r8
-	mov qword [rsp+8*2],r9
 	mov qword [rsp+8*5],r10
 	mov r8, qword [rsp+8*5]
 	cmp r8, 0
-	mov qword [rsp+8*5],r8
 	je L_502
 	mov     rsi, t71
 	mov     rdi, [rsp+8*4]
@@ -676,7 +673,6 @@ L_501:
 	mov r9, qword [rsp+8*6]
 	mov r8,r9
 	mov qword [rsp+8*4],r8
-	mov qword [rsp+8*6],r9
 	
 L_503:
 	mov r9, qword [rsp+8*3]
@@ -693,7 +689,6 @@ L_502:
 	mov r8,r9
 	mov r10,r8
 	mov qword [arg+8*0],r8
-	mov qword [rsp+8*4],r9
 	mov qword [rsp+8*9],r10
 	mov rdi, formatln
 	mov rsi,[rsp+8*9] 
@@ -710,12 +705,9 @@ L_504:
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
-	mov qword [rsp+8*3],r8
-	mov qword [rsp+8*2],r9
 	mov qword [rsp+8*10],r10
 	mov r8, qword [rsp+8*10]
 	cmp r8, 0
-	mov qword [rsp+8*10],r8
 	je L_505
 	mov     rsi, t80
 	mov     rdi, [rsp+8*4]
@@ -724,7 +716,6 @@ L_504:
 	mov r9, qword [rsp+8*11]
 	mov r8,r9
 	mov qword [rsp+8*4],r8
-	mov qword [rsp+8*11],r9
 	
 L_506:
 	mov r9, qword [rsp+8*3]
@@ -741,7 +732,6 @@ L_505:
 	mov r8,r9
 	mov r10,r8
 	mov qword [arg+8*0],r8
-	mov qword [rsp+8*4],r9
 	mov qword [rsp+8*13],r10
 	mov rdi, formatln
 	mov rsi,[rsp+8*13] 
@@ -764,7 +754,6 @@ global_init:
 	sub    rsp, 176
 	mov r8, qword [rsp+8*14]
 	mov rax,r8
-	mov qword [rsp+8*14],r8
 	leave
 	ret
 	

@@ -656,7 +656,6 @@ main:
 	mov qword [rsp+8*4], rax
 	mov r8, qword [rsp+8*4]
 	cmp r8, 0
-	mov qword [rsp+8*4],r8
 	je L_537
 	mov r9,t67
 	mov r8,r9
@@ -699,7 +698,6 @@ global_init:
 	sub    rsp, 128
 	mov r8, qword [rsp+8*8]
 	mov rax,r8
-	mov qword [rsp+8*8],r8
 	leave
 	ret
 	

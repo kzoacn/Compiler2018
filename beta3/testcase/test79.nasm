@@ -664,7 +664,6 @@ main:
 	mov r10,r8
 	mov r11,r10
 	mov qword [rsp+8*2],r8
-	mov qword [rsp+8*6],r9
 	mov qword [arg+8*0],r10
 	mov qword [rsp+8*7],r11
 	mov rdi, formatln
@@ -701,7 +700,6 @@ global_init:
 	sub    rsp, 128
 	mov r8, qword [rsp+8*8]
 	mov rax,r8
-	mov qword [rsp+8*8],r8
 	leave
 	ret
 	

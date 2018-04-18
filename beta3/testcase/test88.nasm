@@ -657,10 +657,10 @@ main:
 	mov r12,r15
 	mov qword [rsp+8*1],r8
 	mov r8,r9
-	mov r10,r8
 	mov qword [arg+8*0],r8
-	mov qword [gbl+8*2],r9
-	mov qword [rsp+8*10],r10
+	mov r9, qword [arg+8*0]
+	mov r8,r9
+	mov qword [rsp+8*10],r8
 	mov qword [rsp+8*4],r11
 	mov qword [gbl+8*5],r12
 	mov qword [rsp+8*6],r13
@@ -677,7 +677,6 @@ main:
 	mov r8,r9
 	mov r10,r8
 	mov qword [arg+8*0],r8
-	mov qword [gbl+8*3],r9
 	mov qword [rsp+8*13],r10
 	mov     rdi, [rsp+8*13]
 	call    toString
@@ -694,7 +693,6 @@ main:
 	mov r8,r9
 	mov r10,r8
 	mov qword [arg+8*0],r8
-	mov qword [gbl+8*5],r9
 	mov qword [rsp+8*17],r10
 	mov     rdi, [rsp+8*17]
 	call    toString
@@ -707,7 +705,6 @@ main:
 	mov r8,r9
 	mov r10,r8
 	mov qword [arg+8*0],r8
-	mov qword [rsp+8*19],r9
 	mov qword [rsp+8*20],r10
 	mov rdi, formatln
 	mov rsi,[rsp+8*20] 
@@ -739,7 +736,6 @@ global_init:
 	mov qword [gbl+8*5],r12
 	mov r8, qword [rsp+8*21]
 	mov rax,r8
-	mov qword [rsp+8*21],r8
 	leave
 	ret
 	

@@ -657,7 +657,6 @@ main:
 	mov qword [rsp+8*4],r14
 	mov r8, qword [rsp+8*4]
 	cmp r8, 0
-	mov qword [rsp+8*4],r8
 	jne L_507
 	mov r9,0
 	mov r8,r9
@@ -677,19 +676,15 @@ L_507:
 	cmp r10,r11
 	mov r12, 0
 	setl r12B
-	mov qword [rsp+8*2],r8
-	mov qword [rsp+8*3],r9
 	mov qword [rsp+8*6],r10
 	mov qword [rsp+8*7],r12
 	mov r9, qword [rsp+8*7]
 	mov r8,r9
 	mov qword [rsp+8*5],r8
-	mov qword [rsp+8*7],r9
 	
 L_508:
 	mov r8, qword [rsp+8*5]
 	cmp r8, 0
-	mov qword [rsp+8*5],r8
 	je L_509
 	mov r9,t73
 	mov r8,r9
@@ -732,7 +727,6 @@ global_init:
 	sub    rsp, 152
 	mov r8, qword [rsp+8*11]
 	mov rax,r8
-	mov qword [rsp+8*11],r8
 	leave
 	ret
 	

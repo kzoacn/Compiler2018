@@ -664,12 +664,10 @@ L_398:
 	mov r9, qword [rsp+8*4]
 	mov r8,r9
 	mov qword [rsp+8*3],r8
-	mov qword [rsp+8*4],r9
 	
 L_399:
 	mov r8, qword [rsp+8*3]
 	cmp r8, 0
-	mov qword [rsp+8*3],r8
 	je L_400
 	mov r9,t70
 	mov r8,r9
@@ -702,7 +700,6 @@ L_401:
 	sete r8B
 	cmp r8, 0
 	mov qword [rsp+8*8],r8
-	mov qword [rsp+8*2],r9
 	je L_402
 	mov r9,1
 	mov r8,r9
@@ -719,12 +716,10 @@ L_402:
 	mov r9, qword [rsp+8*10]
 	mov r8,r9
 	mov qword [rsp+8*9],r8
-	mov qword [rsp+8*10],r9
 	
 L_403:
 	mov r8, qword [rsp+8*9]
 	cmp r8, 0
-	mov qword [rsp+8*9],r8
 	je L_404
 	mov r9,t84
 	mov r8,r9
@@ -771,12 +766,10 @@ L_406:
 	mov r9, qword [rsp+8*14]
 	mov r8,r9
 	mov qword [rsp+8*13],r8
-	mov qword [rsp+8*14],r9
 	
 L_407:
 	mov r8, qword [rsp+8*13]
 	cmp r8, 0
-	mov qword [rsp+8*13],r8
 	jne L_408
 	mov r9,0
 	mov r8,r9
@@ -793,12 +786,10 @@ L_408:
 	mov r9, qword [rsp+8*16]
 	mov r8,r9
 	mov qword [rsp+8*15],r8
-	mov qword [rsp+8*16],r9
 	
 L_409:
 	mov r8, qword [rsp+8*15]
 	cmp r8, 0
-	mov qword [rsp+8*15],r8
 	je L_410
 	mov r9,t103
 	mov r8,r9
@@ -837,7 +828,6 @@ global_init:
 	sub    rsp, 216
 	mov r8, qword [rsp+8*19]
 	mov rax,r8
-	mov qword [rsp+8*19],r8
 	leave
 	ret
 	

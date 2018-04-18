@@ -651,7 +651,6 @@ main:
 	mov r8,r9
 	mov r10,r8
 	mov qword [rsp+8*3],r8
-	mov qword [rsp+8*2],r9
 	mov qword [rsp+8*4],r10
 	mov     rsi, 2
 	mov     rdi, [rsp+8*4]
@@ -663,9 +662,7 @@ main:
 	mov r11, qword [rsp+8*3]
 	mov r10,r11
 	mov r12,r10
-	mov qword [rsp+8*5],r8
 	mov qword [gbl+8*6],r10
-	mov qword [rsp+8*3],r11
 	mov qword [rsp+8*7],r12
 	mov     rsi, 2
 	mov     rdi, [rsp+8*7]
@@ -686,7 +683,6 @@ main:
 	mov r8,r9
 	mov r10,r8
 	mov qword [arg+8*0],r8
-	mov qword [rsp+8*12],r9
 	mov qword [rsp+8*13],r10
 	mov rdi, formatln
 	mov rsi,[rsp+8*13] 
@@ -713,10 +709,8 @@ global_init:
 	mov r9, qword [gbl+8*14]
 	mov r8,r9
 	mov qword [gbl+8*6],r8
-	mov qword [gbl+8*14],r9
 	mov r8, qword [rsp+8*15]
 	mov rax,r8
-	mov qword [rsp+8*15],r8
 	leave
 	ret
 	

@@ -654,14 +654,12 @@ main:
 	mov r9,r10
 	mov qword [rsp+8*3],r8
 	mov qword [rsp+8*4],r9
-	mov qword [rsp+8*2],r10
 	mov     rdi, 6
 	call    mallocArray
 	mov     qword [rsp+8*5], rax
 	mov r9, qword [rsp+8*4]
 	mov r8,r9
 	mov qword [rsp+8*6],r8
-	mov qword [rsp+8*4],r9
 	mov     rsi, 0
 	mov     rdi, [rsp+8*6]
 	call    address
@@ -671,10 +669,7 @@ main:
 	mov [r8],r9
 	mov r11, qword [rsp+8*4]
 	mov r10,r11
-	mov qword [rsp+8*7],r8
-	mov qword [rsp+8*5],r9
 	mov qword [rsp+8*8],r10
-	mov qword [rsp+8*4],r11
 	mov     rsi, 0
 	mov     rdi, [rsp+8*8]
 	call    address
@@ -699,7 +694,6 @@ main:
 	mov r8,r9
 	mov r10,r8
 	mov qword [arg+8*0],r8
-	mov qword [rsp+8*14],r9
 	mov qword [rsp+8*15],r10
 	mov rdi, formatln
 	mov rsi,[rsp+8*15] 
@@ -722,7 +716,6 @@ global_init:
 	sub    rsp, 192
 	mov r8, qword [rsp+8*16]
 	mov rax,r8
-	mov qword [rsp+8*16],r8
 	leave
 	ret
 	

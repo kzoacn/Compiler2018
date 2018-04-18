@@ -664,7 +664,6 @@ main:
 	mov r8,r9
 	mov r10,r8
 	mov qword [arg+8*0],r8
-	mov qword [rsp+8*6],r9
 	mov qword [rsp+8*7],r10
 	mov rdi, formatln
 	mov rsi,[rsp+8*7] 
@@ -691,7 +690,6 @@ main:
 	mov r8,r9
 	mov r10,r8
 	mov qword [arg+8*0],r8
-	mov qword [rsp+8*10],r9
 	mov qword [rsp+8*11],r10
 	mov rdi, formatln
 	mov rsi,[rsp+8*11] 
@@ -718,7 +716,6 @@ main:
 	mov r8,r9
 	mov r10,r8
 	mov qword [arg+8*0],r8
-	mov qword [rsp+8*14],r9
 	mov qword [rsp+8*15],r10
 	mov rdi, formatln
 	mov rsi,[rsp+8*15] 
@@ -754,18 +751,14 @@ gcd:
 	mov r14, 0
 	sete r14B
 	mov qword [rsp+8*16],r8
-	mov qword [arg+8*0],r9
 	mov qword [rsp+8*17],r10
-	mov qword [arg+8*1],r11
 	mov qword [rsp+8*18],r12
 	mov qword [rsp+8*19],r14
 	mov r8, qword [rsp+8*19]
 	cmp r8, 0
-	mov qword [rsp+8*19],r8
 	je L_340
 	mov r8, qword [rsp+8*17]
 	mov rax,r8
-	mov qword [rsp+8*17],r8
 	leave
 	ret
 	jmp L_341
@@ -781,8 +774,6 @@ L_340:
 	mov r10, rdx
 	mov r11,r10
 	mov r12,r9
-	mov qword [rsp+8*16],r8
-	mov qword [rsp+8*17],r9
 	mov qword [rsp+8*20],r10
 	mov qword [arg+8*1],r11
 	mov qword [arg+8*0],r12
@@ -805,7 +796,6 @@ global_init:
 	sub    rsp, 240
 	mov r8, qword [rsp+8*22]
 	mov rax,r8
-	mov qword [rsp+8*22],r8
 	leave
 	ret
 	

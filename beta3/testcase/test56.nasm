@@ -656,7 +656,6 @@ main:
 	mov r13,r14
 	mov r15,r10
 	mov qword [rsp+8*3],r8
-	mov qword [rsp+8*2],r9
 	mov qword [rsp+8*4],r10
 	mov qword [arg+8*1],r11
 	mov qword [arg+8*0],r13
@@ -675,7 +674,6 @@ main:
 	mov r8,r9
 	mov r10,r8
 	mov qword [arg+8*0],r8
-	mov qword [rsp+8*10],r9
 	mov qword [rsp+8*11],r10
 	mov rdi, formatln
 	mov rsi,[rsp+8*11] 
@@ -702,11 +700,8 @@ Adder_add:
 	add r14,r12
 	mov rax,r14
 	mov qword [rsp+8*12],r8
-	mov qword [arg+8*63],r9
 	mov qword [rsp+8*13],r10
-	mov qword [arg+8*0],r11
 	mov qword [rsp+8*14],r12
-	mov qword [arg+8*1],r13
 	mov qword [rsp+8*15],r14
 	leave
 	ret
@@ -721,7 +716,6 @@ global_init:
 	sub    rsp, 192
 	mov r8, qword [rsp+8*16]
 	mov rax,r8
-	mov qword [rsp+8*16],r8
 	leave
 	ret
 	

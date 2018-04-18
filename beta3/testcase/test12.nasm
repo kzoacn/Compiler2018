@@ -654,7 +654,6 @@ main:
 	mov r8,r9
 	mov r10,r8
 	mov qword [rsp+8*4],r8
-	mov qword [rsp+8*3],r9
 	mov qword [rsp+8*5],r10
 	mov     rsi, 0
 	mov     rdi, [rsp+8*5]
@@ -665,9 +664,7 @@ main:
 	mov [r8],r9
 	mov r11, qword [rsp+8*4]
 	mov r10,r11
-	mov qword [rsp+8*6],r8
 	mov qword [rsp+8*7],r10
-	mov qword [rsp+8*4],r11
 	mov     rsi, 1
 	mov     rdi, [rsp+8*7]
 	call    address
@@ -677,9 +674,7 @@ main:
 	mov [r8],r9
 	mov r11, qword [rsp+8*4]
 	mov r10,r11
-	mov qword [rsp+8*8],r8
 	mov qword [rsp+8*9],r10
-	mov qword [rsp+8*4],r11
 	mov     rsi, 2
 	mov     rdi, [rsp+8*9]
 	call    address
@@ -689,9 +684,7 @@ main:
 	mov [r8],r9
 	mov r11, qword [rsp+8*4]
 	mov r10,r11
-	mov qword [rsp+8*10],r8
 	mov qword [rsp+8*11],r10
-	mov qword [rsp+8*4],r11
 	mov     rsi, 3
 	mov     rdi, [rsp+8*11]
 	call    address
@@ -701,9 +694,7 @@ main:
 	mov [r8],r9
 	mov r11, qword [rsp+8*4]
 	mov r10,r11
-	mov qword [rsp+8*12],r8
 	mov qword [rsp+8*13],r10
-	mov qword [rsp+8*4],r11
 	mov     rsi, 4
 	mov     rdi, [rsp+8*13]
 	call    address
@@ -713,7 +704,6 @@ main:
 	mov [r8],r9
 	mov r11,0
 	mov r10,r11
-	mov qword [rsp+8*14],r8
 	mov qword [rsp+8*15],r10
 	
 L_78:
@@ -722,17 +712,13 @@ L_78:
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
-	mov qword [rsp+8*15],r8
-	mov qword [rsp+8*2],r9
 	mov qword [rsp+8*16],r10
 	mov r8, qword [rsp+8*16]
 	cmp r8, 0
-	mov qword [rsp+8*16],r8
 	je L_79
 	mov r9, qword [rsp+8*4]
 	mov r8,r9
 	mov qword [rsp+8*17],r8
-	mov qword [rsp+8*4],r9
 	mov     rsi, [rsp+8*15]
 	mov     rdi, [rsp+8*17]
 	call    address
@@ -752,7 +738,6 @@ L_78:
 	mov r8,r9
 	mov r10,r8
 	mov qword [arg+8*0],r8
-	mov qword [rsp+8*22],r9
 	mov qword [rsp+8*23],r10
 	mov rdi, formatln
 	mov rsi,[rsp+8*23] 
@@ -787,7 +772,6 @@ global_init:
 	sub    rsp, 264
 	mov r8, qword [rsp+8*25]
 	mov rax,r8
-	mov qword [rsp+8*25],r8
 	leave
 	ret
 	

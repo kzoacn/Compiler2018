@@ -654,16 +654,13 @@ L_337:
 	cmp r8,r9
 	mov r10, 0
 	setle r10B
-	mov qword [rsp+8*2],r8
 	mov qword [rsp+8*3],r10
 	mov r8, qword [rsp+8*3]
 	cmp r8, 0
-	mov qword [rsp+8*3],r8
 	je L_338
 	mov r9, qword [rsp+8*2]
 	mov r8,r9
 	mov qword [arg+8*0],r8
-	mov qword [rsp+8*2],r9
 	call fib
 	mov r8 , rax
 	mov r9,r8
@@ -678,7 +675,6 @@ L_337:
 	mov r8,r9
 	mov r10,r8
 	mov qword [arg+8*0],r8
-	mov qword [rsp+8*7],r9
 	mov qword [rsp+8*8],r10
 	mov rdi, formatln
 	mov rsi,[rsp+8*8] 
@@ -714,15 +710,12 @@ fib:
 	mov r11, 0
 	setle r11B
 	mov qword [rsp+8*10],r8
-	mov qword [arg+8*0],r9
 	mov qword [rsp+8*11],r11
 	mov r8, qword [rsp+8*11]
 	cmp r8, 0
-	mov qword [rsp+8*11],r8
 	je L_336
 	mov r8, qword [rsp+8*10]
 	mov rax,r8
-	mov qword [rsp+8*10],r8
 	leave
 	ret
 	
@@ -765,7 +758,6 @@ global_init:
 	sub    rsp, 200
 	mov r8, qword [rsp+8*17]
 	mov rax,r8
-	mov qword [rsp+8*17],r8
 	leave
 	ret
 	

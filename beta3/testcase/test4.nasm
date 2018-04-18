@@ -657,17 +657,14 @@ L_2:
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
-	mov qword [rsp+8*3],r8
 	mov qword [rsp+8*4],r10
 	mov r8, qword [rsp+8*4]
 	cmp r8, 0
-	mov qword [rsp+8*4],r8
 	je L_3
 	mov r9, qword [rsp+8*3]
 	mov r8,r9
 	mov r10,r8
 	mov qword [arg+8*0],r8
-	mov qword [rsp+8*3],r9
 	mov qword [rsp+8*6],r10
 	mov     rdi, [rsp+8*6]
 	call    toString
@@ -676,7 +673,6 @@ L_2:
 	mov r8,r9
 	mov r10,r8
 	mov qword [arg+8*0],r8
-	mov qword [rsp+8*7],r9
 	mov qword [rsp+8*8],r10
 	mov rdi, formatln
 	mov rsi,[rsp+8*8] 
@@ -690,7 +686,6 @@ L_2:
 	mov r11,r10
 	mov r8,r9
 	mov qword [rsp+8*2],r8
-	mov qword [rsp+8*3],r9
 	mov qword [rsp+8*9],r10
 	mov qword [rsp+8*10],r11
 	
@@ -698,7 +693,6 @@ L_4:
 	mov r9, qword [rsp+8*10]
 	mov r8,r9
 	mov qword [rsp+8*3],r8
-	mov qword [rsp+8*10],r9
 	jmp L_2
 	
 L_3:
@@ -714,7 +708,6 @@ global_init:
 	sub    rsp, 152
 	mov r8, qword [rsp+8*11]
 	mov rax,r8
-	mov qword [rsp+8*11],r8
 	leave
 	ret
 	

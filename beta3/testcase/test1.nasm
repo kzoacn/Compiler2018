@@ -666,7 +666,6 @@ global_init:
 	sub    rsp, 96
 	mov r8, qword [rsp+8*4]
 	mov rax,r8
-	mov qword [rsp+8*4],r8
 	leave
 	ret
 	

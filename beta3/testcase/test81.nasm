@@ -664,7 +664,6 @@ main:
 	mov r8,r9
 	mov r10,r8
 	mov qword [arg+8*0],r8
-	mov qword [rsp+8*6],r9
 	mov qword [rsp+8*7],r10
 	mov rdi, formatln
 	mov rsi,[rsp+8*7] 
@@ -675,7 +674,6 @@ main:
 	mov r8,r9
 	mov r10,r8
 	mov qword [arg+8*0],r8
-	mov qword [gbl+8*2],r9
 	mov qword [rsp+8*8],r10
 	mov     rdi, [rsp+8*8]
 	call    toString
@@ -684,7 +682,6 @@ main:
 	mov r8,r9
 	mov r10,r8
 	mov qword [arg+8*0],r8
-	mov qword [rsp+8*9],r9
 	mov qword [rsp+8*10],r10
 	mov rdi, formatln
 	mov rsi,[rsp+8*10] 
@@ -707,7 +704,6 @@ f:
 	imul r10,r8
 	mov rax,r10
 	mov qword [rsp+8*11],r8
-	mov qword [arg+8*0],r9
 	mov qword [rsp+8*12],r10
 	leave
 	ret
@@ -722,7 +718,6 @@ global_init:
 	sub    rsp, 168
 	mov r8, qword [rsp+8*13]
 	mov rax,r8
-	mov qword [rsp+8*13],r8
 	leave
 	ret
 	
