@@ -402,7 +402,7 @@ GS_20:  mov     rax, qword [rbp-8H]
 parseInt:
         push    rbp
         mov     rbp, rsp
-        mov     r8,qword [arg+8*15]
+        mov     r8,qword [arg+8*63]
         mov     qword [rbp-18H], r8
         mov     qword [rbp-10H], 0
         mov     qword [rbp-8H], 1
@@ -456,7 +456,7 @@ substring:
         sub     rsp, 48
         mov     qword [rbp-28H], rdi
         mov     qword [rbp-30H], rsi
-        mov     r8,qword [arg+8*15]
+        mov     r8,qword [arg+8*63]
         mov     qword [rbp-18H], r8
         mov     rax, qword [rbp-28H]
         mov     rdx, qword [rbp-30H]
@@ -507,7 +507,7 @@ ord:
         push    rbp
         mov     rbp, rsp
         mov     qword [rbp-18H], rdi
-        mov     r8,qword [arg+8*15]
+        mov     r8,qword [arg+8*63]
         mov     qword [rbp-8H], r8
         mov     rax, qword [rbp-18H]
         lea     rdx, [rax+1H]
@@ -642,12 +642,9 @@ main:
 	mov    rbp, rsp
 	sub    rsp, 120
 	call global_init
-	mov r8, qword [rsp+8*1]
 	mov r8 , rax
-	mov r9, qword [arg+8*0]
-	mov r10,t16
+	mov r10,t64
 	mov r9,r10
-	mov r11, qword [rsp+8*3]
 	mov r11,r9
 	mov qword [rsp+8*1],r8
 	mov qword [arg+8*0],r9
@@ -657,10 +654,8 @@ main:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov r8, qword [arg+8*0]
-	mov r9,t20
+	mov r9,t68
 	mov r8,r9
-	mov r10, qword [rsp+8*4]
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*4],r10
@@ -669,10 +664,8 @@ main:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov r8, qword [arg+8*0]
-	mov r9,t24
+	mov r9,t72
 	mov r8,r9
-	mov r10, qword [rsp+8*5]
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*5],r10
@@ -681,10 +674,8 @@ main:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov r8, qword [arg+8*0]
-	mov r9,t28
+	mov r9,t76
 	mov r8,r9
-	mov r10, qword [rsp+8*6]
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*6],r10
@@ -732,16 +723,16 @@ GS_31:
 GS_32:
 	db 25H, 73H, 00H
 	
-t20:
-	 db 10,"0123456789" ,0
+t76:
+	 db 12,"asdfasdfasdf" ,0
 
-t24:
-	 db 3,"adf" ,0
-
-t16:
+t64:
 	 db 11,"Hello World" ,0
 
-t28:
-	 db 12,"asdfasdfasdf" ,0
+t68:
+	 db 10,"0123456789" ,0
+
+t72:
+	 db 3,"adf" ,0
 
 

@@ -402,7 +402,7 @@ GS_20:  mov     rax, qword [rbp-8H]
 parseInt:
         push    rbp
         mov     rbp, rsp
-        mov     r8,qword [arg+8*15]
+        mov     r8,qword [arg+8*63]
         mov     qword [rbp-18H], r8
         mov     qword [rbp-10H], 0
         mov     qword [rbp-8H], 1
@@ -456,7 +456,7 @@ substring:
         sub     rsp, 48
         mov     qword [rbp-28H], rdi
         mov     qword [rbp-30H], rsi
-        mov     r8,qword [arg+8*15]
+        mov     r8,qword [arg+8*63]
         mov     qword [rbp-18H], r8
         mov     rax, qword [rbp-28H]
         mov     rdx, qword [rbp-30H]
@@ -507,7 +507,7 @@ ord:
         push    rbp
         mov     rbp, rsp
         mov     qword [rbp-18H], rdi
-        mov     r8,qword [arg+8*15]
+        mov     r8,qword [arg+8*63]
         mov     qword [rbp-8H], r8
         mov     rax, qword [rbp-18H]
         lea     rdx, [rax+1H]
@@ -642,9 +642,7 @@ main:
 	mov    rbp, rsp
 	sub    rsp, 256
 	call global_init
-	mov r8, qword [rsp+8*1]
 	mov r8 , rax
-	mov r9, qword [rsp+8*2]
 	mov r10,0
 	mov r9,r10
 	mov qword [rsp+8*1],r8
@@ -652,16 +650,13 @@ main:
 	mov     rdi, 5
 	call    mallocArray
 	mov     qword [rsp+8*3], rax
-	mov r8, qword [rsp+8*4]
 	mov r9, qword [rsp+8*3]
 	mov r8,r9
 	mov r10, qword [rsp+8*2]
-	mov r10,r10
 	mov r11,1
+	mov r10,r10
 	add r10,r11
-	mov r12, qword [arg+8*0]
 	mov r12,r10
-	mov r13, qword [rsp+8*6]
 	mov r13,r12
 	mov qword [rsp+8*4],r8
 	mov qword [rsp+8*3],r9
@@ -671,10 +666,8 @@ main:
 	mov     rdi, [rsp+8*6]
 	call    toString
 	mov     qword[rsp+8*7], rax
-	mov r8, qword [arg+8*0]
 	mov r9, qword [rsp+8*7]
 	mov r8,r9
-	mov r10, qword [rsp+8*8]
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*7],r9
@@ -685,12 +678,10 @@ main:
 	xor rax, rax
 	call printf
 	mov r8, qword [rsp+8*2]
-	mov r8,r8
 	mov r9,1
+	mov r8,r8
 	add r8,r9
-	mov r10, qword [arg+8*0]
 	mov r10,r8
-	mov r11, qword [rsp+8*9]
 	mov r11,r10
 	mov qword [rsp+8*2],r8
 	mov qword [arg+8*0],r10
@@ -698,10 +689,8 @@ main:
 	mov     rdi, [rsp+8*9]
 	call    toString
 	mov     qword[rsp+8*10], rax
-	mov r8, qword [arg+8*0]
 	mov r9, qword [rsp+8*10]
 	mov r8,r9
-	mov r10, qword [rsp+8*11]
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*10],r9
@@ -711,7 +700,6 @@ main:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov r8, qword [rsp+8*12]
 	mov r9, qword [rsp+8*4]
 	mov r8,r9
 	mov qword [rsp+8*12],r8
@@ -720,34 +708,23 @@ main:
 	mov     rdi, [rsp+8*12]
 	call    address
 	mov [rsp+8*13], rax
-	mov r8, qword [rsp+8*14]
-	mov r9, qword [rsp+8*13]
-	mov r8, [r9]
-	mov qword [rsp+8*14],r8
-	mov qword [rsp+8*13],r9
-	mov r8, qword [rsp+8*14]
-	mov r8,r8
-	mov r9,1
-	add r8,r9
-	mov r10, qword [rsp+8*13]
-	mov [r10],r8
-	mov qword [rsp+8*14],r8
-	mov qword [rsp+8*13],r10
-	mov r8, qword [arg+8*0]
-	mov r9, qword [rsp+8*14]
-	mov r8,r9
-	mov r10, qword [rsp+8*15]
-	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov r8, qword [rsp+8*13]
+	mov r9, [r8]
+	mov r10,1
+	mov r9,r9
+	add r9,r10
+	mov [r8],r9
+	mov r11,r9
+	mov r12,r11
+	mov qword [rsp+8*13],r8
 	mov qword [rsp+8*14],r9
-	mov qword [rsp+8*15],r10
+	mov qword [arg+8*0],r11
+	mov qword [rsp+8*15],r12
 	mov     rdi, [rsp+8*15]
 	call    toString
 	mov     qword[rsp+8*16], rax
-	mov r8, qword [arg+8*0]
 	mov r9, qword [rsp+8*16]
 	mov r8,r9
-	mov r10, qword [rsp+8*17]
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*16],r9
@@ -757,7 +734,6 @@ main:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov r8, qword [rsp+8*18]
 	mov r9, qword [rsp+8*4]
 	mov r8,r9
 	mov qword [rsp+8*18],r8
@@ -766,34 +742,23 @@ main:
 	mov     rdi, [rsp+8*18]
 	call    address
 	mov [rsp+8*19], rax
-	mov r8, qword [rsp+8*20]
-	mov r9, qword [rsp+8*19]
-	mov r8, [r9]
-	mov qword [rsp+8*20],r8
-	mov qword [rsp+8*19],r9
-	mov r8, qword [rsp+8*20]
-	mov r8,r8
-	mov r9,1
-	add r8,r9
-	mov r10, qword [rsp+8*19]
-	mov [r10],r8
-	mov qword [rsp+8*20],r8
-	mov qword [rsp+8*19],r10
-	mov r8, qword [arg+8*0]
-	mov r9, qword [rsp+8*20]
-	mov r8,r9
-	mov r10, qword [rsp+8*21]
-	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov r8, qword [rsp+8*19]
+	mov r9, [r8]
+	mov r10,1
+	mov r9,r9
+	add r9,r10
+	mov [r8],r9
+	mov r11,r9
+	mov r12,r11
+	mov qword [rsp+8*19],r8
 	mov qword [rsp+8*20],r9
-	mov qword [rsp+8*21],r10
+	mov qword [arg+8*0],r11
+	mov qword [rsp+8*21],r12
 	mov     rdi, [rsp+8*21]
 	call    toString
 	mov     qword[rsp+8*22], rax
-	mov r8, qword [arg+8*0]
 	mov r9, qword [rsp+8*22]
 	mov r8,r9
-	mov r10, qword [rsp+8*23]
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*22],r9

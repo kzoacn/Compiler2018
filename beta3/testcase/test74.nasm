@@ -402,7 +402,7 @@ GS_20:  mov     rax, qword [rbp-8H]
 parseInt:
         push    rbp
         mov     rbp, rsp
-        mov     r8,qword [arg+8*15]
+        mov     r8,qword [arg+8*63]
         mov     qword [rbp-18H], r8
         mov     qword [rbp-10H], 0
         mov     qword [rbp-8H], 1
@@ -456,7 +456,7 @@ substring:
         sub     rsp, 48
         mov     qword [rbp-28H], rdi
         mov     qword [rbp-30H], rsi
-        mov     r8,qword [arg+8*15]
+        mov     r8,qword [arg+8*63]
         mov     qword [rbp-18H], r8
         mov     rax, qword [rbp-28H]
         mov     rdx, qword [rbp-30H]
@@ -507,7 +507,7 @@ ord:
         push    rbp
         mov     rbp, rsp
         mov     qword [rbp-18H], rdi
-        mov     r8,qword [arg+8*15]
+        mov     r8,qword [arg+8*63]
         mov     qword [rbp-8H], r8
         mov     rax, qword [rbp-18H]
         lea     rdx, [rax+1H]
@@ -642,13 +642,10 @@ main:
 	mov    rbp, rsp
 	sub    rsp, 128
 	call global_init
-	mov r8, qword [rsp+8*1]
 	mov r8 , rax
-	mov r9, qword [rsp+8*2]
-	mov r10,t16
+	mov r10,t64
 	mov r9,r10
-	mov r11, qword [rsp+8*3]
-	mov r12,t17
+	mov r12,t65
 	mov r11,r12
 	mov qword [rsp+8*1],r8
 	mov qword [rsp+8*2],r9
@@ -661,10 +658,8 @@ main:
 	cmp r8, 0
 	mov qword [rsp+8*4],r8
 	je L_537
-	mov r8, qword [arg+8*0]
-	mov r9,t19
+	mov r9,t67
 	mov r8,r9
-	mov r10, qword [rsp+8*6]
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*6],r10
@@ -676,10 +671,8 @@ main:
 	jmp L_538
 	
 L_537:
-	mov r8, qword [arg+8*0]
-	mov r9,t23
+	mov r9,t71
 	mov r8,r9
-	mov r10, qword [rsp+8*7]
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*7],r10
@@ -733,16 +726,16 @@ GS_31:
 GS_32:
 	db 25H, 73H, 00H
 	
-t23:
-	 db 6,"not ls" ,0
-
-t16:
-	 db 3,"acc" ,0
-
-t17:
+t65:
 	 db 3,"abc" ,0
 
-t19:
+t64:
+	 db 3,"acc" ,0
+
+t67:
 	 db 2,"ls" ,0
+
+t71:
+	 db 6,"not ls" ,0
 
 

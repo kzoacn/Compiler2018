@@ -253,6 +253,10 @@ class ExecTest {
     void test88()throws Exception{
         test("test88");
     }
+    @Test
+    void test89()throws Exception{
+        test("test89");
+    }
 
     void test(String name) throws Exception{
 

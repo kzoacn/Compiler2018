@@ -402,7 +402,7 @@ GS_20:  mov     rax, qword [rbp-8H]
 parseInt:
         push    rbp
         mov     rbp, rsp
-        mov     r8,qword [arg+8*15]
+        mov     r8,qword [arg+8*63]
         mov     qword [rbp-18H], r8
         mov     qword [rbp-10H], 0
         mov     qword [rbp-8H], 1
@@ -456,7 +456,7 @@ substring:
         sub     rsp, 48
         mov     qword [rbp-28H], rdi
         mov     qword [rbp-30H], rsi
-        mov     r8,qword [arg+8*15]
+        mov     r8,qword [arg+8*63]
         mov     qword [rbp-18H], r8
         mov     rax, qword [rbp-28H]
         mov     rdx, qword [rbp-30H]
@@ -507,7 +507,7 @@ ord:
         push    rbp
         mov     rbp, rsp
         mov     qword [rbp-18H], rdi
-        mov     r8,qword [arg+8*15]
+        mov     r8,qword [arg+8*63]
         mov     qword [rbp-8H], r8
         mov     rax, qword [rbp-18H]
         lea     rdx, [rax+1H]
@@ -642,42 +642,31 @@ main:
 	mov    rbp, rsp
 	sub    rsp, 152
 	call global_init
-	mov r8, qword [rsp+8*1]
 	mov r8 , rax
 	mov qword [rsp+8*1],r8
 	mov     rdi, 10
 	call    mallocArray
 	mov     qword [rsp+8*2], rax
-	mov r8, qword [rsp+8*3]
 	mov r9, qword [rsp+8*2]
 	mov r8,r9
-	mov r10, qword [rsp+8*4]
 	mov r10,r8
-	mov r11, qword [arg+8*15]
 	mov r11,r10
-	mov r12, qword [rsp+8*6]
 	mov r12,r11
 	mov r12, [r12]
+	mov r13,r12
+	mov r14,r13
 	mov qword [rsp+8*3],r8
 	mov qword [rsp+8*2],r9
 	mov qword [rsp+8*4],r10
-	mov qword [arg+8*15],r11
+	mov qword [arg+8*63],r11
 	mov qword [rsp+8*6],r12
-	mov r8, qword [arg+8*0]
-	mov r9, qword [rsp+8*6]
-	mov r8,r9
-	mov r10, qword [rsp+8*8]
-	mov r10,r8
-	mov qword [arg+8*0],r8
-	mov qword [rsp+8*6],r9
-	mov qword [rsp+8*8],r10
+	mov qword [arg+8*0],r13
+	mov qword [rsp+8*8],r14
 	mov     rdi, [rsp+8*8]
 	call    toString
 	mov     qword[rsp+8*9], rax
-	mov r8, qword [arg+8*0]
 	mov r9, qword [rsp+8*9]
 	mov r8,r9
-	mov r10, qword [rsp+8*10]
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*9],r9

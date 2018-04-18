@@ -542,7 +542,7 @@ public class ConstantPool {
             "        sub     rsp, 48\n" +
             "        mov     qword [rbp-28H], rdi\n" +
             "        mov     qword [rbp-30H], rsi\n" +
-            "        mov     r8,qword [arg+8*15]\n" +
+            "        mov     r8,qword [arg+8*63]\n" +
             "        mov     qword [rbp-18H], r8\n" +
             "        mov     rax, qword [rbp-28H]\n" +
             "        mov     rdx, qword [rbp-30H]\n" +
@@ -592,7 +592,7 @@ public class ConstantPool {
     static final StringBuffer parseIntFunction=new StringBuffer("parseInt:\n" +
             "        push    rbp\n" +
             "        mov     rbp, rsp\n" +
-            "        mov     r8,qword [arg+8*15]\n" +
+            "        mov     r8,qword [arg+8*63]\n" +
             "        mov     qword [rbp-18H], r8\n" +
             "        mov     qword [rbp-10H], 0\n" +
             "        mov     qword [rbp-8H], 1\n" +
@@ -643,7 +643,7 @@ public class ConstantPool {
             "        push    rbp\n" +
             "        mov     rbp, rsp\n" +
             "        mov     qword [rbp-18H], rdi\n" +
-            "        mov     r8,qword [arg+8*15]\n" +
+            "        mov     r8,qword [arg+8*63]\n" +
             "        mov     qword [rbp-8H], r8\n" +
             "        mov     rax, qword [rbp-18H]\n" +
             "        lea     rdx, [rax+1H]\n" +

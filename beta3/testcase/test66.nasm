@@ -402,7 +402,7 @@ GS_20:  mov     rax, qword [rbp-8H]
 parseInt:
         push    rbp
         mov     rbp, rsp
-        mov     r8,qword [arg+8*15]
+        mov     r8,qword [arg+8*63]
         mov     qword [rbp-18H], r8
         mov     qword [rbp-10H], 0
         mov     qword [rbp-8H], 1
@@ -456,7 +456,7 @@ substring:
         sub     rsp, 48
         mov     qword [rbp-28H], rdi
         mov     qword [rbp-30H], rsi
-        mov     r8,qword [arg+8*15]
+        mov     r8,qword [arg+8*63]
         mov     qword [rbp-18H], r8
         mov     rax, qword [rbp-28H]
         mov     rdx, qword [rbp-30H]
@@ -507,7 +507,7 @@ ord:
         push    rbp
         mov     rbp, rsp
         mov     qword [rbp-18H], rdi
-        mov     r8,qword [arg+8*15]
+        mov     r8,qword [arg+8*63]
         mov     qword [rbp-8H], r8
         mov     rax, qword [rbp-18H]
         lea     rdx, [rax+1H]
@@ -642,17 +642,13 @@ main:
 	mov    rbp, rsp
 	sub    rsp, 152
 	call global_init
-	mov r8, qword [rsp+8*1]
 	mov r8 , rax
-	mov r9, qword [rsp+8*2]
 	mov r10,1
 	mov r9,r10
-	mov r11, qword [rsp+8*3]
 	mov r12,0
 	mov r11,r12
 	mov r13,0
 	cmp r11,r13
-	mov r14, qword [rsp+8*4]
 	mov r14, 0
 	setne r14B
 	mov qword [rsp+8*1],r8
@@ -663,7 +659,6 @@ main:
 	cmp r8, 0
 	mov qword [rsp+8*4],r8
 	jne L_507
-	mov r8, qword [rsp+8*5]
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*5],r8
@@ -677,18 +672,15 @@ L_507:
 	mov rbx, r9
 	cdq
 	idiv rbx
-	mov r10, qword [rsp+8*6]
 	mov r10, rax
 	mov r11,5
 	cmp r10,r11
-	mov r12, qword [rsp+8*7]
 	mov r12, 0
 	setl r12B
 	mov qword [rsp+8*2],r8
 	mov qword [rsp+8*3],r9
 	mov qword [rsp+8*6],r10
 	mov qword [rsp+8*7],r12
-	mov r8, qword [rsp+8*5]
 	mov r9, qword [rsp+8*7]
 	mov r8,r9
 	mov qword [rsp+8*5],r8
@@ -699,10 +691,8 @@ L_508:
 	cmp r8, 0
 	mov qword [rsp+8*5],r8
 	je L_509
-	mov r8, qword [arg+8*0]
-	mov r9,t25
+	mov r9,t73
 	mov r8,r9
-	mov r10, qword [rsp+8*9]
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*9],r10
@@ -714,10 +704,8 @@ L_508:
 	jmp L_510
 	
 L_509:
-	mov r8, qword [arg+8*0]
-	mov r9,t29
+	mov r9,t77
 	mov r8,r9
-	mov r10, qword [rsp+8*10]
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*10],r10
@@ -771,10 +759,10 @@ GS_31:
 GS_32:
 	db 25H, 73H, 00H
 	
-t25:
+t73:
 	 db 5,"error" ,0
 
-t29:
+t77:
 	 db 5,"logic" ,0
 
 
