@@ -649,6 +649,7 @@ main:
 	mov r11,r12
 	mov r14,2800
 	mov r13,r14
+	mov qword [rsp+8*1],r8
 	mov r8,0
 	mov r15,r8
 	mov r10,0
@@ -752,10 +753,12 @@ L_420:
 	mov r14,r12
 	imul r14,r13
 	mov r15, qword [rsp+8*5]
+	mov qword [rsp+8*18],r8
 	mov r8,r15
 	add r8,r14
 	mov r15,r8
 	mov r8, qword [rsp+8*9]
+	mov qword [rsp+8*19],r11
 	mov r11,1
 	mov r8,r8
 	sub r8,r11
@@ -765,12 +768,14 @@ L_420:
 	cdq
 	idiv rbx
 	mov r11, rdx
+	mov qword [rsp+8*20],r12
 	mov r12,r9
 	mov r9,r10
 	add r9,1
 	shl r9,4
 	add r9,r12
 	mov [r9],r11
+	mov qword [rsp+8*25],r9
 	mov r9,r8
 	mov r11,1
 	mov r8,r8
@@ -788,6 +793,7 @@ L_420:
 	sub r10,r8
 	mov r8,0
 	cmp r10,r8
+	mov qword [rsp+8*26],r9
 	mov r9, 0
 	sete r9B
 	mov qword [rsp+8*28],r9

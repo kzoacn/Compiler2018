@@ -692,7 +692,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
     }
     Variable nextVariable(VariableType type){
         Variable variable = new Variable("t"+Integer.toString(counter++),type);
-        variable.isTemp=true;
+        variable.isTemp=false;
         symbolMap.putSymbol(variable.name,variable.type);
         return variable;
     }

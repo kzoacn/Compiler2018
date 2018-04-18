@@ -673,10 +673,13 @@ main:
 	shl r15,4
 	add r15,r13
 	mov r13, [r15]
+	mov qword [rsp+8*6],r8
 	mov r8,r13
 	mov r9,r8
 	mov r9, [r9]
+	mov qword [arg+8*63],r8
 	mov r8,r9
+	mov qword [rsp+8*11],r9
 	mov r9,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*13],r9

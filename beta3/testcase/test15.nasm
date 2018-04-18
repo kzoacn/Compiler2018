@@ -753,9 +753,11 @@ L_116:
 	mov r10,r8
 	sub r10,r9
 	mov r9,1
+	mov qword [rsp+8*15],r11
 	mov r11,r14
 	sub r11,r9
 	mov r9,r12
+	mov qword [rsp+8*16],r13
 	mov r13,r10
 	add r13,1
 	shl r13,4
@@ -765,9 +767,11 @@ L_116:
 	add r13,1
 	shl r13,4
 	add r13,r9
+	mov qword [rsp+8*20],r9
 	mov r9, [r13]
 	mov r10,r15
 	add r10,r9
+	mov qword [rsp+8*22],r9
 	mov r9,r12
 	mov r11,r8
 	add r11,1

@@ -704,6 +704,7 @@ main:
 	add r12,r10
 	mov r15,1
 	mov [r12],r15
+	mov qword [rsp+8*8],r10
 	mov r10,0
 	mov r9,r10
 	mov qword [rsp+8*7],r8
@@ -847,9 +848,11 @@ L_138:
 	add r13,r11
 	mov r9, [r13]
 	mov r10,1
+	mov qword [rsp+8*24],r11
 	mov r11,r14
 	sub r11,r10
 	mov r10,r12
+	mov qword [rsp+8*25],r13
 	mov r13,r8
 	add r13,1
 	shl r13,4
@@ -864,13 +867,17 @@ L_138:
 	add r13,1
 	shl r13,4
 	add r13,r10
+	mov qword [rsp+8*28],r10
 	mov r10, [r13]
 	mov r11,r9
 	add r11,r10
+	mov qword [rsp+8*26],r9
 	mov r9,1
+	mov qword [rsp+8*30],r10
 	mov r10,r15
 	sub r10,r9
 	mov r9,r12
+	mov qword [rsp+8*29],r13
 	mov r13,r8
 	add r13,1
 	shl r13,4
@@ -885,9 +892,11 @@ L_138:
 	add r13,1
 	shl r13,4
 	add r13,r9
+	mov qword [rsp+8*33],r9
 	mov r9, [r13]
 	mov r10,r11
 	add r10,r9
+	mov qword [rsp+8*35],r9
 	mov r9,r12
 	mov r11,r8
 	add r11,1
@@ -967,6 +976,7 @@ L_126:
 	add r11,r8
 	mov r14, [r11]
 	mov r15,r14
+	mov qword [rsp+8*42],r8
 	mov r8,r15
 	mov qword [rsp+8*46],r8
 	mov qword [rsp+8*43],r11

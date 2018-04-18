@@ -651,6 +651,7 @@ main:
 	add r13,r11
 	mov r14,r13
 	mov r15,r14
+	mov qword [rsp+8*1],r8
 	mov r8,r15
 	mov qword [rsp+8*7],r8
 	mov qword [rsp+8*2],r9

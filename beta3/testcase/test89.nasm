@@ -653,6 +653,7 @@ main:
 	mov r9,r9
 	add r9,r15
 	mov r11,r9
+	mov qword [rsp+8*1],r8
 	mov r8,1
 	mov r9,r9
 	add r9,r8

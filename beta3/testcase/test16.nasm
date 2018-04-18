@@ -698,7 +698,9 @@ main:
 	shl r9,4
 	add r9,r15
 	mov r8, [r9]
+	mov qword [rsp+8*9],r9
 	mov r9,r8
+	mov qword [rsp+8*10],r8
 	mov r8,r9
 	mov qword [rsp+8*12],r8
 	mov qword [arg+8*0],r9
