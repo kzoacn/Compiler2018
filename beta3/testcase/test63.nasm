@@ -769,15 +769,14 @@ main:
 	add r8,r9
 	mov r15,0
 	mov [r8],r15
+	mov r10,3
+	mov r8,r10
+	add r8,1
+	shl r8,4
+	add r8,r9
+	mov r11,1
+	mov [r8],r11
 	mov qword [rsp+8*18],r8
-	mov r8,3
-	mov r10,r8
-	add r10,1
-	shl r10,4
-	add r10,r9
-	mov r8,1
-	mov [r10],r8
-	mov qword [rsp+8*18],r10
 	mov     rsi, [rsp+8*17]
 	mov     rdi, [rsp+8*4]
 	call    multiAddress
@@ -811,15 +810,14 @@ main:
 	add r8,r9
 	mov r15,0
 	mov [r8],r15
+	mov r10,3
+	mov r8,r10
+	add r8,1
+	shl r8,4
+	add r8,r9
+	mov r11,1
+	mov [r8],r11
 	mov qword [rsp+8*21],r8
-	mov r8,3
-	mov r10,r8
-	add r10,1
-	shl r10,4
-	add r10,r9
-	mov r8,1
-	mov [r10],r8
-	mov qword [rsp+8*21],r10
 	mov     rsi, [rsp+8*20]
 	mov     rdi, [rsp+8*4]
 	call    multiAddress

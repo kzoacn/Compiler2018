@@ -658,13 +658,12 @@ main:
 	mov r9,r9
 	add r9,r8
 	mov r13,r9
-	mov r8,r11
-	mov qword [arg+8*0],r8
+	mov r10,r11
+	mov r12,r10
 	mov qword [rsp+8*2],r9
-	mov r9, qword [arg+8*0]
-	mov r8,r9
-	mov qword [rsp+8*6],r8
+	mov qword [arg+8*0],r10
 	mov qword [rsp+8*3],r11
+	mov qword [rsp+8*6],r12
 	mov qword [rsp+8*4],r13
 	mov     rdi, [rsp+8*6]
 	call    toString

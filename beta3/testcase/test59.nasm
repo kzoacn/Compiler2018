@@ -662,34 +662,31 @@ main:
 	mov [r12],r13
 	mov r14,r8
 	mov r15,1
-	mov qword [rsp+8*4],r8
-	mov r8,r15
-	add r8,1
-	shl r8,4
-	add r8,r14
-	mov r9,2
-	mov [r8],r9
-	mov qword [rsp+8*8],r8
-	mov r9, qword [rsp+8*4]
-	mov r8,r9
-	mov r9,0
+	mov r9,r15
+	add r9,1
+	shl r9,4
+	add r9,r14
 	mov qword [rsp+8*5],r10
-	mov r10,r9
-	add r10,1
-	shl r10,4
-	add r10,r8
-	mov qword [rsp+8*9],r8
-	mov r8, [r10]
-	mov qword [rsp+8*11],r8
-	mov r9, qword [rsp+8*11]
-	mov r8,r9
-	mov qword [arg+8*0],r8
-	mov r9, qword [arg+8*0]
-	mov r8,r9
-	mov qword [rsp+8*13],r8
-	mov qword [rsp+8*10],r10
+	mov r10,2
+	mov [r9],r10
+	mov r11,r8
 	mov qword [rsp+8*6],r12
+	mov r12,0
+	mov r13,r12
+	add r13,1
+	shl r13,4
+	add r13,r11
 	mov qword [rsp+8*7],r14
+	mov r14, [r13]
+	mov r15,r14
+	mov qword [rsp+8*8],r9
+	mov r9,r15
+	mov qword [rsp+8*4],r8
+	mov qword [rsp+8*13],r9
+	mov qword [rsp+8*9],r11
+	mov qword [rsp+8*10],r13
+	mov qword [rsp+8*11],r14
+	mov qword [arg+8*0],r15
 	mov     rdi, [rsp+8*13]
 	call    toString
 	mov     qword[rsp+8*14], rax

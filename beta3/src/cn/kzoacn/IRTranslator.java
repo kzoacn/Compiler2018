@@ -244,7 +244,7 @@ public class IRTranslator {
     int reserveRegister(){
         int pos=-1;
         //LRU
-        /*int mn=2000000000;
+        int mn=2000000000;
         for(int i=8;i<16;i++){
             if(ban[i])continue;
             if(lastUsedTime[i]<mn){
@@ -253,8 +253,8 @@ public class IRTranslator {
             }
         }
 
-        kick(pos);*/
-
+        kick(pos);
+/*
         int mx=-1;
         for(int i=8;i<16;i++){
             if(ban[i])continue;
@@ -270,7 +270,7 @@ public class IRTranslator {
             }
         }
 
-        kick(pos);
+        kick(pos);*/
 
         return pos;
     }

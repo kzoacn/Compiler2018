@@ -675,18 +675,15 @@ main:
 	mov r13, [r15]
 	mov qword [rsp+8*6],r8
 	mov r8,r13
-	mov qword [arg+8*63],r8
-	mov r9, qword [arg+8*63]
-	mov r8,r9
-	mov r8, [r8]
-	mov qword [rsp+8*11],r8
-	mov r9, qword [rsp+8*11]
-	mov r8,r9
-	mov qword [arg+8*0],r8
-	mov r9, qword [arg+8*0]
-	mov r8,r9
-	mov qword [rsp+8*13],r8
+	mov r10,r8
+	mov r10, [r10]
 	mov qword [rsp+8*7],r11
+	mov r11,r10
+	mov r12,r11
+	mov qword [arg+8*63],r8
+	mov qword [rsp+8*11],r10
+	mov qword [arg+8*0],r11
+	mov qword [rsp+8*13],r12
 	mov qword [rsp+8*8],r13
 	mov qword [rsp+8*9],r15
 	mov     rdi, [rsp+8*13]
