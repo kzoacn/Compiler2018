@@ -74,8 +74,8 @@
       <file leaf-file-name="ConstantPool.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/ConstantPool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="2055" column="83" lean-forward="false" selection-start-line="2055" selection-start-column="83" selection-end-line="2055" selection-end-column="83" />
+            <state relative-caret-position="52">
+              <caret line="2055" column="47" lean-forward="false" selection-start-line="2055" selection-start-column="47" selection-end-line="2055" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -141,7 +141,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>leftvalue</find>
       <find>equa</find>
       <find>err</find>
       <find>getreg</find>
@@ -171,6 +170,7 @@
       <find>addsub</find>
       <find>address</find>
       <find>nextVariable</find>
+      <find>check</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -1066,8 +1066,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/ConstantPool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="2055" column="83" lean-forward="false" selection-start-line="2055" selection-start-column="83" selection-end-line="2055" selection-end-column="83" />
+        <state relative-caret-position="52">
+          <caret line="2055" column="47" lean-forward="false" selection-start-line="2055" selection-start-column="47" selection-end-line="2055" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
