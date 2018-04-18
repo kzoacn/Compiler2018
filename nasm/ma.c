@@ -23,15 +23,17 @@ long* address(long st,long pos){
     return (void*)(st+((pos+1)<<4));
 }
 
+#define addr(st,pos) ((long*)((st)+(((pos)+1)<<4)))
+
 
 long* multiAddress(unsigned char* st,long* a){
     long size=*a,i;
     if(size==0)return st;
     unsigned char *cur=st;
     for(i=1;i<size;i++){
-        cur=*address((long)cur,*address(a,i-1));
+        cur=*addr((long)cur,*addr(a,i-1));
     }
-    cur=address((long)cur,*address(a,size-1));
+    cur=addr((long)cur,*addr(a,size-1));
     return cur;
 }
 

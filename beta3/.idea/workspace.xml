@@ -23,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-336">
-              <caret line="2503" column="26" lean-forward="false" selection-start-line="2503" selection-start-column="26" selection-end-line="2503" selection-end-column="26" />
+            <state relative-caret-position="-1153">
+              <caret line="2529" column="47" lean-forward="false" selection-start-line="2529" selection-start-column="47" selection-end-line="2529" selection-end-column="47" />
               <folding>
                 <element signature="e#7877#7878#0" expanded="true" />
                 <element signature="e#7947#7948#0" expanded="true" />
@@ -54,10 +54,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IRTranslator.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ConstantPool.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/ConstantPool.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="62">
+              <caret line="621" column="49" lean-forward="false" selection-start-line="621" selection-start-column="49" selection-end-line="621" selection-end-column="49" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IRTranslator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
+            <state relative-caret-position="888">
               <caret line="726" column="32" lean-forward="false" selection-start-line="726" selection-start-column="32" selection-end-line="726" selection-end-column="32" />
               <folding>
                 <element signature="e#1905#1923#0" expanded="true" />
@@ -66,18 +78,6 @@
                 <element signature="e#9310#9311#0" expanded="true" />
                 <element signature="e#9344#9345#0" expanded="true" />
                 <element signature="e#9392#9393#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConstantPool.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/ConstantPool.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="137" column="37" lean-forward="false" selection-start-line="137" selection-start-column="30" selection-end-line="137" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -153,7 +153,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>assign</find>
       <find>leftval</find>
       <find>express</find>
       <find>getvalue</find>
@@ -181,8 +180,9 @@
       <find>arg+8*15</find>
       <find>arg+8</find>
       <find>arg</find>
-      <find>address</find>
       <find>acces</find>
+      <find>address</find>
+      <find>multiadree</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -200,9 +200,9 @@
         <option value="$PROJECT_DIR$/src/cn/kzoacn/SemanticTest.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/Builder.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/Main.java" />
-        <option value="$PROJECT_DIR$/src/cn/kzoacn/ConstantPool.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/ExecTest.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java" />
+        <option value="$PROJECT_DIR$/src/cn/kzoacn/ConstantPool.java" />
       </list>
     </option>
   </component>
@@ -464,12 +464,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ExecTest - 2018.04.18 at 15h 26m 33s.xml">
-      <configuration name="ExecTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExecTest - 2018.04.18 at 15h 26m 56s.xml">
-      <configuration name="ExecTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ExecTest - 2018.04.18 at 15h 27m 11s.xml">
       <configuration name="ExecTest" configurationId="JUnit" />
     </history-entry>
@@ -492,6 +486,12 @@
       <configuration name="ExecTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ExecTest - 2018.04.18 at 15h 36m 21s.xml">
+      <configuration name="ExecTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecTest - 2018.04.18 at 15h 50m 37s.xml">
+      <configuration name="ExecTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecTest - 2018.04.18 at 15h 50m 53s.xml">
       <configuration name="ExecTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -1021,23 +1021,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-336">
-          <caret line="2503" column="26" lean-forward="false" selection-start-line="2503" selection-start-column="26" selection-end-line="2503" selection-end-column="26" />
-          <folding>
-            <element signature="e#7877#7878#0" expanded="true" />
-            <element signature="e#7947#7948#0" expanded="true" />
-            <element signature="e#16782#16783#0" expanded="true" />
-            <element signature="e#16828#16829#0" expanded="true" />
-            <element signature="e#16871#16872#0" expanded="true" />
-            <element signature="e#16915#16916#0" expanded="true" />
-            <element signature="e#16954#16955#0" expanded="true" />
-            <element signature="e#16998#16999#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/MxstarParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-209">
@@ -1061,19 +1044,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/ConstantPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="137" column="37" lean-forward="false" selection-start-line="137" selection-start-column="30" selection-end-line="137" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
+        <state relative-caret-position="888">
           <caret line="726" column="32" lean-forward="false" selection-start-line="726" selection-start-column="32" selection-end-line="726" selection-end-column="32" />
           <folding>
             <element signature="e#1905#1923#0" expanded="true" />
@@ -1082,6 +1055,33 @@
             <element signature="e#9310#9311#0" expanded="true" />
             <element signature="e#9344#9345#0" expanded="true" />
             <element signature="e#9392#9393#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/ConstantPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="621" column="49" lean-forward="false" selection-start-line="621" selection-start-column="49" selection-end-line="621" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1153">
+          <caret line="2529" column="47" lean-forward="false" selection-start-line="2529" selection-start-column="47" selection-end-line="2529" selection-end-column="47" />
+          <folding>
+            <element signature="e#7877#7878#0" expanded="true" />
+            <element signature="e#7947#7948#0" expanded="true" />
+            <element signature="e#16782#16783#0" expanded="true" />
+            <element signature="e#16828#16829#0" expanded="true" />
+            <element signature="e#16871#16872#0" expanded="true" />
+            <element signature="e#16915#16916#0" expanded="true" />
+            <element signature="e#16954#16955#0" expanded="true" />
+            <element signature="e#16998#16999#0" expanded="true" />
           </folding>
         </state>
       </provider>
