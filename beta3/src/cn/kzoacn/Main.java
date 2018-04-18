@@ -692,7 +692,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
     }
     Variable nextVariable(VariableType type){
         Variable variable = new Variable("t"+Integer.toString(counter++),type);
-        variable.isTemp=true;
+        variable.isTemp=false;
         symbolMap.putSymbol(variable.name,variable.type);
         return variable;
     }
@@ -704,7 +704,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
     }
     Variable nextConst(int constValue,VariableType type){
         Variable variable =  new Variable("const"+Integer.toString(counter++),type);
-        variable.isTemp=true;
+        variable.isTemp=false;
         variable.constValue=constValue;
         return variable;
     }
@@ -2297,6 +2297,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         IR ir0=visit(ctx.expression(0));
         IR ir1=visit(ctx.expression(1));
         Variable temp = nextVariable(symbolMap.operate(ir0.last.dest.type,ctx.op.getText(),ir1.last.dest.type) );
+        temp.isTemp=true;
         OpCode opCode=OpCode.add;
         if(ctx.op.getText().equals("+"))
             opCode=OpCode.add;
