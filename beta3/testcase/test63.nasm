@@ -774,8 +774,8 @@ main:
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r11,1
-	mov [r8],r11
+	mov r10,1
+	mov [r8],r10
 	mov qword [rsp+8*18],r8
 	mov     rsi, [rsp+8*17]
 	mov     rdi, [rsp+8*4]
@@ -815,8 +815,8 @@ main:
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r11,1
-	mov [r8],r11
+	mov r10,1
+	mov [r8],r10
 	mov qword [rsp+8*21],r8
 	mov     rsi, [rsp+8*20]
 	mov     rdi, [rsp+8*4]

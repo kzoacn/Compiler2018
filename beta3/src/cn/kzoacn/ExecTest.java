@@ -45,6 +45,10 @@ class ExecTest {
         test("test8");
     }
     @Test
+    void test9()throws Exception{
+        test("test9");
+    }
+    @Test
     void test14()throws Exception{
         test("test14");
     }

@@ -821,11 +821,11 @@ L_523:
 	mov r14,0
 	mov [r13],r14
 	mov r15,r9
-	mov r8,1
-	mov r9,r9
-	add r9,r8
-	mov qword [rsp+8*13],r9
 	mov qword [rsp+8*33],r10
+	mov r10,1
+	mov r9,r9
+	add r9,r10
+	mov qword [rsp+8*13],r9
 	mov qword [rsp+8*34],r11
 	mov qword [rsp+8*35],r13
 	mov qword [rsp+8*36],r15

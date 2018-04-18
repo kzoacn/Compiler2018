@@ -693,10 +693,9 @@ qpow:
 	mov r12,r13
 	mov r15,1
 	mov r14,r15
+	mov r9,r8
 	mov qword [rsp+8*9],r8
-	mov r9, qword [rsp+8*9]
-	mov r8,r9
-	mov qword [rsp+8*13],r8
+	mov qword [rsp+8*13],r9
 	mov qword [rsp+8*10],r10
 	mov qword [rsp+8*11],r12
 	mov qword [rsp+8*12],r14

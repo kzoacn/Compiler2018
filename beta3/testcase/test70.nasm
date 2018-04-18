@@ -659,21 +659,21 @@ main:
 	mov [r12],r13
 	mov r14,r8
 	mov r15,r14
-	mov r9,2
-	mov qword [rsp+8*4],r10
-	mov r10,r9
-	add r10,1
-	shl r10,4
-	add r10,r15
-	mov r11, [r10]
-	mov qword [rsp+8*5],r12
-	mov r12,r11
-	mov r13,r12
 	mov qword [rsp+8*3],r8
-	mov qword [rsp+8*8],r10
-	mov qword [rsp+8*9],r11
-	mov qword [arg+8*0],r12
-	mov qword [rsp+8*11],r13
+	mov r8,2
+	mov r9,r8
+	add r9,1
+	shl r9,4
+	add r9,r15
+	mov r8, [r9]
+	mov qword [rsp+8*8],r9
+	mov r9,r8
+	mov qword [rsp+8*9],r8
+	mov r8,r9
+	mov qword [rsp+8*11],r8
+	mov qword [arg+8*0],r9
+	mov qword [rsp+8*4],r10
+	mov qword [rsp+8*5],r12
 	mov qword [gbl+8*6],r14
 	mov qword [rsp+8*7],r15
 	mov     rdi, [rsp+8*11]

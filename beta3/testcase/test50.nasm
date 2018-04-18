@@ -762,8 +762,8 @@ main:
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r11,0
-	mov [r8],r11
+	mov r10,0
+	mov [r8],r10
 	mov qword [rsp+8*15],r8
 	mov     rsi, [rsp+8*14]
 	mov     rdi, [rsp+8*4]
@@ -806,15 +806,15 @@ main:
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r11,0
-	mov [r8],r11
-	mov r12,4
-	mov r8,r12
+	mov r10,0
+	mov [r8],r10
+	mov r10,4
+	mov r8,r10
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r13,2
-	mov [r8],r13
+	mov r10,2
+	mov [r8],r10
 	mov qword [rsp+8*19],r8
 	mov     rsi, [rsp+8*18]
 	mov     rdi, [rsp+8*4]
@@ -857,22 +857,22 @@ main:
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r11,0
-	mov [r8],r11
-	mov r12,4
-	mov r8,r12
+	mov r10,0
+	mov [r8],r10
+	mov r10,4
+	mov r8,r10
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r13,2
-	mov [r8],r13
-	mov r14,5
-	mov r8,r14
+	mov r10,2
+	mov [r8],r10
+	mov r10,5
+	mov r8,r10
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r15,3
-	mov [r8],r15
+	mov r10,3
+	mov [r8],r10
 	mov qword [rsp+8*23],r8
 	mov     rsi, [rsp+8*22]
 	mov     rdi, [rsp+8*4]
@@ -912,22 +912,22 @@ main:
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r11,0
-	mov [r8],r11
-	mov r12,4
-	mov r8,r12
+	mov r10,0
+	mov [r8],r10
+	mov r10,4
+	mov r8,r10
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r13,2
-	mov [r8],r13
-	mov r14,5
-	mov r8,r14
+	mov r10,2
+	mov [r8],r10
+	mov r10,5
+	mov r8,r10
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r15,3
-	mov [r8],r15
+	mov r10,3
+	mov [r8],r10
 	mov qword [rsp+8*26],r8
 	mov     rsi, [rsp+8*25]
 	mov     rdi, [rsp+8*4]

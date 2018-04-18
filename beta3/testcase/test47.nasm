@@ -793,8 +793,8 @@ L_438:
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r11,0
-	mov [r8],r11
+	mov r10,0
+	mov [r8],r10
 	mov qword [rsp+8*21],r8
 	mov     rsi, [rsp+8*20]
 	mov     rdi, [rsp+8*4]
@@ -851,15 +851,15 @@ L_441:
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r11,0
-	mov [r8],r11
-	mov r12,4
-	mov r8,r12
+	mov r10,0
+	mov [r8],r10
+	mov r10,4
+	mov r8,r10
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r13, qword [rsp+8*24]
-	mov [r8],r13
+	mov r10, qword [rsp+8*24]
+	mov [r8],r10
 	mov qword [rsp+8*27],r8
 	mov     rsi, [rsp+8*26]
 	mov     rdi, [rsp+8*4]
@@ -943,15 +943,15 @@ L_436:
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r11,0
-	mov [r8],r11
-	mov r12,4
-	mov r8,r12
+	mov r10,0
+	mov [r8],r10
+	mov r10,4
+	mov r8,r10
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r13,4
-	mov [r8],r13
+	mov r10,4
+	mov [r8],r10
 	mov qword [rsp+8*35],r8
 	mov     rsi, [rsp+8*34]
 	mov     rdi, [rsp+8*4]

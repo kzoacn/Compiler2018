@@ -259,8 +259,8 @@ public class IRTranslator {
         for(int i=8;i<16;i++){
             if(ban[i])continue;
             if(variableLastIndex.get(occ[i])<currentLine){
-                //if(occ[i].isTemp)
-                //   writeBack[i]=false;
+                if(occ[i].isTemp)
+                   writeBack[i]=false;
                 pos=i;
                 break;
             }
@@ -408,6 +408,7 @@ public class IRTranslator {
 
         int skipCounter=0;
         int line=0;
+        currentLine=0;
         for(Quad cur=ir.head;cur!=null;cur=cur.next){
             line+=1;
             currentLine++;

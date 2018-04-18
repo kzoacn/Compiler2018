@@ -654,8 +654,8 @@ main:
 	mov qword [rsp+8*1],r8
 	mov r8,0
 	mov r15,r8
-	mov r10,0
-	mov r13,r10
+	mov r8,0
+	mov r13,r8
 	mov qword [rsp+8*2],r9
 	mov qword [rsp+8*3],r11
 	mov qword [rsp+8*4],r13

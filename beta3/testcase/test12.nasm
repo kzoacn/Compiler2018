@@ -669,43 +669,43 @@ main:
 	mov qword [rsp+8*5],r10
 	mov r10,128
 	mov [r9],r10
-	mov r11,r8
-	mov qword [rsp+8*6],r12
-	mov r12,2
-	mov r13,r12
-	add r13,1
-	shl r13,4
-	add r13,r11
-	mov qword [rsp+8*7],r14
-	mov r14,255
-	mov [r13],r14
-	mov r15,r8
 	mov qword [rsp+8*8],r9
-	mov r9,3
-	mov r10,r9
-	add r10,1
-	shl r10,4
-	add r10,r15
-	mov qword [rsp+8*9],r11
-	mov r11,256
-	mov [r10],r11
-	mov r12,r8
-	mov qword [rsp+8*10],r13
-	mov r13,4
-	mov r14,r13
-	add r14,1
-	shl r14,4
-	add r14,r12
+	mov r9,r8
+	mov r10,2
+	mov r11,r10
+	add r11,1
+	shl r11,4
+	add r11,r9
+	mov qword [rsp+8*9],r9
+	mov r9,255
+	mov [r11],r9
+	mov r9,r8
+	mov r10,3
+	mov qword [rsp+8*10],r11
+	mov r11,r10
+	add r11,1
+	shl r11,4
+	add r11,r9
+	mov qword [rsp+8*11],r9
+	mov r9,256
+	mov [r11],r9
+	mov r9,r8
+	mov r10,4
+	mov qword [rsp+8*12],r11
+	mov r11,r10
+	add r11,1
+	shl r11,4
+	add r11,r9
+	mov qword [rsp+8*13],r9
 	mov r9,2147483247
-	mov [r14],r9
-	mov qword [rsp+8*11],r15
-	mov qword [rsp+8*12],r10
+	mov [r11],r9
 	mov r10,0
-	mov r15,r10
+	mov r9,r10
 	mov qword [rsp+8*4],r8
-	mov qword [rsp+8*13],r12
-	mov qword [rsp+8*14],r14
-	mov qword [rsp+8*15],r15
+	mov qword [rsp+8*15],r9
+	mov qword [rsp+8*14],r11
+	mov qword [rsp+8*6],r12
+	mov qword [rsp+8*7],r14
 	
 L_78:
 	mov r8, qword [rsp+8*15]
