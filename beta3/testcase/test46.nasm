@@ -675,10 +675,10 @@ L_429:
 	mov r9, qword [rsp+8*8]
 	mov r8,r9
 	mov r10,0
-	mov     rsi, r10
-	mov     rdi, r9
-	call    address
-	mov r8, rax
+	mov r8,r10
+	add r8,1
+	shl r8,4
+	add r8,r9
 	mov r11,0
 	mov [r8],r11
 	mov qword [rsp+8*9],r8
@@ -695,10 +695,10 @@ L_429:
 	mov r9, qword [rsp+8*11]
 	mov r8,r9
 	mov r10,0
-	mov     rsi, r10
-	mov     rdi, r9
-	call    address
-	mov r8, rax
+	mov r8,r10
+	add r8,1
+	shl r8,4
+	add r8,r9
 	mov r11,1
 	mov [r8],r11
 	mov qword [rsp+8*12],r8
@@ -718,10 +718,10 @@ L_429:
 	mov r9, qword [rsp+8*15]
 	mov r8,r9
 	mov r10,0
-	mov     rsi, r10
-	mov     rdi, r9
-	call    address
-	mov r8, rax
+	mov r8,r10
+	add r8,1
+	shl r8,4
+	add r8,r9
 	mov r11,1
 	mov [r8],r11
 	mov qword [rsp+8*16],r8
@@ -740,10 +740,10 @@ L_429:
 	mov r9, qword [rsp+8*18]
 	mov r8,r9
 	mov r10,0
-	mov     rsi, r10
-	mov     rdi, r9
-	call    address
-	mov r8, rax
+	mov r8,r10
+	add r8,1
+	shl r8,4
+	add r8,r9
 	mov r11,1
 	mov [r8],r11
 	mov qword [rsp+8*19],r8
@@ -789,10 +789,10 @@ L_432:
 	mov r9, qword [rsp+8*24]
 	mov r8,r9
 	mov r10,0
-	mov     rsi, r10
-	mov     rdi, r9
-	call    address
-	mov r8, rax
+	mov r8,r10
+	add r8,1
+	shl r8,4
+	add r8,r9
 	mov r11,0
 	mov [r8],r11
 	mov qword [rsp+8*25],r8
@@ -826,10 +826,10 @@ L_432:
 	mov r9, qword [rsp+8*31]
 	mov r8,r9
 	mov r10,0
-	mov     rsi, r10
-	mov     rdi, r9
-	call    address
-	mov r8, rax
+	mov r8,r10
+	add r8,1
+	shl r8,4
+	add r8,r9
 	mov r11,1
 	mov [r8],r11
 	mov qword [rsp+8*32],r8

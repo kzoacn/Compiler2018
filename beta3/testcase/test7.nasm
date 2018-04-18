@@ -670,16 +670,16 @@ L_673:
 	mov r9, qword [rsp+8*4]
 	mov r8,r9
 	mov r10, qword [rsp+8*5]
-	mov     rsi, r10
-	mov     rdi, r8
-	call    address
-	mov r11, rax
+	mov r11,r10
+	add r11,1
+	shl r11,4
+	add r11,r8
 	mov [r11],r10
 	mov r12,r9
-	mov     rsi, r10
-	mov     rdi, r12
-	call    address
-	mov r13, rax
+	mov r13,r10
+	add r13,1
+	shl r13,4
+	add r13,r12
 	mov r14, [r13]
 	mov r15,r14
 	mov qword [rsp+8*7],r8

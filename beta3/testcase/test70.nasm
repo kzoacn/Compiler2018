@@ -651,20 +651,20 @@ main:
 	mov r8,r9
 	mov r10,r8
 	mov r11,2
-	mov     rsi, r11
-	mov     rdi, r10
-	call    address
-	mov r12, rax
+	mov r12,r11
+	add r12,1
+	shl r12,4
+	add r12,r10
 	mov r13,2
 	mov [r12],r13
 	mov r14,r8
 	mov r15,r14
 	mov qword [rsp+8*3],r8
 	mov r8,2
-	mov     rsi, r8
-	mov     rdi, r15
-	call    address
-	mov r9, rax
+	mov r9,r8
+	add r9,1
+	shl r9,4
+	add r9,r15
 	mov r8, [r9]
 	mov qword [rsp+8*9],r8
 	mov qword [rsp+8*8],r9

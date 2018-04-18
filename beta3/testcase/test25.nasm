@@ -681,10 +681,10 @@ L_203:
 	add r12,r13
 	mov r15, qword [rsp+8*4]
 	mov r14,r15
-	mov     rsi, r11
-	mov     rdi, r14
-	call    address
-	mov r8, rax
+	mov r8,r11
+	add r8,1
+	shl r8,4
+	add r8,r14
 	mov [r8],r10
 	mov qword [rsp+8*11],r8
 	mov qword [rsp+8*8],r10
@@ -720,10 +720,10 @@ L_206:
 	mov r9, qword [rsp+8*4]
 	mov r8,r9
 	mov r10, qword [rsp+8*6]
-	mov     rsi, r10
-	mov     rdi, r8
-	call    address
-	mov r11, rax
+	mov r11,r10
+	add r11,1
+	shl r11,4
+	add r11,r8
 	mov r12, [r11]
 	mov r13,r12
 	mov r14,r13

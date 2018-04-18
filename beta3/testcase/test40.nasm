@@ -674,10 +674,10 @@ L_387:
 	mov r10, qword [gbl+8*5]
 	mov r9,r10
 	mov r11, qword [rsp+8*6]
-	mov     rsi, r11
-	mov     rdi, r9
-	call    address
-	mov r12, rax
+	mov r12,r11
+	add r12,1
+	shl r12,4
+	add r12,r9
 	mov [r12],r8
 	mov qword [rsp+8*8],r8
 	mov qword [rsp+8*9],r9
@@ -823,16 +823,16 @@ L_379:
 	mov r9, qword [gbl+8*29]
 	mov r8,r9
 	mov r10, qword [rsp+8*26]
-	mov     rsi, r10
-	mov     rdi, r8
-	call    address
-	mov r11, rax
+	mov r11,r10
+	add r11,1
+	shl r11,4
+	add r11,r8
 	mov r8, [r11]
 	mov r12, qword [rsp+8*27]
-	mov     rsi, r12
-	mov     rdi, r8
-	call    address
-	mov r11, rax
+	mov r11,r12
+	add r11,1
+	shl r11,4
+	add r11,r8
 	mov r13, [r11]
 	mov r14,0
 	cmp r13,r14
@@ -848,16 +848,16 @@ L_379:
 	mov r9, qword [gbl+8*29]
 	mov r8,r9
 	mov r10, qword [rsp+8*26]
-	mov     rsi, r10
-	mov     rdi, r8
-	call    address
-	mov r11, rax
+	mov r11,r10
+	add r11,1
+	shl r11,4
+	add r11,r8
 	mov r8, [r11]
 	mov r12, qword [rsp+8*27]
-	mov     rsi, r12
-	mov     rdi, r8
-	call    address
-	mov r11, rax
+	mov r11,r12
+	add r11,1
+	shl r11,4
+	add r11,r8
 	mov r13, [r11]
 	mov rax,r13
 	mov qword [rsp+8*34],r8
@@ -879,10 +879,10 @@ L_381:
 	mov r9, qword [gbl+8*5]
 	mov r8,r9
 	mov r10, qword [rsp+8*26]
-	mov     rsi, r10
-	mov     rdi, r8
-	call    address
-	mov r11, rax
+	mov r11,r10
+	add r11,1
+	shl r11,4
+	add r11,r8
 	mov r12, [r11]
 	mov rax,r12
 	mov qword [rsp+8*38],r8
@@ -960,16 +960,16 @@ L_385:
 	mov r9, qword [gbl+8*29]
 	mov r8,r9
 	mov r10, qword [rsp+8*26]
-	mov     rsi, r10
-	mov     rdi, r8
-	call    address
-	mov r11, rax
+	mov r11,r10
+	add r11,1
+	shl r11,4
+	add r11,r8
 	mov r8, [r11]
 	mov r12, qword [rsp+8*27]
-	mov     rsi, r12
-	mov     rdi, r8
-	call    address
-	mov r11, rax
+	mov r11,r12
+	add r11,1
+	shl r11,4
+	add r11,r8
 	mov r13, qword [rsp+8*41]
 	mov [r11],r13
 	mov rax,r13
@@ -994,17 +994,17 @@ global_init:
 	mov     qword [gbl+8*52], rax
 	mov r8, qword [gbl+8*52]
 	mov r9,0
-	mov     rsi, r9
-	mov     rdi, r8
-	call    address
-	mov r10, rax
+	mov r10,r9
+	add r10,1
+	shl r10,4
+	add r10,r8
 	mov r11,51
 	mov [r10],r11
 	mov r12,1
-	mov     rsi, r12
-	mov     rdi, r8
-	call    address
-	mov r10, rax
+	mov r10,r12
+	add r10,1
+	shl r10,4
+	add r10,r8
 	mov r13,51
 	mov [r10],r13
 	mov qword [gbl+8*53],r10

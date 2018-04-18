@@ -661,10 +661,10 @@ L_511:
 	mov r9, qword [gbl+8*5]
 	mov r8,r9
 	mov r10, qword [rsp+8*2]
-	mov     rsi, r10
-	mov     rdi, r8
-	call    address
-	mov r11, rax
+	mov r11,r10
+	add r11,1
+	shl r11,4
+	add r11,r8
 	mov r12,1
 	mov [r11],r12
 	mov qword [rsp+8*6],r8
@@ -698,10 +698,10 @@ L_514:
 	mov r9, qword [gbl+8*5]
 	mov r8,r9
 	mov r10, qword [rsp+8*2]
-	mov     rsi, r10
-	mov     rdi, r8
-	call    address
-	mov r11, rax
+	mov r11,r10
+	add r11,1
+	shl r11,4
+	add r11,r8
 	mov r12, [r11]
 	cmp r12, 0
 	mov qword [rsp+8*10],r8
@@ -732,10 +732,10 @@ L_519:
 	sub r10,r9
 	mov r12, qword [gbl+8*5]
 	mov r11,r12
-	mov     rsi, r10
-	mov     rdi, r11
-	call    address
-	mov r13, rax
+	mov r13,r10
+	add r13,1
+	shl r13,4
+	add r13,r11
 	mov r14, [r13]
 	mov r15,r14
 	mov qword [rsp+8*16],r10
@@ -816,10 +816,10 @@ L_523:
 	imul r10,r9
 	mov r12, qword [gbl+8*5]
 	mov r11,r12
-	mov     rsi, r10
-	mov     rdi, r11
-	call    address
-	mov r13, rax
+	mov r13,r10
+	add r13,1
+	shl r13,4
+	add r13,r11
 	mov r14,0
 	mov [r13],r14
 	mov r15,r9

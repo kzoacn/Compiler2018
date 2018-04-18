@@ -651,10 +651,10 @@ main:
 	mov r8,r9
 	mov r10,r8
 	mov r11,0
-	mov     rsi, r11
-	mov     rdi, r10
-	call    address
-	mov r12, rax
+	mov r12,r11
+	add r12,1
+	shl r12,4
+	add r12,r10
 	mov r13,0
 	mov [r12],r13
 	mov r14,r8
@@ -14009,10 +14009,10 @@ getcount:
 	mov r8,r9
 	mov r10,r8
 	mov r11,0
-	mov     rsi, r11
-	mov     rdi, r10
-	call    address
-	mov r12, rax
+	mov r12,r11
+	add r12,1
+	shl r12,4
+	add r12,r10
 	mov r13, [r12]
 	mov r14,1
 	mov r13,r13

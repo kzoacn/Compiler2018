@@ -660,10 +660,10 @@ main:
 	mov r9, qword [rsp+8*6]
 	mov r8,r9
 	mov r10,0
-	mov     rsi, r10
-	mov     rdi, r9
-	call    address
-	mov r8, rax
+	mov r8,r10
+	add r8,1
+	shl r8,4
+	add r8,r9
 	mov r11,0
 	mov [r8],r11
 	mov qword [rsp+8*7],r8
@@ -697,10 +697,10 @@ main:
 	mov r9, qword [rsp+8*12]
 	mov r8,r9
 	mov r10,0
-	mov     rsi, r10
-	mov     rdi, r9
-	call    address
-	mov r8, rax
+	mov r8,r10
+	add r8,1
+	shl r8,4
+	add r8,r9
 	mov r11,1
 	mov [r8],r11
 	mov qword [rsp+8*13],r8
@@ -753,10 +753,10 @@ func:
 	mov r9, qword [rsp+8*21]
 	mov r8,r9
 	mov r10,0
-	mov     rsi, r10
-	mov     rdi, r9
-	call    address
-	mov r8, rax
+	mov r8,r10
+	add r8,1
+	shl r8,4
+	add r8,r9
 	mov r11,0
 	mov [r8],r11
 	mov qword [rsp+8*22],r8
@@ -776,10 +776,10 @@ func:
 	mov r9, qword [rsp+8*25]
 	mov r8,r9
 	mov r10,0
-	mov     rsi, r10
-	mov     rdi, r9
-	call    address
-	mov r8, rax
+	mov r8,r10
+	add r8,1
+	shl r8,4
+	add r8,r9
 	mov r11,1
 	mov [r8],r11
 	mov qword [rsp+8*26],r8

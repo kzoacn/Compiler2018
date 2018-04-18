@@ -670,17 +670,17 @@ L_480:
 	mov r9, qword [rsp+8*3]
 	mov r8,r9
 	mov r10, qword [rsp+8*4]
-	mov     rsi, r10
-	mov     rdi, r8
-	call    address
-	mov r11, rax
+	mov r11,r10
+	add r11,1
+	shl r11,4
+	add r11,r8
 	mov r12, qword [rsp+8*6]
 	mov [r11],r12
 	mov r13,r9
-	mov     rsi, r10
-	mov     rdi, r13
-	call    address
-	mov r14, rax
+	mov r14,r10
+	add r14,1
+	shl r14,4
+	add r14,r13
 	mov r13, [r14]
 	mov r15,r13
 	mov qword [rsp+8*7],r8

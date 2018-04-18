@@ -700,10 +700,10 @@ main:
 	mov r9, qword [rsp+8*4]
 	mov r8,r9
 	mov r10,0
-	mov     rsi, r10
-	mov     rdi, r8
-	call    address
-	mov r11, rax
+	mov r11,r10
+	add r11,1
+	shl r11,4
+	add r11,r8
 	mov r12, [r11]
 	mov r13,1
 	mov r12,r12
@@ -732,10 +732,10 @@ main:
 	mov r9, qword [rsp+8*4]
 	mov r8,r9
 	mov r10,0
-	mov     rsi, r10
-	mov     rdi, r8
-	call    address
-	mov r11, rax
+	mov r11,r10
+	add r11,1
+	shl r11,4
+	add r11,r8
 	mov r12, [r11]
 	mov r13,1
 	mov r12,r12

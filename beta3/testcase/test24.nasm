@@ -698,10 +698,10 @@ L_412:
 	add r12,r13
 	mov r15, qword [rsp+8*8]
 	mov r14,r15
-	mov     rsi, r11
-	mov     rdi, r14
-	call    address
-	mov r8, rax
+	mov r8,r11
+	add r8,1
+	shl r8,4
+	add r8,r14
 	mov [r8],r10
 	mov qword [rsp+8*15],r8
 	mov qword [rsp+8*12],r10
@@ -744,10 +744,10 @@ L_420:
 	mov r9, qword [rsp+8*8]
 	mov r8,r9
 	mov r10, qword [rsp+8*3]
-	mov     rsi, r10
-	mov     rdi, r8
-	call    address
-	mov r11, rax
+	mov r11,r10
+	add r11,1
+	shl r11,4
+	add r11,r8
 	mov r12, [r11]
 	mov r13, qword [rsp+8*2]
 	mov r14,r12
@@ -772,10 +772,10 @@ L_420:
 	mov qword [rsp+8*23],r9
 	mov r9, qword [rsp+8*8]
 	mov r8,r9
-	mov     rsi, r10
-	mov     rdi, r8
-	call    address
-	mov r9, rax
+	mov r9,r10
+	add r9,1
+	shl r9,4
+	add r9,r8
 	mov qword [rsp+8*24],r8
 	mov r8, qword [rsp+8*23]
 	mov [r9],r8
