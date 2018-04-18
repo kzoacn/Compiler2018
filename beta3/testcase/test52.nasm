@@ -656,7 +656,6 @@ main:
 	sub r12,r11
 	mov r13,r12
 	mov r14,r13
-	mov qword [rsp+8*3],r8
 	mov r8,0
 	mov r15,r8
 	mov qword [gbl+8*4],r9
@@ -755,20 +754,14 @@ L_474:
 	mov r13,r12
 	mov r15, qword [gbl+8*26]
 	mov r14,r15
-	mov qword [rsp+8*22],r8
 	mov r8,r10
 	add r8,1
 	shl r8,4
 	add r8,r14
-	mov qword [rsp+8*23],r11
 	mov r11, [r8]
-	mov qword [rsp+8*28],r8
 	mov r8,r11
-	mov qword [rsp+8*29],r11
-	mov qword [rsp+8*24],r12
 	mov r12, qword [gbl+8*13]
 	mov r11,r12
-	mov qword [rsp+8*27],r14
 	mov r14,r13
 	add r14,1
 	shl r14,4
@@ -778,11 +771,8 @@ L_474:
 	add r14,1
 	shl r14,4
 	add r14,r11
-	mov qword [rsp+8*31],r11
 	mov r11, [r14]
-	mov qword [rsp+8*32],r14
 	mov r14,r11
-	mov qword [rsp+8*33],r11
 	mov r11,1
 	mov r15,r13
 	sub r15,r11
@@ -808,7 +798,6 @@ L_474:
 	mov r14,r12
 	add r14,r13
 	mov r15,r14
-	mov qword [rsp+8*38],r8
 	mov r8,r11
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*39],r11
@@ -825,7 +814,6 @@ L_474:
 	mov r14,r12
 	sub r14,r13
 	mov r15,r14
-	mov qword [rsp+8*41],r8
 	mov r8,r11
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*42],r11
@@ -842,7 +830,6 @@ L_474:
 	mov r14,r12
 	add r14,r13
 	mov r15,r14
-	mov qword [rsp+8*44],r8
 	mov r8,r11
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*45],r11
@@ -859,7 +846,6 @@ L_474:
 	mov r14,r12
 	sub r14,r13
 	mov r15,r14
-	mov qword [rsp+8*47],r8
 	mov r8,r11
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*48],r11
@@ -876,7 +862,6 @@ L_474:
 	mov r14,r12
 	add r14,r13
 	mov r15,r14
-	mov qword [rsp+8*50],r8
 	mov r8,r11
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*51],r11
@@ -893,7 +878,6 @@ L_474:
 	mov r14,r12
 	sub r14,r13
 	mov r15,r14
-	mov qword [rsp+8*53],r8
 	mov r8,r11
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*54],r11
@@ -910,7 +894,6 @@ L_474:
 	mov r14,r12
 	add r14,r13
 	mov r15,r14
-	mov qword [rsp+8*56],r8
 	mov r8,r11
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*57],r11
@@ -1209,7 +1192,6 @@ L_459:
 	mov r15,r14
 	neg r15
 	cmp r13,r15
-	mov qword [rsp+8*92],r8
 	mov r8, 0
 	sete r8B
 	mov qword [rsp+8*96],r8
@@ -1241,11 +1223,8 @@ L_459:
 	mov qword [gbl+8*19],r8
 	mov r8, qword [rsp+8*88]
 	mov [r10],r8
-	mov qword [rsp+8*101],r10
 	mov r10, qword [gbl+8*34]
-	mov qword [rsp+8*98],r11
 	mov r11,1
-	mov qword [rsp+8*99],r13
 	mov r13,r10
 	add r13,r11
 	mov r11, qword [gbl+8*13]
@@ -1260,10 +1239,8 @@ L_459:
 	shl r11,4
 	add r11,r10
 	mov [r11],r13
-	mov qword [rsp+8*103],r10
 	mov r10, qword [gbl+8*7]
 	cmp r14,r10
-	mov qword [rsp+8*104],r11
 	mov r11, 0
 	sete r11B
 	mov qword [rsp+8*105],r11

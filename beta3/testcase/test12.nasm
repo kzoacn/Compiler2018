@@ -666,37 +666,30 @@ main:
 	add r9,1
 	shl r9,4
 	add r9,r14
-	mov qword [rsp+8*5],r10
 	mov r10,128
 	mov [r9],r10
-	mov qword [rsp+8*8],r9
 	mov r9,r8
 	mov r10,2
 	mov r11,r10
 	add r11,1
 	shl r11,4
 	add r11,r9
-	mov qword [rsp+8*9],r9
 	mov r9,255
 	mov [r11],r9
 	mov r9,r8
 	mov r10,3
-	mov qword [rsp+8*10],r11
 	mov r11,r10
 	add r11,1
 	shl r11,4
 	add r11,r9
-	mov qword [rsp+8*11],r9
 	mov r9,256
 	mov [r11],r9
 	mov r9,r8
 	mov r10,4
-	mov qword [rsp+8*12],r11
 	mov r11,r10
 	add r11,1
 	shl r11,4
 	add r11,r9
-	mov qword [rsp+8*13],r9
 	mov r9,2147483247
 	mov [r11],r9
 	mov r10,0

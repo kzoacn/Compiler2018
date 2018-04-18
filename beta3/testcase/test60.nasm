@@ -721,7 +721,6 @@ L_498:
 	shl r15,4
 	add r15,r14
 	mov r14, [r15]
-	mov qword [rsp+8*12],r8
 	mov r8,0
 	mov r15,r8
 	add r15,1
@@ -730,7 +729,6 @@ L_498:
 	mov r8,1
 	mov [r15],r8
 	mov r8,r9
-	mov qword [rsp+8*13],r11
 	mov r11,r10
 	add r11,1
 	shl r11,4
@@ -746,11 +744,9 @@ L_498:
 	add r11,1
 	shl r11,4
 	add r11,r8
-	mov qword [rsp+8*16],r8
 	mov r8,2
 	mov [r11],r8
 	mov r8,r9
-	mov qword [rsp+8*17],r11
 	mov r11,r10
 	add r11,1
 	shl r11,4
@@ -766,9 +762,7 @@ L_498:
 	add r11,1
 	shl r11,4
 	add r11,r8
-	mov qword [rsp+8*18],r8
 	mov r8, [r11]
-	mov qword [rsp+8*19],r11
 	mov r11,r9
 	mov r9,r10
 	add r9,1
@@ -785,12 +779,9 @@ L_498:
 	add r9,1
 	shl r9,4
 	add r9,r11
-	mov qword [rsp+8*21],r11
 	mov r11, [r9]
-	mov qword [rsp+8*22],r9
 	mov r9,r8
 	add r9,r11
-	mov qword [rsp+8*20],r8
 	mov r8,r9
 	mov r9,r8
 	mov qword [arg+8*0],r8

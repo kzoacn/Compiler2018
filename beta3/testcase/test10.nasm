@@ -696,11 +696,8 @@ L_33:
 	mov rbx, r15
 	cdq
 	idiv rbx
-	mov qword [rsp+8*10],r8
 	mov r8, rdx
 	mov r12,r8
-	mov qword [rsp+8*13],r8
-	mov qword [rsp+8*11],r11
 	mov r11,0
 	mov r8,r11
 	mov qword [rsp+8*14],r8
@@ -731,10 +728,8 @@ L_36:
 	add r15,1
 	shl r15,4
 	add r15,r13
-	mov qword [rsp+8*16],r8
 	mov r8, [r15]
 	cmp r12,r8
-	mov qword [rsp+8*17],r11
 	mov r11, 0
 	sete r11B
 	mov qword [rsp+8*21],r8
@@ -841,15 +836,12 @@ L_46:
 	mov r14,r10
 	add r14,r13
 	mov r15,r9
-	mov qword [rsp+8*30],r8
 	mov r8,r14
 	add r8,1
 	shl r8,4
 	add r8,r15
-	mov qword [rsp+8*31],r11
 	mov r11, [r8]
 	cmp r12,r11
-	mov qword [rsp+8*35],r8
 	mov r8, 0
 	setg r8B
 	mov qword [rsp+8*37],r8
@@ -872,30 +864,22 @@ L_46:
 	mov r14,1
 	mov r15,r10
 	add r15,r14
-	mov qword [rsp+8*38],r8
 	mov r8,r9
-	mov qword [rsp+8*39],r11
 	mov r11,r15
 	add r11,1
 	shl r11,4
 	add r11,r8
-	mov qword [rsp+8*43],r8
 	mov r8, [r11]
-	mov qword [rsp+8*44],r11
 	mov r11,r9
-	mov qword [rsp+8*40],r12
 	mov r12,r10
 	add r12,1
 	shl r12,4
 	add r12,r11
 	mov [r12],r8
-	mov qword [rsp+8*45],r8
 	mov r8,1
-	mov qword [rsp+8*46],r11
 	mov r11,r10
 	add r11,r8
 	mov r8,r9
-	mov qword [rsp+8*47],r12
 	mov r12,r11
 	add r12,1
 	shl r12,4

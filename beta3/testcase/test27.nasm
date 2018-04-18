@@ -903,7 +903,6 @@ L_319:
 	mov r15, [r14]
 	mov r10,0
 	cmp r15,r10
-	mov qword [rsp+8*40],r11
 	mov r11, 0
 	sete r11B
 	mov qword [rsp+8*43],r11
@@ -935,7 +934,6 @@ L_319:
 	shl r12,4
 	add r12,r15
 	mov r11, [r12]
-	mov qword [rsp+8*48],r12
 	mov r12,0
 	cmp r11,r12
 	mov r14, 0
@@ -972,10 +970,8 @@ L_319:
 	mov [r12],r11
 	mov r11,r8
 	add r11,r13
-	mov qword [rsp+8*55],r12
 	mov r12,r10
 	mov r14,0
-	mov qword [rsp+8*54],r15
 	mov r15,r14
 	add r15,1
 	shl r15,4
@@ -987,28 +983,22 @@ L_319:
 	add r15,r12
 	mov r11,1
 	mov [r15],r11
-	mov qword [rsp+8*57],r12
 	mov r12, qword [gbl+8*34]
 	mov r11,r12
 	mov r14,r8
 	add r14,1
 	shl r14,4
 	add r14,r11
-	mov qword [rsp+8*59],r11
 	mov r11,1
 	mov [r14],r11
-	mov qword [rsp+8*60],r14
 	mov r14, qword [gbl+8*18]
 	mov r11,r14
-	mov qword [rsp+8*58],r15
 	mov r15,r13
 	add r15,1
 	shl r15,4
 	add r15,r11
 	mov [r15],r8
-	mov qword [rsp+8*61],r11
 	mov r11,1
-	mov qword [rsp+8*62],r15
 	mov r15,r13
 	add r15,r11
 	mov r11,r15
@@ -1037,10 +1027,8 @@ L_319:
 	mov r13, qword [rsp+8*29]
 	mov r14,r10
 	add r14,r13
-	mov qword [rsp+8*67],r8
 	mov r8, qword [gbl+8*7]
 	mov r15,r8
-	mov qword [rsp+8*68],r11
 	mov r11,0
 	mov r12,r11
 	add r12,1
@@ -1054,11 +1042,9 @@ L_319:
 	mov r11,0
 	mov [r12],r11
 	mov r11, qword [gbl+8*14]
-	mov qword [rsp+8*71],r12
 	mov r12,r10
 	add r12,r11
 	mov r14,1
-	mov qword [rsp+8*70],r15
 	mov r15,r12
 	sub r15,r14
 	mov r12,r15

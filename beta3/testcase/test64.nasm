@@ -650,7 +650,6 @@ main:
 	mov r14,t66
 	mov r13,r14
 	mov r15,r9
-	mov qword [rsp+8*1],r8
 	mov r8,r15
 	mov qword [rsp+8*6],r8
 	mov qword [rsp+8*2],r9

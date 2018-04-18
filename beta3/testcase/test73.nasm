@@ -751,7 +751,6 @@ calc:
 	mov r14,r12
 	mov r15,1
 	cmp r15,r14
-	mov qword [rsp+8*21],r10
 	mov r10, 0
 	sete r10B
 	mov qword [rsp+8*20],r8
@@ -783,7 +782,6 @@ L_526:
 	mov r15,r11
 	sub r15,r14
 	mov r9,r15
-	mov qword [rsp+8*25],r10
 	mov r14,0
 	mov r10,r14
 	mov r14,r12
@@ -810,7 +808,6 @@ L_526:
 	mov r14,r12
 	sub r14,r13
 	mov r15,r14
-	mov qword [rsp+8*30],r8
 	mov r11, qword [rsp+8*26]
 	mov r8,r11
 	mov r11,r10

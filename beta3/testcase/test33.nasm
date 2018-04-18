@@ -651,7 +651,6 @@ main:
 	mov r13,r14
 	mov r15,10
 	cmp r13,r15
-	mov qword [rsp+8*1],r8
 	mov r8, 0
 	sete r8B
 	mov qword [rsp+8*5],r8

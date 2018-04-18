@@ -682,7 +682,6 @@ L_673:
 	add r13,r12
 	mov r14, [r13]
 	mov r15,r14
-	mov qword [rsp+8*7],r8
 	mov r8,r15
 	mov qword [rsp+8*13],r8
 	mov qword [rsp+8*8],r11

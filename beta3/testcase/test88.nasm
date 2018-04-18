@@ -655,7 +655,6 @@ main:
 	mov r15,r11
 	add r15,r14
 	mov r12,r15
-	mov qword [rsp+8*1],r8
 	mov r8,r9
 	mov r11,r8
 	mov qword [arg+8*0],r8

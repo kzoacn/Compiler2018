@@ -26,8 +26,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="2300" column="33" lean-forward="true" selection-start-line="2300" selection-start-column="33" selection-end-line="2300" selection-end-column="33" />
+            <state relative-caret-position="90">
+              <caret line="687" column="57" lean-forward="false" selection-start-line="687" selection-start-column="57" selection-end-line="687" selection-end-column="57" />
               <folding>
                 <element signature="e#7877#7878#0" expanded="true" />
                 <element signature="e#7947#7948#0" expanded="true" />
@@ -153,7 +153,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>speac</find>
       <find>leftvalue</find>
       <find>equa</find>
       <find>err</find>
@@ -176,13 +175,14 @@
       <find>acces</find>
       <find>multiadree</find>
       <find>addre</find>
-      <find>address</find>
       <find>addressf</find>
       <find>isTemp</find>
       <find>getvalue</find>
       <find>istemp</find>
       <find>println</find>
       <find>addsub</find>
+      <find>address</find>
+      <find>nextVariable</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -200,9 +200,9 @@
         <option value="$PROJECT_DIR$/src/cn/kzoacn/SemanticTest.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/Builder.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/ConstantPool.java" />
-        <option value="$PROJECT_DIR$/src/cn/kzoacn/Main.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/ExecTest.java" />
+        <option value="$PROJECT_DIR$/src/cn/kzoacn/Main.java" />
       </list>
     </option>
   </component>
@@ -464,23 +464,26 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ExecTest - 2018.04.18 at 22h 21m 18s.xml">
-      <configuration name="ExecTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExecTest - 2018.04.18 at 22h 24m 44s.xml">
-      <configuration name="ExecTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ExecTest - 2018.04.18 at 22h 34m 36s.xml">
       <configuration name="ExecTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ExecTest - 2018.04.18 at 22h 34m 51s.xml">
       <configuration name="ExecTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ExecTest_test8 - 2018.04.18 at 22h 21m 25s.xml">
-      <configuration name="ExecTest.test8" configurationId="JUnit" />
+    <history-entry file="ExecTest - 2018.04.18 at 22h 39m 55s.xml">
+      <configuration name="ExecTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ExecTest_test8 - 2018.04.18 at 22h 25m 07s.xml">
-      <configuration name="ExecTest.test8" configurationId="JUnit" />
+    <history-entry file="ExecTest - 2018.04.18 at 22h 40m 55s.xml">
+      <configuration name="ExecTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecTest - 2018.04.18 at 22h 41m 45s.xml">
+      <configuration name="ExecTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecTest - 2018.04.18 at 22h 44m 02s.xml">
+      <configuration name="ExecTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecTest - 2018.04.18 at 22h 45m 21s.xml">
+      <configuration name="ExecTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ExecTest_test8 - 2018.04.18 at 22h 33m 50s.xml">
       <configuration name="ExecTest.test8" configurationId="JUnit" />
@@ -490,9 +493,6 @@
     </history-entry>
     <history-entry file="ExecTest_test8 - 2018.04.18 at 22h 34m 27s.xml">
       <configuration name="ExecTest.test8" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExecTest_testTo40 - 2018.04.18 at 22h 21m 00s.xml">
-      <configuration name="ExecTest.testTo40" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -1077,8 +1077,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="2300" column="33" lean-forward="true" selection-start-line="2300" selection-start-column="33" selection-end-line="2300" selection-end-column="33" />
+        <state relative-caret-position="90">
+          <caret line="687" column="57" lean-forward="false" selection-start-line="687" selection-start-column="57" selection-end-line="687" selection-end-column="57" />
           <folding>
             <element signature="e#7877#7878#0" expanded="true" />
             <element signature="e#7947#7948#0" expanded="true" />

@@ -784,9 +784,7 @@ qsrt:
 	add r15,1
 	shl r15,4
 	add r15,r14
-	mov qword [rsp+8*27],r9
 	mov r9, [r15]
-	mov qword [rsp+8*28],r14
 	mov r14,r9
 	mov qword [rsp+8*22],r8
 	mov qword [rsp+8*30],r9
@@ -888,37 +886,28 @@ L_177:
 	mov r13,r12
 	mov r14,r9
 	mov r15, qword [rsp+8*25]
-	mov qword [rsp+8*44],r8
 	mov r8,r15
 	add r8,1
 	shl r8,4
 	add r8,r14
-	mov qword [rsp+8*45],r11
 	mov r11, [r8]
-	mov qword [rsp+8*49],r8
 	mov r8,r9
-	mov qword [rsp+8*46],r12
 	mov r12,r10
 	add r12,1
 	shl r12,4
 	add r12,r8
 	mov [r12],r11
-	mov qword [rsp+8*51],r8
 	mov r8,r9
-	mov qword [rsp+8*50],r11
 	mov r11,r15
 	add r11,1
 	shl r11,4
 	add r11,r8
 	mov [r11],r13
-	mov qword [rsp+8*53],r8
 	mov r8,r10
-	mov qword [rsp+8*55],r8
 	mov r8,1
 	mov r10,r10
 	add r10,r8
 	mov r8,r15
-	mov qword [rsp+8*56],r8
 	mov r8,1
 	mov r15,r15
 	sub r15,r8
