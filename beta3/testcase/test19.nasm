@@ -674,11 +674,9 @@ L_399:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*6],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*6] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*6] 
+	add rdi, 1 
+	call puts
 	jmp L_401
 	
 L_400:
@@ -687,11 +685,9 @@ L_400:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*7],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*7] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*7] 
+	add rdi, 1 
+	call puts
 	
 L_401:
 	mov r8, 0
@@ -726,11 +722,9 @@ L_403:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*11],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*11] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*11] 
+	add rdi, 1 
+	call puts
 	jmp L_405
 	
 L_404:
@@ -739,11 +733,9 @@ L_404:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*12],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*12] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*12] 
+	add rdi, 1 
+	call puts
 	
 L_405:
 	mov r9,0
@@ -796,11 +788,9 @@ L_409:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*17],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*17] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*17] 
+	add rdi, 1 
+	call puts
 	jmp L_411
 	
 L_410:
@@ -809,11 +799,9 @@ L_410:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*18],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*18] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*18] 
+	add rdi, 1 
+	call puts
 	
 L_411:
 	mov r8,0

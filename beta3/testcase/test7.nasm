@@ -698,11 +698,9 @@ L_673:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*15],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*15] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*15] 
+	add rdi, 1 
+	call puts
 	
 L_675:
 	mov r9, qword [rsp+8*5]

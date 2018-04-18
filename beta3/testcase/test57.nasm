@@ -725,11 +725,9 @@ Hello_say:
 	mov qword [rsp+8*14],r8
 	mov qword [arg+8*0],r10
 	mov qword [rsp+8*16],r12
-	mov rdi, formatln
-	mov rsi,[rsp+8*16] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*16] 
+	add rdi, 1 
+	call puts
 	mov r8, qword [rsp+8*17]
 	mov rax,r8
 	leave

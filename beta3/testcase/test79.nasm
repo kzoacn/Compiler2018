@@ -666,11 +666,9 @@ main:
 	mov qword [rsp+8*2],r8
 	mov qword [arg+8*0],r10
 	mov qword [rsp+8*7],r11
-	mov rdi, formatln
-	mov rsi,[rsp+8*7] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*7] 
+	add rdi, 1 
+	call puts
 	mov r8,0
 	mov rax,r8
 	leave

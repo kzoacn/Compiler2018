@@ -2203,11 +2203,9 @@ main:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*329],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*329] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*329] 
+	add rdi, 1 
+	call puts
 	mov r9, qword [gbl+8*3]
 	mov r8,r9
 	mov r10,71
@@ -2471,11 +2469,9 @@ main:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*400],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*400] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*400] 
+	add rdi, 1 
+	call puts
 	mov r9, qword [gbl+8*3]
 	mov r8,r9
 	mov r10,71
@@ -2739,11 +2735,9 @@ main:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*470],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*470] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*470] 
+	add rdi, 1 
+	call puts
 	mov r9, qword [gbl+8*3]
 	mov r8,r9
 	mov r10,71
@@ -3007,11 +3001,9 @@ main:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*540],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*540] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*540] 
+	add rdi, 1 
+	call puts
 	mov r9, qword [gbl+8*3]
 	mov r8,r9
 	mov r10,71
@@ -3275,11 +3267,9 @@ main:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*610],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*610] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*610] 
+	add rdi, 1 
+	call puts
 	mov r9, qword [gbl+8*3]
 	mov r8,r9
 	mov r10,71
@@ -3543,11 +3533,9 @@ main:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*680],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*680] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*680] 
+	add rdi, 1 
+	call puts
 	mov r9, qword [gbl+8*3]
 	mov r8,r9
 	mov r10,71
@@ -3811,11 +3799,9 @@ main:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*750],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*750] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*750] 
+	add rdi, 1 
+	call puts
 	mov r9, qword [gbl+8*3]
 	mov r8,r9
 	mov r10,71
@@ -4079,11 +4065,9 @@ main:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*820],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*820] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*820] 
+	add rdi, 1 
+	call puts
 	mov r9, qword [gbl+8*3]
 	mov r8,r9
 	mov r10,71
@@ -4347,11 +4331,9 @@ main:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*890],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*890] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*890] 
+	add rdi, 1 
+	call puts
 	mov r9, qword [gbl+8*3]
 	mov r8,r9
 	mov r10,71
@@ -4615,11 +4597,9 @@ main:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*960],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*960] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*960] 
+	add rdi, 1 
+	call puts
 	mov r9, qword [gbl+8*3]
 	mov r8,r9
 	mov r10,71
@@ -4883,11 +4863,9 @@ main:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*1030],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*1030] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*1030] 
+	add rdi, 1 
+	call puts
 	mov r9, qword [gbl+8*3]
 	mov r8,r9
 	mov r10,91
@@ -4903,11 +4881,9 @@ main:
 	mov qword [rsp+8*1033],r12
 	mov qword [arg+8*0],r13
 	mov qword [rsp+8*1034],r14
-	mov rdi, formatln
-	mov rsi,[rsp+8*1034] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*1034] 
+	add rdi, 1 
+	call puts
 	mov r9, qword [gbl+8*3]
 	mov r8,r9
 	mov r10,81
@@ -5313,11 +5289,9 @@ main:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*1142],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*1142] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*1142] 
+	add rdi, 1 
+	call puts
 	mov r9, qword [gbl+8*3]
 	mov r8,r9
 	mov r10,81
@@ -5723,11 +5697,9 @@ main:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*1250],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*1250] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*1250] 
+	add rdi, 1 
+	call puts
 	mov r9, qword [gbl+8*3]
 	mov r8,r9
 	mov r10,81
@@ -5998,11 +5970,9 @@ main:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*1322],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*1322] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*1322] 
+	add rdi, 1 
+	call puts
 	mov r9, qword [gbl+8*3]
 	mov r8,r9
 	mov r10,71
@@ -6484,11 +6454,9 @@ main:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*1450],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*1450] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*1450] 
+	add rdi, 1 
+	call puts
 	mov r9, qword [gbl+8*3]
 	mov r8,r9
 	mov r10,80
@@ -7060,11 +7028,9 @@ main:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*1602],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*1602] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*1602] 
+	add rdi, 1 
+	call puts
 	mov r9, qword [gbl+8*3]
 	mov r8,r9
 	mov r10,91
@@ -7080,11 +7046,9 @@ main:
 	mov qword [rsp+8*1605],r12
 	mov qword [arg+8*0],r13
 	mov qword [rsp+8*1606],r14
-	mov rdi, formatln
-	mov rsi,[rsp+8*1606] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*1606] 
+	add rdi, 1 
+	call puts
 	mov r9, qword [gbl+8*3]
 	mov r8,r9
 	mov r10,81
@@ -7355,11 +7319,9 @@ main:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*1678],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*1678] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*1678] 
+	add rdi, 1 
+	call puts
 	mov r9, qword [gbl+8*3]
 	mov r8,r9
 	mov r10,71
@@ -7841,11 +7803,9 @@ main:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*1806],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*1806] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*1806] 
+	add rdi, 1 
+	call puts
 	mov r9, qword [gbl+8*3]
 	mov r8,r9
 	mov r10,80
@@ -8417,11 +8377,9 @@ main:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*1958],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*1958] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*1958] 
+	add rdi, 1 
+	call puts
 	mov r9, qword [gbl+8*3]
 	mov r8,r9
 	mov r10,91
@@ -8437,11 +8395,9 @@ main:
 	mov qword [rsp+8*1961],r12
 	mov qword [arg+8*0],r13
 	mov qword [rsp+8*1962],r14
-	mov rdi, formatln
-	mov rsi,[rsp+8*1962] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*1962] 
+	add rdi, 1 
+	call puts
 	mov r9, qword [gbl+8*3]
 	mov r8,r9
 	mov r10,81
@@ -8630,11 +8586,9 @@ main:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*2012],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*2012] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*2012] 
+	add rdi, 1 
+	call puts
 	mov r9, qword [gbl+8*3]
 	mov r8,r9
 	mov r10,81
@@ -8831,11 +8785,9 @@ main:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*2065],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*2065] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*2065] 
+	add rdi, 1 
+	call puts
 	mov r9, qword [gbl+8*3]
 	mov r8,r9
 	mov r10,81
@@ -9032,11 +8984,9 @@ main:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*2117],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*2117] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*2117] 
+	add rdi, 1 
+	call puts
 	mov r9, qword [gbl+8*190]
 	mov r8,r9
 	mov r10,0
@@ -9052,11 +9002,9 @@ main:
 	mov qword [rsp+8*2120],r12
 	mov qword [arg+8*0],r13
 	mov qword [rsp+8*2121],r14
-	mov rdi, formatln
-	mov rsi,[rsp+8*2121] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*2121] 
+	add rdi, 1 
+	call puts
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*2],r8
@@ -9109,11 +9057,9 @@ L_664:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*2132],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*2132] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*2132] 
+	add rdi, 1 
+	call puts
 	
 L_666:
 	mov r9, qword [rsp+8*2]
@@ -9178,11 +9124,9 @@ L_667:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*2143],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*2143] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*2143] 
+	add rdi, 1 
+	call puts
 	
 L_669:
 	mov r9, qword [rsp+8*2]
@@ -9224,11 +9168,9 @@ L_670:
 	mov qword [rsp+8*2148],r12
 	mov qword [arg+8*0],r13
 	mov qword [rsp+8*2149],r14
-	mov rdi, formatln
-	mov rsi,[rsp+8*2149] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*2149] 
+	add rdi, 1 
+	call puts
 	
 L_672:
 	mov r9, qword [rsp+8*2]

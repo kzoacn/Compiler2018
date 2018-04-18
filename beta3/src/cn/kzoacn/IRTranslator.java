@@ -143,11 +143,15 @@ public class IRTranslator {
     }
     StringBuffer println(Variable var) {
         StringBuffer cmd=new StringBuffer();
+        cmd.append("mov rdi,"+ varName(var) +" \n\t");
+        cmd.append("add rdi, 1 \n\t");
+        cmd.append("call puts\n\t");
+        /*StringBuffer cmd=new StringBuffer();
         cmd.append("mov rdi, formatln\n\t");
         cmd.append("mov rsi,"+ varName(var) +" \n\t");
         cmd.append("add rsi, 1 \n\t");
         cmd.append("xor rax, rax\n\t");
-        cmd.append("call printf\n\t");
+        cmd.append("call printf\n\t");*/
         return  cmd;
     }
     StringBuffer print(Variable var) {
@@ -240,7 +244,7 @@ public class IRTranslator {
     int reserveRegister(){
         int pos=-1;
         //LRU
-        /*int mn=2000000000;
+        int mn=2000000000;
         for(int i=8;i<16;i++){
             if(ban[i])continue;
             if(lastUsedTime[i]<mn){
@@ -249,9 +253,9 @@ public class IRTranslator {
             }
         }
 
-        kick(pos);*/
+        kick(pos);
 
-        int mx=-1;
+        /*int mx=-1;
         for(int i=8;i<16;i++){
             if(ban[i])continue;
             if(variableLastIndex.get(occ[i])<currentLine){
@@ -264,7 +268,7 @@ public class IRTranslator {
             }
         }
 
-        kick(pos);
+        kick(pos);*/
 
         return pos;
     }
@@ -282,6 +286,22 @@ public class IRTranslator {
         occ[i]=var;
         ban[i]=true;
         lastUsedTime[i]=currentLine;
+    }
+    boolean inReg(Variable var){
+        for(int i=8;i<16;i++){
+            if(!free[i]&&occ[i].equals(var)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    boolean fullReg(){
+        for(int i=8;i<16;i++){
+            if(free[i]) {
+                return false;
+            }
+        }
+        return true;
     }
 
     int getRegister(Variable var,boolean read){
@@ -435,9 +455,16 @@ public class IRTranslator {
                     //kickAll();
                     break;
                 case add:
-                    readReg(var1);readReg(var2);
-                    text.append(new StringBuffer("mov "+writeReg(dest)+","+readReg(var1)+"\n\t"));
-                    text.append(new StringBuffer("add "+writeReg(dest)+","+readReg(var2)+"\n\t"));
+                    //if(inReg(var2) ||!fullReg()) {
+                        readReg(var1);
+                        readReg(var2);
+                        text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
+                        text.append(new StringBuffer("add " + writeReg(dest) + "," + readReg(var2) + "\n\t"));
+                    /*}else{
+                        readReg(var1);
+                        text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
+                        text.append(new StringBuffer("add " + writeReg(dest) + "," + varName(var2) + "\n\t"));
+                    }*/
                     //kickAll();
 
                     //text.append(new StringBuffer("mov r8, "+varName(var1)+"\n\t"));
@@ -445,9 +472,16 @@ public class IRTranslator {
                     //text.append(new StringBuffer("mov qword "+varName(dest)+",r8 \n\t"));
                     break;
                 case subtract:
-                    readReg(var1);readReg(var2);
-                    text.append(new StringBuffer("mov "+writeReg(dest)+","+readReg(var1)+"\n\t"));
-                    text.append(new StringBuffer("sub "+writeReg(dest)+","+readReg(var2)+"\n\t"));
+                    //if(inReg(var2) ||!fullReg()) {
+                        readReg(var1);
+                        readReg(var2);
+                        text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
+                        text.append(new StringBuffer("sub " + writeReg(dest) + "," + readReg(var2) + "\n\t"));
+                    /*}else{
+                        readReg(var1);
+                        text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
+                        text.append(new StringBuffer("sub " + writeReg(dest) + "," + varName(var2) + "\n\t"));
+                    }*/
                     //kickAll();
                     //text.append(new StringBuffer("mov r8, "+varName(var1)+"\n\t"));
                     //text.append(new StringBuffer("sub r8, "+varName(var2)+"\n\t"));

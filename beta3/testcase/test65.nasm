@@ -690,11 +690,9 @@ L_502:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*9],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*9] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*9] 
+	add rdi, 1 
+	call puts
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*3],r8
@@ -733,11 +731,9 @@ L_505:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*13],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*13] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*13] 
+	add rdi, 1 
+	call puts
 	mov r8,0
 	mov rax,r8
 	leave

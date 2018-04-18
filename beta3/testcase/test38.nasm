@@ -700,11 +700,9 @@ L_369:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*9],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*9] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*9] 
+	add rdi, 1 
+	call puts
 	mov r8, qword [rsp+8*4]
 	mov r9,1
 	mov r8,r8
@@ -764,11 +762,9 @@ L_371:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*16],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*16] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*16] 
+	add rdi, 1 
+	call puts
 	mov r8, qword [rsp+8*11]
 	mov r9,1
 	mov r8,r8
@@ -828,11 +824,9 @@ L_373:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*23],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*23] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*23] 
+	add rdi, 1 
+	call puts
 	mov r8, qword [rsp+8*18]
 	mov r9,1
 	mov r8,r8

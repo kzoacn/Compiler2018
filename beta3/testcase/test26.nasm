@@ -2469,11 +2469,9 @@ L_224:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*287],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*287] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*287] 
+	add rdi, 1 
+	call puts
 	jmp L_308
 	
 L_307:
@@ -2482,11 +2480,9 @@ L_307:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*288],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*288] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*288] 
+	add rdi, 1 
+	call puts
 	
 L_308:
 	mov r8,0

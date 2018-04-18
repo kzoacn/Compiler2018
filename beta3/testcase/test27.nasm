@@ -802,11 +802,9 @@ L_313:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*26],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*26] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*26] 
+	add rdi, 1 
+	call puts
 	
 L_311:
 	mov r9, qword [rsp+8*13]
@@ -824,11 +822,9 @@ L_310:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*28],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*28] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*28] 
+	add rdi, 1 
+	call puts
 	mov r8,0
 	mov rax,r8
 	leave

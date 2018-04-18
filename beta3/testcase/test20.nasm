@@ -662,11 +662,9 @@ hello:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*4],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*4] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*4] 
+	add rdi, 1 
+	call puts
 	mov r8,0
 	mov rax,r8
 	leave

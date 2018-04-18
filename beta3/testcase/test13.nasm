@@ -961,11 +961,9 @@ L_102:
 	mov r10,r8
 	mov qword [arg+8*0],r8
 	mov qword [rsp+8*60],r10
-	mov rdi, formatln
-	mov rsi,[rsp+8*60] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
+	mov rdi,[rsp+8*60] 
+	add rdi, 1 
+	call puts
 	
 L_104:
 	mov r9, qword [gbl+8*4]
