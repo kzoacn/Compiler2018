@@ -650,18 +650,18 @@ main:
 	mov r9, qword [rsp+8*2]
 	mov r8,r9
 	mov r10,r8
+	mov r11,0
+	mov     rsi, r11
+	mov     rdi, r10
+	call    address
+	mov r12, rax
+	mov r13,0
+	mov [r12],r13
+	mov r14,r8
 	mov qword [gbl+8*3],r8
 	mov qword [rsp+8*4],r10
-	mov     rsi, 0
-	mov     rdi, [rsp+8*4]
-	call    address
-	mov [rsp+8*5], rax
-	mov r8, qword [rsp+8*5]
-	mov r9,0
-	mov [r8],r9
-	mov r11, qword [gbl+8*3]
-	mov r10,r11
-	mov qword [arg+8*0],r10
+	mov qword [rsp+8*5],r12
+	mov qword [arg+8*0],r14
 	call getcount
 	mov r8 , rax
 	mov r9,r8
@@ -14008,21 +14008,21 @@ getcount:
 	mov r9, qword [arg+8*0]
 	mov r8,r9
 	mov r10,r8
+	mov r11,0
+	mov     rsi, r11
+	mov     rdi, r10
+	call    address
+	mov r12, rax
+	mov r13, [r12]
+	mov r14,1
+	mov r13,r13
+	add r13,r14
+	mov [r12],r13
+	mov rax,r13
 	mov qword [rsp+8*2569],r8
 	mov qword [rsp+8*2570],r10
-	mov     rsi, 0
-	mov     rdi, [rsp+8*2570]
-	call    address
-	mov [rsp+8*2571], rax
-	mov r8, qword [rsp+8*2571]
-	mov r9, [r8]
-	mov r10,1
-	mov r9,r9
-	add r9,r10
-	mov [r8],r9
-	mov rax,r9
-	mov qword [rsp+8*2571],r8
-	mov qword [rsp+8*2572],r9
+	mov qword [rsp+8*2571],r12
+	mov qword [rsp+8*2572],r13
 	leave
 	ret
 	mov r8,0

@@ -681,17 +681,16 @@ L_203:
 	add r12,r13
 	mov r15, qword [rsp+8*4]
 	mov r14,r15
+	mov     rsi, r11
+	mov     rdi, r14
+	call    address
+	mov r8, rax
+	mov [r8],r10
+	mov qword [rsp+8*11],r8
 	mov qword [rsp+8*8],r10
 	mov qword [rsp+8*9],r11
 	mov qword [rsp+8*5],r12
 	mov qword [rsp+8*10],r14
-	mov     rsi, [rsp+8*9]
-	mov     rdi, [rsp+8*10]
-	call    address
-	mov [rsp+8*11], rax
-	mov r8, qword [rsp+8*11]
-	mov r9, qword [rsp+8*8]
-	mov [r8],r9
 	
 L_205:
 	mov r9, qword [rsp+8*6]
@@ -720,19 +719,19 @@ L_206:
 	je L_207
 	mov r9, qword [rsp+8*4]
 	mov r8,r9
-	mov qword [rsp+8*14],r8
-	mov     rsi, [rsp+8*6]
-	mov     rdi, [rsp+8*14]
+	mov r10, qword [rsp+8*6]
+	mov     rsi, r10
+	mov     rdi, r8
 	call    address
-	mov [rsp+8*15], rax
-	mov r8, qword [rsp+8*15]
-	mov r9, [r8]
-	mov r10,r9
-	mov r11,r10
-	mov qword [rsp+8*15],r8
-	mov qword [rsp+8*16],r9
-	mov qword [arg+8*0],r10
-	mov qword [rsp+8*18],r11
+	mov r11, rax
+	mov r12, [r11]
+	mov r13,r12
+	mov r14,r13
+	mov qword [rsp+8*14],r8
+	mov qword [rsp+8*15],r11
+	mov qword [rsp+8*16],r12
+	mov qword [arg+8*0],r13
+	mov qword [rsp+8*18],r14
 	mov     rdi, [rsp+8*18]
 	call    toString
 	mov     qword[rsp+8*19], rax

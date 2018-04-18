@@ -669,27 +669,25 @@ L_480:
 	mov     qword [rsp+8*6], rax
 	mov r9, qword [rsp+8*3]
 	mov r8,r9
+	mov r10, qword [rsp+8*4]
+	mov     rsi, r10
+	mov     rdi, r8
+	call    address
+	mov r11, rax
+	mov r12, qword [rsp+8*6]
+	mov [r11],r12
+	mov r13,r9
+	mov     rsi, r10
+	mov     rdi, r13
+	call    address
+	mov r14, rax
+	mov r13, [r14]
+	mov r15,r13
 	mov qword [rsp+8*7],r8
-	mov     rsi, [rsp+8*4]
-	mov     rdi, [rsp+8*7]
-	call    address
-	mov [rsp+8*8], rax
-	mov r8, qword [rsp+8*8]
-	mov r9, qword [rsp+8*6]
-	mov [r8],r9
-	mov r11, qword [rsp+8*3]
-	mov r10,r11
-	mov qword [rsp+8*9],r10
-	mov     rsi, [rsp+8*4]
-	mov     rdi, [rsp+8*9]
-	call    address
-	mov [rsp+8*10], rax
-	mov r8, qword [rsp+8*10]
-	mov r9, [r8]
-	mov r10,r9
-	mov qword [rsp+8*10],r8
-	mov qword [rsp+8*9],r9
-	mov qword [arg+8*63],r10
+	mov qword [rsp+8*8],r11
+	mov qword [rsp+8*9],r13
+	mov qword [rsp+8*10],r14
+	mov qword [arg+8*63],r15
 	call Hello_say
 	mov r8 , rax
 	mov qword [rsp+8*12],r8

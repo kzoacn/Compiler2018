@@ -686,14 +686,15 @@ L_390:
 	je L_394
 	mov r9, qword [gbl+8*4]
 	mov r8,r9
-	mov qword [rsp+8*10],r8
-	mov     rsi, [rsp+8*6]
-	mov     rdi, [rsp+8*10]
+	mov r10, qword [rsp+8*6]
+	mov     rsi, r10
+	mov     rdi, r8
 	call    address
-	mov [rsp+8*11], rax
-	mov r8, qword [rsp+8*11]
-	mov r9,0
-	mov [r8],r9
+	mov r11, rax
+	mov r12,0
+	mov [r11],r12
+	mov qword [rsp+8*10],r8
+	mov qword [rsp+8*11],r11
 	jmp L_392
 	
 L_394:
@@ -703,15 +704,15 @@ L_394:
 	add r8,r9
 	mov r11, qword [gbl+8*4]
 	mov r10,r11
+	mov r12, qword [rsp+8*6]
+	mov     rsi, r12
+	mov     rdi, r10
+	call    address
+	mov r13, rax
+	mov [r13],r8
 	mov qword [rsp+8*5],r8
 	mov qword [rsp+8*12],r10
-	mov     rsi, [rsp+8*6]
-	mov     rdi, [rsp+8*12]
-	call    address
-	mov [rsp+8*13], rax
-	mov r8, qword [rsp+8*13]
-	mov r9, qword [rsp+8*5]
-	mov [r8],r9
+	mov qword [rsp+8*13],r13
 	
 L_392:
 	mov r9, qword [rsp+8*6]
@@ -740,19 +741,19 @@ L_395:
 	je L_396
 	mov r9, qword [gbl+8*4]
 	mov r8,r9
-	mov qword [rsp+8*16],r8
-	mov     rsi, [rsp+8*6]
-	mov     rdi, [rsp+8*16]
+	mov r10, qword [rsp+8*6]
+	mov     rsi, r10
+	mov     rdi, r8
 	call    address
-	mov [rsp+8*17], rax
-	mov r8, qword [rsp+8*17]
-	mov r9, [r8]
-	mov r10,r9
-	mov r11,r10
-	mov qword [rsp+8*17],r8
-	mov qword [rsp+8*18],r9
-	mov qword [arg+8*0],r10
-	mov qword [rsp+8*20],r11
+	mov r11, rax
+	mov r12, [r11]
+	mov r13,r12
+	mov r14,r13
+	mov qword [rsp+8*16],r8
+	mov qword [rsp+8*17],r11
+	mov qword [rsp+8*18],r12
+	mov qword [arg+8*0],r13
+	mov qword [rsp+8*20],r14
 	mov     rdi, [rsp+8*20]
 	call    toString
 	mov     qword[rsp+8*21], rax

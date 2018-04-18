@@ -699,23 +699,23 @@ main:
 	call printf
 	mov r9, qword [rsp+8*4]
 	mov r8,r9
-	mov qword [rsp+8*12],r8
-	mov     rsi, 0
-	mov     rdi, [rsp+8*12]
+	mov r10,0
+	mov     rsi, r10
+	mov     rdi, r8
 	call    address
-	mov [rsp+8*13], rax
-	mov r8, qword [rsp+8*13]
-	mov r9, [r8]
-	mov r10,1
-	mov r9,r9
-	add r9,r10
-	mov [r8],r9
-	mov r11,r9
-	mov r12,r11
-	mov qword [rsp+8*13],r8
-	mov qword [rsp+8*14],r9
-	mov qword [arg+8*0],r11
-	mov qword [rsp+8*15],r12
+	mov r11, rax
+	mov r12, [r11]
+	mov r13,1
+	mov r12,r12
+	add r12,r13
+	mov [r11],r12
+	mov r14,r12
+	mov r15,r14
+	mov qword [rsp+8*12],r8
+	mov qword [rsp+8*13],r11
+	mov qword [rsp+8*14],r12
+	mov qword [arg+8*0],r14
+	mov qword [rsp+8*15],r15
 	mov     rdi, [rsp+8*15]
 	call    toString
 	mov     qword[rsp+8*16], rax
@@ -731,23 +731,23 @@ main:
 	call printf
 	mov r9, qword [rsp+8*4]
 	mov r8,r9
-	mov qword [rsp+8*18],r8
-	mov     rsi, 0
-	mov     rdi, [rsp+8*18]
+	mov r10,0
+	mov     rsi, r10
+	mov     rdi, r8
 	call    address
-	mov [rsp+8*19], rax
-	mov r8, qword [rsp+8*19]
-	mov r9, [r8]
-	mov r10,1
-	mov r9,r9
-	add r9,r10
-	mov [r8],r9
-	mov r11,r9
-	mov r12,r11
-	mov qword [rsp+8*19],r8
-	mov qword [rsp+8*20],r9
-	mov qword [arg+8*0],r11
-	mov qword [rsp+8*21],r12
+	mov r11, rax
+	mov r12, [r11]
+	mov r13,1
+	mov r12,r12
+	add r12,r13
+	mov [r11],r12
+	mov r14,r12
+	mov r15,r14
+	mov qword [rsp+8*18],r8
+	mov qword [rsp+8*19],r11
+	mov qword [rsp+8*20],r12
+	mov qword [arg+8*0],r14
+	mov qword [rsp+8*21],r15
 	mov     rdi, [rsp+8*21]
 	call    toString
 	mov     qword[rsp+8*22], rax

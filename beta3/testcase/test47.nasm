@@ -672,34 +672,35 @@ L_435:
 	mov     qword [rsp+8*7], rax
 	mov r9, qword [rsp+8*4]
 	mov r8,r9
-	mov qword [rsp+8*8],r8
-	mov     rsi, [rsp+8*5]
-	mov     rdi, [rsp+8*8]
+	mov r10, qword [rsp+8*5]
+	mov     rsi, r10
+	mov     rdi, r8
 	call    address
-	mov [rsp+8*9], rax
-	mov r8, qword [rsp+8*9]
-	mov r9, qword [rsp+8*7]
-	mov [r8],r9
+	mov r11, rax
+	mov r12, qword [rsp+8*7]
+	mov [r11],r12
+	mov qword [rsp+8*8],r8
+	mov qword [rsp+8*9],r11
 	mov     rdi, 2
 	call    mallocArray
 	mov     qword [rsp+8*10], rax
 	mov r9, qword [rsp+8*10]
 	mov r8,r9
+	mov r10,0
+	mov     rsi, r10
+	mov     rdi, r9
+	call    address
+	mov r8, rax
+	mov r11, qword [rsp+8*5]
+	mov [r8],r11
+	mov r12,1
+	mov     rsi, r12
+	mov     rdi, r9
+	call    address
+	mov r8, rax
+	mov r13,0
+	mov [r8],r13
 	mov qword [rsp+8*11],r8
-	mov     rsi, 0
-	mov     rdi, [rsp+8*10]
-	call    address
-	mov [rsp+8*11], rax
-	mov r8, qword [rsp+8*11]
-	mov r9, qword [rsp+8*5]
-	mov [r8],r9
-	mov     rsi, 1
-	mov     rdi, [rsp+8*10]
-	call    address
-	mov [rsp+8*11], rax
-	mov r8, qword [rsp+8*11]
-	mov r9,0
-	mov [r8],r9
 	mov     rsi, [rsp+8*10]
 	mov     rdi, [rsp+8*4]
 	call    multiAddress
@@ -729,28 +730,28 @@ L_438:
 	mov     qword [rsp+8*16], rax
 	mov r9, qword [rsp+8*16]
 	mov r8,r9
+	mov r10,0
+	mov     rsi, r10
+	mov     rdi, r9
+	call    address
+	mov r8, rax
+	mov r11, qword [rsp+8*5]
+	mov [r8],r11
+	mov r12,1
+	mov     rsi, r12
+	mov     rdi, r9
+	call    address
+	mov r8, rax
+	mov r13,0
+	mov [r8],r13
+	mov r14,2
+	mov     rsi, r14
+	mov     rdi, r9
+	call    address
+	mov r8, rax
+	mov r15, qword [rsp+8*14]
+	mov [r8],r15
 	mov qword [rsp+8*17],r8
-	mov     rsi, 0
-	mov     rdi, [rsp+8*16]
-	call    address
-	mov [rsp+8*17], rax
-	mov r8, qword [rsp+8*17]
-	mov r9, qword [rsp+8*5]
-	mov [r8],r9
-	mov     rsi, 1
-	mov     rdi, [rsp+8*16]
-	call    address
-	mov [rsp+8*17], rax
-	mov r8, qword [rsp+8*17]
-	mov r9,0
-	mov [r8],r9
-	mov     rsi, 2
-	mov     rdi, [rsp+8*16]
-	call    address
-	mov [rsp+8*17], rax
-	mov r8, qword [rsp+8*17]
-	mov r9, qword [rsp+8*14]
-	mov [r8],r9
 	mov     rsi, [rsp+8*16]
 	mov     rdi, [rsp+8*4]
 	call    multiAddress
@@ -766,35 +767,36 @@ L_438:
 	mov     qword [rsp+8*20], rax
 	mov r9, qword [rsp+8*20]
 	mov r8,r9
+	mov r10,0
+	mov     rsi, r10
+	mov     rdi, r9
+	call    address
+	mov r8, rax
+	mov r11, qword [rsp+8*5]
+	mov [r8],r11
+	mov r12,1
+	mov     rsi, r12
+	mov     rdi, r9
+	call    address
+	mov r8, rax
+	mov r13,0
+	mov [r8],r13
+	mov r14,2
+	mov     rsi, r14
+	mov     rdi, r9
+	call    address
+	mov r8, rax
+	mov r15, qword [rsp+8*14]
+	mov [r8],r15
 	mov qword [rsp+8*21],r8
-	mov     rsi, 0
-	mov     rdi, [rsp+8*20]
+	mov r8,3
+	mov     rsi, r8
+	mov     rdi, r9
 	call    address
-	mov [rsp+8*21], rax
-	mov r8, qword [rsp+8*21]
-	mov r9, qword [rsp+8*5]
-	mov [r8],r9
-	mov     rsi, 1
-	mov     rdi, [rsp+8*20]
-	call    address
-	mov [rsp+8*21], rax
-	mov r8, qword [rsp+8*21]
-	mov r9,0
-	mov [r8],r9
-	mov     rsi, 2
-	mov     rdi, [rsp+8*20]
-	call    address
-	mov [rsp+8*21], rax
-	mov r8, qword [rsp+8*21]
-	mov r9, qword [rsp+8*14]
-	mov [r8],r9
-	mov     rsi, 3
-	mov     rdi, [rsp+8*20]
-	call    address
-	mov [rsp+8*21], rax
-	mov r8, qword [rsp+8*21]
-	mov r9,0
-	mov [r8],r9
+	mov r10, rax
+	mov r8,0
+	mov [r10],r8
+	mov qword [rsp+8*21],r10
 	mov     rsi, [rsp+8*20]
 	mov     rdi, [rsp+8*4]
 	call    multiAddress
@@ -824,42 +826,43 @@ L_441:
 	mov     qword [rsp+8*26], rax
 	mov r9, qword [rsp+8*26]
 	mov r8,r9
+	mov r10,0
+	mov     rsi, r10
+	mov     rdi, r9
+	call    address
+	mov r8, rax
+	mov r11, qword [rsp+8*5]
+	mov [r8],r11
+	mov r12,1
+	mov     rsi, r12
+	mov     rdi, r9
+	call    address
+	mov r8, rax
+	mov r13,0
+	mov [r8],r13
+	mov r14,2
+	mov     rsi, r14
+	mov     rdi, r9
+	call    address
+	mov r8, rax
+	mov r15, qword [rsp+8*14]
+	mov [r8],r15
 	mov qword [rsp+8*27],r8
-	mov     rsi, 0
-	mov     rdi, [rsp+8*26]
+	mov r8,3
+	mov     rsi, r8
+	mov     rdi, r9
 	call    address
-	mov [rsp+8*27], rax
-	mov r8, qword [rsp+8*27]
-	mov r9, qword [rsp+8*5]
-	mov [r8],r9
-	mov     rsi, 1
-	mov     rdi, [rsp+8*26]
+	mov r10, rax
+	mov r8,0
+	mov [r10],r8
+	mov r8,4
+	mov     rsi, r8
+	mov     rdi, r9
 	call    address
-	mov [rsp+8*27], rax
-	mov r8, qword [rsp+8*27]
-	mov r9,0
-	mov [r8],r9
-	mov     rsi, 2
-	mov     rdi, [rsp+8*26]
-	call    address
-	mov [rsp+8*27], rax
-	mov r8, qword [rsp+8*27]
-	mov r9, qword [rsp+8*14]
-	mov [r8],r9
-	mov     rsi, 3
-	mov     rdi, [rsp+8*26]
-	call    address
-	mov [rsp+8*27], rax
-	mov r8, qword [rsp+8*27]
-	mov r9,0
-	mov [r8],r9
-	mov     rsi, 4
-	mov     rdi, [rsp+8*26]
-	call    address
-	mov [rsp+8*27], rax
-	mov r8, qword [rsp+8*27]
-	mov r9, qword [rsp+8*24]
-	mov [r8],r9
+	mov r10, rax
+	mov r8, qword [rsp+8*24]
+	mov [r10],r8
+	mov qword [rsp+8*27],r10
 	mov     rsi, [rsp+8*26]
 	mov     rdi, [rsp+8*4]
 	call    multiAddress
@@ -916,42 +919,43 @@ L_436:
 	mov     qword [rsp+8*34], rax
 	mov r9, qword [rsp+8*34]
 	mov r8,r9
+	mov r10,0
+	mov     rsi, r10
+	mov     rdi, r9
+	call    address
+	mov r8, rax
+	mov r11,3
+	mov [r8],r11
+	mov r12,1
+	mov     rsi, r12
+	mov     rdi, r9
+	call    address
+	mov r8, rax
+	mov r13,0
+	mov [r8],r13
+	mov r14,2
+	mov     rsi, r14
+	mov     rdi, r9
+	call    address
+	mov r8, rax
+	mov r15,1
+	mov [r8],r15
 	mov qword [rsp+8*35],r8
-	mov     rsi, 0
-	mov     rdi, [rsp+8*34]
+	mov r8,3
+	mov     rsi, r8
+	mov     rdi, r9
 	call    address
-	mov [rsp+8*35], rax
-	mov r8, qword [rsp+8*35]
-	mov r9,3
-	mov [r8],r9
-	mov     rsi, 1
-	mov     rdi, [rsp+8*34]
+	mov r10, rax
+	mov r8,0
+	mov [r10],r8
+	mov r8,4
+	mov     rsi, r8
+	mov     rdi, r9
 	call    address
-	mov [rsp+8*35], rax
-	mov r8, qword [rsp+8*35]
-	mov r9,0
-	mov [r8],r9
-	mov     rsi, 2
-	mov     rdi, [rsp+8*34]
-	call    address
-	mov [rsp+8*35], rax
-	mov r8, qword [rsp+8*35]
-	mov r9,1
-	mov [r8],r9
-	mov     rsi, 3
-	mov     rdi, [rsp+8*34]
-	call    address
-	mov [rsp+8*35], rax
-	mov r8, qword [rsp+8*35]
-	mov r9,0
-	mov [r8],r9
-	mov     rsi, 4
-	mov     rdi, [rsp+8*34]
-	call    address
-	mov [rsp+8*35], rax
-	mov r8, qword [rsp+8*35]
-	mov r9,4
-	mov [r8],r9
+	mov r10, rax
+	mov r8,4
+	mov [r10],r8
+	mov qword [rsp+8*35],r10
 	mov     rsi, [rsp+8*34]
 	mov     rdi, [rsp+8*4]
 	call    multiAddress

@@ -655,14 +655,14 @@ main:
 	mov     qword [rsp+8*4], rax
 	mov r9, qword [rsp+8*4]
 	mov r8,r9
-	mov qword [rsp+8*5],r8
-	mov     rsi, 0
-	mov     rdi, [rsp+8*4]
+	mov r10,0
+	mov     rsi, r10
+	mov     rdi, r9
 	call    address
-	mov [rsp+8*5], rax
-	mov r8, qword [rsp+8*5]
-	mov r9,0
-	mov [r8],r9
+	mov r8, rax
+	mov r11,0
+	mov [r8],r11
+	mov qword [rsp+8*5],r8
 	mov     rsi, [rsp+8*4]
 	mov     rdi, [rsp+8*3]
 	call    multiAddress
@@ -719,14 +719,14 @@ Adder_add:
 	mov     qword [rsp+8*16], rax
 	mov r9, qword [rsp+8*16]
 	mov r8,r9
-	mov qword [rsp+8*17],r8
-	mov     rsi, 0
-	mov     rdi, [rsp+8*16]
+	mov r10,0
+	mov     rsi, r10
+	mov     rdi, r9
 	call    address
-	mov [rsp+8*17], rax
-	mov r8, qword [rsp+8*17]
-	mov r9,0
-	mov [r8],r9
+	mov r8, rax
+	mov r11,0
+	mov [r8],r11
+	mov qword [rsp+8*17],r8
 	mov     rsi, [rsp+8*16]
 	mov     rdi, [rsp+8*14]
 	call    multiAddress

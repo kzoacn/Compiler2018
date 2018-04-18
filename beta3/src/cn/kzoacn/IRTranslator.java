@@ -722,13 +722,15 @@ public class IRTranslator {
                     //text.append(new StringBuffer("mov qword [r9], r8\n\t"));
                     break;
                 case address:
-                    kickAll();
+                    //kickAll();
+                    readReg(var1);
+                    readReg(var2);
                     text.append(new StringBuffer(
-                                    "mov     rsi, "+varName(var2)+"\n\t" +
-                                    "mov     rdi, "+varName(var1)+"\n\t" +
+                                    "mov     rsi, "+readReg(var2)+"\n\t" +
+                                    "mov     rdi, "+readReg(var1)+"\n\t" +
                                     "call    address\n\t") +
-                                    "mov "+varName(dest)+", rax\n\t");
-                    clearAll();
+                                    "mov "+writeReg(dest)+", rax\n\t");
+                    //clearAll();
                     break;
                 case print:
                     kickAll();
