@@ -107,6 +107,7 @@ int main() {
 		println("Let's start!");
 		initialize(random());
 		now = random() % 10 + 1;
+		
 		println(toString(now));
 		for (; i < now - 1; ++i)
 		{
