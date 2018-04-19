@@ -374,6 +374,8 @@ public class IRTranslator {
                 "        resb    256\n");
         bss.append("arg:\n" +
                 "        resb    1024\n");
+        bss.append("\n" +
+                "trsp:         resb   1024");
 
         data.append(new StringBuffer("\nformatln:\n\t"));
         data.append(new StringBuffer("db  \"%s\", 10, 0\n\t"));
@@ -572,6 +574,9 @@ public class IRTranslator {
                 case ret:
                     text.append(new StringBuffer("mov rax," +readReg(var1)+"\n\t"));
                     kickAll();
+                    if(name.equals("main")){
+                        text.append("        mov     rsp, qword [trsp]\n\t");
+                    }
                     text.append(new StringBuffer("leave\n\t"));
                     text.append(new StringBuffer("ret\n\t"));
                     break;
@@ -817,6 +822,20 @@ public class IRTranslator {
                     text.append(new StringBuffer("push   rbp\n\t"));
                     text.append(new StringBuffer("mov    rbp, rsp\n\t"));
                     text.append(new StringBuffer("sub    rsp, "+Integer.toString(variableIndex.size()*8+64)+"\n\t")); //TODO
+
+                    if(name.equals("main")){
+                        text.append(new StringBuffer("        mov     eax, 536870912\n" +
+                                "        cdqe\n" +
+                                "        mov     rdi, rax\n" +
+                                "        call    malloc\n" +
+                                "        mov     edx, dword 536870912\n" +
+                                "        movsxd  rdx, edx\n" +
+                                "        sub     rdx, "+Integer.toString(variableIndex.size()*8+2048)+"\n" +
+                                "        add     rax, rdx\n" +
+                                "        mov     qword [trsp], rsp\n" +
+                                "        mov     rsp, rax\n" +
+                                "        mov     eax, 0\n\t"));
+                    }
                     break;
                 case endContext:
                     break;

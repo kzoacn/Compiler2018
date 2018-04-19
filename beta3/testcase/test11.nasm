@@ -641,6 +641,17 @@ main:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 576
+	        mov     eax, 536870912
+        cdqe
+        mov     rdi, rax
+        call    malloc
+        mov     edx, dword 536870912
+        movsxd  rdx, edx
+        sub     rdx, 2560
+        add     rax, rdx
+        mov     qword [trsp], rsp
+        mov     rsp, rax
+        mov     eax, 0
 	call global_init
 	mov r8 , rax
 	mov r10,233
@@ -991,10 +1002,12 @@ L_77:
 L_76:
 	mov r8,0
 	mov rax,r8
+	        mov     rsp, qword [trsp]
 	leave
 	ret
 	mov r8,0
 	mov rax,r8
+	        mov     rsp, qword [trsp]
 	leave
 	ret
 	jmp QED
@@ -1017,6 +1030,7 @@ buff.1788:
 arg:
         resb    1024
 
+trsp:         resb   1024
 	 section   .data
 
 formatln:

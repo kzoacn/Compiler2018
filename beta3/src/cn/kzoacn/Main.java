@@ -761,7 +761,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
 
         IR globalVariableIR = new IR();
         globalVariableIR.push(new Quad(OpCode.label,"global_init"));
-        globalVariableIR.push(new Quad(OpCode.enterFunction));
+        globalVariableIR.push(new Quad(OpCode.enterFunction,"global_init"));
 
 
         for(ParseTree child : ctx.children){
@@ -847,7 +847,9 @@ class MVisitor extends MxstarBaseVisitor<IR>{
             }
         }*/
         globalVariableIR.push(new Quad(OpCode.exitFunction));
-        globalVariableIR.push(new Quad(OpCode.ret,nextConst(0,VariableType.INT),Variable.empty,Variable.empty));
+        Quad quad=new Quad(OpCode.ret,nextConst(0,VariableType.INT),Variable.empty,Variable.empty);
+        quad.name=symbolMap.currentFunction;
+        globalVariableIR.push(quad);
 
         ir.concat(mainIR);
         ir.push(new Quad(OpCode.jmp,"QED"));
@@ -1920,7 +1922,9 @@ class MVisitor extends MxstarBaseVisitor<IR>{
 
         if(ctx.expression()==null){
             //ir.push(new Quad(OpCode.push,nextConst(0,VariableType.CONST_INT),Variable.empty,Variable.empty));
-            ir.push(new Quad(OpCode.ret,nextConst(0,VariableType.CONST_INT),Variable.empty,Variable.empty));
+            Quad quad=new Quad(OpCode.ret,nextConst(0,VariableType.CONST_INT),Variable.empty,Variable.empty);
+            quad.name=symbolMap.currentFunction;
+            ir.push(quad);
         }else{
             ir.concat(visit(ctx.expression()));
             //ir.push(new Quad(OpCode.push,ir.last.dest,Variable.empty,Variable.empty));
