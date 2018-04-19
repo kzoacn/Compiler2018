@@ -816,6 +816,7 @@ main:
         call    puts
         mov     edi, L_072
         call    puts
+        mov     eax, 0
         pop     rbp
         ret
 
@@ -1579,6 +1580,5 @@ L_165:
         db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
         db 31H, 34H, 32H, 20H, 73H, 74H, 65H, 70H
         db 28H, 73H, 29H, 00H
-        
 
 

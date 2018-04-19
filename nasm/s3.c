@@ -399,4 +399,5 @@ printf("Let's start!\n");
 printf("2\n");
 printf("5 5045 \n");
 printf("Total: 5046 step(s)\n");
+return 0;
 }

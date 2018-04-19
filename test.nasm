@@ -1,1799 +1,1583 @@
-	 global    main
-	 extern    puts
-	 extern    printf
-	 extern    scanf
-	 extern    malloc
-	 extern    strlen
-	 extern    strcmp
-	 extern    memset
-
-	 section   .text
-toString:
-        push    rbp
-        mov     rbp, rsp
-        sub     rsp, 64
-        mov     qword [rbp-38H], rdi
-        mov     qword [rbp-8H], 0
-        mov     qword [rbp-10H], 1
-        cmp     qword [rbp-38H], 0
-        jnz     L_001
-        mov     qword [rbp-8H], 1
-L_001:  cmp     qword [rbp-38H], 0
-        jns     L_002
-        neg     qword [rbp-38H]
-        mov     qword [rbp-10H], -1
-        add     qword [rbp-8H], 1
-L_002:  mov     rax, qword [rbp-38H]
-        mov     qword [rbp-18H], rax
-        jmp     L_004
-
-L_003:  add     qword [rbp-8H], 1
-        mov     rcx, qword [rbp-18H]
-        mov     rdx, qword 6666666666666667H
-        mov     rax, rcx
-        imul    rdx
-        sar     rdx, 2
-        mov     rax, rcx
-        sar     rax, 63
-        sub     rdx, rax
-        mov     rax, rdx
-        mov     qword [rbp-18H], rax
-L_004:  cmp     qword [rbp-18H], 0
-        jg      L_003
-        mov     rax, qword [rbp-8H]
-        add     rax, 2
-        mov     rdi, rax
-        call    malloc
-        mov     qword [rbp-28H], rax
-        mov     rax, qword [rbp-28H]
-        mov     qword [rbp-20H], rax
-        mov     rax, qword [rbp-8H]
-        mov     edx, eax
-        mov     rax, qword [rbp-20H]
-        mov     byte [rax], dl
-        add     qword [rbp-20H], 1
-        cmp     qword [rbp-10H], -1
-        jnz     L_005
-        mov     rax, qword [rbp-20H]
-        mov     byte [rax], 45
-L_005:  mov     rdx, qword [rbp-8H]
-        mov     rax, qword [rbp-28H]
-        add     rax, rdx
-        mov     qword [rbp-20H], rax
-        cmp     qword [rbp-38H], 0
-        jnz     L_006
-        mov     rax, qword [rbp-20H]
-        mov     byte [rax], 48
-        jmp     L_008
-
-L_006:  jmp     L_008
-
-L_007:  mov     rcx, qword [rbp-38H]
-        mov     rdx, qword 6666666666666667H
-        mov     rax, rcx
-        imul    rdx
-        sar     rdx, 2
-        mov     rax, rcx
-        sar     rax, 63
-        sub     rdx, rax
-        mov     rax, rdx
-        shl     rax, 2
-        add     rax, rdx
-        add     rax, rax
-        sub     rcx, rax
-        mov     rdx, rcx
-        mov     eax, edx
-        add     eax, 48
-        mov     edx, eax
-        mov     rax, qword [rbp-20H]
-        mov     byte [rax], dl
-        sub     qword [rbp-20H], 1
-        mov     rcx, qword [rbp-38H]
-        mov     rdx, qword 6666666666666667H
-        mov     rax, rcx
-        imul    rdx
-        sar     rdx, 2
-        mov     rax, rcx
-        sar     rax, 63
-        sub     rdx, rax
-        mov     rax, rdx
-        mov     qword [rbp-38H], rax
-L_008:  cmp     qword [rbp-38H], 0
-        jg      L_007
-        mov     rax, qword [rbp-28H]
-        leave
-        ret
-
-mallocArray:
-        push    rbp
-        mov     rbp, rsp
-        sub     rsp, 32
-        mov     qword [rbp-18H], rdi
-        mov     rax, qword [rbp-18H]
-        add     rax, 1
-        shl     rax, 4
-        mov     rdi, rax
-        call    malloc
-        mov     qword [rbp-8H], rax
-        mov     rax, qword [rbp-18H]
-        add     rax, 1
-        shl     rax, 4
-        mov     rdx, rax
-        mov     rax, qword [rbp-8H]
-        mov     esi, 0
-        mov     rdi, rax
-        call    memset
-        mov     rax, qword [rbp-8H]
-        mov     rdx, qword [rbp-18H]
-        mov     qword [rax], rdx
-        mov     rax, qword [rbp-8H]
-        leave
-        ret
-
-concat:
-        push    rbp
-        mov     rbp, rsp
-        sub     rsp, 48
-        mov     qword [rbp-28H], rdi
-        mov     qword [rbp-30H], rsi
-        mov     rax, qword [rbp-28H]
-        movzx   eax, byte [rax]
-        movzx   edx, al
-        mov     rax, qword [rbp-30H]
-        movzx   eax, byte [rax]
-        movzx   eax, al
-        add     eax, edx
-        add     eax, 2
-        cdqe
-        mov     rdi, rax
-        call    malloc
-        mov     qword [rbp-18H], rax
-        mov     rax, qword [rbp-28H]
-        movzx   edx, byte [rax]
-        mov     rax, qword [rbp-30H]
-        movzx   eax, byte [rax]
-        add     edx, eax
-        mov     rax, qword [rbp-18H]
-        mov     byte [rax], dl
-        mov     qword [rbp-8H], 0
-        mov     qword [rbp-10H], 0
-        mov     qword [rbp-8H], 0
-        jmp     cc_002
-
-cc_001:  add     qword [rbp-10H], 1
-        mov     rdx, qword [rbp-10H]
-        mov     rax, qword [rbp-18H]
-        add     rdx, rax
-        mov     rax, qword [rbp-8H]
-        lea     rcx, [rax+1H]
-        mov     rax, qword [rbp-28H]
-        add     rax, rcx
-        movzx   eax, byte [rax]
-        mov     byte [rdx], al
-        add     qword [rbp-8H], 1
-cc_002:  mov     rax, qword [rbp-28H]
-        movzx   eax, byte [rax]
-        movzx   eax, al
-        cmp     rax, qword [rbp-8H]
-        jg      cc_001
-        mov     qword [rbp-8H], 0
-        jmp     cc_004
-
-cc_003:  add     qword [rbp-10H], 1
-        mov     rdx, qword [rbp-10H]
-        mov     rax, qword [rbp-18H]
-        add     rdx, rax
-        mov     rax, qword [rbp-8H]
-        lea     rcx, [rax+1H]
-        mov     rax, qword [rbp-30H]
-        add     rax, rcx
-        movzx   eax, byte [rax]
-        mov     byte [rdx], al
-        add     qword [rbp-8H], 1
-cc_004:  mov     rax, qword [rbp-30H]
-        movzx   eax, byte [rax]
-        movzx   eax, al
-        cmp     rax, qword [rbp-8H]
-        jg      cc_003
-        add     qword [rbp-10H], 1
-        mov     rdx, qword [rbp-10H]
-        mov     rax, qword [rbp-18H]
-        add     rax, rdx
-        mov     byte [rax], 0
-        mov     rax, qword [rbp-18H]
-        leave
-        ret
-
-address:
-        push    rbp
-        mov     rbp, rsp
-        mov     qword [rbp-8H], rdi
-        mov     qword [rbp-10H], rsi
-        mov     rax, qword [rbp-10H]
-        add     rax, 1
-        shl     rax, 4
-        mov     rdx, rax
-        mov     rax, qword [rbp-8H]
-        add     rax, rdx
-        pop     rbp
-        ret
-_multiArray:
-        push    rbp
-        mov     rbp, rsp
-        push    rbx
-        sub     rsp, 56
-        mov     dword [rbp-34H], edi
-        mov     qword [rbp-40H], rsi
-        mov     eax, dword [rbp-34H]
-        add     eax, 1
-        movsxd  rdx, eax
-        mov     rax, qword [rbp-40H]
-        mov     rax, qword [rax]
-        cmp     rdx, rax
-        jnz     CL_005
-        mov     eax, dword [rbp-34H]
-        movsxd  rdx, eax
-        mov     rax, qword [rbp-40H]
-        mov     rsi, rdx
-        mov     rdi, rax
-        call    address
-        mov     rax, qword [rax]
-        mov     rdi, rax
-        call    mallocArray
-        jmp     CL_008
-
-CL_005:  mov     eax, dword [rbp-34H]
-        movsxd  rdx, eax
-        mov     rax, qword [rbp-40H]
-        mov     rsi, rdx
-        mov     rdi, rax
-        call    address
-        mov     rax, qword [rax]
-        mov     qword [rbp-20H], rax
-        mov     rax, qword [rbp-20H]
-        mov     rdi, rax
-        call    mallocArray
-        mov     qword [rbp-28H], rax
-        mov     dword [rbp-14H], 0
-        jmp     CL_007
-
-CL_006:  mov     eax, dword [rbp-14H]
-        movsxd  rdx, eax
-        mov     rax, qword [rbp-28H]
-        mov     rsi, rdx
-        mov     rdi, rax
-        call    address
-        mov     rbx, rax
-        mov     eax, dword [rbp-34H]
-        lea     edx, [rax+1H]
-        mov     rax, qword [rbp-40H]
-        mov     rsi, rax
-        mov     edi, edx
-        call    _multiArray
-        mov     qword [rbx], rax
-        add     dword [rbp-14H], 1
-CL_007:  mov     eax, dword [rbp-14H]
-        cdqe
-        cmp     rax, qword [rbp-20H]
-        jl      CL_006
-        mov     rax, qword [rbp-28H]
-CL_008:  add     rsp, 56
-        pop     rbx
-        pop     rbp
-        ret
 
 
-multiArray:
-        push    rbp
-        mov     rbp, rsp
-        sub     rsp, 16
-        mov     qword [rbp-8H], rdi
-        mov     rax, qword [rbp-8H]
-        mov     rsi, rax
-        mov     edi, 0
-        call    _multiArray
-        leave
-        ret
-
-multiAddress:
-        push    rbp
-        mov     rbp, rsp
-        sub     rsp, 48
-        mov     qword [rbp-28H], rdi
-        mov     qword [rbp-30H], rsi
-        mov     rax, qword [rbp-30H]
-        mov     rax, qword [rax]
-        mov     qword [rbp-18H], rax
-        cmp     qword [rbp-18H], 0
-        jnz     mAd_005
-        mov     rax, qword [rbp-28H]
-        jmp     mAd_008
-
-mAd_005:  mov     rax, qword [rbp-28H]
-        mov     qword [rbp-10H], rax
-        mov     qword [rbp-8H], 1
-        jmp     mAd_007
-
-mAd_006:  mov     rax, qword [rbp-8H]
-        lea     rdx, [rax-1H]
-        mov     rax, qword [rbp-30H]
-        mov     rsi, rdx
-        mov     rdi, rax
-        call    address
-        mov     rdx, qword [rax]
-        mov     rax, qword [rbp-10H]
-        mov     rsi, rdx
-        mov     rdi, rax
-        call    address
-        mov     rax, qword [rax]
-        mov     qword [rbp-10H], rax
-        add     qword [rbp-8H], 1
-mAd_007:  mov     rax, qword [rbp-8H]
-        cmp     rax, qword [rbp-18H]
-        jl      mAd_006
-        mov     rax, qword [rbp-18H]
-        lea     rdx, [rax-1H]
-        mov     rax, qword [rbp-30H]
-        mov     rsi, rdx
-        mov     rdi, rax
-        call    address
-        mov     rdx, qword [rax]
-        mov     rax, qword [rbp-10H]
-        mov     rsi, rdx
-        mov     rdi, rax
-        call    address
-        mov     qword [rbp-10H], rax
-        mov     rax, qword [rbp-10H]
-mAd_008:  leave
-        ret
-
-getInt:
-        push    rbp
-        mov     rbp, rsp
-        sub     rsp, 16
-        lea     rax, [rbp-8H]
-        mov     rsi, rax
-        mov     edi, GS_31
-        mov     eax, 0
-        call    scanf
-        mov     rax, qword [rbp-8H]
-        leave
-        ret
-
-getString:
-        push    rbp
-        mov     rbp, rsp
-        sub     rsp, 32
-        mov     esi, buff.1788
-        mov     edi, GS_32
-        mov     eax, 0
-        call    scanf
-        mov     edi, buff.1788
-        call    strlen
-        mov     qword [rbp-10H], rax
-        mov     rax, qword [rbp-10H]
-        add     rax, 2
-        mov     rdi, rax
-        call    malloc
-        mov     qword [rbp-18H], rax
-        mov     rax, qword [rbp-10H]
-        mov     edx, eax
-        mov     rax, qword [rbp-18H]
-        mov     byte [rax], dl
-        mov     qword [rbp-8H], 1
-        jmp     GS_20
-
-GS_19:  mov     rdx, qword [rbp-8H]
-        mov     rax, qword [rbp-18H]
-        add     rdx, rax
-        mov     rax, qword [rbp-8H]
-        sub     rax, 1
-
-        movzx   eax, byte [abs buff.1788+rax]
-        mov     byte [rdx], al
-        add     qword [rbp-8H], 1
-GS_20:  mov     rax, qword [rbp-8H]
-        cmp     rax, qword [rbp-10H]
-        jle     GS_19
-        mov     rax, qword [rbp-18H]
-        leave
-        ret
-
-parseInt:
-        push    rbp
-        mov     rbp, rsp
-        mov     r8,qword [arg+8*63]
-        mov     qword [rbp-18H], r8
-        mov     qword [rbp-10H], 0
-        mov     qword [rbp-8H], 1
-        jmp     PSL_025
-
-PSL_023:  mov     rdx, qword [rbp-8H]
-        mov     rax, qword [rbp-18H]
-        add     rax, rdx
-        movzx   eax, byte [rax]
-        cmp     al, 47
-        jbe     PSL_024
-        mov     rdx, qword [rbp-8H]
-        mov     rax, qword [rbp-18H]
-        add     rax, rdx
-        movzx   eax, byte [rax]
-        cmp     al, 57
-        ja      PSL_024
-        mov     rdx, qword [rbp-10H]
-        mov     rax, rdx
-        shl     rax, 2
-        add     rax, rdx
-        add     rax, rax
-        mov     rdx, rax
-        mov     rcx, qword [rbp-8H]
-        mov     rax, qword [rbp-18H]
-        add     rax, rcx
-        movzx   eax, byte [rax]
-        movzx   eax, al
-        sub     eax, 48
-        cdqe
-        add     rax, rdx
-        mov     qword [rbp-10H], rax
-        add     qword [rbp-8H], 1
-        jmp     PSL_025
-
-PSL_024:  mov     rax, qword [rbp-10H]
-        jmp     PSL_026
-
-PSL_025:  mov     rax, qword [rbp-18H]
-        movzx   eax, byte [rax]
-        movzx   eax, al
-        cmp     rax, qword [rbp-8H]
-        jge     PSL_023
-        mov     rax, qword [rbp-10H]
-PSL_026:  pop     rbp
-        ret
-
-substring:
-        push    rbp
-        mov     rbp, rsp
-        sub     rsp, 48
-        mov     qword [rbp-28H], rdi
-        mov     qword [rbp-30H], rsi
-        mov     r8,qword [arg+8*63]
-        mov     qword [rbp-18H], r8
-        mov     rax, qword [rbp-28H]
-        mov     rdx, qword [rbp-30H]
-        sub     rdx, rax
-        mov     rax, rdx
-        add     rax, 3
-        mov     rdi, rax
-        call    malloc
-        mov     qword [rbp-20H], rax
-        mov     rax, qword [rbp-30H]
-        mov     edx, eax
-        mov     rax, qword [rbp-28H]
-        sub     edx, eax
-        mov     eax, edx
-        add     eax, 1
-        mov     edx, eax
-        mov     rax, qword [rbp-20H]
-        mov     byte [rax], dl
-        mov     qword [rbp-10H], 0
-        mov     rax, qword [rbp-28H]
-        mov     qword [rbp-8H], rax
-        jmp     PSL_022
-
-PSL_021:  add     qword [rbp-10H], 1
-        mov     rdx, qword [rbp-10H]
-        mov     rax, qword [rbp-20H]
-        add     rdx, rax
-        mov     rax, qword [rbp-8H]
-        lea     rcx, [rax+1H]
-        mov     rax, qword [rbp-18H]
-        add     rax, rcx
-        movzx   eax, byte [rax]
-        mov     byte [rdx], al
-        add     qword [rbp-8H], 1
-PSL_022:  mov     rax, qword [rbp-8H]
-        cmp     rax, qword [rbp-30H]
-        jle     PSL_021
-        add     qword [rbp-10H], 1
-        mov     rdx, qword [rbp-10H]
-        mov     rax, qword [rbp-20H]
-        add     rax, rdx
-        mov     byte [rax], 0
-        mov     rax, qword [rbp-20H]
-        leave
-        ret
-
-ord:
-        push    rbp
-        mov     rbp, rsp
-        mov     qword [rbp-18H], rdi
-        mov     r8,qword [arg+8*63]
-        mov     qword [rbp-8H], r8
-        mov     rax, qword [rbp-18H]
-        lea     rdx, [rax+1H]
-        mov     rax, qword [rbp-8H]
-        add     rax, rdx
-        movzx   eax, byte [rax]
-        movzx   eax, al
-        pop     rbp
-        ret
-
-strls:
-        push    rbp
-        mov     rbp, rsp
-        sub     rsp, 16
-        mov     qword [rbp-8H], rdi
-        mov     qword [rbp-10H], rsi
-        mov     rax, qword [rbp-10H]
-        lea     rdx, [rax+1H]
-        mov     rax, qword [rbp-8H]
-        add     rax, 1
-        mov     rsi, rdx
-        mov     rdi, rax
-        call    strcmp
-        shr     eax, 31
-        movzx   eax, al
-        leave
-        ret
 
 
-strle:
-        push    rbp
-        mov     rbp, rsp
-        sub     rsp, 16
-        mov     qword [rbp-8H], rdi
-        mov     qword [rbp-10H], rsi
-        mov     rax, qword [rbp-10H]
-        lea     rdx, [rax+1H]
-        mov     rax, qword [rbp-8H]
-        add     rax, 1
-        mov     rsi, rdx
-        mov     rdi, rax
-        call    strcmp
-        test    eax, eax
-        setle   al
-        movzx   eax, al
-        leave
-        ret
 
 
-streq:
-        push    rbp
-        mov     rbp, rsp
-        sub     rsp, 16
-        mov     qword [rbp-8H], rdi
-        mov     qword [rbp-10H], rsi
-        mov     rax, qword [rbp-10H]
-        lea     rdx, [rax+1H]
-        mov     rax, qword [rbp-8H]
-        add     rax, 1
-        mov     rsi, rdx
-        mov     rdi, rax
-        call    strcmp
-        test    eax, eax
-        sete    al
-        movzx   eax, al
-        leave
-        ret
+default rel
+
+global main
+
+extern puts
 
 
-strge:
-        push    rbp
-        mov     rbp, rsp
-        sub     rsp, 16
-        mov     qword [rbp-8H], rdi
-        mov     qword [rbp-10H], rsi
-        mov     rax, qword [rbp-10H]
-        lea     rdx, [rax+1H]
-        mov     rax, qword [rbp-8H]
-        add     rax, 1
-        mov     rsi, rdx
-        mov     rdi, rax
-        call    strcmp
-        not     eax
-        shr     eax, 31
-        movzx   eax, al
-        leave
-        ret
-
-
-strgt:
-        push    rbp
-        mov     rbp, rsp
-        sub     rsp, 16
-        mov     qword [rbp-8H], rdi
-        mov     qword [rbp-10H], rsi
-        mov     rax, qword [rbp-10H]
-        lea     rdx, [rax+1H]
-        mov     rax, qword [rbp-8H]
-        add     rax, 1
-        mov     rsi, rdx
-        mov     rdi, rax
-        call    strcmp
-        test    eax, eax
-        setg    al
-        movzx   eax, al
-        leave
-        ret
-
-
-strne:
-        push    rbp
-        mov     rbp, rsp
-        sub     rsp, 16
-        mov     qword [rbp-8H], rdi
-        mov     qword [rbp-10H], rsi
-        mov     rax, qword [rbp-10H]
-        lea     rdx, [rax+1H]
-        mov     rax, qword [rbp-8H]
-        add     rax, 1
-        mov     rsi, rdx
-        mov     rdi, rax
-        call    strcmp
-        test    eax, eax
-        setne   al
-        movzx   eax, al
-        leave
-        ret
-
+SECTION .text   
 
 main:
-	push   rbp
-	mov    rbp, rsp
-	sub    rsp, 1456
-	call global_init
-	mov r8 , rax
-	mov r10,0
-	mov r9,r10
-	mov qword [rsp+8*1],r8
-	mov qword [rsp+8*2],r9
-	
-L_46:
-	mov r8, qword [rsp+8*2]
-	mov r9,100
-	cmp r8,r9
-	mov r10, 0
-	setl r10B
-	mov qword [rsp+8*3],r10
-	mov r8, qword [rsp+8*3]
-	cmp r8, 0
-	je L_47
-	mov r9,0
-	mov r8,r9
-	mov r11,0
-	mov r10,r11
-	mov r13,0
-	mov r12,r13
-	mov r15,5050
-	mov r14,r15
-	mov r11,0
-	mov r9,r11
-	mov qword [rsp+8*4],r8
-	mov qword [gbl+8*8],r9
-	mov qword [rsp+8*5],r10
-	mov qword [rsp+8*6],r12
-	mov qword [gbl+8*7],r14
-	mov     rdi, 101
-	call    mallocArray
-	mov     qword [rsp+8*9], rax
-	mov r9, qword [rsp+8*9]
-	mov r8,r9
-	xor rdx, rdx
-	mov r10, qword [gbl+8*11]
-	mov rax, r10
-	mov r11, qword [gbl+8*12]
-	mov rbx, r11
-	cdq
-	idiv rbx
-	mov r12, rax
-	mov r13,r12
-	xor rdx, rdx
-	mov rax, r10
-	mov rbx, r11
-	cdq
-	idiv rbx
-	mov r14, rdx
-	mov r15,r14
-	mov r12, qword [gbl+8*7]
-	mov r9,r12
-	mov qword [gbl+8*10],r8
-	mov qword [arg+8*0],r9
-	mov qword [gbl+8*14],r13
-	mov qword [rsp+8*15],r14
-	mov qword [gbl+8*16],r15
-	call pd
-	mov r8 , rax
-	mov r9, 0
-	cmp r8, 0
-	sete r9B
-	cmp r9, 0
-	mov qword [rsp+8*18],r8
-	mov qword [rsp+8*19],r9
-	je L_50
-	mov r9,t227
-	mov r8,r9
-	mov r10,r8
-	mov qword [arg+8*0],r8
-	mov qword [rsp+8*20],r10
-	mov rdi,[rsp+8*20] 
-	add rdi, 1 
-	call puts
-	mov r8,1
-	mov rax,r8
-	leave
-	ret
-	
-L_50:
-	mov r9,t232
-	mov r8,r9
-	mov r10,r8
-	mov qword [arg+8*0],r8
-	mov qword [rsp+8*21],r10
-	mov rdi,[rsp+8*21] 
-	add rdi, 1 
-	call puts
-	call random
-	mov r8 , rax
-	mov r9,r8
-	mov qword [rsp+8*22],r8
-	mov qword [arg+8*0],r9
-	call initialize
-	mov r8 , rax
-	mov qword [rsp+8*23],r8
-	call random
-	mov r8 , rax
-	xor rdx, rdx
-	mov rax, r8
-	mov r9,10
-	mov rbx, r9
-	cdq
-	idiv rbx
-	mov r10, rdx
-	mov r11,1
-	mov r12,r10
-	add r12,r11
-	mov r13,r12
-	mov r14,r13
-	mov r15,r14
-	mov qword [rsp+8*24],r8
-	mov qword [rsp+8*25],r10
-	mov qword [rsp+8*26],r12
-	mov qword [gbl+8*27],r13
-	mov qword [arg+8*0],r14
-	mov qword [rsp+8*28],r15
-	mov     rdi, [rsp+8*28]
-	call    toString
-	mov     qword[rsp+8*29], rax
-	mov r9, qword [rsp+8*29]
-	mov r8,r9
-	mov r10,r8
-	mov qword [arg+8*0],r8
-	mov qword [rsp+8*30],r10
-	mov rdi,[rsp+8*30] 
-	add rdi, 1 
-	call puts
-	
-L_51:
-	mov r8, qword [gbl+8*27]
-	mov r9,1
-	mov r10,r8
-	sub r10,r9
-	mov r11, qword [rsp+8*4]
-	cmp r11,r10
-	mov r12, 0
-	setl r12B
-	mov qword [rsp+8*31],r10
-	mov qword [rsp+8*32],r12
-	mov r8, qword [rsp+8*32]
-	cmp r8, 0
-	je L_52
-	call random
-	mov r8 , rax
-	xor rdx, rdx
-	mov rax, r8
-	mov r9,10
-	mov rbx, r9
-	cdq
-	idiv rbx
-	mov r10, rdx
-	mov r11,1
-	mov r12,r10
-	add r12,r11
-	mov r14, qword [gbl+8*10]
-	mov r13,r14
-	mov r15, qword [rsp+8*4]
-	mov qword [rsp+8*33],r8
-	mov r8,r15
-	add r8,1
-	shl r8,4
-	add r8,r13
-	mov [r8],r12
-	mov qword [rsp+8*37],r8
-	mov qword [rsp+8*34],r10
-	mov qword [rsp+8*35],r12
-	mov qword [rsp+8*36],r13
-	
-L_54:
-	mov r9, qword [gbl+8*10]
-	mov r8,r9
-	mov r10, qword [rsp+8*4]
-	mov r11,r10
-	add r11,1
-	shl r11,4
-	add r11,r8
-	mov r12, [r11]
-	mov r13, qword [rsp+8*5]
-	mov r14,r12
-	add r14,r13
-	mov r15, qword [gbl+8*7]
-	cmp r14,r15
-	mov qword [rsp+8*38],r8
-	mov r8, 0
-	setg r8B
-	mov qword [rsp+8*42],r8
-	mov qword [rsp+8*39],r11
-	mov qword [rsp+8*40],r12
-	mov qword [rsp+8*41],r14
-	mov r8, qword [rsp+8*42]
-	cmp r8, 0
-	je L_55
-	call random
-	mov r8 , rax
-	xor rdx, rdx
-	mov rax, r8
-	mov r9,10
-	mov rbx, r9
-	cdq
-	idiv rbx
-	mov r10, rdx
-	mov r11,1
-	mov r12,r10
-	add r12,r11
-	mov r14, qword [gbl+8*10]
-	mov r13,r14
-	mov r15, qword [rsp+8*4]
-	mov qword [rsp+8*43],r8
-	mov r8,r15
-	add r8,1
-	shl r8,4
-	add r8,r13
-	mov [r8],r12
-	mov qword [rsp+8*47],r8
-	mov qword [rsp+8*44],r10
-	mov qword [rsp+8*45],r12
-	mov qword [rsp+8*46],r13
-	jmp L_54
-	
-L_55:
-	mov r9, qword [gbl+8*10]
-	mov r8,r9
-	mov r10, qword [rsp+8*4]
-	mov r11,r10
-	add r11,1
-	shl r11,4
-	add r11,r8
-	mov r12, [r11]
-	mov r13, qword [rsp+8*5]
-	mov r14,r13
-	add r14,r12
-	mov r13,r14
-	mov qword [rsp+8*48],r8
-	mov qword [rsp+8*49],r11
-	mov qword [rsp+8*50],r12
-	mov qword [rsp+8*5],r13
-	mov qword [rsp+8*51],r14
-	
-L_53:
-	mov r8, qword [rsp+8*4]
-	mov r9,1
-	mov r8,r8
-	add r8,r9
-	mov qword [rsp+8*4],r8
-	jmp L_51
-	
-L_52:
-	mov r8, qword [gbl+8*7]
-	mov r9, qword [rsp+8*5]
-	mov r10,r8
-	sub r10,r9
-	mov r11, qword [gbl+8*27]
-	mov r12,1
-	mov r13,r11
-	sub r13,r12
-	mov r15, qword [gbl+8*10]
-	mov r14,r15
-	mov r8,r13
-	add r8,1
-	shl r8,4
-	add r8,r14
-	mov [r8],r10
-	mov qword [rsp+8*55],r8
-	mov qword [rsp+8*52],r10
-	mov qword [rsp+8*53],r13
-	mov qword [rsp+8*54],r14
-	call show
-	mov r8 , rax
-	mov qword [rsp+8*56],r8
-	call merge
-	mov r8 , rax
-	mov qword [rsp+8*57],r8
-	
-L_56:
-	call win
-	mov r8 , rax
-	mov r9, 0
-	cmp r8, 0
-	sete r9B
-	cmp r9, 0
-	mov qword [rsp+8*58],r8
-	mov qword [rsp+8*59],r9
-	je L_57
-	mov r8, qword [rsp+8*6]
-	mov r9,1
-	mov r8,r8
-	add r8,r9
-	mov qword [rsp+8*6],r8
-	call move
-	mov r8 , rax
-	mov qword [rsp+8*60],r8
-	call merge
-	mov r8 , rax
-	mov qword [rsp+8*61],r8
-	jmp L_56
-	
-L_57:
-	mov r9, qword [rsp+8*6]
-	mov r8,r9
-	mov r10,r8
-	mov qword [arg+8*0],r8
-	mov qword [rsp+8*62],r10
-	mov     rdi, [rsp+8*62]
-	call    toString
-	mov     qword[rsp+8*63], rax
-	mov     rsi, [rsp+8*63]
-	mov     rdi, t298
-	call    concat
-	mov [rsp+8*64], rax
-	mov     rsi, t303
-	mov     rdi, [rsp+8*64]
-	call    concat
-	mov [rsp+8*65], rax
-	mov r9, qword [rsp+8*65]
-	mov r8,r9
-	mov r10,r8
-	mov qword [arg+8*0],r8
-	mov qword [rsp+8*66],r10
-	mov rdi,[rsp+8*66] 
-	add rdi, 1 
-	call puts
-	
-L_48:
-	mov r8, qword [rsp+8*2]
-	mov r9,1
-	mov r8,r8
-	add r8,r9
-	mov qword [rsp+8*2],r8
-	jmp L_46
-	
-L_47:
-	mov r8,0
-	mov rax,r8
-	leave
-	ret
-	mov r8,0
-	mov rax,r8
-	leave
-	ret
-	jmp QED
-	
-random:
-	push   rbp
-	mov    rbp, rsp
-	sub    rsp, 1456
-	xor rdx, rdx
-	mov r8, qword [gbl+8*67]
-	mov rax, r8
-	mov r9, qword [gbl+8*14]
-	mov rbx, r9
-	cdq
-	idiv rbx
-	mov r10, rdx
-	mov r11, qword [gbl+8*12]
-	mov r12,r11
-	imul r12,r10
-	xor rdx, rdx
-	mov rax, r8
-	mov rbx, r9
-	cdq
-	idiv rbx
-	mov r13, rax
-	mov r14, qword [gbl+8*16]
-	mov r15,r14
-	imul r15,r13
-	mov r9,r12
-	sub r9,r15
-	mov r10,r9
-	mov r9,0
-	cmp r10,r9
-	mov r12, 0
-	setge r12B
-	mov qword [rsp+8*73],r10
-	mov qword [rsp+8*74],r12
-	mov qword [rsp+8*70],r13
-	mov qword [rsp+8*71],r15
-	mov r8, qword [rsp+8*74]
-	cmp r8, 0
-	je L_0
-	mov r9, qword [rsp+8*73]
-	mov r8,r9
-	mov qword [gbl+8*67],r8
-	jmp L_1
-	
-L_0:
-	mov r8, qword [rsp+8*73]
-	mov r9, qword [gbl+8*11]
-	mov r10,r8
-	add r10,r9
-	mov r11,r10
-	mov qword [rsp+8*75],r10
-	mov qword [gbl+8*67],r11
-	
-L_1:
-	mov r8, qword [gbl+8*67]
-	mov rax,r8
-	leave
-	ret
-	mov r8,0
-	mov rax,r8
-	leave
-	ret
-	
-initialize:
-	push   rbp
-	mov    rbp, rsp
-	sub    rsp, 1456
-	mov r9, qword [arg+8*0]
-	mov r8,r9
-	mov r10,r8
-	mov r11,0
-	mov rax,r11
-	mov qword [rsp+8*76],r8
-	mov qword [gbl+8*67],r10
-	leave
-	ret
-	
-swap:
-	push   rbp
-	mov    rbp, rsp
-	sub    rsp, 1456
-	mov r9, qword [arg+8*0]
-	mov r8,r9
-	mov r11, qword [arg+8*1]
-	mov r10,r11
-	mov r13, qword [gbl+8*10]
-	mov r12,r13
-	mov r14,r8
-	add r14,1
-	shl r14,4
-	add r14,r12
-	mov r15, [r14]
-	mov qword [rsp+8*80],r12
-	mov r12,r15
-	mov qword [rsp+8*81],r14
-	mov r14,r13
-	mov qword [rsp+8*82],r15
-	mov r15,r10
-	add r15,1
-	shl r15,4
-	add r15,r14
-	mov qword [rsp+8*84],r14
-	mov r14, [r15]
-	mov qword [rsp+8*85],r15
-	mov r15,r13
-	mov r13,r8
-	add r13,1
-	shl r13,4
-	add r13,r15
-	mov [r13],r14
-	mov qword [rsp+8*77],r8
-	mov qword [rsp+8*88],r13
-	mov r13, qword [gbl+8*10]
-	mov r8,r13
-	mov qword [rsp+8*86],r14
-	mov r14,r10
-	add r14,1
-	shl r14,4
-	add r14,r8
-	mov [r14],r12
-	mov qword [rsp+8*89],r8
-	mov r8,0
-	mov rax,r8
-	mov qword [rsp+8*79],r10
-	mov qword [rsp+8*83],r12
-	mov qword [rsp+8*90],r14
-	mov qword [rsp+8*87],r15
-	leave
-	ret
-	
-pd:
-	push   rbp
-	mov    rbp, rsp
-	sub    rsp, 1456
-	mov r9, qword [arg+8*0]
-	mov r8,r9
-	mov qword [rsp+8*91],r8
-	
-L_2:
-	mov r8, qword [gbl+8*8]
-	mov r9, qword [rsp+8*91]
-	cmp r8,r9
-	mov r10, 0
-	setle r10B
-	mov qword [rsp+8*92],r10
-	mov r8, qword [rsp+8*92]
-	cmp r8, 0
-	je L_3
-	mov r8, qword [gbl+8*8]
-	mov r9,1
-	mov r10,r8
-	add r10,r9
-	mov r11,r8
-	imul r11,r10
-	xor rdx, rdx
-	mov rax, r11
-	mov r12,2
-	mov rbx, r12
-	cdq
-	idiv rbx
-	mov r13, rax
-	mov r14, qword [rsp+8*91]
-	cmp r14,r13
-	mov r15, 0
-	sete r15B
-	mov qword [rsp+8*93],r10
-	mov qword [rsp+8*94],r11
-	mov qword [rsp+8*95],r13
-	mov qword [rsp+8*96],r15
-	mov r8, qword [rsp+8*96]
-	cmp r8, 0
-	je L_6
-	mov r8,1
-	mov rax,r8
-	leave
-	ret
-	
-L_6:
-	
-L_4:
-	mov r8, qword [gbl+8*8]
-	mov r9,1
-	mov r8,r8
-	add r8,r9
-	mov qword [gbl+8*8],r8
-	jmp L_2
-	
-L_3:
-	mov r8,0
-	mov rax,r8
-	leave
-	ret
-	mov r8,0
-	mov rax,r8
-	leave
-	ret
-	
-show:
-	push   rbp
-	mov    rbp, rsp
-	sub    rsp, 1456
-	mov r9,0
-	mov r8,r9
-	mov qword [rsp+8*97],r8
-	
-L_7:
-	mov r8, qword [rsp+8*97]
-	mov r9, qword [gbl+8*27]
-	cmp r8,r9
-	mov r10, 0
-	setl r10B
-	mov qword [rsp+8*98],r10
-	mov r8, qword [rsp+8*98]
-	cmp r8, 0
-	je L_8
-	mov r9, qword [gbl+8*10]
-	mov r8,r9
-	mov r10, qword [rsp+8*97]
-	mov r11,r10
-	add r11,1
-	shl r11,4
-	add r11,r8
-	mov r12, [r11]
-	mov r13,r12
-	mov r14,r13
-	mov qword [rsp+8*99],r8
-	mov qword [rsp+8*100],r11
-	mov qword [rsp+8*101],r12
-	mov qword [arg+8*0],r13
-	mov qword [rsp+8*102],r14
-	mov     rdi, [rsp+8*102]
-	call    toString
-	mov     qword[rsp+8*103], rax
-	mov     rsi, t108
-	mov     rdi, [rsp+8*103]
-	call    concat
-	mov [rsp+8*104], rax
-	mov r9, qword [rsp+8*104]
-	mov r8,r9
-	mov r10,r8
-	mov qword [arg+8*0],r8
-	mov qword [rsp+8*105],r10
-	mov rdi, format
-	mov rsi,[rsp+8*105] 
-	add rsi, 1 
-	xor rax, rax
-	call printf
-	
-L_9:
-	mov r8, qword [rsp+8*97]
-	mov r9,1
-	mov r8,r8
-	add r8,r9
-	mov qword [rsp+8*97],r8
-	jmp L_7
-	
-L_8:
-	mov r9,t113
-	mov r8,r9
-	mov r10,r8
-	mov qword [arg+8*0],r8
-	mov qword [rsp+8*106],r10
-	mov rdi,[rsp+8*106] 
-	add rdi, 1 
-	call puts
-	mov r8,0
-	mov rax,r8
-	leave
-	ret
-	
-win:
-	push   rbp
-	mov    rbp, rsp
-	sub    rsp, 1456
-	mov     rdi, 101
-	call    mallocArray
-	mov     qword [rsp+8*107], rax
-	mov r9, qword [rsp+8*107]
-	mov r8,r9
-	mov r10, qword [gbl+8*27]
-	mov r11, qword [gbl+8*8]
-	cmp r10,r11
-	mov r12, 0
-	setne r12B
-	mov qword [rsp+8*108],r8
-	mov qword [rsp+8*109],r12
-	mov r8, qword [rsp+8*109]
-	cmp r8, 0
-	je L_11
-	mov r8,0
-	mov rax,r8
-	leave
-	ret
-	
-L_11:
-	mov r9,0
-	mov r8,r9
-	mov qword [rsp+8*110],r8
-	
-L_12:
-	mov r8, qword [rsp+8*110]
-	mov r9, qword [gbl+8*27]
-	cmp r8,r9
-	mov r10, 0
-	setl r10B
-	mov qword [rsp+8*111],r10
-	mov r8, qword [rsp+8*111]
-	cmp r8, 0
-	je L_13
-	mov r9, qword [gbl+8*10]
-	mov r8,r9
-	mov r10, qword [rsp+8*110]
-	mov r11,r10
-	add r11,1
-	shl r11,4
-	add r11,r8
-	mov r12, [r11]
-	mov r14, qword [rsp+8*108]
-	mov r13,r14
-	mov r15,r10
-	add r15,1
-	shl r15,4
-	add r15,r13
-	mov [r15],r12
-	mov qword [rsp+8*112],r8
-	mov qword [rsp+8*113],r11
-	mov qword [rsp+8*114],r12
-	mov qword [rsp+8*115],r13
-	mov qword [rsp+8*116],r15
-	
-L_14:
-	mov r8, qword [rsp+8*110]
-	mov r9,1
-	mov r8,r8
-	add r8,r9
-	mov qword [rsp+8*110],r8
-	jmp L_12
-	
-L_13:
-	mov r9,0
-	mov r8,r9
-	mov qword [rsp+8*117],r8
-	
-L_15:
-	mov r8, qword [gbl+8*27]
-	mov r9,1
-	mov r10,r8
-	sub r10,r9
-	mov r11, qword [rsp+8*117]
-	cmp r11,r10
-	mov r12, 0
-	setl r12B
-	mov qword [rsp+8*118],r10
-	mov qword [rsp+8*119],r12
-	mov r8, qword [rsp+8*119]
-	cmp r8, 0
-	je L_16
-	mov r8, qword [rsp+8*117]
-	mov r9,1
-	mov r10,r8
-	add r10,r9
-	mov r11,r10
-	mov qword [rsp+8*120],r10
-	mov qword [rsp+8*110],r11
-	
-L_18:
-	mov r8, qword [rsp+8*110]
-	mov r9, qword [gbl+8*27]
-	cmp r8,r9
-	mov r10, 0
-	setl r10B
-	mov qword [rsp+8*121],r10
-	mov r8, qword [rsp+8*121]
-	cmp r8, 0
-	je L_19
-	mov r9, qword [rsp+8*108]
-	mov r8,r9
-	mov r10, qword [rsp+8*117]
-	mov r11,r10
-	add r11,1
-	shl r11,4
-	add r11,r8
-	mov r12, [r11]
-	mov r13,r9
-	mov r14, qword [rsp+8*110]
-	mov r15,r14
-	add r15,1
-	shl r15,4
-	add r15,r13
-	mov qword [rsp+8*122],r8
-	mov r8, [r15]
-	cmp r12,r8
-	mov qword [rsp+8*123],r11
-	mov r11, 0
-	setg r11B
-	mov qword [rsp+8*127],r8
-	mov qword [rsp+8*128],r11
-	mov qword [rsp+8*124],r12
-	mov qword [rsp+8*125],r13
-	mov qword [rsp+8*126],r15
-	mov r8, qword [rsp+8*128]
-	cmp r8, 0
-	je L_22
-	mov r9, qword [rsp+8*108]
-	mov r8,r9
-	mov r10, qword [rsp+8*117]
-	mov r11,r10
-	add r11,1
-	shl r11,4
-	add r11,r8
-	mov r12, [r11]
-	mov r13,r12
-	mov r14,r9
-	mov r15, qword [rsp+8*110]
-	mov qword [rsp+8*129],r8
-	mov r8,r15
-	add r8,1
-	shl r8,4
-	add r8,r14
-	mov qword [rsp+8*130],r11
-	mov r11, [r8]
-	mov qword [rsp+8*134],r8
-	mov r8,r9
-	mov qword [rsp+8*131],r12
-	mov r12,r10
-	add r12,1
-	shl r12,4
-	add r12,r8
-	mov [r12],r11
-	mov qword [rsp+8*136],r8
-	mov r8,r9
-	mov qword [rsp+8*135],r11
-	mov r11,r15
-	add r11,1
-	shl r11,4
-	add r11,r8
-	mov [r11],r13
-	mov qword [rsp+8*138],r8
-	mov qword [rsp+8*139],r11
-	mov qword [rsp+8*137],r12
-	mov qword [rsp+8*132],r13
-	mov qword [rsp+8*133],r14
-	
-L_22:
-	
-L_20:
-	mov r8, qword [rsp+8*110]
-	mov r9,1
-	mov r8,r8
-	add r8,r9
-	mov qword [rsp+8*110],r8
-	jmp L_18
-	
-L_19:
-	
-L_17:
-	mov r8, qword [rsp+8*117]
-	mov r9,1
-	mov r8,r8
-	add r8,r9
-	mov qword [rsp+8*117],r8
-	jmp L_15
-	
-L_16:
-	mov r9,0
-	mov r8,r9
-	mov qword [rsp+8*117],r8
-	
-L_23:
-	mov r8, qword [rsp+8*117]
-	mov r9, qword [gbl+8*27]
-	cmp r8,r9
-	mov r10, 0
-	setl r10B
-	mov qword [rsp+8*140],r10
-	mov r8, qword [rsp+8*140]
-	cmp r8, 0
-	je L_24
-	mov r9, qword [rsp+8*108]
-	mov r8,r9
-	mov r10, qword [rsp+8*117]
-	mov r11,r10
-	add r11,1
-	shl r11,4
-	add r11,r8
-	mov r12, [r11]
-	mov r13,1
-	mov r14,r10
-	add r14,r13
-	cmp r12,r14
-	mov r15, 0
-	setne r15B
-	mov qword [rsp+8*141],r8
-	mov qword [rsp+8*142],r11
-	mov qword [rsp+8*143],r12
-	mov qword [rsp+8*144],r14
-	mov qword [rsp+8*145],r15
-	mov r8, qword [rsp+8*145]
-	cmp r8, 0
-	je L_27
-	mov r8,0
-	mov rax,r8
-	leave
-	ret
-	
-L_27:
-	
-L_25:
-	mov r8, qword [rsp+8*117]
-	mov r9,1
-	mov r8,r8
-	add r8,r9
-	mov qword [rsp+8*117],r8
-	jmp L_23
-	
-L_24:
-	mov r8,1
-	mov rax,r8
-	leave
-	ret
-	mov r8,0
-	mov rax,r8
-	leave
-	ret
-	
-merge:
-	push   rbp
-	mov    rbp, rsp
-	sub    rsp, 1456
-	mov r9,0
-	mov r8,r9
-	mov qword [rsp+8*146],r8
-	
-L_28:
-	mov r8, qword [rsp+8*146]
-	mov r9, qword [gbl+8*27]
-	cmp r8,r9
-	mov r10, 0
-	setl r10B
-	mov qword [rsp+8*147],r10
-	mov r8, qword [rsp+8*147]
-	cmp r8, 0
-	je L_29
-	mov r9, qword [gbl+8*10]
-	mov r8,r9
-	mov r10, qword [rsp+8*146]
-	mov r11,r10
-	add r11,1
-	shl r11,4
-	add r11,r8
-	mov r12, [r11]
-	mov r13,0
-	cmp r12,r13
-	mov r14, 0
-	sete r14B
-	mov qword [rsp+8*148],r8
-	mov qword [rsp+8*149],r11
-	mov qword [rsp+8*150],r12
-	mov qword [rsp+8*151],r14
-	mov r8, qword [rsp+8*151]
-	cmp r8, 0
-	je L_32
-	mov r8, qword [rsp+8*146]
-	mov r9,1
-	mov r10,r8
-	add r10,r9
-	mov r11,r10
-	mov qword [rsp+8*152],r10
-	mov qword [rsp+8*153],r11
-	
-L_33:
-	mov r8, qword [rsp+8*153]
-	mov r9, qword [gbl+8*27]
-	cmp r8,r9
-	mov r10, 0
-	setl r10B
-	mov qword [rsp+8*154],r10
-	mov r8, qword [rsp+8*154]
-	cmp r8, 0
-	je L_34
-	mov r9, qword [gbl+8*10]
-	mov r8,r9
-	mov r10, qword [rsp+8*153]
-	mov r11,r10
-	add r11,1
-	shl r11,4
-	add r11,r8
-	mov r12, [r11]
-	mov r13,0
-	cmp r12,r13
-	mov r14, 0
-	setne r14B
-	mov qword [rsp+8*155],r8
-	mov qword [rsp+8*156],r11
-	mov qword [rsp+8*157],r12
-	mov qword [rsp+8*158],r14
-	mov r8, qword [rsp+8*158]
-	cmp r8, 0
-	je L_37
-	mov r9, qword [rsp+8*153]
-	mov r8,r9
-	mov r11, qword [rsp+8*146]
-	mov r10,r11
-	mov qword [arg+8*1],r8
-	mov qword [arg+8*0],r10
-	call swap
-	mov r8 , rax
-	mov qword [rsp+8*159],r8
-	jmp L_34
-	
-L_37:
-	
-L_35:
-	mov r8, qword [rsp+8*153]
-	mov r9,1
-	mov r8,r8
-	add r8,r9
-	mov qword [rsp+8*153],r8
-	jmp L_33
-	
-L_34:
-	
-L_32:
-	
-L_30:
-	mov r8, qword [rsp+8*146]
-	mov r9,1
-	mov r8,r8
-	add r8,r9
-	mov qword [rsp+8*146],r8
-	jmp L_28
-	
-L_29:
-	mov r9,0
-	mov r8,r9
-	mov qword [rsp+8*146],r8
-	
-L_38:
-	mov r8, qword [rsp+8*146]
-	mov r9, qword [gbl+8*27]
-	cmp r8,r9
-	mov r10, 0
-	setl r10B
-	mov qword [rsp+8*160],r10
-	mov r8, qword [rsp+8*160]
-	cmp r8, 0
-	je L_39
-	mov r9, qword [gbl+8*10]
-	mov r8,r9
-	mov r10, qword [rsp+8*146]
-	mov r11,r10
-	add r11,1
-	shl r11,4
-	add r11,r8
-	mov r12, [r11]
-	mov r13,0
-	cmp r12,r13
-	mov r14, 0
-	sete r14B
-	mov qword [rsp+8*161],r8
-	mov qword [rsp+8*162],r11
-	mov qword [rsp+8*163],r12
-	mov qword [rsp+8*164],r14
-	mov r8, qword [rsp+8*164]
-	cmp r8, 0
-	je L_42
-	mov r9, qword [rsp+8*146]
-	mov r8,r9
-	mov qword [gbl+8*27],r8
-	jmp L_39
-	
-L_42:
-	
-L_40:
-	mov r8, qword [rsp+8*146]
-	mov r9,1
-	mov r8,r8
-	add r8,r9
-	mov qword [rsp+8*146],r8
-	jmp L_38
-	
-L_39:
-	mov r8,0
-	mov rax,r8
-	leave
-	ret
-	
-move:
-	push   rbp
-	mov    rbp, rsp
-	sub    rsp, 1456
-	mov r9,0
-	mov r8,r9
-	mov qword [rsp+8*165],r8
-	
-L_43:
-	mov r8, qword [rsp+8*165]
-	mov r9, qword [gbl+8*27]
-	cmp r8,r9
-	mov r10, 0
-	setl r10B
-	mov qword [rsp+8*166],r10
-	mov r8, qword [rsp+8*166]
-	cmp r8, 0
-	je L_44
-	mov r9, qword [gbl+8*10]
-	mov r8,r9
-	mov r10, qword [rsp+8*165]
-	mov r11,r10
-	add r11,1
-	shl r11,4
-	add r11,r8
-	mov r12, [r11]
-	mov r13,1
-	mov r12,r12
-	sub r12,r13
-	mov [r11],r12
-	mov r14,1
-	mov r15,r10
-	add r15,r14
-	mov r10,r15
-	mov qword [rsp+8*167],r8
-	mov qword [rsp+8*165],r10
-	mov qword [rsp+8*168],r11
-	mov qword [rsp+8*169],r12
-	mov qword [rsp+8*170],r15
-	
-L_45:
-	jmp L_43
-	
-L_44:
-	mov r9, qword [gbl+8*10]
-	mov r8,r9
-	mov r10, qword [gbl+8*27]
-	mov r11,r10
-	add r11,1
-	shl r11,4
-	add r11,r8
-	mov [r11],r10
-	mov r12,r10
-	mov r13,1
-	mov r10,r10
-	add r10,r13
-	mov r14,0
-	mov rax,r14
-	mov qword [rsp+8*171],r8
-	mov qword [gbl+8*27],r10
-	mov qword [rsp+8*172],r11
-	mov qword [rsp+8*173],r12
-	leave
-	ret
-	
-global_init:
-	push   rbp
-	mov    rbp, rsp
-	sub    rsp, 1456
-	mov r9,48271
-	mov r8,r9
-	mov r11,2147483647
-	mov r10,r11
-	mov r13,1
-	mov r12,r13
-	mov qword [gbl+8*12],r8
-	mov qword [gbl+8*11],r10
-	mov qword [gbl+8*67],r12
-	mov r8, qword [rsp+8*174]
-	mov rax,r8
-	leave
-	ret
-	
-QED:
-	
-	 section   .bss
-gbl:         resb   3440
-buff.1788:
-        resb    256
-arg:
-        resb    1024
+        push    rbp
+        mov     rbp, rsp
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_002
+        call    puts
+        mov     edi, L_003
+        call    puts
+        mov     edi, L_004
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_005
+        call    puts
+        mov     edi, L_006
+        call    puts
+        mov     edi, L_007
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_008
+        call    puts
+        mov     edi, L_009
+        call    puts
+        mov     edi, L_010
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_005
+        call    puts
+        mov     edi, L_011
+        call    puts
+        mov     edi, L_012
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_013
+        call    puts
+        mov     edi, L_014
+        call    puts
+        mov     edi, L_015
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_005
+        call    puts
+        mov     edi, L_016
+        call    puts
+        mov     edi, L_017
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_018
+        call    puts
+        mov     edi, L_019
+        call    puts
+        mov     edi, L_020
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_021
+        call    puts
+        mov     edi, L_022
+        call    puts
+        mov     edi, L_023
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_024
+        call    puts
+        mov     edi, L_025
+        call    puts
+        mov     edi, L_026
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_027
+        call    puts
+        mov     edi, L_028
+        call    puts
+        mov     edi, L_029
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_018
+        call    puts
+        mov     edi, L_030
+        call    puts
+        mov     edi, L_031
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_024
+        call    puts
+        mov     edi, L_032
+        call    puts
+        mov     edi, L_033
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_002
+        call    puts
+        mov     edi, L_034
+        call    puts
+        mov     edi, L_035
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_027
+        call    puts
+        mov     edi, L_036
+        call    puts
+        mov     edi, L_012
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_027
+        call    puts
+        mov     edi, L_037
+        call    puts
+        mov     edi, L_038
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_039
+        call    puts
+        mov     edi, L_040
+        call    puts
+        mov     edi, L_041
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_008
+        call    puts
+        mov     edi, L_042
+        call    puts
+        mov     edi, L_043
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_039
+        call    puts
+        mov     edi, L_044
+        call    puts
+        mov     edi, L_045
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_021
+        call    puts
+        mov     edi, L_046
+        call    puts
+        mov     edi, L_047
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_039
+        call    puts
+        mov     edi, L_048
+        call    puts
+        mov     edi, L_049
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_005
+        call    puts
+        mov     edi, L_050
+        call    puts
+        mov     edi, L_051
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_013
+        call    puts
+        mov     edi, L_014
+        call    puts
+        mov     edi, L_015
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_018
+        call    puts
+        mov     edi, L_052
+        call    puts
+        mov     edi, L_020
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_039
+        call    puts
+        mov     edi, L_053
+        call    puts
+        mov     edi, L_054
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_018
+        call    puts
+        mov     edi, L_055
+        call    puts
+        mov     edi, L_056
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_002
+        call    puts
+        mov     edi, L_057
+        call    puts
+        mov     edi, L_058
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_008
+        call    puts
+        mov     edi, L_059
+        call    puts
+        mov     edi, L_060
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_018
+        call    puts
+        mov     edi, L_061
+        call    puts
+        mov     edi, L_041
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_021
+        call    puts
+        mov     edi, L_062
+        call    puts
+        mov     edi, L_063
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_008
+        call    puts
+        mov     edi, L_064
+        call    puts
+        mov     edi, L_035
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_002
+        call    puts
+        mov     edi, L_065
+        call    puts
+        mov     edi, L_066
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_005
+        call    puts
+        mov     edi, L_067
+        call    puts
+        mov     edi, L_068
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_005
+        call    puts
+        mov     edi, L_069
+        call    puts
+        mov     edi, L_012
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_005
+        call    puts
+        mov     edi, L_070
+        call    puts
+        mov     edi, L_060
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_013
+        call    puts
+        mov     edi, L_014
+        call    puts
+        mov     edi, L_015
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_024
+        call    puts
+        mov     edi, L_071
+        call    puts
+        mov     edi, L_072
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_018
+        call    puts
+        mov     edi, L_073
+        call    puts
+        mov     edi, L_074
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_075
+        call    puts
+        mov     edi, L_076
+        call    puts
+        mov     edi, L_077
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_021
+        call    puts
+        mov     edi, L_078
+        call    puts
+        mov     edi, L_079
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_075
+        call    puts
+        mov     edi, L_080
+        call    puts
+        mov     edi, L_081
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_008
+        call    puts
+        mov     edi, L_082
+        call    puts
+        mov     edi, L_083
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_013
+        call    puts
+        mov     edi, L_014
+        call    puts
+        mov     edi, L_015
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_027
+        call    puts
+        mov     edi, L_084
+        call    puts
+        mov     edi, L_012
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_008
+        call    puts
+        mov     edi, L_085
+        call    puts
+        mov     edi, L_086
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_075
+        call    puts
+        mov     edi, L_087
+        call    puts
+        mov     edi, L_088
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_005
+        call    puts
+        mov     edi, L_089
+        call    puts
+        mov     edi, L_090
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_008
+        call    puts
+        mov     edi, L_091
+        call    puts
+        mov     edi, L_060
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_075
+        call    puts
+        mov     edi, L_092
+        call    puts
+        mov     edi, L_093
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_002
+        call    puts
+        mov     edi, L_094
+        call    puts
+        mov     edi, L_095
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_021
+        call    puts
+        mov     edi, L_096
+        call    puts
+        mov     edi, L_097
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_039
+        call    puts
+        mov     edi, L_098
+        call    puts
+        mov     edi, L_099
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_018
+        call    puts
+        mov     edi, L_100
+        call    puts
+        mov     edi, L_101
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_005
+        call    puts
+        mov     edi, L_102
+        call    puts
+        mov     edi, L_007
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_018
+        call    puts
+        mov     edi, L_103
+        call    puts
+        mov     edi, L_104
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_013
+        call    puts
+        mov     edi, L_014
+        call    puts
+        mov     edi, L_015
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_002
+        call    puts
+        mov     edi, L_105
+        call    puts
+        mov     edi, L_012
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_024
+        call    puts
+        mov     edi, L_106
+        call    puts
+        mov     edi, L_033
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_027
+        call    puts
+        mov     edi, L_107
+        call    puts
+        mov     edi, L_108
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_024
+        call    puts
+        mov     edi, L_109
+        call    puts
+        mov     edi, L_110
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_018
+        call    puts
+        mov     edi, L_111
+        call    puts
+        mov     edi, L_112
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_024
+        call    puts
+        mov     edi, L_113
+        call    puts
+        mov     edi, L_114
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_027
+        call    puts
+        mov     edi, L_115
+        call    puts
+        mov     edi, L_116
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_008
+        call    puts
+        mov     edi, L_117
+        call    puts
+        mov     edi, L_118
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_002
+        call    puts
+        mov     edi, L_119
+        call    puts
+        mov     edi, L_120
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_075
+        call    puts
+        mov     edi, L_121
+        call    puts
+        mov     edi, L_122
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_002
+        call    puts
+        mov     edi, L_123
+        call    puts
+        mov     edi, L_124
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_024
+        call    puts
+        mov     edi, L_071
+        call    puts
+        mov     edi, L_072
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_005
+        call    puts
+        mov     edi, L_125
+        call    puts
+        mov     edi, L_051
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_002
+        call    puts
+        mov     edi, L_126
+        call    puts
+        mov     edi, L_090
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_027
+        call    puts
+        mov     edi, L_127
+        call    puts
+        mov     edi, L_120
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_021
+        call    puts
+        mov     edi, L_128
+        call    puts
+        mov     edi, L_129
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_024
+        call    puts
+        mov     edi, L_106
+        call    puts
+        mov     edi, L_033
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_005
+        call    puts
+        mov     edi, L_130
+        call    puts
+        mov     edi, L_131
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_013
+        call    puts
+        mov     edi, L_014
+        call    puts
+        mov     edi, L_015
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_039
+        call    puts
+        mov     edi, L_132
+        call    puts
+        mov     edi, L_133
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_013
+        call    puts
+        mov     edi, L_014
+        call    puts
+        mov     edi, L_015
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_002
+        call    puts
+        mov     edi, L_134
+        call    puts
+        mov     edi, L_135
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_002
+        call    puts
+        mov     edi, L_136
+        call    puts
+        mov     edi, L_137
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_075
+        call    puts
+        mov     edi, L_138
+        call    puts
+        mov     edi, L_139
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_013
+        call    puts
+        mov     edi, L_014
+        call    puts
+        mov     edi, L_015
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_021
+        call    puts
+        mov     edi, L_140
+        call    puts
+        mov     edi, L_141
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_024
+        call    puts
+        mov     edi, L_113
+        call    puts
+        mov     edi, L_114
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_008
+        call    puts
+        mov     edi, L_142
+        call    puts
+        mov     edi, L_047
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_075
+        call    puts
+        mov     edi, L_143
+        call    puts
+        mov     edi, L_144
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_005
+        call    puts
+        mov     edi, L_145
+        call    puts
+        mov     edi, L_146
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_018
+        call    puts
+        mov     edi, L_147
+        call    puts
+        mov     edi, L_148
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_018
+        call    puts
+        mov     edi, L_149
+        call    puts
+        mov     edi, L_150
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_021
+        call    puts
+        mov     edi, L_151
+        call    puts
+        mov     edi, L_058
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_021
+        call    puts
+        mov     edi, L_152
+        call    puts
+        mov     edi, L_110
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_002
+        call    puts
+        mov     edi, L_153
+        call    puts
+        mov     edi, L_012
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_075
+        call    puts
+        mov     edi, L_154
+        call    puts
+        mov     edi, L_155
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_002
+        call    puts
+        mov     edi, L_156
+        call    puts
+        mov     edi, L_020
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_005
+        call    puts
+        mov     edi, L_157
+        call    puts
+        mov     edi, L_158
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_039
+        call    puts
+        mov     edi, L_159
+        call    puts
+        mov     edi, L_160
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_018
+        call    puts
+        mov     edi, L_161
+        call    puts
+        mov     edi, L_020
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_021
+        call    puts
+        mov     edi, L_162
+        call    puts
+        mov     edi, L_047
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_021
+        call    puts
+        mov     edi, L_163
+        call    puts
+        mov     edi, L_129
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_008
+        call    puts
+        mov     edi, L_164
+        call    puts
+        mov     edi, L_165
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_013
+        call    puts
+        mov     edi, L_014
+        call    puts
+        mov     edi, L_015
+        call    puts
+        mov     edi, L_001
+        call    puts
+        mov     edi, L_024
+        call    puts
+        mov     edi, L_071
+        call    puts
+        mov     edi, L_072
+        call    puts
+        pop     rbp
+        ret
 
-	 section   .data
 
-formatln:
-	db  "%s", 10, 0
-	
-format:
-	db  "%s",  0
-	
-GS_31:
-	db 25H, 6CH, 64H, 00H
-	
-GS_32:
-	db 25H, 73H, 00H
-	
-t108:
-	 db 1," " ,0
 
-t227:
-	 db 79,"Sorry, the number n must be a number s.t. there exists i satisfying n=1+2+...+i" ,0
+SECTION .data   
 
-t303:
-	 db 8," step(s)" ,0
 
-t232:
-	 db 12,"Let's start!" ,0
+SECTION .bss    
 
-t298:
-	 db 7,"Total: " ,0
 
-t113:
-	 db 0,"" ,0
+SECTION .rodata 
+
+L_001:
+        db 4CH, 65H, 74H, 27H, 73H, 20H, 73H, 74H
+        db 61H, 72H, 74H, 21H, 00H
+
+L_002:
+        db 35H, 00H
+
+L_003:
+        db 37H, 20H, 38H, 20H, 32H, 20H, 34H, 20H
+        db 35H, 30H, 32H, 39H, 20H, 00H
+
+L_004:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 33H, 33H, 32H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_005:
+        db 36H, 00H
+
+L_006:
+        db 32H, 20H, 32H, 20H, 32H, 20H, 38H, 20H
+        db 38H, 20H, 35H, 30H, 32H, 38H, 20H, 00H
+
+L_007:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 34H, 33H, 33H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_008:
+        db 34H, 00H
+
+L_009:
+        db 31H, 30H, 20H, 31H, 30H, 20H, 35H, 20H
+        db 35H, 30H, 32H, 35H, 20H, 00H
+
+L_010:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 34H, 32H, 38H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_011:
+        db 33H, 20H, 36H, 20H, 31H, 20H, 38H, 20H
+        db 38H, 20H, 35H, 30H, 32H, 34H, 20H, 00H
+
+L_012:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 35H, 32H, 36H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_013:
+        db 31H, 00H
+
+L_014:
+        db 35H, 30H, 35H, 30H, 20H, 00H
+
+L_015:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 34H
+        db 39H, 35H, 30H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_016:
+        db 38H, 20H, 34H, 20H, 33H, 20H, 38H, 20H
+        db 35H, 20H, 35H, 30H, 32H, 32H, 20H, 00H
+
+L_017:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 32H, 32H, 34H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_018:
+        db 38H, 00H
+
+L_019:
+        db 37H, 20H, 32H, 20H, 38H, 20H, 36H, 20H
+        db 33H, 20H, 33H, 20H, 38H, 20H, 35H, 30H
+        db 31H, 33H, 20H, 00H
+
+L_020:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 36H, 31H, 38H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_021:
+        db 33H, 00H
+
+L_022:
+        db 34H, 20H, 32H, 20H, 35H, 30H, 34H, 34H
+        db 20H, 00H
+
+L_023:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 30H, 34H, 35H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_024:
+        db 32H, 00H
+
+L_025:
+        db 31H, 20H, 35H, 30H, 34H, 39H, 20H, 00H
+
+L_026:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 34H
+        db 39H, 34H, 39H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_027:
+        db 37H, 00H
+
+L_028:
+        db 36H, 20H, 31H, 30H, 20H, 35H, 20H, 36H
+        db 20H, 35H, 20H, 34H, 20H, 35H, 30H, 31H
+        db 34H, 20H, 00H
+
+L_029:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 36H, 31H, 36H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_030:
+        db 35H, 20H, 31H, 30H, 20H, 36H, 20H, 31H
+        db 30H, 20H, 39H, 20H, 32H, 20H, 39H, 20H
+        db 34H, 39H, 39H, 39H, 20H, 00H
+
+L_031:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 34H
+        db 38H, 39H, 39H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_032:
+        db 37H, 20H, 35H, 30H, 34H, 33H, 20H, 00H
+
+L_033:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 31H, 34H, 34H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_034:
+        db 31H, 20H, 38H, 20H, 38H, 20H, 35H, 20H
+        db 35H, 30H, 32H, 38H, 20H, 00H
+
+L_035:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 34H, 33H, 32H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_036:
+        db 32H, 20H, 31H, 20H, 31H, 30H, 20H, 37H
+        db 20H, 38H, 20H, 31H, 20H, 35H, 30H, 32H
+        db 31H, 20H, 00H
+
+L_037:
+        db 34H, 20H, 34H, 20H, 31H, 20H, 33H, 20H
+        db 31H, 30H, 20H, 35H, 20H, 35H, 30H, 32H
+        db 33H, 20H, 00H
+
+L_038:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 35H, 32H, 38H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_039:
+        db 39H, 00H
+
+L_040:
+        db 37H, 20H, 32H, 20H, 31H, 30H, 20H, 39H
+        db 20H, 39H, 20H, 38H, 20H, 31H, 30H, 20H
+        db 34H, 20H, 34H, 39H, 39H, 31H, 20H, 00H
+
+L_041:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 36H, 39H, 38H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_042:
+        db 31H, 30H, 20H, 31H, 20H, 39H, 20H, 35H
+        db 30H, 33H, 30H, 20H, 00H
+
+L_043:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 32H, 33H, 33H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_044:
+        db 36H, 20H, 36H, 20H, 36H, 20H, 32H, 20H
+        db 38H, 20H, 36H, 20H, 39H, 20H, 38H, 20H
+        db 34H, 39H, 39H, 39H, 20H, 00H
+
+L_045:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 36H, 30H, 36H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_046:
+        db 31H, 30H, 20H, 35H, 20H, 35H, 30H, 33H
+        db 35H, 20H, 00H
+
+L_047:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 33H, 33H, 36H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_048:
+        db 36H, 20H, 31H, 20H, 35H, 20H, 32H, 20H
+        db 39H, 20H, 35H, 20H, 31H, 20H, 31H, 20H
+        db 35H, 30H, 32H, 30H, 20H, 00H
+
+L_049:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 31H, 32H, 31H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_050:
+        db 39H, 20H, 35H, 20H, 37H, 20H, 37H, 20H
+        db 39H, 20H, 35H, 30H, 31H, 33H, 20H, 00H
+
+L_051:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 36H, 31H, 37H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_052:
+        db 31H, 30H, 20H, 33H, 20H, 33H, 20H, 37H
+        db 20H, 31H, 20H, 37H, 20H, 38H, 20H, 35H
+        db 30H, 31H, 31H, 20H, 00H
+
+L_053:
+        db 37H, 20H, 39H, 20H, 32H, 20H, 32H, 20H
+        db 35H, 20H, 31H, 30H, 20H, 38H, 20H, 34H
+        db 20H, 35H, 30H, 30H, 33H, 20H, 00H
+
+L_054:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 35H, 30H, 38H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_055:
+        db 36H, 20H, 35H, 20H, 31H, 20H, 38H, 20H
+        db 34H, 20H, 31H, 20H, 38H, 20H, 35H, 30H
+        db 31H, 37H, 20H, 00H
+
+L_056:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 34H
+        db 39H, 31H, 37H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_057:
+        db 31H, 30H, 20H, 34H, 20H, 33H, 20H, 32H
+        db 20H, 35H, 30H, 33H, 31H, 20H, 00H
+
+L_058:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 33H, 33H, 34H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_059:
+        db 38H, 20H, 36H, 20H, 31H, 30H, 20H, 35H
+        db 30H, 32H, 36H, 20H, 00H
+
+L_060:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 34H
+        db 39H, 32H, 36H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_061:
+        db 38H, 20H, 34H, 20H, 39H, 20H, 38H, 20H
+        db 31H, 30H, 20H, 36H, 20H, 39H, 20H, 34H
+        db 39H, 39H, 36H, 20H, 00H
+
+L_062:
+        db 31H, 20H, 37H, 20H, 35H, 30H, 34H, 32H
+        db 20H, 00H
+
+L_063:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 30H, 34H, 33H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_064:
+        db 38H, 20H, 38H, 20H, 36H, 20H, 35H, 30H
+        db 32H, 38H, 20H, 00H
+
+L_065:
+        db 31H, 30H, 20H, 35H, 20H, 39H, 20H, 32H
+        db 20H, 35H, 30H, 32H, 34H, 20H, 00H
+
+L_066:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 33H, 32H, 36H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_067:
+        db 37H, 20H, 32H, 20H, 34H, 20H, 37H, 20H
+        db 35H, 20H, 35H, 30H, 32H, 35H, 20H, 00H
+
+L_068:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 34H
+        db 39H, 32H, 35H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_069:
+        db 33H, 20H, 36H, 20H, 31H, 20H, 39H, 20H
+        db 36H, 20H, 35H, 30H, 32H, 35H, 20H, 00H
+
+L_070:
+        db 31H, 20H, 39H, 20H, 35H, 20H, 37H, 20H
+        db 32H, 20H, 35H, 30H, 32H, 36H, 20H, 00H
+
+L_071:
+        db 35H, 20H, 35H, 30H, 34H, 35H, 20H, 00H
+
+L_072:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 30H, 34H, 36H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_073:
+        db 32H, 20H, 32H, 20H, 36H, 20H, 33H, 20H
+        db 35H, 20H, 31H, 30H, 20H, 36H, 20H, 35H
+        db 30H, 31H, 36H, 20H, 00H
+
+L_074:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 36H, 32H, 31H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_075:
+        db 31H, 30H, 00H
+
+L_076:
+        db 38H, 20H, 36H, 20H, 38H, 20H, 31H, 20H
+        db 31H, 20H, 34H, 20H, 31H, 20H, 37H, 20H
+        db 33H, 20H, 35H, 30H, 31H, 31H, 20H, 00H
+
+L_077:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 32H, 31H, 34H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_078:
+        db 32H, 20H, 33H, 20H, 35H, 30H, 34H, 35H
+        db 20H, 00H
+
+L_079:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 34H
+        db 39H, 34H, 35H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_080:
+        db 34H, 20H, 31H, 30H, 20H, 39H, 20H, 31H
+        db 30H, 20H, 36H, 20H, 31H, 30H, 20H, 32H
+        db 20H, 32H, 20H, 33H, 20H, 34H, 39H, 39H
+        db 34H, 20H, 00H
+
+L_081:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 37H, 30H, 30H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_082:
+        db 37H, 20H, 39H, 20H, 34H, 20H, 35H, 30H
+        db 33H, 30H, 20H, 00H
+
+L_083:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 32H, 33H, 32H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_084:
+        db 33H, 20H, 31H, 20H, 37H, 20H, 32H, 20H
+        db 38H, 20H, 39H, 20H, 35H, 30H, 32H, 30H
+        db 20H, 00H
+
+L_085:
+        db 33H, 20H, 35H, 20H, 31H, 30H, 20H, 35H
+        db 30H, 33H, 32H, 20H, 00H
+
+L_086:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 33H, 33H, 35H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_087:
+        db 31H, 30H, 20H, 37H, 20H, 33H, 20H, 37H
+        db 20H, 39H, 20H, 39H, 20H, 32H, 20H, 34H
+        db 20H, 34H, 20H, 34H, 39H, 39H, 35H, 20H
+        db 00H
+
+L_088:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 38H, 30H, 30H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_089:
+        db 33H, 20H, 31H, 20H, 36H, 20H, 32H, 20H
+        db 33H, 20H, 35H, 30H, 33H, 35H, 20H, 00H
+
+L_090:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 33H, 33H, 39H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_091:
+        db 36H, 20H, 31H, 30H, 20H, 38H, 20H, 35H
+        db 30H, 32H, 36H, 20H, 00H
+
+L_092:
+        db 34H, 20H, 39H, 20H, 32H, 20H, 38H, 20H
+        db 39H, 20H, 33H, 20H, 34H, 20H, 31H, 20H
+        db 33H, 20H, 35H, 30H, 30H, 37H, 20H, 00H
+
+L_093:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 37H, 31H, 31H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_094:
+        db 39H, 20H, 34H, 20H, 36H, 20H, 37H, 20H
+        db 35H, 30H, 32H, 34H, 20H, 00H
+
+L_095:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 34H, 32H, 35H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_096:
+        db 32H, 20H, 37H, 20H, 35H, 30H, 34H, 31H
+        db 20H, 00H
+
+L_097:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 31H, 34H, 33H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_098:
+        db 33H, 20H, 32H, 20H, 39H, 20H, 35H, 20H
+        db 35H, 20H, 31H, 30H, 20H, 37H, 20H, 33H
+        db 20H, 35H, 30H, 30H, 36H, 20H, 00H
+
+L_099:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 36H, 31H, 31H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_100:
+        db 34H, 20H, 32H, 20H, 39H, 20H, 37H, 20H
+        db 34H, 20H, 34H, 20H, 39H, 20H, 35H, 30H
+        db 31H, 31H, 20H, 00H
+
+L_101:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 34H
+        db 39H, 31H, 31H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_102:
+        db 31H, 20H, 33H, 20H, 36H, 20H, 39H, 20H
+        db 33H, 20H, 35H, 30H, 32H, 38H, 20H, 00H
+
+L_103:
+        db 33H, 20H, 34H, 20H, 37H, 20H, 31H, 20H
+        db 36H, 20H, 38H, 20H, 34H, 20H, 35H, 30H
+        db 31H, 37H, 20H, 00H
+
+L_104:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 31H, 31H, 39H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_105:
+        db 31H, 30H, 20H, 36H, 20H, 31H, 20H, 38H
+        db 20H, 35H, 30H, 32H, 35H, 20H, 00H
+
+L_106:
+        db 38H, 20H, 35H, 30H, 34H, 32H, 20H, 00H
+
+L_107:
+        db 33H, 20H, 38H, 20H, 32H, 20H, 33H, 20H
+        db 36H, 20H, 33H, 20H, 35H, 30H, 32H, 35H
+        db 20H, 00H
+
+L_108:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 34H, 32H, 37H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_109:
+        db 39H, 20H, 35H, 30H, 34H, 31H, 20H, 00H
+
+L_110:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 34H
+        db 39H, 34H, 31H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_111:
+        db 37H, 20H, 31H, 20H, 31H, 20H, 33H, 20H
+        db 34H, 20H, 31H, 20H, 38H, 20H, 35H, 30H
+        db 32H, 35H, 20H, 00H
+
+L_112:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 35H, 32H, 37H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_113:
+        db 33H, 20H, 35H, 30H, 34H, 37H, 20H, 00H
+
+L_114:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 30H, 34H, 38H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_115:
+        db 32H, 20H, 36H, 20H, 34H, 20H, 36H, 20H
+        db 37H, 20H, 31H, 30H, 20H, 35H, 30H, 31H
+        db 35H, 20H, 00H
+
+L_116:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 35H, 31H, 37H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_117:
+        db 34H, 20H, 36H, 20H, 33H, 20H, 35H, 30H
+        db 33H, 37H, 20H, 00H
+
+L_118:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 34H
+        db 39H, 33H, 37H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_119:
+        db 38H, 20H, 38H, 20H, 36H, 20H, 37H, 20H
+        db 35H, 30H, 32H, 31H, 20H, 00H
+
+L_120:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 35H, 32H, 35H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_121:
+        db 38H, 20H, 31H, 30H, 20H, 31H, 20H, 32H
+        db 20H, 33H, 20H, 34H, 20H, 39H, 20H, 34H
+        db 20H, 39H, 20H, 35H, 30H, 30H, 30H, 20H
+        db 00H
+
+L_122:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 38H, 30H, 31H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_123:
+        db 33H, 20H, 39H, 20H, 35H, 20H, 31H, 20H
+        db 35H, 30H, 33H, 32H, 20H, 00H
+
+L_124:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 31H, 33H, 33H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_125:
+        db 35H, 20H, 39H, 20H, 39H, 20H, 31H, 30H
+        db 20H, 37H, 20H, 35H, 30H, 31H, 30H, 20H
+        db 00H
+
+L_126:
+        db 36H, 20H, 33H, 20H, 32H, 20H, 33H, 20H
+        db 35H, 30H, 33H, 36H, 20H, 00H
+
+L_127:
+        db 35H, 20H, 32H, 20H, 37H, 20H, 35H, 20H
+        db 31H, 20H, 39H, 20H, 35H, 30H, 32H, 31H
+        db 20H, 00H
+
+L_128:
+        db 33H, 20H, 31H, 30H, 20H, 35H, 30H, 33H
+        db 37H, 20H, 00H
+
+L_129:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 32H, 34H, 30H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_130:
+        db 34H, 20H, 38H, 20H, 31H, 20H, 33H, 20H
+        db 35H, 20H, 35H, 30H, 32H, 39H, 20H, 00H
+
+L_131:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 31H, 33H, 31H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_132:
+        db 31H, 20H, 34H, 20H, 31H, 30H, 20H, 31H
+        db 20H, 37H, 20H, 32H, 20H, 36H, 20H, 33H
+        db 20H, 35H, 30H, 31H, 36H, 20H, 00H
+
+L_133:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 34H, 31H, 39H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_134:
+        db 32H, 20H, 32H, 20H, 36H, 20H, 37H, 20H
+        db 35H, 30H, 33H, 33H, 20H, 00H
+
+L_135:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 34H
+        db 39H, 33H, 33H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_136:
+        db 33H, 20H, 31H, 30H, 20H, 34H, 20H, 34H
+        db 20H, 35H, 30H, 32H, 39H, 20H, 00H
+
+L_137:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 34H
+        db 39H, 32H, 39H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_138:
+        db 36H, 20H, 33H, 20H, 31H, 30H, 20H, 37H
+        db 20H, 35H, 20H, 39H, 20H, 38H, 20H, 31H
+        db 30H, 20H, 31H, 30H, 20H, 34H, 39H, 38H
+        db 32H, 20H, 00H
+
+L_139:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 37H, 38H, 36H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_140:
+        db 33H, 20H, 36H, 20H, 35H, 30H, 34H, 31H
+        db 20H, 00H
+
+L_141:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 30H, 34H, 32H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_142:
+        db 31H, 30H, 20H, 31H, 20H, 36H, 20H, 35H
+        db 30H, 33H, 33H, 20H, 00H
+
+L_143:
+        db 34H, 20H, 37H, 20H, 33H, 20H, 37H, 20H
+        db 37H, 20H, 33H, 20H, 31H, 20H, 35H, 20H
+        db 35H, 20H, 35H, 30H, 30H, 38H, 20H, 00H
+
+L_144:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 37H, 31H, 34H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_145:
+        db 31H, 30H, 20H, 32H, 20H, 35H, 20H, 38H
+        db 20H, 39H, 20H, 35H, 30H, 31H, 36H, 20H
+        db 00H
+
+L_146:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 35H, 31H, 38H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_147:
+        db 36H, 20H, 37H, 20H, 37H, 20H, 39H, 20H
+        db 35H, 20H, 36H, 20H, 39H, 20H, 35H, 30H
+        db 30H, 31H, 20H, 00H
+
+L_148:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 37H, 30H, 37H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_149:
+        db 34H, 20H, 37H, 20H, 36H, 20H, 38H, 20H
+        db 35H, 20H, 38H, 20H, 35H, 20H, 35H, 30H
+        db 30H, 37H, 20H, 00H
+
+L_150:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 34H
+        db 39H, 30H, 37H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_151:
+        db 38H, 20H, 39H, 20H, 35H, 30H, 33H, 33H
+        db 20H, 00H
+
+L_152:
+        db 38H, 20H, 31H, 20H, 35H, 30H, 34H, 31H
+        db 20H, 00H
+
+L_153:
+        db 31H, 30H, 20H, 37H, 20H, 33H, 20H, 39H
+        db 20H, 35H, 30H, 32H, 31H, 20H, 00H
+
+L_154:
+        db 31H, 30H, 20H, 38H, 20H, 32H, 20H, 34H
+        db 20H, 33H, 20H, 39H, 20H, 31H, 20H, 32H
+        db 20H, 38H, 20H, 35H, 30H, 30H, 33H, 20H
+        db 00H
+
+L_155:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 37H, 31H, 30H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_156:
+        db 31H, 30H, 20H, 38H, 20H, 36H, 20H, 39H
+        db 20H, 35H, 30H, 31H, 37H, 20H, 00H
+
+L_157:
+        db 31H, 20H, 38H, 20H, 39H, 20H, 34H, 20H
+        db 39H, 20H, 35H, 30H, 31H, 39H, 20H, 00H
+
+L_158:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 34H
+        db 39H, 31H, 39H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_159:
+        db 31H, 30H, 20H, 31H, 20H, 35H, 20H, 35H
+        db 20H, 31H, 30H, 20H, 31H, 30H, 20H, 38H
+        db 20H, 39H, 20H, 34H, 39H, 39H, 32H, 20H
+        db 00H
+
+L_160:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 37H, 39H, 38H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
+
+L_161:
+        db 39H, 20H, 32H, 20H, 36H, 20H, 31H, 20H
+        db 33H, 20H, 31H, 30H, 20H, 37H, 20H, 35H
+        db 30H, 31H, 32H, 20H, 00H
+
+L_162:
+        db 31H, 30H, 20H, 36H, 20H, 35H, 30H, 33H
+        db 34H, 20H, 00H
+
+L_163:
+        db 31H, 30H, 20H, 33H, 20H, 35H, 30H, 33H
+        db 37H, 20H, 00H
+
+L_164:
+        db 31H, 20H, 33H, 20H, 35H, 20H, 35H, 30H
+        db 34H, 31H, 20H, 00H
+
+L_165:
+        db 54H, 6FH, 74H, 61H, 6CH, 3AH, 20H, 35H
+        db 31H, 34H, 32H, 20H, 73H, 74H, 65H, 70H
+        db 28H, 73H, 29H, 00H
 
 

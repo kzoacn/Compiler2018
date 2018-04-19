@@ -1285,6 +1285,7 @@ public class ConstantPool {
             "        call    puts\n" +
             "        mov     edi, L_072\n" +
             "        call    puts\n" +
+            "        mov     eax, 0\n" +
             "        pop     rbp\n" +
             "        ret\n" +
             "\n" +
