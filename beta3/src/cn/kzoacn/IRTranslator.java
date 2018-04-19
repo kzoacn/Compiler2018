@@ -542,14 +542,15 @@ public class IRTranslator {
                 case shiftLeft:
                     readReg(var1);readReg(var2);
                     text.append(new StringBuffer("mov "+writeReg(dest)+","+readReg(var1)+"\n\t"));
-                    text.append(new StringBuffer("shl "+writeReg(dest)+","+var2.constValue+"\n\t"));
+                    text.append(new StringBuffer("mov rcx"+","+readReg(var2)+"\n\t"));
+                    text.append(new StringBuffer("shl "+writeReg(dest)+",cl\n\t"));
                     //kickAll();
                     break;
                 case shiftRight:
                     readReg(var1);readReg(var2);
                     text.append(new StringBuffer("mov "+writeReg(dest)+","+readReg(var1)+"\n\t"));
-                    text.append(new StringBuffer("ror "+writeReg(dest)+","+readReg(var2)+"\n\t"));
-                    //kickAll();
+                    text.append(new StringBuffer("mov rcx"+","+readReg(var2)+"\n\t"));
+                    text.append(new StringBuffer("shr "+writeReg(dest)+",cl\n\t"));
                     break;
                 case move:
                     text.append(new StringBuffer("mov "+writeReg(dest)+","+readReg(var1)+"\n\t"));

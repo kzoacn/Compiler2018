@@ -26,8 +26,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="958" column="21" lean-forward="false" selection-start-line="958" selection-start-column="21" selection-end-line="958" selection-end-column="21" />
+            <state relative-caret-position="281">
+              <caret line="973" column="25" lean-forward="false" selection-start-line="973" selection-start-column="25" selection-end-line="973" selection-end-column="25" />
               <folding>
                 <element signature="e#7877#7878#0" expanded="true" />
                 <element signature="e#7947#7948#0" expanded="true" />
@@ -42,16 +42,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IRTranslator.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="IRTranslator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="336" column="33" lean-forward="false" selection-start-line="336" selection-start-column="33" selection-end-line="336" selection-end-column="33" />
+            <state relative-caret-position="433">
+              <caret line="552" column="53" lean-forward="false" selection-start-line="552" selection-start-column="53" selection-end-line="552" selection-end-column="53" />
               <folding>
-                <element signature="e#1905#1923#0" expanded="true" />
-                <element signature="e#1988#2006#0" expanded="true" />
                 <element signature="e#9867#9868#0" expanded="true" />
                 <element signature="e#9916#9917#0" expanded="true" />
+                <element signature="e#9950#9951#0" expanded="true" />
                 <element signature="e#9998#9999#0" expanded="true" />
               </folding>
             </state>
@@ -61,7 +60,7 @@
       <file leaf-file-name="ExecTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/ExecTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
+            <state relative-caret-position="4902">
               <caret line="271" column="0" lean-forward="false" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -70,10 +69,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConstantPool.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ConstantPool.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/ConstantPool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
+            <state relative-caret-position="119">
               <caret line="2051" column="15" lean-forward="false" selection-start-line="2051" selection-start-column="15" selection-end-line="2051" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -85,7 +84,7 @@
       <file leaf-file-name="MxstarParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/MxstarParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
+            <state relative-caret-position="43548">
               <caret line="2563" column="32" lean-forward="false" selection-start-line="2563" selection-start-column="32" selection-end-line="2563" selection-end-column="32" />
               <folding>
                 <element signature="e#13122#13123#0" expanded="true" />
@@ -100,7 +99,7 @@
       <file leaf-file-name="Mxstar.g4" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Mxstar.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
+            <state relative-caret-position="399">
               <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
               <folding />
             </state>
@@ -110,7 +109,7 @@
       <file leaf-file-name="Semantic.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Semantic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
+            <state relative-caret-position="589">
               <caret line="37" column="10" lean-forward="false" selection-start-line="37" selection-start-column="10" selection-end-line="37" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -122,7 +121,7 @@
       <file leaf-file-name="Builder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Builder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
+            <state relative-caret-position="589">
               <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding />
             </state>
@@ -140,7 +139,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getreg</find>
       <find>mallocarray</find>
       <find>equalor</find>
       <find>malloc</find>
@@ -170,6 +168,7 @@
       <find>check</find>
       <find>load</find>
       <find>fun</find>
+      <find>sghi</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -188,8 +187,8 @@
         <option value="$PROJECT_DIR$/src/cn/kzoacn/Builder.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/ExecTest.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/Main.java" />
-        <option value="$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/ConstantPool.java" />
+        <option value="$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java" />
       </list>
     </option>
   </component>
@@ -243,10 +242,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -377,7 +376,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="ExecTest.test91" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ExecTest.test87" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="cn.kzoacn.*" />
@@ -389,7 +388,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="cn.kzoacn" />
       <option name="MAIN_CLASS_NAME" value="cn.kzoacn.ExecTest" />
-      <option name="METHOD_NAME" value="test91" />
+      <option name="METHOD_NAME" value="test87" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -420,17 +419,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.ExecTest" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.ExecTest.test8" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.ExecTest.test91" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.ExecTest.test1" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.ExecTest.test41" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ExecTest.test1" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ExecTest.test41" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ExecTest.test87" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.ExecTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ExecTest.test41" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ExecTest.test8" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.ExecTest.test1" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.ExecTest.test91" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ExecTest.test87" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ExecTest.test41" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ExecTest.test8" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.ExecTest.test1" />
       </list>
     </recent_temporary>
   </component>
@@ -451,22 +450,13 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ExecTest - 2018.04.18 at 23h 04m 50s.xml">
-      <configuration name="ExecTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExecTest - 2018.04.19 at 16h 01m 12s.xml">
-      <configuration name="ExecTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExecTest - 2018.04.19 at 16h 02m 21s.xml">
-      <configuration name="ExecTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExecTest - 2018.04.19 at 16h 03m 09s.xml">
-      <configuration name="ExecTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExecTest - 2018.04.19 at 16h 05m 31s.xml">
-      <configuration name="ExecTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ExecTest - 2018.04.19 at 16h 06m 56s.xml">
+      <configuration name="ExecTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecTest - 2018.04.19 at 18h 41m 23s.xml">
+      <configuration name="ExecTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecTest - 2018.04.19 at 18h 49m 08s.xml">
       <configuration name="ExecTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ExecTest_test1 - 2018.04.19 at 16h 01m 18s.xml">
@@ -477,6 +467,15 @@
     </history-entry>
     <history-entry file="ExecTest_test8 - 2018.04.19 at 16h 03m 15s.xml">
       <configuration name="ExecTest.test8" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecTest_test87 - 2018.04.19 at 18h 41m 32s.xml">
+      <configuration name="ExecTest.test87" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecTest_test87 - 2018.04.19 at 18h 42m 58s.xml">
+      <configuration name="ExecTest.test87" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecTest_test87 - 2018.04.19 at 18h 48m 43s.xml">
+      <configuration name="ExecTest.test87" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ExecTest_test91 - 2018.04.18 at 23h 00m 08s.xml">
       <configuration name="ExecTest.test91" configurationId="JUnit" />
@@ -495,7 +494,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30597016" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30597016" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -592,10 +591,9 @@
         <state relative-caret-position="3059">
           <caret line="171" column="91" lean-forward="false" selection-start-line="171" selection-start-column="91" selection-end-line="171" selection-end-column="91" />
           <folding>
-            <element signature="e#1905#1923#0" expanded="true" />
-            <element signature="e#1988#2006#0" expanded="true" />
             <element signature="e#9867#9868#0" expanded="true" />
             <element signature="e#9916#9917#0" expanded="true" />
+            <element signature="e#9950#9951#0" expanded="true" />
             <element signature="e#9998#9999#0" expanded="true" />
           </folding>
         </state>
@@ -690,10 +688,9 @@
         <state relative-caret-position="3059">
           <caret line="171" column="91" lean-forward="false" selection-start-line="171" selection-start-column="91" selection-end-line="171" selection-end-column="91" />
           <folding>
-            <element signature="e#1905#1923#0" expanded="true" />
-            <element signature="e#1988#2006#0" expanded="true" />
             <element signature="e#9867#9868#0" expanded="true" />
             <element signature="e#9916#9917#0" expanded="true" />
+            <element signature="e#9950#9951#0" expanded="true" />
             <element signature="e#9998#9999#0" expanded="true" />
           </folding>
         </state>
@@ -756,10 +753,9 @@
         <state relative-caret-position="3059">
           <caret line="171" column="91" lean-forward="false" selection-start-line="171" selection-start-column="91" selection-end-line="171" selection-end-column="91" />
           <folding>
-            <element signature="e#1905#1923#0" expanded="true" />
-            <element signature="e#1988#2006#0" expanded="true" />
             <element signature="e#9867#9868#0" expanded="true" />
             <element signature="e#9916#9917#0" expanded="true" />
+            <element signature="e#9950#9951#0" expanded="true" />
             <element signature="e#9998#9999#0" expanded="true" />
           </folding>
         </state>
@@ -825,10 +821,9 @@
         <state relative-caret-position="3211">
           <caret line="179" column="10" lean-forward="false" selection-start-line="179" selection-start-column="10" selection-end-line="179" selection-end-column="10" />
           <folding>
-            <element signature="e#1905#1923#0" expanded="true" />
-            <element signature="e#1988#2006#0" expanded="true" />
             <element signature="e#9867#9868#0" expanded="true" />
             <element signature="e#9916#9917#0" expanded="true" />
+            <element signature="e#9950#9951#0" expanded="true" />
             <element signature="e#9998#9999#0" expanded="true" />
           </folding>
         </state>
@@ -968,47 +963,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Mxstar.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/MxstarParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="2563" column="32" lean-forward="false" selection-start-line="2563" selection-start-column="32" selection-end-line="2563" selection-end-column="32" />
-          <folding>
-            <element signature="e#13122#13123#0" expanded="true" />
-            <element signature="e#13174#13175#0" expanded="true" />
-            <element signature="e#89420#89421#0" expanded="true" />
-            <element signature="e#89476#89477#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Semantic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="37" column="10" lean-forward="false" selection-start-line="37" selection-start-column="10" selection-end-line="37" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/ExecTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="271" column="0" lean-forward="false" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/SemanticTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="552">
@@ -1019,18 +973,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/ExecTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4902">
+          <caret line="271" column="0" lean-forward="false" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/MxstarParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43548">
+          <caret line="2563" column="32" lean-forward="false" selection-start-line="2563" selection-start-column="32" selection-end-line="2563" selection-end-column="32" />
+          <folding>
+            <element signature="e#13122#13123#0" expanded="true" />
+            <element signature="e#13174#13175#0" expanded="true" />
+            <element signature="e#89420#89421#0" expanded="true" />
+            <element signature="e#89476#89477#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Mxstar.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Semantic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="37" column="10" lean-forward="false" selection-start-line="37" selection-start-column="10" selection-end-line="37" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Builder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
+        <state relative-caret-position="589">
           <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/ConstantPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="2051" column="15" lean-forward="false" selection-start-line="2051" selection-start-column="15" selection-end-line="2051" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="958" column="21" lean-forward="false" selection-start-line="958" selection-start-column="21" selection-end-line="958" selection-end-column="21" />
+        <state relative-caret-position="281">
+          <caret line="973" column="25" lean-forward="false" selection-start-line="973" selection-start-column="25" selection-end-line="973" selection-end-column="25" />
           <folding>
             <element signature="e#7877#7878#0" expanded="true" />
             <element signature="e#7947#7948#0" expanded="true" />
@@ -1046,24 +1051,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="336" column="33" lean-forward="false" selection-start-line="336" selection-start-column="33" selection-end-line="336" selection-end-column="33" />
+        <state relative-caret-position="433">
+          <caret line="552" column="53" lean-forward="false" selection-start-line="552" selection-start-column="53" selection-end-line="552" selection-end-column="53" />
           <folding>
-            <element signature="e#1905#1923#0" expanded="true" />
-            <element signature="e#1988#2006#0" expanded="true" />
             <element signature="e#9867#9868#0" expanded="true" />
             <element signature="e#9916#9917#0" expanded="true" />
+            <element signature="e#9950#9951#0" expanded="true" />
             <element signature="e#9998#9999#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/ConstantPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="2051" column="15" lean-forward="false" selection-start-line="2051" selection-start-column="15" selection-end-line="2051" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

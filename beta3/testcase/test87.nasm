@@ -649,7 +649,8 @@ L_627:
 	mov r8,1
 	mov r9,29
 	mov r10,r8
-	shl r10,29
+	mov rcx,r9
+	shl r10,cl
 	mov r11, qword [gbl+8*3]
 	cmp r11,r10
 	mov r12, 0
@@ -668,7 +669,8 @@ L_629:
 	mov r8,1
 	mov r9,29
 	mov r10,r8
-	shl r10,29
+	mov rcx,r9
+	shl r10,cl
 	mov r11,r10
 	neg r11
 	mov r12, qword [gbl+8*3]
