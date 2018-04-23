@@ -657,22 +657,22 @@ main:
 	mov r10,5
 	mov r9,r10
 	mov qword [rsp+8*1],r8
-	mov qword [arg+8*0],r9
+	mov qword rdi,r9
 	call f
 	mov r8 , rax
-	mov r10, qword [gbl+8*4]
+	mov r10,  [gbl+8*4]
 	mov r9,r10
 	mov r11,r9
 	mov qword [rsp+8*3],r8
-	mov qword [arg+8*0],r9
+	mov qword rdi,r9
 	mov qword [rsp+8*5],r11
 	mov     rdi, [rsp+8*5]
 	call    toString
 	mov     qword[rsp+8*6], rax
-	mov r9, qword [rsp+8*6]
+	mov r9,  [rsp+8*6]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*7],r10
 	mov rdi,[rsp+8*7] 
 	add rdi, 1 
@@ -688,7 +688,7 @@ f:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 168
-	mov r9, qword [arg+8*0]
+	mov r9,  rdi
 	mov r8,r9
 	mov r10,0
 	cmp r8,r10
@@ -696,7 +696,7 @@ f:
 	sete r11B
 	mov qword [rsp+8*8],r8
 	mov qword [rsp+8*9],r11
-	mov r8, qword [rsp+8*9]
+	mov r8,  [rsp+8*9]
 	cmp r8, 0
 	je L_375
 	mov r8,0
@@ -705,12 +705,12 @@ f:
 	ret
 	
 L_375:
-	mov r9, qword [gbl+8*4]
+	mov r9,  [gbl+8*4]
 	mov r8,r9
 	mov r10,1
 	mov r9,r9
 	add r9,r10
-	mov r11, qword [rsp+8*8]
+	mov r11,  [rsp+8*8]
 	mov r12,1
 	mov r11,r11
 	sub r11,r12
@@ -718,10 +718,10 @@ L_375:
 	mov qword [rsp+8*10],r8
 	mov qword [gbl+8*4],r9
 	mov qword [rsp+8*8],r11
-	mov qword [arg+8*0],r13
+	mov qword rdi,r13
 	call f
 	mov r8 , rax
-	mov r10, qword [gbl+8*4]
+	mov r10,  [gbl+8*4]
 	mov r9,r10
 	mov r11,1
 	mov r10,r10
@@ -741,7 +741,7 @@ global_init:
 	mov r9,0
 	mov r8,r9
 	mov qword [gbl+8*4],r8
-	mov r8, qword [rsp+8*13]
+	mov r8,  [rsp+8*13]
 	mov rax,r8
 	leave
 	ret

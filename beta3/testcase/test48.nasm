@@ -661,27 +661,27 @@ main:
 	mov     rdi, [rsp+8*2]
 	call    mallocArray
 	mov     qword [rsp+8*3], rax
-	mov r9, qword [rsp+8*3]
+	mov r9,  [rsp+8*3]
 	mov r8,r9
 	mov qword [rsp+8*4],r8
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword [rsp+8*5], rax
-	mov r9, qword [rsp+8*4]
+	mov r9,  [rsp+8*4]
 	mov r8,r9
 	mov r10,1
 	mov r11,r10
 	add r11,1
 	shl r11,4
 	add r11,r8
-	mov r12, qword [rsp+8*5]
+	mov r12,  [rsp+8*5]
 	mov [r11],r12
 	mov qword [rsp+8*6],r8
 	mov qword [rsp+8*7],r11
 	mov     rdi, 2
 	call    mallocArray
 	mov     qword [rsp+8*8], rax
-	mov r9, qword [rsp+8*8]
+	mov r9,  [rsp+8*8]
 	mov r8,r9
 	mov r10,0
 	mov r8,r10
@@ -705,13 +705,13 @@ main:
 	mov     rdi, [rsp+8*2]
 	call    mallocArray
 	mov     qword [rsp+8*11], rax
-	mov r8, qword [rsp+8*10]
-	mov r9, qword [rsp+8*11]
+	mov r8,  [rsp+8*10]
+	mov r9,  [rsp+8*11]
 	mov [r8],r9
 	mov     rdi, 3
 	call    mallocArray
 	mov     qword [rsp+8*12], rax
-	mov r9, qword [rsp+8*12]
+	mov r9,  [rsp+8*12]
 	mov r8,r9
 	mov r10,0
 	mov r8,r10
@@ -739,13 +739,13 @@ main:
 	mov     rdi, [rsp+8*4]
 	call    multiAddress
 	mov [rsp+8*14], rax
-	mov r8, qword [rsp+8*14]
+	mov r8,  [rsp+8*14]
 	mov r9,3
 	mov [r8],r9
 	mov     rdi, 3
 	call    mallocArray
 	mov     qword [rsp+8*15], rax
-	mov r9, qword [rsp+8*15]
+	mov r9,  [rsp+8*15]
 	mov r8,r9
 	mov r10,0
 	mov r8,r10
@@ -773,20 +773,20 @@ main:
 	mov     rdi, [rsp+8*4]
 	call    multiAddress
 	mov [rsp+8*17], rax
-	mov r8, qword [rsp+8*17]
+	mov r8,  [rsp+8*17]
 	mov r8, [r8]
 	mov r9,r8
 	mov r10,r9
 	mov qword [rsp+8*17],r8
-	mov qword [arg+8*0],r9
+	mov qword rdi,r9
 	mov qword [rsp+8*19],r10
 	mov     rdi, [rsp+8*19]
 	call    toString
 	mov     qword[rsp+8*20], rax
-	mov r9, qword [rsp+8*20]
+	mov r9,  [rsp+8*20]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*21],r10
 	mov rdi,[rsp+8*21] 
 	add rdi, 1 
@@ -802,7 +802,7 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 240
-	mov r8, qword [rsp+8*22]
+	mov r8,  [rsp+8*22]
 	mov rax,r8
 	leave
 	ret

@@ -108,8 +108,13 @@ public class IRTranslator {
             return new StringBuffer(Integer.toString(variable.constValue));
         if(variable.type.name.equals("null"))
             return new StringBuffer(Integer.toString(0));
-        if(symbolMap.argVariableMap.containsKey(variable.name))
-            return new StringBuffer("[arg+8*"+Integer.toString(variable.constValue)+"]");
+        if(symbolMap.argVariableMap.containsKey(variable.name)) {
+            if(variable.constValue==0)
+                return new StringBuffer("rdi");
+            if(variable.constValue==1)
+                return new StringBuffer("rsi");
+            return new StringBuffer("[arg+8*" + Integer.toString(variable.constValue) + "]");
+        }
         if(symbolMap.globalVariableMap.containsKey(variable.name))
             return new StringBuffer("[gbl+8*"+Integer.toString(variableIndex.get(variable))+"]");
         if(variableIndex.containsKey(variable))
@@ -279,7 +284,7 @@ public class IRTranslator {
             if (isConst(var)) {
                 text.append(new StringBuffer("mov r" + Integer.toString(i) + "," + varName(var) + "\n\t"));
             } else {
-                text.append(new StringBuffer("mov r" + Integer.toString(i) + ", qword " + varName(var) + "\n\t"));
+                text.append(new StringBuffer("mov r" + Integer.toString(i) + ",  " + varName(var) + "\n\t"));
             }
         }else{
             writeBack[i]=true;

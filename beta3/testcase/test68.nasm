@@ -658,7 +658,7 @@ main:
 	mov r9,r10
 	mov r11,r9
 	mov qword [rsp+8*1],r8
-	mov qword [arg+8*0],r9
+	mov qword rdi,r9
 	mov qword [rsp+8*3],r11
 	mov rdi, format
 	mov rsi,[rsp+8*3] 
@@ -668,7 +668,7 @@ main:
 	mov r9,t68
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*4],r10
 	mov rdi, format
 	mov rsi,[rsp+8*4] 
@@ -691,7 +691,7 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 104
-	mov r8, qword [rsp+8*5]
+	mov r8,  [rsp+8*5]
 	mov rax,r8
 	leave
 	ret

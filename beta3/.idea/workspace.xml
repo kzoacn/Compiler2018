@@ -26,7 +26,7 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
+            <state relative-caret-position="11058">
               <caret line="612" column="6" lean-forward="false" selection-start-line="612" selection-start-column="6" selection-end-line="612" selection-end-column="6" />
               <folding>
                 <element signature="e#7877#7878#0" expanded="true" />
@@ -45,15 +45,15 @@
       <file leaf-file-name="IRTranslator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="705" column="20" lean-forward="false" selection-start-line="705" selection-start-column="20" selection-end-line="705" selection-end-column="20" />
+            <state relative-caret-position="298">
+              <caret line="113" column="37" lean-forward="false" selection-start-line="113" selection-start-column="37" selection-end-line="113" selection-end-column="37" />
               <folding>
                 <element signature="e#1905#1923#0" expanded="true" />
                 <element signature="e#1988#2006#0" expanded="true" />
-                <element signature="e#9867#9868#0" expanded="true" />
-                <element signature="e#9916#9917#0" expanded="true" />
-                <element signature="e#9950#9951#0" expanded="true" />
-                <element signature="e#9998#9999#0" expanded="true" />
+                <element signature="e#10052#10053#0" expanded="true" />
+                <element signature="e#10101#10102#0" expanded="true" />
+                <element signature="e#10135#10136#0" expanded="true" />
+                <element signature="e#10183#10184#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -141,7 +141,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>add</find>
       <find>kick</find>
       <find>newvari</find>
       <find>r8</find>
@@ -171,6 +170,7 @@
       <find>enterfunc</find>
       <find>Opcode.ret</find>
       <find>bss</find>
+      <find>varName</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -244,10 +244,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -452,12 +452,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ExecTest - 2018.04.19 at 20h 03m 26s.xml">
-      <configuration name="ExecTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExecTest - 2018.04.19 at 20h 04m 58s.xml">
-      <configuration name="ExecTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ExecTest - 2018.04.19 at 20h 12m 41s.xml">
       <configuration name="ExecTest" configurationId="JUnit" />
     </history-entry>
@@ -471,6 +465,12 @@
       <configuration name="ExecTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ExecTest - 2018.04.20 at 18h 25m 41s.xml">
+      <configuration name="ExecTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecTest - 2018.04.23 at 23h 42m 29s.xml">
+      <configuration name="ExecTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecTest - 2018.04.23 at 23h 43m 36s.xml">
       <configuration name="ExecTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ExecTest_test0 - 2018.04.19 at 20h 02m 31s.xml">
@@ -587,10 +587,10 @@
           <folding>
             <element signature="e#1905#1923#0" expanded="true" />
             <element signature="e#1988#2006#0" expanded="true" />
-            <element signature="e#9867#9868#0" expanded="true" />
-            <element signature="e#9916#9917#0" expanded="true" />
-            <element signature="e#9950#9951#0" expanded="true" />
-            <element signature="e#9998#9999#0" expanded="true" />
+            <element signature="e#10052#10053#0" expanded="true" />
+            <element signature="e#10101#10102#0" expanded="true" />
+            <element signature="e#10135#10136#0" expanded="true" />
+            <element signature="e#10183#10184#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -686,10 +686,10 @@
           <folding>
             <element signature="e#1905#1923#0" expanded="true" />
             <element signature="e#1988#2006#0" expanded="true" />
-            <element signature="e#9867#9868#0" expanded="true" />
-            <element signature="e#9916#9917#0" expanded="true" />
-            <element signature="e#9950#9951#0" expanded="true" />
-            <element signature="e#9998#9999#0" expanded="true" />
+            <element signature="e#10052#10053#0" expanded="true" />
+            <element signature="e#10101#10102#0" expanded="true" />
+            <element signature="e#10135#10136#0" expanded="true" />
+            <element signature="e#10183#10184#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -753,10 +753,10 @@
           <folding>
             <element signature="e#1905#1923#0" expanded="true" />
             <element signature="e#1988#2006#0" expanded="true" />
-            <element signature="e#9867#9868#0" expanded="true" />
-            <element signature="e#9916#9917#0" expanded="true" />
-            <element signature="e#9950#9951#0" expanded="true" />
-            <element signature="e#9998#9999#0" expanded="true" />
+            <element signature="e#10052#10053#0" expanded="true" />
+            <element signature="e#10101#10102#0" expanded="true" />
+            <element signature="e#10135#10136#0" expanded="true" />
+            <element signature="e#10183#10184#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -823,10 +823,10 @@
           <folding>
             <element signature="e#1905#1923#0" expanded="true" />
             <element signature="e#1988#2006#0" expanded="true" />
-            <element signature="e#9867#9868#0" expanded="true" />
-            <element signature="e#9916#9917#0" expanded="true" />
-            <element signature="e#9950#9951#0" expanded="true" />
-            <element signature="e#9998#9999#0" expanded="true" />
+            <element signature="e#10052#10053#0" expanded="true" />
+            <element signature="e#10101#10102#0" expanded="true" />
+            <element signature="e#10135#10136#0" expanded="true" />
+            <element signature="e#10183#10184#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1036,7 +1036,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
+        <state relative-caret-position="11058">
           <caret line="612" column="6" lean-forward="false" selection-start-line="612" selection-start-column="6" selection-end-line="612" selection-end-column="6" />
           <folding>
             <element signature="e#7877#7878#0" expanded="true" />
@@ -1053,15 +1053,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="705" column="20" lean-forward="false" selection-start-line="705" selection-start-column="20" selection-end-line="705" selection-end-column="20" />
+        <state relative-caret-position="298">
+          <caret line="113" column="37" lean-forward="false" selection-start-line="113" selection-start-column="37" selection-end-line="113" selection-end-column="37" />
           <folding>
             <element signature="e#1905#1923#0" expanded="true" />
             <element signature="e#1988#2006#0" expanded="true" />
-            <element signature="e#9867#9868#0" expanded="true" />
-            <element signature="e#9916#9917#0" expanded="true" />
-            <element signature="e#9950#9951#0" expanded="true" />
-            <element signature="e#9998#9999#0" expanded="true" />
+            <element signature="e#10052#10053#0" expanded="true" />
+            <element signature="e#10101#10102#0" expanded="true" />
+            <element signature="e#10135#10136#0" expanded="true" />
+            <element signature="e#10183#10184#0" expanded="true" />
           </folding>
         </state>
       </provider>

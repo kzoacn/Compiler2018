@@ -658,7 +658,7 @@ main:
 	mov r9,r10
 	mov r11,r9
 	mov qword [rsp+8*1],r8
-	mov qword [arg+8*0],r9
+	mov qword rdi,r9
 	mov qword [rsp+8*3],r11
 	mov rdi,[rsp+8*3] 
 	add rdi, 1 
@@ -674,7 +674,7 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 96
-	mov r8, qword [rsp+8*4]
+	mov r8,  [rsp+8*4]
 	mov rax,r8
 	leave
 	ret

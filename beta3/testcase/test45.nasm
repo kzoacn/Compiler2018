@@ -659,7 +659,7 @@ main:
 	mov r11,r9
 	mov qword [rsp+8*1],r8
 	mov qword [rsp+8*2],r9
-	mov qword [arg+8*0],r11
+	mov qword rdi,r11
 	call func
 	mov r8 , rax
 	mov r9,r8
@@ -668,7 +668,7 @@ main:
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword [rsp+8*6], rax
-	mov r9, qword [rsp+8*6]
+	mov r9,  [rsp+8*6]
 	mov r8,r9
 	mov r10,0
 	mov r8,r10
@@ -682,20 +682,20 @@ main:
 	mov     rdi, [rsp+8*5]
 	call    multiAddress
 	mov [rsp+8*8], rax
-	mov r8, qword [rsp+8*8]
+	mov r8,  [rsp+8*8]
 	mov r8, [r8]
 	mov r9,r8
 	mov r10,r9
 	mov qword [rsp+8*8],r8
-	mov qword [arg+8*0],r9
+	mov qword rdi,r9
 	mov qword [rsp+8*9],r10
 	mov     rdi, [rsp+8*9]
 	call    toString
 	mov     qword[rsp+8*10], rax
-	mov r9, qword [rsp+8*10]
+	mov r9,  [rsp+8*10]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*11],r10
 	mov rdi,[rsp+8*11] 
 	add rdi, 1 
@@ -703,7 +703,7 @@ main:
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword [rsp+8*12], rax
-	mov r9, qword [rsp+8*12]
+	mov r9,  [rsp+8*12]
 	mov r8,r9
 	mov r10,0
 	mov r8,r10
@@ -717,20 +717,20 @@ main:
 	mov     rdi, [rsp+8*5]
 	call    multiAddress
 	mov [rsp+8*14], rax
-	mov r8, qword [rsp+8*14]
+	mov r8,  [rsp+8*14]
 	mov r8, [r8]
 	mov r9,r8
 	mov r10,r9
 	mov qword [rsp+8*14],r8
-	mov qword [arg+8*0],r9
+	mov qword rdi,r9
 	mov qword [rsp+8*15],r10
 	mov     rdi, [rsp+8*15]
 	call    toString
 	mov     qword[rsp+8*16], rax
-	mov r9, qword [rsp+8*16]
+	mov r9,  [rsp+8*16]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*17],r10
 	mov rdi,[rsp+8*17] 
 	add rdi, 1 
@@ -746,19 +746,19 @@ func:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 296
-	mov r9, qword [arg+8*0]
+	mov r9,  rdi
 	mov r8,r9
 	mov qword [rsp+8*18],r8
 	mov     rdi, 2
 	call    mallocArray
 	mov     qword [rsp+8*19], rax
-	mov r9, qword [rsp+8*19]
+	mov r9,  [rsp+8*19]
 	mov r8,r9
 	mov qword [rsp+8*20],r8
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword [rsp+8*21], rax
-	mov r9, qword [rsp+8*21]
+	mov r9,  [rsp+8*21]
 	mov r8,r9
 	mov r10,0
 	mov r8,r10
@@ -772,16 +772,16 @@ func:
 	mov     rdi, [rsp+8*20]
 	call    multiAddress
 	mov [rsp+8*23], rax
-	mov r8, qword [rsp+8*18]
+	mov r8,  [rsp+8*18]
 	mov r9,r8
 	imul r9,r8
-	mov r10, qword [rsp+8*23]
+	mov r10,  [rsp+8*23]
 	mov [r10],r9
 	mov qword [rsp+8*24],r9
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword [rsp+8*25], rax
-	mov r9, qword [rsp+8*25]
+	mov r9,  [rsp+8*25]
 	mov r8,r9
 	mov r10,0
 	mov r8,r10
@@ -795,13 +795,13 @@ func:
 	mov     rdi, [rsp+8*20]
 	call    multiAddress
 	mov [rsp+8*27], rax
-	mov r8, qword [rsp+8*18]
+	mov r8,  [rsp+8*18]
 	mov r9,1
 	mov r10,r8
 	add r10,r9
-	mov r11, qword [rsp+8*27]
+	mov r11,  [rsp+8*27]
 	mov [r11],r10
-	mov r12, qword [rsp+8*20]
+	mov r12,  [rsp+8*20]
 	mov rax,r12
 	mov qword [rsp+8*28],r10
 	leave
@@ -815,7 +815,7 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 296
-	mov r8, qword [rsp+8*29]
+	mov r8,  [rsp+8*29]
 	mov rax,r8
 	leave
 	ret

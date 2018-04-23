@@ -672,7 +672,7 @@ hello:
 	mov r9,t64
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*4],r10
 	mov rdi,[rsp+8*4] 
 	add rdi, 1 
@@ -690,7 +690,7 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 104
-	mov r8, qword [rsp+8*5]
+	mov r8,  [rsp+8*5]
 	mov rax,r8
 	leave
 	ret

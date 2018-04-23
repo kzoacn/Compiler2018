@@ -658,7 +658,7 @@ main:
 	mov     rdi, 4
 	call    mallocArray
 	mov     qword [rsp+8*2], rax
-	mov r9, qword [rsp+8*2]
+	mov r9,  [rsp+8*2]
 	mov r8,r9
 	mov r10,r8
 	mov r11,2
@@ -682,7 +682,7 @@ main:
 	mov qword [rsp+8*9],r8
 	mov r8,r9
 	mov qword [rsp+8*11],r8
-	mov qword [arg+8*0],r9
+	mov qword rdi,r9
 	mov qword [rsp+8*4],r10
 	mov qword [rsp+8*5],r12
 	mov qword [gbl+8*6],r14
@@ -690,10 +690,10 @@ main:
 	mov     rdi, [rsp+8*11]
 	call    toString
 	mov     qword[rsp+8*12], rax
-	mov r9, qword [rsp+8*12]
+	mov r9,  [rsp+8*12]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*13],r10
 	mov rdi,[rsp+8*13] 
 	add rdi, 1 
@@ -717,10 +717,10 @@ global_init:
 	mov     rdi, 4
 	call    mallocArray
 	mov     qword [gbl+8*14], rax
-	mov r9, qword [gbl+8*14]
+	mov r9,  [gbl+8*14]
 	mov r8,r9
 	mov qword [gbl+8*6],r8
-	mov r8, qword [rsp+8*15]
+	mov r8,  [rsp+8*15]
 	mov rax,r8
 	leave
 	ret

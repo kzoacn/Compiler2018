@@ -658,7 +658,7 @@ main:
 	mov     rdi, 5
 	call    mallocArray
 	mov     qword [rsp+8*2], rax
-	mov r9, qword [rsp+8*2]
+	mov r9,  [rsp+8*2]
 	mov r8,r9
 	mov r11,0
 	mov r10,r11
@@ -666,26 +666,26 @@ main:
 	mov qword [rsp+8*4],r10
 	
 L_495:
-	mov r8, qword [rsp+8*4]
+	mov r8,  [rsp+8*4]
 	mov r9,5
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
 	mov qword [rsp+8*5],r10
-	mov r8, qword [rsp+8*5]
+	mov r8,  [rsp+8*5]
 	cmp r8, 0
 	je L_496
 	mov     rdi, 3
 	call    mallocArray
 	mov     qword [rsp+8*6], rax
-	mov r9, qword [rsp+8*3]
+	mov r9,  [rsp+8*3]
 	mov r8,r9
-	mov r10, qword [rsp+8*4]
+	mov r10,  [rsp+8*4]
 	mov r11,r10
 	add r11,1
 	shl r11,4
 	add r11,r8
-	mov r12, qword [rsp+8*6]
+	mov r12,  [rsp+8*6]
 	mov [r11],r12
 	mov r14,0
 	mov r13,r14
@@ -694,32 +694,32 @@ L_495:
 	mov qword [rsp+8*9],r13
 	
 L_498:
-	mov r8, qword [rsp+8*9]
+	mov r8,  [rsp+8*9]
 	mov r9,3
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
 	mov qword [rsp+8*10],r10
-	mov r8, qword [rsp+8*10]
+	mov r8,  [rsp+8*10]
 	cmp r8, 0
 	je L_499
 	mov     rdi, 2
 	call    mallocArray
 	mov     qword [rsp+8*11], rax
-	mov r9, qword [rsp+8*3]
+	mov r9,  [rsp+8*3]
 	mov r8,r9
-	mov r10, qword [rsp+8*4]
+	mov r10,  [rsp+8*4]
 	mov r11,r10
 	add r11,1
 	shl r11,4
 	add r11,r8
 	mov r8, [r11]
-	mov r12, qword [rsp+8*9]
+	mov r12,  [rsp+8*9]
 	mov r11,r12
 	add r11,1
 	shl r11,4
 	add r11,r8
-	mov r13, qword [rsp+8*11]
+	mov r13,  [rsp+8*11]
 	mov [r11],r13
 	mov r14,r9
 	mov r15,r10
@@ -804,7 +804,7 @@ L_498:
 	mov qword [rsp+8*20],r8
 	mov r8,r9
 	mov r9,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*26],r9
 	mov qword [rsp+8*23],r11
 	mov qword [rsp+8*14],r14
@@ -812,17 +812,17 @@ L_498:
 	mov     rdi, [rsp+8*26]
 	call    toString
 	mov     qword[rsp+8*27], rax
-	mov r9, qword [rsp+8*27]
+	mov r9,  [rsp+8*27]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*28],r10
 	mov rdi,[rsp+8*28] 
 	add rdi, 1 
 	call puts
 	
 L_500:
-	mov r9, qword [rsp+8*9]
+	mov r9,  [rsp+8*9]
 	mov r8,r9
 	mov r10,1
 	mov r9,r9
@@ -834,7 +834,7 @@ L_500:
 L_499:
 	
 L_497:
-	mov r9, qword [rsp+8*4]
+	mov r9,  [rsp+8*4]
 	mov r8,r9
 	mov r10,1
 	mov r9,r9
@@ -860,7 +860,7 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 312
-	mov r8, qword [rsp+8*31]
+	mov r8,  [rsp+8*31]
 	mov rax,r8
 	leave
 	ret

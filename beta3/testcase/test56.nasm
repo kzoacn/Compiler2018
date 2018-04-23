@@ -658,7 +658,7 @@ main:
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword [rsp+8*2], rax
-	mov r9, qword [rsp+8*2]
+	mov r9,  [rsp+8*2]
 	mov r8,r9
 	mov r10,r8
 	mov r12,4
@@ -668,23 +668,23 @@ main:
 	mov r15,r10
 	mov qword [rsp+8*3],r8
 	mov qword [rsp+8*4],r10
-	mov qword [arg+8*1],r11
-	mov qword [arg+8*0],r13
+	mov qword rsi,r11
+	mov qword rdi,r13
 	mov qword [arg+8*63],r15
 	call Adder_add
 	mov r8 , rax
 	mov r9,r8
 	mov r10,r9
 	mov qword [rsp+8*8],r8
-	mov qword [arg+8*0],r9
+	mov qword rdi,r9
 	mov qword [rsp+8*9],r10
 	mov     rdi, [rsp+8*9]
 	call    toString
 	mov     qword[rsp+8*10], rax
-	mov r9, qword [rsp+8*10]
+	mov r9,  [rsp+8*10]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*11],r10
 	mov rdi,[rsp+8*11] 
 	add rdi, 1 
@@ -700,11 +700,11 @@ Adder_add:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 192
-	mov r9, qword [arg+8*63]
+	mov r9,  [arg+8*63]
 	mov r8,r9
-	mov r11, qword [arg+8*0]
+	mov r11,  rdi
 	mov r10,r11
-	mov r13, qword [arg+8*1]
+	mov r13,  rsi
 	mov r12,r13
 	mov r14,r10
 	add r14,r12
@@ -724,7 +724,7 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 192
-	mov r8, qword [rsp+8*16]
+	mov r8,  [rsp+8*16]
 	mov rax,r8
 	leave
 	ret

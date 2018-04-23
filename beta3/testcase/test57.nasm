@@ -658,7 +658,7 @@ main:
 	mov     rdi, 3
 	call    mallocArray
 	mov     qword [rsp+8*2], rax
-	mov r9, qword [rsp+8*2]
+	mov r9,  [rsp+8*2]
 	mov r8,r9
 	mov r11,0
 	mov r10,r11
@@ -666,26 +666,26 @@ main:
 	mov qword [rsp+8*4],r10
 	
 L_480:
-	mov r8, qword [rsp+8*4]
+	mov r8,  [rsp+8*4]
 	mov r9,3
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
 	mov qword [rsp+8*5],r10
-	mov r8, qword [rsp+8*5]
+	mov r8,  [rsp+8*5]
 	cmp r8, 0
 	je L_481
 	mov     rdi, 0
 	call    mallocArray
 	mov     qword [rsp+8*6], rax
-	mov r9, qword [rsp+8*3]
+	mov r9,  [rsp+8*3]
 	mov r8,r9
-	mov r10, qword [rsp+8*4]
+	mov r10,  [rsp+8*4]
 	mov r11,r10
 	add r11,1
 	shl r11,4
 	add r11,r8
-	mov r12, qword [rsp+8*6]
+	mov r12,  [rsp+8*6]
 	mov [r11],r12
 	mov r13,r9
 	mov r14,r10
@@ -704,7 +704,7 @@ L_480:
 	mov qword [rsp+8*12],r8
 	
 L_482:
-	mov r9, qword [rsp+8*4]
+	mov r9,  [rsp+8*4]
 	mov r8,r9
 	mov r10,1
 	mov r9,r9
@@ -730,18 +730,18 @@ Hello_say:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 208
-	mov r9, qword [arg+8*63]
+	mov r9,  [arg+8*63]
 	mov r8,r9
 	mov r11,t67
 	mov r10,r11
 	mov r12,r10
 	mov qword [rsp+8*14],r8
-	mov qword [arg+8*0],r10
+	mov qword rdi,r10
 	mov qword [rsp+8*16],r12
 	mov rdi,[rsp+8*16] 
 	add rdi, 1 
 	call puts
-	mov r8, qword [rsp+8*17]
+	mov r8,  [rsp+8*17]
 	mov rax,r8
 	leave
 	ret
@@ -750,7 +750,7 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 208
-	mov r8, qword [rsp+8*18]
+	mov r8,  [rsp+8*18]
 	mov rax,r8
 	leave
 	ret

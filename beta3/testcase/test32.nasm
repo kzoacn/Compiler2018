@@ -659,22 +659,22 @@ main:
 	mov r12,10
 	mov r11,r12
 	mov qword [rsp+8*1],r8
-	mov qword [arg+8*1],r9
-	mov qword [arg+8*0],r11
+	mov qword rsi,r9
+	mov qword rdi,r11
 	call gcd
 	mov r8 , rax
 	mov r9,r8
 	mov r10,r9
 	mov qword [rsp+8*4],r8
-	mov qword [arg+8*0],r9
+	mov qword rdi,r9
 	mov qword [rsp+8*5],r10
 	mov     rdi, [rsp+8*5]
 	call    toString
 	mov     qword[rsp+8*6], rax
-	mov r9, qword [rsp+8*6]
+	mov r9,  [rsp+8*6]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*7],r10
 	mov rdi,[rsp+8*7] 
 	add rdi, 1 
@@ -683,22 +683,22 @@ main:
 	mov r8,r9
 	mov r11,34986
 	mov r10,r11
-	mov qword [arg+8*1],r8
-	mov qword [arg+8*0],r10
+	mov qword rsi,r8
+	mov qword rdi,r10
 	call gcd
 	mov r8 , rax
 	mov r9,r8
 	mov r10,r9
 	mov qword [rsp+8*8],r8
-	mov qword [arg+8*0],r9
+	mov qword rdi,r9
 	mov qword [rsp+8*9],r10
 	mov     rdi, [rsp+8*9]
 	call    toString
 	mov     qword[rsp+8*10], rax
-	mov r9, qword [rsp+8*10]
+	mov r9,  [rsp+8*10]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*11],r10
 	mov rdi,[rsp+8*11] 
 	add rdi, 1 
@@ -707,22 +707,22 @@ main:
 	mov r8,r9
 	mov r11,2907
 	mov r10,r11
-	mov qword [arg+8*1],r8
-	mov qword [arg+8*0],r10
+	mov qword rsi,r8
+	mov qword rdi,r10
 	call gcd
 	mov r8 , rax
 	mov r9,r8
 	mov r10,r9
 	mov qword [rsp+8*12],r8
-	mov qword [arg+8*0],r9
+	mov qword rdi,r9
 	mov qword [rsp+8*13],r10
 	mov     rdi, [rsp+8*13]
 	call    toString
 	mov     qword[rsp+8*14], rax
-	mov r9, qword [rsp+8*14]
+	mov r9,  [rsp+8*14]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*15],r10
 	mov rdi,[rsp+8*15] 
 	add rdi, 1 
@@ -743,9 +743,9 @@ gcd:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 240
-	mov r9, qword [arg+8*0]
+	mov r9,  rdi
 	mov r8,r9
-	mov r11, qword [arg+8*1]
+	mov r11,  rsi
 	mov r10,r11
 	xor rdx, rdx
 	mov rax, r8
@@ -761,10 +761,10 @@ gcd:
 	mov qword [rsp+8*17],r10
 	mov qword [rsp+8*18],r12
 	mov qword [rsp+8*19],r14
-	mov r8, qword [rsp+8*19]
+	mov r8,  [rsp+8*19]
 	cmp r8, 0
 	je L_340
-	mov r8, qword [rsp+8*17]
+	mov r8,  [rsp+8*17]
 	mov rax,r8
 	leave
 	ret
@@ -772,9 +772,9 @@ gcd:
 	
 L_340:
 	xor rdx, rdx
-	mov r8, qword [rsp+8*16]
+	mov r8,  [rsp+8*16]
 	mov rax, r8
-	mov r9, qword [rsp+8*17]
+	mov r9,  [rsp+8*17]
 	mov rbx, r9
 	cdq
 	idiv rbx
@@ -782,8 +782,8 @@ L_340:
 	mov r11,r10
 	mov r12,r9
 	mov qword [rsp+8*20],r10
-	mov qword [arg+8*1],r11
-	mov qword [arg+8*0],r12
+	mov qword rsi,r11
+	mov qword rdi,r12
 	call gcd
 	mov r8 , rax
 	mov rax,r8
@@ -801,7 +801,7 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 240
-	mov r8, qword [rsp+8*22]
+	mov r8,  [rsp+8*22]
 	mov rax,r8
 	leave
 	ret

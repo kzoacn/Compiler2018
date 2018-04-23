@@ -663,33 +663,33 @@ main:
 	mov qword [rsp+8*3],r11
 	
 L_0:
-	mov r8, qword [rsp+8*3]
+	mov r8,  [rsp+8*3]
 	mov r9,25
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
 	mov qword [rsp+8*4],r10
-	mov r8, qword [rsp+8*4]
+	mov r8,  [rsp+8*4]
 	cmp r8, 0
 	je L_1
-	mov r9, qword [rsp+8*3]
+	mov r9,  [rsp+8*3]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*6],r10
 	mov     rdi, [rsp+8*6]
 	call    toString
 	mov     qword[rsp+8*7], rax
-	mov r9, qword [rsp+8*7]
+	mov r9,  [rsp+8*7]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*8],r10
 	mov rdi,[rsp+8*8] 
 	add rdi, 1 
 	call puts
-	mov r8, qword [rsp+8*2]
-	mov r9, qword [rsp+8*3]
+	mov r8,  [rsp+8*2]
+	mov r9,  [rsp+8*3]
 	mov r10,r8
 	add r10,r9
 	mov r11,r10
@@ -713,7 +713,7 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 152
-	mov r8, qword [rsp+8*11]
+	mov r8,  [rsp+8*11]
 	mov rax,r8
 	leave
 	ret

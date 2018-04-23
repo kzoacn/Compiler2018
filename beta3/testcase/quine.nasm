@@ -656,7 +656,7 @@ main:
 	mov r8 , rax
 	mov r10,0
 	mov r9,r10
-	mov r12, qword [gbl+8*3]
+	mov r12,  [gbl+8*3]
 	mov r11,r12
 	mov r13,0
 	mov r14,r13
@@ -1586,7 +1586,7 @@ main:
 	mov qword [rsp+8*188],r8
 	mov r8,t517
 	mov [r11],r8
-	mov r10, qword [gbl+8*190]
+	mov r10,  [gbl+8*190]
 	mov r8,r10
 	mov qword [rsp+8*189],r11
 	mov r11,0
@@ -1924,7 +1924,7 @@ main:
 	mov     rdi, [rsp+8*255]
 	call    concat
 	mov [rsp+8*259], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -1939,7 +1939,7 @@ main:
 	mov     rdi, [rsp+8*259]
 	call    concat
 	mov [rsp+8*263], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -1954,7 +1954,7 @@ main:
 	mov     rdi, [rsp+8*263]
 	call    concat
 	mov [rsp+8*267], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -1969,7 +1969,7 @@ main:
 	mov     rdi, [rsp+8*267]
 	call    concat
 	mov [rsp+8*271], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,69
 	mov r11,r10
@@ -1984,7 +1984,7 @@ main:
 	mov     rdi, [rsp+8*271]
 	call    concat
 	mov [rsp+8*275], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,0
 	mov r11,r10
@@ -1999,7 +1999,7 @@ main:
 	mov     rdi, [rsp+8*275]
 	call    concat
 	mov [rsp+8*279], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,66
 	mov r11,r10
@@ -2014,7 +2014,7 @@ main:
 	mov     rdi, [rsp+8*279]
 	call    concat
 	mov [rsp+8*283], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -2029,7 +2029,7 @@ main:
 	mov     rdi, [rsp+8*283]
 	call    concat
 	mov [rsp+8*287], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,69
 	mov r11,r10
@@ -2044,7 +2044,7 @@ main:
 	mov     rdi, [rsp+8*287]
 	call    concat
 	mov [rsp+8*291], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,82
 	mov r11,r10
@@ -2059,7 +2059,7 @@ main:
 	mov     rdi, [rsp+8*291]
 	call    concat
 	mov [rsp+8*295], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,7
 	mov r11,r10
@@ -2074,7 +2074,7 @@ main:
 	mov     rdi, [rsp+8*295]
 	call    concat
 	mov [rsp+8*299], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -2089,7 +2089,7 @@ main:
 	mov     rdi, [rsp+8*299]
 	call    concat
 	mov [rsp+8*303], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -2104,7 +2104,7 @@ main:
 	mov     rdi, [rsp+8*303]
 	call    concat
 	mov [rsp+8*307], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,82
 	mov r11,r10
@@ -2119,7 +2119,7 @@ main:
 	mov     rdi, [rsp+8*307]
 	call    concat
 	mov [rsp+8*311], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,0
 	mov r11,r10
@@ -2134,7 +2134,7 @@ main:
 	mov     rdi, [rsp+8*311]
 	call    concat
 	mov [rsp+8*315], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,86
 	mov r11,r10
@@ -2149,7 +2149,7 @@ main:
 	mov     rdi, [rsp+8*315]
 	call    concat
 	mov [rsp+8*319], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,8
 	mov r11,r10
@@ -2164,7 +2164,7 @@ main:
 	mov     rdi, [rsp+8*319]
 	call    concat
 	mov [rsp+8*323], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,89
 	mov r11,r10
@@ -2179,15 +2179,15 @@ main:
 	mov     rdi, [rsp+8*323]
 	call    concat
 	mov [rsp+8*327], rax
-	mov r9, qword [rsp+8*327]
+	mov r9,  [rsp+8*327]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*329],r10
 	mov rdi,[rsp+8*329] 
 	add rdi, 1 
 	call puts
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -2212,7 +2212,7 @@ main:
 	mov     rdi, [rsp+8*332]
 	call    concat
 	mov [rsp+8*336], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,7
 	mov r11,r10
@@ -2227,7 +2227,7 @@ main:
 	mov     rdi, [rsp+8*336]
 	call    concat
 	mov [rsp+8*340], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,86
 	mov r11,r10
@@ -2242,7 +2242,7 @@ main:
 	mov     rdi, [rsp+8*340]
 	call    concat
 	mov [rsp+8*344], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -2257,7 +2257,7 @@ main:
 	mov     rdi, [rsp+8*344]
 	call    concat
 	mov [rsp+8*348], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -2272,7 +2272,7 @@ main:
 	mov     rdi, [rsp+8*348]
 	call    concat
 	mov [rsp+8*352], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,15
 	mov r11,r10
@@ -2287,7 +2287,7 @@ main:
 	mov     rdi, [rsp+8*352]
 	call    concat
 	mov [rsp+8*356], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,8
 	mov r11,r10
@@ -2302,7 +2302,7 @@ main:
 	mov     rdi, [rsp+8*356]
 	call    concat
 	mov [rsp+8*360], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -2317,7 +2317,7 @@ main:
 	mov     rdi, [rsp+8*360]
 	call    concat
 	mov [rsp+8*364], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,67
 	mov r11,r10
@@ -2332,7 +2332,7 @@ main:
 	mov     rdi, [rsp+8*364]
 	call    concat
 	mov [rsp+8*368], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,82
 	mov r11,r10
@@ -2347,7 +2347,7 @@ main:
 	mov     rdi, [rsp+8*368]
 	call    concat
 	mov [rsp+8*372], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,83
 	mov r11,r10
@@ -2362,7 +2362,7 @@ main:
 	mov     rdi, [rsp+8*372]
 	call    concat
 	mov [rsp+8*376], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -2377,7 +2377,7 @@ main:
 	mov     rdi, [rsp+8*376]
 	call    concat
 	mov [rsp+8*380], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -2392,7 +2392,7 @@ main:
 	mov     rdi, [rsp+8*380]
 	call    concat
 	mov [rsp+8*384], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,0
 	mov r11,r10
@@ -2411,7 +2411,7 @@ main:
 	mov     rdi, [rsp+8*388]
 	call    concat
 	mov [rsp+8*390], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,15
 	mov r11,r10
@@ -2430,7 +2430,7 @@ main:
 	mov     rdi, [rsp+8*394]
 	call    concat
 	mov [rsp+8*395], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,26
 	mov r11,r10
@@ -2445,15 +2445,15 @@ main:
 	mov     rdi, [rsp+8*395]
 	call    concat
 	mov [rsp+8*399], rax
-	mov r9, qword [rsp+8*399]
+	mov r9,  [rsp+8*399]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*400],r10
 	mov rdi,[rsp+8*400] 
 	add rdi, 1 
 	call puts
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -2478,7 +2478,7 @@ main:
 	mov     rdi, [rsp+8*403]
 	call    concat
 	mov [rsp+8*407], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,7
 	mov r11,r10
@@ -2493,7 +2493,7 @@ main:
 	mov     rdi, [rsp+8*407]
 	call    concat
 	mov [rsp+8*411], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,86
 	mov r11,r10
@@ -2508,7 +2508,7 @@ main:
 	mov     rdi, [rsp+8*411]
 	call    concat
 	mov [rsp+8*415], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -2523,7 +2523,7 @@ main:
 	mov     rdi, [rsp+8*415]
 	call    concat
 	mov [rsp+8*419], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -2538,7 +2538,7 @@ main:
 	mov     rdi, [rsp+8*419]
 	call    concat
 	mov [rsp+8*423], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,16
 	mov r11,r10
@@ -2553,7 +2553,7 @@ main:
 	mov     rdi, [rsp+8*423]
 	call    concat
 	mov [rsp+8*427], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,8
 	mov r11,r10
@@ -2568,7 +2568,7 @@ main:
 	mov     rdi, [rsp+8*427]
 	call    concat
 	mov [rsp+8*431], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -2583,7 +2583,7 @@ main:
 	mov     rdi, [rsp+8*431]
 	call    concat
 	mov [rsp+8*435], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,67
 	mov r11,r10
@@ -2598,7 +2598,7 @@ main:
 	mov     rdi, [rsp+8*435]
 	call    concat
 	mov [rsp+8*439], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,82
 	mov r11,r10
@@ -2613,7 +2613,7 @@ main:
 	mov     rdi, [rsp+8*439]
 	call    concat
 	mov [rsp+8*443], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,83
 	mov r11,r10
@@ -2628,7 +2628,7 @@ main:
 	mov     rdi, [rsp+8*443]
 	call    concat
 	mov [rsp+8*447], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -2643,7 +2643,7 @@ main:
 	mov     rdi, [rsp+8*447]
 	call    concat
 	mov [rsp+8*451], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -2658,7 +2658,7 @@ main:
 	mov     rdi, [rsp+8*451]
 	call    concat
 	mov [rsp+8*455], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,0
 	mov r11,r10
@@ -2677,7 +2677,7 @@ main:
 	mov     rdi, [rsp+8*459]
 	call    concat
 	mov [rsp+8*460], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,16
 	mov r11,r10
@@ -2696,7 +2696,7 @@ main:
 	mov     rdi, [rsp+8*464]
 	call    concat
 	mov [rsp+8*465], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,26
 	mov r11,r10
@@ -2711,15 +2711,15 @@ main:
 	mov     rdi, [rsp+8*465]
 	call    concat
 	mov [rsp+8*469], rax
-	mov r9, qword [rsp+8*469]
+	mov r9,  [rsp+8*469]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*470],r10
 	mov rdi,[rsp+8*470] 
 	add rdi, 1 
 	call puts
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -2744,7 +2744,7 @@ main:
 	mov     rdi, [rsp+8*473]
 	call    concat
 	mov [rsp+8*477], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,7
 	mov r11,r10
@@ -2759,7 +2759,7 @@ main:
 	mov     rdi, [rsp+8*477]
 	call    concat
 	mov [rsp+8*481], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,86
 	mov r11,r10
@@ -2774,7 +2774,7 @@ main:
 	mov     rdi, [rsp+8*481]
 	call    concat
 	mov [rsp+8*485], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -2789,7 +2789,7 @@ main:
 	mov     rdi, [rsp+8*485]
 	call    concat
 	mov [rsp+8*489], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -2804,7 +2804,7 @@ main:
 	mov     rdi, [rsp+8*489]
 	call    concat
 	mov [rsp+8*493], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,17
 	mov r11,r10
@@ -2819,7 +2819,7 @@ main:
 	mov     rdi, [rsp+8*493]
 	call    concat
 	mov [rsp+8*497], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,8
 	mov r11,r10
@@ -2834,7 +2834,7 @@ main:
 	mov     rdi, [rsp+8*497]
 	call    concat
 	mov [rsp+8*501], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -2849,7 +2849,7 @@ main:
 	mov     rdi, [rsp+8*501]
 	call    concat
 	mov [rsp+8*505], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,67
 	mov r11,r10
@@ -2864,7 +2864,7 @@ main:
 	mov     rdi, [rsp+8*505]
 	call    concat
 	mov [rsp+8*509], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,82
 	mov r11,r10
@@ -2879,7 +2879,7 @@ main:
 	mov     rdi, [rsp+8*509]
 	call    concat
 	mov [rsp+8*513], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,83
 	mov r11,r10
@@ -2894,7 +2894,7 @@ main:
 	mov     rdi, [rsp+8*513]
 	call    concat
 	mov [rsp+8*517], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -2909,7 +2909,7 @@ main:
 	mov     rdi, [rsp+8*517]
 	call    concat
 	mov [rsp+8*521], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -2924,7 +2924,7 @@ main:
 	mov     rdi, [rsp+8*521]
 	call    concat
 	mov [rsp+8*525], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,0
 	mov r11,r10
@@ -2943,7 +2943,7 @@ main:
 	mov     rdi, [rsp+8*529]
 	call    concat
 	mov [rsp+8*530], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,17
 	mov r11,r10
@@ -2962,7 +2962,7 @@ main:
 	mov     rdi, [rsp+8*534]
 	call    concat
 	mov [rsp+8*535], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,26
 	mov r11,r10
@@ -2977,15 +2977,15 @@ main:
 	mov     rdi, [rsp+8*535]
 	call    concat
 	mov [rsp+8*539], rax
-	mov r9, qword [rsp+8*539]
+	mov r9,  [rsp+8*539]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*540],r10
 	mov rdi,[rsp+8*540] 
 	add rdi, 1 
 	call puts
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -3010,7 +3010,7 @@ main:
 	mov     rdi, [rsp+8*543]
 	call    concat
 	mov [rsp+8*547], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,7
 	mov r11,r10
@@ -3025,7 +3025,7 @@ main:
 	mov     rdi, [rsp+8*547]
 	call    concat
 	mov [rsp+8*551], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,86
 	mov r11,r10
@@ -3040,7 +3040,7 @@ main:
 	mov     rdi, [rsp+8*551]
 	call    concat
 	mov [rsp+8*555], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -3055,7 +3055,7 @@ main:
 	mov     rdi, [rsp+8*555]
 	call    concat
 	mov [rsp+8*559], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -3070,7 +3070,7 @@ main:
 	mov     rdi, [rsp+8*559]
 	call    concat
 	mov [rsp+8*563], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,18
 	mov r11,r10
@@ -3085,7 +3085,7 @@ main:
 	mov     rdi, [rsp+8*563]
 	call    concat
 	mov [rsp+8*567], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,8
 	mov r11,r10
@@ -3100,7 +3100,7 @@ main:
 	mov     rdi, [rsp+8*567]
 	call    concat
 	mov [rsp+8*571], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -3115,7 +3115,7 @@ main:
 	mov     rdi, [rsp+8*571]
 	call    concat
 	mov [rsp+8*575], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,67
 	mov r11,r10
@@ -3130,7 +3130,7 @@ main:
 	mov     rdi, [rsp+8*575]
 	call    concat
 	mov [rsp+8*579], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,82
 	mov r11,r10
@@ -3145,7 +3145,7 @@ main:
 	mov     rdi, [rsp+8*579]
 	call    concat
 	mov [rsp+8*583], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,83
 	mov r11,r10
@@ -3160,7 +3160,7 @@ main:
 	mov     rdi, [rsp+8*583]
 	call    concat
 	mov [rsp+8*587], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -3175,7 +3175,7 @@ main:
 	mov     rdi, [rsp+8*587]
 	call    concat
 	mov [rsp+8*591], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -3190,7 +3190,7 @@ main:
 	mov     rdi, [rsp+8*591]
 	call    concat
 	mov [rsp+8*595], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,0
 	mov r11,r10
@@ -3209,7 +3209,7 @@ main:
 	mov     rdi, [rsp+8*599]
 	call    concat
 	mov [rsp+8*600], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,18
 	mov r11,r10
@@ -3228,7 +3228,7 @@ main:
 	mov     rdi, [rsp+8*604]
 	call    concat
 	mov [rsp+8*605], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,26
 	mov r11,r10
@@ -3243,15 +3243,15 @@ main:
 	mov     rdi, [rsp+8*605]
 	call    concat
 	mov [rsp+8*609], rax
-	mov r9, qword [rsp+8*609]
+	mov r9,  [rsp+8*609]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*610],r10
 	mov rdi,[rsp+8*610] 
 	add rdi, 1 
 	call puts
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -3276,7 +3276,7 @@ main:
 	mov     rdi, [rsp+8*613]
 	call    concat
 	mov [rsp+8*617], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,7
 	mov r11,r10
@@ -3291,7 +3291,7 @@ main:
 	mov     rdi, [rsp+8*617]
 	call    concat
 	mov [rsp+8*621], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,86
 	mov r11,r10
@@ -3306,7 +3306,7 @@ main:
 	mov     rdi, [rsp+8*621]
 	call    concat
 	mov [rsp+8*625], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -3321,7 +3321,7 @@ main:
 	mov     rdi, [rsp+8*625]
 	call    concat
 	mov [rsp+8*629], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -3336,7 +3336,7 @@ main:
 	mov     rdi, [rsp+8*629]
 	call    concat
 	mov [rsp+8*633], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,19
 	mov r11,r10
@@ -3351,7 +3351,7 @@ main:
 	mov     rdi, [rsp+8*633]
 	call    concat
 	mov [rsp+8*637], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,8
 	mov r11,r10
@@ -3366,7 +3366,7 @@ main:
 	mov     rdi, [rsp+8*637]
 	call    concat
 	mov [rsp+8*641], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -3381,7 +3381,7 @@ main:
 	mov     rdi, [rsp+8*641]
 	call    concat
 	mov [rsp+8*645], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,67
 	mov r11,r10
@@ -3396,7 +3396,7 @@ main:
 	mov     rdi, [rsp+8*645]
 	call    concat
 	mov [rsp+8*649], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,82
 	mov r11,r10
@@ -3411,7 +3411,7 @@ main:
 	mov     rdi, [rsp+8*649]
 	call    concat
 	mov [rsp+8*653], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,83
 	mov r11,r10
@@ -3426,7 +3426,7 @@ main:
 	mov     rdi, [rsp+8*653]
 	call    concat
 	mov [rsp+8*657], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -3441,7 +3441,7 @@ main:
 	mov     rdi, [rsp+8*657]
 	call    concat
 	mov [rsp+8*661], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -3456,7 +3456,7 @@ main:
 	mov     rdi, [rsp+8*661]
 	call    concat
 	mov [rsp+8*665], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,0
 	mov r11,r10
@@ -3475,7 +3475,7 @@ main:
 	mov     rdi, [rsp+8*669]
 	call    concat
 	mov [rsp+8*670], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,19
 	mov r11,r10
@@ -3494,7 +3494,7 @@ main:
 	mov     rdi, [rsp+8*674]
 	call    concat
 	mov [rsp+8*675], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,26
 	mov r11,r10
@@ -3509,15 +3509,15 @@ main:
 	mov     rdi, [rsp+8*675]
 	call    concat
 	mov [rsp+8*679], rax
-	mov r9, qword [rsp+8*679]
+	mov r9,  [rsp+8*679]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*680],r10
 	mov rdi,[rsp+8*680] 
 	add rdi, 1 
 	call puts
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -3542,7 +3542,7 @@ main:
 	mov     rdi, [rsp+8*683]
 	call    concat
 	mov [rsp+8*687], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,7
 	mov r11,r10
@@ -3557,7 +3557,7 @@ main:
 	mov     rdi, [rsp+8*687]
 	call    concat
 	mov [rsp+8*691], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,86
 	mov r11,r10
@@ -3572,7 +3572,7 @@ main:
 	mov     rdi, [rsp+8*691]
 	call    concat
 	mov [rsp+8*695], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -3587,7 +3587,7 @@ main:
 	mov     rdi, [rsp+8*695]
 	call    concat
 	mov [rsp+8*699], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -3602,7 +3602,7 @@ main:
 	mov     rdi, [rsp+8*699]
 	call    concat
 	mov [rsp+8*703], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,20
 	mov r11,r10
@@ -3617,7 +3617,7 @@ main:
 	mov     rdi, [rsp+8*703]
 	call    concat
 	mov [rsp+8*707], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,8
 	mov r11,r10
@@ -3632,7 +3632,7 @@ main:
 	mov     rdi, [rsp+8*707]
 	call    concat
 	mov [rsp+8*711], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -3647,7 +3647,7 @@ main:
 	mov     rdi, [rsp+8*711]
 	call    concat
 	mov [rsp+8*715], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,67
 	mov r11,r10
@@ -3662,7 +3662,7 @@ main:
 	mov     rdi, [rsp+8*715]
 	call    concat
 	mov [rsp+8*719], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,82
 	mov r11,r10
@@ -3677,7 +3677,7 @@ main:
 	mov     rdi, [rsp+8*719]
 	call    concat
 	mov [rsp+8*723], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,83
 	mov r11,r10
@@ -3692,7 +3692,7 @@ main:
 	mov     rdi, [rsp+8*723]
 	call    concat
 	mov [rsp+8*727], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -3707,7 +3707,7 @@ main:
 	mov     rdi, [rsp+8*727]
 	call    concat
 	mov [rsp+8*731], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -3722,7 +3722,7 @@ main:
 	mov     rdi, [rsp+8*731]
 	call    concat
 	mov [rsp+8*735], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,0
 	mov r11,r10
@@ -3741,7 +3741,7 @@ main:
 	mov     rdi, [rsp+8*739]
 	call    concat
 	mov [rsp+8*740], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,20
 	mov r11,r10
@@ -3760,7 +3760,7 @@ main:
 	mov     rdi, [rsp+8*744]
 	call    concat
 	mov [rsp+8*745], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,26
 	mov r11,r10
@@ -3775,15 +3775,15 @@ main:
 	mov     rdi, [rsp+8*745]
 	call    concat
 	mov [rsp+8*749], rax
-	mov r9, qword [rsp+8*749]
+	mov r9,  [rsp+8*749]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*750],r10
 	mov rdi,[rsp+8*750] 
 	add rdi, 1 
 	call puts
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -3808,7 +3808,7 @@ main:
 	mov     rdi, [rsp+8*753]
 	call    concat
 	mov [rsp+8*757], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,7
 	mov r11,r10
@@ -3823,7 +3823,7 @@ main:
 	mov     rdi, [rsp+8*757]
 	call    concat
 	mov [rsp+8*761], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,86
 	mov r11,r10
@@ -3838,7 +3838,7 @@ main:
 	mov     rdi, [rsp+8*761]
 	call    concat
 	mov [rsp+8*765], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -3853,7 +3853,7 @@ main:
 	mov     rdi, [rsp+8*765]
 	call    concat
 	mov [rsp+8*769], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -3868,7 +3868,7 @@ main:
 	mov     rdi, [rsp+8*769]
 	call    concat
 	mov [rsp+8*773], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,21
 	mov r11,r10
@@ -3883,7 +3883,7 @@ main:
 	mov     rdi, [rsp+8*773]
 	call    concat
 	mov [rsp+8*777], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,8
 	mov r11,r10
@@ -3898,7 +3898,7 @@ main:
 	mov     rdi, [rsp+8*777]
 	call    concat
 	mov [rsp+8*781], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -3913,7 +3913,7 @@ main:
 	mov     rdi, [rsp+8*781]
 	call    concat
 	mov [rsp+8*785], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,67
 	mov r11,r10
@@ -3928,7 +3928,7 @@ main:
 	mov     rdi, [rsp+8*785]
 	call    concat
 	mov [rsp+8*789], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,82
 	mov r11,r10
@@ -3943,7 +3943,7 @@ main:
 	mov     rdi, [rsp+8*789]
 	call    concat
 	mov [rsp+8*793], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,83
 	mov r11,r10
@@ -3958,7 +3958,7 @@ main:
 	mov     rdi, [rsp+8*793]
 	call    concat
 	mov [rsp+8*797], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -3973,7 +3973,7 @@ main:
 	mov     rdi, [rsp+8*797]
 	call    concat
 	mov [rsp+8*801], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -3988,7 +3988,7 @@ main:
 	mov     rdi, [rsp+8*801]
 	call    concat
 	mov [rsp+8*805], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,0
 	mov r11,r10
@@ -4007,7 +4007,7 @@ main:
 	mov     rdi, [rsp+8*809]
 	call    concat
 	mov [rsp+8*810], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,21
 	mov r11,r10
@@ -4026,7 +4026,7 @@ main:
 	mov     rdi, [rsp+8*814]
 	call    concat
 	mov [rsp+8*815], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,26
 	mov r11,r10
@@ -4041,15 +4041,15 @@ main:
 	mov     rdi, [rsp+8*815]
 	call    concat
 	mov [rsp+8*819], rax
-	mov r9, qword [rsp+8*819]
+	mov r9,  [rsp+8*819]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*820],r10
 	mov rdi,[rsp+8*820] 
 	add rdi, 1 
 	call puts
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -4074,7 +4074,7 @@ main:
 	mov     rdi, [rsp+8*823]
 	call    concat
 	mov [rsp+8*827], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,7
 	mov r11,r10
@@ -4089,7 +4089,7 @@ main:
 	mov     rdi, [rsp+8*827]
 	call    concat
 	mov [rsp+8*831], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,86
 	mov r11,r10
@@ -4104,7 +4104,7 @@ main:
 	mov     rdi, [rsp+8*831]
 	call    concat
 	mov [rsp+8*835], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -4119,7 +4119,7 @@ main:
 	mov     rdi, [rsp+8*835]
 	call    concat
 	mov [rsp+8*839], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -4134,7 +4134,7 @@ main:
 	mov     rdi, [rsp+8*839]
 	call    concat
 	mov [rsp+8*843], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,22
 	mov r11,r10
@@ -4149,7 +4149,7 @@ main:
 	mov     rdi, [rsp+8*843]
 	call    concat
 	mov [rsp+8*847], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,8
 	mov r11,r10
@@ -4164,7 +4164,7 @@ main:
 	mov     rdi, [rsp+8*847]
 	call    concat
 	mov [rsp+8*851], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -4179,7 +4179,7 @@ main:
 	mov     rdi, [rsp+8*851]
 	call    concat
 	mov [rsp+8*855], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,67
 	mov r11,r10
@@ -4194,7 +4194,7 @@ main:
 	mov     rdi, [rsp+8*855]
 	call    concat
 	mov [rsp+8*859], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,82
 	mov r11,r10
@@ -4209,7 +4209,7 @@ main:
 	mov     rdi, [rsp+8*859]
 	call    concat
 	mov [rsp+8*863], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,83
 	mov r11,r10
@@ -4224,7 +4224,7 @@ main:
 	mov     rdi, [rsp+8*863]
 	call    concat
 	mov [rsp+8*867], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -4239,7 +4239,7 @@ main:
 	mov     rdi, [rsp+8*867]
 	call    concat
 	mov [rsp+8*871], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -4254,7 +4254,7 @@ main:
 	mov     rdi, [rsp+8*871]
 	call    concat
 	mov [rsp+8*875], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,0
 	mov r11,r10
@@ -4273,7 +4273,7 @@ main:
 	mov     rdi, [rsp+8*879]
 	call    concat
 	mov [rsp+8*880], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,22
 	mov r11,r10
@@ -4292,7 +4292,7 @@ main:
 	mov     rdi, [rsp+8*884]
 	call    concat
 	mov [rsp+8*885], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,26
 	mov r11,r10
@@ -4307,15 +4307,15 @@ main:
 	mov     rdi, [rsp+8*885]
 	call    concat
 	mov [rsp+8*889], rax
-	mov r9, qword [rsp+8*889]
+	mov r9,  [rsp+8*889]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*890],r10
 	mov rdi,[rsp+8*890] 
 	add rdi, 1 
 	call puts
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -4340,7 +4340,7 @@ main:
 	mov     rdi, [rsp+8*893]
 	call    concat
 	mov [rsp+8*897], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,7
 	mov r11,r10
@@ -4355,7 +4355,7 @@ main:
 	mov     rdi, [rsp+8*897]
 	call    concat
 	mov [rsp+8*901], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,86
 	mov r11,r10
@@ -4370,7 +4370,7 @@ main:
 	mov     rdi, [rsp+8*901]
 	call    concat
 	mov [rsp+8*905], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -4385,7 +4385,7 @@ main:
 	mov     rdi, [rsp+8*905]
 	call    concat
 	mov [rsp+8*909], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -4400,7 +4400,7 @@ main:
 	mov     rdi, [rsp+8*909]
 	call    concat
 	mov [rsp+8*913], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,23
 	mov r11,r10
@@ -4415,7 +4415,7 @@ main:
 	mov     rdi, [rsp+8*913]
 	call    concat
 	mov [rsp+8*917], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,8
 	mov r11,r10
@@ -4430,7 +4430,7 @@ main:
 	mov     rdi, [rsp+8*917]
 	call    concat
 	mov [rsp+8*921], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -4445,7 +4445,7 @@ main:
 	mov     rdi, [rsp+8*921]
 	call    concat
 	mov [rsp+8*925], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,67
 	mov r11,r10
@@ -4460,7 +4460,7 @@ main:
 	mov     rdi, [rsp+8*925]
 	call    concat
 	mov [rsp+8*929], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,82
 	mov r11,r10
@@ -4475,7 +4475,7 @@ main:
 	mov     rdi, [rsp+8*929]
 	call    concat
 	mov [rsp+8*933], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,83
 	mov r11,r10
@@ -4490,7 +4490,7 @@ main:
 	mov     rdi, [rsp+8*933]
 	call    concat
 	mov [rsp+8*937], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -4505,7 +4505,7 @@ main:
 	mov     rdi, [rsp+8*937]
 	call    concat
 	mov [rsp+8*941], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -4520,7 +4520,7 @@ main:
 	mov     rdi, [rsp+8*941]
 	call    concat
 	mov [rsp+8*945], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,0
 	mov r11,r10
@@ -4539,7 +4539,7 @@ main:
 	mov     rdi, [rsp+8*949]
 	call    concat
 	mov [rsp+8*950], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,23
 	mov r11,r10
@@ -4558,7 +4558,7 @@ main:
 	mov     rdi, [rsp+8*954]
 	call    concat
 	mov [rsp+8*955], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,26
 	mov r11,r10
@@ -4573,15 +4573,15 @@ main:
 	mov     rdi, [rsp+8*955]
 	call    concat
 	mov [rsp+8*959], rax
-	mov r9, qword [rsp+8*959]
+	mov r9,  [rsp+8*959]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*960],r10
 	mov rdi,[rsp+8*960] 
 	add rdi, 1 
 	call puts
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -4606,7 +4606,7 @@ main:
 	mov     rdi, [rsp+8*963]
 	call    concat
 	mov [rsp+8*967], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,7
 	mov r11,r10
@@ -4621,7 +4621,7 @@ main:
 	mov     rdi, [rsp+8*967]
 	call    concat
 	mov [rsp+8*971], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,86
 	mov r11,r10
@@ -4636,7 +4636,7 @@ main:
 	mov     rdi, [rsp+8*971]
 	call    concat
 	mov [rsp+8*975], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -4651,7 +4651,7 @@ main:
 	mov     rdi, [rsp+8*975]
 	call    concat
 	mov [rsp+8*979], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -4666,7 +4666,7 @@ main:
 	mov     rdi, [rsp+8*979]
 	call    concat
 	mov [rsp+8*983], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,24
 	mov r11,r10
@@ -4681,7 +4681,7 @@ main:
 	mov     rdi, [rsp+8*983]
 	call    concat
 	mov [rsp+8*987], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,8
 	mov r11,r10
@@ -4696,7 +4696,7 @@ main:
 	mov     rdi, [rsp+8*987]
 	call    concat
 	mov [rsp+8*991], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -4711,7 +4711,7 @@ main:
 	mov     rdi, [rsp+8*991]
 	call    concat
 	mov [rsp+8*995], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,67
 	mov r11,r10
@@ -4726,7 +4726,7 @@ main:
 	mov     rdi, [rsp+8*995]
 	call    concat
 	mov [rsp+8*999], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,82
 	mov r11,r10
@@ -4741,7 +4741,7 @@ main:
 	mov     rdi, [rsp+8*999]
 	call    concat
 	mov [rsp+8*1003], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,83
 	mov r11,r10
@@ -4756,7 +4756,7 @@ main:
 	mov     rdi, [rsp+8*1003]
 	call    concat
 	mov [rsp+8*1007], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -4771,7 +4771,7 @@ main:
 	mov     rdi, [rsp+8*1007]
 	call    concat
 	mov [rsp+8*1011], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -4786,7 +4786,7 @@ main:
 	mov     rdi, [rsp+8*1011]
 	call    concat
 	mov [rsp+8*1015], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,0
 	mov r11,r10
@@ -4805,7 +4805,7 @@ main:
 	mov     rdi, [rsp+8*1019]
 	call    concat
 	mov [rsp+8*1020], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,24
 	mov r11,r10
@@ -4824,7 +4824,7 @@ main:
 	mov     rdi, [rsp+8*1024]
 	call    concat
 	mov [rsp+8*1025], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,26
 	mov r11,r10
@@ -4839,15 +4839,15 @@ main:
 	mov     rdi, [rsp+8*1025]
 	call    concat
 	mov [rsp+8*1029], rax
-	mov r9, qword [rsp+8*1029]
+	mov r9,  [rsp+8*1029]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*1030],r10
 	mov rdi,[rsp+8*1030] 
 	add rdi, 1 
 	call puts
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,91
 	mov r11,r10
@@ -4860,12 +4860,12 @@ main:
 	mov qword [rsp+8*1031],r8
 	mov qword [rsp+8*1032],r11
 	mov qword [rsp+8*1033],r12
-	mov qword [arg+8*0],r13
+	mov qword rdi,r13
 	mov qword [rsp+8*1034],r14
 	mov rdi,[rsp+8*1034] 
 	add rdi, 1 
 	call puts
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,81
 	mov r11,r10
@@ -4890,7 +4890,7 @@ main:
 	mov     rdi, [rsp+8*1037]
 	call    concat
 	mov [rsp+8*1041], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -4905,7 +4905,7 @@ main:
 	mov     rdi, [rsp+8*1041]
 	call    concat
 	mov [rsp+8*1045], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -4920,7 +4920,7 @@ main:
 	mov     rdi, [rsp+8*1045]
 	call    concat
 	mov [rsp+8*1049], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -4935,7 +4935,7 @@ main:
 	mov     rdi, [rsp+8*1049]
 	call    concat
 	mov [rsp+8*1053], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,69
 	mov r11,r10
@@ -4950,7 +4950,7 @@ main:
 	mov     rdi, [rsp+8*1053]
 	call    concat
 	mov [rsp+8*1057], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,58
 	mov r11,r10
@@ -4965,7 +4965,7 @@ main:
 	mov     rdi, [rsp+8*1057]
 	call    concat
 	mov [rsp+8*1061], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,59
 	mov r11,r10
@@ -4980,7 +4980,7 @@ main:
 	mov     rdi, [rsp+8*1061]
 	call    concat
 	mov [rsp+8*1065], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,0
 	mov r11,r10
@@ -4995,7 +4995,7 @@ main:
 	mov     rdi, [rsp+8*1065]
 	call    concat
 	mov [rsp+8*1069], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,81
 	mov r11,r10
@@ -5010,7 +5010,7 @@ main:
 	mov     rdi, [rsp+8*1069]
 	call    concat
 	mov [rsp+8*1073], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -5025,7 +5025,7 @@ main:
 	mov     rdi, [rsp+8*1073]
 	call    concat
 	mov [rsp+8*1077], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -5040,7 +5040,7 @@ main:
 	mov     rdi, [rsp+8*1077]
 	call    concat
 	mov [rsp+8*1081], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,67
 	mov r11,r10
@@ -5055,7 +5055,7 @@ main:
 	mov     rdi, [rsp+8*1081]
 	call    concat
 	mov [rsp+8*1085], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,85
 	mov r11,r10
@@ -5070,7 +5070,7 @@ main:
 	mov     rdi, [rsp+8*1085]
 	call    concat
 	mov [rsp+8*1089], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,0
 	mov r11,r10
@@ -5085,7 +5085,7 @@ main:
 	mov     rdi, [rsp+8*1089]
 	call    concat
 	mov [rsp+8*1093], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,81
 	mov r11,r10
@@ -5100,7 +5100,7 @@ main:
 	mov     rdi, [rsp+8*1093]
 	call    concat
 	mov [rsp+8*1097], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,82
 	mov r11,r10
@@ -5115,7 +5115,7 @@ main:
 	mov     rdi, [rsp+8*1097]
 	call    concat
 	mov [rsp+8*1101], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -5130,7 +5130,7 @@ main:
 	mov     rdi, [rsp+8*1101]
 	call    concat
 	mov [rsp+8*1105], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -5145,7 +5145,7 @@ main:
 	mov     rdi, [rsp+8*1105]
 	call    concat
 	mov [rsp+8*1109], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -5160,7 +5160,7 @@ main:
 	mov     rdi, [rsp+8*1109]
 	call    concat
 	mov [rsp+8*1113], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,69
 	mov r11,r10
@@ -5175,7 +5175,7 @@ main:
 	mov     rdi, [rsp+8*1113]
 	call    concat
 	mov [rsp+8*1117], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,58
 	mov r11,r10
@@ -5190,7 +5190,7 @@ main:
 	mov     rdi, [rsp+8*1117]
 	call    concat
 	mov [rsp+8*1121], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,17
 	mov r11,r10
@@ -5205,7 +5205,7 @@ main:
 	mov     rdi, [rsp+8*1121]
 	call    concat
 	mov [rsp+8*1125], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,20
 	mov r11,r10
@@ -5220,7 +5220,7 @@ main:
 	mov     rdi, [rsp+8*1125]
 	call    concat
 	mov [rsp+8*1129], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,21
 	mov r11,r10
@@ -5235,7 +5235,7 @@ main:
 	mov     rdi, [rsp+8*1129]
 	call    concat
 	mov [rsp+8*1133], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,59
 	mov r11,r10
@@ -5250,7 +5250,7 @@ main:
 	mov     rdi, [rsp+8*1133]
 	call    concat
 	mov [rsp+8*1137], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,26
 	mov r11,r10
@@ -5265,15 +5265,15 @@ main:
 	mov     rdi, [rsp+8*1137]
 	call    concat
 	mov [rsp+8*1141], rax
-	mov r9, qword [rsp+8*1141]
+	mov r9,  [rsp+8*1141]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*1142],r10
 	mov rdi,[rsp+8*1142] 
 	add rdi, 1 
 	call puts
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,81
 	mov r11,r10
@@ -5298,7 +5298,7 @@ main:
 	mov     rdi, [rsp+8*1145]
 	call    concat
 	mov [rsp+8*1149], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -5313,7 +5313,7 @@ main:
 	mov     rdi, [rsp+8*1149]
 	call    concat
 	mov [rsp+8*1153], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -5328,7 +5328,7 @@ main:
 	mov     rdi, [rsp+8*1153]
 	call    concat
 	mov [rsp+8*1157], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -5343,7 +5343,7 @@ main:
 	mov     rdi, [rsp+8*1157]
 	call    concat
 	mov [rsp+8*1161], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,69
 	mov r11,r10
@@ -5358,7 +5358,7 @@ main:
 	mov     rdi, [rsp+8*1161]
 	call    concat
 	mov [rsp+8*1165], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,58
 	mov r11,r10
@@ -5373,7 +5373,7 @@ main:
 	mov     rdi, [rsp+8*1165]
 	call    concat
 	mov [rsp+8*1169], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,59
 	mov r11,r10
@@ -5388,7 +5388,7 @@ main:
 	mov     rdi, [rsp+8*1169]
 	call    concat
 	mov [rsp+8*1173], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,0
 	mov r11,r10
@@ -5403,7 +5403,7 @@ main:
 	mov     rdi, [rsp+8*1173]
 	call    concat
 	mov [rsp+8*1177], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,65
 	mov r11,r10
@@ -5418,7 +5418,7 @@ main:
 	mov     rdi, [rsp+8*1177]
 	call    concat
 	mov [rsp+8*1181], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -5433,7 +5433,7 @@ main:
 	mov     rdi, [rsp+8*1181]
 	call    concat
 	mov [rsp+8*1185], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -5448,7 +5448,7 @@ main:
 	mov     rdi, [rsp+8*1185]
 	call    concat
 	mov [rsp+8*1189], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,67
 	mov r11,r10
@@ -5463,7 +5463,7 @@ main:
 	mov     rdi, [rsp+8*1189]
 	call    concat
 	mov [rsp+8*1193], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,85
 	mov r11,r10
@@ -5478,7 +5478,7 @@ main:
 	mov     rdi, [rsp+8*1193]
 	call    concat
 	mov [rsp+8*1197], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,0
 	mov r11,r10
@@ -5493,7 +5493,7 @@ main:
 	mov     rdi, [rsp+8*1197]
 	call    concat
 	mov [rsp+8*1201], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,81
 	mov r11,r10
@@ -5508,7 +5508,7 @@ main:
 	mov     rdi, [rsp+8*1201]
 	call    concat
 	mov [rsp+8*1205], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,82
 	mov r11,r10
@@ -5523,7 +5523,7 @@ main:
 	mov     rdi, [rsp+8*1205]
 	call    concat
 	mov [rsp+8*1209], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -5538,7 +5538,7 @@ main:
 	mov     rdi, [rsp+8*1209]
 	call    concat
 	mov [rsp+8*1213], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -5553,7 +5553,7 @@ main:
 	mov     rdi, [rsp+8*1213]
 	call    concat
 	mov [rsp+8*1217], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -5568,7 +5568,7 @@ main:
 	mov     rdi, [rsp+8*1217]
 	call    concat
 	mov [rsp+8*1221], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,69
 	mov r11,r10
@@ -5583,7 +5583,7 @@ main:
 	mov     rdi, [rsp+8*1221]
 	call    concat
 	mov [rsp+8*1225], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,58
 	mov r11,r10
@@ -5598,7 +5598,7 @@ main:
 	mov     rdi, [rsp+8*1225]
 	call    concat
 	mov [rsp+8*1229], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,17
 	mov r11,r10
@@ -5613,7 +5613,7 @@ main:
 	mov     rdi, [rsp+8*1229]
 	call    concat
 	mov [rsp+8*1233], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,20
 	mov r11,r10
@@ -5628,7 +5628,7 @@ main:
 	mov     rdi, [rsp+8*1233]
 	call    concat
 	mov [rsp+8*1237], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,21
 	mov r11,r10
@@ -5643,7 +5643,7 @@ main:
 	mov     rdi, [rsp+8*1237]
 	call    concat
 	mov [rsp+8*1241], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,59
 	mov r11,r10
@@ -5658,7 +5658,7 @@ main:
 	mov     rdi, [rsp+8*1241]
 	call    concat
 	mov [rsp+8*1245], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,26
 	mov r11,r10
@@ -5673,15 +5673,15 @@ main:
 	mov     rdi, [rsp+8*1245]
 	call    concat
 	mov [rsp+8*1249], rax
-	mov r9, qword [rsp+8*1249]
+	mov r9,  [rsp+8*1249]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*1250],r10
 	mov rdi,[rsp+8*1250] 
 	add rdi, 1 
 	call puts
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,81
 	mov r11,r10
@@ -5706,7 +5706,7 @@ main:
 	mov     rdi, [rsp+8*1253]
 	call    concat
 	mov [rsp+8*1257], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -5721,7 +5721,7 @@ main:
 	mov     rdi, [rsp+8*1257]
 	call    concat
 	mov [rsp+8*1261], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -5736,7 +5736,7 @@ main:
 	mov     rdi, [rsp+8*1261]
 	call    concat
 	mov [rsp+8*1265], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -5751,7 +5751,7 @@ main:
 	mov     rdi, [rsp+8*1265]
 	call    concat
 	mov [rsp+8*1269], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,69
 	mov r11,r10
@@ -5766,7 +5766,7 @@ main:
 	mov     rdi, [rsp+8*1269]
 	call    concat
 	mov [rsp+8*1273], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,0
 	mov r11,r10
@@ -5781,7 +5781,7 @@ main:
 	mov     rdi, [rsp+8*1273]
 	call    concat
 	mov [rsp+8*1277], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,81
 	mov r11,r10
@@ -5796,7 +5796,7 @@ main:
 	mov     rdi, [rsp+8*1277]
 	call    concat
 	mov [rsp+8*1281], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,17
 	mov r11,r10
@@ -5811,7 +5811,7 @@ main:
 	mov     rdi, [rsp+8*1281]
 	call    concat
 	mov [rsp+8*1285], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,7
 	mov r11,r10
@@ -5826,7 +5826,7 @@ main:
 	mov     rdi, [rsp+8*1285]
 	call    concat
 	mov [rsp+8*1289], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -5841,7 +5841,7 @@ main:
 	mov     rdi, [rsp+8*1289]
 	call    concat
 	mov [rsp+8*1293], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -5856,7 +5856,7 @@ main:
 	mov     rdi, [rsp+8*1293]
 	call    concat
 	mov [rsp+8*1297], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,82
 	mov r11,r10
@@ -5871,7 +5871,7 @@ main:
 	mov     rdi, [rsp+8*1297]
 	call    concat
 	mov [rsp+8*1301], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,0
 	mov r11,r10
@@ -5886,7 +5886,7 @@ main:
 	mov     rdi, [rsp+8*1301]
 	call    concat
 	mov [rsp+8*1305], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,81
 	mov r11,r10
@@ -5901,7 +5901,7 @@ main:
 	mov     rdi, [rsp+8*1305]
 	call    concat
 	mov [rsp+8*1309], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,81
 	mov r11,r10
@@ -5916,7 +5916,7 @@ main:
 	mov     rdi, [rsp+8*1309]
 	call    concat
 	mov [rsp+8*1313], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,8
 	mov r11,r10
@@ -5931,7 +5931,7 @@ main:
 	mov     rdi, [rsp+8*1313]
 	call    concat
 	mov [rsp+8*1317], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,89
 	mov r11,r10
@@ -5946,15 +5946,15 @@ main:
 	mov     rdi, [rsp+8*1317]
 	call    concat
 	mov [rsp+8*1321], rax
-	mov r9, qword [rsp+8*1321]
+	mov r9,  [rsp+8*1321]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*1322],r10
 	mov rdi,[rsp+8*1322] 
 	add rdi, 1 
 	call puts
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -5979,7 +5979,7 @@ main:
 	mov     rdi, [rsp+8*1325]
 	call    concat
 	mov [rsp+8*1329], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,7
 	mov r11,r10
@@ -5994,7 +5994,7 @@ main:
 	mov     rdi, [rsp+8*1329]
 	call    concat
 	mov [rsp+8*1333], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,81
 	mov r11,r10
@@ -6009,7 +6009,7 @@ main:
 	mov     rdi, [rsp+8*1333]
 	call    concat
 	mov [rsp+8*1337], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,81
 	mov r11,r10
@@ -6024,7 +6024,7 @@ main:
 	mov     rdi, [rsp+8*1337]
 	call    concat
 	mov [rsp+8*1341], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,27
 	mov r11,r10
@@ -6039,7 +6039,7 @@ main:
 	mov     rdi, [rsp+8*1341]
 	call    concat
 	mov [rsp+8*1345], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -6054,7 +6054,7 @@ main:
 	mov     rdi, [rsp+8*1345]
 	call    concat
 	mov [rsp+8*1349], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,24
 	mov r11,r10
@@ -6069,7 +6069,7 @@ main:
 	mov     rdi, [rsp+8*1349]
 	call    concat
 	mov [rsp+8*1353], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,8
 	mov r11,r10
@@ -6084,7 +6084,7 @@ main:
 	mov     rdi, [rsp+8*1353]
 	call    concat
 	mov [rsp+8*1357], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -6099,7 +6099,7 @@ main:
 	mov     rdi, [rsp+8*1357]
 	call    concat
 	mov [rsp+8*1361], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,67
 	mov r11,r10
@@ -6114,7 +6114,7 @@ main:
 	mov     rdi, [rsp+8*1361]
 	call    concat
 	mov [rsp+8*1365], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,82
 	mov r11,r10
@@ -6129,7 +6129,7 @@ main:
 	mov     rdi, [rsp+8*1365]
 	call    concat
 	mov [rsp+8*1369], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,83
 	mov r11,r10
@@ -6144,7 +6144,7 @@ main:
 	mov     rdi, [rsp+8*1369]
 	call    concat
 	mov [rsp+8*1373], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -6159,7 +6159,7 @@ main:
 	mov     rdi, [rsp+8*1373]
 	call    concat
 	mov [rsp+8*1377], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -6174,7 +6174,7 @@ main:
 	mov     rdi, [rsp+8*1377]
 	call    concat
 	mov [rsp+8*1381], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,0
 	mov r11,r10
@@ -6193,7 +6193,7 @@ main:
 	mov     rdi, [rsp+8*1385]
 	call    concat
 	mov [rsp+8*1386], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,81
 	mov r11,r10
@@ -6208,7 +6208,7 @@ main:
 	mov     rdi, [rsp+8*1386]
 	call    concat
 	mov [rsp+8*1390], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,58
 	mov r11,r10
@@ -6227,7 +6227,7 @@ main:
 	mov     rdi, [rsp+8*1394]
 	call    concat
 	mov [rsp+8*1395], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,10
 	mov r11,r10
@@ -6242,7 +6242,7 @@ main:
 	mov     rdi, [rsp+8*1395]
 	call    concat
 	mov [rsp+8*1399], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,66
 	mov r11,r10
@@ -6257,7 +6257,7 @@ main:
 	mov     rdi, [rsp+8*1399]
 	call    concat
 	mov [rsp+8*1403], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -6272,7 +6272,7 @@ main:
 	mov     rdi, [rsp+8*1403]
 	call    concat
 	mov [rsp+8*1407], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,69
 	mov r11,r10
@@ -6287,7 +6287,7 @@ main:
 	mov     rdi, [rsp+8*1407]
 	call    concat
 	mov [rsp+8*1411], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,82
 	mov r11,r10
@@ -6302,7 +6302,7 @@ main:
 	mov     rdi, [rsp+8*1411]
 	call    concat
 	mov [rsp+8*1415], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,7
 	mov r11,r10
@@ -6317,7 +6317,7 @@ main:
 	mov     rdi, [rsp+8*1415]
 	call    concat
 	mov [rsp+8*1419], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,81
 	mov r11,r10
@@ -6332,7 +6332,7 @@ main:
 	mov     rdi, [rsp+8*1419]
 	call    concat
 	mov [rsp+8*1423], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,81
 	mov r11,r10
@@ -6347,7 +6347,7 @@ main:
 	mov     rdi, [rsp+8*1423]
 	call    concat
 	mov [rsp+8*1427], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,8
 	mov r11,r10
@@ -6362,7 +6362,7 @@ main:
 	mov     rdi, [rsp+8*1427]
 	call    concat
 	mov [rsp+8*1431], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,10
 	mov r11,r10
@@ -6381,7 +6381,7 @@ main:
 	mov     rdi, [rsp+8*1435]
 	call    concat
 	mov [rsp+8*1436], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,59
 	mov r11,r10
@@ -6396,7 +6396,7 @@ main:
 	mov     rdi, [rsp+8*1436]
 	call    concat
 	mov [rsp+8*1440], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -6415,7 +6415,7 @@ main:
 	mov     rdi, [rsp+8*1444]
 	call    concat
 	mov [rsp+8*1445], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,26
 	mov r11,r10
@@ -6430,15 +6430,15 @@ main:
 	mov     rdi, [rsp+8*1445]
 	call    concat
 	mov [rsp+8*1449], rax
-	mov r9, qword [rsp+8*1449]
+	mov r9,  [rsp+8*1449]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*1450],r10
 	mov rdi,[rsp+8*1450] 
 	add rdi, 1 
 	call puts
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -6463,7 +6463,7 @@ main:
 	mov     rdi, [rsp+8*1453]
 	call    concat
 	mov [rsp+8*1457], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,82
 	mov r11,r10
@@ -6478,7 +6478,7 @@ main:
 	mov     rdi, [rsp+8*1457]
 	call    concat
 	mov [rsp+8*1461], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,83
 	mov r11,r10
@@ -6493,7 +6493,7 @@ main:
 	mov     rdi, [rsp+8*1461]
 	call    concat
 	mov [rsp+8*1465], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -6508,7 +6508,7 @@ main:
 	mov     rdi, [rsp+8*1465]
 	call    concat
 	mov [rsp+8*1469], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -6523,7 +6523,7 @@ main:
 	mov     rdi, [rsp+8*1469]
 	call    concat
 	mov [rsp+8*1473], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,0
 	mov r11,r10
@@ -6542,7 +6542,7 @@ main:
 	mov     rdi, [rsp+8*1477]
 	call    concat
 	mov [rsp+8*1478], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,81
 	mov r11,r10
@@ -6557,7 +6557,7 @@ main:
 	mov     rdi, [rsp+8*1478]
 	call    concat
 	mov [rsp+8*1482], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,58
 	mov r11,r10
@@ -6576,7 +6576,7 @@ main:
 	mov     rdi, [rsp+8*1486]
 	call    concat
 	mov [rsp+8*1487], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,10
 	mov r11,r10
@@ -6591,7 +6591,7 @@ main:
 	mov     rdi, [rsp+8*1487]
 	call    concat
 	mov [rsp+8*1491], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,66
 	mov r11,r10
@@ -6606,7 +6606,7 @@ main:
 	mov     rdi, [rsp+8*1491]
 	call    concat
 	mov [rsp+8*1495], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -6621,7 +6621,7 @@ main:
 	mov     rdi, [rsp+8*1495]
 	call    concat
 	mov [rsp+8*1499], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,69
 	mov r11,r10
@@ -6636,7 +6636,7 @@ main:
 	mov     rdi, [rsp+8*1499]
 	call    concat
 	mov [rsp+8*1503], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,82
 	mov r11,r10
@@ -6651,7 +6651,7 @@ main:
 	mov     rdi, [rsp+8*1503]
 	call    concat
 	mov [rsp+8*1507], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,7
 	mov r11,r10
@@ -6666,7 +6666,7 @@ main:
 	mov     rdi, [rsp+8*1507]
 	call    concat
 	mov [rsp+8*1511], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,81
 	mov r11,r10
@@ -6681,7 +6681,7 @@ main:
 	mov     rdi, [rsp+8*1511]
 	call    concat
 	mov [rsp+8*1515], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,81
 	mov r11,r10
@@ -6696,7 +6696,7 @@ main:
 	mov     rdi, [rsp+8*1515]
 	call    concat
 	mov [rsp+8*1519], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,14
 	mov r11,r10
@@ -6711,7 +6711,7 @@ main:
 	mov     rdi, [rsp+8*1519]
 	call    concat
 	mov [rsp+8*1523], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,16
 	mov r11,r10
@@ -6726,7 +6726,7 @@ main:
 	mov     rdi, [rsp+8*1523]
 	call    concat
 	mov [rsp+8*1527], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,15
 	mov r11,r10
@@ -6741,7 +6741,7 @@ main:
 	mov     rdi, [rsp+8*1527]
 	call    concat
 	mov [rsp+8*1531], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,8
 	mov r11,r10
@@ -6756,7 +6756,7 @@ main:
 	mov     rdi, [rsp+8*1531]
 	call    concat
 	mov [rsp+8*1535], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,10
 	mov r11,r10
@@ -6771,7 +6771,7 @@ main:
 	mov     rdi, [rsp+8*1535]
 	call    concat
 	mov [rsp+8*1539], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,66
 	mov r11,r10
@@ -6786,7 +6786,7 @@ main:
 	mov     rdi, [rsp+8*1539]
 	call    concat
 	mov [rsp+8*1543], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -6801,7 +6801,7 @@ main:
 	mov     rdi, [rsp+8*1543]
 	call    concat
 	mov [rsp+8*1547], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,69
 	mov r11,r10
@@ -6816,7 +6816,7 @@ main:
 	mov     rdi, [rsp+8*1547]
 	call    concat
 	mov [rsp+8*1551], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,82
 	mov r11,r10
@@ -6831,7 +6831,7 @@ main:
 	mov     rdi, [rsp+8*1551]
 	call    concat
 	mov [rsp+8*1555], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,7
 	mov r11,r10
@@ -6846,7 +6846,7 @@ main:
 	mov     rdi, [rsp+8*1555]
 	call    concat
 	mov [rsp+8*1559], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,81
 	mov r11,r10
@@ -6861,7 +6861,7 @@ main:
 	mov     rdi, [rsp+8*1559]
 	call    concat
 	mov [rsp+8*1563], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,81
 	mov r11,r10
@@ -6876,7 +6876,7 @@ main:
 	mov     rdi, [rsp+8*1563]
 	call    concat
 	mov [rsp+8*1567], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,4
 	mov r11,r10
@@ -6891,7 +6891,7 @@ main:
 	mov     rdi, [rsp+8*1567]
 	call    concat
 	mov [rsp+8*1571], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,16
 	mov r11,r10
@@ -6906,7 +6906,7 @@ main:
 	mov     rdi, [rsp+8*1571]
 	call    concat
 	mov [rsp+8*1575], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,15
 	mov r11,r10
@@ -6921,7 +6921,7 @@ main:
 	mov     rdi, [rsp+8*1575]
 	call    concat
 	mov [rsp+8*1579], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,8
 	mov r11,r10
@@ -6936,7 +6936,7 @@ main:
 	mov     rdi, [rsp+8*1579]
 	call    concat
 	mov [rsp+8*1583], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,10
 	mov r11,r10
@@ -6955,7 +6955,7 @@ main:
 	mov     rdi, [rsp+8*1587]
 	call    concat
 	mov [rsp+8*1588], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,59
 	mov r11,r10
@@ -6970,7 +6970,7 @@ main:
 	mov     rdi, [rsp+8*1588]
 	call    concat
 	mov [rsp+8*1592], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -6989,7 +6989,7 @@ main:
 	mov     rdi, [rsp+8*1596]
 	call    concat
 	mov [rsp+8*1597], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,26
 	mov r11,r10
@@ -7004,15 +7004,15 @@ main:
 	mov     rdi, [rsp+8*1597]
 	call    concat
 	mov [rsp+8*1601], rax
-	mov r9, qword [rsp+8*1601]
+	mov r9,  [rsp+8*1601]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*1602],r10
 	mov rdi,[rsp+8*1602] 
 	add rdi, 1 
 	call puts
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,91
 	mov r11,r10
@@ -7025,12 +7025,12 @@ main:
 	mov qword [rsp+8*1603],r8
 	mov qword [rsp+8*1604],r11
 	mov qword [rsp+8*1605],r12
-	mov qword [arg+8*0],r13
+	mov qword rdi,r13
 	mov qword [rsp+8*1606],r14
 	mov rdi,[rsp+8*1606] 
 	add rdi, 1 
 	call puts
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,81
 	mov r11,r10
@@ -7055,7 +7055,7 @@ main:
 	mov     rdi, [rsp+8*1609]
 	call    concat
 	mov [rsp+8*1613], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -7070,7 +7070,7 @@ main:
 	mov     rdi, [rsp+8*1613]
 	call    concat
 	mov [rsp+8*1617], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -7085,7 +7085,7 @@ main:
 	mov     rdi, [rsp+8*1617]
 	call    concat
 	mov [rsp+8*1621], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -7100,7 +7100,7 @@ main:
 	mov     rdi, [rsp+8*1621]
 	call    concat
 	mov [rsp+8*1625], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,69
 	mov r11,r10
@@ -7115,7 +7115,7 @@ main:
 	mov     rdi, [rsp+8*1625]
 	call    concat
 	mov [rsp+8*1629], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,0
 	mov r11,r10
@@ -7130,7 +7130,7 @@ main:
 	mov     rdi, [rsp+8*1629]
 	call    concat
 	mov [rsp+8*1633], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,65
 	mov r11,r10
@@ -7145,7 +7145,7 @@ main:
 	mov     rdi, [rsp+8*1633]
 	call    concat
 	mov [rsp+8*1637], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,17
 	mov r11,r10
@@ -7160,7 +7160,7 @@ main:
 	mov     rdi, [rsp+8*1637]
 	call    concat
 	mov [rsp+8*1641], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,7
 	mov r11,r10
@@ -7175,7 +7175,7 @@ main:
 	mov     rdi, [rsp+8*1641]
 	call    concat
 	mov [rsp+8*1645], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -7190,7 +7190,7 @@ main:
 	mov     rdi, [rsp+8*1645]
 	call    concat
 	mov [rsp+8*1649], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -7205,7 +7205,7 @@ main:
 	mov     rdi, [rsp+8*1649]
 	call    concat
 	mov [rsp+8*1653], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,82
 	mov r11,r10
@@ -7220,7 +7220,7 @@ main:
 	mov     rdi, [rsp+8*1653]
 	call    concat
 	mov [rsp+8*1657], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,0
 	mov r11,r10
@@ -7235,7 +7235,7 @@ main:
 	mov     rdi, [rsp+8*1657]
 	call    concat
 	mov [rsp+8*1661], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,65
 	mov r11,r10
@@ -7250,7 +7250,7 @@ main:
 	mov     rdi, [rsp+8*1661]
 	call    concat
 	mov [rsp+8*1665], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,65
 	mov r11,r10
@@ -7265,7 +7265,7 @@ main:
 	mov     rdi, [rsp+8*1665]
 	call    concat
 	mov [rsp+8*1669], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,8
 	mov r11,r10
@@ -7280,7 +7280,7 @@ main:
 	mov     rdi, [rsp+8*1669]
 	call    concat
 	mov [rsp+8*1673], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,89
 	mov r11,r10
@@ -7295,15 +7295,15 @@ main:
 	mov     rdi, [rsp+8*1673]
 	call    concat
 	mov [rsp+8*1677], rax
-	mov r9, qword [rsp+8*1677]
+	mov r9,  [rsp+8*1677]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*1678],r10
 	mov rdi,[rsp+8*1678] 
 	add rdi, 1 
 	call puts
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -7328,7 +7328,7 @@ main:
 	mov     rdi, [rsp+8*1681]
 	call    concat
 	mov [rsp+8*1685], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,7
 	mov r11,r10
@@ -7343,7 +7343,7 @@ main:
 	mov     rdi, [rsp+8*1685]
 	call    concat
 	mov [rsp+8*1689], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,65
 	mov r11,r10
@@ -7358,7 +7358,7 @@ main:
 	mov     rdi, [rsp+8*1689]
 	call    concat
 	mov [rsp+8*1693], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,65
 	mov r11,r10
@@ -7373,7 +7373,7 @@ main:
 	mov     rdi, [rsp+8*1693]
 	call    concat
 	mov [rsp+8*1697], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,27
 	mov r11,r10
@@ -7388,7 +7388,7 @@ main:
 	mov     rdi, [rsp+8*1697]
 	call    concat
 	mov [rsp+8*1701], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -7403,7 +7403,7 @@ main:
 	mov     rdi, [rsp+8*1701]
 	call    concat
 	mov [rsp+8*1705], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,24
 	mov r11,r10
@@ -7418,7 +7418,7 @@ main:
 	mov     rdi, [rsp+8*1705]
 	call    concat
 	mov [rsp+8*1709], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,8
 	mov r11,r10
@@ -7433,7 +7433,7 @@ main:
 	mov     rdi, [rsp+8*1709]
 	call    concat
 	mov [rsp+8*1713], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -7448,7 +7448,7 @@ main:
 	mov     rdi, [rsp+8*1713]
 	call    concat
 	mov [rsp+8*1717], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,67
 	mov r11,r10
@@ -7463,7 +7463,7 @@ main:
 	mov     rdi, [rsp+8*1717]
 	call    concat
 	mov [rsp+8*1721], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,82
 	mov r11,r10
@@ -7478,7 +7478,7 @@ main:
 	mov     rdi, [rsp+8*1721]
 	call    concat
 	mov [rsp+8*1725], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,83
 	mov r11,r10
@@ -7493,7 +7493,7 @@ main:
 	mov     rdi, [rsp+8*1725]
 	call    concat
 	mov [rsp+8*1729], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -7508,7 +7508,7 @@ main:
 	mov     rdi, [rsp+8*1729]
 	call    concat
 	mov [rsp+8*1733], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -7523,7 +7523,7 @@ main:
 	mov     rdi, [rsp+8*1733]
 	call    concat
 	mov [rsp+8*1737], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,0
 	mov r11,r10
@@ -7542,7 +7542,7 @@ main:
 	mov     rdi, [rsp+8*1741]
 	call    concat
 	mov [rsp+8*1742], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,65
 	mov r11,r10
@@ -7557,7 +7557,7 @@ main:
 	mov     rdi, [rsp+8*1742]
 	call    concat
 	mov [rsp+8*1746], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,58
 	mov r11,r10
@@ -7576,7 +7576,7 @@ main:
 	mov     rdi, [rsp+8*1750]
 	call    concat
 	mov [rsp+8*1751], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,10
 	mov r11,r10
@@ -7591,7 +7591,7 @@ main:
 	mov     rdi, [rsp+8*1751]
 	call    concat
 	mov [rsp+8*1755], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,66
 	mov r11,r10
@@ -7606,7 +7606,7 @@ main:
 	mov     rdi, [rsp+8*1755]
 	call    concat
 	mov [rsp+8*1759], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -7621,7 +7621,7 @@ main:
 	mov     rdi, [rsp+8*1759]
 	call    concat
 	mov [rsp+8*1763], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,69
 	mov r11,r10
@@ -7636,7 +7636,7 @@ main:
 	mov     rdi, [rsp+8*1763]
 	call    concat
 	mov [rsp+8*1767], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,82
 	mov r11,r10
@@ -7651,7 +7651,7 @@ main:
 	mov     rdi, [rsp+8*1767]
 	call    concat
 	mov [rsp+8*1771], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,7
 	mov r11,r10
@@ -7666,7 +7666,7 @@ main:
 	mov     rdi, [rsp+8*1771]
 	call    concat
 	mov [rsp+8*1775], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,65
 	mov r11,r10
@@ -7681,7 +7681,7 @@ main:
 	mov     rdi, [rsp+8*1775]
 	call    concat
 	mov [rsp+8*1779], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,65
 	mov r11,r10
@@ -7696,7 +7696,7 @@ main:
 	mov     rdi, [rsp+8*1779]
 	call    concat
 	mov [rsp+8*1783], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,8
 	mov r11,r10
@@ -7711,7 +7711,7 @@ main:
 	mov     rdi, [rsp+8*1783]
 	call    concat
 	mov [rsp+8*1787], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,10
 	mov r11,r10
@@ -7730,7 +7730,7 @@ main:
 	mov     rdi, [rsp+8*1791]
 	call    concat
 	mov [rsp+8*1792], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,59
 	mov r11,r10
@@ -7745,7 +7745,7 @@ main:
 	mov     rdi, [rsp+8*1792]
 	call    concat
 	mov [rsp+8*1796], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -7764,7 +7764,7 @@ main:
 	mov     rdi, [rsp+8*1800]
 	call    concat
 	mov [rsp+8*1801], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,26
 	mov r11,r10
@@ -7779,15 +7779,15 @@ main:
 	mov     rdi, [rsp+8*1801]
 	call    concat
 	mov [rsp+8*1805], rax
-	mov r9, qword [rsp+8*1805]
+	mov r9,  [rsp+8*1805]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*1806],r10
 	mov rdi,[rsp+8*1806] 
 	add rdi, 1 
 	call puts
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -7812,7 +7812,7 @@ main:
 	mov     rdi, [rsp+8*1809]
 	call    concat
 	mov [rsp+8*1813], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,82
 	mov r11,r10
@@ -7827,7 +7827,7 @@ main:
 	mov     rdi, [rsp+8*1813]
 	call    concat
 	mov [rsp+8*1817], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,83
 	mov r11,r10
@@ -7842,7 +7842,7 @@ main:
 	mov     rdi, [rsp+8*1817]
 	call    concat
 	mov [rsp+8*1821], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -7857,7 +7857,7 @@ main:
 	mov     rdi, [rsp+8*1821]
 	call    concat
 	mov [rsp+8*1825], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -7872,7 +7872,7 @@ main:
 	mov     rdi, [rsp+8*1825]
 	call    concat
 	mov [rsp+8*1829], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,0
 	mov r11,r10
@@ -7891,7 +7891,7 @@ main:
 	mov     rdi, [rsp+8*1833]
 	call    concat
 	mov [rsp+8*1834], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,65
 	mov r11,r10
@@ -7906,7 +7906,7 @@ main:
 	mov     rdi, [rsp+8*1834]
 	call    concat
 	mov [rsp+8*1838], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,58
 	mov r11,r10
@@ -7925,7 +7925,7 @@ main:
 	mov     rdi, [rsp+8*1842]
 	call    concat
 	mov [rsp+8*1843], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,10
 	mov r11,r10
@@ -7940,7 +7940,7 @@ main:
 	mov     rdi, [rsp+8*1843]
 	call    concat
 	mov [rsp+8*1847], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,66
 	mov r11,r10
@@ -7955,7 +7955,7 @@ main:
 	mov     rdi, [rsp+8*1847]
 	call    concat
 	mov [rsp+8*1851], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -7970,7 +7970,7 @@ main:
 	mov     rdi, [rsp+8*1851]
 	call    concat
 	mov [rsp+8*1855], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,69
 	mov r11,r10
@@ -7985,7 +7985,7 @@ main:
 	mov     rdi, [rsp+8*1855]
 	call    concat
 	mov [rsp+8*1859], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,82
 	mov r11,r10
@@ -8000,7 +8000,7 @@ main:
 	mov     rdi, [rsp+8*1859]
 	call    concat
 	mov [rsp+8*1863], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,7
 	mov r11,r10
@@ -8015,7 +8015,7 @@ main:
 	mov     rdi, [rsp+8*1863]
 	call    concat
 	mov [rsp+8*1867], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,65
 	mov r11,r10
@@ -8030,7 +8030,7 @@ main:
 	mov     rdi, [rsp+8*1867]
 	call    concat
 	mov [rsp+8*1871], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,65
 	mov r11,r10
@@ -8045,7 +8045,7 @@ main:
 	mov     rdi, [rsp+8*1871]
 	call    concat
 	mov [rsp+8*1875], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,14
 	mov r11,r10
@@ -8060,7 +8060,7 @@ main:
 	mov     rdi, [rsp+8*1875]
 	call    concat
 	mov [rsp+8*1879], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,16
 	mov r11,r10
@@ -8075,7 +8075,7 @@ main:
 	mov     rdi, [rsp+8*1879]
 	call    concat
 	mov [rsp+8*1883], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,15
 	mov r11,r10
@@ -8090,7 +8090,7 @@ main:
 	mov     rdi, [rsp+8*1883]
 	call    concat
 	mov [rsp+8*1887], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,8
 	mov r11,r10
@@ -8105,7 +8105,7 @@ main:
 	mov     rdi, [rsp+8*1887]
 	call    concat
 	mov [rsp+8*1891], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,10
 	mov r11,r10
@@ -8120,7 +8120,7 @@ main:
 	mov     rdi, [rsp+8*1891]
 	call    concat
 	mov [rsp+8*1895], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,66
 	mov r11,r10
@@ -8135,7 +8135,7 @@ main:
 	mov     rdi, [rsp+8*1895]
 	call    concat
 	mov [rsp+8*1899], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -8150,7 +8150,7 @@ main:
 	mov     rdi, [rsp+8*1899]
 	call    concat
 	mov [rsp+8*1903], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,69
 	mov r11,r10
@@ -8165,7 +8165,7 @@ main:
 	mov     rdi, [rsp+8*1903]
 	call    concat
 	mov [rsp+8*1907], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,82
 	mov r11,r10
@@ -8180,7 +8180,7 @@ main:
 	mov     rdi, [rsp+8*1907]
 	call    concat
 	mov [rsp+8*1911], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,7
 	mov r11,r10
@@ -8195,7 +8195,7 @@ main:
 	mov     rdi, [rsp+8*1911]
 	call    concat
 	mov [rsp+8*1915], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,65
 	mov r11,r10
@@ -8210,7 +8210,7 @@ main:
 	mov     rdi, [rsp+8*1915]
 	call    concat
 	mov [rsp+8*1919], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,65
 	mov r11,r10
@@ -8225,7 +8225,7 @@ main:
 	mov     rdi, [rsp+8*1919]
 	call    concat
 	mov [rsp+8*1923], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,4
 	mov r11,r10
@@ -8240,7 +8240,7 @@ main:
 	mov     rdi, [rsp+8*1923]
 	call    concat
 	mov [rsp+8*1927], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,16
 	mov r11,r10
@@ -8255,7 +8255,7 @@ main:
 	mov     rdi, [rsp+8*1927]
 	call    concat
 	mov [rsp+8*1931], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,15
 	mov r11,r10
@@ -8270,7 +8270,7 @@ main:
 	mov     rdi, [rsp+8*1931]
 	call    concat
 	mov [rsp+8*1935], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,8
 	mov r11,r10
@@ -8285,7 +8285,7 @@ main:
 	mov     rdi, [rsp+8*1935]
 	call    concat
 	mov [rsp+8*1939], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,10
 	mov r11,r10
@@ -8304,7 +8304,7 @@ main:
 	mov     rdi, [rsp+8*1943]
 	call    concat
 	mov [rsp+8*1944], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,59
 	mov r11,r10
@@ -8319,7 +8319,7 @@ main:
 	mov     rdi, [rsp+8*1944]
 	call    concat
 	mov [rsp+8*1948], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -8338,7 +8338,7 @@ main:
 	mov     rdi, [rsp+8*1952]
 	call    concat
 	mov [rsp+8*1953], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,26
 	mov r11,r10
@@ -8353,15 +8353,15 @@ main:
 	mov     rdi, [rsp+8*1953]
 	call    concat
 	mov [rsp+8*1957], rax
-	mov r9, qword [rsp+8*1957]
+	mov r9,  [rsp+8*1957]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*1958],r10
 	mov rdi,[rsp+8*1958] 
 	add rdi, 1 
 	call puts
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,91
 	mov r11,r10
@@ -8374,12 +8374,12 @@ main:
 	mov qword [rsp+8*1959],r8
 	mov qword [rsp+8*1960],r11
 	mov qword [rsp+8*1961],r12
-	mov qword [arg+8*0],r13
+	mov qword rdi,r13
 	mov qword [rsp+8*1962],r14
 	mov rdi,[rsp+8*1962] 
 	add rdi, 1 
 	call puts
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,81
 	mov r11,r10
@@ -8404,7 +8404,7 @@ main:
 	mov     rdi, [rsp+8*1965]
 	call    concat
 	mov [rsp+8*1969], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -8419,7 +8419,7 @@ main:
 	mov     rdi, [rsp+8*1969]
 	call    concat
 	mov [rsp+8*1973], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -8434,7 +8434,7 @@ main:
 	mov     rdi, [rsp+8*1973]
 	call    concat
 	mov [rsp+8*1977], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -8449,7 +8449,7 @@ main:
 	mov     rdi, [rsp+8*1977]
 	call    concat
 	mov [rsp+8*1981], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,69
 	mov r11,r10
@@ -8464,7 +8464,7 @@ main:
 	mov     rdi, [rsp+8*1981]
 	call    concat
 	mov [rsp+8*1985], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,0
 	mov r11,r10
@@ -8479,7 +8479,7 @@ main:
 	mov     rdi, [rsp+8*1985]
 	call    concat
 	mov [rsp+8*1989], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,65
 	mov r11,r10
@@ -8494,7 +8494,7 @@ main:
 	mov     rdi, [rsp+8*1989]
 	call    concat
 	mov [rsp+8*1993], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,77
 	mov r11,r10
@@ -8509,7 +8509,7 @@ main:
 	mov     rdi, [rsp+8*1993]
 	call    concat
 	mov [rsp+8*1997], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -8528,7 +8528,7 @@ main:
 	mov     rdi, [rsp+8*2001]
 	call    concat
 	mov [rsp+8*2002], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,26
 	mov r11,r10
@@ -8547,7 +8547,7 @@ main:
 	mov     rdi, [rsp+8*2006]
 	call    concat
 	mov [rsp+8*2007], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,26
 	mov r11,r10
@@ -8562,15 +8562,15 @@ main:
 	mov     rdi, [rsp+8*2007]
 	call    concat
 	mov [rsp+8*2011], rax
-	mov r9, qword [rsp+8*2011]
+	mov r9,  [rsp+8*2011]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*2012],r10
 	mov rdi,[rsp+8*2012] 
 	add rdi, 1 
 	call puts
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,81
 	mov r11,r10
@@ -8595,7 +8595,7 @@ main:
 	mov     rdi, [rsp+8*2015]
 	call    concat
 	mov [rsp+8*2019], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -8610,7 +8610,7 @@ main:
 	mov     rdi, [rsp+8*2019]
 	call    concat
 	mov [rsp+8*2023], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -8625,7 +8625,7 @@ main:
 	mov     rdi, [rsp+8*2023]
 	call    concat
 	mov [rsp+8*2027], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -8640,7 +8640,7 @@ main:
 	mov     rdi, [rsp+8*2027]
 	call    concat
 	mov [rsp+8*2031], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,69
 	mov r11,r10
@@ -8655,7 +8655,7 @@ main:
 	mov     rdi, [rsp+8*2031]
 	call    concat
 	mov [rsp+8*2035], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,0
 	mov r11,r10
@@ -8670,7 +8670,7 @@ main:
 	mov     rdi, [rsp+8*2035]
 	call    concat
 	mov [rsp+8*2039], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,63
 	mov r11,r10
@@ -8685,7 +8685,7 @@ main:
 	mov     rdi, [rsp+8*2039]
 	call    concat
 	mov [rsp+8*2043], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,17
 	mov r11,r10
@@ -8700,7 +8700,7 @@ main:
 	mov     rdi, [rsp+8*2043]
 	call    concat
 	mov [rsp+8*2047], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,79
 	mov r11,r10
@@ -8715,7 +8715,7 @@ main:
 	mov     rdi, [rsp+8*2047]
 	call    concat
 	mov [rsp+8*2051], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -8746,7 +8746,7 @@ main:
 	mov     rdi, [rsp+8*2059]
 	call    concat
 	mov [rsp+8*2060], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,26
 	mov r11,r10
@@ -8761,15 +8761,15 @@ main:
 	mov     rdi, [rsp+8*2060]
 	call    concat
 	mov [rsp+8*2064], rax
-	mov r9, qword [rsp+8*2064]
+	mov r9,  [rsp+8*2064]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*2065],r10
 	mov rdi,[rsp+8*2065] 
 	add rdi, 1 
 	call puts
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,81
 	mov r11,r10
@@ -8794,7 +8794,7 @@ main:
 	mov     rdi, [rsp+8*2068]
 	call    concat
 	mov [rsp+8*2072], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,80
 	mov r11,r10
@@ -8809,7 +8809,7 @@ main:
 	mov     rdi, [rsp+8*2072]
 	call    concat
 	mov [rsp+8*2076], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,71
 	mov r11,r10
@@ -8824,7 +8824,7 @@ main:
 	mov     rdi, [rsp+8*2076]
 	call    concat
 	mov [rsp+8*2080], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,76
 	mov r11,r10
@@ -8839,7 +8839,7 @@ main:
 	mov     rdi, [rsp+8*2080]
 	call    concat
 	mov [rsp+8*2084], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,69
 	mov r11,r10
@@ -8854,7 +8854,7 @@ main:
 	mov     rdi, [rsp+8*2084]
 	call    concat
 	mov [rsp+8*2088], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,0
 	mov r11,r10
@@ -8869,7 +8869,7 @@ main:
 	mov     rdi, [rsp+8*2088]
 	call    concat
 	mov [rsp+8*2092], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,63
 	mov r11,r10
@@ -8884,7 +8884,7 @@ main:
 	mov     rdi, [rsp+8*2092]
 	call    concat
 	mov [rsp+8*2096], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,17
 	mov r11,r10
@@ -8899,7 +8899,7 @@ main:
 	mov     rdi, [rsp+8*2096]
 	call    concat
 	mov [rsp+8*2100], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,64
 	mov r11,r10
@@ -8914,7 +8914,7 @@ main:
 	mov     rdi, [rsp+8*2100]
 	call    concat
 	mov [rsp+8*2104], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,28
 	mov r11,r10
@@ -8945,7 +8945,7 @@ main:
 	mov     rdi, [rsp+8*2111]
 	call    concat
 	mov [rsp+8*2112], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,26
 	mov r11,r10
@@ -8960,15 +8960,15 @@ main:
 	mov     rdi, [rsp+8*2112]
 	call    concat
 	mov [rsp+8*2116], rax
-	mov r9, qword [rsp+8*2116]
+	mov r9,  [rsp+8*2116]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*2117],r10
 	mov rdi,[rsp+8*2117] 
 	add rdi, 1 
 	call puts
-	mov r9, qword [gbl+8*190]
+	mov r9,  [gbl+8*190]
 	mov r8,r9
 	mov r10,0
 	mov r11,r10
@@ -8981,7 +8981,7 @@ main:
 	mov qword [rsp+8*2118],r8
 	mov qword [rsp+8*2119],r11
 	mov qword [rsp+8*2120],r12
-	mov qword [arg+8*0],r13
+	mov qword rdi,r13
 	mov qword [rsp+8*2121],r14
 	mov rdi,[rsp+8*2121] 
 	add rdi, 1 
@@ -8991,18 +8991,18 @@ main:
 	mov qword [rsp+8*2],r8
 	
 L_666:
-	mov r8, qword [rsp+8*2]
+	mov r8,  [rsp+8*2]
 	mov r9,93
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
 	mov qword [rsp+8*2122],r10
-	mov r8, qword [rsp+8*2122]
+	mov r8,  [rsp+8*2122]
 	cmp r8, 0
 	je L_667
-	mov r9, qword [rsp+8*2]
+	mov r9,  [rsp+8*2]
 	mov r8,r9
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	call c2
 	mov r8 , rax
 	mov qword [rsp+8*2123],r8
@@ -9010,9 +9010,9 @@ L_666:
 	mov     rdi, [rsp+8*2123]
 	call    concat
 	mov [rsp+8*2124], rax
-	mov r9, qword [gbl+8*3]
+	mov r9,  [gbl+8*3]
 	mov r8,r9
-	mov r10, qword [rsp+8*2]
+	mov r10,  [rsp+8*2]
 	mov r11,r10
 	add r11,1
 	shl r11,4
@@ -9033,17 +9033,17 @@ L_666:
 	mov     rdi, [rsp+8*2129]
 	call    concat
 	mov [rsp+8*2131], rax
-	mov r9, qword [rsp+8*2131]
+	mov r9,  [rsp+8*2131]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*2132],r10
 	mov rdi,[rsp+8*2132] 
 	add rdi, 1 
 	call puts
 	
 L_668:
-	mov r9, qword [rsp+8*2]
+	mov r9,  [rsp+8*2]
 	mov r8,r9
 	mov r10,1
 	mov r9,r9
@@ -9058,18 +9058,18 @@ L_667:
 	mov qword [rsp+8*2],r8
 	
 L_669:
-	mov r8, qword [rsp+8*2]
+	mov r8,  [rsp+8*2]
 	mov r9,31
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
 	mov qword [rsp+8*2134],r10
-	mov r8, qword [rsp+8*2134]
+	mov r8,  [rsp+8*2134]
 	cmp r8, 0
 	je L_670
-	mov r9, qword [rsp+8*2]
+	mov r9,  [rsp+8*2]
 	mov r8,r9
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	call s2
 	mov r8 , rax
 	mov qword [rsp+8*2135],r8
@@ -9077,9 +9077,9 @@ L_669:
 	mov     rdi, [rsp+8*2135]
 	call    concat
 	mov [rsp+8*2136], rax
-	mov r9, qword [gbl+8*190]
+	mov r9,  [gbl+8*190]
 	mov r8,r9
-	mov r10, qword [rsp+8*2]
+	mov r10,  [rsp+8*2]
 	mov r11,r10
 	add r11,1
 	shl r11,4
@@ -9100,17 +9100,17 @@ L_669:
 	mov     rdi, [rsp+8*2141]
 	call    concat
 	mov [rsp+8*2142], rax
-	mov r9, qword [rsp+8*2142]
+	mov r9,  [rsp+8*2142]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*2143],r10
 	mov rdi,[rsp+8*2143] 
 	add rdi, 1 
 	call puts
 	
 L_671:
-	mov r9, qword [rsp+8*2]
+	mov r9,  [rsp+8*2]
 	mov r8,r9
 	mov r10,1
 	mov r9,r9
@@ -9125,18 +9125,18 @@ L_670:
 	mov qword [rsp+8*2],r8
 	
 L_672:
-	mov r8, qword [rsp+8*2]
+	mov r8,  [rsp+8*2]
 	mov r9,31
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
 	mov qword [rsp+8*2145],r10
-	mov r8, qword [rsp+8*2145]
+	mov r8,  [rsp+8*2145]
 	cmp r8, 0
 	je L_673
-	mov r9, qword [gbl+8*190]
+	mov r9,  [gbl+8*190]
 	mov r8,r9
-	mov r10, qword [rsp+8*2]
+	mov r10,  [rsp+8*2]
 	mov r11,r10
 	add r11,1
 	shl r11,4
@@ -9147,14 +9147,14 @@ L_672:
 	mov qword [rsp+8*2146],r8
 	mov qword [rsp+8*2147],r11
 	mov qword [rsp+8*2148],r12
-	mov qword [arg+8*0],r13
+	mov qword rdi,r13
 	mov qword [rsp+8*2149],r14
 	mov rdi,[rsp+8*2149] 
 	add rdi, 1 
 	call puts
 	
 L_674:
-	mov r9, qword [rsp+8*2]
+	mov r9,  [rsp+8*2]
 	mov r8,r9
 	mov r10,1
 	mov r9,r9
@@ -9175,7 +9175,7 @@ digt:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 17568
-	mov r9, qword [arg+8*0]
+	mov r9,  rdi
 	mov r8,r9
 	mov r10,0
 	cmp r8,r10
@@ -9183,7 +9183,7 @@ digt:
 	sete r11B
 	mov qword [rsp+8*2151],r8
 	mov qword [rsp+8*2152],r11
-	mov r8, qword [rsp+8*2152]
+	mov r8,  [rsp+8*2152]
 	cmp r8, 0
 	je L_643
 	mov r8,t66
@@ -9192,13 +9192,13 @@ digt:
 	ret
 	
 L_643:
-	mov r8, qword [rsp+8*2151]
+	mov r8,  [rsp+8*2151]
 	mov r9,1
 	cmp r8,r9
 	mov r10, 0
 	sete r10B
 	mov qword [rsp+8*2153],r10
-	mov r8, qword [rsp+8*2153]
+	mov r8,  [rsp+8*2153]
 	cmp r8, 0
 	je L_645
 	mov r8,t69
@@ -9207,13 +9207,13 @@ L_643:
 	ret
 	
 L_645:
-	mov r8, qword [rsp+8*2151]
+	mov r8,  [rsp+8*2151]
 	mov r9,2
 	cmp r8,r9
 	mov r10, 0
 	sete r10B
 	mov qword [rsp+8*2154],r10
-	mov r8, qword [rsp+8*2154]
+	mov r8,  [rsp+8*2154]
 	cmp r8, 0
 	je L_647
 	mov r8,t72
@@ -9222,13 +9222,13 @@ L_645:
 	ret
 	
 L_647:
-	mov r8, qword [rsp+8*2151]
+	mov r8,  [rsp+8*2151]
 	mov r9,3
 	cmp r8,r9
 	mov r10, 0
 	sete r10B
 	mov qword [rsp+8*2155],r10
-	mov r8, qword [rsp+8*2155]
+	mov r8,  [rsp+8*2155]
 	cmp r8, 0
 	je L_649
 	mov r8,t75
@@ -9237,13 +9237,13 @@ L_647:
 	ret
 	
 L_649:
-	mov r8, qword [rsp+8*2151]
+	mov r8,  [rsp+8*2151]
 	mov r9,4
 	cmp r8,r9
 	mov r10, 0
 	sete r10B
 	mov qword [rsp+8*2156],r10
-	mov r8, qword [rsp+8*2156]
+	mov r8,  [rsp+8*2156]
 	cmp r8, 0
 	je L_651
 	mov r8,t78
@@ -9252,13 +9252,13 @@ L_649:
 	ret
 	
 L_651:
-	mov r8, qword [rsp+8*2151]
+	mov r8,  [rsp+8*2151]
 	mov r9,5
 	cmp r8,r9
 	mov r10, 0
 	sete r10B
 	mov qword [rsp+8*2157],r10
-	mov r8, qword [rsp+8*2157]
+	mov r8,  [rsp+8*2157]
 	cmp r8, 0
 	je L_653
 	mov r8,t81
@@ -9267,13 +9267,13 @@ L_651:
 	ret
 	
 L_653:
-	mov r8, qword [rsp+8*2151]
+	mov r8,  [rsp+8*2151]
 	mov r9,6
 	cmp r8,r9
 	mov r10, 0
 	sete r10B
 	mov qword [rsp+8*2158],r10
-	mov r8, qword [rsp+8*2158]
+	mov r8,  [rsp+8*2158]
 	cmp r8, 0
 	je L_655
 	mov r8,t84
@@ -9282,13 +9282,13 @@ L_653:
 	ret
 	
 L_655:
-	mov r8, qword [rsp+8*2151]
+	mov r8,  [rsp+8*2151]
 	mov r9,7
 	cmp r8,r9
 	mov r10, 0
 	sete r10B
 	mov qword [rsp+8*2159],r10
-	mov r8, qword [rsp+8*2159]
+	mov r8,  [rsp+8*2159]
 	cmp r8, 0
 	je L_657
 	mov r8,t87
@@ -9297,13 +9297,13 @@ L_655:
 	ret
 	
 L_657:
-	mov r8, qword [rsp+8*2151]
+	mov r8,  [rsp+8*2151]
 	mov r9,8
 	cmp r8,r9
 	mov r10, 0
 	sete r10B
 	mov qword [rsp+8*2160],r10
-	mov r8, qword [rsp+8*2160]
+	mov r8,  [rsp+8*2160]
 	cmp r8, 0
 	je L_659
 	mov r8,t90
@@ -9312,13 +9312,13 @@ L_657:
 	ret
 	
 L_659:
-	mov r8, qword [rsp+8*2151]
+	mov r8,  [rsp+8*2151]
 	mov r9,9
 	cmp r8,r9
 	mov r10, 0
 	sete r10B
 	mov qword [rsp+8*2161],r10
-	mov r8, qword [rsp+8*2161]
+	mov r8,  [rsp+8*2161]
 	cmp r8, 0
 	je L_661
 	mov r8,t93
@@ -9336,7 +9336,7 @@ s2:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 17568
-	mov r9, qword [arg+8*0]
+	mov r9,  rdi
 	mov r8,r9
 	mov r10,9
 	cmp r8,r10
@@ -9344,12 +9344,12 @@ s2:
 	setle r11B
 	mov qword [rsp+8*2162],r8
 	mov qword [rsp+8*2163],r11
-	mov r8, qword [rsp+8*2163]
+	mov r8,  [rsp+8*2163]
 	cmp r8, 0
 	je L_663
-	mov r9, qword [rsp+8*2162]
+	mov r9,  [rsp+8*2162]
 	mov r8,r9
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	call digt
 	mov r8 , rax
 	mov qword [rsp+8*2164],r8
@@ -9361,14 +9361,14 @@ s2:
 	mov     rdi, [rsp+8*2165]
 	call    concat
 	mov [rsp+8*2166], rax
-	mov r8, qword [rsp+8*2166]
+	mov r8,  [rsp+8*2166]
 	mov rax,r8
 	leave
 	ret
 	
 L_663:
 	xor rdx, rdx
-	mov r8, qword [rsp+8*2162]
+	mov r8,  [rsp+8*2162]
 	mov rax, r8
 	mov r9,10
 	mov rbx, r9
@@ -9377,7 +9377,7 @@ L_663:
 	mov r10, rax
 	mov r11,r10
 	mov qword [rsp+8*2167],r10
-	mov qword [arg+8*0],r11
+	mov qword rdi,r11
 	call digt
 	mov r8 , rax
 	mov qword [rsp+8*2168],r8
@@ -9386,7 +9386,7 @@ L_663:
 	call    concat
 	mov [rsp+8*2169], rax
 	xor rdx, rdx
-	mov r8, qword [rsp+8*2162]
+	mov r8,  [rsp+8*2162]
 	mov rax, r8
 	mov r9,10
 	mov rbx, r9
@@ -9395,7 +9395,7 @@ L_663:
 	mov r10, rdx
 	mov r11,r10
 	mov qword [rsp+8*2170],r10
-	mov qword [arg+8*0],r11
+	mov qword rdi,r11
 	call digt
 	mov r8 , rax
 	mov qword [rsp+8*2171],r8
@@ -9407,7 +9407,7 @@ L_663:
 	mov     rdi, [rsp+8*2172]
 	call    concat
 	mov [rsp+8*2173], rax
-	mov r8, qword [rsp+8*2173]
+	mov r8,  [rsp+8*2173]
 	mov rax,r8
 	leave
 	ret
@@ -9420,7 +9420,7 @@ c2:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 17568
-	mov r9, qword [arg+8*0]
+	mov r9,  rdi
 	mov r8,r9
 	mov r10,9
 	cmp r8,r10
@@ -9428,12 +9428,12 @@ c2:
 	setle r11B
 	mov qword [rsp+8*2174],r8
 	mov qword [rsp+8*2175],r11
-	mov r8, qword [rsp+8*2175]
+	mov r8,  [rsp+8*2175]
 	cmp r8, 0
 	je L_665
-	mov r9, qword [rsp+8*2174]
+	mov r9,  [rsp+8*2174]
 	mov r8,r9
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	call digt
 	mov r8 , rax
 	mov qword [rsp+8*2176],r8
@@ -9445,14 +9445,14 @@ c2:
 	mov     rdi, [rsp+8*2177]
 	call    concat
 	mov [rsp+8*2178], rax
-	mov r8, qword [rsp+8*2178]
+	mov r8,  [rsp+8*2178]
 	mov rax,r8
 	leave
 	ret
 	
 L_665:
 	xor rdx, rdx
-	mov r8, qword [rsp+8*2174]
+	mov r8,  [rsp+8*2174]
 	mov rax, r8
 	mov r9,10
 	mov rbx, r9
@@ -9461,7 +9461,7 @@ L_665:
 	mov r10, rax
 	mov r11,r10
 	mov qword [rsp+8*2179],r10
-	mov qword [arg+8*0],r11
+	mov qword rdi,r11
 	call digt
 	mov r8 , rax
 	mov qword [rsp+8*2180],r8
@@ -9470,7 +9470,7 @@ L_665:
 	call    concat
 	mov [rsp+8*2181], rax
 	xor rdx, rdx
-	mov r8, qword [rsp+8*2174]
+	mov r8,  [rsp+8*2174]
 	mov rax, r8
 	mov r9,10
 	mov rbx, r9
@@ -9479,7 +9479,7 @@ L_665:
 	mov r10, rdx
 	mov r11,r10
 	mov qword [rsp+8*2182],r10
-	mov qword [arg+8*0],r11
+	mov qword rdi,r11
 	call digt
 	mov r8 , rax
 	mov qword [rsp+8*2183],r8
@@ -9491,7 +9491,7 @@ L_665:
 	mov     rdi, [rsp+8*2184]
 	call    concat
 	mov [rsp+8*2185], rax
-	mov r8, qword [rsp+8*2185]
+	mov r8,  [rsp+8*2185]
 	mov rax,r8
 	leave
 	ret
@@ -9507,13 +9507,13 @@ global_init:
 	mov     rdi, 256
 	call    mallocArray
 	mov     qword [gbl+8*2186], rax
-	mov r9, qword [gbl+8*2186]
+	mov r9,  [gbl+8*2186]
 	mov r8,r9
 	mov qword [gbl+8*190],r8
 	mov     rdi, 256
 	call    mallocArray
 	mov     qword [gbl+8*2187], rax
-	mov r9, qword [gbl+8*2187]
+	mov r9,  [gbl+8*2187]
 	mov r8,r9
 	mov r11,t145
 	mov r10,r11
@@ -9525,7 +9525,7 @@ global_init:
 	mov qword [gbl+8*2130],r10
 	mov qword [gbl+8*389],r12
 	mov qword [gbl+8*2057],r14
-	mov r8, qword [rsp+8*2188]
+	mov r8,  [rsp+8*2188]
 	mov rax,r8
 	leave
 	ret

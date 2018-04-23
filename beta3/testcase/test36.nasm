@@ -661,7 +661,7 @@ main:
 	mov     rdi, [rsp+8*2]
 	call    mallocArray
 	mov     qword [rsp+8*3], rax
-	mov r9, qword [rsp+8*3]
+	mov r9,  [rsp+8*3]
 	mov r8,r9
 	mov r11,0
 	mov r10,r11
@@ -672,22 +672,22 @@ main:
 	mov qword [rsp+8*6],r12
 	
 L_360:
-	mov r8, qword [rsp+8*6]
-	mov r9, qword [rsp+8*2]
+	mov r8,  [rsp+8*6]
+	mov r9,  [rsp+8*2]
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
 	mov qword [rsp+8*7],r10
-	mov r8, qword [rsp+8*7]
+	mov r8,  [rsp+8*7]
 	cmp r8, 0
 	je L_361
-	mov r8, qword [rsp+8*5]
+	mov r8,  [rsp+8*5]
 	mov r9,1
 	mov r8,r8
 	add r8,r9
-	mov r11, qword [rsp+8*4]
+	mov r11,  [rsp+8*4]
 	mov r10,r11
-	mov r12, qword [rsp+8*6]
+	mov r12,  [rsp+8*6]
 	mov r13,r12
 	add r13,1
 	shl r13,4
@@ -698,7 +698,7 @@ L_360:
 	mov qword [rsp+8*9],r13
 	
 L_362:
-	mov r8, qword [rsp+8*6]
+	mov r8,  [rsp+8*6]
 	mov r9,1
 	mov r8,r8
 	add r8,r9
@@ -714,24 +714,24 @@ L_361:
 	mov qword [rsp+8*6],r10
 	
 L_363:
-	mov r8, qword [rsp+8*6]
-	mov r9, qword [rsp+8*2]
+	mov r8,  [rsp+8*6]
+	mov r9,  [rsp+8*2]
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
 	mov qword [rsp+8*11],r10
-	mov r8, qword [rsp+8*11]
+	mov r8,  [rsp+8*11]
 	cmp r8, 0
 	je L_364
-	mov r9, qword [rsp+8*4]
+	mov r9,  [rsp+8*4]
 	mov r8,r9
-	mov r10, qword [rsp+8*6]
+	mov r10,  [rsp+8*6]
 	mov r11,r10
 	add r11,1
 	shl r11,4
 	add r11,r8
 	mov r12, [r11]
-	mov r13, qword [rsp+8*10]
+	mov r13,  [rsp+8*10]
 	mov r14,r13
 	add r14,r12
 	mov r13,r14
@@ -742,7 +742,7 @@ L_363:
 	mov qword [rsp+8*15],r14
 	
 L_365:
-	mov r8, qword [rsp+8*6]
+	mov r8,  [rsp+8*6]
 	mov r9,1
 	mov r8,r8
 	add r8,r9
@@ -750,18 +750,18 @@ L_365:
 	jmp L_363
 	
 L_364:
-	mov r9, qword [rsp+8*10]
+	mov r9,  [rsp+8*10]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*17],r10
 	mov     rdi, [rsp+8*17]
 	call    toString
 	mov     qword[rsp+8*18], rax
-	mov r9, qword [rsp+8*18]
+	mov r9,  [rsp+8*18]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*19],r10
 	mov rdi,[rsp+8*19] 
 	add rdi, 1 
@@ -782,7 +782,7 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 224
-	mov r8, qword [rsp+8*20]
+	mov r8,  [rsp+8*20]
 	mov rax,r8
 	leave
 	ret

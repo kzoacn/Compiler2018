@@ -661,7 +661,7 @@ main:
 	mov     rdi, [rsp+8*2]
 	call    mallocArray
 	mov     qword [rsp+8*3], rax
-	mov r9, qword [rsp+8*3]
+	mov r9,  [rsp+8*3]
 	mov r8,r9
 	mov r11,0
 	mov r10,r11
@@ -669,18 +669,18 @@ main:
 	mov qword [rsp+8*5],r10
 	
 L_675:
-	mov r8, qword [rsp+8*5]
-	mov r9, qword [rsp+8*2]
+	mov r8,  [rsp+8*5]
+	mov r9,  [rsp+8*2]
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
 	mov qword [rsp+8*6],r10
-	mov r8, qword [rsp+8*6]
+	mov r8,  [rsp+8*6]
 	cmp r8, 0
 	je L_676
-	mov r9, qword [rsp+8*4]
+	mov r9,  [rsp+8*4]
 	mov r8,r9
-	mov r10, qword [rsp+8*5]
+	mov r10,  [rsp+8*5]
 	mov r11,r10
 	add r11,1
 	shl r11,4
@@ -700,21 +700,21 @@ L_675:
 	mov qword [rsp+8*9],r12
 	mov qword [rsp+8*10],r13
 	mov qword [rsp+8*11],r14
-	mov qword [arg+8*0],r15
+	mov qword rdi,r15
 	mov     rdi, [rsp+8*13]
 	call    toString
 	mov     qword[rsp+8*14], rax
-	mov r9, qword [rsp+8*14]
+	mov r9,  [rsp+8*14]
 	mov r8,r9
 	mov r10,r8
-	mov qword [arg+8*0],r8
+	mov qword rdi,r8
 	mov qword [rsp+8*15],r10
 	mov rdi,[rsp+8*15] 
 	add rdi, 1 
 	call puts
 	
 L_677:
-	mov r9, qword [rsp+8*5]
+	mov r9,  [rsp+8*5]
 	mov r8,r9
 	mov r10,1
 	mov r9,r9
@@ -735,7 +735,7 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 200
-	mov r8, qword [rsp+8*17]
+	mov r8,  [rsp+8*17]
 	mov rax,r8
 	leave
 	ret
