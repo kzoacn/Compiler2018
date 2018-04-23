@@ -1,188 +1,78 @@
-int[] b = new int[500005];
-int[] now = new int[500005];
-int[] t = new int[500005];
-int[] a = new int[200005];
+
 int n;
-int m;
-int p;
-int op;
-int L = 1;
-int[] flag = new int[500005];
-int[][] s = new int[500005][80];
-int[] sum = new int[500005];
-int ans = 0;
+int[] a;
 
-int square(int x) {
-    return (x % p) * (x % p) ;
-}
-
-int gcd(int x, int y)
+void exchange(int x,int y)
 {
-    if(y == 0) return x;
-    if(x < y)
-        return gcd(y,x);
-    else
-        return gcd(y, x % y);
+    int t=a[x];
+    a[x]=a[y];
+    a[y]=t;
 }
 
-int lcm(int a, int b) {
-    return a / gcd(a, b) * b;
-}
-
-int aa=13131;
-int bb=5353;
-int MOD=(2<<14) - 7;
-int no=1;
-
-int Rand()
-{
-    int i = 1;
-    for(i=1;i<3;i++)
-        no=(no * aa + bb) % MOD;
-    if(no < 0){
-        no = -no;
-    }
-    return no;
-}
-
-int RandRange(int low, int high)
-{
-    return low + Rand() % (high - low + 1) + 1;
-}
-
-
-void init() {
-    int[] c = new int[140005];
-    int i = 0;
-    int j = 0;
-    for(i = 2; i < p; ++i) c[i] = i;
-    for(i = 2; i < p; ++i)
-        for(j = 1; j <= 15; ++j)
-            c[i] = square(c[i]) % p;
-    for(i = 2; i < p; ++i) {
-        int j;
-        int x = c[i];
-        for(j = 1; ;++j) {
-            x = square(x) % p;
-            b[x] = 1;
-            if(x == c[i]) break;
+int makeHeap() {
+    int i;
+    int t;
+    int j;
+    i = (n - 1) / 2;
+    t = 0;
+	j = 0;
+    while (i >= 0) {
+        j = i * 2;
+        if (i*2+1<n && a[i*2+1]<a[i*2]) j = i*2+1;
+        if (a[i] > a[j]) {
+            exchange(i,j);
         }
-        L = lcm(L, j);
+        i = i - 1;
     }
-    b[0] = 1;
-	b[1] = 1;
+    return 0;
 }
 
-void build(int o, int l, int r) {
-    int i = 0;
-    if(l == r) {
-        sum[o] = a[l];
-        if(a[l] < p && a[l] >= 0  && b[a[l] % p] > 0) {
-            flag[o] = 1;
-            s[o][0] = a[l];
-            for(i = 1; i < L; ++i)
-                s[o][i] = square(s[o][i - 1]) % p;
+int adjustHeap(int n) {
+    int i;
+    int j;
+    int t;
+    i = 0;
+	j = 0;
+	t = 0;
+    while (i * 2 < n) {
+        j = i*2;
+        if (i*2+1<n && a[i*2+1] < a[i*2]) j = i*2+1;
+        if (a[i] > a[j]) {
+            int t = a[i];
+            a[i] = a[j];
+            a[j] = t;
+            i = j;
         }
-        now[o] = 0;
-    } else {
-        int lc = o * 2;
-        int rc = o * 2 + 1;
-        int mid = (l + r) / 2;
-        build(lc, l, mid);
-        build(rc, mid + 1, r);
-        sum[o] = sum[lc] + sum[rc];
-        flag[o] = flag[lc] & flag[rc];
-        if(flag[o]>0){
-            for(i = 0; i < L; ++i)
-                s[o][i] = s[lc][i] + s[rc][i];
-            now[0] = 0;
-        }
+        else break;
     }
+    return 0;
 }
 
-void pushdown(int o) {
-    if(t[o]>0) {
-        int lc = o * 2;
-        int rc = o * 2 + 1;
-        now[lc] = (now[lc] + t[o]) % L;
-        sum[lc] = s[lc][now[lc]];
-        t[lc] = (t[lc] + t[o]) % L;
-        now[rc] = (now[rc] + t[o]) % L;
-        sum[rc] = s[rc][now[rc]];
-        t[rc] = (t[rc] + t[o]) % L;
-        t[o] = 0;
+int heapSort() {
+    int t;
+    int k;
+    t = 0;
+    for (k = 0; k < n; k = k + 1) {
+        t = a[0];
+        a[0] = a[n-k-1];
+        a[n-k-1] = t;
+        adjustHeap(n-k-1);
     }
-}
-
-int pl = 0;
-int pr = 0;
-//
-void update(int o, int l, int r) {
-    if (pl <= l && pr >= r && flag[o]>0) {
-        now[o] = (now[o] + 1) % L;
-        sum[o] = s[o][now[o]];
-        t[o] = (t[o] + 1) % L;
-        return;
-    }
-    if(l == r) {
-        sum[o] = square(sum[o]) % p;
-        if(b[sum[o]]>0) {
-            flag[o] = 1;
-            s[o][0] = sum[o];
-            int i = 0;
-            for(i = 1; i < L; ++i)
-                s[o][i] = square(s[o][i - 1]) % p;
-        }
-        return;
-    }
-    if(t[o]>0) pushdown(o);
-    int lc = o * 2;
-    int rc = o * 2 + 1;
-    int mid = (l + r) / 2;
-    if(pl <= mid) update(lc, l, mid);
-    if(pr >= mid + 1) update(rc, mid + 1, r);
-    sum[o] = sum[lc] + sum[rc];
-    flag[o] = flag[lc] & flag[rc];
-    if(flag[o]>0){
-        int i = 0;
-        for(i = 0; i < L; ++i)
-            s[o][i] = s[lc][(i + now[lc]) % L] + s[rc][(i + now[rc]) % L];
-        now[o] = 0;
-    }
-}
-
-int query(int o, int l, int r) {
-    if (pl <= l && pr >= r) return sum[o];
-    int lc = o * 2;
-    int rc = o * 2 + 1;
-    int mid = (l + r) / 2;
-    int ss = 0;
-    if(t[o]>0) pushdown(o);
-    if(pl <= mid) ss = (ss + query(lc, l, mid)) % MOD;
-    if(pr >= mid + 1) ss = (ss + query(rc, mid + 1, r)) % MOD;
-    return ss;
+    return 0;
 }
 
 int main() {
-    n = 40000;
-    m = 40000;
-    p = 9977;
-    int i = 1;
-    for(i = 1; i <= n; ++i)
-        a[i] = RandRange(0, p);
-    init();
-    build(1, 1, n);
-    while(m>0) {
-        op = Rand() % 2;
-        pl = RandRange(1, n);
-        pr = RandRange(1, n);
-        while(pr <= pl)
-            pr = RandRange(1, n);
-        if(op == 0) update(1, 1, n);
-        if(op == 1) ans = (ans + query(1, 1, n))%MOD;
-        m --;
-    }
-    print(toString(ans));
+    int i;
+	n = 3289347;
+	a = new int[n];
+
+    for (i = 0; i < a.size(); i = i + 1)
+		a[i] = i;
+    makeHeap();
+    heapSort();
+    for (i = 0; i < a.size(); i = i + 39997)
+        print(toString(a[i]) + " ");
+	print("\n");
     return 0;
 }
 
@@ -190,19 +80,17 @@ int main() {
 
 /*!! metadata:
 === comment ===
-segtree-515030910592-lijinning.txt
+heapsort-5100379110-daibo.mx
 === input ===
-40000
-40000
-9977
+3289347
 === assert ===
 output
 === timeout ===
-10.0
+2.0
 === output ===
-21523
+3289346 3249349 3209352 3169355 3129358 3089361 3049364 3009367 2969370 2929373 2889376 2849379 2809382 2769385 2729388 2689391 2649394 2609397 2569400 2529403 2489406 2449409 2409412 2369415 2329418 2289421 2249424 2209427 2169430 2129433 2089436 2049439 2009442 1969445 1929448 1889451 1849454 1809457 1769460 1729463 1689466 1649469 1609472 1569475 1529478 1489481 1449484 1409487 1369490 1329493 1289496 1249499 1209502 1169505 1129508 1089511 1049514 1009517 969520 929523 889526 849529 809532 769535 729538 689541 649544 609547 569550 529553 489556 449559 409562 369565 329568 289571 249574 209577 169580 129583 89586 49589 9592
 === phase ===
-optim extended
+optim pretest
 === is_public ===
 True
 
