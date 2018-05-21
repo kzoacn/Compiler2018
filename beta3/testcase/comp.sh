@@ -1,4 +1,4 @@
 nasm -felf64 $1.nasm
-gcc $1.o
+gcc -static $1.o
 
 

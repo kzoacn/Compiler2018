@@ -829,7 +829,7 @@ public class IRTranslator {
                     text.append(new StringBuffer("sub    rsp, "+Integer.toString(variableIndex.size()*8+64)+"\n\t")); //TODO
 
                     if(name.equals("main")){
-                        text.append(new StringBuffer("        mov     eax, 536870912\n" +
+                        text.append(new StringBuffer("mov     rax, 5368709120\n" +
                                 "        cdqe\n" +
                                 "        mov     rdi, rax\n" +
                                 "        call    malloc\n" +

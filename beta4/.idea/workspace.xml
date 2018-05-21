@@ -23,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="1571" column="13" lean-forward="true" selection-start-line="1571" selection-start-column="13" selection-end-line="1571" selection-end-column="13" />
+            <state relative-caret-position="320">
+              <caret line="1618" column="62" lean-forward="true" selection-start-line="1618" selection-start-column="62" selection-end-line="1618" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -35,8 +35,8 @@
       <file leaf-file-name="IRTranslator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1900">
-              <caret line="106" column="42" selection-start-line="106" selection-start-column="42" selection-end-line="106" selection-end-column="42" />
+            <state relative-caret-position="2520">
+              <caret line="358" column="26" lean-forward="true" selection-start-line="358" selection-start-column="26" selection-end-line="358" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -66,8 +66,8 @@
       <file leaf-file-name="Semantic.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Semantic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+            <state relative-caret-position="152">
+              <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -84,11 +84,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConstantPool.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ConstantPool.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/ConstantPool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="343" column="71" selection-start-line="343" selection-start-column="71" selection-end-line="343" selection-end-column="71" />
+            <state relative-caret-position="282">
+              <caret line="335" column="28" selection-start-line="335" selection-start-column="28" selection-end-line="335" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -128,8 +128,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>parseInt</find>
-      <find>nextVariable</find>
       <find>methoddefin</find>
       <find>symbolmap</find>
       <find>global</find>
@@ -158,6 +156,8 @@
       <find>variabledefin</find>
       <find>dote</find>
       <find>speci</find>
+      <find>rsp</find>
+      <find>536870912</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -171,8 +171,8 @@
         <option value="$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/ExecTest.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/Main.java" />
-        <option value="$PROJECT_DIR$/src/cn/kzoacn/Semantic.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/ConstantPool.java" />
+        <option value="$PROJECT_DIR$/src/cn/kzoacn/Semantic.java" />
       </list>
     </option>
   </component>
@@ -797,13 +797,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1900">
-          <caret line="106" column="42" selection-start-line="106" selection-start-column="42" selection-end-line="106" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Mxstar.g4">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2394">
@@ -815,13 +808,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3382">
           <caret line="191" column="8" selection-start-line="191" selection-start-column="8" selection-end-line="191" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="1571" column="13" lean-forward="true" selection-start-line="1571" selection-start-column="13" selection-end-line="1571" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -837,18 +823,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Semantic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        <state relative-caret-position="152">
+          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2520">
+          <caret line="358" column="26" lean-forward="true" selection-start-line="358" selection-start-column="26" selection-end-line="358" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/ConstantPool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="343" column="71" selection-start-line="343" selection-start-column="71" selection-end-line="343" selection-end-column="71" />
+        <state relative-caret-position="282">
+          <caret line="335" column="28" selection-start-line="335" selection-start-column="28" selection-end-line="335" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="1618" column="62" lean-forward="true" selection-start-line="1618" selection-start-column="62" selection-end-line="1618" selection-end-column="62" />
         </state>
       </provider>
     </entry>
