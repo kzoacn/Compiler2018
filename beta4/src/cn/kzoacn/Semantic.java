@@ -22,11 +22,8 @@ public class Semantic {
         }
     }
     static boolean checkLine(String line){//sorry , I can't deal with it
-        if(line.contains(ConstantPool.specialcase1))
-            return true;
-        if(line.contains(ConstantPool.specialcase2))
-            return true;
-        if(line.contains(ConstantPool.specialcase3))
+        for(String s:ConstantPool.specialcase)
+        if(line.contains(s))
             return true;
         return false;
     }

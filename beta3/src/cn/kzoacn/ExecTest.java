@@ -320,7 +320,7 @@ class ExecTest {
             System.err.println("CE 1!");
             Assertions.assertTrue(false);
         }
-        p = Runtime.getRuntime().exec("gcc "+"./testcase/"+name+".o");
+        p = Runtime.getRuntime().exec("gcc "+"-static ./testcase/"+name+".o");
         p.waitFor();
         if (p.exitValue() != 0) {
             System.err.println("CE 2!");
