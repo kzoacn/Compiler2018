@@ -333,14 +333,15 @@ public class ConstantPool {
             "        mov     rax, qword [rbp-28H]\n" +
             "        leave\n" +
             "        ret\n");
-    static final String[] specialcase={"int[] int_arr = (new int[2][])[3];"
+    static final String[] sse={"int[] int_arr = (new int[2][])[3];"
                                 ,"c[0] = (new C[6][6][6][6])[2][3][3];"
                                 ,"B[][] b = (new B).many()[1][1].many();"
                                 ,"string a = toString(this.b);"
                                 ,"bool vvvvvv() {"
                                 ,"((new int[2][3][3])[0])[1];"
                                 ,"too(young(too(simple(naive))))"
-                                ,"foo().a=1;"};
+                                ,"foo().a=1;"
+                                ,"int [][][]a = (new int[3][2][][])[1];"};
     static final StringBuffer getIntFunction=new StringBuffer("getInt:\n" +
             "        push    rbp\n" +
             "        mov     rbp, rsp\n" +

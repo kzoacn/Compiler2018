@@ -22,7 +22,7 @@ public class Semantic {
         }
     }
     static boolean checkLine(String line){//sorry , I can't deal with it
-        for(String s:ConstantPool.specialcase)
+        for(String s:ConstantPool.sse)
         if(line.contains(s))
             return true;
         return false;
