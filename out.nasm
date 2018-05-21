@@ -641,7 +641,7 @@ main:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 3632
-	        mov     eax, 536870912
+	mov     rax, 536870912
         cdqe
         mov     rdi, rax
         call    malloc
@@ -660,20 +660,15 @@ main:
 	mov r11,r12
 	mov r14,9977
 	mov r13,r14
-	mov r15,0
-	mov rax,r15
 	mov qword [rsp+8*1],r8
+	mov r8,1
+	mov r15,r8
+	mov r8,1
+	mov r15,r8
 	mov qword [gbl+8*2],r9
 	mov qword [gbl+8*3],r11
 	mov qword [gbl+8*4],r13
-	        mov     rsp, qword [trsp]
-	leave
-	ret
-	mov r9,1
-	mov r8,r9
-	mov r10,1
-	mov r8,r10
-	mov qword [rsp+8*5],r8
+	mov qword [rsp+8*5],r15
 	
 L_78:
 	mov r8,  [rsp+8*5]
@@ -3101,7 +3096,7 @@ global_init:
 	add r10,1
 	shl r10,4
 	add r10,r8
-	mov r11,500005
+	mov r11,160000
 	mov [r10],r11
 	mov r12,1
 	mov r10,r12

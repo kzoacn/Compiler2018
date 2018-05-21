@@ -23,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9851">
-              <caret line="612" column="6" selection-start-line="612" selection-start-column="6" selection-end-line="612" selection-end-column="6" />
+            <state relative-caret-position="643">
+              <caret line="2152" column="69" selection-start-line="2152" selection-start-column="69" selection-end-line="2152" selection-end-column="69" />
               <folding>
                 <element signature="e#21684#21692#0" expanded="true" />
               </folding>
@@ -38,8 +38,8 @@
       <file leaf-file-name="IRTranslator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="677">
-              <caret line="436" lean-forward="true" selection-start-line="436" selection-end-line="436" />
+            <state relative-caret-position="282">
+              <caret line="738" column="32" selection-start-line="738" selection-start-column="21" selection-end-line="738" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#10052#10053#0" expanded="true" />
@@ -54,7 +54,7 @@
       <file leaf-file-name="ExecTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/ExecTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5890">
+            <state relative-caret-position="5643">
               <caret line="310" selection-start-line="310" selection-end-line="310" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -75,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConstantPool.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ConstantPool.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/ConstantPool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2587">
-              <caret line="5551" column="40" lean-forward="true" selection-start-line="5551" selection-start-column="40" selection-end-line="5551" selection-end-column="40" />
+            <state relative-caret-position="416">
+              <caret line="5235" column="36" lean-forward="true" selection-start-line="5235" selection-start-column="36" selection-end-line="5235" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,8 +105,8 @@
       <file leaf-file-name="Mxstar.g4" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Mxstar.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+            <state relative-caret-position="323">
+              <caret line="128" column="94" lean-forward="true" selection-start-line="128" selection-start-column="94" selection-end-line="128" selection-end-column="94" />
             </state>
           </provider>
         </entry>
@@ -143,9 +143,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>newvari</find>
-      <find>r8</find>
-      <find>10</find>
       <find>argLst</find>
       <find>argList.get(15)</find>
       <find>arg+8*15</find>
@@ -173,6 +170,9 @@
       <find>bss</find>
       <find>varName</find>
       <find>536870912</find>
+      <find>mallocarray</find>
+      <find>multiarray</find>
+      <find>newarray</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -184,11 +184,11 @@
         <option value="$PROJECT_DIR$/src/cn/kzoacn/Semantic.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/SemanticTest.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/Builder.java" />
-        <option value="$PROJECT_DIR$/src/cn/kzoacn/Main.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/IRSimulator.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/ExecTest.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/ConstantPool.java" />
+        <option value="$PROJECT_DIR$/src/cn/kzoacn/Main.java" />
       </list>
     </option>
   </component>
@@ -204,7 +204,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -231,7 +231,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -462,34 +462,34 @@
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31343284" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="4" side_tool="true" weight="0.3296875" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Tool Output" order="7" weight="0.32942432" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="ANTLR Preview" order="7" weight="0.32942432" />
+      <window_info anchor="bottom" id="Tool Output" order="7" weight="0.32942432" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Terminal" order="12" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.04477612" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30597016" />
+      <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Tool Output" order="7" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24791667" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30597016" />
       <window_info id="Image Layers" order="5" />
       <window_info id="Designer" order="3" />
-      <window_info anchor="bottom" id="ANTLR Preview" order="9" weight="0.32942432" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31343284" />
@@ -499,8 +499,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="12" />
+      <window_info anchor="bottom" id="ANTLR Preview" order="9" weight="0.32942432" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.04477612" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info id="Favorites" order="6" side_tool="true" />
     </layout-to-restore>
@@ -841,40 +841,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Mxstar.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9851">
-          <caret line="612" column="6" selection-start-line="612" selection-start-column="6" selection-end-line="612" selection-end-column="6" />
-          <folding>
-            <element signature="e#21684#21692#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="677">
-          <caret line="436" lean-forward="true" selection-start-line="436" selection-end-line="436" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#10052#10053#0" expanded="true" />
-            <element signature="e#10101#10102#0" expanded="true" />
-            <element signature="e#10135#10136#0" expanded="true" />
-            <element signature="e#10183#10184#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/ExecTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5890">
+        <state relative-caret-position="5643">
           <caret line="310" selection-start-line="310" selection-end-line="310" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -901,10 +870,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/ConstantPool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2587">
-          <caret line="5551" column="40" lean-forward="true" selection-start-line="5551" selection-start-column="40" selection-end-line="5551" selection-end-column="40" />
+        <state relative-caret-position="416">
+          <caret line="5235" column="36" lean-forward="true" selection-start-line="5235" selection-start-column="36" selection-end-line="5235" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="738" column="32" selection-start-line="738" selection-start-column="21" selection-end-line="738" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#10052#10053#0" expanded="true" />
+            <element signature="e#10101#10102#0" expanded="true" />
+            <element signature="e#10135#10136#0" expanded="true" />
+            <element signature="e#10183#10184#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Mxstar.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="128" column="94" lean-forward="true" selection-start-line="128" selection-start-column="94" selection-end-line="128" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="643">
+          <caret line="2152" column="69" selection-start-line="2152" selection-start-column="69" selection-end-line="2152" selection-end-column="69" />
+          <folding>
+            <element signature="e#21684#21692#0" expanded="true" />
           </folding>
         </state>
       </provider>

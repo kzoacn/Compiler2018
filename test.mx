@@ -167,7 +167,6 @@ int main() {
     n = 40000;
     m = 40000;
     p = 9977;
-    return 0;
     int i = 1;
     for(i = 1; i <= n; ++i)
         a[i] = RandRange(0, p);
