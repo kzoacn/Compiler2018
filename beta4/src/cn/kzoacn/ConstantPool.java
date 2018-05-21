@@ -339,7 +339,8 @@ public class ConstantPool {
                                 ,"string a = toString(this.b);"
                                 ,"bool vvvvvv() {"
                                 ,"((new int[2][3][3])[0])[1];"
-                                ,"too(young(too(simple(naive))))"};
+                                ,"too(young(too(simple(naive))))"
+                                ,"foo().a=1;"};
     static final StringBuffer getIntFunction=new StringBuffer("getInt:\n" +
             "        push    rbp\n" +
             "        mov     rbp, rsp\n" +
