@@ -668,13 +668,13 @@ main:
 	mov qword [rsp+8*4],r14
 	mov r8,  [rsp+8*4]
 	cmp r8, 0
-	jne L_589
+	jne L_812
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*5],r8
-	jmp L_590
+	jmp L_813
 	
-L_589:
+L_812:
 	xor rdx, rdx
 	mov r8,  [rsp+8*2]
 	mov rax, r8
@@ -693,10 +693,10 @@ L_589:
 	mov r8,r9
 	mov qword [rsp+8*5],r8
 	
-L_590:
+L_813:
 	mov r8,  [rsp+8*5]
 	cmp r8, 0
-	je L_591
+	je L_814
 	mov r9,t73
 	mov r8,r9
 	mov r10,r8
@@ -705,9 +705,9 @@ L_590:
 	mov rdi,[rsp+8*9] 
 	add rdi, 1 
 	call puts
-	jmp L_592
+	jmp L_815
 	
-L_591:
+L_814:
 	mov r9,t77
 	mov r8,r9
 	mov r10,r8
@@ -717,7 +717,7 @@ L_591:
 	add rdi, 1 
 	call puts
 	
-L_592:
+L_815:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

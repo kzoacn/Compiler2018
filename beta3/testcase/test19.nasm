@@ -659,13 +659,13 @@ main:
 	cmp r9, 0
 	mov qword [rsp+8*1],r8
 	mov qword [rsp+8*2],r9
-	jne L_439
+	jne L_514
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*3],r8
-	jmp L_440
+	jmp L_515
 	
-L_439:
+L_514:
 	mov r8,1
 	mov r9,0
 	cmp r8,r9
@@ -676,10 +676,10 @@ L_439:
 	mov r8,r9
 	mov qword [rsp+8*3],r8
 	
-L_440:
+L_515:
 	mov r8,  [rsp+8*3]
 	cmp r8, 0
-	je L_441
+	je L_516
 	mov r9,t70
 	mov r8,r9
 	mov r10,r8
@@ -688,9 +688,9 @@ L_440:
 	mov rdi,[rsp+8*6] 
 	add rdi, 1 
 	call puts
-	jmp L_442
+	jmp L_517
 	
-L_441:
+L_516:
 	mov r9,t74
 	mov r8,r9
 	mov r10,r8
@@ -700,20 +700,20 @@ L_441:
 	add rdi, 1 
 	call puts
 	
-L_442:
+L_517:
 	mov r8, 0
 	mov r9,  [rsp+8*2]
 	cmp r9, 0
 	sete r8B
 	cmp r8, 0
 	mov qword [rsp+8*8],r8
-	je L_443
+	je L_518
 	mov r9,1
 	mov r8,r9
 	mov qword [rsp+8*9],r8
-	jmp L_444
+	jmp L_519
 	
-L_443:
+L_518:
 	mov r8,1
 	mov r9,0
 	cmp r8,r9
@@ -724,10 +724,10 @@ L_443:
 	mov r8,r9
 	mov qword [rsp+8*9],r8
 	
-L_444:
+L_519:
 	mov r8,  [rsp+8*9]
 	cmp r8, 0
-	je L_445
+	je L_520
 	mov r9,t84
 	mov r8,r9
 	mov r10,r8
@@ -736,9 +736,9 @@ L_444:
 	mov rdi,[rsp+8*11] 
 	add rdi, 1 
 	call puts
-	jmp L_446
+	jmp L_521
 	
-L_445:
+L_520:
 	mov r9,t88
 	mov r8,r9
 	mov r10,r8
@@ -748,18 +748,18 @@ L_445:
 	add rdi, 1 
 	call puts
 	
-L_446:
+L_521:
 	mov r9,0
 	mov r8,r9
 	cmp r8, 0
 	mov qword [rsp+8*2],r8
-	jne L_447
+	jne L_522
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*13],r8
-	jmp L_448
+	jmp L_523
 	
-L_447:
+L_522:
 	mov r8,1
 	mov r9,0
 	cmp r8,r9
@@ -770,16 +770,16 @@ L_447:
 	mov r8,r9
 	mov qword [rsp+8*13],r8
 	
-L_448:
+L_523:
 	mov r8,  [rsp+8*13]
 	cmp r8, 0
-	jne L_449
+	jne L_524
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*15],r8
-	jmp L_450
+	jmp L_525
 	
-L_449:
+L_524:
 	mov r8,2
 	mov r9,4
 	cmp r8,r9
@@ -790,10 +790,10 @@ L_449:
 	mov r8,r9
 	mov qword [rsp+8*15],r8
 	
-L_450:
+L_525:
 	mov r8,  [rsp+8*15]
 	cmp r8, 0
-	je L_451
+	je L_526
 	mov r9,t103
 	mov r8,r9
 	mov r10,r8
@@ -802,9 +802,9 @@ L_450:
 	mov rdi,[rsp+8*17] 
 	add rdi, 1 
 	call puts
-	jmp L_452
+	jmp L_527
 	
-L_451:
+L_526:
 	mov r9,t107
 	mov r8,r9
 	mov r10,r8
@@ -814,7 +814,7 @@ L_451:
 	add rdi, 1 
 	call puts
 	
-L_452:
+L_527:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

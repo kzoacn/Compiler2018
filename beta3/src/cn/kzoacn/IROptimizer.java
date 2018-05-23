@@ -116,9 +116,9 @@ public class IROptimizer {
         }
 
 
-       // System.err.println("----------------------------------------------");
-        //tmp.print();
-        //System.err.println("----------------------------------------------");
+        System.err.println("----------------------------------------------");
+        tmp.print();
+        System.err.println("----------------------------------------------");
 
         return tmp;
     }

@@ -640,14 +640,14 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 168
+	sub    rsp, 176
 	mov     rax, 536870912
         cdqe
         mov     rdi, rax
         call    malloc
         mov     edx, dword 536870912
         movsxd  rdx, edx
-        sub     rdx, 2152
+        sub     rdx, 2160
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
@@ -658,32 +658,21 @@ main:
 	mov r9,r10
 	mov r12,20
 	mov r11,r12
+	mov r13,r11
+	mov r14,r13
+	imul r14,r13
+	mov r15,r14
 	mov qword [rsp+8*1],r8
+	mov r8,r15
+	mov r11,r8
+	mov qword [rsp+8*7],r8
+	mov r8,r11
+	mov qword [rsp+8*8],r8
 	mov qword [gbl+8*2],r9
 	mov qword rdi,r11
-	call f
-	mov r8 , rax
-	mov r9,r8
-	mov r10,r9
-	mov qword [rsp+8*4],r8
-	mov qword rdi,r9
-	mov qword [rsp+8*5],r10
-	mov     rdi, [rsp+8*5]
-	call    toString
-	mov     qword[rsp+8*6], rax
-	mov r9,  [rsp+8*6]
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*7],r10
-	mov rdi,[rsp+8*7] 
-	add rdi, 1 
-	call puts
-	mov r9,  [gbl+8*2]
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*8],r10
+	mov qword [rsp+8*4],r13
+	mov qword [rsp+8*5],r14
+	mov qword [rsp+8*6],r15
 	mov     rdi, [rsp+8*8]
 	call    toString
 	mov     qword[rsp+8*9], rax
@@ -695,35 +684,39 @@ main:
 	mov rdi,[rsp+8*10] 
 	add rdi, 1 
 	call puts
+	mov r9,  [gbl+8*2]
+	mov r8,r9
+	mov r10,r8
+	mov qword rdi,r8
+	mov qword [rsp+8*11],r10
+	mov     rdi, [rsp+8*11]
+	call    toString
+	mov     qword[rsp+8*12], rax
+	mov r9,  [rsp+8*12]
+	mov r8,r9
+	mov r10,r8
+	mov qword rdi,r8
+	mov qword [rsp+8*13],r10
+	mov rdi,[rsp+8*13] 
+	add rdi, 1 
+	call puts
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]
 	leave
 	ret
 	
-f:
-	push   rbp
-	mov    rbp, rsp
-	sub    rsp, 168
-	mov r9,  rdi
-	mov r8,r9
-	mov r10,r8
-	imul r10,r8
-	mov rax,r10
-	leave
-	ret
-	
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 168
-	mov r8,  [rsp+8*13]
+	sub    rsp, 176
+	mov r8,  [rsp+8*14]
 	mov rax,r8
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2152
+gbl:         resb   2160
 buff.1788:
         resb    256
 arg:

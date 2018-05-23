@@ -640,14 +640,14 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 176
+	sub    rsp, 184
 	mov     rax, 536870912
         cdqe
         mov     rdi, rax
         call    malloc
         mov     edx, dword 536870912
         movsxd  rdx, edx
-        sub     rdx, 2160
+        sub     rdx, 2168
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
@@ -656,44 +656,61 @@ main:
 	mov r8 , rax
 	mov r10,1
 	mov r9,r10
+	mov r12,  [rsp+8*3]
+	mov r11,r12
+	mov r13,1
+	mov r12,r12
+	add r12,r13
+	mov r15,0
+	mov r14,r15
 	mov qword [rsp+8*1],r8
-	mov qword [rsp+8*2],r9
-	call f
-	mov r8 , rax
-	mov r10,  [rsp+8*2]
-	mov r9,r10
-	mov r11,r9
-	mov qword [rsp+8*3],r8
-	mov qword rdi,r9
-	mov qword [rsp+8*5],r11
-	mov     rdi, [rsp+8*5]
-	call    toString
-	mov     qword[rsp+8*6], rax
-	mov r9,  [rsp+8*6]
+	mov r8,r14
+	mov qword [rsp+8*6],r8
 	mov r8,r9
 	mov r10,r8
 	mov qword rdi,r8
-	mov qword [rsp+8*7],r10
-	mov rdi,[rsp+8*7] 
+	mov qword [rsp+8*2],r9
+	mov qword [rsp+8*8],r10
+	mov qword [rsp+8*4],r11
+	mov qword [rsp+8*3],r12
+	mov qword [rsp+8*5],r14
+	mov     rdi, [rsp+8*8]
+	call    toString
+	mov     qword[rsp+8*9], rax
+	mov r9,  [rsp+8*9]
+	mov r8,r9
+	mov r10,r8
+	mov qword rdi,r8
+	mov qword [rsp+8*10],r10
+	mov rdi,[rsp+8*10] 
 	add rdi, 1 
 	call puts
-	call f
-	mov r8 , rax
-	mov r10,  [rsp+8*2]
-	mov r9,r10
-	mov r11,r9
-	mov qword [rsp+8*8],r8
-	mov qword rdi,r9
-	mov qword [rsp+8*9],r11
-	mov     rdi, [rsp+8*9]
+	mov r9,  [rsp+8*3]
+	mov r8,r9
+	mov r10,1
+	mov r9,r9
+	add r9,r10
+	mov r12,0
+	mov r11,r12
+	mov r13,r11
+	mov r15,  [rsp+8*2]
+	mov r14,r15
+	mov qword [rsp+8*4],r8
+	mov r8,r14
+	mov qword [rsp+8*12],r8
+	mov qword [rsp+8*3],r9
+	mov qword [rsp+8*5],r11
+	mov qword [rsp+8*11],r13
+	mov qword rdi,r14
+	mov     rdi, [rsp+8*12]
 	call    toString
-	mov     qword[rsp+8*10], rax
-	mov r9,  [rsp+8*10]
+	mov     qword[rsp+8*13], rax
+	mov r9,  [rsp+8*13]
 	mov r8,r9
 	mov r10,r8
 	mov qword rdi,r8
-	mov qword [rsp+8*11],r10
-	mov rdi,[rsp+8*11] 
+	mov qword [rsp+8*14],r10
+	mov rdi,[rsp+8*14] 
 	add rdi, 1 
 	call puts
 	mov r8,0
@@ -702,31 +719,17 @@ main:
 	leave
 	ret
 	
-f:
-	push   rbp
-	mov    rbp, rsp
-	sub    rsp, 176
-	mov r9,  [rsp+8*12]
-	mov r8,r9
-	mov r10,1
-	mov r9,r9
-	add r9,r10
-	mov r11,0
-	mov rax,r11
-	leave
-	ret
-	
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 176
-	mov r8,  [rsp+8*14]
+	sub    rsp, 184
+	mov r8,  [rsp+8*15]
 	mov rax,r8
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2160
+gbl:         resb   2168
 buff.1788:
         resb    256
 arg:

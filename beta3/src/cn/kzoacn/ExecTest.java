@@ -289,6 +289,10 @@ class ExecTest {
     void test95()throws Exception{
         test("test95");
     }
+    @Test @Disabled
+    void test96()throws Exception{
+        test("test96");
+    }
 
     void test(String name) throws Exception{
 

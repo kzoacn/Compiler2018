@@ -659,7 +659,7 @@ main:
 	mov qword [rsp+8*1],r8
 	mov qword [rsp+8*2],r9
 	
-L_593:
+L_816:
 	mov r8,  [rsp+8*2]
 	mov r9,  [gbl+8*3]
 	cmp r8,r9
@@ -668,7 +668,7 @@ L_593:
 	mov qword [rsp+8*4],r10
 	mov r8,  [rsp+8*4]
 	cmp r8, 0
-	je L_594
+	je L_817
 	mov r9,  [gbl+8*5]
 	mov r8,r9
 	mov r10,  [rsp+8*2]
@@ -686,14 +686,14 @@ L_593:
 	mov qword [rsp+8*2],r10
 	mov qword [rsp+8*7],r11
 	mov qword [rsp+8*8],r13
-	jmp L_593
+	jmp L_816
 	
-L_594:
+L_817:
 	mov r9,2
 	mov r8,r9
 	mov qword [rsp+8*2],r8
 	
-L_596:
+L_819:
 	mov r8,  [rsp+8*2]
 	mov r9,  [gbl+8*3]
 	cmp r8,r9
@@ -702,7 +702,7 @@ L_596:
 	mov qword [rsp+8*9],r10
 	mov r8,  [rsp+8*9]
 	cmp r8, 0
-	je L_597
+	je L_820
 	mov r9,  [gbl+8*5]
 	mov r8,r9
 	mov r10,  [rsp+8*2]
@@ -715,7 +715,7 @@ L_596:
 	mov qword [rsp+8*10],r8
 	mov qword [rsp+8*11],r11
 	mov qword [rsp+8*12],r12
-	je L_600
+	je L_823
 	mov r9,2
 	mov r8,r9
 	mov r10,  [rsp+8*2]
@@ -727,13 +727,13 @@ L_596:
 	mov qword [rsp+8*14],r12
 	mov r8,  [rsp+8*14]
 	cmp r8, 0
-	jne L_601
+	jne L_824
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*15],r8
-	jmp L_602
+	jmp L_825
 	
-L_601:
+L_824:
 	mov r8,  [rsp+8*2]
 	mov r9,2
 	mov r10,r8
@@ -752,10 +752,10 @@ L_601:
 	mov qword [rsp+8*19],r14
 	mov qword [rsp+8*15],r15
 	
-L_602:
+L_825:
 	mov r8,  [rsp+8*15]
 	cmp r8, 0
-	je L_604
+	je L_827
 	mov r9,  [gbl+8*20]
 	mov r8,r9
 	mov r10,1
@@ -800,9 +800,9 @@ L_602:
 	add rdi, 1 
 	call puts
 	
-L_604:
+L_827:
 	
-L_605:
+L_828:
 	mov r8,  [rsp+8*2]
 	mov r9,  [rsp+8*13]
 	mov r10,r8
@@ -815,7 +815,7 @@ L_605:
 	mov qword [rsp+8*31],r12
 	mov r8,  [rsp+8*31]
 	cmp r8, 0
-	je L_606
+	je L_829
 	mov r8,  [rsp+8*2]
 	mov r9,  [rsp+8*13]
 	mov r10,r8
@@ -836,11 +836,11 @@ L_605:
 	mov qword [rsp+8*33],r11
 	mov qword [rsp+8*34],r13
 	mov qword [rsp+8*35],r15
-	jmp L_605
+	jmp L_828
 	
-L_606:
+L_829:
 	
-L_600:
+L_823:
 	mov r9,  [rsp+8*2]
 	mov r8,r9
 	mov r10,1
@@ -848,9 +848,9 @@ L_600:
 	add r9,r10
 	mov qword [rsp+8*36],r8
 	mov qword [rsp+8*2],r9
-	jmp L_596
+	jmp L_819
 	
-L_597:
+L_820:
 	mov r9,  [gbl+8*20]
 	mov r8,r9
 	mov r10,r8

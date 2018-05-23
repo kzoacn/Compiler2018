@@ -665,7 +665,7 @@ main:
 	mov qword [rsp+8*3],r11
 	mov qword [rsp+8*4],r13
 	
-L_381:
+L_454:
 	mov r8,  [rsp+8*4]
 	mov r9,  [rsp+8*2]
 	cmp r8,r9
@@ -674,7 +674,7 @@ L_381:
 	mov qword [rsp+8*5],r10
 	mov r8,  [rsp+8*5]
 	cmp r8, 0
-	je L_382
+	je L_455
 	mov r8,  [rsp+8*3]
 	mov r9,  [rsp+8*4]
 	mov r10,r8
@@ -686,14 +686,14 @@ L_381:
 	mov qword [rsp+8*3],r8
 	mov qword [rsp+8*4],r9
 	mov qword [rsp+8*6],r10
-	jmp L_381
+	jmp L_454
 	
-L_382:
+L_455:
 	mov r9,1
 	mov r8,r9
 	mov qword [rsp+8*7],r8
 	
-L_384:
+L_457:
 	mov r8,  [rsp+8*7]
 	mov r9,  [rsp+8*2]
 	cmp r8,r9
@@ -702,7 +702,7 @@ L_384:
 	mov qword [rsp+8*8],r10
 	mov r8,  [rsp+8*8]
 	cmp r8, 0
-	je L_385
+	je L_458
 	mov r8,  [rsp+8*3]
 	mov r9,10
 	mov r10,r8
@@ -717,9 +717,9 @@ L_384:
 	mov qword [rsp+8*3],r8
 	mov qword [rsp+8*9],r10
 	mov qword [rsp+8*7],r11
-	jmp L_384
+	jmp L_457
 	
-L_385:
+L_458:
 	mov r9,  [rsp+8*3]
 	mov r8,r9
 	mov r10,r8

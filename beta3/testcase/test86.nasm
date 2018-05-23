@@ -640,14 +640,14 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 296
+	sub    rsp, 304
 	mov     rax, 536870912
         cdqe
         mov     rdi, rax
         call    malloc
         mov     edx, dword 536870912
         movsxd  rdx, edx
-        sub     rdx, 2280
+        sub     rdx, 2288
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
@@ -672,7 +672,7 @@ main:
 	mov qword [rsp+8*4],r13
 	mov qword [rsp+8*5],r15
 	
-L_831:
+L_1661:
 	mov r8,  [rsp+8*4]
 	mov r9,5
 	cmp r8,r9
@@ -681,7 +681,7 @@ L_831:
 	mov qword [rsp+8*6],r10
 	mov r8,  [rsp+8*6]
 	cmp r8, 0
-	je L_832
+	je L_1662
 	mov r8,  [rsp+8*2]
 	mov r9,  [rsp+8*5]
 	mov r10,r8
@@ -747,24 +747,33 @@ L_831:
 	mov r8,r9
 	mov r11,  [rsp+8*2]
 	mov r10,r11
+	mov r12,r10
+	mov r13,r8
+	mov r14,r12
+	add r14,r13
+	mov r15,r14
 	mov qword rsi,r8
-	mov qword rdi,r10
-	call f
-	mov r8 , rax
+	mov r8,r15
 	mov r9,r8
 	mov r10,r9
-	mov qword [rsp+8*20],r8
-	mov qword rdi,r9
-	mov qword [rsp+8*21],r10
-	mov     rdi, [rsp+8*21]
+	mov qword [rsp+8*24],r8
+	mov r8,r10
+	mov qword [rsp+8*26],r8
+	mov qword [rsp+8*25],r9
+	mov qword rdi,r10
+	mov qword [rsp+8*20],r12
+	mov qword [rsp+8*21],r13
+	mov qword [rsp+8*22],r14
+	mov qword [rsp+8*23],r15
+	mov     rdi, [rsp+8*26]
 	call    toString
-	mov     qword[rsp+8*22], rax
-	mov r9,  [rsp+8*22]
+	mov     qword[rsp+8*27], rax
+	mov r9,  [rsp+8*27]
 	mov r8,r9
 	mov r10,r8
 	mov qword rdi,r8
-	mov qword [rsp+8*23],r10
-	mov rdi,[rsp+8*23] 
+	mov qword [rsp+8*28],r10
+	mov rdi,[rsp+8*28] 
 	add rdi, 1 
 	call puts
 	mov r9,  [rsp+8*4]
@@ -772,43 +781,28 @@ L_831:
 	mov r10,1
 	mov r9,r9
 	add r9,r10
-	mov qword [rsp+8*24],r8
+	mov qword [rsp+8*29],r8
 	mov qword [rsp+8*4],r9
-	jmp L_831
+	jmp L_1661
 	
-L_832:
+L_1662:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]
 	leave
 	ret
 	
-f:
-	push   rbp
-	mov    rbp, rsp
-	sub    rsp, 296
-	mov r9,  rdi
-	mov r8,r9
-	mov r11,  rsi
-	mov r10,r11
-	mov r12,r8
-	add r12,r10
-	mov r13,r12
-	mov rax,r13
-	leave
-	ret
-	
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 296
-	mov r8,  [rsp+8*29]
+	sub    rsp, 304
+	mov r8,  [rsp+8*30]
 	mov rax,r8
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2280
+gbl:         resb   2288
 buff.1788:
         resb    256
 arg:

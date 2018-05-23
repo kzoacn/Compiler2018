@@ -996,14 +996,15 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         quad.name=symbolMap.currentFunction;
         globalVariableIR.push(quad);
 
-        ir.concat(mainIR);
-        ir.push(new Quad(OpCode.jmp,"QED"));
+        //ir.concat(mainIR);
+
 
         ir.concat(classIR);
+        funcIR.put("main",mainIR);
         functionIR=IROptimize();
         ir.concat(functionIR);
         ir.concat(globalVariableIR);
-        ir.push(new Quad(OpCode.label,"QED"));
+
         return ir;
     }
 

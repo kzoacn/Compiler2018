@@ -723,7 +723,7 @@ main:
 	mov qword [rsp+8*7],r13
 	mov qword [rsp+8*8],r15
 	
-L_1072:
+L_1988:
 	mov r8,  [rsp+8*17]
 	mov r9,  [rsp+8*2]
 	cmp r8,r9
@@ -732,7 +732,7 @@ L_1072:
 	mov qword [rsp+8*18],r10
 	mov r8,  [rsp+8*18]
 	cmp r8, 0
-	je L_1073
+	je L_1989
 	mov r9,  [rsp+8*4]
 	mov r8,r9
 	mov r10,  [rsp+8*17]
@@ -751,13 +751,13 @@ L_1072:
 	mov qword [rsp+8*22],r14
 	mov r8,  [rsp+8*22]
 	cmp r8, 0
-	je L_1076
+	je L_1992
 	mov r9,  [rsp+8*17]
 	mov r8,r9
 	mov qword [rsp+8*6],r8
-	jmp L_1073
+	jmp L_1989
 	
-L_1076:
+L_1992:
 	mov r9,  [rsp+8*17]
 	mov r8,r9
 	mov r10,1
@@ -765,9 +765,9 @@ L_1076:
 	add r9,r10
 	mov qword [rsp+8*23],r8
 	mov qword [rsp+8*17],r9
-	jmp L_1072
+	jmp L_1988
 	
-L_1073:
+L_1989:
 	mov r9,  [rsp+8*6]
 	mov r8,r9
 	mov r10,r8

@@ -667,7 +667,7 @@ main:
 	mov qword [rsp+8*4], rax
 	mov r8,  [rsp+8*4]
 	cmp r8, 0
-	je L_621
+	je L_1356
 	mov r9,t67
 	mov r8,r9
 	mov r10,r8
@@ -676,9 +676,9 @@ main:
 	mov rdi,[rsp+8*6] 
 	add rdi, 1 
 	call puts
-	jmp L_622
+	jmp L_1357
 	
-L_621:
+L_1356:
 	mov r9,t71
 	mov r8,r9
 	mov r10,r8
@@ -688,7 +688,7 @@ L_621:
 	add rdi, 1 
 	call puts
 	
-L_622:
+L_1357:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

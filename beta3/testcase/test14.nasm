@@ -668,7 +668,7 @@ main:
 	mov qword [rsp+8*5],r10
 	mov qword [rsp+8*6],r12
 	
-L_431:
+L_506:
 	mov r8,  [rsp+8*6]
 	mov r9,  [gbl+8*2]
 	cmp r8,r9
@@ -677,7 +677,7 @@ L_431:
 	mov qword [rsp+8*7],r10
 	mov r8,  [rsp+8*7]
 	cmp r8, 0
-	je L_432
+	je L_507
 	xor rdx, rdx
 	mov r8,  [rsp+8*6]
 	mov rax, r8
@@ -694,7 +694,7 @@ L_431:
 	mov qword [rsp+8*9],r12
 	mov r8,  [rsp+8*9]
 	cmp r8, 0
-	je L_435
+	je L_510
 	mov r9,  [gbl+8*4]
 	mov r8,r9
 	mov r10,  [rsp+8*6]
@@ -706,9 +706,9 @@ L_431:
 	mov [r11],r12
 	mov qword [rsp+8*10],r8
 	mov qword [rsp+8*11],r11
-	jmp L_433
+	jmp L_508
 	
-L_435:
+L_510:
 	mov r8,  [rsp+8*5]
 	mov r9,1
 	mov r8,r8
@@ -725,7 +725,7 @@ L_435:
 	mov qword [rsp+8*12],r10
 	mov qword [rsp+8*13],r13
 	
-L_433:
+L_508:
 	mov r9,  [rsp+8*6]
 	mov r8,r9
 	mov r10,1
@@ -733,14 +733,14 @@ L_433:
 	add r9,r10
 	mov qword [rsp+8*14],r8
 	mov qword [rsp+8*6],r9
-	jmp L_431
+	jmp L_506
 	
-L_432:
+L_507:
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*6],r8
 	
-L_436:
+L_511:
 	mov r8,  [rsp+8*6]
 	mov r9,  [gbl+8*2]
 	cmp r8,r9
@@ -749,7 +749,7 @@ L_436:
 	mov qword [rsp+8*15],r10
 	mov r8,  [rsp+8*15]
 	cmp r8, 0
-	je L_437
+	je L_512
 	mov r9,  [gbl+8*4]
 	mov r8,r9
 	mov r10,  [rsp+8*6]
@@ -783,9 +783,9 @@ L_436:
 	add r9,r10
 	mov qword [rsp+8*23],r8
 	mov qword [rsp+8*6],r9
-	jmp L_436
+	jmp L_511
 	
-L_437:
+L_512:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

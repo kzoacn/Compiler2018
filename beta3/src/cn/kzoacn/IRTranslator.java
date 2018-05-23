@@ -271,6 +271,7 @@ public class IRTranslator {
 
         kick(pos);*/
 
+        int mn=2000000000;
         int mx=-1;
         for(int i=8;i<16;i++){
             if(ban[i])continue;
@@ -280,10 +281,14 @@ public class IRTranslator {
                 pos=i;
                 break;
             }
-            if(variableLastIndex.get(occ[i])>mx){
-                mx=variableLastIndex.get(occ[i]);
+            if(lastUsedTime[i]<mn){
+                mn=lastUsedTime[i];
                 pos=i;
             }
+            /*if(variableLastIndex.get(occ[i])>mx){
+                mx=variableLastIndex.get(occ[i]);
+                pos=i;
+            }*/
         }
 
         kick(pos);

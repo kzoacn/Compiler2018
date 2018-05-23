@@ -637,6 +637,26 @@ strne:
         ret
 
 
+Hello_say:
+	push   rbp
+	mov    rbp, rsp
+	sub    rsp, 208
+	mov r9,  [arg+8*63]
+	mov r8,r9
+	mov r11,t67
+	mov r10,r11
+	mov r12,r10
+	mov qword [rsp+8*2],r8
+	mov qword rdi,r10
+	mov qword [rsp+8*4],r12
+	mov rdi,[rsp+8*4] 
+	add rdi, 1 
+	call puts
+	mov r8,  [rsp+8*5]
+	mov rax,r8
+	leave
+	ret
+	
 main:
 	push   rbp
 	mov    rbp, rsp
@@ -654,38 +674,38 @@ main:
         mov     eax, 0
 	call global_init
 	mov r8 , rax
-	mov qword [rsp+8*1],r8
+	mov qword [rsp+8*6],r8
 	mov     rdi, 3
 	call    mallocArray
-	mov     qword [rsp+8*2], rax
-	mov r9,  [rsp+8*2]
+	mov     qword [rsp+8*7], rax
+	mov r9,  [rsp+8*7]
 	mov r8,r9
 	mov r11,0
 	mov r10,r11
-	mov qword [rsp+8*3],r8
-	mov qword [rsp+8*4],r10
+	mov qword [rsp+8*8],r8
+	mov qword [rsp+8*9],r10
 	
-L_562:
-	mov r8,  [rsp+8*4]
+L_785:
+	mov r8,  [rsp+8*9]
 	mov r9,3
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
-	mov qword [rsp+8*5],r10
-	mov r8,  [rsp+8*5]
+	mov qword [rsp+8*10],r10
+	mov r8,  [rsp+8*10]
 	cmp r8, 0
-	je L_563
+	je L_786
 	mov     rdi, 0
 	call    mallocArray
-	mov     qword [rsp+8*6], rax
-	mov r9,  [rsp+8*3]
+	mov     qword [rsp+8*11], rax
+	mov r9,  [rsp+8*8]
 	mov r8,r9
-	mov r10,  [rsp+8*4]
+	mov r10,  [rsp+8*9]
 	mov r11,r10
 	add r11,1
 	shl r11,4
 	add r11,r8
-	mov r12,  [rsp+8*6]
+	mov r12,  [rsp+8*11]
 	mov [r11],r12
 	mov r13,r9
 	mov r14,r10
@@ -694,47 +714,27 @@ L_562:
 	add r14,r13
 	mov r13, [r14]
 	mov r15,r13
-	mov qword [rsp+8*7],r8
-	mov qword [rsp+8*8],r11
-	mov qword [rsp+8*9],r13
-	mov qword [rsp+8*10],r14
+	mov qword [rsp+8*12],r8
+	mov qword [rsp+8*13],r11
+	mov qword [rsp+8*14],r13
+	mov qword [rsp+8*15],r14
 	mov qword [arg+8*63],r15
 	call Hello_say
 	mov r8 , rax
-	mov r10,  [rsp+8*4]
+	mov r10,  [rsp+8*9]
 	mov r9,r10
 	mov r11,1
 	mov r10,r10
 	add r10,r11
-	mov qword [rsp+8*12],r8
-	mov qword [rsp+8*13],r9
-	mov qword [rsp+8*4],r10
-	jmp L_562
+	mov qword [rsp+8*16],r8
+	mov qword [rsp+8*17],r9
+	mov qword [rsp+8*9],r10
+	jmp L_785
 	
-L_563:
+L_786:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]
-	leave
-	ret
-	
-Hello_say:
-	push   rbp
-	mov    rbp, rsp
-	sub    rsp, 208
-	mov r9,  [arg+8*63]
-	mov r8,r9
-	mov r11,t67
-	mov r10,r11
-	mov r12,r10
-	mov qword [rsp+8*14],r8
-	mov qword rdi,r10
-	mov qword [rsp+8*16],r12
-	mov rdi,[rsp+8*16] 
-	add rdi, 1 
-	call puts
-	mov r8,  [rsp+8*17]
-	mov rax,r8
 	leave
 	ret
 	

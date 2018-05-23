@@ -637,6 +637,54 @@ strne:
         ret
 
 
+f:
+	push   rbp
+	mov    rbp, rsp
+	sub    rsp, 168
+	mov r9,  rdi
+	mov r8,r9
+	mov r10,0
+	cmp r8,r10
+	mov r11, 0
+	sete r11B
+	mov qword [rsp+8*2],r8
+	mov qword [rsp+8*3],r11
+	mov r8,  [rsp+8*3]
+	cmp r8, 0
+	je L_481
+	mov r8,0
+	mov rax,r8
+	leave
+	ret
+	
+L_481:
+	mov r9,  [gbl+8*4]
+	mov r8,r9
+	mov r10,1
+	mov r9,r9
+	add r9,r10
+	mov r11,  [rsp+8*2]
+	mov r12,1
+	mov r11,r11
+	sub r11,r12
+	mov r13,r11
+	mov qword [rsp+8*5],r8
+	mov qword [gbl+8*4],r9
+	mov qword [rsp+8*2],r11
+	mov qword rdi,r13
+	call f
+	mov r8 , rax
+	mov r10,  [gbl+8*4]
+	mov r9,r10
+	mov r11,1
+	mov r10,r10
+	add r10,r11
+	mov r12,0
+	mov rax,r12
+	mov qword [gbl+8*4],r10
+	leave
+	ret
+	
 main:
 	push   rbp
 	mov    rbp, rsp
@@ -656,78 +704,30 @@ main:
 	mov r8 , rax
 	mov r10,5
 	mov r9,r10
-	mov qword [rsp+8*1],r8
+	mov qword [rsp+8*8],r8
 	mov qword rdi,r9
 	call f
 	mov r8 , rax
 	mov r10,  [gbl+8*4]
 	mov r9,r10
 	mov r11,r9
-	mov qword [rsp+8*3],r8
+	mov qword [rsp+8*9],r8
 	mov qword rdi,r9
-	mov qword [rsp+8*5],r11
-	mov     rdi, [rsp+8*5]
+	mov qword [rsp+8*10],r11
+	mov     rdi, [rsp+8*10]
 	call    toString
-	mov     qword[rsp+8*6], rax
-	mov r9,  [rsp+8*6]
+	mov     qword[rsp+8*11], rax
+	mov r9,  [rsp+8*11]
 	mov r8,r9
 	mov r10,r8
 	mov qword rdi,r8
-	mov qword [rsp+8*7],r10
-	mov rdi,[rsp+8*7] 
+	mov qword [rsp+8*12],r10
+	mov rdi,[rsp+8*12] 
 	add rdi, 1 
 	call puts
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]
-	leave
-	ret
-	
-f:
-	push   rbp
-	mov    rbp, rsp
-	sub    rsp, 168
-	mov r9,  rdi
-	mov r8,r9
-	mov r10,0
-	cmp r8,r10
-	mov r11, 0
-	sete r11B
-	mov qword [rsp+8*8],r8
-	mov qword [rsp+8*9],r11
-	mov r8,  [rsp+8*9]
-	cmp r8, 0
-	je L_408
-	mov r8,0
-	mov rax,r8
-	leave
-	ret
-	
-L_408:
-	mov r9,  [gbl+8*4]
-	mov r8,r9
-	mov r10,1
-	mov r9,r9
-	add r9,r10
-	mov r11,  [rsp+8*8]
-	mov r12,1
-	mov r11,r11
-	sub r11,r12
-	mov r13,r11
-	mov qword [rsp+8*10],r8
-	mov qword [gbl+8*4],r9
-	mov qword [rsp+8*8],r11
-	mov qword rdi,r13
-	call f
-	mov r8 , rax
-	mov r10,  [gbl+8*4]
-	mov r9,r10
-	mov r11,1
-	mov r10,r10
-	add r10,r11
-	mov r12,0
-	mov rax,r12
-	mov qword [gbl+8*4],r10
 	leave
 	ret
 	
