@@ -687,7 +687,7 @@ main:
 	mov qword [rsp+8*10],r15
 	mov r8,  [rsp+8*10]
 	cmp r8, 0
-	je L_300
+	je L_620
 	mov r9,t137
 	mov r8,r9
 	mov r10,r8
@@ -702,7 +702,7 @@ main:
 	leave
 	ret
 	
-L_300:
+L_620:
 	mov r9,  [gbl+8*2]
 	mov r8,r9
 	mov r10,  [gbl+8*7]
@@ -742,12 +742,6 @@ L_300:
 	        mov     rsp, qword [trsp]
 	leave
 	ret
-	mov r8,0
-	mov rax,r8
-	        mov     rsp, qword [trsp]
-	leave
-	ret
-	jmp QED
 	
 calc:
 	push   rbp
@@ -775,13 +769,13 @@ calc:
 	mov qword [rsp+8*23],r14
 	mov r8,  [rsp+8*24]
 	cmp r8, 0
-	je L_290
+	je L_610
 	mov r8,  [rsp+8*20]
 	mov rax,r8
 	leave
 	ret
 	
-L_290:
+L_610:
 	xor rdx, rdx
 	mov r8,  [rsp+8*23]
 	mov rax, r8
@@ -851,7 +845,7 @@ L_290:
 	mov qword [rsp+8*37], rax
 	mov r8,  [rsp+8*37]
 	cmp r8, 0
-	je L_291
+	je L_611
 	mov     rsi, [rsp+8*36]
 	mov     rdi, [rsp+8*31]
 	call    concat
@@ -860,16 +854,15 @@ L_290:
 	mov rax,r8
 	leave
 	ret
-	jmp L_292
 	
-L_291:
+L_611:
 	mov rdi, [rsp+8*31]
 	mov rsi, [rsp+8*36]
 	call    streq
 	mov qword [rsp+8*39], rax
 	mov r8,  [rsp+8*39]
 	cmp r8, 0
-	je L_293
+	je L_613
 	mov r9,  [rsp+8*31]
 	mov r8,r9
 	mov r11,0
@@ -905,7 +898,7 @@ L_291:
 	mov qword [rsp+8*46],r11
 	mov r8,  [rsp+8*46]
 	cmp r8, 0
-	je L_296
+	je L_616
 	mov     rsi, [rsp+8*36]
 	mov     rdi, [rsp+8*31]
 	call    concat
@@ -915,7 +908,7 @@ L_291:
 	leave
 	ret
 	
-L_296:
+L_616:
 	mov     rsi, [rsp+8*31]
 	mov     rdi, [rsp+8*36]
 	call    concat
@@ -924,16 +917,15 @@ L_296:
 	mov rax,r8
 	leave
 	ret
-	jmp L_294
 	
-L_293:
+L_613:
 	mov rdi, [rsp+8*31]
 	mov rsi, [rsp+8*36]
 	call    strgt
 	mov qword [rsp+8*49], rax
 	mov r8,  [rsp+8*49]
 	cmp r8, 0
-	je L_298
+	je L_618
 	mov     rsi, [rsp+8*31]
 	mov     rdi, [rsp+8*36]
 	call    concat
@@ -943,11 +935,7 @@ L_293:
 	leave
 	ret
 	
-L_298:
-	
-L_294:
-	
-L_292:
+L_618:
 	mov r9,t117
 	mov r8,r9
 	mov r10,r8
@@ -969,8 +957,6 @@ global_init:
 	mov rax,r8
 	leave
 	ret
-	
-QED:
 	
 	 section   .bss
 gbl:         resb   2464

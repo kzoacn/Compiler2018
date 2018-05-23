@@ -694,14 +694,11 @@ L_2:
 	add r10,r9
 	mov r11,r10
 	mov r8,r9
+	mov r9,r11
 	mov qword [rsp+8*2],r8
+	mov qword [rsp+8*3],r9
 	mov qword [rsp+8*9],r10
 	mov qword [rsp+8*10],r11
-	
-L_4:
-	mov r9,  [rsp+8*10]
-	mov r8,r9
-	mov qword [rsp+8*3],r8
 	jmp L_2
 	
 L_3:
@@ -710,7 +707,6 @@ L_3:
 	        mov     rsp, qword [trsp]
 	leave
 	ret
-	jmp QED
 	
 global_init:
 	push   rbp
@@ -720,8 +716,6 @@ global_init:
 	mov rax,r8
 	leave
 	ret
-	
-QED:
 	
 	 section   .bss
 gbl:         resb   2136

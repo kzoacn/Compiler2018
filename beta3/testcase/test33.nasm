@@ -671,13 +671,13 @@ main:
 	mov qword [rsp+8*4],r13
 	mov r8,  [rsp+8*5]
 	cmp r8, 0
-	jne L_342
+	jne L_375
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*6],r8
-	jmp L_343
+	jmp L_376
 	
-L_342:
+L_375:
 	xor rdx, rdx
 	mov r8,  [rsp+8*2]
 	mov rax, r8
@@ -696,16 +696,16 @@ L_342:
 	mov r8,r9
 	mov qword [rsp+8*6],r8
 	
-L_343:
+L_376:
 	mov r8,  [rsp+8*6]
 	cmp r8, 0
-	jne L_344
+	jne L_377
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*9],r8
-	jmp L_345
+	jmp L_378
 	
-L_344:
+L_377:
 	mov r8,  [rsp+8*2]
 	mov r9,5
 	cmp r8,r9
@@ -716,19 +716,19 @@ L_344:
 	mov r8,r9
 	mov qword [rsp+8*9],r8
 	
-L_345:
+L_378:
 	mov r8, 0
 	mov r9,  [rsp+8*9]
 	cmp r9, 0
 	sete r8B
 	cmp r8, 0
 	mov qword [rsp+8*11],r8
-	je L_347
+	je L_380
 	mov r9,30
 	mov r8,r9
 	mov qword [rsp+8*4],r8
 	
-L_347:
+L_380:
 	mov r9,  [rsp+8*4]
 	mov r8,r9
 	mov r10,r8
@@ -750,12 +750,6 @@ L_347:
 	        mov     rsp, qword [trsp]
 	leave
 	ret
-	mov r8,0
-	mov rax,r8
-	        mov     rsp, qword [trsp]
-	leave
-	ret
-	jmp QED
 	
 global_init:
 	push   rbp
@@ -765,8 +759,6 @@ global_init:
 	mov rax,r8
 	leave
 	ret
-	
-QED:
 	
 	 section   .bss
 gbl:         resb   2176

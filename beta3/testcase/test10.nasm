@@ -761,8 +761,6 @@ L_36:
 	jmp L_37
 	
 L_40:
-	
-L_38:
 	mov r9,  [rsp+8*14]
 	mov r8,r9
 	mov r10,1
@@ -773,8 +771,6 @@ L_38:
 	jmp L_36
 	
 L_37:
-	
-L_35:
 	mov r9,  [rsp+8*8]
 	mov r8,r9
 	mov r10,1
@@ -794,8 +790,6 @@ L_34:
 	jmp L_31
 	
 L_42:
-	
-L_32:
 	mov r9,  [rsp+8*6]
 	mov r8,r9
 	mov r10,1
@@ -917,8 +911,6 @@ L_46:
 	mov qword [rsp+8*42],r15
 	
 L_50:
-	
-L_48:
 	mov r9,  [rsp+8*14]
 	mov r8,r9
 	mov r10,1
@@ -929,8 +921,6 @@ L_48:
 	jmp L_46
 	
 L_47:
-	
-L_45:
 	mov r9,  [rsp+8*8]
 	mov r8,r9
 	mov r10,1
@@ -981,8 +971,6 @@ L_51:
 	mov rdi,[rsp+8*60] 
 	add rdi, 1 
 	call puts
-	
-L_53:
 	mov r9,  [rsp+8*8]
 	mov r8,r9
 	mov r10,1
@@ -998,12 +986,6 @@ L_52:
 	        mov     rsp, qword [trsp]
 	leave
 	ret
-	mov r8,0
-	mov rax,r8
-	        mov     rsp, qword [trsp]
-	leave
-	ret
-	jmp QED
 	
 global_init:
 	push   rbp
@@ -1013,8 +995,6 @@ global_init:
 	mov rax,r8
 	leave
 	ret
-	
-QED:
 	
 	 section   .bss
 gbl:         resb   2544

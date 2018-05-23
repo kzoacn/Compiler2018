@@ -795,24 +795,19 @@ L_116:
 	add r11,r9
 	mov [r11],r10
 	mov qword [rsp+8*24],r9
+	mov r9,r14
+	mov qword [rsp+8*26],r9
+	mov r9,1
+	mov r14,r14
+	add r14,r9
 	mov qword [rsp+8*23],r10
 	mov qword [rsp+8*25],r11
 	mov qword [rsp+8*21],r13
+	mov qword [rsp+8*12],r14
 	mov qword [rsp+8*17],r15
-	
-L_118:
-	mov r9,  [rsp+8*12]
-	mov r8,r9
-	mov r10,1
-	mov r9,r9
-	add r9,r10
-	mov qword [rsp+8*26],r8
-	mov qword [rsp+8*12],r9
 	jmp L_116
 	
 L_117:
-	
-L_115:
 	mov r8,  [rsp+8*8]
 	mov r9,1
 	mov r8,r8
@@ -858,12 +853,6 @@ L_114:
 	        mov     rsp, qword [trsp]
 	leave
 	ret
-	mov r8,0
-	mov rax,r8
-	        mov     rsp, qword [trsp]
-	leave
-	ret
-	jmp QED
 	
 global_init:
 	push   rbp
@@ -873,8 +862,6 @@ global_init:
 	mov rax,r8
 	leave
 	ret
-	
-QED:
 	
 	 section   .bss
 gbl:         resb   2320

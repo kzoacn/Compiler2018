@@ -659,13 +659,13 @@ main:
 	cmp r9, 0
 	mov qword [rsp+8*1],r8
 	mov qword [rsp+8*2],r9
-	jne L_162
+	jne L_439
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*3],r8
-	jmp L_163
+	jmp L_440
 	
-L_162:
+L_439:
 	mov r8,1
 	mov r9,0
 	cmp r8,r9
@@ -676,10 +676,10 @@ L_162:
 	mov r8,r9
 	mov qword [rsp+8*3],r8
 	
-L_163:
+L_440:
 	mov r8,  [rsp+8*3]
 	cmp r8, 0
-	je L_164
+	je L_441
 	mov r9,t70
 	mov r8,r9
 	mov r10,r8
@@ -688,9 +688,9 @@ L_163:
 	mov rdi,[rsp+8*6] 
 	add rdi, 1 
 	call puts
-	jmp L_165
+	jmp L_442
 	
-L_164:
+L_441:
 	mov r9,t74
 	mov r8,r9
 	mov r10,r8
@@ -700,20 +700,20 @@ L_164:
 	add rdi, 1 
 	call puts
 	
-L_165:
+L_442:
 	mov r8, 0
 	mov r9,  [rsp+8*2]
 	cmp r9, 0
 	sete r8B
 	cmp r8, 0
 	mov qword [rsp+8*8],r8
-	je L_166
+	je L_443
 	mov r9,1
 	mov r8,r9
 	mov qword [rsp+8*9],r8
-	jmp L_167
+	jmp L_444
 	
-L_166:
+L_443:
 	mov r8,1
 	mov r9,0
 	cmp r8,r9
@@ -724,10 +724,10 @@ L_166:
 	mov r8,r9
 	mov qword [rsp+8*9],r8
 	
-L_167:
+L_444:
 	mov r8,  [rsp+8*9]
 	cmp r8, 0
-	je L_168
+	je L_445
 	mov r9,t84
 	mov r8,r9
 	mov r10,r8
@@ -736,9 +736,9 @@ L_167:
 	mov rdi,[rsp+8*11] 
 	add rdi, 1 
 	call puts
-	jmp L_169
+	jmp L_446
 	
-L_168:
+L_445:
 	mov r9,t88
 	mov r8,r9
 	mov r10,r8
@@ -748,18 +748,18 @@ L_168:
 	add rdi, 1 
 	call puts
 	
-L_169:
+L_446:
 	mov r9,0
 	mov r8,r9
 	cmp r8, 0
 	mov qword [rsp+8*2],r8
-	jne L_170
+	jne L_447
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*13],r8
-	jmp L_171
+	jmp L_448
 	
-L_170:
+L_447:
 	mov r8,1
 	mov r9,0
 	cmp r8,r9
@@ -770,16 +770,16 @@ L_170:
 	mov r8,r9
 	mov qword [rsp+8*13],r8
 	
-L_171:
+L_448:
 	mov r8,  [rsp+8*13]
 	cmp r8, 0
-	jne L_172
+	jne L_449
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*15],r8
-	jmp L_173
+	jmp L_450
 	
-L_172:
+L_449:
 	mov r8,2
 	mov r9,4
 	cmp r8,r9
@@ -790,10 +790,10 @@ L_172:
 	mov r8,r9
 	mov qword [rsp+8*15],r8
 	
-L_173:
+L_450:
 	mov r8,  [rsp+8*15]
 	cmp r8, 0
-	je L_174
+	je L_451
 	mov r9,t103
 	mov r8,r9
 	mov r10,r8
@@ -802,9 +802,9 @@ L_173:
 	mov rdi,[rsp+8*17] 
 	add rdi, 1 
 	call puts
-	jmp L_175
+	jmp L_452
 	
-L_174:
+L_451:
 	mov r9,t107
 	mov r8,r9
 	mov r10,r8
@@ -814,13 +814,12 @@ L_174:
 	add rdi, 1 
 	call puts
 	
-L_175:
+L_452:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]
 	leave
 	ret
-	jmp QED
 	
 global_init:
 	push   rbp
@@ -830,8 +829,6 @@ global_init:
 	mov rax,r8
 	leave
 	ret
-	
-QED:
 	
 	 section   .bss
 gbl:         resb   2200

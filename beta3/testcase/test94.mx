@@ -9,10 +9,6 @@ int g(int x,int y){
 	return f(x,y)-1;
 }
 
-int h(){
-	return g(3,4);
-}
-
 int main(){
-	println(toString(h()));
+	println(toString(g(3,4)));
 }

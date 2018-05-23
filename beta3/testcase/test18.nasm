@@ -930,8 +930,6 @@ L_138:
 	mov qword [rsp+8*34],r13
 	
 L_139:
-	
-L_133:
 	mov r9,  [rsp+8*14]
 	mov r8,r9
 	mov r10,1
@@ -942,8 +940,6 @@ L_133:
 	jmp L_131
 	
 L_132:
-	
-L_130:
 	mov r9,  [rsp+8*12]
 	mov r8,r9
 	mov r10,1
@@ -954,8 +950,6 @@ L_130:
 	jmp L_128
 	
 L_129:
-	
-L_127:
 	mov r9,  [rsp+8*10]
 	mov r8,r9
 	mov r10,1
@@ -1009,12 +1003,6 @@ L_126:
 	        mov     rsp, qword [trsp]
 	leave
 	ret
-	mov r8,0
-	mov rax,r8
-	        mov     rsp, qword [trsp]
-	leave
-	ret
-	jmp QED
 	
 global_init:
 	push   rbp
@@ -1024,8 +1012,6 @@ global_init:
 	mov rax,r8
 	leave
 	ret
-	
-QED:
 	
 	 section   .bss
 gbl:         resb   2432

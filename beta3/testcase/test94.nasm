@@ -654,47 +654,34 @@ main:
         mov     eax, 0
 	call global_init
 	mov r8 , rax
+	mov r10,4
+	mov r9,r10
+	mov r12,3
+	mov r11,r12
 	mov qword [rsp+8*1],r8
-	call h
+	mov qword rsi,r9
+	mov qword rdi,r11
+	call g
 	mov r8 , rax
 	mov r9,r8
 	mov r10,r9
-	mov qword [rsp+8*2],r8
+	mov qword [rsp+8*4],r8
 	mov qword rdi,r9
-	mov qword [rsp+8*4],r10
-	mov     rdi, [rsp+8*4]
+	mov qword [rsp+8*5],r10
+	mov     rdi, [rsp+8*5]
 	call    toString
-	mov     qword[rsp+8*5], rax
-	mov r9,  [rsp+8*5]
+	mov     qword[rsp+8*6], rax
+	mov r9,  [rsp+8*6]
 	mov r8,r9
 	mov r10,r8
 	mov qword rdi,r8
-	mov qword [rsp+8*6],r10
-	mov rdi,[rsp+8*6] 
+	mov qword [rsp+8*7],r10
+	mov rdi,[rsp+8*7] 
 	add rdi, 1 
 	call puts
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]
-	leave
-	ret
-	jmp QED
-	
-f:
-	push   rbp
-	mov    rbp, rsp
-	sub    rsp, 192
-	mov r9,  rdi
-	mov r8,r9
-	mov r11,  rsi
-	mov r10,r11
-	mov r12,r8
-	add r12,r10
-	mov rax,r12
-	leave
-	ret
-	mov r8,0
-	mov rax,r8
 	leave
 	ret
 	
@@ -708,40 +695,20 @@ g:
 	mov r10,r11
 	mov r11,r10
 	mov r9,r8
-	mov qword [rsp+8*11],r8
+	mov r12,r9
+	mov r13,r11
+	mov r14,r12
+	add r14,r13
+	mov r15,r14
+	mov qword [rsp+8*8],r8
+	mov r8,r15
 	mov qword rdi,r9
-	mov qword [rsp+8*12],r10
-	mov qword rsi,r11
-	call f
-	mov r8 , rax
 	mov r9,1
+	mov qword [rsp+8*9],r10
 	mov r10,r8
 	sub r10,r9
 	mov rax,r10
-	leave
-	ret
-	mov r8,0
-	mov rax,r8
-	leave
-	ret
-	
-h:
-	push   rbp
-	mov    rbp, rsp
-	sub    rsp, 192
-	mov r9,4
-	mov r8,r9
-	mov r11,3
-	mov r10,r11
-	mov qword rsi,r8
-	mov qword rdi,r10
-	call g
-	mov r8 , rax
-	mov rax,r8
-	leave
-	ret
-	mov r8,0
-	mov rax,r8
+	mov qword rsi,r11
 	leave
 	ret
 	
@@ -753,8 +720,6 @@ global_init:
 	mov rax,r8
 	leave
 	ret
-	
-QED:
 	
 	 section   .bss
 gbl:         resb   2176

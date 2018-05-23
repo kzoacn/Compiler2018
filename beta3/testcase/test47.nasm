@@ -668,7 +668,7 @@ main:
 	mov qword [rsp+8*4],r8
 	mov qword [rsp+8*5],r10
 	
-L_199:
+L_480:
 	mov r8,  [rsp+8*5]
 	mov r9,  [rsp+8*2]
 	cmp r8,r9
@@ -677,7 +677,7 @@ L_199:
 	mov qword [rsp+8*6],r10
 	mov r8,  [rsp+8*6]
 	cmp r8, 0
-	je L_200
+	je L_481
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword [rsp+8*7], rax
@@ -726,7 +726,7 @@ L_199:
 	mov r10,r11
 	mov qword [rsp+8*14],r10
 	
-L_202:
+L_483:
 	mov r8,  [rsp+8*14]
 	mov r9,  [rsp+8*2]
 	cmp r8,r9
@@ -735,7 +735,7 @@ L_202:
 	mov qword [rsp+8*15],r10
 	mov r8,  [rsp+8*15]
 	cmp r8, 0
-	je L_203
+	je L_484
 	mov     rdi, 3
 	call    mallocArray
 	mov     qword [rsp+8*16], rax
@@ -821,7 +821,7 @@ L_202:
 	mov r10,r11
 	mov qword [rsp+8*24],r10
 	
-L_205:
+L_486:
 	mov r8,  [rsp+8*24]
 	mov r9,  [rsp+8*2]
 	cmp r8,r9
@@ -830,7 +830,7 @@ L_205:
 	mov qword [rsp+8*25],r10
 	mov r8,  [rsp+8*25]
 	cmp r8, 0
-	je L_206
+	je L_487
 	mov     rdi, 5
 	call    mallocArray
 	mov     qword [rsp+8*26], rax
@@ -885,21 +885,16 @@ L_205:
 	xor r10,r11
 	mov r12,  [rsp+8*28]
 	mov [r12],r10
+	mov r13,r11
+	mov r14,1
+	mov r11,r11
+	add r11,r14
 	mov qword [rsp+8*29],r10
+	mov qword [rsp+8*24],r11
+	mov qword [rsp+8*30],r13
+	jmp L_486
 	
-L_207:
-	mov r9,  [rsp+8*24]
-	mov r8,r9
-	mov r10,1
-	mov r9,r9
-	add r9,r10
-	mov qword [rsp+8*30],r8
-	mov qword [rsp+8*24],r9
-	jmp L_205
-	
-L_206:
-	
-L_204:
+L_487:
 	mov r9,  [rsp+8*14]
 	mov r8,r9
 	mov r10,1
@@ -907,11 +902,9 @@ L_204:
 	add r9,r10
 	mov qword [rsp+8*31],r8
 	mov qword [rsp+8*14],r9
-	jmp L_202
+	jmp L_483
 	
-L_203:
-	
-L_201:
+L_484:
 	mov r9,  [rsp+8*5]
 	mov r8,r9
 	mov r10,1
@@ -919,9 +912,9 @@ L_201:
 	add r9,r10
 	mov qword [rsp+8*32],r8
 	mov qword [rsp+8*5],r9
-	jmp L_199
+	jmp L_480
 	
-L_200:
+L_481:
 	mov     rdi, 5
 	call    mallocArray
 	mov     qword [rsp+8*33], rax
@@ -990,7 +983,6 @@ L_200:
 	        mov     rsp, qword [trsp]
 	leave
 	ret
-	jmp QED
 	
 global_init:
 	push   rbp
@@ -1000,8 +992,6 @@ global_init:
 	mov rax,r8
 	leave
 	ret
-	
-QED:
 	
 	 section   .bss
 gbl:         resb   2368

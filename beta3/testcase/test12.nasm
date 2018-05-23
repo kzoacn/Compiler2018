@@ -754,8 +754,6 @@ L_78:
 	mov rdi,[rsp+8*23] 
 	add rdi, 1 
 	call puts
-	
-L_80:
 	mov r9,  [rsp+8*15]
 	mov r8,r9
 	mov r10,1
@@ -771,12 +769,6 @@ L_79:
 	        mov     rsp, qword [trsp]
 	leave
 	ret
-	mov r8,0
-	mov rax,r8
-	        mov     rsp, qword [trsp]
-	leave
-	ret
-	jmp QED
 	
 global_init:
 	push   rbp
@@ -786,8 +778,6 @@ global_init:
 	mov rax,r8
 	leave
 	ret
-	
-QED:
 	
 	 section   .bss
 gbl:         resb   2248

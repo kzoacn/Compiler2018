@@ -671,7 +671,7 @@ main:
 	mov qword [rsp+8*5],r10
 	mov qword [rsp+8*6],r12
 	
-L_203:
+L_207:
 	mov r8,  [rsp+8*6]
 	mov r9,  [rsp+8*2]
 	cmp r8,r9
@@ -680,7 +680,7 @@ L_203:
 	mov qword [rsp+8*7],r10
 	mov r8,  [rsp+8*7]
 	cmp r8, 0
-	je L_204
+	je L_208
 	mov r8,  [rsp+8*2]
 	mov r9,  [rsp+8*6]
 	mov r10,r8
@@ -698,27 +698,23 @@ L_203:
 	shl r12,4
 	add r12,r14
 	mov [r12],r10
-	mov qword [rsp+8*8],r10
-	mov qword [rsp+8*9],r11
-	mov qword [rsp+8*11],r12
-	mov qword [rsp+8*10],r14
-	
-L_205:
-	mov r9,  [rsp+8*6]
-	mov r8,r9
+	mov r10,r9
+	mov qword [rsp+8*12],r10
 	mov r10,1
 	mov r9,r9
 	add r9,r10
-	mov qword [rsp+8*12],r8
 	mov qword [rsp+8*6],r9
-	jmp L_203
+	mov qword [rsp+8*9],r11
+	mov qword [rsp+8*11],r12
+	mov qword [rsp+8*10],r14
+	jmp L_207
 	
-L_204:
+L_208:
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*6],r8
 	
-L_206:
+L_210:
 	mov r8,  [rsp+8*6]
 	mov r9,  [rsp+8*2]
 	cmp r8,r9
@@ -727,7 +723,7 @@ L_206:
 	mov qword [rsp+8*13],r10
 	mov r8,  [rsp+8*13]
 	cmp r8, 0
-	je L_207
+	je L_211
 	mov r9,  [rsp+8*4]
 	mov r8,r9
 	mov r10,  [rsp+8*6]
@@ -754,8 +750,6 @@ L_206:
 	mov rdi,[rsp+8*20] 
 	add rdi, 1 
 	call puts
-	
-L_208:
 	mov r9,  [rsp+8*6]
 	mov r8,r9
 	mov r10,1
@@ -763,20 +757,14 @@ L_208:
 	add r9,r10
 	mov qword [rsp+8*21],r8
 	mov qword [rsp+8*6],r9
-	jmp L_206
+	jmp L_210
 	
-L_207:
+L_211:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]
 	leave
 	ret
-	mov r8,0
-	mov rax,r8
-	        mov     rsp, qword [trsp]
-	leave
-	ret
-	jmp QED
 	
 global_init:
 	push   rbp
@@ -786,8 +774,6 @@ global_init:
 	mov rax,r8
 	leave
 	ret
-	
-QED:
 	
 	 section   .bss
 gbl:         resb   2224

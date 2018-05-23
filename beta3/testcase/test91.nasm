@@ -703,12 +703,6 @@ main:
 	        mov     rsp, qword [trsp]
 	leave
 	ret
-	mov r8,0
-	mov rax,r8
-	        mov     rsp, qword [trsp]
-	leave
-	ret
-	jmp QED
 	
 cd:
 	push   rbp
@@ -736,7 +730,7 @@ cd:
 	mov qword [rsp+8*19],r14
 	mov r8,  [rsp+8*21]
 	cmp r8, 0
-	je L_404
+	je L_849
 	mov     rsi, [rsp+8*17]
 	mov     rdi, t66
 	call    concat
@@ -764,9 +758,9 @@ cd:
 	add r9,r10
 	mov qword [rsp+8*24],r8
 	mov qword [rsp+8*20],r9
-	jmp L_405
+	jmp L_850
 	
-L_404:
+L_849:
 	mov r8,  [rsp+8*16]
 	mov r9,1
 	mov r10,r8
@@ -841,12 +835,8 @@ L_404:
 	mov qword [rsp+8*20],r9
 	mov qword [rsp+8*31],r10
 	
-L_405:
+L_850:
 	mov r8,  [rsp+8*20]
-	mov rax,r8
-	leave
-	ret
-	mov r8,0
 	mov rax,r8
 	leave
 	ret
@@ -859,8 +849,6 @@ global_init:
 	mov rax,r8
 	leave
 	ret
-	
-QED:
 	
 	 section   .bss
 gbl:         resb   2304

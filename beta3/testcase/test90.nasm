@@ -778,12 +778,6 @@ main:
 	        mov     rsp, qword [trsp]
 	leave
 	ret
-	mov r8,0
-	mov rax,r8
-	        mov     rsp, qword [trsp]
-	leave
-	ret
-	jmp QED
 	
 gcd:
 	push   rbp
@@ -889,7 +883,7 @@ gcd:
 	mov qword [rsp+8*42],r14
 	mov qword [rsp+8*71],r15
 	
-L_395:
+L_840:
 	mov r8,  [rsp+8*71]
 	mov r9,10
 	cmp r8,r9
@@ -898,7 +892,7 @@ L_395:
 	mov qword [rsp+8*72],r10
 	mov r8,  [rsp+8*72]
 	cmp r8, 0
-	je L_396
+	je L_841
 	mov r8,  [rsp+8*41]
 	mov r9,  [rsp+8*42]
 	mov r10,r8
@@ -995,18 +989,15 @@ L_395:
 	idiv rbx
 	mov r12, rdx
 	mov r10,r12
+	mov r11,  [rsp+8*71]
+	mov r12,1
+	mov r11,r11
+	add r11,r12
 	mov qword [rsp+8*75],r10
-	mov qword [rsp+8*74],r12
+	mov qword [rsp+8*71],r11
+	jmp L_840
 	
-L_397:
-	mov r8,  [rsp+8*71]
-	mov r9,1
-	mov r8,r8
-	add r8,r9
-	mov qword [rsp+8*71],r8
-	jmp L_395
-	
-L_396:
+L_841:
 	xor rdx, rdx
 	mov r8,  [rsp+8*39]
 	mov rax, r8
@@ -1023,14 +1014,13 @@ L_396:
 	mov qword [rsp+8*77],r12
 	mov r8,  [rsp+8*77]
 	cmp r8, 0
-	je L_398
+	je L_843
 	mov r8,  [rsp+8*40]
 	mov rax,r8
 	leave
 	ret
-	jmp L_399
 	
-L_398:
+L_843:
 	xor rdx, rdx
 	mov r8,  [rsp+8*39]
 	mov rax, r8
@@ -1236,12 +1226,6 @@ L_398:
 	mov qword [arg+8*28],r15
 	call gcd1
 	mov r8 , rax
-	mov rax,r8
-	leave
-	ret
-	
-L_399:
-	mov r8,0
 	mov rax,r8
 	leave
 	ret
@@ -1453,14 +1437,13 @@ gcd1:
 	mov qword [rsp+8*112],r15
 	mov r8,  [rsp+8*117]
 	cmp r8, 0
-	je L_400
+	je L_845
 	mov r8,  [rsp+8*82]
 	mov rax,r8
 	leave
 	ret
-	jmp L_401
 	
-L_400:
+L_845:
 	xor rdx, rdx
 	mov r8,  [rsp+8*81]
 	mov rax, r8
@@ -1565,12 +1548,6 @@ L_400:
 	mov qword [arg+8*29],r15
 	call gcd2
 	mov r8 , rax
-	mov rax,r8
-	leave
-	ret
-	
-L_401:
-	mov r8,0
 	mov rax,r8
 	leave
 	ret
@@ -1785,14 +1762,13 @@ gcd2:
 	mov qword [rsp+8*151],r15
 	mov r8,  [rsp+8*156]
 	cmp r8, 0
-	je L_402
+	je L_847
 	mov r8,  [rsp+8*121]
 	mov rax,r8
 	leave
 	ret
-	jmp L_403
 	
-L_402:
+L_847:
 	xor rdx, rdx
 	mov r8,  [rsp+8*120]
 	mov rax, r8
@@ -1902,12 +1878,6 @@ L_402:
 	leave
 	ret
 	
-L_403:
-	mov r8,0
-	mov rax,r8
-	leave
-	ret
-	
 global_init:
 	push   rbp
 	mov    rbp, rsp
@@ -1916,8 +1886,6 @@ global_init:
 	mov rax,r8
 	leave
 	ret
-	
-QED:
 	
 	 section   .bss
 gbl:         resb   3320

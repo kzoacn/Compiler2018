@@ -687,12 +687,6 @@ main:
 	        mov     rsp, qword [trsp]
 	leave
 	ret
-	mov r8,0
-	mov rax,r8
-	        mov     rsp, qword [trsp]
-	leave
-	ret
-	jmp QED
 	
 qpow:
 	push   rbp
@@ -713,7 +707,7 @@ qpow:
 	mov qword [rsp+8*11],r12
 	mov qword [rsp+8*12],r14
 	
-L_331:
+L_359:
 	mov r8,  [rsp+8*10]
 	mov r9,0
 	cmp r8,r9
@@ -722,7 +716,7 @@ L_331:
 	mov qword [rsp+8*14],r10
 	mov r8,  [rsp+8*14]
 	cmp r8, 0
-	je L_332
+	je L_360
 	mov r8,  [rsp+8*10]
 	mov r9,1
 	mov r10,r8
@@ -735,7 +729,7 @@ L_331:
 	mov qword [rsp+8*16],r12
 	mov r8,  [rsp+8*16]
 	cmp r8, 0
-	je L_334
+	je L_362
 	mov r8,  [rsp+8*12]
 	mov r9,  [rsp+8*13]
 	mov r10,r8
@@ -752,7 +746,7 @@ L_331:
 	mov qword [rsp+8*17],r10
 	mov qword [rsp+8*18],r12
 	
-L_334:
+L_362:
 	mov r8,  [rsp+8*13]
 	mov r9,r8
 	imul r9,r8
@@ -778,14 +772,10 @@ L_334:
 	mov qword [rsp+8*20],r11
 	mov qword [rsp+8*10],r12
 	mov qword [rsp+8*21],r14
-	jmp L_331
+	jmp L_359
 	
-L_332:
+L_360:
 	mov r8,  [rsp+8*12]
-	mov rax,r8
-	leave
-	ret
-	mov r8,0
 	mov rax,r8
 	leave
 	ret
@@ -798,8 +788,6 @@ global_init:
 	mov rax,r8
 	leave
 	ret
-	
-QED:
 	
 	 section   .bss
 gbl:         resb   2224

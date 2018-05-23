@@ -718,7 +718,7 @@ main:
 	mov qword [rsp+8*6],r12
 	mov qword [rsp+8*7],r14
 	
-L_442:
+L_1061:
 	mov r8,  [rsp+8*15]
 	mov r9,  [rsp+8*2]
 	cmp r8,r9
@@ -727,12 +727,12 @@ L_442:
 	mov qword [rsp+8*16],r10
 	mov r8,  [rsp+8*16]
 	cmp r8, 0
-	je L_443
+	je L_1062
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*17],r8
 	
-L_445:
+L_1064:
 	mov r8,  [rsp+8*17]
 	mov r9,1
 	mov r10,r8
@@ -745,7 +745,7 @@ L_445:
 	mov qword [rsp+8*19],r12
 	mov r8,  [rsp+8*19]
 	cmp r8, 0
-	je L_446
+	je L_1065
 	mov r9,  [rsp+8*4]
 	mov r8,r9
 	mov r10,  [rsp+8*17]
@@ -776,7 +776,7 @@ L_445:
 	mov qword [rsp+8*24],r15
 	mov r8,  [rsp+8*27]
 	cmp r8, 0
-	je L_449
+	je L_1068
 	mov r9,  [rsp+8*4]
 	mov r8,r9
 	mov r10,  [rsp+8*17]
@@ -824,9 +824,7 @@ L_445:
 	mov qword [rsp+8*31],r13
 	mov qword [rsp+8*32],r15
 	
-L_449:
-	
-L_447:
+L_1068:
 	mov r9,  [rsp+8*17]
 	mov r8,r9
 	mov r10,1
@@ -834,11 +832,9 @@ L_447:
 	add r9,r10
 	mov qword [rsp+8*41],r8
 	mov qword [rsp+8*17],r9
-	jmp L_445
+	jmp L_1064
 	
-L_446:
-	
-L_444:
+L_1065:
 	mov r9,  [rsp+8*15]
 	mov r8,r9
 	mov r10,1
@@ -846,14 +842,14 @@ L_444:
 	add r9,r10
 	mov qword [rsp+8*42],r8
 	mov qword [rsp+8*15],r9
-	jmp L_442
+	jmp L_1061
 	
-L_443:
+L_1062:
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*15],r8
 	
-L_450:
+L_1069:
 	mov r8,  [rsp+8*15]
 	mov r9,  [rsp+8*2]
 	cmp r8,r9
@@ -862,7 +858,7 @@ L_450:
 	mov qword [rsp+8*43],r10
 	mov r8,  [rsp+8*43]
 	cmp r8, 0
-	je L_451
+	je L_1070
 	mov r9,  [rsp+8*4]
 	mov r8,r9
 	mov r10,  [rsp+8*15]
@@ -889,8 +885,6 @@ L_450:
 	mov rdi,[rsp+8*50] 
 	add rdi, 1 
 	call puts
-	
-L_452:
 	mov r9,  [rsp+8*15]
 	mov r8,r9
 	mov r10,1
@@ -898,20 +892,14 @@ L_452:
 	add r9,r10
 	mov qword [rsp+8*51],r8
 	mov qword [rsp+8*15],r9
-	jmp L_450
+	jmp L_1069
 	
-L_451:
+L_1070:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]
 	leave
 	ret
-	mov r8,0
-	mov rax,r8
-	        mov     rsp, qword [trsp]
-	leave
-	ret
-	jmp QED
 	
 global_init:
 	push   rbp
@@ -921,8 +909,6 @@ global_init:
 	mov rax,r8
 	leave
 	ret
-	
-QED:
 	
 	 section   .bss
 gbl:         resb   2464

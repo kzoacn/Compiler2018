@@ -659,7 +659,7 @@ main:
 	mov qword [rsp+8*1],r8
 	mov qword [rsp+8*2],r9
 	
-L_275:
+L_593:
 	mov r8,  [rsp+8*2]
 	mov r9,  [gbl+8*3]
 	cmp r8,r9
@@ -668,7 +668,7 @@ L_275:
 	mov qword [rsp+8*4],r10
 	mov r8,  [rsp+8*4]
 	cmp r8, 0
-	je L_276
+	je L_594
 	mov r9,  [gbl+8*5]
 	mov r8,r9
 	mov r10,  [rsp+8*2]
@@ -678,25 +678,22 @@ L_275:
 	add r11,r8
 	mov r12,1
 	mov [r11],r12
+	mov r13,r10
+	mov r14,1
+	mov r10,r10
+	add r10,r14
 	mov qword [rsp+8*6],r8
+	mov qword [rsp+8*2],r10
 	mov qword [rsp+8*7],r11
+	mov qword [rsp+8*8],r13
+	jmp L_593
 	
-L_277:
-	mov r9,  [rsp+8*2]
-	mov r8,r9
-	mov r10,1
-	mov r9,r9
-	add r9,r10
-	mov qword [rsp+8*8],r8
-	mov qword [rsp+8*2],r9
-	jmp L_275
-	
-L_276:
+L_594:
 	mov r9,2
 	mov r8,r9
 	mov qword [rsp+8*2],r8
 	
-L_278:
+L_596:
 	mov r8,  [rsp+8*2]
 	mov r9,  [gbl+8*3]
 	cmp r8,r9
@@ -705,7 +702,7 @@ L_278:
 	mov qword [rsp+8*9],r10
 	mov r8,  [rsp+8*9]
 	cmp r8, 0
-	je L_279
+	je L_597
 	mov r9,  [gbl+8*5]
 	mov r8,r9
 	mov r10,  [rsp+8*2]
@@ -718,7 +715,7 @@ L_278:
 	mov qword [rsp+8*10],r8
 	mov qword [rsp+8*11],r11
 	mov qword [rsp+8*12],r12
-	je L_282
+	je L_600
 	mov r9,2
 	mov r8,r9
 	mov r10,  [rsp+8*2]
@@ -730,13 +727,13 @@ L_278:
 	mov qword [rsp+8*14],r12
 	mov r8,  [rsp+8*14]
 	cmp r8, 0
-	jne L_283
+	jne L_601
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*15],r8
-	jmp L_284
+	jmp L_602
 	
-L_283:
+L_601:
 	mov r8,  [rsp+8*2]
 	mov r9,2
 	mov r10,r8
@@ -755,10 +752,10 @@ L_283:
 	mov qword [rsp+8*19],r14
 	mov qword [rsp+8*15],r15
 	
-L_284:
+L_602:
 	mov r8,  [rsp+8*15]
 	cmp r8, 0
-	je L_286
+	je L_604
 	mov r9,  [gbl+8*20]
 	mov r8,r9
 	mov r10,1
@@ -803,9 +800,9 @@ L_284:
 	add rdi, 1 
 	call puts
 	
-L_286:
+L_604:
 	
-L_287:
+L_605:
 	mov r8,  [rsp+8*2]
 	mov r9,  [rsp+8*13]
 	mov r10,r8
@@ -818,7 +815,7 @@ L_287:
 	mov qword [rsp+8*31],r12
 	mov r8,  [rsp+8*31]
 	cmp r8, 0
-	je L_288
+	je L_606
 	mov r8,  [rsp+8*2]
 	mov r9,  [rsp+8*13]
 	mov r10,r8
@@ -839,13 +836,11 @@ L_287:
 	mov qword [rsp+8*33],r11
 	mov qword [rsp+8*34],r13
 	mov qword [rsp+8*35],r15
-	jmp L_287
+	jmp L_605
 	
-L_288:
+L_606:
 	
-L_282:
-	
-L_280:
+L_600:
 	mov r9,  [rsp+8*2]
 	mov r8,r9
 	mov r10,1
@@ -853,9 +848,9 @@ L_280:
 	add r9,r10
 	mov qword [rsp+8*36],r8
 	mov qword [rsp+8*2],r9
-	jmp L_278
+	jmp L_596
 	
-L_279:
+L_597:
 	mov r9,  [gbl+8*20]
 	mov r8,r9
 	mov r10,r8
@@ -881,12 +876,6 @@ L_279:
 	        mov     rsp, qword [trsp]
 	leave
 	ret
-	mov r8,0
-	mov rax,r8
-	        mov     rsp, qword [trsp]
-	leave
-	ret
-	jmp QED
 	
 global_init:
 	push   rbp
@@ -908,8 +897,6 @@ global_init:
 	mov rax,r8
 	leave
 	ret
-	
-QED:
 	
 	 section   .bss
 gbl:         resb   2384

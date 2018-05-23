@@ -9,3 +9,4 @@
 ./beta3/src/cn/kzoacn/IRTranslator.java
 ./beta3/src/cn/kzoacn/ConstantPool.java
 ./beta3/src/cn/kzoacn/Builder.java
+./beta3/src/cn/kzoacn/IROptimizer.java

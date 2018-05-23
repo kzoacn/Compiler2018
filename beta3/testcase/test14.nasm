@@ -668,7 +668,7 @@ main:
 	mov qword [rsp+8*5],r10
 	mov qword [rsp+8*6],r12
 	
-L_154:
+L_431:
 	mov r8,  [rsp+8*6]
 	mov r9,  [gbl+8*2]
 	cmp r8,r9
@@ -677,7 +677,7 @@ L_154:
 	mov qword [rsp+8*7],r10
 	mov r8,  [rsp+8*7]
 	cmp r8, 0
-	je L_155
+	je L_432
 	xor rdx, rdx
 	mov r8,  [rsp+8*6]
 	mov rax, r8
@@ -694,7 +694,7 @@ L_154:
 	mov qword [rsp+8*9],r12
 	mov r8,  [rsp+8*9]
 	cmp r8, 0
-	je L_158
+	je L_435
 	mov r9,  [gbl+8*4]
 	mov r8,r9
 	mov r10,  [rsp+8*6]
@@ -706,9 +706,9 @@ L_154:
 	mov [r11],r12
 	mov qword [rsp+8*10],r8
 	mov qword [rsp+8*11],r11
-	jmp L_156
+	jmp L_433
 	
-L_158:
+L_435:
 	mov r8,  [rsp+8*5]
 	mov r9,1
 	mov r8,r8
@@ -725,7 +725,7 @@ L_158:
 	mov qword [rsp+8*12],r10
 	mov qword [rsp+8*13],r13
 	
-L_156:
+L_433:
 	mov r9,  [rsp+8*6]
 	mov r8,r9
 	mov r10,1
@@ -733,14 +733,14 @@ L_156:
 	add r9,r10
 	mov qword [rsp+8*14],r8
 	mov qword [rsp+8*6],r9
-	jmp L_154
+	jmp L_431
 	
-L_155:
+L_432:
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*6],r8
 	
-L_159:
+L_436:
 	mov r8,  [rsp+8*6]
 	mov r9,  [gbl+8*2]
 	cmp r8,r9
@@ -749,7 +749,7 @@ L_159:
 	mov qword [rsp+8*15],r10
 	mov r8,  [rsp+8*15]
 	cmp r8, 0
-	je L_160
+	je L_437
 	mov r9,  [gbl+8*4]
 	mov r8,r9
 	mov r10,  [rsp+8*6]
@@ -776,8 +776,6 @@ L_159:
 	mov rdi,[rsp+8*22] 
 	add rdi, 1 
 	call puts
-	
-L_161:
 	mov r9,  [rsp+8*6]
 	mov r8,r9
 	mov r10,1
@@ -785,20 +783,14 @@ L_161:
 	add r9,r10
 	mov qword [rsp+8*23],r8
 	mov qword [rsp+8*6],r9
-	jmp L_159
+	jmp L_436
 	
-L_160:
+L_437:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]
 	leave
 	ret
-	mov r8,0
-	mov rax,r8
-	        mov     rsp, qword [trsp]
-	leave
-	ret
-	jmp QED
 	
 global_init:
 	push   rbp
@@ -811,8 +803,6 @@ global_init:
 	mov rax,r8
 	leave
 	ret
-	
-QED:
 	
 	 section   .bss
 gbl:         resb   2240

@@ -640,14 +640,14 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 120
+	sub    rsp, 80
 	mov     rax, 536870912
         cdqe
         mov     rdi, rax
         call    malloc
         mov     edx, dword 536870912
         movsxd  rdx, edx
-        sub     rdx, 2104
+        sub     rdx, 2064
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
@@ -659,42 +659,18 @@ main:
 	        mov     rsp, qword [trsp]
 	leave
 	ret
-	jmp QED
-	
-hilo:
-	push   rbp
-	mov    rbp, rsp
-	sub    rsp, 120
-	mov r9,  rdi
-	mov r8,r9
-	mov r11,  rsi
-	mov r10,r11
-	mov r12,16
-	mov r13,r8
-	mov rcx,r12
-	shl r13,cl
-	or r13,r10
-	mov rax,r13
-	leave
-	ret
-	mov r8,0
-	mov rax,r8
-	leave
-	ret
 	
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 120
-	mov r8,  [rsp+8*7]
+	sub    rsp, 80
+	mov r8,  [rsp+8*2]
 	mov rax,r8
 	leave
 	ret
 	
-QED:
-	
 	 section   .bss
-gbl:         resb   2104
+gbl:         resb   2064
 buff.1788:
         resb    256
 arg:

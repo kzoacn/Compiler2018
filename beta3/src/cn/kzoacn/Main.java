@@ -812,10 +812,10 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         tmpIR.push(new Quad(OpCode.move,result,Variable.empty,result));
         return tmpIR;
     }
-    IR IROptimizer(){
+    IR IROptimize(){
         IR functionIR=new IR();
         HashMap<String,ArrayList<String> >callList =new HashMap<String, ArrayList<String> >();
-        int T=5;
+        int T=50;
 
         while(T-->0) {
             for (Map.Entry<String, IR> entry : funcIR.entrySet()) {
@@ -1000,7 +1000,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         ir.push(new Quad(OpCode.jmp,"QED"));
 
         ir.concat(classIR);
-        functionIR=IROptimizer();
+        functionIR=IROptimize();
         ir.concat(functionIR);
         ir.concat(globalVariableIR);
         ir.push(new Quad(OpCode.label,"QED"));

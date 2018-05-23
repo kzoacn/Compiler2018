@@ -684,7 +684,6 @@ main:
 	        mov     rsp, qword [trsp]
 	leave
 	ret
-	jmp QED
 	
 add:
 	push   rbp
@@ -699,10 +698,6 @@ add:
 	mov rax,r12
 	leave
 	ret
-	mov r8,0
-	mov rax,r8
-	leave
-	ret
 	
 global_init:
 	push   rbp
@@ -712,8 +707,6 @@ global_init:
 	mov rax,r8
 	leave
 	ret
-	
-QED:
 	
 	 section   .bss
 gbl:         resb   2136

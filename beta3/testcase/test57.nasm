@@ -665,7 +665,7 @@ main:
 	mov qword [rsp+8*3],r8
 	mov qword [rsp+8*4],r10
 	
-L_244:
+L_562:
 	mov r8,  [rsp+8*4]
 	mov r9,3
 	cmp r8,r9
@@ -674,7 +674,7 @@ L_244:
 	mov qword [rsp+8*5],r10
 	mov r8,  [rsp+8*5]
 	cmp r8, 0
-	je L_245
+	je L_563
 	mov     rdi, 0
 	call    mallocArray
 	mov     qword [rsp+8*6], rax
@@ -701,30 +701,22 @@ L_244:
 	mov qword [arg+8*63],r15
 	call Hello_say
 	mov r8 , rax
+	mov r10,  [rsp+8*4]
+	mov r9,r10
+	mov r11,1
+	mov r10,r10
+	add r10,r11
 	mov qword [rsp+8*12],r8
+	mov qword [rsp+8*13],r9
+	mov qword [rsp+8*4],r10
+	jmp L_562
 	
-L_246:
-	mov r9,  [rsp+8*4]
-	mov r8,r9
-	mov r10,1
-	mov r9,r9
-	add r9,r10
-	mov qword [rsp+8*13],r8
-	mov qword [rsp+8*4],r9
-	jmp L_244
-	
-L_245:
+L_563:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]
 	leave
 	ret
-	mov r8,0
-	mov rax,r8
-	        mov     rsp, qword [trsp]
-	leave
-	ret
-	jmp QED
 	
 Hello_say:
 	push   rbp
@@ -754,8 +746,6 @@ global_init:
 	mov rax,r8
 	leave
 	ret
-	
-QED:
 	
 	 section   .bss
 gbl:         resb   2192

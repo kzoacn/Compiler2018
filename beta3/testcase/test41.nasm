@@ -681,7 +681,6 @@ main:
 	        mov     rsp, qword [trsp]
 	leave
 	ret
-	jmp QED
 	
 dfs:
 	push   rbp
@@ -697,10 +696,10 @@ dfs:
 	mov qword [rsp+8*8],r10
 	mov qword [rsp+8*9],r12
 	
-L_189:
+L_468:
 	mov r8,1
 	cmp r8, 0
-	je L_190
+	je L_469
 	mov r9,  [rsp+8*9]
 	mov r8,r9
 	mov r10,1
@@ -721,13 +720,13 @@ L_189:
 	mov qword [rsp+8*12],r14
 	mov r8,  [rsp+8*12]
 	cmp r8, 0
-	je L_192
+	je L_471
 	mov r8,  [rsp+8*8]
 	mov rax,r8
 	leave
 	ret
 	
-L_192:
+L_471:
 	mov r8,  [rsp+8*7]
 	mov r9,1
 	mov r10,r8
@@ -738,13 +737,9 @@ L_192:
 	call dfs
 	mov r8 , rax
 	mov qword [rsp+8*14],r8
-	jmp L_189
+	jmp L_468
 	
-L_190:
-	mov r8,0
-	mov rax,r8
-	leave
-	ret
+L_469:
 	mov r8,0
 	mov rax,r8
 	leave
@@ -758,8 +753,6 @@ global_init:
 	mov rax,r8
 	leave
 	ret
-	
-QED:
 	
 	 section   .bss
 gbl:         resb   2168

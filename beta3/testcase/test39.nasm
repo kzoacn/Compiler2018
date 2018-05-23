@@ -682,7 +682,6 @@ main:
 	        mov     rsp, qword [trsp]
 	leave
 	ret
-	jmp QED
 	
 f:
 	push   rbp
@@ -698,13 +697,13 @@ f:
 	mov qword [rsp+8*9],r11
 	mov r8,  [rsp+8*9]
 	cmp r8, 0
-	je L_375
+	je L_408
 	mov r8,0
 	mov rax,r8
 	leave
 	ret
 	
-L_375:
+L_408:
 	mov r9,  [gbl+8*4]
 	mov r8,r9
 	mov r10,1
@@ -743,8 +742,6 @@ global_init:
 	mov rax,r8
 	leave
 	ret
-	
-QED:
 	
 	 section   .bss
 gbl:         resb   2152

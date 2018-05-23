@@ -354,6 +354,8 @@ public class IRTranslator {
         return "r"+getRegister(var,true);
     }
     void run(String fileName)throws Exception{
+        IROptimizer irOptimizer=new IROptimizer();
+        ir=irOptimizer.optimize(ir);
         for(int i=0;i<16;i++) {
             free[i] = true;
             ban[i] = false;
@@ -579,6 +581,11 @@ public class IRTranslator {
                     //kickAll();
                     break;
                 case xor:
+                    if(isConst(var2)){
+                        readReg(var1);
+                        text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
+                        text.append(new StringBuffer("xor " + writeReg(dest) + "," + Integer.valueOf(var2.constValue) + "\n\t"));
+                    }else
                     if(dest.equals(var2)){
                         readReg(var1);
                         readReg(var2);
@@ -592,6 +599,12 @@ public class IRTranslator {
                     //kickAll();
                     break;
                 case shiftLeft:
+                    if(isConst(var2)){
+                        readReg(var1);
+                        text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
+                        text.append(new StringBuffer("mov rcx" + "," + Integer.valueOf(var2.constValue) + "\n\t"));
+                        text.append(new StringBuffer("shl " + writeReg(dest) + ",cl\n\t"));
+                    }else
                     if(dest.equals(var1)){
                         readReg(var1);
                         readReg(var2);

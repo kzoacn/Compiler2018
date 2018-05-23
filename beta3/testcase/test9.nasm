@@ -723,7 +723,7 @@ main:
 	mov qword [rsp+8*7],r13
 	mov qword [rsp+8*8],r15
 	
-L_453:
+L_1072:
 	mov r8,  [rsp+8*17]
 	mov r9,  [rsp+8*2]
 	cmp r8,r9
@@ -732,7 +732,7 @@ L_453:
 	mov qword [rsp+8*18],r10
 	mov r8,  [rsp+8*18]
 	cmp r8, 0
-	je L_454
+	je L_1073
 	mov r9,  [rsp+8*4]
 	mov r8,r9
 	mov r10,  [rsp+8*17]
@@ -751,15 +751,13 @@ L_453:
 	mov qword [rsp+8*22],r14
 	mov r8,  [rsp+8*22]
 	cmp r8, 0
-	je L_457
+	je L_1076
 	mov r9,  [rsp+8*17]
 	mov r8,r9
 	mov qword [rsp+8*6],r8
-	jmp L_454
+	jmp L_1073
 	
-L_457:
-	
-L_455:
+L_1076:
 	mov r9,  [rsp+8*17]
 	mov r8,r9
 	mov r10,1
@@ -767,9 +765,9 @@ L_455:
 	add r9,r10
 	mov qword [rsp+8*23],r8
 	mov qword [rsp+8*17],r9
-	jmp L_453
+	jmp L_1072
 	
-L_454:
+L_1073:
 	mov r9,  [rsp+8*6]
 	mov r8,r9
 	mov r10,r8
@@ -791,7 +789,6 @@ L_454:
 	        mov     rsp, qword [trsp]
 	leave
 	ret
-	jmp QED
 	
 global_init:
 	push   rbp
@@ -801,8 +798,6 @@ global_init:
 	mov rax,r8
 	leave
 	ret
-	
-QED:
 	
 	 section   .bss
 gbl:         resb   2272
