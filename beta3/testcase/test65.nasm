@@ -667,7 +667,7 @@ main:
 	mov qword [rsp+8*3],r11
 	mov qword [rsp+8*4],r13
 	
-L_501:
+L_265:
 	mov r8,  [rsp+8*3]
 	mov r9,  [rsp+8*2]
 	cmp r8,r9
@@ -676,7 +676,7 @@ L_501:
 	mov qword [rsp+8*5],r10
 	mov r8,  [rsp+8*5]
 	cmp r8, 0
-	je L_502
+	je L_266
 	mov     rsi, t71
 	mov     rdi, [rsp+8*4]
 	call    concat
@@ -685,7 +685,7 @@ L_501:
 	mov r8,r9
 	mov qword [rsp+8*4],r8
 	
-L_503:
+L_267:
 	mov r9,  [rsp+8*3]
 	mov r8,r9
 	mov r10,1
@@ -693,9 +693,9 @@ L_503:
 	add r9,r10
 	mov qword [rsp+8*7],r8
 	mov qword [rsp+8*3],r9
-	jmp L_501
+	jmp L_265
 	
-L_502:
+L_266:
 	mov r9,  [rsp+8*4]
 	mov r8,r9
 	mov r10,r8
@@ -708,7 +708,7 @@ L_502:
 	mov r8,r9
 	mov qword [rsp+8*3],r8
 	
-L_504:
+L_268:
 	mov r8,  [rsp+8*3]
 	mov r9,  [rsp+8*2]
 	cmp r8,r9
@@ -717,7 +717,7 @@ L_504:
 	mov qword [rsp+8*10],r10
 	mov r8,  [rsp+8*10]
 	cmp r8, 0
-	je L_505
+	je L_269
 	mov     rsi, t80
 	mov     rdi, [rsp+8*4]
 	call    concat
@@ -726,7 +726,7 @@ L_504:
 	mov r8,r9
 	mov qword [rsp+8*4],r8
 	
-L_506:
+L_270:
 	mov r9,  [rsp+8*3]
 	mov r8,r9
 	mov r10,1
@@ -734,9 +734,9 @@ L_506:
 	add r9,r10
 	mov qword [rsp+8*12],r8
 	mov qword [rsp+8*3],r9
-	jmp L_504
+	jmp L_268
 	
-L_505:
+L_269:
 	mov r9,  [rsp+8*4]
 	mov r8,r9
 	mov r10,r8

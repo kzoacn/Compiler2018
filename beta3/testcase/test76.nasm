@@ -665,7 +665,7 @@ main:
 	mov qword [gbl+8*3],r8
 	mov qword [rsp+8*4],r10
 	
-L_558:
+L_322:
 	mov r8,  [rsp+8*4]
 	mov r9,  [gbl+8*5]
 	cmp r8,r9
@@ -674,7 +674,7 @@ L_558:
 	mov qword [rsp+8*6],r10
 	mov r8,  [rsp+8*6]
 	cmp r8, 0
-	je L_559
+	je L_323
 	mov r9,  [gbl+8*3]
 	mov r8,r9
 	mov r10,  [rsp+8*4]
@@ -687,7 +687,7 @@ L_558:
 	mov qword [rsp+8*7],r8
 	mov qword [rsp+8*8],r11
 	
-L_560:
+L_324:
 	mov r9,  [rsp+8*4]
 	mov r8,r9
 	mov r10,1
@@ -695,9 +695,9 @@ L_560:
 	add r9,r10
 	mov qword [rsp+8*10],r8
 	mov qword [rsp+8*4],r9
-	jmp L_558
+	jmp L_322
 	
-L_559:
+L_323:
 	mov r9,2
 	mov r8,r9
 	mov r11,1
@@ -839,7 +839,7 @@ put:
 	mov qword [rsp+8*40],r15
 	mov r8,  [rsp+8*40]
 	cmp r8, 0
-	je L_557
+	je L_321
 	mov     rdi, 3
 	call    mallocArray
 	mov     qword [rsp+8*41], rax
@@ -940,7 +940,7 @@ put:
 	leave
 	ret
 	
-L_557:
+L_321:
 	mov r8,0
 	mov rax,r8
 	leave

@@ -687,7 +687,7 @@ main:
 	mov qword [rsp+8*10],r15
 	mov r8,  [rsp+8*10]
 	cmp r8, 0
-	je L_536
+	je L_300
 	mov r9,t137
 	mov r8,r9
 	mov r10,r8
@@ -702,7 +702,7 @@ main:
 	leave
 	ret
 	
-L_536:
+L_300:
 	mov r9,  [gbl+8*2]
 	mov r8,r9
 	mov r10,  [gbl+8*7]
@@ -775,13 +775,13 @@ calc:
 	mov qword [rsp+8*23],r14
 	mov r8,  [rsp+8*24]
 	cmp r8, 0
-	je L_526
+	je L_290
 	mov r8,  [rsp+8*20]
 	mov rax,r8
 	leave
 	ret
 	
-L_526:
+L_290:
 	xor rdx, rdx
 	mov r8,  [rsp+8*23]
 	mov rax, r8
@@ -851,7 +851,7 @@ L_526:
 	mov qword [rsp+8*37], rax
 	mov r8,  [rsp+8*37]
 	cmp r8, 0
-	je L_527
+	je L_291
 	mov     rsi, [rsp+8*36]
 	mov     rdi, [rsp+8*31]
 	call    concat
@@ -860,16 +860,16 @@ L_526:
 	mov rax,r8
 	leave
 	ret
-	jmp L_528
+	jmp L_292
 	
-L_527:
+L_291:
 	mov rdi, [rsp+8*31]
 	mov rsi, [rsp+8*36]
 	call    streq
 	mov qword [rsp+8*39], rax
 	mov r8,  [rsp+8*39]
 	cmp r8, 0
-	je L_529
+	je L_293
 	mov r9,  [rsp+8*31]
 	mov r8,r9
 	mov r11,0
@@ -905,7 +905,7 @@ L_527:
 	mov qword [rsp+8*46],r11
 	mov r8,  [rsp+8*46]
 	cmp r8, 0
-	je L_532
+	je L_296
 	mov     rsi, [rsp+8*36]
 	mov     rdi, [rsp+8*31]
 	call    concat
@@ -915,7 +915,7 @@ L_527:
 	leave
 	ret
 	
-L_532:
+L_296:
 	mov     rsi, [rsp+8*31]
 	mov     rdi, [rsp+8*36]
 	call    concat
@@ -924,16 +924,16 @@ L_532:
 	mov rax,r8
 	leave
 	ret
-	jmp L_530
+	jmp L_294
 	
-L_529:
+L_293:
 	mov rdi, [rsp+8*31]
 	mov rsi, [rsp+8*36]
 	call    strgt
 	mov qword [rsp+8*49], rax
 	mov r8,  [rsp+8*49]
 	cmp r8, 0
-	je L_534
+	je L_298
 	mov     rsi, [rsp+8*31]
 	mov     rdi, [rsp+8*36]
 	call    concat
@@ -943,11 +943,11 @@ L_529:
 	leave
 	ret
 	
-L_534:
+L_298:
 	
-L_530:
+L_294:
 	
-L_528:
+L_292:
 	mov r9,t117
 	mov r8,r9
 	mov r10,r8

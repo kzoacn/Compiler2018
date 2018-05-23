@@ -756,11 +756,33 @@ class MVisitor extends MxstarBaseVisitor<IR>{
     HashMap<String,IR>funcIR=new HashMap<String, IR>();
     HashMap<String,IR>bareIR=new HashMap<String, IR>();
     Function currentFunction;
-    IR getBareIR(IR ir){
+    IR changeLabel(IR ir){
+        IR tmpIR=new IR();
         Quad cur=ir.head;
+        HashMap<String,String>labelMap=new HashMap<String, String>();
+        while(cur!=null){
+            if(cur.name!=null){
+                if(labelMap.containsKey(cur.name)){
+                    cur.name=labelMap.get(cur.name);
+                }else {
+                    labelMap.put(cur.name,nextLabel());
+                    cur.name=labelMap.get(cur.name);
+                }
+            }
+            tmpIR.push(cur);
+
+            cur=cur.next;
+        }
+        return tmpIR;
+    }
+    IR getBareIR(IR ir){
+        IR tmpIR=new IR();
+        ir=ir.clone();
+        Quad cur=ir.head.next;
         String last=nextLabel();
         Variable result=nextVariable(currentFunction.returnType);
         HashMap<String,String>labelMap=new HashMap<String, String>();
+        labelMap.put(last,last);
         while(cur!=null){
             if(cur.name!=null){
                 if(labelMap.containsKey(cur.name)){
@@ -778,16 +800,22 @@ class MVisitor extends MxstarBaseVisitor<IR>{
                 quad.next=cur.next;
                 cur.next=quad;
             }
+            if(cur.opCode==OpCode.enterFunction || cur.opCode==OpCode.exitFunction){
+
+            }else{
+                tmpIR.push(cur);
+            }
+
             cur=cur.next;
         }
-        ir.push(new Quad(OpCode.label,last));
-        ir.push(new Quad(OpCode.move,result,Variable.empty,result));
-        return ir;
+        tmpIR.push(new Quad(OpCode.label,last));
+        tmpIR.push(new Quad(OpCode.move,result,Variable.empty,result));
+        return tmpIR;
     }
     IR IROptimizer(){
         IR functionIR=new IR();
         HashMap<String,ArrayList<String> >callList =new HashMap<String, ArrayList<String> >();
-        int T=2;
+        int T=5;
 
         while(T-->0) {
             for (Map.Entry<String, IR> entry : funcIR.entrySet()) {
@@ -806,6 +834,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
                     }
                     Variable dest=head.dest;
                     IR bIR=bareIR.get(head.name).clone();
+                    bIR=changeLabel(bIR);
                     Quad quad=new Quad(OpCode.move,bIR.last.dest,Variable.empty,dest);
                     prev.next=bIR.head;
                     bIR.push(quad);
@@ -813,7 +842,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
                     prev=bIR.last;
                     head=head.next;
                 }
-                if(flag){
+                if(flag && !bareIR.containsKey(name)){
                     bareIR.put(name,getBareIR(entry.getValue()));
                 }
             }
@@ -938,8 +967,8 @@ class MVisitor extends MxstarBaseVisitor<IR>{
                // System.out.println("Function");
                 symbolMap.nextScope();
                 IR tmpIR=visit(child);
+                funcIR.put(name,tmpIR.clone());
                 functionIR.concat(tmpIR);
-                funcIR.put(name,tmpIR);
                 symbolMap.prevScope();
             }
         }
@@ -971,7 +1000,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         ir.push(new Quad(OpCode.jmp,"QED"));
 
         ir.concat(classIR);
-        //functionIR=IROptimizer();
+        functionIR=IROptimizer();
         ir.concat(functionIR);
         ir.concat(globalVariableIR);
         ir.push(new Quad(OpCode.label,"QED"));

@@ -680,7 +680,7 @@ main:
 	mov qword [rsp+8*8],r8
 	mov qword [rsp+8*9],r10
 	
-L_412:
+L_176:
 	mov r8,  [rsp+8*3]
 	mov r9,  [rsp+8*4]
 	mov r10,r8
@@ -693,7 +693,7 @@ L_412:
 	mov qword [rsp+8*11],r12
 	mov r8,  [rsp+8*11]
 	cmp r8, 0
-	je L_413
+	je L_177
 	xor rdx, rdx
 	mov r8,  [rsp+8*2]
 	mov rax, r8
@@ -720,12 +720,12 @@ L_412:
 	mov qword [rsp+8*3],r12
 	mov qword [rsp+8*14],r14
 	
-L_414:
-	jmp L_412
+L_178:
+	jmp L_176
 	
-L_413:
+L_177:
 	
-L_415:
+L_179:
 	mov r9,0
 	mov r8,r9
 	mov r10,  [rsp+8*4]
@@ -743,15 +743,15 @@ L_415:
 	mov qword [rsp+8*17],r15
 	mov r8,  [rsp+8*17]
 	cmp r8, 0
-	je L_419
-	jmp L_416
+	je L_183
+	jmp L_180
 	
-L_419:
+L_183:
 	mov r9,  [rsp+8*4]
 	mov r8,r9
 	mov qword [rsp+8*3],r8
 	
-L_420:
+L_184:
 	mov r9,  [rsp+8*8]
 	mov r8,r9
 	mov r10,  [rsp+8*3]
@@ -813,12 +813,12 @@ L_420:
 	mov qword [rsp+8*5],r15
 	mov r8,  [rsp+8*27]
 	cmp r8, 0
-	je L_424
-	jmp L_421
+	je L_188
+	jmp L_185
 	
-L_424:
+L_188:
 	
-L_422:
+L_186:
 	mov r8,  [rsp+8*5]
 	mov r9,  [rsp+8*3]
 	mov r10,r8
@@ -826,9 +826,9 @@ L_422:
 	mov r8,r10
 	mov qword [rsp+8*5],r8
 	mov qword [rsp+8*28],r10
-	jmp L_420
+	jmp L_184
 	
-L_421:
+L_185:
 	mov r8,  [rsp+8*4]
 	mov r9,14
 	mov r10,r8
@@ -865,7 +865,7 @@ L_421:
 	xor rax, rax
 	call printf
 	
-L_417:
+L_181:
 	xor rdx, rdx
 	mov r8,  [rsp+8*5]
 	mov rax, r8
@@ -877,9 +877,9 @@ L_417:
 	mov r11,r10
 	mov qword [rsp+8*35],r10
 	mov qword [rsp+8*6],r11
-	jmp L_415
+	jmp L_179
 	
-L_416:
+L_180:
 	mov r9,t112
 	mov r8,r9
 	mov r10,r8

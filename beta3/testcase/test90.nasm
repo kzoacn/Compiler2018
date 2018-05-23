@@ -889,7 +889,7 @@ gcd:
 	mov qword [rsp+8*42],r14
 	mov qword [rsp+8*71],r15
 	
-L_631:
+L_395:
 	mov r8,  [rsp+8*71]
 	mov r9,10
 	cmp r8,r9
@@ -898,7 +898,7 @@ L_631:
 	mov qword [rsp+8*72],r10
 	mov r8,  [rsp+8*72]
 	cmp r8, 0
-	je L_632
+	je L_396
 	mov r8,  [rsp+8*41]
 	mov r9,  [rsp+8*42]
 	mov r10,r8
@@ -998,15 +998,15 @@ L_631:
 	mov qword [rsp+8*75],r10
 	mov qword [rsp+8*74],r12
 	
-L_633:
+L_397:
 	mov r8,  [rsp+8*71]
 	mov r9,1
 	mov r8,r8
 	add r8,r9
 	mov qword [rsp+8*71],r8
-	jmp L_631
+	jmp L_395
 	
-L_632:
+L_396:
 	xor rdx, rdx
 	mov r8,  [rsp+8*39]
 	mov rax, r8
@@ -1023,14 +1023,14 @@ L_632:
 	mov qword [rsp+8*77],r12
 	mov r8,  [rsp+8*77]
 	cmp r8, 0
-	je L_634
+	je L_398
 	mov r8,  [rsp+8*40]
 	mov rax,r8
 	leave
 	ret
-	jmp L_635
+	jmp L_399
 	
-L_634:
+L_398:
 	xor rdx, rdx
 	mov r8,  [rsp+8*39]
 	mov rax, r8
@@ -1240,7 +1240,7 @@ L_634:
 	leave
 	ret
 	
-L_635:
+L_399:
 	mov r8,0
 	mov rax,r8
 	leave
@@ -1453,14 +1453,14 @@ gcd1:
 	mov qword [rsp+8*112],r15
 	mov r8,  [rsp+8*117]
 	cmp r8, 0
-	je L_636
+	je L_400
 	mov r8,  [rsp+8*82]
 	mov rax,r8
 	leave
 	ret
-	jmp L_637
+	jmp L_401
 	
-L_636:
+L_400:
 	xor rdx, rdx
 	mov r8,  [rsp+8*81]
 	mov rax, r8
@@ -1569,7 +1569,7 @@ L_636:
 	leave
 	ret
 	
-L_637:
+L_401:
 	mov r8,0
 	mov rax,r8
 	leave
@@ -1785,14 +1785,14 @@ gcd2:
 	mov qword [rsp+8*151],r15
 	mov r8,  [rsp+8*156]
 	cmp r8, 0
-	je L_638
+	je L_402
 	mov r8,  [rsp+8*121]
 	mov rax,r8
 	leave
 	ret
-	jmp L_639
+	jmp L_403
 	
-L_638:
+L_402:
 	xor rdx, rdx
 	mov r8,  [rsp+8*120]
 	mov rax, r8
@@ -1902,7 +1902,7 @@ L_638:
 	leave
 	ret
 	
-L_639:
+L_403:
 	mov r8,0
 	mov rax,r8
 	leave

@@ -659,7 +659,7 @@ main:
 	mov qword [rsp+8*1],r8
 	mov qword [rsp+8*2],r9
 	
-L_511:
+L_275:
 	mov r8,  [rsp+8*2]
 	mov r9,  [gbl+8*3]
 	cmp r8,r9
@@ -668,7 +668,7 @@ L_511:
 	mov qword [rsp+8*4],r10
 	mov r8,  [rsp+8*4]
 	cmp r8, 0
-	je L_512
+	je L_276
 	mov r9,  [gbl+8*5]
 	mov r8,r9
 	mov r10,  [rsp+8*2]
@@ -681,7 +681,7 @@ L_511:
 	mov qword [rsp+8*6],r8
 	mov qword [rsp+8*7],r11
 	
-L_513:
+L_277:
 	mov r9,  [rsp+8*2]
 	mov r8,r9
 	mov r10,1
@@ -689,14 +689,14 @@ L_513:
 	add r9,r10
 	mov qword [rsp+8*8],r8
 	mov qword [rsp+8*2],r9
-	jmp L_511
+	jmp L_275
 	
-L_512:
+L_276:
 	mov r9,2
 	mov r8,r9
 	mov qword [rsp+8*2],r8
 	
-L_514:
+L_278:
 	mov r8,  [rsp+8*2]
 	mov r9,  [gbl+8*3]
 	cmp r8,r9
@@ -705,7 +705,7 @@ L_514:
 	mov qword [rsp+8*9],r10
 	mov r8,  [rsp+8*9]
 	cmp r8, 0
-	je L_515
+	je L_279
 	mov r9,  [gbl+8*5]
 	mov r8,r9
 	mov r10,  [rsp+8*2]
@@ -718,7 +718,7 @@ L_514:
 	mov qword [rsp+8*10],r8
 	mov qword [rsp+8*11],r11
 	mov qword [rsp+8*12],r12
-	je L_518
+	je L_282
 	mov r9,2
 	mov r8,r9
 	mov r10,  [rsp+8*2]
@@ -730,13 +730,13 @@ L_514:
 	mov qword [rsp+8*14],r12
 	mov r8,  [rsp+8*14]
 	cmp r8, 0
-	jne L_519
+	jne L_283
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*15],r8
-	jmp L_520
+	jmp L_284
 	
-L_519:
+L_283:
 	mov r8,  [rsp+8*2]
 	mov r9,2
 	mov r10,r8
@@ -755,10 +755,10 @@ L_519:
 	mov qword [rsp+8*19],r14
 	mov qword [rsp+8*15],r15
 	
-L_520:
+L_284:
 	mov r8,  [rsp+8*15]
 	cmp r8, 0
-	je L_522
+	je L_286
 	mov r9,  [gbl+8*20]
 	mov r8,r9
 	mov r10,1
@@ -803,9 +803,9 @@ L_520:
 	add rdi, 1 
 	call puts
 	
-L_522:
+L_286:
 	
-L_523:
+L_287:
 	mov r8,  [rsp+8*2]
 	mov r9,  [rsp+8*13]
 	mov r10,r8
@@ -818,7 +818,7 @@ L_523:
 	mov qword [rsp+8*31],r12
 	mov r8,  [rsp+8*31]
 	cmp r8, 0
-	je L_524
+	je L_288
 	mov r8,  [rsp+8*2]
 	mov r9,  [rsp+8*13]
 	mov r10,r8
@@ -839,13 +839,13 @@ L_523:
 	mov qword [rsp+8*33],r11
 	mov qword [rsp+8*34],r13
 	mov qword [rsp+8*35],r15
-	jmp L_523
+	jmp L_287
 	
-L_524:
+L_288:
 	
-L_518:
+L_282:
 	
-L_516:
+L_280:
 	mov r9,  [rsp+8*2]
 	mov r8,r9
 	mov r10,1
@@ -853,9 +853,9 @@ L_516:
 	add r9,r10
 	mov qword [rsp+8*36],r8
 	mov qword [rsp+8*2],r9
-	jmp L_514
+	jmp L_278
 	
-L_515:
+L_279:
 	mov r9,  [gbl+8*20]
 	mov r8,r9
 	mov r10,r8

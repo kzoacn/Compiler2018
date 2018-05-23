@@ -659,13 +659,13 @@ main:
 	cmp r9, 0
 	mov qword [rsp+8*1],r8
 	mov qword [rsp+8*2],r9
-	jne L_398
+	jne L_162
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*3],r8
-	jmp L_399
+	jmp L_163
 	
-L_398:
+L_162:
 	mov r8,1
 	mov r9,0
 	cmp r8,r9
@@ -676,10 +676,10 @@ L_398:
 	mov r8,r9
 	mov qword [rsp+8*3],r8
 	
-L_399:
+L_163:
 	mov r8,  [rsp+8*3]
 	cmp r8, 0
-	je L_400
+	je L_164
 	mov r9,t70
 	mov r8,r9
 	mov r10,r8
@@ -688,9 +688,9 @@ L_399:
 	mov rdi,[rsp+8*6] 
 	add rdi, 1 
 	call puts
-	jmp L_401
+	jmp L_165
 	
-L_400:
+L_164:
 	mov r9,t74
 	mov r8,r9
 	mov r10,r8
@@ -700,20 +700,20 @@ L_400:
 	add rdi, 1 
 	call puts
 	
-L_401:
+L_165:
 	mov r8, 0
 	mov r9,  [rsp+8*2]
 	cmp r9, 0
 	sete r8B
 	cmp r8, 0
 	mov qword [rsp+8*8],r8
-	je L_402
+	je L_166
 	mov r9,1
 	mov r8,r9
 	mov qword [rsp+8*9],r8
-	jmp L_403
+	jmp L_167
 	
-L_402:
+L_166:
 	mov r8,1
 	mov r9,0
 	cmp r8,r9
@@ -724,10 +724,10 @@ L_402:
 	mov r8,r9
 	mov qword [rsp+8*9],r8
 	
-L_403:
+L_167:
 	mov r8,  [rsp+8*9]
 	cmp r8, 0
-	je L_404
+	je L_168
 	mov r9,t84
 	mov r8,r9
 	mov r10,r8
@@ -736,9 +736,9 @@ L_403:
 	mov rdi,[rsp+8*11] 
 	add rdi, 1 
 	call puts
-	jmp L_405
+	jmp L_169
 	
-L_404:
+L_168:
 	mov r9,t88
 	mov r8,r9
 	mov r10,r8
@@ -748,18 +748,18 @@ L_404:
 	add rdi, 1 
 	call puts
 	
-L_405:
+L_169:
 	mov r9,0
 	mov r8,r9
 	cmp r8, 0
 	mov qword [rsp+8*2],r8
-	jne L_406
+	jne L_170
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*13],r8
-	jmp L_407
+	jmp L_171
 	
-L_406:
+L_170:
 	mov r8,1
 	mov r9,0
 	cmp r8,r9
@@ -770,16 +770,16 @@ L_406:
 	mov r8,r9
 	mov qword [rsp+8*13],r8
 	
-L_407:
+L_171:
 	mov r8,  [rsp+8*13]
 	cmp r8, 0
-	jne L_408
+	jne L_172
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*15],r8
-	jmp L_409
+	jmp L_173
 	
-L_408:
+L_172:
 	mov r8,2
 	mov r9,4
 	cmp r8,r9
@@ -790,10 +790,10 @@ L_408:
 	mov r8,r9
 	mov qword [rsp+8*15],r8
 	
-L_409:
+L_173:
 	mov r8,  [rsp+8*15]
 	cmp r8, 0
-	je L_410
+	je L_174
 	mov r9,t103
 	mov r8,r9
 	mov r10,r8
@@ -802,9 +802,9 @@ L_409:
 	mov rdi,[rsp+8*17] 
 	add rdi, 1 
 	call puts
-	jmp L_411
+	jmp L_175
 	
-L_410:
+L_174:
 	mov r9,t107
 	mov r8,r9
 	mov r10,r8
@@ -814,7 +814,7 @@ L_410:
 	add rdi, 1 
 	call puts
 	
-L_411:
+L_175:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

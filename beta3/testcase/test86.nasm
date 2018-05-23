@@ -672,7 +672,7 @@ main:
 	mov qword [rsp+8*4],r13
 	mov qword [rsp+8*5],r15
 	
-L_624:
+L_388:
 	mov r8,  [rsp+8*4]
 	mov r9,5
 	cmp r8,r9
@@ -681,7 +681,7 @@ L_624:
 	mov qword [rsp+8*6],r10
 	mov r8,  [rsp+8*6]
 	cmp r8, 0
-	je L_625
+	je L_389
 	mov r8,  [rsp+8*2]
 	mov r9,  [rsp+8*5]
 	mov r10,r8
@@ -768,7 +768,7 @@ L_624:
 	add rdi, 1 
 	call puts
 	
-L_626:
+L_390:
 	mov r9,  [rsp+8*4]
 	mov r8,r9
 	mov r10,1
@@ -776,9 +776,9 @@ L_626:
 	add r9,r10
 	mov qword [rsp+8*24],r8
 	mov qword [rsp+8*4],r9
-	jmp L_624
+	jmp L_388
 	
-L_625:
+L_389:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

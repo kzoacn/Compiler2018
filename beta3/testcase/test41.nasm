@@ -697,10 +697,10 @@ dfs:
 	mov qword [rsp+8*8],r10
 	mov qword [rsp+8*9],r12
 	
-L_425:
+L_189:
 	mov r8,1
 	cmp r8, 0
-	je L_426
+	je L_190
 	mov r9,  [rsp+8*9]
 	mov r8,r9
 	mov r10,1
@@ -721,13 +721,13 @@ L_425:
 	mov qword [rsp+8*12],r14
 	mov r8,  [rsp+8*12]
 	cmp r8, 0
-	je L_428
+	je L_192
 	mov r8,  [rsp+8*8]
 	mov rax,r8
 	leave
 	ret
 	
-L_428:
+L_192:
 	mov r8,  [rsp+8*7]
 	mov r9,1
 	mov r10,r8
@@ -738,9 +738,9 @@ L_428:
 	call dfs
 	mov r8 , rax
 	mov qword [rsp+8*14],r8
-	jmp L_425
+	jmp L_189
 	
-L_426:
+L_190:
 	mov r8,0
 	mov rax,r8
 	leave
