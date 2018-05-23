@@ -641,7 +641,7 @@ main:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 496
-	        mov     eax, 536870912
+	mov     rax, 536870912
         cdqe
         mov     rdi, rax
         call    malloc
@@ -794,9 +794,6 @@ getHash:
 	idiv rbx
 	mov r13, rdx
 	mov rax,r13
-	mov qword [rsp+8*27],r8
-	mov qword [rsp+8*28],r11
-	mov qword [rsp+8*29],r13
 	leave
 	ret
 	mov r8,0
@@ -818,6 +815,7 @@ put:
 	mov qword [rsp+8*30],r8
 	mov qword rdi,r9
 	mov qword [rsp+8*31],r10
+	mov qword rsi,r11
 	mov qword [rsp+8*33],r12
 	call getHash
 	mov r8 , rax

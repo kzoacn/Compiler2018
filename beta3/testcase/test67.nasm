@@ -640,14 +640,14 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 408
-	        mov     eax, 536870912
+	sub    rsp, 400
+	mov     rax, 536870912
         cdqe
         mov     rdi, rax
         call    malloc
         mov     edx, dword 536870912
         movsxd  rdx, edx
-        sub     rdx, 2392
+        sub     rdx, 2384
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
@@ -793,13 +793,13 @@ L_520:
 	mov     rsi, [rsp+8*28]
 	mov     rdi, [rsp+8*26]
 	call    concat
-	mov [rsp+8*29], rax
-	mov r9,  [rsp+8*29]
+	mov [rsp+8*26], rax
+	mov r9,  [rsp+8*26]
 	mov r8,r9
 	mov r10,r8
 	mov qword rdi,r8
-	mov qword [rsp+8*30],r10
-	mov rdi,[rsp+8*30] 
+	mov qword [rsp+8*29],r10
+	mov rdi,[rsp+8*29] 
 	add rdi, 1 
 	call puts
 	
@@ -814,9 +814,9 @@ L_523:
 	cmp r10,r11
 	mov r12, 0
 	setle r12B
-	mov qword [rsp+8*31],r10
-	mov qword [rsp+8*32],r12
-	mov r8,  [rsp+8*32]
+	mov qword [rsp+8*30],r10
+	mov qword [rsp+8*31],r12
+	mov r8,  [rsp+8*31]
 	cmp r8, 0
 	je L_524
 	mov r8,  [rsp+8*2]
@@ -836,9 +836,9 @@ L_523:
 	mov r9,r9
 	add r9,r10
 	mov qword [rsp+8*13],r9
-	mov qword [rsp+8*34],r11
-	mov qword [rsp+8*35],r13
-	mov qword [rsp+8*36],r15
+	mov qword [rsp+8*33],r11
+	mov qword [rsp+8*34],r13
+	mov qword [rsp+8*35],r15
 	jmp L_523
 	
 L_524:
@@ -851,7 +851,7 @@ L_516:
 	mov r10,1
 	mov r9,r9
 	add r9,r10
-	mov qword [rsp+8*37],r8
+	mov qword [rsp+8*36],r8
 	mov qword [rsp+8*2],r9
 	jmp L_514
 	
@@ -860,20 +860,20 @@ L_515:
 	mov r8,r9
 	mov r10,r8
 	mov qword rdi,r8
-	mov qword [rsp+8*38],r10
-	mov     rdi, [rsp+8*38]
+	mov qword [rsp+8*37],r10
+	mov     rdi, [rsp+8*37]
 	call    toString
-	mov     qword[rsp+8*39], rax
-	mov     rsi, [rsp+8*39]
-	mov     rdi, t117
+	mov     qword[rsp+8*38], rax
+	mov     rsi, [rsp+8*38]
+	mov     rdi, t116
 	call    concat
-	mov [rsp+8*40], rax
-	mov r9,  [rsp+8*40]
+	mov [rsp+8*39], rax
+	mov r9,  [rsp+8*39]
 	mov r8,r9
 	mov r10,r8
 	mov qword rdi,r8
-	mov qword [rsp+8*41],r10
-	mov rdi,[rsp+8*41] 
+	mov qword [rsp+8*40],r10
+	mov rdi,[rsp+8*40] 
 	add rdi, 1 
 	call puts
 	mov r8,0
@@ -891,20 +891,20 @@ L_515:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 408
+	sub    rsp, 400
 	mov r9,15000
 	mov r8,r9
 	mov qword [gbl+8*3],r8
 	mov     rdi, 15001
 	call    mallocArray
-	mov     qword [gbl+8*42], rax
-	mov r9,  [gbl+8*42]
+	mov     qword [gbl+8*41], rax
+	mov r9,  [gbl+8*41]
 	mov r8,r9
 	mov r11,0
 	mov r10,r11
 	mov qword [gbl+8*5],r8
 	mov qword [gbl+8*20],r10
-	mov r8,  [rsp+8*43]
+	mov r8,  [rsp+8*42]
 	mov rax,r8
 	leave
 	ret
@@ -912,7 +912,7 @@ global_init:
 QED:
 	
 	 section   .bss
-gbl:         resb   2392
+gbl:         resb   2384
 buff.1788:
         resb    256
 arg:
@@ -933,7 +933,7 @@ GS_31:
 GS_32:
 	db 25H, 73H, 00H
 	
-t117:
+t116:
 	 db 7,"Total: " ,0
 
 t100:

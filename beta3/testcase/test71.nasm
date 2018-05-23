@@ -641,7 +641,7 @@ main:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 20648
-	        mov     eax, 536870912
+	mov     rax, 536870912
         cdqe
         mov     rdi, rax
         call    malloc
@@ -14028,10 +14028,6 @@ getcount:
 	add r13,r14
 	mov [r12],r13
 	mov rax,r13
-	mov qword [rsp+8*2569],r8
-	mov qword [rsp+8*2570],r10
-	mov qword [rsp+8*2571],r12
-	mov qword [rsp+8*2572],r13
 	leave
 	ret
 	mov r8,0

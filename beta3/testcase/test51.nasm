@@ -640,14 +640,14 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 376
-	        mov     eax, 536870912
+	sub    rsp, 360
+	mov     rax, 536870912
         cdqe
         mov     rdi, rax
         call    malloc
         mov     edx, dword 536870912
         movsxd  rdx, edx
-        sub     rdx, 2360
+        sub     rdx, 2344
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
@@ -886,11 +886,11 @@ main:
 	mov     rsi, [rsp+8*31]
 	mov     rdi, [rsp+8*28]
 	call    concat
-	mov [rsp+8*32], rax
+	mov [rsp+8*28], rax
 	mov     rdi, 2
 	call    mallocArray
-	mov     qword [rsp+8*33], rax
-	mov r9,  [rsp+8*33]
+	mov     qword [rsp+8*32], rax
+	mov r9,  [rsp+8*32]
 	mov r8,r9
 	mov r10,0
 	mov r8,r10
@@ -906,24 +906,24 @@ main:
 	add r8,r9
 	mov r13,3
 	mov [r8],r13
-	mov qword [rsp+8*34],r8
-	mov     rsi, [rsp+8*33]
+	mov qword [rsp+8*33],r8
+	mov     rsi, [rsp+8*32]
 	mov     rdi, [rsp+8*21]
 	call    multiAddress
-	mov [rsp+8*35], rax
-	mov r8,  [rsp+8*35]
+	mov [rsp+8*34], rax
+	mov r8,  [rsp+8*34]
 	mov r8, [r8]
-	mov qword [rsp+8*35],r8
-	mov     rsi, [rsp+8*35]
-	mov     rdi, [rsp+8*32]
+	mov qword [rsp+8*34],r8
+	mov     rsi, [rsp+8*34]
+	mov     rdi, [rsp+8*28]
 	call    concat
-	mov [rsp+8*36], rax
-	mov r9,  [rsp+8*36]
+	mov [rsp+8*28], rax
+	mov r9,  [rsp+8*28]
 	mov r8,r9
 	mov r10,r8
 	mov qword rdi,r8
-	mov qword [rsp+8*38],r10
-	mov rdi,[rsp+8*38] 
+	mov qword [rsp+8*36],r10
+	mov rdi,[rsp+8*36] 
 	add rdi, 1 
 	call puts
 	mov r8,0
@@ -936,8 +936,8 @@ main:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 376
-	mov r8,  [rsp+8*39]
+	sub    rsp, 360
+	mov r8,  [rsp+8*37]
 	mov rax,r8
 	leave
 	ret
@@ -945,7 +945,7 @@ global_init:
 QED:
 	
 	 section   .bss
-gbl:         resb   2360
+gbl:         resb   2344
 buff.1788:
         resb    256
 arg:

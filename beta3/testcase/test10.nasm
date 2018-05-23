@@ -641,7 +641,7 @@ main:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 560
-	        mov     eax, 536870912
+	mov     rax, 536870912
         cdqe
         mov     rdi, rax
         call    malloc
@@ -786,7 +786,6 @@ L_35:
 	
 L_34:
 	mov r8,  [rsp+8*25]
-	mov r8,r8
 	add r8,r8
 	mov r9,  [rsp+8*7]
 	cmp r9, 0

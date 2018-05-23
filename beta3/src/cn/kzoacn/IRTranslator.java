@@ -235,6 +235,17 @@ public class IRTranslator {
         for(int i=0;i<16;i++)if(!free[i])
             kick(i);
     }
+    void kickLocal(){
+        //symbolMap.globalVariableMap.containsKey(variable.name)
+        for(int i=0;i<16;i++)if(!free[i]){
+            if(symbolMap.globalVariableMap.containsKey(occ[i].name)){
+                kick(i);
+            }else{
+                free[i]=true;
+            }
+
+        }
+    }
     void clearAll(){
         for(int i=0;i<16;i++){
             free[i]=true;
@@ -466,10 +477,16 @@ public class IRTranslator {
                     break;
                 case add:
                     //if(inReg(var2) ||!fullReg()) {
+                    if(dest.equals(var2)){
+                        readReg(var1);
+                        readReg(var2);
+                        text.append(new StringBuffer("add " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
+                    }else {
                         readReg(var1);
                         readReg(var2);
                         text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
                         text.append(new StringBuffer("add " + writeReg(dest) + "," + readReg(var2) + "\n\t"));
+                    }
                     /*}else{
                         readReg(var1);
                         text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
@@ -483,10 +500,17 @@ public class IRTranslator {
                     break;
                 case subtract:
                     //if(inReg(var2) ||!fullReg()) {
+                    if(dest.equals(var2)){
+                        readReg(var1);
+                        readReg(var2);
+                        text.append(new StringBuffer("sub " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
+                        text.append(new StringBuffer("neg " + writeReg(dest) + "\n\t"));
+                    }else {
                         readReg(var1);
                         readReg(var2);
                         text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
                         text.append(new StringBuffer("sub " + writeReg(dest) + "," + readReg(var2) + "\n\t"));
+                    }
                     /*}else{
                         readReg(var1);
                         text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
@@ -529,38 +553,76 @@ public class IRTranslator {
                     //kickAll();
                     break;
                 case and:
-                    readReg(var1);readReg(var2);
-                    text.append(new StringBuffer("mov "+writeReg(dest)+","+readReg(var1)+"\n\t"));
-                    text.append(new StringBuffer("and "+writeReg(dest)+","+readReg(var2)+"\n\t"));
+                    if(dest.equals(var2)){
+                        readReg(var1);
+                        readReg(var2);
+                        text.append(new StringBuffer("and " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
+                    }else {
+                        readReg(var1);
+                        readReg(var2);
+                        text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
+                        text.append(new StringBuffer("and " + writeReg(dest) + "," + readReg(var2) + "\n\t"));
+                    }
                     //kickAll();
                     break;
                 case or:
-                    readReg(var1);readReg(var2);
-                    text.append(new StringBuffer("mov "+writeReg(dest)+","+readReg(var1)+"\n\t"));
-                    text.append(new StringBuffer("or "+writeReg(dest)+","+readReg(var2)+"\n\t"));
+                    if(dest.equals(var2)){
+                        readReg(var1);
+                        readReg(var2);
+                        text.append(new StringBuffer("or " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
+                    }else {
+                        readReg(var1);
+                        readReg(var2);
+                        text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
+                        text.append(new StringBuffer("or " + writeReg(dest) + "," + readReg(var2) + "\n\t"));
+                    }
                     //kickAll();
                     break;
                 case xor:
-                    readReg(var1);readReg(var2);
-                    text.append(new StringBuffer("mov "+writeReg(dest)+","+readReg(var1)+"\n\t"));
-                    text.append(new StringBuffer("xor "+writeReg(dest)+","+readReg(var2)+"\n\t"));
+                    if(dest.equals(var2)){
+                        readReg(var1);
+                        readReg(var2);
+                        text.append(new StringBuffer("xor " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
+                    }else {
+                        readReg(var1);
+                        readReg(var2);
+                        text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
+                        text.append(new StringBuffer("xor " + writeReg(dest) + "," + readReg(var2) + "\n\t"));
+                    }
                     //kickAll();
                     break;
                 case shiftLeft:
-                    readReg(var1);readReg(var2);
-                    text.append(new StringBuffer("mov "+writeReg(dest)+","+readReg(var1)+"\n\t"));
-                    text.append(new StringBuffer("mov rcx"+","+readReg(var2)+"\n\t"));
-                    text.append(new StringBuffer("shl "+writeReg(dest)+",cl\n\t"));
+                    if(dest.equals(var1)){
+                        readReg(var1);
+                        readReg(var2);
+                        text.append(new StringBuffer("mov rcx" + "," + readReg(var2) + "\n\t"));
+                        text.append(new StringBuffer("shl " + writeReg(var1) + ",cl\n\t"));
+                    }else {
+                        readReg(var1);
+                        readReg(var2);
+                        text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
+                        text.append(new StringBuffer("mov rcx" + "," + readReg(var2) + "\n\t"));
+                        text.append(new StringBuffer("shl " + writeReg(dest) + ",cl\n\t"));
+                    }
                     //kickAll();
                     break;
                 case shiftRight:
-                    readReg(var1);readReg(var2);
-                    text.append(new StringBuffer("mov "+writeReg(dest)+","+readReg(var1)+"\n\t"));
-                    text.append(new StringBuffer("mov rcx"+","+readReg(var2)+"\n\t"));
-                    text.append(new StringBuffer("shr "+writeReg(dest)+",cl\n\t"));
+                    if(dest.equals(var1)){
+                        readReg(var1);
+                        readReg(var2);
+                        text.append(new StringBuffer("mov rcx" + "," + readReg(var2) + "\n\t"));
+                        text.append(new StringBuffer("shr " + writeReg(var1) + ",cl\n\t"));
+                    }else {
+                        readReg(var1);
+                        readReg(var2);
+                        text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
+                        text.append(new StringBuffer("mov rcx" + "," + readReg(var2) + "\n\t"));
+                        text.append(new StringBuffer("shr " + writeReg(dest) + ",cl\n\t"));
+                    }
                     break;
                 case move:
-                    text.append(new StringBuffer("mov "+writeReg(dest)+","+readReg(var1)+"\n\t"));
+                    text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
+
                     //kickAll();
                     break;
                 case push:
@@ -578,7 +640,8 @@ public class IRTranslator {
                     break;
                 case ret:
                     text.append(new StringBuffer("mov rax," +readReg(var1)+"\n\t"));
-                    kickAll();
+                    //kickAll();
+                    kickLocal();
                     if(name.equals("main")){
                         text.append("        mov     rsp, qword [trsp]\n\t");
                     }

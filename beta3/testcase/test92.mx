@@ -1,0 +1,30 @@
+int hilo(int hi, int lo)
+{
+	return lo | (hi << 16);
+}
+int main(){}
+
+/*!! metadata:
+=== comment ===
+ Testcase for Loop Invariant Optimization (also Register Allocation & Inlining) v2
+=== is_public ===
+True
+=== assert ===
+output
+=== timeout ===
+12.0
+=== input ===
+0 40
+100 200
+125 250
+
+=== phase ===
+optim pretest
+=== output ===
+C22EE30E 1CCFFFD1 587343F6 E333CAFF
+
+=== exitcode ===
+0
+
+!!*/
+

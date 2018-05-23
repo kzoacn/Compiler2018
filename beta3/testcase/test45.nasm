@@ -641,7 +641,7 @@ main:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 296
-	        mov     eax, 536870912
+	mov     rax, 536870912
         cdqe
         mov     rdi, rax
         call    malloc
@@ -803,7 +803,6 @@ func:
 	mov [r11],r10
 	mov r12,  [rsp+8*20]
 	mov rax,r12
-	mov qword [rsp+8*28],r10
 	leave
 	ret
 	mov r8,0

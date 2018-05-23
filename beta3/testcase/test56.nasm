@@ -641,7 +641,7 @@ main:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 192
-	        mov     eax, 536870912
+	mov     rax, 536870912
         cdqe
         mov     rdi, rax
         call    malloc
@@ -709,10 +709,6 @@ Adder_add:
 	mov r14,r10
 	add r14,r12
 	mov rax,r14
-	mov qword [rsp+8*12],r8
-	mov qword [rsp+8*13],r10
-	mov qword [rsp+8*14],r12
-	mov qword [rsp+8*15],r14
 	leave
 	ret
 	mov r8,0

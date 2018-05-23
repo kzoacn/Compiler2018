@@ -640,14 +640,14 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 376
-	        mov     eax, 536870912
+	sub    rsp, 360
+	mov     rax, 536870912
         cdqe
         mov     rdi, rax
         call    malloc
         mov     edx, dword 536870912
         movsxd  rdx, edx
-        sub     rdx, 2360
+        sub     rdx, 2344
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
@@ -764,10 +764,9 @@ L_420:
 	mov r14,r12
 	imul r14,r13
 	mov r15,  [rsp+8*5]
+	add r14,r15
+	mov r15,r14
 	mov qword [rsp+8*18],r8
-	mov r8,r15
-	add r8,r14
-	mov r15,r8
 	mov r8,  [rsp+8*9]
 	mov qword [rsp+8*19],r11
 	mov r11,1
@@ -786,7 +785,7 @@ L_420:
 	shl r9,4
 	add r9,r12
 	mov [r9],r11
-	mov qword [rsp+8*25],r9
+	mov qword [rsp+8*24],r9
 	mov r9,r8
 	mov r11,1
 	mov r8,r8
@@ -804,15 +803,15 @@ L_420:
 	sub r10,r8
 	mov r8,0
 	cmp r10,r8
-	mov qword [rsp+8*26],r9
+	mov qword [rsp+8*25],r9
 	mov r9, 0
 	sete r9B
-	mov qword [rsp+8*28],r9
+	mov qword [rsp+8*27],r9
 	mov qword [rsp+8*3],r10
-	mov qword [rsp+8*24],r12
+	mov qword [rsp+8*23],r12
 	mov qword [rsp+8*21],r14
 	mov qword [rsp+8*5],r15
-	mov r8,  [rsp+8*28]
+	mov r8,  [rsp+8*27]
 	cmp r8, 0
 	je L_424
 	jmp L_421
@@ -826,7 +825,7 @@ L_422:
 	imul r10,r9
 	mov r8,r10
 	mov qword [rsp+8*5],r8
-	mov qword [rsp+8*29],r10
+	mov qword [rsp+8*28],r10
 	jmp L_420
 	
 L_421:
@@ -844,26 +843,24 @@ L_421:
 	idiv rbx
 	mov r13, rax
 	mov r14,  [rsp+8*6]
-	mov r15,r14
-	add r15,r13
+	add r13,r14
+	mov r15,r13
 	mov qword [rsp+8*4],r8
 	mov r8,r15
-	mov r9,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*34],r9
-	mov qword [rsp+8*30],r10
-	mov qword [rsp+8*31],r13
-	mov qword [rsp+8*32],r15
-	mov     rdi, [rsp+8*34]
+	mov qword [rsp+8*32],r8
+	mov qword [rsp+8*29],r10
+	mov qword [rsp+8*30],r13
+	mov qword rdi,r15
+	mov     rdi, [rsp+8*32]
 	call    toString
-	mov     qword[rsp+8*35], rax
-	mov r9,  [rsp+8*35]
+	mov     qword[rsp+8*33], rax
+	mov r9,  [rsp+8*33]
 	mov r8,r9
 	mov r10,r8
 	mov qword rdi,r8
-	mov qword [rsp+8*36],r10
+	mov qword [rsp+8*34],r10
 	mov rdi, format
-	mov rsi,[rsp+8*36] 
+	mov rsi,[rsp+8*34] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
@@ -878,17 +875,17 @@ L_417:
 	idiv rbx
 	mov r10, rdx
 	mov r11,r10
-	mov qword [rsp+8*37],r10
+	mov qword [rsp+8*35],r10
 	mov qword [rsp+8*6],r11
 	jmp L_415
 	
 L_416:
-	mov r9,t114
+	mov r9,t112
 	mov r8,r9
 	mov r10,r8
 	mov qword rdi,r8
-	mov qword [rsp+8*38],r10
-	mov rdi,[rsp+8*38] 
+	mov qword [rsp+8*36],r10
+	mov rdi,[rsp+8*36] 
 	add rdi, 1 
 	call puts
 	mov r8,0
@@ -906,8 +903,8 @@ L_416:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 376
-	mov r8,  [rsp+8*39]
+	sub    rsp, 360
+	mov r8,  [rsp+8*37]
 	mov rax,r8
 	leave
 	ret
@@ -915,7 +912,7 @@ global_init:
 QED:
 	
 	 section   .bss
-gbl:         resb   2360
+gbl:         resb   2344
 buff.1788:
         resb    256
 arg:
@@ -936,7 +933,7 @@ GS_31:
 GS_32:
 	db 25H, 73H, 00H
 	
-t114:
+t112:
 	 db 0,"" ,0
 
 

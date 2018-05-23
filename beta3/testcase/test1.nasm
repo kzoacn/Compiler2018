@@ -641,7 +641,7 @@ main:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 96
-	    mov     rax, 53687091200
+	mov     rax, 536870912
         cdqe
         mov     rdi, rax
         call    malloc

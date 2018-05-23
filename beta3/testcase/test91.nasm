@@ -640,25 +640,25 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 352
-	        mov     eax, 536870912
+	sub    rsp, 320
+	mov     rax, 536870912
         cdqe
         mov     rdi, rax
         call    malloc
         mov     edx, dword 536870912
         movsxd  rdx, edx
-        sub     rdx, 2336
+        sub     rdx, 2304
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
 	call global_init
 	mov r8 , rax
-	mov r10,t95
+	mov r10,t91
 	mov r9,r10
-	mov r12,t96
+	mov r12,t92
 	mov r11,r12
-	mov r14,t97
+	mov r14,t93
 	mov r13,r14
 	mov qword [rsp+8*1],r8
 	mov r8,10
@@ -713,7 +713,7 @@ main:
 cd:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 352
+	sub    rsp, 320
 	mov r9,  rdi
 	mov r8,r9
 	mov r11,  rsi
@@ -744,17 +744,17 @@ cd:
 	mov     rsi, t68
 	mov     rdi, [rsp+8*22]
 	call    concat
-	mov [rsp+8*23], rax
+	mov [rsp+8*22], rax
 	mov     rsi, [rsp+8*19]
-	mov     rdi, [rsp+8*23]
+	mov     rdi, [rsp+8*22]
 	call    concat
-	mov [rsp+8*24], rax
-	mov r9,  [rsp+8*24]
+	mov [rsp+8*22], rax
+	mov r9,  [rsp+8*22]
 	mov r8,r9
 	mov r10,r8
 	mov qword rdi,r8
-	mov qword [rsp+8*25],r10
-	mov rdi,[rsp+8*25] 
+	mov qword [rsp+8*23],r10
+	mov rdi,[rsp+8*23] 
 	add rdi, 1 
 	call puts
 	mov r9,  [rsp+8*20]
@@ -762,7 +762,7 @@ cd:
 	mov r10,1
 	mov r9,r9
 	add r9,r10
-	mov qword [rsp+8*26],r8
+	mov qword [rsp+8*24],r8
 	mov qword [rsp+8*20],r9
 	jmp L_641
 	
@@ -781,7 +781,7 @@ L_640:
 	mov r12,r14
 	mov qword rsi,r12
 	mov r12,r10
-	mov qword [rsp+8*27],r10
+	mov qword [rsp+8*25],r10
 	mov qword [arg+8*4],r11
 	mov qword rdi,r12
 	mov qword [arg+8*3],r13
@@ -789,26 +789,26 @@ L_640:
 	call cd
 	mov r8 , rax
 	mov r9,r8
-	mov qword [rsp+8*28],r8
+	mov qword [rsp+8*26],r8
 	mov qword [rsp+8*20],r9
 	mov     rsi, [rsp+8*17]
-	mov     rdi, t80
+	mov     rdi, t78
 	call    concat
-	mov [rsp+8*29], rax
-	mov     rsi, t82
-	mov     rdi, [rsp+8*29]
+	mov [rsp+8*27], rax
+	mov     rsi, t80
+	mov     rdi, [rsp+8*27]
 	call    concat
-	mov [rsp+8*30], rax
+	mov [rsp+8*27], rax
 	mov     rsi, [rsp+8*19]
-	mov     rdi, [rsp+8*30]
+	mov     rdi, [rsp+8*27]
 	call    concat
-	mov [rsp+8*31], rax
-	mov r9,  [rsp+8*31]
+	mov [rsp+8*27], rax
+	mov r9,  [rsp+8*27]
 	mov r8,r9
 	mov r10,r8
 	mov qword rdi,r8
-	mov qword [rsp+8*32],r10
-	mov rdi,[rsp+8*32] 
+	mov qword [rsp+8*28],r10
+	mov rdi,[rsp+8*28] 
 	add rdi, 1 
 	call puts
 	mov r8,  [rsp+8*16]
@@ -826,7 +826,7 @@ L_640:
 	mov qword rsi,r8
 	mov r8,r10
 	mov qword rdi,r8
-	mov qword [rsp+8*33],r10
+	mov qword [rsp+8*29],r10
 	mov qword [arg+8*4],r11
 	mov qword [arg+8*3],r13
 	mov qword [arg+8*2],r15
@@ -837,9 +837,9 @@ L_640:
 	mov r11,1
 	mov r9,r9
 	add r9,r11
-	mov qword [rsp+8*34],r8
+	mov qword [rsp+8*30],r8
 	mov qword [rsp+8*20],r9
-	mov qword [rsp+8*35],r10
+	mov qword [rsp+8*31],r10
 	
 L_641:
 	mov r8,  [rsp+8*20]
@@ -854,8 +854,8 @@ L_641:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 352
-	mov r8,  [rsp+8*36]
+	sub    rsp, 320
+	mov r8,  [rsp+8*32]
 	mov rax,r8
 	leave
 	ret
@@ -863,7 +863,7 @@ global_init:
 QED:
 	
 	 section   .bss
-gbl:         resb   2336
+gbl:         resb   2304
 buff.1788:
         resb    256
 arg:
@@ -884,14 +884,8 @@ GS_31:
 GS_32:
 	db 25H, 73H, 00H
 	
-t96:
-	 db 1,"B" ,0
-
-t95:
-	 db 1,"A" ,0
-
-t97:
-	 db 1,"C" ,0
+t78:
+	 db 5,"move " ,0
 
 t66:
 	 db 5,"move " ,0
@@ -899,10 +893,16 @@ t66:
 t68:
 	 db 5," --> " ,0
 
-t80:
-	 db 5,"move " ,0
+t92:
+	 db 1,"B" ,0
 
-t82:
+t80:
 	 db 5," --> " ,0
+
+t91:
+	 db 1,"A" ,0
+
+t93:
+	 db 1,"C" ,0
 
 
