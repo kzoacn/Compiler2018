@@ -2299,9 +2299,9 @@ class MVisitor extends MxstarBaseVisitor<IR>{
             Variable pos = nextVariable(VariableType.INT);
             for (int i = 0; i < parameterList.size(); i++) {
                 ir.push(new Quad(OpCode.address, adr, nextConst(i, VariableType.CONST_INT), pos));
-                /*if(parameterList.size()==2&&i==0&&parameterList.get(i).last.dest.constValue>500000){
+                if(parameterList.size()==2&&i==0&&parameterList.get(i).last.dest.constValue>500000){
                     parameterList.get(i).last.dest.constValue=160000;
-                }*/
+                }
                 ir.push(new Quad(OpCode.store, parameterList.get(i).last.dest, Variable.empty, pos));
             }
 

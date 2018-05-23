@@ -27,7 +27,7 @@
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="247">
-              <caret line="2303" column="18" selection-start-line="2303" selection-start-column="18" selection-end-line="2303" selection-end-column="18" />
+              <caret line="2303" column="19" lean-forward="true" selection-start-line="2303" selection-start-column="19" selection-end-line="2303" selection-end-column="19" />
               <folding>
                 <element signature="e#26837#26849#0" expanded="true" />
                 <element signature="e#26893#26905#0" expanded="true" />
@@ -924,7 +924,7 @@
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
-          <caret line="2303" column="18" selection-start-line="2303" selection-start-column="18" selection-end-line="2303" selection-end-column="18" />
+          <caret line="2303" column="19" lean-forward="true" selection-start-line="2303" selection-start-column="19" selection-end-line="2303" selection-end-column="19" />
           <folding>
             <element signature="e#26837#26849#0" expanded="true" />
             <element signature="e#26893#26905#0" expanded="true" />
