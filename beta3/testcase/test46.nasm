@@ -668,8 +668,8 @@ main:
 	mov r9,  [rsp+8*3]
 	mov r8,r9
 	mov r10,r8
-	mov r9,0
-	mov r11,r9
+	mov r12,0
+	mov r11,r12
 	mov qword [rsp+8*4],r8
 	mov qword [rsp+8*5],r10
 	mov qword [rsp+8*6],r11
@@ -771,9 +771,9 @@ L_101:
 	mov [r8],r9
 	mov r11,  [rsp+8*6]
 	mov r10,r11
-	mov r8,1
+	mov r12,1
 	mov r11,r11
-	add r11,r8
+	add r11,r12
 	mov qword [rsp+8*22],r10
 	mov qword [rsp+8*6],r11
 	jmp L_101
@@ -853,10 +853,10 @@ L_104:
 	mov r9,r8
 	mov r11,  [rsp+8*6]
 	mov r10,r11
-	mov qword [rsp+8*33],r8
-	mov r8,1
+	mov r12,1
 	mov r11,r11
-	add r11,r8
+	add r11,r12
+	mov qword [rsp+8*33],r8
 	mov qword [rsp+8*5],r9
 	mov qword [rsp+8*34],r10
 	mov qword [rsp+8*6],r11

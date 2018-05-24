@@ -217,7 +217,7 @@ public class IRTranslator {
     static boolean[] ban=new boolean[16];
     static int[] lastUsedTime=new int[16];
     static int russ=10;
-    static final int registerNum=4;
+    static final int registerNum=6;
     void kick(int x){
 
         if(writeBack[x]) {

@@ -152,7 +152,7 @@ public class IROptimizer {
             line_number++;
             cur=cur.next;
         }
-        if(variables.size()>250){
+        if(variables.size()>5){
             return ir;
         }
         //live analyze
@@ -261,7 +261,7 @@ public class IROptimizer {
         variables.removeIf((var)->gbl.contains(var.name));
         variables.removeIf((var)->var.type.name.contains("const") || var.type.name.equals("null"));
 
-        int registerNumber=4;
+        int registerNumber=2;
         while(variables.size()>0){
             ArrayList<Variable>newColor=new ArrayList<Variable>();
             for(Variable var : variables){

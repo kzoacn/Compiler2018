@@ -692,9 +692,9 @@ L_107:
 	add r11,1
 	shl r11,4
 	add r11,r8
+	mov r12,  [rsp+8*7]
+	mov [r11],r12
 	mov qword [rsp+8*8],r8
-	mov r8,  [rsp+8*7]
-	mov [r11],r8
 	mov qword [rsp+8*9],r11
 	mov     rdi, 2
 	call    mallocArray
@@ -708,13 +708,13 @@ L_107:
 	add r8,r9
 	mov r11,  [rsp+8*5]
 	mov [r8],r11
-	mov r10,1
-	mov r8,r10
+	mov r12,1
+	mov r8,r12
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r10,0
-	mov [r8],r10
+	mov r13,0
+	mov [r8],r13
 	mov qword [rsp+8*11],r8
 	mov     rsi, [rsp+8*10]
 	mov     rdi, [rsp+8*4]
@@ -752,13 +752,13 @@ L_110:
 	add r8,r9
 	mov r11,  [rsp+8*5]
 	mov [r8],r11
-	mov r10,1
-	mov r8,r10
+	mov r12,1
+	mov r8,r12
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r10,0
-	mov [r8],r10
+	mov r13,0
+	mov [r8],r13
 	mov r10,2
 	mov r8,r10
 	add r8,1
@@ -789,13 +789,13 @@ L_110:
 	add r8,r9
 	mov r11,  [rsp+8*5]
 	mov [r8],r11
-	mov r10,1
-	mov r8,r10
+	mov r12,1
+	mov r8,r12
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r10,0
-	mov [r8],r10
+	mov r13,0
+	mov [r8],r13
 	mov r10,2
 	mov r8,r10
 	add r8,1
@@ -803,13 +803,13 @@ L_110:
 	add r8,r9
 	mov r10,  [rsp+8*14]
 	mov [r8],r10
-	mov r11,3
-	mov r8,r11
+	mov r12,3
+	mov r8,r12
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r11,0
-	mov [r8],r11
+	mov r12,0
+	mov [r8],r12
 	mov qword [rsp+8*21],r8
 	mov     rsi, [rsp+8*20]
 	mov     rdi, [rsp+8*4]
@@ -847,13 +847,13 @@ L_113:
 	add r8,r9
 	mov r11,  [rsp+8*5]
 	mov [r8],r11
-	mov r10,1
-	mov r8,r10
+	mov r12,1
+	mov r8,r12
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r10,0
-	mov [r8],r10
+	mov r13,0
+	mov [r8],r13
 	mov r10,2
 	mov r8,r10
 	add r8,1
@@ -861,20 +861,20 @@ L_113:
 	add r8,r9
 	mov r10,  [rsp+8*14]
 	mov [r8],r10
-	mov r11,3
-	mov r8,r11
+	mov r12,3
+	mov r8,r12
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r11,0
-	mov [r8],r11
-	mov r11,4
-	mov r8,r11
+	mov r12,0
+	mov [r8],r12
+	mov r12,4
+	mov r8,r12
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r11,  [rsp+8*24]
-	mov [r8],r11
+	mov r12,  [rsp+8*24]
+	mov [r8],r12
 	mov qword [rsp+8*27],r8
 	mov     rsi, [rsp+8*26]
 	mov     rdi, [rsp+8*4]
@@ -887,15 +887,14 @@ L_113:
 	mov r11,  [rsp+8*24]
 	mov r10,r10
 	xor r10,r11
-	mov r8,  [rsp+8*28]
-	mov [r8],r10
-	mov r8,r11
-	mov qword [rsp+8*30],r8
-	mov r8,1
+	mov r12,  [rsp+8*28]
+	mov [r12],r10
+	mov r13,r11
+	mov r10,1
 	mov r11,r11
-	add r11,r8
-	mov qword [rsp+8*29],r10
+	add r11,r10
 	mov qword [rsp+8*24],r11
+	mov qword [rsp+8*30],r13
 	jmp L_113
 	
 L_114:
@@ -931,13 +930,13 @@ L_108:
 	add r8,r9
 	mov r11,3
 	mov [r8],r11
-	mov r10,1
-	mov r8,r10
+	mov r12,1
+	mov r8,r12
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r10,0
-	mov [r8],r10
+	mov r13,0
+	mov [r8],r13
 	mov r10,2
 	mov r8,r10
 	add r8,1

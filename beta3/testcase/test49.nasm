@@ -696,8 +696,8 @@ main:
 	add r10,r8
 	mov r11,  [rsp+8*2]
 	mov [r10],r11
-	mov r9,1
-	mov r10,r9
+	mov r12,1
+	mov r10,r12
 	add r10,1
 	shl r10,4
 	add r10,r8
@@ -749,20 +749,20 @@ L_119:
 	add r8,r9
 	mov r11,0
 	mov [r8],r11
-	mov r10,1
+	mov r12,1
+	mov r8,r12
+	add r8,1
+	shl r8,4
+	add r8,r9
+	mov r13,  [rsp+8*10]
+	mov [r8],r13
+	mov r10,2
 	mov r8,r10
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r10,  [rsp+8*10]
+	mov r10,  [rsp+8*12]
 	mov [r8],r10
-	mov r11,2
-	mov r8,r11
-	add r8,1
-	shl r8,4
-	add r8,r9
-	mov r11,  [rsp+8*12]
-	mov [r8],r11
 	mov qword [rsp+8*15],r8
 	mov     rsi, [rsp+8*14]
 	mov     rdi, [rsp+8*4]
@@ -774,12 +774,13 @@ L_119:
 	xor r10,r9
 	mov r11,  [rsp+8*16]
 	mov [r11],r10
-	mov r10,r9
-	mov qword [rsp+8*18],r10
-	mov r10,1
+	mov r12,r9
+	mov r13,1
 	mov r9,r9
-	add r9,r10
+	add r9,r13
 	mov qword [rsp+8*12],r9
+	mov qword [rsp+8*17],r10
+	mov qword [rsp+8*18],r12
 	jmp L_119
 	
 L_120:
@@ -805,13 +806,13 @@ L_117:
 	add r8,r9
 	mov r11,0
 	mov [r8],r11
-	mov r10,1
-	mov r8,r10
+	mov r12,1
+	mov r8,r12
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r10,2
-	mov [r8],r10
+	mov r13,2
+	mov [r8],r13
 	mov r10,2
 	mov r8,r10
 	add r8,1

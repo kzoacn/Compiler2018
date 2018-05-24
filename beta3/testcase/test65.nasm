@@ -660,16 +660,16 @@ main:
 	mov r8 , rax
 	mov r10,100
 	mov r9,r10
+	mov r12,0
+	mov r11,r12
 	mov qword [rsp+8*1],r8
+	mov r8,t66
+	mov r13,r8
 	mov r8,0
 	mov r11,r8
-	mov r10,t66
-	mov r8,r10
-	mov r10,0
-	mov r11,r10
-	mov qword [rsp+8*4],r8
 	mov qword [rsp+8*2],r9
 	mov qword [rsp+8*3],r11
+	mov qword [rsp+8*4],r13
 	
 L_354:
 	mov r8,  [rsp+8*3]
@@ -689,9 +689,9 @@ L_354:
 	mov r8,r9
 	mov r11,  [rsp+8*3]
 	mov r10,r11
-	mov r9,1
+	mov r12,1
 	mov r11,r11
-	add r11,r9
+	add r11,r12
 	mov qword [rsp+8*4],r8
 	mov qword [rsp+8*7],r10
 	mov qword [rsp+8*3],r11
@@ -728,9 +728,9 @@ L_357:
 	mov r8,r9
 	mov r11,  [rsp+8*3]
 	mov r10,r11
-	mov r9,1
+	mov r12,1
 	mov r11,r11
-	add r11,r9
+	add r11,r12
 	mov qword [rsp+8*4],r8
 	mov qword [rsp+8*12],r10
 	mov qword [rsp+8*3],r11

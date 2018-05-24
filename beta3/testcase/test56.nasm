@@ -645,12 +645,12 @@ Adder_add:
 	mov r8,r9
 	mov r11,  rdi
 	mov r10,r11
+	mov r13,  rsi
+	mov r12,r13
 	mov qword [rsp+8*2],r8
-	mov r8,  rsi
-	mov r15,r8
-	mov r9,r10
-	add r9,r15
-	mov rax,r9
+	mov r8,r10
+	add r8,r12
+	mov rax,r8
 	leave
 	ret
 	
@@ -682,16 +682,16 @@ main:
 	mov r9,  [rsp+8*9]
 	mov r8,r9
 	mov r10,r8
+	mov r12,4
+	mov r11,r12
 	mov qword [rsp+8*10],r8
-	mov r8,4
-	mov r11,r8
-	mov r9,3
-	mov r8,r9
-	mov r9,r10
-	mov qword rdi,r8
-	mov qword [arg+8*63],r9
+	mov r8,3
+	mov r13,r8
+	mov r8,r10
+	mov qword [arg+8*63],r8
 	mov qword [rsp+8*11],r10
 	mov qword rsi,r11
+	mov qword rdi,r13
 	push r15
 	push r14
 	call Adder_add

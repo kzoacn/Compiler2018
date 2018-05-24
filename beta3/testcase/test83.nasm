@@ -645,18 +645,17 @@ point_set:
 	mov r8,r9
 	mov r11,  rdi
 	mov r10,r11
-	mov qword [rsp+8*2],r8
-	mov r9,  rsi
-	mov r8,r9
+	mov r13,  rsi
+	mov r12,r13
+	mov r9,0
 	mov qword [rsp+8*4],r10
-	mov r10,  [rsp+8*2]
-	mov r11,0
-	mov qword [rsp+8*6],r8
-	mov r8,r11
-	add r8,1
-	shl r8,4
-	add r8,r10
-	mov qword [rsp+8*7],r8
+	mov r10,r9
+	add r10,1
+	shl r10,4
+	add r10,r8
+	mov qword [rsp+8*2],r8
+	mov qword [rsp+8*7],r10
+	mov qword [rsp+8*6],r12
 	mov     rdi, 0
 	call    mallocArray
 	mov     qword [rsp+8*8], rax
@@ -672,11 +671,11 @@ point_set:
 	mov [r8],r9
 	mov r10,  [rsp+8*2]
 	mov r11,1
-	mov r8,r11
-	add r8,1
-	shl r8,4
-	add r8,r10
-	mov qword [rsp+8*11],r8
+	mov r12,r11
+	add r12,1
+	shl r12,4
+	add r12,r10
+	mov qword [rsp+8*11],r12
 	mov     rdi, 0
 	call    mallocArray
 	mov     qword [rsp+8*12], rax
@@ -723,16 +722,16 @@ main:
 	mov r9,  [rsp+8*17]
 	mov r8,r9
 	mov r10,r8
-	mov r9,2
-	mov r11,r9
-	mov qword rsi,r11
-	mov r11,1
-	mov r9,r11
-	mov r11,r10
+	mov r12,2
+	mov r11,r12
+	mov r9,1
+	mov r13,r9
+	mov r9,r10
 	mov qword [rsp+8*18],r8
-	mov qword rdi,r9
+	mov qword [arg+8*63],r9
 	mov qword [rsp+8*19],r10
-	mov qword [arg+8*63],r11
+	mov qword rsi,r11
+	mov qword rdi,r13
 	push r15
 	push r14
 	call point_set

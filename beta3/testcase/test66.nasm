@@ -660,15 +660,15 @@ main:
 	mov r8 , rax
 	mov r10,1
 	mov r9,r10
+	mov r12,0
+	mov r11,r12
+	mov r13,0
+	cmp r11,r13
 	mov qword [rsp+8*1],r8
-	mov r8,0
-	mov r11,r8
-	mov r8,0
-	cmp r11,r8
-	mov r10, 0
-	setne r10B
+	mov r8, 0
+	setne r8B
+	mov qword [rsp+8*4],r8
 	mov qword [rsp+8*2],r9
-	mov qword [rsp+8*4],r10
 	mov qword [rsp+8*3],r11
 	mov r8,  [rsp+8*4]
 	cmp r8, 0
@@ -689,10 +689,10 @@ L_360:
 	mov r10, rax
 	mov r11,5
 	cmp r10,r11
-	mov r8, 0
-	setl r8B
-	mov qword [rsp+8*7],r8
+	mov r12, 0
+	setl r12B
 	mov qword [rsp+8*6],r10
+	mov qword [rsp+8*7],r12
 	mov r9,  [rsp+8*7]
 	mov r8,r9
 	mov qword [rsp+8*5],r8

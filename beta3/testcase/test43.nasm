@@ -748,11 +748,11 @@ main:
 	mov r10,r9
 	add r10,r8
 	mov r11,r10
+	mov r12,r11
 	mov qword [rsp+8*15],r8
-	mov r8,r11
-	mov qword [rsp+8*18],r8
 	mov qword [rsp+8*16],r10
 	mov qword rdi,r11
+	mov qword [rsp+8*18],r12
 	mov     rdi, [rsp+8*18]
 	call    toString
 	mov     qword[rsp+8*19], rax

@@ -660,25 +660,26 @@ main:
 	mov r8 , rax
 	mov r10,1
 	mov r9,r10
-	mov r11,2
-	mov r15,r11
+	mov r12,2
+	mov r11,r12
 	mov qword [rsp+8*1],r8
-	mov r10,3
+	mov r8,3
+	mov r13,r8
+	mov r10,4
 	mov r8,r10
-	mov r11,4
 	mov r10,r11
-	mov r11,r15
-	imul r11,r8
-	add r11,r9
-	mov r10,r11
-	mov qword [rsp+8*4],r8
+	imul r10,r13
+	add r10,r9
 	mov r8,r10
 	mov qword [rsp+8*2],r9
 	mov r9,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*8],r9
-	mov qword [rsp+8*5],r10
-	mov qword [rsp+8*6],r11
+	mov qword [rsp+8*5],r8
+	mov r8,r9
+	mov qword [rsp+8*8],r8
+	mov qword rdi,r9
+	mov qword [rsp+8*6],r10
+	mov qword [rsp+8*3],r11
+	mov qword [rsp+8*4],r13
 	mov     rdi, [rsp+8*8]
 	call    toString
 	mov     qword[rsp+8*9], rax

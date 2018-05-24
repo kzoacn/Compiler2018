@@ -645,10 +645,10 @@ Hello_say:
 	mov r8,r9
 	mov r11,t67
 	mov r10,r11
+	mov r12,r10
 	mov qword [rsp+8*2],r8
-	mov r8,r10
-	mov qword [rsp+8*4],r8
 	mov qword rdi,r10
+	mov qword [rsp+8*4],r12
 	mov rdi,[rsp+8*4] 
 	add rdi, 1 
 	call puts
@@ -709,20 +709,20 @@ L_333:
 	add r11,1
 	shl r11,4
 	add r11,r8
+	mov r12,  [rsp+8*11]
+	mov [r11],r12
+	mov r13,r9
 	mov qword [rsp+8*12],r8
-	mov r8,  [rsp+8*11]
-	mov [r11],r8
-	mov r8,r9
-	mov r9,r10
-	add r9,1
-	shl r9,4
-	add r9,r8
-	mov r8, [r9]
-	mov qword [rsp+8*15],r9
-	mov r9,r8
-	mov qword [rsp+8*14],r8
-	mov qword [arg+8*63],r9
+	mov r8,r10
+	add r8,1
+	shl r8,4
+	add r8,r13
+	mov r13, [r8]
+	mov qword [rsp+8*15],r8
+	mov r8,r13
+	mov qword [arg+8*63],r8
 	mov qword [rsp+8*13],r11
+	mov qword [rsp+8*14],r13
 	push r15
 	push r14
 	call Hello_say

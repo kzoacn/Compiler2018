@@ -723,12 +723,12 @@ main:
 	mov [r8],r9
 	mov r11,  [rsp+8*11]
 	mov r10,r11
-	mov r9,3
-	mov r8,r9
-	mov r9,r10
-	mov qword rdi,r8
-	mov qword [arg+8*63],r9
+	mov r13,3
+	mov r12,r13
+	mov r8,r10
+	mov qword [arg+8*63],r8
 	mov qword [rsp+8*15],r10
+	mov qword rdi,r12
 	push r15
 	push r14
 	call Adder_add

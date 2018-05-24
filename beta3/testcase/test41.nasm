@@ -645,11 +645,11 @@ dfs:
 	mov r8,r9
 	mov r11,0
 	mov r10,r11
+	mov r13,1
+	mov r12,r13
 	mov qword [rsp+8*2],r8
-	mov r8,1
-	mov r11,r8
 	mov qword [rsp+8*3],r10
-	mov qword [rsp+8*4],r11
+	mov qword [rsp+8*4],r12
 	
 L_93:
 	mov r8,1
@@ -661,17 +661,18 @@ L_93:
 	mov r9,r9
 	add r9,r10
 	mov r11,  [rsp+8*3]
+	mov r12,r11
+	add r12,r9
+	mov r11,r12
+	mov r13,  [rsp+8*2]
+	cmp r9,r13
 	mov qword [rsp+8*5],r8
-	mov r8,r11
-	add r8,r9
-	mov r11,r8
-	mov r8,  [rsp+8*2]
-	cmp r9,r8
-	mov r10, 0
-	sete r10B
+	mov r8, 0
+	sete r8B
+	mov qword [rsp+8*7],r8
 	mov qword [rsp+8*4],r9
-	mov qword [rsp+8*7],r10
 	mov qword [rsp+8*3],r11
+	mov qword [rsp+8*6],r12
 	mov r8,  [rsp+8*7]
 	cmp r8, 0
 	je L_96

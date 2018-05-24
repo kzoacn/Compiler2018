@@ -670,19 +670,17 @@ main:
 	mov r10,1
 	mov r11,r10
 	neg r11
-	mov r9,r11
-	mov r10,r8
-	mov r11,0
-	mov qword [rsp+8*6],r9
-	mov r9,r11
-	add r9,1
-	shl r9,4
-	add r9,r10
-	mov qword [rsp+8*7],r10
-	mov r10,3
-	mov [r9],r10
-	mov qword [rsp+8*8],r9
+	mov r12,r11
+	mov r13,r8
+	mov r9,0
+	mov r10,r9
+	add r10,1
+	shl r10,4
+	add r10,r13
+	mov r9,3
+	mov [r10],r9
 	mov r9,r8
+	mov qword [rsp+8*8],r10
 	mov r10,1
 	mov r11,r10
 	add r11,1
@@ -726,6 +724,8 @@ main:
 	mov qword [rsp+8*4],r8
 	mov qword [rsp+8*17],r9
 	mov qword [rsp+8*16],r11
+	mov qword [rsp+8*6],r12
+	mov qword [rsp+8*7],r13
 	
 L_2025:
 	mov r8,  [rsp+8*17]
@@ -744,15 +744,15 @@ L_2025:
 	add r11,1
 	shl r11,4
 	add r11,r8
+	mov r12, [r11]
+	mov r13,2
+	cmp r12,r13
 	mov qword [rsp+8*19],r8
-	mov r8, [r11]
-	mov r9,2
-	cmp r8,r9
+	mov r8, 0
+	sete r8B
+	mov qword [rsp+8*22],r8
 	mov qword [rsp+8*20],r11
-	mov r11, 0
-	sete r11B
-	mov qword [rsp+8*21],r8
-	mov qword [rsp+8*22],r11
+	mov qword [rsp+8*21],r12
 	mov r8,  [rsp+8*22]
 	cmp r8, 0
 	je L_2029

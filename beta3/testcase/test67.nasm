@@ -680,16 +680,16 @@ L_364:
 	add r11,1
 	shl r11,4
 	add r11,r8
+	mov r12,1
+	mov [r11],r12
+	mov r13,r10
 	mov qword [rsp+8*6],r8
-	mov r8,1
-	mov [r11],r8
-	mov r8,r10
-	mov qword [rsp+8*8],r8
 	mov r8,1
 	mov r10,r10
 	add r10,r8
 	mov qword [rsp+8*2],r10
 	mov qword [rsp+8*7],r11
+	mov qword [rsp+8*8],r13
 	jmp L_364
 	
 L_365:
@@ -714,21 +714,21 @@ L_367:
 	add r11,1
 	shl r11,4
 	add r11,r8
+	mov r12, [r11]
+	cmp r12, 0
 	mov qword [rsp+8*10],r8
-	mov r8, [r11]
-	cmp r8, 0
-	mov qword [rsp+8*12],r8
 	mov qword [rsp+8*11],r11
+	mov qword [rsp+8*12],r12
 	je L_371
 	mov r9,2
 	mov r8,r9
 	mov r10,  [rsp+8*2]
 	mov r11,3
 	cmp r10,r11
-	mov r9, 0
-	setg r9B
+	mov r12, 0
+	setg r12B
 	mov qword [rsp+8*13],r8
-	mov qword [rsp+8*14],r9
+	mov qword [rsp+8*14],r12
 	mov r8,  [rsp+8*14]
 	cmp r8, 0
 	jne L_372
@@ -742,18 +742,18 @@ L_372:
 	mov r9,2
 	mov r10,r8
 	sub r10,r9
-	mov r9,  [gbl+8*5]
-	mov r11,r9
-	mov r8,r10
-	add r8,1
-	shl r8,4
-	add r8,r11
-	mov r10, [r8]
-	mov qword [rsp+8*18],r8
-	mov r8,r10
-	mov qword [rsp+8*15],r8
-	mov qword [rsp+8*19],r10
+	mov r12,  [gbl+8*5]
+	mov r11,r12
+	mov r13,r10
+	add r13,1
+	shl r13,4
+	add r13,r11
+	mov r9, [r13]
+	mov r10,r9
+	mov qword [rsp+8*19],r9
+	mov qword [rsp+8*15],r10
 	mov qword [rsp+8*17],r11
+	mov qword [rsp+8*18],r13
 	
 L_373:
 	mov r8,  [rsp+8*15]
@@ -765,15 +765,16 @@ L_373:
 	mov r9,r9
 	add r9,r10
 	mov r11,  [rsp+8*2]
+	mov r12,2
+	mov r13,r11
+	sub r13,r12
 	mov qword [rsp+8*21],r8
-	mov r8,2
-	mov r10,r11
-	sub r10,r8
-	mov r8,r10
+	mov r8,r13
 	mov r10,r8
 	mov qword rdi,r8
 	mov qword [gbl+8*20],r9
 	mov qword [rsp+8*24],r10
+	mov qword [rsp+8*22],r13
 	mov     rdi, [rsp+8*24]
 	call    toString
 	mov     qword[rsp+8*25], rax
@@ -811,10 +812,10 @@ L_376:
 	imul r10,r9
 	mov r11,  [gbl+8*3]
 	cmp r10,r11
-	mov r8, 0
-	setle r8B
-	mov qword [rsp+8*31],r8
+	mov r12, 0
+	setle r12B
 	mov qword [rsp+8*30],r10
+	mov qword [rsp+8*31],r12
 	mov r8,  [rsp+8*31]
 	cmp r8, 0
 	je L_377
@@ -822,23 +823,22 @@ L_376:
 	mov r9,  [rsp+8*13]
 	mov r10,r8
 	imul r10,r9
-	mov r8,  [gbl+8*5]
-	mov r11,r8
-	mov r9,r10
-	add r9,1
-	shl r9,4
-	add r9,r11
+	mov r12,  [gbl+8*5]
+	mov r11,r12
+	mov r13,r10
+	add r13,1
+	shl r13,4
+	add r13,r11
 	mov r10,0
-	mov [r9],r10
-	mov qword [rsp+8*34],r9
-	mov r10,  [rsp+8*13]
-	mov r9,r10
-	mov qword [rsp+8*35],r9
-	mov r9,1
-	mov r10,r10
-	add r10,r9
-	mov qword [rsp+8*13],r10
+	mov [r13],r10
+	mov r10,r9
+	mov qword [rsp+8*35],r10
+	mov r10,1
+	mov r9,r9
+	add r9,r10
+	mov qword [rsp+8*13],r9
 	mov qword [rsp+8*33],r11
+	mov qword [rsp+8*34],r13
 	jmp L_376
 	
 L_377:

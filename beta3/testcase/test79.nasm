@@ -661,17 +661,17 @@ main:
 	mov r10,t64
 	mov r9,r10
 	mov r11,r9
+	mov r13,2
+	mov r12,r13
 	mov qword [rsp+8*1],r8
 	mov qword [rsp+8*2],r9
-	mov r9,2
+	mov r9,0
 	mov r8,r9
-	mov r10,0
-	mov r9,r10
-	mov r10,r11
-	mov qword rsi,r8
-	mov qword rdi,r9
-	mov qword [arg+8*63],r10
+	mov r9,r11
+	mov qword rdi,r8
+	mov qword [arg+8*63],r9
 	mov qword [rsp+8*3],r11
+	mov qword rsi,r12
 	mov     rsi, rsi
 	mov     rdi, rdi
 	call    substring

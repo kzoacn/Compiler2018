@@ -661,11 +661,11 @@ main:
 	mov r10,4
 	mov r9,r10
 	mov r11,r9
+	mov r12,r11
 	mov qword [rsp+8*1],r8
-	mov r8,r11
-	mov qword [rsp+8*4],r8
 	mov qword [rsp+8*2],r9
 	mov qword rdi,r11
+	mov qword [rsp+8*4],r12
 	mov     rdi, 2
 	call    mallocArray
 	mov     qword [rsp+8*5], rax
@@ -718,14 +718,14 @@ main:
 	add r10,r9
 	mov r11,  [rsp+8*13]
 	mov [r11],r10
-	mov r9,  [rsp+8*6]
-	mov r8,r9
+	mov r13,  [rsp+8*6]
+	mov r12,r13
+	mov r8,r12
 	mov r9,r8
-	mov qword [rsp+8*15],r8
-	mov r8,r9
-	mov qword [rsp+8*17],r8
-	mov qword [rsp+8*16],r9
+	mov qword [rsp+8*16],r8
+	mov qword [rsp+8*17],r9
 	mov qword [rsp+8*14],r10
+	mov qword [rsp+8*15],r12
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword [rsp+8*18], rax
