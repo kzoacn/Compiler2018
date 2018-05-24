@@ -652,29 +652,33 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r15
+	push r14
 	call global_init
+	pop r14
+	pop r15
 	mov r8 , rax
 	mov r10,1
 	mov r9,r10
-	mov r12,0
-	mov r11,r12
-	mov r13,0
-	cmp r11,r13
-	mov r14, 0
-	setne r14B
 	mov qword [rsp+8*1],r8
+	mov r8,0
+	mov r11,r8
+	mov r8,0
+	cmp r11,r8
+	mov r10, 0
+	setne r10B
 	mov qword [rsp+8*2],r9
+	mov qword [rsp+8*4],r10
 	mov qword [rsp+8*3],r11
-	mov qword [rsp+8*4],r14
 	mov r8,  [rsp+8*4]
 	cmp r8, 0
-	jne L_812
+	jne L_360
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*5],r8
-	jmp L_813
+	jmp L_361
 	
-L_812:
+L_360:
 	xor rdx, rdx
 	mov r8,  [rsp+8*2]
 	mov rax, r8
@@ -685,18 +689,18 @@ L_812:
 	mov r10, rax
 	mov r11,5
 	cmp r10,r11
-	mov r12, 0
-	setl r12B
+	mov r8, 0
+	setl r8B
+	mov qword [rsp+8*7],r8
 	mov qword [rsp+8*6],r10
-	mov qword [rsp+8*7],r12
 	mov r9,  [rsp+8*7]
 	mov r8,r9
 	mov qword [rsp+8*5],r8
 	
-L_813:
+L_361:
 	mov r8,  [rsp+8*5]
 	cmp r8, 0
-	je L_814
+	je L_362
 	mov r9,t73
 	mov r8,r9
 	mov r10,r8
@@ -705,9 +709,9 @@ L_813:
 	mov rdi,[rsp+8*9] 
 	add rdi, 1 
 	call puts
-	jmp L_815
+	jmp L_363
 	
-L_814:
+L_362:
 	mov r9,t77
 	mov r8,r9
 	mov r10,r8
@@ -717,7 +721,7 @@ L_814:
 	add rdi, 1 
 	call puts
 	
-L_815:
+L_363:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

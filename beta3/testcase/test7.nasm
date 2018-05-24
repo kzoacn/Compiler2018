@@ -652,7 +652,11 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r15
+	push r14
 	call global_init
+	pop r14
+	pop r15
 	mov r8 , rax
 	mov r10,5
 	mov r9,r10
@@ -668,7 +672,7 @@ main:
 	mov qword [rsp+8*4],r8
 	mov qword [rsp+8*5],r10
 	
-L_1974:
+L_2011:
 	mov r8,  [rsp+8*5]
 	mov r9,  [rsp+8*2]
 	cmp r8,r9
@@ -677,7 +681,7 @@ L_1974:
 	mov qword [rsp+8*6],r10
 	mov r8,  [rsp+8*6]
 	cmp r8, 0
-	je L_1975
+	je L_2012
 	mov r9,  [rsp+8*4]
 	mov r8,r9
 	mov r10,  [rsp+8*5]
@@ -686,21 +690,21 @@ L_1974:
 	shl r11,4
 	add r11,r8
 	mov [r11],r10
-	mov r12,r9
-	mov r13,r10
-	add r13,1
-	shl r13,4
-	add r13,r12
-	mov r14, [r13]
-	mov r15,r14
 	mov qword [rsp+8*7],r8
-	mov r8,r15
+	mov r8,r9
+	mov r9,r10
+	add r9,1
+	shl r9,4
+	add r9,r8
+	mov qword [rsp+8*9],r8
+	mov r8, [r9]
+	mov qword [rsp+8*10],r9
+	mov r9,r8
+	mov qword [rsp+8*11],r8
+	mov r8,r9
 	mov qword [rsp+8*13],r8
+	mov qword rdi,r9
 	mov qword [rsp+8*8],r11
-	mov qword [rsp+8*9],r12
-	mov qword [rsp+8*10],r13
-	mov qword [rsp+8*11],r14
-	mov qword rdi,r15
 	mov     rdi, [rsp+8*13]
 	call    toString
 	mov     qword[rsp+8*14], rax
@@ -719,9 +723,9 @@ L_1974:
 	add r9,r10
 	mov qword [rsp+8*16],r8
 	mov qword [rsp+8*5],r9
-	jmp L_1974
+	jmp L_2011
 	
-L_1975:
+L_2012:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

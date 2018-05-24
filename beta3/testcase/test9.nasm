@@ -652,7 +652,11 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r15
+	push r14
 	call global_init
+	pop r14
+	pop r15
 	mov r8 , rax
 	mov r10,5
 	mov r9,r10
@@ -666,15 +670,18 @@ main:
 	mov r10,1
 	mov r11,r10
 	neg r11
-	mov r12,r11
-	mov r13,r8
-	mov r14,0
-	mov r15,r14
-	add r15,1
-	shl r15,4
-	add r15,r13
-	mov r9,3
-	mov [r15],r9
+	mov r9,r11
+	mov r10,r8
+	mov r11,0
+	mov qword [rsp+8*6],r9
+	mov r9,r11
+	add r9,1
+	shl r9,4
+	add r9,r10
+	mov qword [rsp+8*7],r10
+	mov r10,3
+	mov [r9],r10
+	mov qword [rsp+8*8],r9
 	mov r9,r8
 	mov r10,1
 	mov r11,r10
@@ -719,11 +726,8 @@ main:
 	mov qword [rsp+8*4],r8
 	mov qword [rsp+8*17],r9
 	mov qword [rsp+8*16],r11
-	mov qword [rsp+8*6],r12
-	mov qword [rsp+8*7],r13
-	mov qword [rsp+8*8],r15
 	
-L_1988:
+L_2025:
 	mov r8,  [rsp+8*17]
 	mov r9,  [rsp+8*2]
 	cmp r8,r9
@@ -732,7 +736,7 @@ L_1988:
 	mov qword [rsp+8*18],r10
 	mov r8,  [rsp+8*18]
 	cmp r8, 0
-	je L_1989
+	je L_2026
 	mov r9,  [rsp+8*4]
 	mov r8,r9
 	mov r10,  [rsp+8*17]
@@ -740,24 +744,24 @@ L_1988:
 	add r11,1
 	shl r11,4
 	add r11,r8
-	mov r12, [r11]
-	mov r13,2
-	cmp r12,r13
-	mov r14, 0
-	sete r14B
 	mov qword [rsp+8*19],r8
+	mov r8, [r11]
+	mov r9,2
+	cmp r8,r9
 	mov qword [rsp+8*20],r11
-	mov qword [rsp+8*21],r12
-	mov qword [rsp+8*22],r14
+	mov r11, 0
+	sete r11B
+	mov qword [rsp+8*21],r8
+	mov qword [rsp+8*22],r11
 	mov r8,  [rsp+8*22]
 	cmp r8, 0
-	je L_1992
+	je L_2029
 	mov r9,  [rsp+8*17]
 	mov r8,r9
 	mov qword [rsp+8*6],r8
-	jmp L_1989
+	jmp L_2026
 	
-L_1992:
+L_2029:
 	mov r9,  [rsp+8*17]
 	mov r8,r9
 	mov r10,1
@@ -765,9 +769,9 @@ L_1992:
 	add r9,r10
 	mov qword [rsp+8*23],r8
 	mov qword [rsp+8*17],r9
-	jmp L_1988
+	jmp L_2025
 	
-L_1989:
+L_2026:
 	mov r9,  [rsp+8*6]
 	mov r8,r9
 	mov r10,r8

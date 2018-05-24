@@ -652,13 +652,17 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r15
+	push r14
 	call global_init
+	pop r14
+	pop r15
 	mov r8 , rax
 	mov r10,t64
 	mov r9,r10
-	mov r12,t65
-	mov r11,r12
 	mov qword [rsp+8*1],r8
+	mov r8,t65
+	mov r11,r8
 	mov qword [rsp+8*2],r9
 	mov qword [rsp+8*3],r11
 	mov rdi, [rsp+8*3]
@@ -667,7 +671,7 @@ main:
 	mov qword [rsp+8*4], rax
 	mov r8,  [rsp+8*4]
 	cmp r8, 0
-	je L_1356
+	je L_904
 	mov r9,t67
 	mov r8,r9
 	mov r10,r8
@@ -676,9 +680,9 @@ main:
 	mov rdi,[rsp+8*6] 
 	add rdi, 1 
 	call puts
-	jmp L_1357
+	jmp L_905
 	
-L_1356:
+L_904:
 	mov r9,t71
 	mov r8,r9
 	mov r10,r8
@@ -688,7 +692,7 @@ L_1356:
 	add rdi, 1 
 	call puts
 	
-L_1357:
+L_905:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

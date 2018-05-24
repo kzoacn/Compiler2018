@@ -652,16 +652,22 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r15
+	push r14
 	call global_init
+	pop r14
+	pop r15
 	mov r8 , rax
 	mov r10,1
 	mov r9,r10
 	mov r11,r9
-	mov r12,r11
-	mov r13,r12
-	mov r14,0
-	mov rax,r14
+	mov qword [rsp+8*1],r8
+	mov r8,r11
 	mov qword rdi,r9
+	mov r9,r8
+	mov qword [rsp+8*4],r8
+	mov r8,0
+	mov rax,r8
 	        mov     rsp, qword [trsp]
 	leave
 	ret

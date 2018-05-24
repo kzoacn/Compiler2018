@@ -653,12 +653,12 @@ gcd:
 	mov r12, rdx
 	mov r13,0
 	cmp r12,r13
-	mov r14, 0
-	sete r14B
+	mov r9, 0
+	sete r9B
 	mov qword [rsp+8*2],r8
+	mov qword [rsp+8*6],r9
 	mov qword [rsp+8*4],r10
 	mov qword [rsp+8*5],r12
-	mov qword [rsp+8*6],r14
 	mov r8,  [rsp+8*6]
 	cmp r8, 0
 	je L_446

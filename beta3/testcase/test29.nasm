@@ -658,23 +658,23 @@ main:
 	mov r9,r10
 	mov r12,10
 	mov r11,r12
-	mov r14,2
-	mov r13,r14
-	mov r15,r13
 	mov qword [rsp+8*1],r8
-	mov r8,r11
-	mov r10,r9
-	mov qword [arg+8*2],r9
+	mov r8,2
+	mov r13,r8
+	mov r8,r13
+	mov r10,r11
 	mov qword rsi,r11
-	mov r11,1
-	mov r9,r11
-	mov r11,r15
-	mov qword [rsp+8*6],r8
+	mov r11,r9
+	mov qword [arg+8*2],r9
+	mov r12,1
+	mov r9,r12
+	mov r12,r8
+	mov qword [rsp+8*5],r8
 	mov qword [rsp+8*8],r9
-	mov qword [rsp+8*7],r10
-	mov qword [rsp+8*9],r11
+	mov qword [rsp+8*6],r10
+	mov qword [rsp+8*7],r11
+	mov qword [rsp+8*9],r12
 	mov qword rdi,r13
-	mov qword [rsp+8*5],r15
 	
 L_436:
 	mov r8,  [rsp+8*6]
@@ -734,13 +734,13 @@ L_438:
 	mov rbx, r13
 	cdq
 	idiv rbx
-	mov r14, rax
-	mov r12,r14
 	mov qword [rsp+8*9],r8
+	mov r8, rax
+	mov r12,r8
+	mov qword [rsp+8*17],r8
 	mov qword [rsp+8*15],r9
 	mov qword [rsp+8*16],r11
 	mov qword [rsp+8*6],r12
-	mov qword [rsp+8*17],r14
 	jmp L_436
 	
 L_437:

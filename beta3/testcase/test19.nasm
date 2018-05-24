@@ -652,20 +652,24 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r15
+	push r14
 	call global_init
+	pop r14
+	pop r15
 	mov r8 , rax
 	mov r10,1
 	mov r9,r10
 	cmp r9, 0
 	mov qword [rsp+8*1],r8
 	mov qword [rsp+8*2],r9
-	jne L_514
+	jne L_62
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*3],r8
-	jmp L_515
+	jmp L_63
 	
-L_514:
+L_62:
 	mov r8,1
 	mov r9,0
 	cmp r8,r9
@@ -676,10 +680,10 @@ L_514:
 	mov r8,r9
 	mov qword [rsp+8*3],r8
 	
-L_515:
+L_63:
 	mov r8,  [rsp+8*3]
 	cmp r8, 0
-	je L_516
+	je L_64
 	mov r9,t70
 	mov r8,r9
 	mov r10,r8
@@ -688,9 +692,9 @@ L_515:
 	mov rdi,[rsp+8*6] 
 	add rdi, 1 
 	call puts
-	jmp L_517
+	jmp L_65
 	
-L_516:
+L_64:
 	mov r9,t74
 	mov r8,r9
 	mov r10,r8
@@ -700,20 +704,20 @@ L_516:
 	add rdi, 1 
 	call puts
 	
-L_517:
+L_65:
 	mov r8, 0
 	mov r9,  [rsp+8*2]
 	cmp r9, 0
 	sete r8B
 	cmp r8, 0
 	mov qword [rsp+8*8],r8
-	je L_518
+	je L_66
 	mov r9,1
 	mov r8,r9
 	mov qword [rsp+8*9],r8
-	jmp L_519
+	jmp L_67
 	
-L_518:
+L_66:
 	mov r8,1
 	mov r9,0
 	cmp r8,r9
@@ -724,10 +728,10 @@ L_518:
 	mov r8,r9
 	mov qword [rsp+8*9],r8
 	
-L_519:
+L_67:
 	mov r8,  [rsp+8*9]
 	cmp r8, 0
-	je L_520
+	je L_68
 	mov r9,t84
 	mov r8,r9
 	mov r10,r8
@@ -736,9 +740,9 @@ L_519:
 	mov rdi,[rsp+8*11] 
 	add rdi, 1 
 	call puts
-	jmp L_521
+	jmp L_69
 	
-L_520:
+L_68:
 	mov r9,t88
 	mov r8,r9
 	mov r10,r8
@@ -748,18 +752,18 @@ L_520:
 	add rdi, 1 
 	call puts
 	
-L_521:
+L_69:
 	mov r9,0
 	mov r8,r9
 	cmp r8, 0
 	mov qword [rsp+8*2],r8
-	jne L_522
+	jne L_70
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*13],r8
-	jmp L_523
+	jmp L_71
 	
-L_522:
+L_70:
 	mov r8,1
 	mov r9,0
 	cmp r8,r9
@@ -770,16 +774,16 @@ L_522:
 	mov r8,r9
 	mov qword [rsp+8*13],r8
 	
-L_523:
+L_71:
 	mov r8,  [rsp+8*13]
 	cmp r8, 0
-	jne L_524
+	jne L_72
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*15],r8
-	jmp L_525
+	jmp L_73
 	
-L_524:
+L_72:
 	mov r8,2
 	mov r9,4
 	cmp r8,r9
@@ -790,10 +794,10 @@ L_524:
 	mov r8,r9
 	mov qword [rsp+8*15],r8
 	
-L_525:
+L_73:
 	mov r8,  [rsp+8*15]
 	cmp r8, 0
-	je L_526
+	je L_74
 	mov r9,t103
 	mov r8,r9
 	mov r10,r8
@@ -802,9 +806,9 @@ L_525:
 	mov rdi,[rsp+8*17] 
 	add rdi, 1 
 	call puts
-	jmp L_527
+	jmp L_75
 	
-L_526:
+L_74:
 	mov r9,t107
 	mov r8,r9
 	mov r10,r8
@@ -814,7 +818,7 @@ L_526:
 	add rdi, 1 
 	call puts
 	
-L_527:
+L_75:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

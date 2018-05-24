@@ -693,10 +693,10 @@ L_466:
 	shl r13,4
 	add r13,r10
 	mov [r13],r8
-	mov r14,1
-	mov r12,r12
-	add r12,r14
 	mov qword [rsp+8*5],r8
+	mov r8,1
+	mov r12,r12
+	add r12,r8
 	mov qword [rsp+8*8],r10
 	mov qword [rsp+8*6],r12
 	mov qword [rsp+8*9],r13
@@ -729,18 +729,17 @@ L_469:
 	add r11,r8
 	mov r12, [r11]
 	mov r13,  [rsp+8*10]
-	mov r14,r13
-	add r14,r12
-	mov r13,r14
-	mov r15,1
-	mov r10,r10
-	add r10,r15
 	mov qword [rsp+8*12],r8
+	mov r8,r13
+	add r8,r12
+	mov r13,r8
+	mov r8,1
+	mov r10,r10
+	add r10,r8
 	mov qword [rsp+8*6],r10
 	mov qword [rsp+8*13],r11
 	mov qword [rsp+8*14],r12
 	mov qword [rsp+8*10],r13
-	mov qword [rsp+8*15],r14
 	jmp L_469
 	
 L_470:

@@ -652,7 +652,11 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r15
+	push r14
 	call global_init
+	pop r14
+	pop r15
 	mov r8 , rax
 	mov r10,5
 	mov r9,r10
@@ -692,8 +696,8 @@ main:
 	add r10,r8
 	mov r11,  [rsp+8*2]
 	mov [r10],r11
-	mov r12,1
-	mov r10,r12
+	mov r9,1
+	mov r10,r9
 	add r10,1
 	shl r10,4
 	add r10,r8
@@ -717,20 +721,20 @@ main:
 	add r8,r9
 	mov r11,0
 	mov [r8],r11
-	mov r12,1
-	mov r8,r12
+	mov r10,1
+	mov r8,r10
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r13,0
-	mov [r8],r13
-	mov r14,2
-	mov r8,r14
+	mov r10,0
+	mov [r8],r10
+	mov r10,2
+	mov r8,r10
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r15,1
-	mov [r8],r15
+	mov r10,1
+	mov [r8],r10
 	mov qword [rsp+8*11],r8
 	mov     rsi, [rsp+8*10]
 	mov     rdi, [rsp+8*4]
@@ -754,20 +758,20 @@ main:
 	add r8,r9
 	mov r11,0
 	mov [r8],r11
-	mov r12,1
-	mov r8,r12
+	mov r10,1
+	mov r8,r10
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r13,0
-	mov [r8],r13
-	mov r14,2
-	mov r8,r14
+	mov r10,0
+	mov [r8],r10
+	mov r10,2
+	mov r8,r10
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r15,1
-	mov [r8],r15
+	mov r10,1
+	mov [r8],r10
 	mov r10,3
 	mov r8,r10
 	add r8,1
@@ -798,20 +802,20 @@ main:
 	add r8,r9
 	mov r11,0
 	mov [r8],r11
-	mov r12,1
-	mov r8,r12
+	mov r10,1
+	mov r8,r10
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r13,0
-	mov [r8],r13
-	mov r14,2
-	mov r8,r14
+	mov r10,0
+	mov [r8],r10
+	mov r10,2
+	mov r8,r10
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r15,1
-	mov [r8],r15
+	mov r10,1
+	mov [r8],r10
 	mov r10,3
 	mov r8,r10
 	add r8,1
@@ -849,20 +853,20 @@ main:
 	add r8,r9
 	mov r11,0
 	mov [r8],r11
-	mov r12,1
-	mov r8,r12
+	mov r10,1
+	mov r8,r10
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r13,0
-	mov [r8],r13
-	mov r14,2
-	mov r8,r14
+	mov r10,0
+	mov [r8],r10
+	mov r10,2
+	mov r8,r10
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r15,1
-	mov [r8],r15
+	mov r10,1
+	mov [r8],r10
 	mov r10,3
 	mov r8,r10
 	add r8,1
@@ -904,20 +908,20 @@ main:
 	add r8,r9
 	mov r11,0
 	mov [r8],r11
-	mov r12,1
-	mov r8,r12
+	mov r10,1
+	mov r8,r10
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r13,0
-	mov [r8],r13
-	mov r14,2
-	mov r8,r14
+	mov r10,0
+	mov [r8],r10
+	mov r10,2
+	mov r8,r10
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r15,1
-	mov [r8],r15
+	mov r10,1
+	mov [r8],r10
 	mov r10,3
 	mov r8,r10
 	add r8,1

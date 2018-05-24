@@ -690,23 +690,24 @@ L_211:
 	mov r13,1
 	mov r12,r12
 	add r12,r13
-	mov r15,  [rsp+8*4]
-	mov r14,r15
 	mov qword [rsp+8*5],r12
-	mov r12,r11
-	add r12,1
-	shl r12,4
-	add r12,r14
-	mov [r12],r10
-	mov r10,r9
-	mov qword [rsp+8*12],r10
-	mov r10,1
+	mov r13,  [rsp+8*4]
+	mov r12,r13
+	mov r8,r11
+	add r8,1
+	shl r8,4
+	add r8,r12
+	mov [r8],r10
+	mov qword [rsp+8*11],r8
+	mov r8,r9
+	mov qword [rsp+8*12],r8
+	mov r8,1
 	mov r9,r9
-	add r9,r10
+	add r9,r8
 	mov qword [rsp+8*6],r9
+	mov qword [rsp+8*8],r10
 	mov qword [rsp+8*9],r11
-	mov qword [rsp+8*11],r12
-	mov qword [rsp+8*10],r14
+	mov qword [rsp+8*10],r12
 	jmp L_211
 	
 L_212:
@@ -733,12 +734,12 @@ L_214:
 	add r11,r8
 	mov r12, [r11]
 	mov r13,r12
-	mov r14,r13
 	mov qword [rsp+8*14],r8
+	mov r8,r13
+	mov qword [rsp+8*18],r8
 	mov qword [rsp+8*15],r11
 	mov qword [rsp+8*16],r12
 	mov qword rdi,r13
-	mov qword [rsp+8*18],r14
 	mov     rdi, [rsp+8*18]
 	call    toString
 	mov     qword[rsp+8*19], rax

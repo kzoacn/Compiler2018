@@ -652,7 +652,11 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r15
+	push r14
 	call global_init
+	pop r14
+	pop r15
 	mov r8 , rax
 	mov r10,5
 	mov r9,r10
@@ -674,9 +678,9 @@ main:
 	add r11,1
 	shl r11,4
 	add r11,r8
-	mov r12,  [rsp+8*5]
-	mov [r11],r12
 	mov qword [rsp+8*6],r8
+	mov r8,  [rsp+8*5]
+	mov [r11],r8
 	mov qword [rsp+8*7],r11
 	mov     rdi, 2
 	call    mallocArray
@@ -690,13 +694,13 @@ main:
 	add r8,r9
 	mov r11,1
 	mov [r8],r11
-	mov r12,1
-	mov r8,r12
+	mov r10,1
+	mov r8,r10
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r13,0
-	mov [r8],r13
+	mov r10,0
+	mov [r8],r10
 	mov qword [rsp+8*9],r8
 	mov     rsi, [rsp+8*8]
 	mov     rdi, [rsp+8*4]
@@ -720,20 +724,20 @@ main:
 	add r8,r9
 	mov r11,1
 	mov [r8],r11
-	mov r12,1
-	mov r8,r12
+	mov r10,1
+	mov r8,r10
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r13,0
-	mov [r8],r13
-	mov r14,2
-	mov r8,r14
+	mov r10,0
+	mov [r8],r10
+	mov r10,2
+	mov r8,r10
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r15,2
-	mov [r8],r15
+	mov r10,2
+	mov [r8],r10
 	mov qword [rsp+8*13],r8
 	mov     rsi, [rsp+8*12]
 	mov     rdi, [rsp+8*4]
@@ -754,20 +758,20 @@ main:
 	add r8,r9
 	mov r11,1
 	mov [r8],r11
-	mov r12,1
-	mov r8,r12
+	mov r10,1
+	mov r8,r10
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r13,0
-	mov [r8],r13
-	mov r14,2
-	mov r8,r14
+	mov r10,0
+	mov [r8],r10
+	mov r10,2
+	mov r8,r10
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r15,2
-	mov [r8],r15
+	mov r10,2
+	mov [r8],r10
 	mov qword [rsp+8*16],r8
 	mov     rsi, [rsp+8*15]
 	mov     rdi, [rsp+8*4]

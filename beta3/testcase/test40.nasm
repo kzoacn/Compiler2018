@@ -695,10 +695,10 @@ L_493:
 	idiv rbx
 	mov r13, rdx
 	mov r8,r13
-	mov r14,1
-	mov r15,r8
-	add r15,r14
-	mov r9,r15
+	mov r9,1
+	mov r10,r8
+	add r10,r9
+	mov r9,r10
 	mov r10,r9
 	mov qword [rsp+8*12],r9
 	mov r11,  [gbl+8*5]
@@ -719,7 +719,6 @@ L_493:
 	mov qword [rsp+8*13],r10
 	mov qword [rsp+8*6],r12
 	mov qword [rsp+8*15],r13
-	mov qword [rsp+8*11],r15
 	jmp L_493
 	
 L_494:
@@ -790,14 +789,14 @@ L_485:
 	shl r11,4
 	add r11,r8
 	mov r13, [r11]
-	mov r14,0
-	cmp r13,r14
-	mov r15, 0
-	setne r15B
 	mov qword [rsp+8*27],r8
+	mov r8,0
+	cmp r13,r8
 	mov qword [rsp+8*28],r11
+	mov r11, 0
+	setne r11B
+	mov qword [rsp+8*30],r11
 	mov qword [rsp+8*29],r13
-	mov qword [rsp+8*30],r15
 	mov r8,  [rsp+8*30]
 	cmp r8, 0
 	je L_487
@@ -875,12 +874,12 @@ L_490:
 	add r11,r10
 	mov r13,  [rsp+8*24]
 	mov r12,r13
-	mov r14,r11
+	mov r10,r11
 	mov qword [rsp+8*41],r8
+	mov qword rdi,r10
 	mov qword [rsp+8*42],r11
 	mov qword rsi,r12
 	mov qword [rsp+8*24],r13
-	mov qword rdi,r14
 	call dp
 	mov r8 , rax
 	mov r9,  [rsp+8*41]
@@ -889,18 +888,17 @@ L_490:
 	mov r11,r10
 	mov r13,  [rsp+8*38]
 	mov r12,r13
-	mov r14,r12
-	mov r15,r11
-	cmp r14,r15
 	mov qword [rsp+8*43],r8
-	mov r8, 0
-	setg r8B
-	mov qword [rsp+8*47],r8
-	mov qword [rsp+8*44],r10
+	mov r8,r12
+	mov r9,r11
+	cmp r8,r9
+	mov r10, 0
+	setg r10B
+	mov qword [rsp+8*45],r8
+	mov qword [rsp+8*46],r9
+	mov qword [rsp+8*47],r10
 	mov qword rsi,r11
 	mov qword rdi,r12
-	mov qword [rsp+8*45],r14
-	mov qword [rsp+8*46],r15
 	mov r8,  [rsp+8*47]
 	cmp r8, 0
 	je L_503

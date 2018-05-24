@@ -105,6 +105,7 @@ class Variable{
     int constValue;
     VariableType type;
     boolean isTemp;
+    int register;
     Variable(String name,VariableType type){
         this.name=name;
         this.type=type;

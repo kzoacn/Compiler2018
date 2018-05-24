@@ -19,7 +19,7 @@ class ExecTest {
 
     @Test
     void testTo40()throws Exception{
-        for(int i=0;i<=40;i++){
+        for(int i=0;i<=10;i++){
             String name="test"+Integer.toString(i);
             test(name);
         }
@@ -292,6 +292,10 @@ class ExecTest {
     @Test @Disabled
     void test96()throws Exception{
         test("test96");
+    }
+    @Test
+    void test97()throws Exception{
+        test("test97");
     }
 
     void test(String name) throws Exception{

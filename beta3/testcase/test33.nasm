@@ -658,15 +658,15 @@ main:
 	mov r9,r10
 	mov r12,1
 	mov r11,r12
-	mov r14,0
-	mov r13,r14
-	mov r15,10
-	cmp r13,r15
 	mov qword [rsp+8*1],r8
-	mov r8, 0
-	sete r8B
-	mov qword [rsp+8*5],r8
+	mov r8,0
+	mov r13,r8
+	mov r8,10
+	cmp r13,r8
+	mov r10, 0
+	sete r10B
 	mov qword [rsp+8*2],r9
+	mov qword [rsp+8*5],r10
 	mov qword [rsp+8*3],r11
 	mov qword [rsp+8*4],r13
 	mov r8,  [rsp+8*5]

@@ -115,6 +115,8 @@ public class IRTranslator {
                 return new StringBuffer("rsi");
             return new StringBuffer("[arg+8*" + Integer.toString(variable.constValue) + "]");
         }
+        if(variable.register>0&&variable.register<=2)
+           return new StringBuffer(" r"+Integer.toString(16-variable.register));
         if(symbolMap.globalVariableMap.containsKey(variable.name))
             return new StringBuffer("[gbl+8*"+Integer.toString(variableIndex.get(variable))+"]");
         if(variableIndex.containsKey(variable))
@@ -215,6 +217,7 @@ public class IRTranslator {
     static boolean[] ban=new boolean[16];
     static int[] lastUsedTime=new int[16];
     static int russ=10;
+    static final int registerNum=4;
     void kick(int x){
 
         if(writeBack[x]) {
@@ -226,18 +229,18 @@ public class IRTranslator {
         occ[x]=null;
     }
     void kick(Variable var){
-        for(int i=8;i<16;i++){
+        for(int i=8;i<8+registerNum;i++){
             if(!free[i]&&occ[i].equals(var))
                 kick(i);
         }
     }
     void kickAll(){
-        for(int i=0;i<16;i++)if(!free[i])
+        for(int i=0;i<8+registerNum;i++)if(!free[i])
             kick(i);
     }
     void kickLocal(){
         //symbolMap.globalVariableMap.containsKey(variable.name)
-        for(int i=0;i<16;i++)if(!free[i]){
+        for(int i=0;i<8+registerNum;i++)if(!free[i]){
             if(symbolMap.globalVariableMap.containsKey(occ[i].name)){
                 kick(i);
             }else{
@@ -247,13 +250,13 @@ public class IRTranslator {
         }
     }
     void clearAll(){
-        for(int i=0;i<16;i++){
+        for(int i=0;i<8+registerNum;i++){
             free[i]=true;
         }
     }
 
     void unlock(){
-        for(int i=8;i<16;i++){
+        for(int i=8;i<8+registerNum;i++){
             ban[i]=false;
         }
     }
@@ -273,7 +276,7 @@ public class IRTranslator {
 
         int mn=2000000000;
         int mx=-1;
-        for(int i=8;i<16;i++){
+        for(int i=8;i<8+registerNum;i++){
             if(ban[i])continue;
             if(variableLastIndex.get(occ[i])<currentLine){
                 if(occ[i].isTemp)
@@ -311,7 +314,7 @@ public class IRTranslator {
         lastUsedTime[i]=currentLine;
     }
     boolean inReg(Variable var){
-        for(int i=8;i<16;i++){
+        for(int i=8;i<8+registerNum;i++){
             if(!free[i]&&occ[i].equals(var)) {
                 return true;
             }
@@ -319,7 +322,7 @@ public class IRTranslator {
         return false;
     }
     boolean fullReg(){
-        for(int i=8;i<16;i++){
+        for(int i=8;i<8+registerNum;i++){
             if(free[i]) {
                 return false;
             }
@@ -328,7 +331,10 @@ public class IRTranslator {
     }
 
     int getRegister(Variable var,boolean read){
-        for(int i=8;i<16;i++){
+        if(var.register>0){
+            return 16-var.register;
+        }
+        for(int i=8;i<8+registerNum;i++){
             if(!free[i]&&occ[i].equals(var)) {
                 ban[i]=true;
                 lastUsedTime[i]=currentLine;
@@ -337,7 +343,7 @@ public class IRTranslator {
                 return i;
             }
         }
-        for(int i=8;i<16;i++){
+        for(int i=8;i<8+registerNum;i++){
             if(free[i]) {
                 put(i,var,read);
                 return i;
@@ -361,7 +367,7 @@ public class IRTranslator {
     void run(String fileName)throws Exception{
         IROptimizer irOptimizer=new IROptimizer();
         ir=irOptimizer.optimize(ir);
-        for(int i=0;i<16;i++) {
+        for(int i=0;i<8+registerNum;i++) {
             free[i] = true;
             ban[i] = false;
             lastUsedTime[i]=0;
@@ -651,7 +657,12 @@ public class IRTranslator {
                     break;
                 case call:
                     kickAll();
+
+                    text.append(new StringBuffer("push r15"+"\n\t"));
+                    text.append(new StringBuffer("push r14"+"\n\t"));
                     text.append(new StringBuffer("call "+name+"\n\t"));
+                    text.append(new StringBuffer("pop r14"+"\n\t"));
+                    text.append(new StringBuffer("pop r15"+"\n\t"));
                     clearAll();
                     text.append(new StringBuffer("mov "+writeReg(dest)+" , rax\n\t"));
 
