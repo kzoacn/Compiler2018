@@ -3,7 +3,7 @@ cat > test.mx
 java -classpath ./lib/antlr-4.7.1-complete.jar:./bin cn.kzoacn.Builder
 
 cat test.mx | grep "get" >hasget
-if diff empty hasget; then
+if diff empty hasget >null; then
 	nasm -felf64 test.nasm 
 	gcc -static test.o 
 	./a.out > ans.out
