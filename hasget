@@ -1,1 +1,1 @@
-	n = getString().parseInt();
+	int n = getInt();

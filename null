@@ -1,2 +1,2 @@
 0a1
-> 	n = getString().parseInt();
+> 	int n = getInt();
