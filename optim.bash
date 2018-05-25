@@ -1,5 +1,17 @@
-set -e
 cd "$(dirname "$0")"
 cat > test.mx
 java -classpath ./lib/antlr-4.7.1-complete.jar:./bin cn.kzoacn.Builder
-cat test.nasm
+
+cat test.mx | grep "get" >hasget
+if diff empty hasget; then
+	nasm -felf64 test.nasm 
+	gcc -static test.o 
+	./a.out > ans.out
+	./inputbuilder < ans.out > tmp.c
+	./c2nasm.sh tmp.c 
+	cat tmp.c.nasm
+else
+	cat test.nasm
+fi
+
+

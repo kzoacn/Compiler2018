@@ -32,11 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IROptimizer.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="IROptimizer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IROptimizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="263" column="28" selection-start-line="263" selection-start-column="28" selection-end-line="263" selection-end-column="28" />
+            <state relative-caret-position="419">
+              <caret line="154" column="29" selection-start-line="154" selection-start-column="29" selection-end-line="154" selection-end-column="29" />
               <folding>
                 <element signature="e#7697#7726#0" expanded="true" />
                 <element signature="e#7781#7799#0" expanded="true" />
@@ -49,7 +49,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IRTranslator.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IRTranslator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="214">
@@ -150,9 +150,9 @@
       <find>getregister</find>
       <find>isConst</find>
       <find>varName</find>
-      <find>registernu</find>
       <find>getRegister</find>
       <find>registern</find>
+      <find>registernu</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -168,8 +168,8 @@
         <option value="$PROJECT_DIR$/src/cn/kzoacn/ConstantPool.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/Main.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/ExecTest.java" />
-        <option value="$PROJECT_DIR$/src/cn/kzoacn/IROptimizer.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java" />
+        <option value="$PROJECT_DIR$/src/cn/kzoacn/IROptimizer.java" />
       </list>
     </option>
   </component>
@@ -389,12 +389,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ExecTest - 2018.05.24 at 17h 15m 33s.xml">
-      <configuration name="ExecTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExecTest_test79 - 2018.05.24 at 17h 15m 39s.xml">
-      <configuration name="ExecTest.test79" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ExecTest_test79 - 2018.05.24 at 17h 15m 59s.xml">
       <configuration name="ExecTest.test79" configurationId="JUnit" />
     </history-entry>
@@ -419,10 +413,15 @@
     <history-entry file="ExecTest_test97 - 2018.05.24 at 17h 34m 37s.xml">
       <configuration name="ExecTest.test97" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ExecTest - 2018.05.24 at 17h 43m 14s.xml">
+      <configuration name="ExecTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecTest - 2018.05.24 at 17h 43m 49s.xml">
+      <configuration name="ExecTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -442,7 +441,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.14636752" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.14636752" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="4" side_tool="true" weight="0.3296875" />
@@ -870,21 +869,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IROptimizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="263" column="28" selection-start-line="263" selection-start-column="28" selection-end-line="263" selection-end-column="28" />
-          <folding>
-            <element signature="e#7697#7726#0" expanded="true" />
-            <element signature="e#7781#7799#0" expanded="true" />
-            <element signature="e#8431#8441#0" expanded="true" />
-            <element signature="e#8664#8672#0" expanded="true" />
-            <element signature="e#8698#8708#0" expanded="true" />
-            <element signature="e#9916#9933#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
@@ -897,6 +881,21 @@
             <element signature="e#10806#10807#0" expanded="true" />
             <element signature="e#10840#10841#0" expanded="true" />
             <element signature="e#10888#10889#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IROptimizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="154" column="29" selection-start-line="154" selection-start-column="29" selection-end-line="154" selection-end-column="29" />
+          <folding>
+            <element signature="e#7697#7726#0" expanded="true" />
+            <element signature="e#7781#7799#0" expanded="true" />
+            <element signature="e#8431#8441#0" expanded="true" />
+            <element signature="e#8664#8672#0" expanded="true" />
+            <element signature="e#8698#8708#0" expanded="true" />
+            <element signature="e#9916#9933#0" expanded="true" />
           </folding>
         </state>
       </provider>
