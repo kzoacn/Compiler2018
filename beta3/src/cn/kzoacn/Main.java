@@ -2121,8 +2121,8 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         String falseLabel=nextLabel();
         String endLabel=nextLabel();
         VariableType variableType=symbolMap.operate(ir0.last.dest.type,"||",ir1.last.dest.type);
-        Variable temp;
-        temp=nextVariable(variableType);
+        Variable temp=buildVariable(ir0.last.dest,"||",ir1.last.dest);
+
 
         ir.concat(ir0);
         Quad quad=new Quad(OpCode.jz,ir0.last.dest,Variable.empty,Variable.empty);
@@ -2144,7 +2144,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
 
         String trueLabel=nextLabel();
         String endLabel=nextLabel();
-        Variable temp = nextVariable(symbolMap.operate(ir0.last.dest.type,"&&",ir1.last.dest.type) );
+        Variable temp=buildVariable(ir0.last.dest,"&&",ir1.last.dest);
         temp.isTemp=true;
         ir.concat(ir0);
         Quad quad=new Quad(OpCode.jnz,ir0.last.dest,Variable.empty,Variable.empty);
@@ -2162,7 +2162,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
     @Override public IR visitRelationOperator(MxstarParser.RelationOperatorContext ctx) {
         IR ir0=visit(ctx.expression(0));
         IR ir1=visit(ctx.expression(1));
-        Variable temp = nextVariable(symbolMap.operate(ir0.last.dest.type,ctx.op.getText(),ir1.last.dest.type) );
+        Variable temp=buildVariable(ir0.last.dest,ctx.op.getText(),ir1.last.dest);
         temp.isTemp=true;
         if(ir0.last.dest.type.name.contains("string")){
             OpCode opCode = OpCode.strless;

@@ -676,7 +676,7 @@ main:
 	mov qword [rsp+8*3],r11
 	mov qword [rsp+8*4],r13
 	
-L_1209:
+L_1221:
 	mov r8,  [rsp+8*4]
 	mov r9,5
 	cmp r8,r9
@@ -685,7 +685,7 @@ L_1209:
 	mov qword [rsp+8*6],r10
 	mov r8,  [rsp+8*6]
 	cmp r8, 0
-	je L_1210
+	je L_1222
 	mov r8,  [rsp+8*2]
 	mov r9,  [rsp+8*5]
 	mov r10,r8
@@ -785,9 +785,9 @@ L_1209:
 	add r9,r10
 	mov qword [rsp+8*29],r8
 	mov qword [rsp+8*4],r9
-	jmp L_1209
+	jmp L_1221
 	
-L_1210:
+L_1222:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

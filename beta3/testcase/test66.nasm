@@ -640,14 +640,14 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 152
+	sub    rsp, 136
 	mov     rax, 536870912
         cdqe
         mov     rdi, rax
         call    malloc
         mov     edx, dword 536870912
         movsxd  rdx, edx
-        sub     rdx, 2136
+        sub     rdx, 2120
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
@@ -675,7 +675,7 @@ main:
 	jne L_360
 	mov r9,0
 	mov r8,r9
-	mov qword [rsp+8*5],r8
+	mov qword [rsp+8*4],r8
 	jmp L_361
 	
 L_360:
@@ -689,35 +689,34 @@ L_360:
 	mov r10, rax
 	mov r11,5
 	cmp r10,r11
-	mov r12, 0
-	setl r12B
-	mov qword [rsp+8*6],r10
-	mov qword [rsp+8*7],r12
-	mov r9,  [rsp+8*7]
+	mov r10, 0
+	setl r10B
+	mov qword [rsp+8*5],r10
+	mov r9,  [rsp+8*5]
 	mov r8,r9
-	mov qword [rsp+8*5],r8
+	mov qword [rsp+8*4],r8
 	
 L_361:
-	mov r8,  [rsp+8*5]
+	mov r8,  [rsp+8*4]
 	cmp r8, 0
 	je L_362
-	mov r9,t73
+	mov r9,t71
 	mov r8,r9
 	mov r10,r8
 	mov qword rdi,r8
-	mov qword [rsp+8*9],r10
-	mov rdi,[rsp+8*9] 
+	mov qword [rsp+8*7],r10
+	mov rdi,[rsp+8*7] 
 	add rdi, 1 
 	call puts
 	jmp L_363
 	
 L_362:
-	mov r9,t77
+	mov r9,t75
 	mov r8,r9
 	mov r10,r8
 	mov qword rdi,r8
-	mov qword [rsp+8*10],r10
-	mov rdi,[rsp+8*10] 
+	mov qword [rsp+8*8],r10
+	mov rdi,[rsp+8*8] 
 	add rdi, 1 
 	call puts
 	
@@ -731,14 +730,14 @@ L_363:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 152
-	mov r8,  [rsp+8*11]
+	sub    rsp, 136
+	mov r8,  [rsp+8*9]
 	mov rax,r8
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2136
+gbl:         resb   2120
 buff.1788:
         resb    256
 arg:
@@ -759,10 +758,10 @@ GS_31:
 GS_32:
 	db 25H, 73H, 00H
 	
-t73:
-	 db 5,"error" ,0
-
-t77:
+t75:
 	 db 5,"logic" ,0
+
+t71:
+	 db 5,"error" ,0
 
 

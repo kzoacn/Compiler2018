@@ -722,7 +722,7 @@ main:
 	mov qword [rsp+8*14],r11
 	mov qword [rsp+8*6],r12
 	
-L_2014:
+L_2040:
 	mov r8,  [rsp+8*15]
 	mov r9,  [rsp+8*2]
 	cmp r8,r9
@@ -731,25 +731,27 @@ L_2014:
 	mov qword [rsp+8*16],r10
 	mov r8,  [rsp+8*16]
 	cmp r8, 0
-	je L_2015
+	je L_2041
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*17],r8
 	
-L_2017:
+L_2043:
 	mov r8,  [rsp+8*17]
 	mov r9,1
 	mov r10,r8
 	add r10,r9
 	mov r11,  [rsp+8*2]
 	cmp r10,r11
-	mov r12, 0
-	setl r12B
+	mov r10, 0
+	setl r10B
 	mov qword [rsp+8*18],r10
-	mov qword [rsp+8*19],r12
 	mov r8,  [rsp+8*19]
-	cmp r8, 0
-	je L_2018
+	add r8,r8
+	mov r9,  [rsp+8*18]
+	cmp r9, 0
+	mov qword [rsp+8*19],r8
+	je L_2044
 	mov r9,  [rsp+8*4]
 	mov r8,r9
 	mov r10,  [rsp+8*17]
@@ -779,7 +781,7 @@ L_2017:
 	mov qword [rsp+8*25],r13
 	mov r8,  [rsp+8*27]
 	cmp r8, 0
-	je L_2021
+	je L_2047
 	mov r9,  [rsp+8*4]
 	mov r8,r9
 	mov r10,  [rsp+8*17]
@@ -826,7 +828,7 @@ L_2017:
 	mov qword [rsp+8*40],r12
 	mov qword [rsp+8*31],r13
 	
-L_2021:
+L_2047:
 	mov r9,  [rsp+8*17]
 	mov r8,r9
 	mov r10,1
@@ -834,9 +836,9 @@ L_2021:
 	add r9,r10
 	mov qword [rsp+8*41],r8
 	mov qword [rsp+8*17],r9
-	jmp L_2017
+	jmp L_2043
 	
-L_2018:
+L_2044:
 	mov r9,  [rsp+8*15]
 	mov r8,r9
 	mov r10,1
@@ -844,14 +846,14 @@ L_2018:
 	add r9,r10
 	mov qword [rsp+8*42],r8
 	mov qword [rsp+8*15],r9
-	jmp L_2014
+	jmp L_2040
 	
-L_2015:
+L_2041:
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*15],r8
 	
-L_2022:
+L_2048:
 	mov r8,  [rsp+8*15]
 	mov r9,  [rsp+8*2]
 	cmp r8,r9
@@ -860,7 +862,7 @@ L_2022:
 	mov qword [rsp+8*43],r10
 	mov r8,  [rsp+8*43]
 	cmp r8, 0
-	je L_2023
+	je L_2049
 	mov r9,  [rsp+8*4]
 	mov r8,r9
 	mov r10,  [rsp+8*15]
@@ -894,9 +896,9 @@ L_2022:
 	add r9,r10
 	mov qword [rsp+8*51],r8
 	mov qword [rsp+8*15],r9
-	jmp L_2022
+	jmp L_2048
 	
-L_2023:
+L_2049:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

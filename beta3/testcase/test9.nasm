@@ -727,7 +727,7 @@ main:
 	mov qword [rsp+8*6],r12
 	mov qword [rsp+8*7],r13
 	
-L_2025:
+L_2051:
 	mov r8,  [rsp+8*17]
 	mov r9,  [rsp+8*2]
 	cmp r8,r9
@@ -736,7 +736,7 @@ L_2025:
 	mov qword [rsp+8*18],r10
 	mov r8,  [rsp+8*18]
 	cmp r8, 0
-	je L_2026
+	je L_2052
 	mov r9,  [rsp+8*4]
 	mov r8,r9
 	mov r10,  [rsp+8*17]
@@ -755,13 +755,13 @@ L_2025:
 	mov qword [rsp+8*21],r12
 	mov r8,  [rsp+8*22]
 	cmp r8, 0
-	je L_2029
+	je L_2055
 	mov r9,  [rsp+8*17]
 	mov r8,r9
 	mov qword [rsp+8*6],r8
-	jmp L_2026
+	jmp L_2052
 	
-L_2029:
+L_2055:
 	mov r9,  [rsp+8*17]
 	mov r8,r9
 	mov r10,1
@@ -769,9 +769,9 @@ L_2029:
 	add r9,r10
 	mov qword [rsp+8*23],r8
 	mov qword [rsp+8*17],r9
-	jmp L_2025
+	jmp L_2051
 	
-L_2026:
+L_2052:
 	mov r9,  [rsp+8*6]
 	mov r8,r9
 	mov r10,r8

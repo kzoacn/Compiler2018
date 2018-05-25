@@ -640,14 +640,14 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 560
+	sub    rsp, 552
 	mov     rax, 536870912
         cdqe
         mov     rdi, rax
         call    malloc
         mov     edx, dword 536870912
         movsxd  rdx, edx
-        sub     rdx, 2544
+        sub     rdx, 2536
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
@@ -828,12 +828,14 @@ L_46:
 	add r10,r9
 	mov r11,  [rsp+8*2]
 	cmp r10,r11
-	mov r12, 0
-	setl r12B
+	mov r10, 0
+	setl r10B
 	mov qword [rsp+8*28],r10
-	mov qword [rsp+8*29],r12
-	mov r8,  [rsp+8*29]
-	cmp r8, 0
+	mov r8,  [rsp+8*25]
+	add r8,r8
+	mov r9,  [rsp+8*28]
+	cmp r9, 0
+	mov qword [rsp+8*25],r8
 	je L_47
 	mov r9,  [rsp+8*5]
 	mov r8,r9
@@ -844,10 +846,10 @@ L_46:
 	add r11,r8
 	mov r12, [r11]
 	mov r13,1
-	mov qword [rsp+8*30],r8
+	mov qword [rsp+8*29],r8
 	mov r8,r10
 	add r8,r13
-	mov qword [rsp+8*31],r11
+	mov qword [rsp+8*30],r11
 	mov r11,r9
 	mov r13,r8
 	add r13,1
@@ -855,14 +857,14 @@ L_46:
 	add r13,r11
 	mov r8, [r13]
 	cmp r12,r8
-	mov qword [rsp+8*34],r11
+	mov qword [rsp+8*33],r11
 	mov r11, 0
 	setg r11B
-	mov qword [rsp+8*36],r8
-	mov qword [rsp+8*37],r11
-	mov qword [rsp+8*32],r12
-	mov qword [rsp+8*35],r13
-	mov r8,  [rsp+8*37]
+	mov qword [rsp+8*35],r8
+	mov qword [rsp+8*36],r11
+	mov qword [rsp+8*31],r12
+	mov qword [rsp+8*34],r13
+	mov r8,  [rsp+8*36]
 	cmp r8, 0
 	je L_50
 	mov r9,  [rsp+8*5]
@@ -874,42 +876,42 @@ L_46:
 	add r11,r8
 	mov r12, [r11]
 	mov r13,r12
-	mov qword [rsp+8*38],r8
+	mov qword [rsp+8*37],r8
 	mov r8,1
-	mov qword [rsp+8*39],r11
+	mov qword [rsp+8*38],r11
 	mov r11,r10
 	add r11,r8
 	mov r8,r9
-	mov qword [rsp+8*40],r12
+	mov qword [rsp+8*39],r12
 	mov r12,r11
 	add r12,1
 	shl r12,4
 	add r12,r8
-	mov qword [rsp+8*43],r8
+	mov qword [rsp+8*42],r8
 	mov r8, [r12]
 	mov r11,r9
-	mov qword [rsp+8*44],r12
+	mov qword [rsp+8*43],r12
 	mov r12,r10
 	add r12,1
 	shl r12,4
 	add r12,r11
 	mov [r12],r8
-	mov qword [rsp+8*45],r8
+	mov qword [rsp+8*44],r8
 	mov r8,1
-	mov qword [rsp+8*46],r11
+	mov qword [rsp+8*45],r11
 	mov r11,r10
 	add r11,r8
 	mov r8,r9
-	mov qword [rsp+8*47],r12
+	mov qword [rsp+8*46],r12
 	mov r12,r11
 	add r12,1
 	shl r12,4
 	add r12,r8
 	mov [r12],r13
-	mov qword [rsp+8*49],r8
-	mov qword [rsp+8*48],r11
-	mov qword [rsp+8*50],r12
-	mov qword [rsp+8*41],r13
+	mov qword [rsp+8*48],r8
+	mov qword [rsp+8*47],r11
+	mov qword [rsp+8*49],r12
+	mov qword [rsp+8*40],r13
 	
 L_50:
 	mov r9,  [rsp+8*14]
@@ -917,7 +919,7 @@ L_50:
 	mov r10,1
 	mov r9,r9
 	add r9,r10
-	mov qword [rsp+8*51],r8
+	mov qword [rsp+8*50],r8
 	mov qword [rsp+8*14],r9
 	jmp L_46
 	
@@ -927,7 +929,7 @@ L_47:
 	mov r10,1
 	mov r9,r9
 	add r9,r10
-	mov qword [rsp+8*52],r8
+	mov qword [rsp+8*51],r8
 	mov qword [rsp+8*8],r9
 	jmp L_43
 	
@@ -942,8 +944,8 @@ L_51:
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
-	mov qword [rsp+8*53],r10
-	mov r8,  [rsp+8*53]
+	mov qword [rsp+8*52],r10
+	mov r8,  [rsp+8*52]
 	cmp r8, 0
 	je L_52
 	mov r9,  [rsp+8*5]
@@ -955,21 +957,21 @@ L_51:
 	add r11,r8
 	mov r12, [r11]
 	mov r13,r12
-	mov qword [rsp+8*54],r8
+	mov qword [rsp+8*53],r8
 	mov r8,r13
-	mov qword [rsp+8*58],r8
-	mov qword [rsp+8*55],r11
-	mov qword [rsp+8*56],r12
+	mov qword [rsp+8*57],r8
+	mov qword [rsp+8*54],r11
+	mov qword [rsp+8*55],r12
 	mov qword rdi,r13
-	mov     rdi, [rsp+8*58]
+	mov     rdi, [rsp+8*57]
 	call    toString
-	mov     qword[rsp+8*59], rax
-	mov r9,  [rsp+8*59]
+	mov     qword[rsp+8*58], rax
+	mov r9,  [rsp+8*58]
 	mov r8,r9
 	mov r10,r8
 	mov qword rdi,r8
-	mov qword [rsp+8*60],r10
-	mov rdi,[rsp+8*60] 
+	mov qword [rsp+8*59],r10
+	mov rdi,[rsp+8*59] 
 	add rdi, 1 
 	call puts
 	mov r9,  [rsp+8*8]
@@ -977,7 +979,7 @@ L_51:
 	mov r10,1
 	mov r9,r9
 	add r9,r10
-	mov qword [rsp+8*61],r8
+	mov qword [rsp+8*60],r8
 	mov qword [rsp+8*8],r9
 	jmp L_51
 	
@@ -991,14 +993,14 @@ L_52:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 560
-	mov r8,  [rsp+8*62]
+	sub    rsp, 552
+	mov r8,  [rsp+8*61]
 	mov rax,r8
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2544
+gbl:         resb   2536
 buff.1788:
         resb    256
 arg:

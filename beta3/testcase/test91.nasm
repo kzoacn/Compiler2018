@@ -664,7 +664,7 @@ cd:
 	mov qword [rsp+8*10],r10
 	mov r8,  [rsp+8*11]
 	cmp r8, 0
-	je L_1229
+	je L_1241
 	mov     rsi, [rsp+8*4]
 	mov     rdi, t66
 	call    concat
@@ -692,9 +692,9 @@ cd:
 	add r9,r10
 	mov qword [rsp+8*14],r8
 	mov qword [rsp+8*10],r9
-	jmp L_1230
+	jmp L_1242
 	
-L_1229:
+L_1241:
 	mov r8,  [rsp+8*2]
 	mov r9,1
 	mov r10,r8
@@ -779,7 +779,7 @@ L_1229:
 	mov qword [rsp+8*10],r9
 	mov qword [rsp+8*21],r10
 	
-L_1230:
+L_1242:
 	mov r8,  [rsp+8*10]
 	mov rax,r8
 	leave

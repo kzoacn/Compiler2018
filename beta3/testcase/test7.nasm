@@ -672,7 +672,7 @@ main:
 	mov qword [rsp+8*4],r8
 	mov qword [rsp+8*5],r10
 	
-L_2011:
+L_2037:
 	mov r8,  [rsp+8*5]
 	mov r9,  [rsp+8*2]
 	cmp r8,r9
@@ -681,7 +681,7 @@ L_2011:
 	mov qword [rsp+8*6],r10
 	mov r8,  [rsp+8*6]
 	cmp r8, 0
-	je L_2012
+	je L_2038
 	mov r9,  [rsp+8*4]
 	mov r8,r9
 	mov r10,  [rsp+8*5]
@@ -723,9 +723,9 @@ L_2011:
 	add r9,r10
 	mov qword [rsp+8*16],r8
 	mov qword [rsp+8*5],r9
-	jmp L_2011
+	jmp L_2037
 	
-L_2012:
+L_2038:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]
