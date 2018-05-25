@@ -1,1 +1,4 @@
-	int n = getInt();
+	seed = getInt();
+	l = getInt();
+	r = getInt();
+	P = getInt();

@@ -1,2 +1,5 @@
-0a1
-> 	int n = getInt();
+0a1,4
+> 	seed = getInt();
+> 	l = getInt();
+> 	r = getInt();
+> 	P = getInt();

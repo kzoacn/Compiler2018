@@ -11,7 +11,7 @@ if diff empty hasget >null; then
 	./c2nasm.sh tmp.c 
 	cat tmp.c.nasm
 else
-	cat test.nasm
+	./movclear <test.nasm 
 fi
 
 
