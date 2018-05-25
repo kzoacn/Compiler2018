@@ -654,7 +654,11 @@ main:
         mov     eax, 0
 	push r15
 	push r14
+	push r13
+	push r12
 	call global_init
+	pop r12
+	pop r13
 	pop r14
 	pop r15
 	mov r8 , rax
@@ -662,19 +666,19 @@ main:
 	mov r9,r10
 	mov r11,r9
 	inc r9 
-	mov r13,0
-	mov r12,r13
-	mov r15,0
-	mov r14,r15
 	mov qword [rsp+8*1],r8
-	mov r8,0
-	mov r12,r8
-	mov qword [rsp+8*2],r9
+	mov r10,0
+	mov r8,r10
 	mov qword [rsp+8*3],r11
-	mov qword [rsp+8*4],r12
-	mov qword [rsp+8*5],r14
+	mov r11,0
+	mov r10,r11
+	mov r11,0
+	mov r8,r11
+	mov qword [rsp+8*4],r8
+	mov qword [rsp+8*2],r9
+	mov qword [rsp+8*5],r10
 	
-L_1221:
+L_1673:
 	mov r8,  [rsp+8*4]
 	mov r9,5
 	cmp r8,r9
@@ -682,25 +686,23 @@ L_1221:
 	setl r10B
 	cmp r10, 0
 	mov qword [rsp+8*6],r10
-	je L_1222
+	je L_1674
 	mov r8,  [rsp+8*2]
 	mov r9,  [rsp+8*5]
 	mov r10,r8
 	add r10,r9
 	mov r8,r10
 	mov r11,  [rsp+8*4]
-	mov r12,1
-	mov r13,r11
-	add r13,r12
-	mov r9,r13
-	mov r14,r11
-	mov r15,r14
+	mov r10,1
+	mov r9,r11
+	add r9,r10
+	mov r10,r9
+	mov r9,r11
 	mov qword [rsp+8*2],r8
-	mov qword [rsp+8*5],r9
-	mov qword [rsp+8*7],r10
-	mov qword [rsp+8*8],r13
-	mov qword rdi,r14
-	mov qword [rsp+8*10],r15
+	mov r8,r9
+	mov qword [rsp+8*10],r8
+	mov qword rdi,r9
+	mov qword [rsp+8*5],r10
 	mov     rdi, [rsp+8*10]
 	call    toString
 	mov     qword[rsp+8*11], rax
@@ -748,13 +750,14 @@ L_1221:
 	mov r8,r9
 	mov r11,  [rsp+8*2]
 	mov r10,r11
-	mov r12,r10
-	mov r13,r8
-	mov r14,r12
-	add r14,r13
-	mov r15,r14
+	mov r9,r10
+	mov r11,r8
 	mov qword rsi,r8
+	mov r8,r9
+	add r8,r11
+	mov r15,r8
 	mov r8,r15
+	mov qword [rsp+8*20],r9
 	mov r9,r8
 	mov r10,r9
 	mov qword [rsp+8*24],r8
@@ -762,10 +765,7 @@ L_1221:
 	mov qword [rsp+8*26],r8
 	mov qword [rsp+8*25],r9
 	mov qword rdi,r10
-	mov qword [rsp+8*20],r12
-	mov qword [rsp+8*21],r13
-	mov qword [rsp+8*22],r14
-	mov qword [rsp+8*23],r15
+	mov qword [rsp+8*21],r11
 	mov     rdi, [rsp+8*26]
 	call    toString
 	mov     qword[rsp+8*27], rax
@@ -782,9 +782,9 @@ L_1221:
 	inc r9 
 	mov qword [rsp+8*29],r8
 	mov qword [rsp+8*4],r9
-	jmp L_1221
+	jmp L_1673
 	
-L_1222:
+L_1674:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

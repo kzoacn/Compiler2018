@@ -654,56 +654,55 @@ main:
         mov     eax, 0
 	push r15
 	push r14
+	push r13
+	push r12
 	call global_init
+	pop r12
+	pop r13
 	pop r14
 	pop r15
 	mov r8 , rax
-	mov r10,5
-	mov r9,r10
+	mov r9,5
+	mov r14,r9
 	mov qword [rsp+8*1],r8
-	mov qword [rsp+8*2],r9
-	mov     rdi, [rsp+8*2]
+	mov     rdi,  r14
 	call    mallocArray
 	mov     qword [rsp+8*3], rax
 	mov r9,  [rsp+8*3]
 	mov r8,r9
-	mov r11,0
-	mov r10,r11
+	mov r10,0
+	mov r15,r10
 	mov qword [rsp+8*4],r8
-	mov qword [rsp+8*5],r10
 	
-L_2037:
-	mov r8,  [rsp+8*5]
-	mov r9,  [rsp+8*2]
-	cmp r8,r9
-	mov r10, 0
-	setl r10B
-	cmp r10, 0
-	mov qword [rsp+8*6],r10
-	je L_2038
+L_2606:
+	cmp r15,r14
+	mov r8, 0
+	setl r8B
+	cmp r8, 0
+	mov qword [rsp+8*6],r8
+	je L_2607
 	mov r9,  [rsp+8*4]
 	mov r8,r9
-	mov r10,  [rsp+8*5]
-	mov r11,r10
-	add r11,1
-	shl r11,4
-	add r11,r8
-	mov [r11],r10
-	mov r12,r9
-	mov r13,r10
-	add r13,1
-	shl r13,4
-	add r13,r12
-	mov r14, [r13]
-	mov r15,r14
+	mov r10,r15
+	add r10,1
+	shl r10,4
+	add r10,r8
+	mov [r10],r15
+	mov r11,r9
 	mov qword [rsp+8*7],r8
 	mov r8,r15
-	mov qword [rsp+8*13],r8
-	mov qword [rsp+8*8],r11
-	mov qword [rsp+8*9],r12
-	mov qword [rsp+8*10],r13
-	mov qword [rsp+8*11],r14
-	mov qword rdi,r15
+	add r8,1
+	shl r8,4
+	add r8,r11
+	mov r9, [r8]
+	mov qword [rsp+8*10],r8
+	mov r8,r9
+	mov qword [rsp+8*11],r9
+	mov r9,r8
+	mov qword rdi,r8
+	mov qword [rsp+8*13],r9
+	mov qword [rsp+8*8],r10
+	mov qword [rsp+8*9],r11
 	mov     rdi, [rsp+8*13]
 	call    toString
 	mov     qword[rsp+8*14], rax
@@ -715,14 +714,12 @@ L_2037:
 	mov rdi,[rsp+8*15] 
 	add rdi, 1 
 	call puts
-	mov r9,  [rsp+8*5]
-	mov r8,r9
-	inc r9 
+	mov r8,r15
+	inc qword r15 
 	mov qword [rsp+8*16],r8
-	mov qword [rsp+8*5],r9
-	jmp L_2037
+	jmp L_2606
 	
-L_2038:
+L_2607:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

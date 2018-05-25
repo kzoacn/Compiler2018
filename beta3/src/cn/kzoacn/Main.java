@@ -106,10 +106,12 @@ class Variable{
     VariableType type;
     boolean isTemp;
     int register;
+    boolean global;
     Variable(String name,VariableType type){
         this.name=name;
         this.type=type;
         isTemp=false;
+        global=Variable.isGlobal;
     }
     @Override
     public String toString(){

@@ -125,6 +125,11 @@ public class IROptimizer {
         in=new ArrayList<HashSet<Variable> >();
         out=new ArrayList<HashSet<Variable> >();
         lineMap=new HashMap<String, Integer>();
+
+        HashSet<String>gbl=new HashSet<String>();
+        for(int i=0;i<128;i++) {
+            gbl.add("t" + Integer.toString(i));
+        }
         while(cur!=null){
             cur.line=line_number;
             edgeList.add(new ArrayList<Integer>());
@@ -136,23 +141,29 @@ public class IROptimizer {
                 def.get(line_number).add(cur.dest);
                 variables.add(cur.dest);
                 cur.dest.register=0;
+                if(cur.dest.global)
+                    gbl.add(cur.dest.name);
             }
             if(cur.var1!=null&&!cur.var1.equals(Variable.empty)) {
                 use.get(line_number).add(cur.var1);
                 variables.add(cur.var1);
                 cur.var1.register=0;
+                if(cur.var1.global)
+                    gbl.add(cur.var1.name);
             }
             if(cur.var2!=null&&!cur.var2.equals(Variable.empty)) {
                 use.get(line_number).add(cur.var2);
                 variables.add(cur.var2);
                 cur.var2.register=0;
+                if(cur.var2.global)
+                    gbl.add(cur.var2.name);
             }
             if(cur.opCode==OpCode.label)
                 lineMap.put(cur.name,cur.line);
             line_number++;
             cur=cur.next;
         }
-        if(variables.size()>5){
+        if(variables.size()>250){
             return ir;
         }
         //live analyze
@@ -195,7 +206,11 @@ public class IROptimizer {
             cur=cur.next;
         }
 
+        Date date=new Date();
+        date.setTime(0);
         while(true){
+            if(date.getTime()>1000*20)
+                return ir;
             boolean flag=true;
 
             HashSet<Variable> nin;
@@ -231,8 +246,11 @@ public class IROptimizer {
         HashMap<Variable,Integer>degree=new HashMap<Variable,Integer>();
         for(Variable var:variables)
             graph.put(var,new HashSet<Variable>());
+
         for(int i=0;i<line_number;i++){
+            //System.err.println(i);
             for(Variable var1:in.get(i)){
+                //System.err.print(var1.name+",");
                 for(Variable var2:in.get(i)){
                     if(!var1.equals(var2)){
                         graph.get(var1).add(var2);
@@ -240,12 +258,14 @@ public class IROptimizer {
                 }
             }
             for(Variable var1:out.get(i)){
+                //System.err.print(var1.name+",");
                 for(Variable var2:out.get(i)){
                     if(!var1.equals(var2)){
                         graph.get(var1).add(var2);
                     }
                 }
             }
+            //System.err.println();
         }
         for(Variable var:variables){
             degree.put(var,graph.get(var).size());
@@ -254,12 +274,16 @@ public class IROptimizer {
 
         ArrayList<Variable>color=new ArrayList<Variable>();
 
-        HashSet<String>gbl=new HashSet<String>();
-        for(int i=0;i<128;i++)
-            gbl.add("t"+Integer.toString(i));
+
         variables.removeIf((var)->var.isTemp);
         variables.removeIf((var)->gbl.contains(var.name));
-        variables.removeIf((var)->var.type.name.contains("const") || var.type.name.equals("null"));
+        variables.removeIf((var)->var.type.name.contains("const") ||var.name.contains("const") || var.type.name.equals("null"));
+        variables.removeIf((var)->var.name.startsWith("t"));
+        for(Map.Entry<Variable,HashSet<Variable> > entry : graph.entrySet()){
+            HashSet<Variable> hashSet=entry.getValue();
+            hashSet.removeIf((var)->!variables.contains(var));
+            degree.put(entry.getKey(),hashSet.size());
+        }
 
         int registerNumber=2;
         while(variables.size()>0){
@@ -297,18 +321,22 @@ public class IROptimizer {
         }
 
         HashMap<String,Integer>colorMap=new HashMap<String, Integer>();
+        boolean[] used=new boolean[10];
+        for(int i=0;i<10;i++)used[i]=false;
         for(Variable var:color){
             for(int i=0;i<10;i++)visit[i]=false;
             for(Variable var2:graph.get(var))if(colorMap.containsKey(var2.name))
                 visit[colorMap.get(var2.name)]=true;
             int mex=0;
-            for(int i=0;i<10;i++){
+            for(int i=1;i<10;i++){
                 if(!visit[i]){
                     mex=i;
                     break;
                 }
             }
             if(mex>registerNumber)mex=0;
+            if(used[mex])continue;
+            used[mex]=true;
             colorMap.put(var.name,mex);
         }
         cur=ir.head;

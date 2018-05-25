@@ -645,11 +645,12 @@ Adder_add:
 	mov r8,r9
 	mov r11,  rdi
 	mov r10,r11
-	mov r13,  rsi
-	mov r12,r13
-	mov r14,r10
-	add r14,r12
-	mov rax,r14
+	mov qword [rsp+8*2],r8
+	mov r9,  rsi
+	mov r8,r9
+	mov r11,r10
+	add r11,r8
+	mov rax,r11
 	leave
 	ret
 	
@@ -670,7 +671,11 @@ main:
         mov     eax, 0
 	push r15
 	push r14
+	push r13
+	push r12
 	call global_init
+	pop r12
+	pop r13
 	pop r14
 	pop r15
 	mov r8 , rax
@@ -678,22 +683,25 @@ main:
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword [rsp+8*9], rax
-	mov r9,  [rsp+8*9]
-	mov r8,r9
-	mov r10,r8
-	mov r12,4
-	mov r11,r12
-	mov r14,3
-	mov r13,r14
-	mov r15,r10
-	mov qword [rsp+8*10],r8
-	mov qword [rsp+8*11],r10
-	mov qword rsi,r11
-	mov qword rdi,r13
-	mov qword [arg+8*63],r15
+	mov r8,  [rsp+8*9]
+	mov r15,r8
+	mov r9,r15
+	mov r11,4
+	mov r10,r11
+	mov qword rsi,r10
+	mov r10,3
+	mov r8,r10
+	mov r10,r9
+	mov qword rdi,r8
+	mov qword [rsp+8*11],r9
+	mov qword [arg+8*63],r10
 	push r15
 	push r14
+	push r13
+	push r12
 	call Adder_add
+	pop r12
+	pop r13
 	pop r14
 	pop r15
 	mov r8 , rax

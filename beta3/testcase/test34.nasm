@@ -652,40 +652,39 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r15
+	push r14
+	push r13
+	push r12
 	call global_init
+	pop r12
+	pop r13
+	pop r14
+	pop r15
 	mov r8 , rax
-	mov r10,10
-	mov r9,r10
-	mov r12,0
-	mov r11,r12
+	mov r9,10
+	mov r14,r9
+	mov r11,0
+	mov r10,r11
 	mov qword [rsp+8*1],r8
 	mov r8,1
-	mov r13,r8
-	mov qword [rsp+8*2],r9
-	mov qword [rsp+8*3],r11
-	mov qword [rsp+8*4],r13
+	mov r15,r8
+	mov qword [rsp+8*3],r10
 	
 L_454:
-	mov r8,  [rsp+8*4]
-	mov r9,  [rsp+8*2]
-	cmp r8,r9
-	mov r10, 0
-	setle r10B
-	mov qword [rsp+8*5],r10
-	mov r8,  [rsp+8*5]
+	cmp r15,r14
+	mov r8, 0
+	setle r8B
 	cmp r8, 0
+	mov qword [rsp+8*5],r8
 	je L_455
 	mov r8,  [rsp+8*3]
-	mov r9,  [rsp+8*4]
-	mov r10,r8
-	add r10,r9
-	mov r8,r10
-	mov r11,1
-	mov r9,r9
-	add r9,r11
+	mov r9,r8
+	add r9,r15
+	mov r8,r9
+	inc qword r15 
 	mov qword [rsp+8*3],r8
-	mov qword [rsp+8*4],r9
-	mov qword [rsp+8*6],r10
+	mov qword [rsp+8*6],r9
 	jmp L_454
 	
 L_455:
@@ -695,13 +694,11 @@ L_455:
 	
 L_457:
 	mov r8,  [rsp+8*7]
-	mov r9,  [rsp+8*2]
-	cmp r8,r9
-	mov r10, 0
-	setle r10B
-	mov qword [rsp+8*8],r10
-	mov r8,  [rsp+8*8]
-	cmp r8, 0
+	cmp r8,r14
+	mov r9, 0
+	setle r9B
+	cmp r9, 0
+	mov qword [rsp+8*8],r9
 	je L_458
 	mov r8,  [rsp+8*3]
 	mov r9,10
@@ -711,9 +708,7 @@ L_457:
 	mov r10,r10
 	add r10,r11
 	mov r8,r10
-	mov r12,1
-	mov r11,r11
-	add r11,r12
+	inc r11 
 	mov qword [rsp+8*3],r8
 	mov qword [rsp+8*9],r10
 	mov qword [rsp+8*7],r11

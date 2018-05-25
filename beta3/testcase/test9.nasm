@@ -654,15 +654,18 @@ main:
         mov     eax, 0
 	push r15
 	push r14
+	push r13
+	push r12
 	call global_init
+	pop r12
+	pop r13
 	pop r14
 	pop r15
 	mov r8 , rax
-	mov r10,5
-	mov r9,r10
+	mov r9,5
+	mov r14,r9
 	mov qword [rsp+8*1],r8
-	mov qword [rsp+8*2],r9
-	mov     rdi, [rsp+8*2]
+	mov     rdi,  r14
 	call    mallocArray
 	mov     qword [rsp+8*3], rax
 	mov r9,  [rsp+8*3]
@@ -670,17 +673,19 @@ main:
 	mov r10,1
 	mov r11,r10
 	neg r11
-	mov r12,r11
-	mov r13,r8
-	mov r14,0
-	mov r15,r14
-	add r15,1
-	shl r15,4
-	add r15,r13
+	mov r15,r11
+	mov r9,r8
+	mov r10,0
+	mov r11,r10
+	add r11,1
+	shl r11,4
+	add r11,r9
+	mov qword [rsp+8*7],r9
 	mov r9,3
-	mov [r15],r9
+	mov [r11],r9
 	mov r9,r8
 	mov r10,1
+	mov qword [rsp+8*8],r11
 	mov r11,r10
 	add r11,1
 	shl r11,4
@@ -723,19 +728,15 @@ main:
 	mov qword [rsp+8*4],r8
 	mov qword [rsp+8*17],r9
 	mov qword [rsp+8*16],r11
-	mov qword [rsp+8*6],r12
-	mov qword [rsp+8*7],r13
-	mov qword [rsp+8*8],r15
 	
-L_2051:
+L_2620:
 	mov r8,  [rsp+8*17]
-	mov r9,  [rsp+8*2]
-	cmp r8,r9
-	mov r10, 0
-	setl r10B
-	cmp r10, 0
-	mov qword [rsp+8*18],r10
-	je L_2052
+	cmp r8,r14
+	mov r9, 0
+	setl r9B
+	cmp r9, 0
+	mov qword [rsp+8*18],r9
+	je L_2621
 	mov r9,  [rsp+8*4]
 	mov r8,r9
 	mov r10,  [rsp+8*17]
@@ -743,36 +744,34 @@ L_2051:
 	add r11,1
 	shl r11,4
 	add r11,r8
-	mov r12, [r11]
-	mov r13,2
-	cmp r12,r13
-	mov r14, 0
-	sete r14B
-	cmp r14, 0
 	mov qword [rsp+8*19],r8
+	mov r8, [r11]
+	mov r9,2
+	cmp r8,r9
 	mov qword [rsp+8*20],r11
-	mov qword [rsp+8*21],r12
-	mov qword [rsp+8*22],r14
-	je L_2055
-	mov r9,  [rsp+8*17]
-	mov r8,r9
-	mov qword [rsp+8*6],r8
-	jmp L_2052
+	mov r11, 0
+	sete r11B
+	cmp r11, 0
+	mov qword [rsp+8*21],r8
+	mov qword [rsp+8*22],r11
+	je L_2624
+	mov r8,  [rsp+8*17]
+	mov r15,r8
+	jmp L_2621
 	
-L_2055:
+L_2624:
 	mov r9,  [rsp+8*17]
 	mov r8,r9
 	inc r9 
 	mov qword [rsp+8*23],r8
 	mov qword [rsp+8*17],r9
-	jmp L_2051
+	jmp L_2620
 	
-L_2052:
-	mov r9,  [rsp+8*6]
-	mov r8,r9
-	mov r10,r8
+L_2621:
+	mov r8,r15
+	mov r9,r8
 	mov qword rdi,r8
-	mov qword [rsp+8*25],r10
+	mov qword [rsp+8*25],r9
 	mov     rdi, [rsp+8*25]
 	call    toString
 	mov     qword[rsp+8*26], rax

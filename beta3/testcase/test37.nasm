@@ -652,17 +652,23 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r15
+	push r14
+	push r13
+	push r12
 	call global_init
+	pop r12
+	pop r13
+	pop r14
+	pop r15
 	mov r8 , rax
 	mov r9,  [gbl+8*2]
-	mov r10,0
-	cmp r9,r10
-	mov r11, 0
-	setg r11B
+	cmp r9,0
+	mov r10, 0
+	setg r10B
+	cmp r10, 0
 	mov qword [rsp+8*1],r8
-	mov qword [rsp+8*3],r11
-	mov r8,  [rsp+8*3]
-	cmp r8, 0
+	mov qword [rsp+8*3],r10
 	je L_473
 	mov r9,  [gbl+8*2]
 	mov r8,r9
@@ -670,11 +676,11 @@ main:
 	mov r9,r9
 	sub r9,r10
 	mov r11,r8
-	mov r12,r11
 	mov qword [rsp+8*4],r8
+	mov r8,r11
+	mov qword [rsp+8*6],r8
 	mov qword [gbl+8*2],r9
 	mov qword rdi,r11
-	mov qword [rsp+8*6],r12
 	mov     rdi, [rsp+8*6]
 	call    toString
 	mov     qword[rsp+8*7], rax

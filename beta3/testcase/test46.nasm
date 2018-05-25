@@ -654,35 +654,35 @@ main:
         mov     eax, 0
 	push r15
 	push r14
+	push r13
+	push r12
 	call global_init
+	pop r12
+	pop r13
 	pop r14
 	pop r15
 	mov r8 , rax
-	mov r10,5
-	mov r9,r10
+	mov r9,5
+	mov r14,r9
 	mov qword [rsp+8*1],r8
-	mov qword [rsp+8*2],r9
 	mov     rdi, 2
 	call    mallocArray
 	mov     qword [rsp+8*3], rax
 	mov r9,  [rsp+8*3]
 	mov r8,r9
 	mov r10,r8
-	mov r12,0
-	mov r11,r12
+	mov r11,0
+	mov r15,r11
 	mov qword [rsp+8*4],r8
 	mov qword [rsp+8*5],r10
-	mov qword [rsp+8*6],r11
 	
-L_101:
-	mov r8,  [rsp+8*6]
-	mov r9,  [rsp+8*2]
-	cmp r8,r9
-	mov r10, 0
-	setl r10B
-	cmp r10, 0
-	mov qword [rsp+8*7],r10
-	je L_102
+L_553:
+	cmp r15,r14
+	mov r8, 0
+	setl r8B
+	cmp r8, 0
+	mov qword [rsp+8*7],r8
+	je L_554
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword [rsp+8*8], rax
@@ -701,8 +701,7 @@ L_101:
 	call    multiAddress
 	mov [rsp+8*10], rax
 	mov r8,  [rsp+8*10]
-	mov r9,  [rsp+8*6]
-	mov [r8],r9
+	mov [r8],r15
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword [rsp+8*11], rax
@@ -768,30 +767,25 @@ L_101:
 	mov r8,  [rsp+8*20]
 	mov r9,0
 	mov [r8],r9
-	mov r11,  [rsp+8*6]
-	mov r10,r11
-	inc r11 
+	mov r10,r15
+	inc qword r15 
 	mov qword [rsp+8*22],r10
-	mov qword [rsp+8*6],r11
-	jmp L_101
+	jmp L_553
 	
-L_102:
+L_554:
 	mov r9,  [rsp+8*4]
 	mov r8,r9
-	mov r11,0
-	mov r10,r11
+	mov r10,0
+	mov r15,r10
 	mov qword [rsp+8*5],r8
-	mov qword [rsp+8*6],r10
 	
-L_104:
-	mov r8,  [rsp+8*6]
-	mov r9,  [rsp+8*2]
-	cmp r8,r9
-	mov r10, 0
-	setl r10B
-	cmp r10, 0
-	mov qword [rsp+8*23],r10
-	je L_105
+L_556:
+	cmp r15,r14
+	mov r8, 0
+	setl r8B
+	cmp r8, 0
+	mov qword [rsp+8*23],r8
+	je L_557
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword [rsp+8*24], rax
@@ -847,16 +841,14 @@ L_104:
 	mov r8,  [rsp+8*33]
 	mov r8, [r8]
 	mov r9,r8
-	mov r11,  [rsp+8*6]
-	mov r10,r11
-	inc r11 
+	mov r10,r15
+	inc qword r15 
 	mov qword [rsp+8*33],r8
 	mov qword [rsp+8*5],r9
 	mov qword [rsp+8*34],r10
-	mov qword [rsp+8*6],r11
-	jmp L_104
+	jmp L_556
 	
-L_105:
+L_557:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

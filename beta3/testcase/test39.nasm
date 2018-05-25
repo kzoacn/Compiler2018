@@ -641,16 +641,14 @@ f:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 168
-	mov r9,  rdi
-	mov r8,r9
-	mov r10,0
-	cmp r8,r10
-	mov r11, 0
-	sete r11B
-	mov qword [rsp+8*2],r8
-	mov qword [rsp+8*3],r11
-	mov r8,  [rsp+8*3]
-	cmp r8, 0
+	mov r8,  rdi
+	mov r15,r8
+	mov r9,0
+	cmp r15,r9
+	mov r10, 0
+	sete r10B
+	cmp r10, 0
+	mov qword [rsp+8*3],r10
 	je L_481
 	mov r8,0
 	mov rax,r8
@@ -660,27 +658,29 @@ f:
 L_481:
 	mov r9,  [gbl+8*4]
 	mov r8,r9
+	inc r9 
 	mov r10,1
-	mov r9,r9
-	add r9,r10
-	mov r11,  [rsp+8*2]
-	mov r12,1
-	mov r11,r11
-	sub r11,r12
-	mov r13,r11
+	mov r15,r15
+	sub r15,r10
+	mov r11,r15
 	mov qword [rsp+8*5],r8
 	mov qword [gbl+8*4],r9
-	mov qword [rsp+8*2],r11
-	mov qword rdi,r13
+	mov qword rdi,r11
+	push r15
+	push r14
+	push r13
+	push r12
 	call f
+	pop r12
+	pop r13
+	pop r14
+	pop r15
 	mov r8 , rax
 	mov r10,  [gbl+8*4]
 	mov r9,r10
-	mov r11,1
-	mov r10,r10
-	add r10,r11
-	mov r12,0
-	mov rax,r12
+	inc r10 
+	mov r11,0
+	mov rax,r11
 	mov qword [gbl+8*4],r10
 	leave
 	ret
@@ -700,13 +700,29 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r15
+	push r14
+	push r13
+	push r12
 	call global_init
+	pop r12
+	pop r13
+	pop r14
+	pop r15
 	mov r8 , rax
 	mov r10,5
 	mov r9,r10
 	mov qword [rsp+8*8],r8
 	mov qword rdi,r9
+	push r15
+	push r14
+	push r13
+	push r12
 	call f
+	pop r12
+	pop r13
+	pop r14
+	pop r15
 	mov r8 , rax
 	mov r10,  [gbl+8*4]
 	mov r9,r10

@@ -640,69 +640,71 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 192
+	sub    rsp, 176
 	mov     rax, 536870912
         cdqe
         mov     rdi, rax
         call    malloc
         mov     edx, dword 536870912
         movsxd  rdx, edx
-        sub     rdx, 2176
+        sub     rdx, 2160
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r15
+	push r14
+	push r13
+	push r12
 	call global_init
+	pop r12
+	pop r13
+	pop r14
+	pop r15
 	mov r8 , rax
 	mov r10,5
 	mov r9,r10
-	mov r12,1
-	mov r11,r12
+	mov r11,1
+	mov r15,r11
 	mov qword [rsp+8*1],r8
 	mov r8,0
-	mov r13,r8
+	mov r14,r8
 	mov r8,10
-	cmp r13,r8
+	cmp r14,r8
 	mov r10, 0
 	sete r10B
+	cmp r10, 0
 	mov qword [rsp+8*2],r9
 	mov qword [rsp+8*5],r10
-	mov qword [rsp+8*3],r11
-	mov qword [rsp+8*4],r13
-	mov r8,  [rsp+8*5]
-	cmp r8, 0
 	jne L_448
 	mov r9,0
 	mov r8,r9
-	mov qword [rsp+8*6],r8
+	mov qword [rsp+8*5],r8
 	jmp L_449
 	
 L_448:
 	xor rdx, rdx
 	mov r8,  [rsp+8*2]
 	mov rax, r8
-	mov r9,  [rsp+8*3]
-	mov rbx, r9
+	mov rbx, r15
 	cdq
 	idiv rbx
-	mov r10, rax
-	mov r11,0
-	cmp r10,r11
-	mov r12, 0
-	sete r12B
-	mov qword [rsp+8*7],r10
-	mov qword [rsp+8*8],r12
-	mov r9,  [rsp+8*8]
-	mov r8,r9
-	mov qword [rsp+8*6],r8
+	mov r9, rax
+	mov r10,0
+	cmp r9,r10
+	mov r11, 0
+	sete r11B
+	mov r9,r11
+	mov qword [rsp+8*5],r9
+	mov qword [rsp+8*7],r11
 	
 L_449:
-	mov r8,  [rsp+8*6]
+	mov r8,  [rsp+8*5]
 	cmp r8, 0
 	jne L_450
 	mov r9,0
 	mov r8,r9
-	mov qword [rsp+8*9],r8
+	mov qword [rsp+8*5],r8
 	jmp L_451
 	
 L_450:
@@ -711,38 +713,35 @@ L_450:
 	cmp r8,r9
 	mov r10, 0
 	sete r10B
-	mov qword [rsp+8*10],r10
-	mov r9,  [rsp+8*10]
-	mov r8,r9
-	mov qword [rsp+8*9],r8
+	mov r11,r10
+	mov qword [rsp+8*8],r10
+	mov qword [rsp+8*5],r11
 	
 L_451:
 	mov r8, 0
-	mov r9,  [rsp+8*9]
+	mov r9,  [rsp+8*5]
 	cmp r9, 0
 	sete r8B
 	cmp r8, 0
-	mov qword [rsp+8*11],r8
+	mov qword [rsp+8*9],r8
 	je L_453
-	mov r9,30
-	mov r8,r9
-	mov qword [rsp+8*4],r8
+	mov r8,30
+	mov r14,r8
 	
 L_453:
-	mov r9,  [rsp+8*4]
+	mov r8,r14
+	mov r9,r8
+	mov qword rdi,r8
+	mov qword [rsp+8*11],r9
+	mov     rdi, [rsp+8*11]
+	call    toString
+	mov     qword[rsp+8*12], rax
+	mov r9,  [rsp+8*12]
 	mov r8,r9
 	mov r10,r8
 	mov qword rdi,r8
 	mov qword [rsp+8*13],r10
-	mov     rdi, [rsp+8*13]
-	call    toString
-	mov     qword[rsp+8*14], rax
-	mov r9,  [rsp+8*14]
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*15],r10
-	mov rdi,[rsp+8*15] 
+	mov rdi,[rsp+8*13] 
 	add rdi, 1 
 	call puts
 	mov r8,0
@@ -754,14 +753,14 @@ L_453:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 192
-	mov r8,  [rsp+8*16]
+	sub    rsp, 176
+	mov r8,  [rsp+8*14]
 	mov rax,r8
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2176
+gbl:         resb   2160
 buff.1788:
         resb    256
 arg:

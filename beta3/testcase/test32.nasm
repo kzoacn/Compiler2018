@@ -641,47 +641,49 @@ gcd:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 240
-	mov r9,  rdi
-	mov r8,r9
-	mov r11,  rsi
-	mov r10,r11
+	mov r8,  rdi
+	mov r15,r8
+	mov r9,  rsi
+	mov r14,r9
 	xor rdx, rdx
-	mov rax, r8
-	mov rbx, r10
+	mov rax, r15
+	mov rbx, r14
 	cdq
 	idiv rbx
-	mov r12, rdx
-	mov r13,0
-	cmp r12,r13
-	mov r9, 0
-	sete r9B
-	mov qword [rsp+8*2],r8
-	mov qword [rsp+8*6],r9
-	mov qword [rsp+8*4],r10
-	mov qword [rsp+8*5],r12
-	mov r8,  [rsp+8*6]
+	mov r10, rdx
+	mov r11,0
+	cmp r10,r11
+	mov r8, 0
+	sete r8B
 	cmp r8, 0
+	mov qword [rsp+8*6],r8
+	mov qword [rsp+8*5],r10
 	je L_446
-	mov r8,  [rsp+8*4]
-	mov rax,r8
+	mov rax,r14
 	leave
 	ret
 	
 L_446:
 	xor rdx, rdx
-	mov r8,  [rsp+8*2]
-	mov rax, r8
-	mov r9,  [rsp+8*4]
-	mov rbx, r9
+	mov rax, r15
+	mov rbx, r14
 	cdq
 	idiv rbx
-	mov r10, rdx
-	mov r11,r10
-	mov r12,r9
-	mov qword [rsp+8*7],r10
-	mov qword rsi,r11
-	mov qword rdi,r12
+	mov r8, rdx
+	mov r9,r8
+	mov r10,r14
+	mov qword [rsp+8*7],r8
+	mov qword rsi,r9
+	mov qword rdi,r10
+	push r15
+	push r14
+	push r13
+	push r12
 	call gcd
+	pop r12
+	pop r13
+	pop r14
+	pop r15
 	mov r8 , rax
 	mov rax,r8
 	leave
@@ -702,16 +704,32 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r15
+	push r14
+	push r13
+	push r12
 	call global_init
+	pop r12
+	pop r13
+	pop r14
+	pop r15
 	mov r8 , rax
 	mov r10,1
 	mov r9,r10
-	mov r12,10
-	mov r11,r12
 	mov qword [rsp+8*9],r8
+	mov r8,10
+	mov r11,r8
 	mov qword rsi,r9
 	mov qword rdi,r11
+	push r15
+	push r14
+	push r13
+	push r12
 	call gcd
+	pop r12
+	pop r13
+	pop r14
+	pop r15
 	mov r8 , rax
 	mov r9,r8
 	mov r10,r9
@@ -735,7 +753,15 @@ main:
 	mov r10,r11
 	mov qword rsi,r8
 	mov qword rdi,r10
+	push r15
+	push r14
+	push r13
+	push r12
 	call gcd
+	pop r12
+	pop r13
+	pop r14
+	pop r15
 	mov r8 , rax
 	mov r9,r8
 	mov r10,r9
@@ -759,7 +785,15 @@ main:
 	mov r10,r11
 	mov qword rsi,r8
 	mov qword rdi,r10
+	push r15
+	push r14
+	push r13
+	push r12
 	call gcd
+	pop r12
+	pop r13
+	pop r14
+	pop r15
 	mov r8 , rax
 	mov r9,r8
 	mov r10,r9

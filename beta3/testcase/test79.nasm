@@ -654,24 +654,28 @@ main:
         mov     eax, 0
 	push r15
 	push r14
+	push r13
+	push r12
 	call global_init
+	pop r12
+	pop r13
 	pop r14
 	pop r15
 	mov r8 , rax
 	mov r10,t64
 	mov r9,r10
 	mov r11,r9
-	mov r13,2
-	mov r12,r13
-	mov r15,0
-	mov r14,r15
 	mov qword [rsp+8*1],r8
-	mov r8,r11
-	mov qword [arg+8*63],r8
 	mov qword [rsp+8*2],r9
+	mov r9,2
+	mov r8,r9
+	mov r10,0
+	mov r9,r10
+	mov r10,r11
+	mov qword rsi,r8
+	mov qword rdi,r9
+	mov qword [arg+8*63],r10
 	mov qword [rsp+8*3],r11
-	mov qword rsi,r12
-	mov qword rdi,r14
 	mov     rsi, rsi
 	mov     rdi, rdi
 	call    substring

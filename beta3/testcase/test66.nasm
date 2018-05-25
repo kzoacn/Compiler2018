@@ -654,50 +654,50 @@ main:
         mov     eax, 0
 	push r15
 	push r14
+	push r13
+	push r12
 	call global_init
+	pop r12
+	pop r13
 	pop r14
 	pop r15
 	mov r8 , rax
-	mov r10,1
-	mov r9,r10
-	mov r12,0
-	mov r11,r12
-	mov r13,0
-	cmp r11,r13
-	mov r14, 0
-	setne r14B
-	cmp r14, 0
+	mov r9,1
+	mov r15,r9
+	mov r10,0
+	mov r14,r10
+	mov r11,0
+	cmp r14,r11
 	mov qword [rsp+8*1],r8
-	mov qword [rsp+8*2],r9
-	mov qword [rsp+8*3],r11
-	mov qword [rsp+8*4],r14
-	jne L_360
+	mov r8, 0
+	setne r8B
+	cmp r8, 0
+	mov qword [rsp+8*4],r8
+	jne L_812
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*4],r8
-	jmp L_361
+	jmp L_813
 	
-L_360:
+L_812:
 	xor rdx, rdx
-	mov r8,  [rsp+8*2]
-	mov rax, r8
-	mov r9,  [rsp+8*3]
-	mov rbx, r9
+	mov rax, r15
+	mov rbx, r14
 	cdq
 	idiv rbx
-	mov r10, rax
-	mov r11,5
-	cmp r10,r11
-	mov r10, 0
-	setl r10B
-	mov r12,r10
-	mov qword [rsp+8*5],r10
-	mov qword [rsp+8*4],r12
+	mov r8, rax
+	mov r9,5
+	cmp r8,r9
+	mov r8, 0
+	setl r8B
+	mov r10,r8
+	mov qword [rsp+8*5],r8
+	mov qword [rsp+8*4],r10
 	
-L_361:
+L_813:
 	mov r8,  [rsp+8*4]
 	cmp r8, 0
-	je L_362
+	je L_814
 	mov r9,t71
 	mov r8,r9
 	mov r10,r8
@@ -706,9 +706,9 @@ L_361:
 	mov rdi,[rsp+8*7] 
 	add rdi, 1 
 	call puts
-	jmp L_363
+	jmp L_815
 	
-L_362:
+L_814:
 	mov r9,t75
 	mov r8,r9
 	mov r10,r8
@@ -718,7 +718,7 @@ L_362:
 	add rdi, 1 
 	call puts
 	
-L_363:
+L_815:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

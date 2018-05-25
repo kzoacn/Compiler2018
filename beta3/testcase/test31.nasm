@@ -652,27 +652,39 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r15
+	push r14
+	push r13
+	push r12
 	call global_init
+	pop r12
+	pop r13
+	pop r14
+	pop r15
 	mov r8 , rax
-	mov r10,1
-	mov r9,r10
+	mov r9,1
+	mov r15,r9
 	mov qword [rsp+8*1],r8
-	mov qword [rsp+8*2],r9
 	
 L_443:
-	mov r8,  [rsp+8*2]
-	mov r9,10
-	cmp r8,r9
-	mov r10, 0
-	setle r10B
-	mov qword [rsp+8*3],r10
-	mov r8,  [rsp+8*3]
-	cmp r8, 0
+	mov r8,10
+	cmp r15,r8
+	mov r9, 0
+	setle r9B
+	cmp r9, 0
+	mov qword [rsp+8*3],r9
 	je L_444
-	mov r9,  [rsp+8*2]
-	mov r8,r9
+	mov r8,r15
 	mov qword rdi,r8
+	push r15
+	push r14
+	push r13
+	push r12
 	call fib
+	pop r12
+	pop r13
+	pop r14
+	pop r15
 	mov r8 , rax
 	mov r9,r8
 	mov r10,r9
@@ -690,13 +702,9 @@ L_443:
 	mov rdi,[rsp+8*8] 
 	add rdi, 1 
 	call puts
-	mov r9,  [rsp+8*2]
-	mov r8,r9
-	mov r10,1
-	mov r9,r9
-	add r9,r10
+	mov r8,r15
+	inc qword r15 
 	mov qword [rsp+8*9],r8
-	mov qword [rsp+8*2],r9
 	jmp L_443
 	
 L_444:
@@ -716,10 +724,9 @@ fib:
 	cmp r8,r10
 	mov r11, 0
 	setle r11B
+	cmp r11, 0
 	mov qword [rsp+8*10],r8
 	mov qword [rsp+8*11],r11
-	mov r8,  [rsp+8*11]
-	cmp r8, 0
 	je L_442
 	mov r8,  [rsp+8*10]
 	mov rax,r8
@@ -734,17 +741,33 @@ L_442:
 	mov r11,r10
 	mov qword [rsp+8*12],r10
 	mov qword rdi,r11
+	push r15
+	push r14
+	push r13
+	push r12
 	call fib
+	pop r12
+	pop r13
+	pop r14
+	pop r15
 	mov r8 , rax
 	mov r9,  [rsp+8*10]
 	mov r10,2
 	mov r11,r9
 	sub r11,r10
-	mov r12,r11
+	mov r9,r11
 	mov qword [rsp+8*13],r8
+	mov qword rdi,r9
 	mov qword [rsp+8*14],r11
-	mov qword rdi,r12
+	push r15
+	push r14
+	push r13
+	push r12
 	call fib
+	pop r12
+	pop r13
+	pop r14
+	pop r15
 	mov r8 , rax
 	mov r9,  [rsp+8*13]
 	mov r10,r9

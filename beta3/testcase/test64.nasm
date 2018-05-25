@@ -654,24 +654,26 @@ main:
         mov     eax, 0
 	push r15
 	push r14
+	push r13
+	push r12
 	call global_init
+	pop r12
+	pop r13
 	pop r14
 	pop r15
 	mov r8 , rax
-	mov r10,t64
-	mov r9,r10
-	mov r12,t65
-	mov r11,r12
-	mov r14,t66
-	mov r13,r14
-	mov r15,r9
+	mov r9,t64
+	mov r14,r9
+	mov r11,t65
+	mov r10,r11
 	mov qword [rsp+8*1],r8
-	mov r8,r15
-	mov qword [rsp+8*6],r8
-	mov qword [rsp+8*2],r9
-	mov qword [rsp+8*3],r11
-	mov qword [rsp+8*4],r13
-	mov qword rdi,r15
+	mov r8,t66
+	mov r15,r8
+	mov r8,r14
+	mov r9,r8
+	mov qword rdi,r8
+	mov qword [rsp+8*6],r9
+	mov qword [rsp+8*3],r10
 	mov rdi,[rsp+8*6] 
 	add rdi, 1 
 	call puts
@@ -683,11 +685,10 @@ main:
 	mov rdi,[rsp+8*7] 
 	add rdi, 1 
 	call puts
-	mov r9,  [rsp+8*4]
-	mov r8,r9
-	mov r10,r8
+	mov r8,r15
+	mov r9,r8
 	mov qword rdi,r8
-	mov qword [rsp+8*8],r10
+	mov qword [rsp+8*8],r9
 	mov rdi,[rsp+8*8] 
 	add rdi, 1 
 	call puts

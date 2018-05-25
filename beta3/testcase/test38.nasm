@@ -641,16 +641,14 @@ f:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 272
-	mov r9,  rdi
-	mov r8,r9
-	mov r10,0
-	cmp r8,r10
-	mov r11, 0
-	setle r11B
-	mov qword [rsp+8*2],r8
-	mov qword [rsp+8*3],r11
-	mov r8,  [rsp+8*3]
-	cmp r8, 0
+	mov r8,  rdi
+	mov r15,r8
+	mov r9,0
+	cmp r15,r9
+	mov r10, 0
+	setle r10B
+	cmp r10, 0
+	mov qword [rsp+8*3],r10
 	je L_475
 	mov r8,0
 	mov rax,r8
@@ -668,11 +666,10 @@ L_475:
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov r9,  [rsp+8*2]
-	mov r8,r9
-	mov r10,r8
+	mov r8,r15
+	mov r9,r8
 	mov qword rdi,r8
-	mov qword [rsp+8*5],r10
+	mov qword [rsp+8*5],r9
 	mov     rdi, [rsp+8*5]
 	call    toString
 	mov     qword[rsp+8*6], rax
@@ -684,14 +681,20 @@ L_475:
 	mov rdi,[rsp+8*7] 
 	add rdi, 1 
 	call puts
-	mov r8,  [rsp+8*2]
-	mov r9,1
-	mov r8,r8
-	sub r8,r9
-	mov r10,r8
-	mov qword [rsp+8*2],r8
-	mov qword rdi,r10
+	mov r8,1
+	mov r15,r15
+	sub r15,r8
+	mov r9,r15
+	mov qword rdi,r9
+	push r15
+	push r14
+	push r13
+	push r12
 	call g
+	pop r12
+	pop r13
+	pop r14
+	pop r15
 	mov r8 , rax
 	mov r9,0
 	mov rax,r9
@@ -708,10 +711,9 @@ g:
 	cmp r8,r10
 	mov r11, 0
 	setle r11B
+	cmp r11, 0
 	mov qword [rsp+8*9],r8
 	mov qword [rsp+8*10],r11
-	mov r8,  [rsp+8*10]
-	cmp r8, 0
 	je L_477
 	mov r8,0
 	mov rax,r8
@@ -752,7 +754,15 @@ L_477:
 	mov r10,r8
 	mov qword [rsp+8*9],r8
 	mov qword rdi,r10
+	push r15
+	push r14
+	push r13
+	push r12
 	call h
+	pop r12
+	pop r13
+	pop r14
+	pop r15
 	mov r8 , rax
 	mov r9,0
 	mov rax,r9
@@ -769,10 +779,9 @@ h:
 	cmp r8,r10
 	mov r11, 0
 	setle r11B
+	cmp r11, 0
 	mov qword [rsp+8*16],r8
 	mov qword [rsp+8*17],r11
-	mov r8,  [rsp+8*17]
-	cmp r8, 0
 	je L_479
 	mov r8,0
 	mov rax,r8
@@ -813,7 +822,15 @@ L_479:
 	mov r10,r8
 	mov qword [rsp+8*16],r8
 	mov qword rdi,r10
+	push r15
+	push r14
+	push r13
+	push r12
 	call f
+	pop r12
+	pop r13
+	pop r14
+	pop r15
 	mov r8 , rax
 	mov r9,0
 	mov rax,r9
@@ -835,13 +852,29 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r15
+	push r14
+	push r13
+	push r12
 	call global_init
+	pop r12
+	pop r13
+	pop r14
+	pop r15
 	mov r8 , rax
 	mov r10,5
 	mov r9,r10
 	mov qword [rsp+8*23],r8
 	mov qword rdi,r9
+	push r15
+	push r14
+	push r13
+	push r12
 	call f
+	pop r12
+	pop r13
+	pop r14
+	pop r15
 	mov r8 , rax
 	mov r9,0
 	mov rax,r9

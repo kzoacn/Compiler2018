@@ -654,7 +654,11 @@ main:
         mov     eax, 0
 	push r15
 	push r14
+	push r13
+	push r12
 	call global_init
+	pop r12
+	pop r13
 	pop r14
 	pop r15
 	mov r8 , rax
@@ -662,20 +666,19 @@ main:
 	mov     rdi, 10
 	call    mallocArray
 	mov     qword [rsp+8*2], rax
-	mov r9,  [rsp+8*2]
-	mov r8,r9
-	mov r10,r8
+	mov r8,  [rsp+8*2]
+	mov r15,r8
+	mov r9,r15
+	mov r10,r9
 	mov r11,r10
-	mov r12,r11
-	mov r12, [r12]
-	mov r13,r12
-	mov r14,r13
-	mov qword [rsp+8*3],r8
-	mov qword [rsp+8*4],r10
-	mov qword [arg+8*63],r11
-	mov qword [rsp+8*6],r12
-	mov qword rdi,r13
-	mov qword [rsp+8*8],r14
+	mov r11, [r11]
+	mov r8,r11
+	mov qword [rsp+8*4],r9
+	mov r9,r8
+	mov qword rdi,r8
+	mov qword [rsp+8*8],r9
+	mov qword [arg+8*63],r10
+	mov qword [rsp+8*6],r11
 	mov     rdi, [rsp+8*8]
 	call    toString
 	mov     qword[rsp+8*9], rax

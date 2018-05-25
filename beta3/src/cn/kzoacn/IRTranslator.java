@@ -217,7 +217,7 @@ public class IRTranslator {
     static boolean[] ban=new boolean[16];
     static int[] lastUsedTime=new int[16];
     static int russ=10;
-    static final int registerNum=8;
+    static final int registerNum=4;
     void kick(int x){
 
         if(writeBack[x]) {
@@ -668,7 +668,11 @@ public class IRTranslator {
 
                     text.append(new StringBuffer("push r15"+"\n\t"));
                     text.append(new StringBuffer("push r14"+"\n\t"));
+                    text.append(new StringBuffer("push r13"+"\n\t"));
+                    text.append(new StringBuffer("push r12"+"\n\t"));
                     text.append(new StringBuffer("call "+name+"\n\t"));
+                    text.append(new StringBuffer("pop r12"+"\n\t"));
+                    text.append(new StringBuffer("pop r13"+"\n\t"));
                     text.append(new StringBuffer("pop r14"+"\n\t"));
                     text.append(new StringBuffer("pop r15"+"\n\t"));
                     clearAll();
