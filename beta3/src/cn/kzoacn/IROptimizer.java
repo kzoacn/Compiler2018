@@ -207,9 +207,8 @@ public class IROptimizer {
         }
 
         Date date=new Date();
-        date.setTime(0);
         while(true){
-            if(date.getTime()>1000*20)
+            if((new Date()).getTime()-date.getTime()>10000)
                 return ir;
             boolean flag=true;
 
