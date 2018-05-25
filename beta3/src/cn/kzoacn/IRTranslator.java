@@ -217,7 +217,7 @@ public class IRTranslator {
     static boolean[] ban=new boolean[16];
     static int[] lastUsedTime=new int[16];
     static int russ=10;
-    static final int registerNum=6;
+    static final int registerNum=8;
     void kick(int x){
 
         if(writeBack[x]) {
@@ -490,6 +490,14 @@ public class IRTranslator {
                     break;
                 case add:
                     //if(inReg(var2) ||!fullReg()) {
+                    if(dest.equals(var1)&&isConst(var2)&&var2.constValue==1){
+                        if(inReg(var1)) {
+                            readReg(var1);
+                            text.append(new StringBuffer("inc " + writeReg(dest) + " \n\t"));
+                        }else{
+                            text.append(new StringBuffer("inc qword" + varName(dest) + " \n\t"));
+                        }
+                    }else
                     if(dest.equals(var2)){
                         readReg(var1);
                         readReg(var2);

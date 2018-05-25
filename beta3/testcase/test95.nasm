@@ -663,9 +663,8 @@ main:
 	mov r11,r9
 	mov r12,r11
 	mov r13,r12
-	mov qword [rsp+8*1],r8
-	mov r8,0
-	mov rax,r8
+	mov r14,0
+	mov rax,r14
 	mov qword rdi,r9
 	        mov     rsp, qword [trsp]
 	leave

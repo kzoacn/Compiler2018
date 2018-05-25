@@ -695,16 +695,16 @@ L_2037:
 	add r13,1
 	shl r13,4
 	add r13,r12
+	mov r14, [r13]
+	mov r15,r14
 	mov qword [rsp+8*7],r8
-	mov r8, [r13]
-	mov r9,r8
-	mov qword [rsp+8*11],r8
-	mov r8,r9
+	mov r8,r15
 	mov qword [rsp+8*13],r8
-	mov qword rdi,r9
 	mov qword [rsp+8*8],r11
 	mov qword [rsp+8*9],r12
 	mov qword [rsp+8*10],r13
+	mov qword [rsp+8*11],r14
+	mov qword rdi,r15
 	mov     rdi, [rsp+8*13]
 	call    toString
 	mov     qword[rsp+8*14], rax
@@ -718,9 +718,7 @@ L_2037:
 	call puts
 	mov r9,  [rsp+8*5]
 	mov r8,r9
-	mov r10,1
-	mov r9,r9
-	add r9,r10
+	inc r9 
 	mov qword [rsp+8*16],r8
 	mov qword [rsp+8*5],r9
 	jmp L_2037

@@ -662,16 +662,16 @@ main:
 	mov r9,r10
 	mov r12,2
 	mov r11,r12
-	mov qword [rsp+8*1],r8
-	mov r8,5
-	mov r13,r8
+	mov r14,5
+	mov r13,r14
 	cmp r9,r11
-	mov r8, 0
-	setg r8B
-	mov qword [rsp+8*5],r8
+	mov r15, 0
+	setg r15B
+	mov qword [rsp+8*1],r8
 	mov qword [rsp+8*2],r9
 	mov qword [rsp+8*3],r11
 	mov qword [rsp+8*4],r13
+	mov qword [rsp+8*5],r15
 	mov r8,  [rsp+8*5]
 	cmp r8, 0
 	jne L_5

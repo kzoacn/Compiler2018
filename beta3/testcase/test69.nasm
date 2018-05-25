@@ -697,11 +697,11 @@ main:
 	mov r10,r11
 	mov r13,2
 	mov r12,r13
-	mov r11,r8
+	mov r14,r8
 	mov qword [rsp+8*12],r8
 	mov qword rsi,r10
-	mov qword [arg+8*63],r11
 	mov qword rdi,r12
+	mov qword [arg+8*63],r14
 	mov     rsi, rsi
 	mov     rdi, rdi
 	call    substring
@@ -750,12 +750,12 @@ main:
 	mov r11,r11
 	and r11,r12
 	mov r13,r11
+	mov r14,r13
 	mov qword [rsp+8*21],r8
-	mov r8,r13
-	mov qword [rsp+8*23],r8
 	mov qword [arg+8*63],r10
 	mov qword [rsp+8*22],r11
 	mov qword rdi,r13
+	mov qword [rsp+8*23],r14
 	mov     rdi, [rsp+8*23]
 	call    toString
 	mov     qword[rsp+8*24], rax

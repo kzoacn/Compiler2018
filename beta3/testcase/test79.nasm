@@ -663,15 +663,15 @@ main:
 	mov r11,r9
 	mov r13,2
 	mov r12,r13
+	mov r15,0
+	mov r14,r15
 	mov qword [rsp+8*1],r8
+	mov r8,r11
+	mov qword [arg+8*63],r8
 	mov qword [rsp+8*2],r9
-	mov r9,0
-	mov r8,r9
-	mov r9,r11
-	mov qword rdi,r8
-	mov qword [arg+8*63],r9
 	mov qword [rsp+8*3],r11
 	mov qword rsi,r12
+	mov qword rdi,r14
 	mov     rsi, rsi
 	mov     rdi, rdi
 	call    substring

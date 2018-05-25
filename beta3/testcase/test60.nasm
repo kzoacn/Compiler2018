@@ -691,9 +691,9 @@ L_348:
 	add r11,r8
 	mov r12,  [rsp+8*6]
 	mov [r11],r12
+	mov r14,0
+	mov r13,r14
 	mov qword [rsp+8*7],r8
-	mov r8,0
-	mov r13,r8
 	mov qword [rsp+8*8],r11
 	mov qword [rsp+8*9],r13
 	
@@ -725,29 +725,27 @@ L_351:
 	add r11,r8
 	mov r13,  [rsp+8*11]
 	mov [r11],r13
+	mov r14,r9
+	mov r15,r10
+	add r15,1
+	shl r15,4
+	add r15,r14
+	mov r14, [r15]
+	mov r15,r12
+	add r15,1
+	shl r15,4
+	add r15,r14
+	mov r14, [r15]
 	mov qword [rsp+8*12],r8
+	mov r8,0
+	mov r15,r8
+	add r15,1
+	shl r15,4
+	add r15,r14
+	mov r8,1
+	mov [r15],r8
 	mov r8,r9
 	mov qword [rsp+8*13],r11
-	mov r11,r10
-	add r11,1
-	shl r11,4
-	add r11,r8
-	mov r8, [r11]
-	mov r11,r12
-	add r11,1
-	shl r11,4
-	add r11,r8
-	mov r8, [r11]
-	mov r13,0
-	mov r11,r13
-	add r11,1
-	shl r11,4
-	add r11,r8
-	mov qword [rsp+8*14],r8
-	mov r8,1
-	mov [r11],r8
-	mov r8,r9
-	mov qword [rsp+8*15],r11
 	mov r11,r10
 	add r11,1
 	shl r11,4
@@ -813,6 +811,8 @@ L_351:
 	mov qword rdi,r8
 	mov qword [rsp+8*26],r9
 	mov qword [rsp+8*23],r11
+	mov qword [rsp+8*14],r14
+	mov qword [rsp+8*15],r15
 	mov     rdi, [rsp+8*26]
 	call    toString
 	mov     qword[rsp+8*27], rax
@@ -826,9 +826,7 @@ L_351:
 	call puts
 	mov r9,  [rsp+8*9]
 	mov r8,r9
-	mov r10,1
-	mov r9,r9
-	add r9,r10
+	inc r9 
 	mov qword [rsp+8*29],r8
 	mov qword [rsp+8*9],r9
 	jmp L_351
@@ -836,9 +834,7 @@ L_351:
 L_352:
 	mov r9,  [rsp+8*4]
 	mov r8,r9
-	mov r10,1
-	mov r9,r9
-	add r9,r10
+	inc r9 
 	mov qword [rsp+8*30],r8
 	mov qword [rsp+8*4],r9
 	jmp L_348

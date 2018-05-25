@@ -662,16 +662,16 @@ main:
 	mov r9,r10
 	mov r12,t65
 	mov r11,r12
+	mov r14,t66
+	mov r13,r14
+	mov r15,r9
 	mov qword [rsp+8*1],r8
-	mov r8,t66
-	mov r13,r8
-	mov r8,r9
+	mov r8,r15
+	mov qword [rsp+8*6],r8
 	mov qword [rsp+8*2],r9
-	mov r9,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*6],r9
 	mov qword [rsp+8*3],r11
 	mov qword [rsp+8*4],r13
+	mov qword rdi,r15
 	mov rdi,[rsp+8*6] 
 	add rdi, 1 
 	call puts

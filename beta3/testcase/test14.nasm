@@ -713,28 +713,23 @@ L_54:
 	jmp L_56
 	
 L_58:
-	mov r8,  [rsp+8*5]
-	mov r9,1
-	mov r8,r8
-	add r8,r9
-	mov r11,  [gbl+8*4]
-	mov r10,r11
-	mov r12,  [rsp+8*6]
-	mov r13,r12
-	add r13,1
-	shl r13,4
-	add r13,r10
-	mov [r13],r8
-	mov qword [rsp+8*5],r8
-	mov qword [rsp+8*12],r10
-	mov qword [rsp+8*13],r13
+	inc qword[rsp+8*5] 
+	mov r9,  [gbl+8*4]
+	mov r8,r9
+	mov r10,  [rsp+8*6]
+	mov r11,r10
+	add r11,1
+	shl r11,4
+	add r11,r8
+	mov r12,  [rsp+8*5]
+	mov [r11],r12
+	mov qword [rsp+8*12],r8
+	mov qword [rsp+8*13],r11
 	
 L_56:
 	mov r9,  [rsp+8*6]
 	mov r8,r9
-	mov r10,1
-	mov r9,r9
-	add r9,r10
+	inc r9 
 	mov qword [rsp+8*14],r8
 	mov qword [rsp+8*6],r9
 	jmp L_54
@@ -763,12 +758,12 @@ L_59:
 	add r11,r8
 	mov r12, [r11]
 	mov r13,r12
+	mov r14,r13
 	mov qword [rsp+8*16],r8
-	mov r8,r13
-	mov qword [rsp+8*20],r8
 	mov qword [rsp+8*17],r11
 	mov qword [rsp+8*18],r12
 	mov qword rdi,r13
+	mov qword [rsp+8*20],r14
 	mov     rdi, [rsp+8*20]
 	call    toString
 	mov     qword[rsp+8*21], rax
@@ -782,9 +777,7 @@ L_59:
 	call puts
 	mov r9,  [rsp+8*6]
 	mov r8,r9
-	mov r10,1
-	mov r9,r9
-	add r9,r10
+	inc r9 
 	mov qword [rsp+8*23],r8
 	mov qword [rsp+8*6],r9
 	jmp L_59

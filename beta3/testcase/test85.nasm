@@ -664,14 +664,14 @@ main:
 	mov r11,r12
 	mov r13,r9
 	add r13,r11
+	mov r14,r13
+	mov r15,r14
 	mov qword [rsp+8*1],r8
-	mov r8,r13
 	mov qword [rsp+8*2],r9
-	mov r9,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*6],r9
 	mov qword [rsp+8*3],r11
 	mov qword [rsp+8*4],r13
+	mov qword rdi,r14
+	mov qword [rsp+8*6],r15
 	mov     rdi, [rsp+8*6]
 	call    toString
 	mov     qword[rsp+8*7], rax

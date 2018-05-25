@@ -712,17 +712,17 @@ L_333:
 	mov r12,  [rsp+8*11]
 	mov [r11],r12
 	mov r13,r9
+	mov r14,r10
+	add r14,1
+	shl r14,4
+	add r14,r13
+	mov r13, [r14]
+	mov r15,r13
 	mov qword [rsp+8*12],r8
-	mov r8,r10
-	add r8,1
-	shl r8,4
-	add r8,r13
-	mov r13, [r8]
-	mov qword [rsp+8*15],r8
-	mov r8,r13
-	mov qword [arg+8*63],r8
 	mov qword [rsp+8*13],r11
 	mov qword [rsp+8*14],r13
+	mov qword [rsp+8*15],r14
+	mov qword [arg+8*63],r15
 	push r15
 	push r14
 	call Hello_say
@@ -731,9 +731,7 @@ L_333:
 	mov r8 , rax
 	mov r10,  [rsp+8*9]
 	mov r9,r10
-	mov r11,1
-	mov r10,r10
-	add r10,r11
+	inc r10 
 	mov qword [rsp+8*16],r8
 	mov qword [rsp+8*17],r9
 	mov qword [rsp+8*9],r10

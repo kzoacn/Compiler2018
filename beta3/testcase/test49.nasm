@@ -756,13 +756,13 @@ L_119:
 	add r8,r9
 	mov r13,  [rsp+8*10]
 	mov [r8],r13
-	mov r10,2
-	mov r8,r10
+	mov r14,2
+	mov r8,r14
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r10,  [rsp+8*12]
-	mov [r8],r10
+	mov r15,  [rsp+8*12]
+	mov [r8],r15
 	mov qword [rsp+8*15],r8
 	mov     rsi, [rsp+8*14]
 	mov     rdi, [rsp+8*4]
@@ -775,9 +775,7 @@ L_119:
 	mov r11,  [rsp+8*16]
 	mov [r11],r10
 	mov r12,r9
-	mov r13,1
-	mov r9,r9
-	add r9,r13
+	inc r9 
 	mov qword [rsp+8*12],r9
 	mov qword [rsp+8*17],r10
 	mov qword [rsp+8*18],r12
@@ -786,9 +784,7 @@ L_119:
 L_120:
 	mov r9,  [rsp+8*10]
 	mov r8,r9
-	mov r10,1
-	mov r9,r9
-	add r9,r10
+	inc r9 
 	mov qword [rsp+8*19],r8
 	mov qword [rsp+8*10],r9
 	jmp L_116
@@ -813,13 +809,13 @@ L_117:
 	add r8,r9
 	mov r13,2
 	mov [r8],r13
-	mov r10,2
-	mov r8,r10
+	mov r14,2
+	mov r8,r14
 	add r8,1
 	shl r8,4
 	add r8,r9
-	mov r10,1
-	mov [r8],r10
+	mov r15,1
+	mov [r8],r15
 	mov qword [rsp+8*21],r8
 	mov     rsi, [rsp+8*20]
 	mov     rdi, [rsp+8*4]

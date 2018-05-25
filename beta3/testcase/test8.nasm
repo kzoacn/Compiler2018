@@ -675,19 +675,18 @@ main:
 	add r12,r10
 	mov r13,1
 	mov [r12],r13
-	mov r9,r8
+	mov r14,r8
+	mov r15,1
+	mov r9,r15
+	add r9,1
+	shl r9,4
+	add r9,r14
 	mov qword [rsp+8*5],r10
-	mov r10,1
-	mov r11,r10
-	add r11,1
-	shl r11,4
-	add r11,r9
-	mov qword [rsp+8*7],r9
-	mov r9,5
-	mov [r11],r9
+	mov r10,5
+	mov [r9],r10
+	mov qword [rsp+8*8],r9
 	mov r9,r8
 	mov r10,2
-	mov qword [rsp+8*8],r11
 	mov r11,r10
 	add r11,1
 	shl r11,4
@@ -721,6 +720,7 @@ main:
 	mov qword [rsp+8*15],r9
 	mov qword [rsp+8*14],r11
 	mov qword [rsp+8*6],r12
+	mov qword [rsp+8*7],r14
 	
 L_2040:
 	mov r8,  [rsp+8*15]
@@ -761,24 +761,25 @@ L_2043:
 	add r11,r8
 	mov r12, [r11]
 	mov r13,1
+	mov r14,r10
+	add r14,r13
+	mov r15,r9
 	mov qword [rsp+8*20],r8
-	mov r8,r10
-	add r8,r13
+	mov r8,r14
+	add r8,1
+	shl r8,4
+	add r8,r15
 	mov qword [rsp+8*21],r11
-	mov r11,r9
-	mov r13,r8
-	add r13,1
-	shl r13,4
-	add r13,r11
-	mov r8, [r13]
-	cmp r12,r8
-	mov qword [rsp+8*24],r11
-	mov r11, 0
-	setg r11B
-	mov qword [rsp+8*26],r8
-	mov qword [rsp+8*27],r11
+	mov r11, [r8]
+	cmp r12,r11
+	mov qword [rsp+8*25],r8
+	mov r8, 0
+	setg r8B
+	mov qword [rsp+8*27],r8
+	mov qword [rsp+8*26],r11
 	mov qword [rsp+8*22],r12
-	mov qword [rsp+8*25],r13
+	mov qword [rsp+8*23],r14
+	mov qword [rsp+8*24],r15
 	mov r8,  [rsp+8*27]
 	cmp r8, 0
 	je L_2047
@@ -791,21 +792,21 @@ L_2043:
 	add r11,r8
 	mov r12, [r11]
 	mov r13,r12
+	mov r14,1
+	mov r15,r10
+	add r15,r14
 	mov qword [rsp+8*28],r8
-	mov r8,1
-	mov qword [rsp+8*29],r11
-	mov r11,r10
-	add r11,r8
 	mov r8,r9
-	mov qword [rsp+8*30],r12
-	mov r12,r11
-	add r12,1
-	shl r12,4
-	add r12,r8
+	mov qword [rsp+8*29],r11
+	mov r11,r15
+	add r11,1
+	shl r11,4
+	add r11,r8
 	mov qword [rsp+8*33],r8
-	mov r8, [r12]
+	mov r8, [r11]
+	mov qword [rsp+8*34],r11
 	mov r11,r9
-	mov qword [rsp+8*34],r12
+	mov qword [rsp+8*30],r12
 	mov r12,r10
 	add r12,1
 	shl r12,4
@@ -827,13 +828,12 @@ L_2043:
 	mov qword [rsp+8*38],r11
 	mov qword [rsp+8*40],r12
 	mov qword [rsp+8*31],r13
+	mov qword [rsp+8*32],r15
 	
 L_2047:
 	mov r9,  [rsp+8*17]
 	mov r8,r9
-	mov r10,1
-	mov r9,r9
-	add r9,r10
+	inc r9 
 	mov qword [rsp+8*41],r8
 	mov qword [rsp+8*17],r9
 	jmp L_2043
@@ -841,9 +841,7 @@ L_2047:
 L_2044:
 	mov r9,  [rsp+8*15]
 	mov r8,r9
-	mov r10,1
-	mov r9,r9
-	add r9,r10
+	inc r9 
 	mov qword [rsp+8*42],r8
 	mov qword [rsp+8*15],r9
 	jmp L_2040
@@ -872,12 +870,12 @@ L_2048:
 	add r11,r8
 	mov r12, [r11]
 	mov r13,r12
+	mov r14,r13
 	mov qword [rsp+8*44],r8
-	mov r8,r13
-	mov qword [rsp+8*48],r8
 	mov qword [rsp+8*45],r11
 	mov qword [rsp+8*46],r12
 	mov qword rdi,r13
+	mov qword [rsp+8*48],r14
 	mov     rdi, [rsp+8*48]
 	call    toString
 	mov     qword[rsp+8*49], rax
@@ -891,9 +889,7 @@ L_2048:
 	call puts
 	mov r9,  [rsp+8*15]
 	mov r8,r9
-	mov r10,1
-	mov r9,r9
-	add r9,r10
+	inc r9 
 	mov qword [rsp+8*51],r8
 	mov qword [rsp+8*15],r9
 	jmp L_2048

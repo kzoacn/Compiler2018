@@ -25,6 +25,9 @@ int main(){
 			if(vec[0]=="mov" && vec[1]==vec[2]){
 				flag=0;
 			}
+			if(vec[0]=="add" && vec[2]=="1"){
+				s="\tinc "+vec[1];
+			}
 		}
 		if(flag)cout<<s<<endl;
 	}

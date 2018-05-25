@@ -664,12 +664,12 @@ main:
 	mov r11,r12
 	mov r13,0
 	cmp r11,r13
+	mov r14, 0
+	setne r14B
 	mov qword [rsp+8*1],r8
-	mov r8, 0
-	setne r8B
-	mov qword [rsp+8*4],r8
 	mov qword [rsp+8*2],r9
 	mov qword [rsp+8*3],r11
+	mov qword [rsp+8*4],r14
 	mov r8,  [rsp+8*4]
 	cmp r8, 0
 	jne L_360

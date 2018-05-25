@@ -663,12 +663,12 @@ main:
 	mov r12,t123
 	mov r11,r12
 	mov r13,r11
+	mov r14,r13
 	mov qword [rsp+8*1],r8
-	mov r8,r13
-	mov qword [arg+8*63],r8
 	mov qword [gbl+8*2],r9
 	mov qword [gbl+8*3],r11
 	mov qword [rsp+8*4],r13
+	mov qword [arg+8*63],r14
 	call    parseInt
 	mov     qword [rsp+8*6], rax
 	mov r9,  [rsp+8*6]
@@ -678,17 +678,17 @@ main:
 	mov r12,r10
 	mov r13,r12
 	mov r13, [r13]
-	mov r9,255
+	mov r14,255
 	mov r13,r13
-	and r13,r9
+	and r13,r14
 	cmp r13,r8
-	mov r9, 0
-	setl r9B
+	mov r15, 0
+	setl r15B
 	mov qword [gbl+8*7],r8
-	mov qword [rsp+8*10],r9
 	mov qword [rsp+8*8],r10
 	mov qword [arg+8*63],r12
 	mov qword [rsp+8*9],r13
+	mov qword [rsp+8*10],r15
 	mov r8,  [rsp+8*10]
 	cmp r8, 0
 	je L_903
@@ -714,14 +714,14 @@ L_903:
 	mov r12,r10
 	sub r12,r11
 	mov r13,r12
-	mov r10,0
-	mov r9,r10
-	mov r10,r8
+	mov r15,0
+	mov r14,r15
+	mov r9,r8
 	mov qword [rsp+8*13],r8
-	mov qword rdi,r9
-	mov qword [arg+8*63],r10
+	mov qword [arg+8*63],r9
 	mov qword [rsp+8*14],r12
 	mov qword rsi,r13
+	mov qword rdi,r14
 	mov     rsi, rsi
 	mov     rdi, rdi
 	call    substring
@@ -764,17 +764,17 @@ calc:
 	mov r13,255
 	mov r12,r12
 	and r12,r13
+	mov r14,r12
+	mov r15,1
+	cmp r15,r14
 	mov qword [rsp+8*21],r10
-	mov r10,r12
-	mov qword [rsp+8*22],r12
-	mov r12,1
-	cmp r12,r10
-	mov r13, 0
-	sete r13B
+	mov r10, 0
+	sete r10B
 	mov qword [rsp+8*20],r8
-	mov qword [rsp+8*23],r10
+	mov qword [rsp+8*24],r10
 	mov qword [arg+8*63],r11
-	mov qword [rsp+8*24],r13
+	mov qword [rsp+8*22],r12
+	mov qword [rsp+8*23],r14
 	mov r8,  [rsp+8*24]
 	cmp r8, 0
 	je L_893
@@ -795,18 +795,19 @@ L_893:
 	mov r11,r10
 	mov r13,  [rsp+8*20]
 	mov r12,r13
-	mov r9,1
-	mov r10,r11
-	sub r10,r9
-	mov r9,r10
-	mov r8,0
-	mov r10,r8
-	mov r8,r12
-	mov qword [arg+8*63],r8
+	mov r14,1
+	mov r15,r11
+	sub r15,r14
+	mov r9,r15
+	mov r14,0
+	mov r10,r14
+	mov r14,r12
 	mov qword rsi,r9
 	mov qword rdi,r10
 	mov qword [rsp+8*26],r11
 	mov qword [rsp+8*27],r12
+	mov qword [arg+8*63],r14
+	mov qword [rsp+8*28],r15
 	mov     rsi, rsi
 	mov     rdi, rdi
 	call    substring
@@ -825,18 +826,19 @@ L_893:
 	mov r10,r11
 	mov r12,  [rsp+8*23]
 	mov r13,1
+	mov r14,r12
+	sub r14,r13
+	mov r15,r14
 	mov qword [rsp+8*30],r8
-	mov r8,r12
-	sub r8,r13
-	mov r11,r8
-	mov r12,  [rsp+8*26]
-	mov r8,r12
-	mov r12,r10
+	mov r11,  [rsp+8*26]
+	mov r8,r11
+	mov r11,r10
 	mov qword rdi,r8
 	mov qword [rsp+8*31],r9
 	mov qword [rsp+8*32],r10
-	mov qword rsi,r11
-	mov qword [arg+8*63],r12
+	mov qword [arg+8*63],r11
+	mov qword [rsp+8*33],r14
+	mov qword rsi,r15
 	mov     rsi, rsi
 	mov     rdi, rdi
 	call    substring
@@ -894,11 +896,11 @@ L_894:
 	mov r10,r11
 	mov r13,0
 	mov r12,r13
-	mov r9,r10
+	mov r14,r10
 	mov qword [rsp+8*42],r8
-	mov qword [arg+8*63],r9
 	mov qword [rsp+8*43],r10
 	mov qword rdi,r12
+	mov qword [arg+8*63],r14
 	mov     rdi, rdi
 	call    ord
 	mov     qword [rsp+8*44], rax

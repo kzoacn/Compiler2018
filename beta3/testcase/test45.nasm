@@ -720,12 +720,12 @@ main:
 	mov [r11],r10
 	mov r13,  [rsp+8*6]
 	mov r12,r13
-	mov r8,r12
-	mov r9,r8
-	mov qword [rsp+8*16],r8
-	mov qword [rsp+8*17],r9
+	mov r14,r12
+	mov r15,r14
 	mov qword [rsp+8*14],r10
 	mov qword [rsp+8*15],r12
+	mov qword [rsp+8*16],r14
+	mov qword [rsp+8*17],r15
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword [rsp+8*18], rax

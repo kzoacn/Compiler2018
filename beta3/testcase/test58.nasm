@@ -725,10 +725,10 @@ main:
 	mov r10,r11
 	mov r13,3
 	mov r12,r13
-	mov r8,r10
-	mov qword [arg+8*63],r8
+	mov r14,r10
 	mov qword [rsp+8*15],r10
 	mov qword rdi,r12
+	mov qword [arg+8*63],r14
 	push r15
 	push r14
 	call Adder_add
