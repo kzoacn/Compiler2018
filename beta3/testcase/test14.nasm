@@ -678,9 +678,8 @@ L_54:
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
+	cmp r10, 0
 	mov qword [rsp+8*7],r10
-	mov r8,  [rsp+8*7]
-	cmp r8, 0
 	je L_55
 	xor rdx, rdx
 	mov r8,  [rsp+8*6]
@@ -694,10 +693,9 @@ L_54:
 	cmp r10,r11
 	mov r12, 0
 	sete r12B
+	cmp r12, 0
 	mov qword [rsp+8*8],r10
 	mov qword [rsp+8*9],r12
-	mov r8,  [rsp+8*9]
-	cmp r8, 0
 	je L_58
 	mov r9,  [gbl+8*4]
 	mov r8,r9
@@ -745,9 +743,8 @@ L_59:
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
+	cmp r10, 0
 	mov qword [rsp+8*15],r10
-	mov r8,  [rsp+8*15]
-	cmp r8, 0
 	je L_60
 	mov r9,  [gbl+8*4]
 	mov r8,r9

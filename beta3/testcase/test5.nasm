@@ -667,13 +667,12 @@ main:
 	cmp r9,r11
 	mov r15, 0
 	setg r15B
+	cmp r15, 0
 	mov qword [rsp+8*1],r8
 	mov qword [rsp+8*2],r9
 	mov qword [rsp+8*3],r11
 	mov qword [rsp+8*4],r13
 	mov qword [rsp+8*5],r15
-	mov r8,  [rsp+8*5]
-	cmp r8, 0
 	jne L_5
 	mov r9,0
 	mov r8,r9
@@ -686,10 +685,9 @@ L_5:
 	cmp r8,r9
 	mov r10, 0
 	setg r10B
+	mov r11,r10
 	mov qword [rsp+8*6],r10
-	mov r9,  [rsp+8*6]
-	mov r8,r9
-	mov qword [rsp+8*5],r8
+	mov qword [rsp+8*5],r11
 	
 L_6:
 	mov r8,  [rsp+8*5]
@@ -706,9 +704,8 @@ L_7:
 	cmp r8,r9
 	mov r10, 0
 	setg r10B
+	cmp r10, 0
 	mov qword [rsp+8*8],r10
-	mov r8,  [rsp+8*8]
-	cmp r8, 0
 	je L_9
 	mov r9,  [rsp+8*3]
 	mov r8,r9

@@ -680,9 +680,8 @@ L_101:
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
+	cmp r10, 0
 	mov qword [rsp+8*7],r10
-	mov r8,  [rsp+8*7]
-	cmp r8, 0
 	je L_102
 	mov     rdi, 1
 	call    mallocArray
@@ -790,9 +789,8 @@ L_104:
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
+	cmp r10, 0
 	mov qword [rsp+8*23],r10
-	mov r8,  [rsp+8*23]
-	cmp r8, 0
 	je L_105
 	mov     rdi, 1
 	call    mallocArray

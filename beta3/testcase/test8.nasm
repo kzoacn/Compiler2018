@@ -728,9 +728,8 @@ L_2040:
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
+	cmp r10, 0
 	mov qword [rsp+8*16],r10
-	mov r8,  [rsp+8*16]
-	cmp r8, 0
 	je L_2041
 	mov r9,0
 	mov r8,r9
@@ -745,12 +744,11 @@ L_2043:
 	cmp r10,r11
 	mov r10, 0
 	setl r10B
+	mov r12,  [rsp+8*19]
+	add r12,r12
+	cmp r10, 0
 	mov qword [rsp+8*18],r10
-	mov r8,  [rsp+8*19]
-	add r8,r8
-	mov r9,  [rsp+8*18]
-	cmp r9, 0
-	mov qword [rsp+8*19],r8
+	mov qword [rsp+8*19],r12
 	je L_2044
 	mov r9,  [rsp+8*4]
 	mov r8,r9
@@ -775,13 +773,12 @@ L_2043:
 	mov qword [rsp+8*25],r8
 	mov r8, 0
 	setg r8B
+	cmp r8, 0
 	mov qword [rsp+8*27],r8
 	mov qword [rsp+8*26],r11
 	mov qword [rsp+8*22],r12
 	mov qword [rsp+8*23],r14
 	mov qword [rsp+8*24],r15
-	mov r8,  [rsp+8*27]
-	cmp r8, 0
 	je L_2047
 	mov r9,  [rsp+8*4]
 	mov r8,r9
@@ -857,9 +854,8 @@ L_2048:
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
+	cmp r10, 0
 	mov qword [rsp+8*43],r10
-	mov r8,  [rsp+8*43]
-	cmp r8, 0
 	je L_2049
 	mov r9,  [rsp+8*4]
 	mov r8,r9

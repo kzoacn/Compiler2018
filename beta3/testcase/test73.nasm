@@ -684,13 +684,12 @@ main:
 	cmp r13,r8
 	mov r15, 0
 	setl r15B
+	cmp r15, 0
 	mov qword [gbl+8*7],r8
 	mov qword [rsp+8*8],r10
 	mov qword [arg+8*63],r12
 	mov qword [rsp+8*9],r13
 	mov qword [rsp+8*10],r15
-	mov r8,  [rsp+8*10]
-	cmp r8, 0
 	je L_903
 	mov r9,t137
 	mov r8,r9
@@ -770,13 +769,12 @@ calc:
 	mov qword [rsp+8*21],r10
 	mov r10, 0
 	sete r10B
+	cmp r10, 0
 	mov qword [rsp+8*20],r8
 	mov qword [rsp+8*24],r10
 	mov qword [arg+8*63],r11
 	mov qword [rsp+8*22],r12
 	mov qword [rsp+8*23],r14
-	mov r8,  [rsp+8*24]
-	cmp r8, 0
 	je L_893
 	mov r8,  [rsp+8*20]
 	mov rax,r8
@@ -910,10 +908,9 @@ L_894:
 	cmp r10,r8
 	mov r11, 0
 	setl r11B
+	cmp r11, 0
 	mov qword [rsp+8*45],r8
 	mov qword [rsp+8*46],r11
-	mov r8,  [rsp+8*46]
-	cmp r8, 0
 	je L_899
 	mov     rsi, [rsp+8*36]
 	mov     rdi, [rsp+8*31]

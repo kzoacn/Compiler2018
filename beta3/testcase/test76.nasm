@@ -675,9 +675,8 @@ L_959:
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
+	cmp r10, 0
 	mov qword [rsp+8*6],r10
-	mov r8,  [rsp+8*6]
-	cmp r8, 0
 	je L_960
 	mov r9,  [gbl+8*3]
 	mov r8,r9
@@ -741,13 +740,12 @@ L_960:
 	mov qword [rsp+8*18],r11
 	mov r11, 0
 	sete r11B
+	cmp r11, 0
 	mov qword [rsp+8*22],r10
 	mov qword [rsp+8*27],r11
 	mov qword [rsp+8*25],r12
 	mov qword [rsp+8*20],r13
 	mov qword [rsp+8*19],r15
-	mov r8,  [rsp+8*27]
-	cmp r8, 0
 	je L_975
 	mov     rdi, 3
 	call    mallocArray

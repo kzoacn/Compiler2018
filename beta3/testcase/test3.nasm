@@ -672,9 +672,8 @@ L_0:
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
+	cmp r10, 0
 	mov qword [rsp+8*4],r10
-	mov r8,  [rsp+8*4]
-	cmp r8, 0
 	je L_1
 	mov r9,  [rsp+8*3]
 	mov r8,r9

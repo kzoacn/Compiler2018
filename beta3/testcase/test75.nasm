@@ -675,9 +675,8 @@ L_914:
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
+	cmp r10, 0
 	mov qword [rsp+8*6],r10
-	mov r8,  [rsp+8*6]
-	cmp r8, 0
 	je L_915
 	mov r9,  [gbl+8*3]
 	mov r8,r9
@@ -707,9 +706,8 @@ L_917:
 	cmp r8,r9
 	mov r10, 0
 	setle r10B
+	cmp r10, 0
 	mov qword [rsp+8*11],r10
-	mov r8,  [rsp+8*11]
-	cmp r8, 0
 	je L_918
 	mov r9,  [rsp+8*4]
 	mov r8,r9
@@ -753,14 +751,13 @@ L_917:
 	cmp r11,r15
 	mov r9, 0
 	sete r9B
+	cmp r9, 0
 	mov qword [rsp+8*28],r9
 	mov qword [rsp+8*23],r10
 	mov qword [rsp+8*26],r11
 	mov qword [rsp+8*20],r12
 	mov qword [rsp+8*21],r13
 	mov qword [rsp+8*19],r14
-	mov r8,  [rsp+8*28]
-	cmp r8, 0
 	je L_951
 	mov     rdi, 3
 	call    mallocArray
@@ -901,10 +898,9 @@ L_954:
 	cmp r8,r9
 	mov r10, 0
 	setne r10B
+	cmp r10, 0
 	mov qword [rsp+8*48],r8
 	mov qword [rsp+8*49],r10
-	mov r8,  [rsp+8*49]
-	cmp r8, 0
 	je L_955
 	mov     rdi, 1
 	call    mallocArray
@@ -929,10 +925,9 @@ L_954:
 	cmp r8,r9
 	mov r10, 0
 	sete r10B
+	cmp r10, 0
 	mov qword [rsp+8*52],r8
 	mov qword [rsp+8*54],r10
-	mov r8,  [rsp+8*54]
-	cmp r8, 0
 	je L_956
 	mov     rdi, 1
 	call    mallocArray
@@ -1084,9 +1079,8 @@ L_920:
 	cmp r8,r9
 	mov r10, 0
 	setle r10B
+	cmp r10, 0
 	mov qword [rsp+8*74],r10
-	mov r8,  [rsp+8*74]
-	cmp r8, 0
 	je L_921
 	mov r9,  [rsp+8*4]
 	mov r8,r9
@@ -1149,10 +1143,9 @@ L_937:
 	cmp r8,r9
 	mov r10, 0
 	setne r10B
+	cmp r10, 0
 	mov qword [rsp+8*84],r8
 	mov qword [rsp+8*85],r10
-	mov r8,  [rsp+8*85]
-	cmp r8, 0
 	je L_938
 	mov     rdi, 1
 	call    mallocArray

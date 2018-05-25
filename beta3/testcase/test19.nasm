@@ -671,11 +671,10 @@ main:
 	
 L_62:
 	mov r8,1
-	mov r9,0
-	cmp r8,r9
-	mov r10, 0
-	setg r10B
-	mov qword [rsp+8*3],r10
+	cmp r8,0
+	mov r9, 0
+	setg r9B
+	mov qword [rsp+8*3],r9
 	
 L_63:
 	mov r8,  [rsp+8*3]
@@ -716,14 +715,12 @@ L_65:
 	
 L_66:
 	mov r8,1
-	mov r9,0
-	cmp r8,r9
-	mov r10, 0
-	setg r10B
-	mov qword [rsp+8*8],r10
-	mov r9,  [rsp+8*8]
-	mov r8,r9
-	mov qword [rsp+8*7],r8
+	cmp r8,0
+	mov r9, 0
+	setg r9B
+	mov r10,r9
+	mov qword [rsp+8*8],r9
+	mov qword [rsp+8*7],r10
 	
 L_67:
 	mov r8,  [rsp+8*7]
@@ -783,10 +780,9 @@ L_72:
 	cmp r8,r9
 	mov r10, 0
 	setne r10B
+	mov r11,r10
 	mov qword [rsp+8*12],r10
-	mov r9,  [rsp+8*12]
-	mov r8,r9
-	mov qword [rsp+8*11],r8
+	mov qword [rsp+8*11],r11
 	
 L_73:
 	mov r8,  [rsp+8*11]

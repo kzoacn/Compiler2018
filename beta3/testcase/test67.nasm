@@ -669,9 +669,8 @@ L_364:
 	cmp r8,r9
 	mov r10, 0
 	setle r10B
+	cmp r10, 0
 	mov qword [rsp+8*4],r10
-	mov r8,  [rsp+8*4]
-	cmp r8, 0
 	je L_365
 	mov r9,  [gbl+8*5]
 	mov r8,r9
@@ -701,9 +700,8 @@ L_367:
 	cmp r8,r9
 	mov r10, 0
 	setle r10B
+	cmp r10, 0
 	mov qword [rsp+8*9],r10
-	mov r8,  [rsp+8*9]
-	cmp r8, 0
 	je L_368
 	mov r9,  [gbl+8*5]
 	mov r8,r9
@@ -721,14 +719,12 @@ L_367:
 	mov r9,2
 	mov r8,r9
 	mov r10,  [rsp+8*2]
-	mov r11,3
-	cmp r10,r11
-	mov r12, 0
-	setg r12B
+	cmp r10,3
+	mov r11, 0
+	setg r11B
+	cmp r11, 0
 	mov qword [rsp+8*13],r8
-	mov qword [rsp+8*14],r12
-	mov r8,  [rsp+8*14]
-	cmp r8, 0
+	mov qword [rsp+8*14],r11
 	jne L_372
 	mov r9,0
 	mov r8,r9
@@ -811,12 +807,11 @@ L_376:
 	cmp r10,r11
 	mov r10, 0
 	setle r10B
+	mov r12,  [rsp+8*30]
+	add r12,r12
+	cmp r10, 0
 	mov qword [rsp+8*29],r10
-	mov r8,  [rsp+8*30]
-	add r8,r8
-	mov r9,  [rsp+8*29]
-	cmp r9, 0
-	mov qword [rsp+8*30],r8
+	mov qword [rsp+8*30],r12
 	je L_377
 	mov r8,  [rsp+8*2]
 	mov r9,  [rsp+8*13]

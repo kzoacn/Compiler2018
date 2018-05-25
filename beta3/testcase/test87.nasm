@@ -669,9 +669,8 @@ L_1228:
 	cmp r10,r9
 	mov r9, 0
 	setl r9B
+	cmp r9, 0
 	mov qword [rsp+8*2],r9
-	mov r8,  [rsp+8*2]
-	cmp r8, 0
 	jne L_1230
 	mov r9,0
 	mov r8,r9
@@ -689,11 +688,10 @@ L_1230:
 	cmp r11,r10
 	mov r10, 0
 	setg r10B
+	mov r12,r10
 	mov qword [rsp+8*4],r9
 	mov qword [rsp+8*5],r10
-	mov r9,  [rsp+8*5]
-	mov r8,r9
-	mov qword [rsp+8*2],r8
+	mov qword [rsp+8*2],r12
 	
 L_1231:
 	mov r8,  [rsp+8*6]

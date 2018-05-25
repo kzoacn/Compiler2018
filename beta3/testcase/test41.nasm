@@ -666,13 +666,12 @@ L_93:
 	cmp r9,r12
 	mov r13, 0
 	sete r13B
+	cmp r13, 0
 	mov qword [rsp+8*5],r8
 	mov qword [rsp+8*4],r9
 	mov qword [rsp+8*3],r10
 	mov qword [rsp+8*6],r11
 	mov qword [rsp+8*7],r13
-	mov r8,  [rsp+8*7]
-	cmp r8, 0
 	je L_96
 	mov r8,  [rsp+8*3]
 	mov rax,r8

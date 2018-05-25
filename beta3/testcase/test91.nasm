@@ -659,11 +659,10 @@ cd:
 	mov qword [rsp+8*6],r12
 	mov r12, 0
 	sete r12B
+	cmp r12, 0
 	mov qword [rsp+8*10],r8
 	mov qword [rsp+8*11],r12
 	mov qword [rsp+8*8],r14
-	mov r8,  [rsp+8*11]
-	cmp r8, 0
 	je L_1241
 	mov     rsi, [rsp+8*4]
 	mov     rdi, t66

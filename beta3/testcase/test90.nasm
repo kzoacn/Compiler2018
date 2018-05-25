@@ -747,9 +747,8 @@ L_1232:
 	cmp r8,r9
 	mov r10, 0
 	setle r10B
+	cmp r10, 0
 	mov qword [rsp+8*66],r10
-	mov r8,  [rsp+8*66]
-	cmp r8, 0
 	je L_1233
 	mov r8,  [rsp+8*6]
 	mov r9,  [rsp+8*8]
@@ -865,10 +864,9 @@ L_1233:
 	cmp r10,r11
 	mov r12, 0
 	sete r12B
+	cmp r12, 0
 	mov qword [rsp+8*70],r10
 	mov qword [rsp+8*71],r12
-	mov r8,  [rsp+8*71]
-	cmp r8, 0
 	je L_1235
 	mov r8,  [rsp+8*4]
 	mov rax,r8
@@ -1302,11 +1300,10 @@ gcd1:
 	cmp r12,r13
 	mov r14, 0
 	sete r14B
+	cmp r14, 0
 	mov qword [rsp+8*109],r8
 	mov qword [rsp+8*110],r12
 	mov qword [rsp+8*111],r14
-	mov r8,  [rsp+8*111]
-	cmp r8, 0
 	je L_1237
 	mov r8,  [rsp+8*76]
 	mov rax,r8
@@ -1638,10 +1635,9 @@ gcd2:
 	cmp r12,r13
 	mov r14, 0
 	sete r14B
+	cmp r14, 0
 	mov qword [rsp+8*149],r12
 	mov qword [rsp+8*150],r14
-	mov r8,  [rsp+8*150]
-	cmp r8, 0
 	je L_1239
 	mov r8,  [rsp+8*115]
 	mov rax,r8

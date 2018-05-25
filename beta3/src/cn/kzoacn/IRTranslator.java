@@ -694,7 +694,7 @@ public class IRTranslator {
                     text.append(new StringBuffer("cmp "+ readReg(var1)+","+readReg(var2)+"\n\t"));
                     text.append(new StringBuffer("mov "+writeReg(dest)+", 0\n\t"));
                     text.append(new StringBuffer("setl "+writeReg(dest)+"B\n\t"));
-                    kickAll();
+                    //kickAll();
 
 
                     /*text.append(new StringBuffer("mov r8, "+varName(var1)+"\n\t"));
@@ -708,7 +708,7 @@ public class IRTranslator {
                     text.append(new StringBuffer("cmp "+ readReg(var1)+","+readReg(var2)+"\n\t"));
                     text.append(new StringBuffer("mov "+writeReg(dest)+", 0\n\t"));
                     text.append(new StringBuffer("setle "+writeReg(dest)+"B\n\t"));
-                    kickAll();
+                    //kickAll();
                     /*text.append(new StringBuffer("mov r8, "+varName(var1)+"\n\t"));
                     text.append(new StringBuffer("mov r9, "+varName(var2)+"\n\t"));
                     text.append(new StringBuffer("cmp r8, r9\n\t"));
@@ -719,7 +719,7 @@ public class IRTranslator {
                     text.append(new StringBuffer("cmp "+ readReg(var1)+","+readReg(var2)+"\n\t"));
                     text.append(new StringBuffer("mov "+writeReg(dest)+", 0\n\t"));
                     text.append(new StringBuffer("sete "+writeReg(dest)+"B\n\t"));
-                    kickAll();
+                    //kickAll();
                     /*text.append(new StringBuffer("mov r8, "+varName(var1)+"\n\t"));
                     text.append(new StringBuffer("mov r9, "+varName(var2)+"\n\t"));
                     text.append(new StringBuffer("cmp r8, r9\n\t"));
@@ -730,7 +730,7 @@ public class IRTranslator {
                     text.append(new StringBuffer("cmp "+ readReg(var1)+","+readReg(var2)+"\n\t"));
                     text.append(new StringBuffer("mov "+writeReg(dest)+", 0\n\t"));
                     text.append(new StringBuffer("setne "+writeReg(dest)+"B\n\t"));
-                    kickAll();
+                    //kickAll();
                     /*text.append(new StringBuffer("mov r8, "+varName(var1)+"\n\t"));
                     text.append(new StringBuffer("mov r9, "+varName(var2)+"\n\t"));
                     text.append(new StringBuffer("cmp r8, r9\n\t"));
@@ -741,7 +741,7 @@ public class IRTranslator {
                     text.append(new StringBuffer("cmp "+ readReg(var1)+","+readReg(var2)+"\n\t"));
                     text.append(new StringBuffer("mov "+writeReg(dest)+", 0\n\t"));
                     text.append(new StringBuffer("setge "+writeReg(dest)+"B\n\t"));
-                    kickAll();
+                    //kickAll();
                     /*text.append(new StringBuffer("mov r8, "+varName(var1)+"\n\t"));
                     text.append(new StringBuffer("mov r9, "+varName(var2)+"\n\t"));
                     text.append(new StringBuffer("cmp r8, r9\n\t"));
@@ -749,10 +749,16 @@ public class IRTranslator {
                     text.append(new StringBuffer("setge "+varName(dest)+"\n\t"));*/
                     break;
                 case greater:
-                    text.append(new StringBuffer("cmp "+ readReg(var1)+","+readReg(var2)+"\n\t"));
-                    text.append(new StringBuffer("mov "+writeReg(dest)+", 0\n\t"));
-                    text.append(new StringBuffer("setg "+writeReg(dest)+"B\n\t"));
-                    kickAll();
+                    if(isConst(var2)){
+                        text.append(new StringBuffer("cmp " + readReg(var1) + "," + Integer.toString(var2.constValue) + "\n\t"));
+                        text.append(new StringBuffer("mov " + writeReg(dest) + ", 0\n\t"));
+                        text.append(new StringBuffer("setg " + writeReg(dest) + "B\n\t"));
+                    }else {
+                        text.append(new StringBuffer("cmp " + readReg(var1) + "," + readReg(var2) + "\n\t"));
+                        text.append(new StringBuffer("mov " + writeReg(dest) + ", 0\n\t"));
+                        text.append(new StringBuffer("setg " + writeReg(dest) + "B\n\t"));
+                    }
+                    //kickAll();
                     /*text.append(new StringBuffer("mov r8, "+varName(var1)+"\n\t"));
                     text.append(new StringBuffer("mov r9, "+varName(var2)+"\n\t"));
                     text.append(new StringBuffer("cmp r8, r9\n\t"));

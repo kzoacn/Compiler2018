@@ -675,9 +675,8 @@ L_348:
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
+	cmp r10, 0
 	mov qword [rsp+8*5],r10
-	mov r8,  [rsp+8*5]
-	cmp r8, 0
 	je L_349
 	mov     rdi, 3
 	call    mallocArray
@@ -703,9 +702,8 @@ L_351:
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
+	cmp r10, 0
 	mov qword [rsp+8*10],r10
-	mov r8,  [rsp+8*10]
-	cmp r8, 0
 	je L_352
 	mov     rdi, 2
 	call    mallocArray

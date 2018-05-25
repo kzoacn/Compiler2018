@@ -733,9 +733,8 @@ L_2051:
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
+	cmp r10, 0
 	mov qword [rsp+8*18],r10
-	mov r8,  [rsp+8*18]
-	cmp r8, 0
 	je L_2052
 	mov r9,  [rsp+8*4]
 	mov r8,r9
@@ -749,12 +748,11 @@ L_2051:
 	cmp r12,r13
 	mov r14, 0
 	sete r14B
+	cmp r14, 0
 	mov qword [rsp+8*19],r8
 	mov qword [rsp+8*20],r11
 	mov qword [rsp+8*21],r12
 	mov qword [rsp+8*22],r14
-	mov r8,  [rsp+8*22]
-	cmp r8, 0
 	je L_2055
 	mov r9,  [rsp+8*17]
 	mov r8,r9

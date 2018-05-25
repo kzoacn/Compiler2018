@@ -693,10 +693,9 @@ L_80:
 	cmp r10,r11
 	mov r12, 0
 	setne r12B
+	cmp r12, 0
 	mov qword [rsp+8*10],r10
 	mov qword [rsp+8*11],r12
-	mov r8,  [rsp+8*11]
-	cmp r8, 0
 	je L_81
 	xor rdx, rdx
 	mov r8,  [rsp+8*2]
@@ -737,12 +736,11 @@ L_83:
 	cmp r13,r14
 	mov r15, 0
 	sete r15B
+	cmp r15, 0
 	mov qword [rsp+8*5],r8
 	mov qword [rsp+8*16],r12
 	mov qword [rsp+8*9],r13
 	mov qword [rsp+8*17],r15
-	mov r8,  [rsp+8*17]
-	cmp r8, 0
 	je L_87
 	jmp L_84
 	
@@ -806,13 +804,12 @@ L_88:
 	mov qword [rsp+8*25],r9
 	mov r9, 0
 	sete r9B
+	cmp r9, 0
 	mov qword [rsp+8*27],r9
 	mov qword [rsp+8*3],r10
 	mov qword [rsp+8*23],r12
 	mov qword [rsp+8*21],r14
 	mov qword [rsp+8*5],r15
-	mov r8,  [rsp+8*27]
-	cmp r8, 0
 	je L_92
 	jmp L_89
 	

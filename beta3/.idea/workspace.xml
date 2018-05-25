@@ -44,8 +44,8 @@
       <file leaf-file-name="IRTranslator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="490" column="25" lean-forward="true" selection-start-line="490" selection-start-column="25" selection-end-line="490" selection-end-column="25" />
+            <state relative-caret-position="289">
+              <caret line="753" column="82" lean-forward="true" selection-start-line="753" selection-start-column="82" selection-end-line="753" selection-end-column="82" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -128,7 +128,7 @@
       <find>currentLine</find>
       <find>nextVariab</find>
       <find>mov</find>
-      <find />
+      <find>mov qword</find>
       <find>variable.reg</find>
       <find>call</find>
       <find>getregister</find>
@@ -375,15 +375,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ExecTest - 2018.05.25 at 19h 53m 51s.xml">
-      <configuration name="ExecTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExecTest_test98 - 2018.05.25 at 19h 53m 57s.xml">
-      <configuration name="ExecTest.test98" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExecTest - 2018.05.25 at 19h 55m 50s.xml">
-      <configuration name="ExecTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ExecTest_test14 - 2018.05.25 at 19h 56m 07s.xml">
       <configuration name="ExecTest.test14" configurationId="JUnit" />
     </history-entry>
@@ -403,6 +394,15 @@
       <configuration name="ExecTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ExecTest - 2018.05.25 at 20h 01m 04s.xml">
+      <configuration name="ExecTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecTest - 2018.05.25 at 20h 05m 39s.xml">
+      <configuration name="ExecTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecTest_test14 - 2018.05.25 at 20h 05m 51s.xml">
+      <configuration name="ExecTest.test14" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecTest - 2018.05.25 at 20h 06m 45s.xml">
       <configuration name="ExecTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -833,8 +833,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="490" column="25" lean-forward="true" selection-start-line="490" selection-start-column="25" selection-end-line="490" selection-end-column="25" />
+        <state relative-caret-position="289">
+          <caret line="753" column="82" lean-forward="true" selection-start-line="753" selection-start-column="82" selection-end-line="753" selection-end-column="82" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -719,9 +719,8 @@ L_116:
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
+	cmp r10, 0
 	mov qword [rsp+8*11],r10
-	mov r8,  [rsp+8*11]
-	cmp r8, 0
 	je L_117
 	mov r9,0
 	mov r8,r9
@@ -733,9 +732,8 @@ L_119:
 	cmp r8,r9
 	mov r10, 0
 	setl r10B
+	cmp r10, 0
 	mov qword [rsp+8*13],r10
-	mov r8,  [rsp+8*13]
-	cmp r8, 0
 	je L_120
 	mov     rdi, 3
 	call    mallocArray
