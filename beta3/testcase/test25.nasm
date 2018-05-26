@@ -670,63 +670,68 @@ main:
 	mov     qword [rsp+8*3], rax
 	mov r8,  [rsp+8*3]
 	mov r15,r8
-	mov r10,0
-	mov r9,r10
+	mov r9,0
+	mov r14,r9
 	mov r11,0
-	mov r14,r11
-	mov qword [rsp+8*5],r9
+	mov r10,r11
+	mov qword [rsp+8*6],r10
 	
-L_220:
-	cmp r14,r13
-	mov r8, 0
-	setl r8B
-	cmp r8, 0
-	mov qword [rsp+8*7],r8
-	je L_221
-	mov r8,r13
-	sub r8,r14
-	mov r10,  [rsp+8*5]
-	mov r9,r10
-	inc r10 
+L_244:
+	mov r8,  [rsp+8*6]
+	cmp r8,r13
+	mov r9, 0
+	setl r9B
+	cmp r9, 0
+	mov qword [rsp+8*7],r9
+	je L_245
+	mov r8,  [rsp+8*6]
+	mov r9,r13
+	sub r9,r8
+	mov r10,r14
+	inc qword r14 
 	mov r11,r15
-	mov qword [rsp+8*5],r10
+	mov r8,r10
+	add r8,1
+	shl r8,3
+	add r8,r11
+	mov [r8],r9
+	mov qword [rsp+8*11],r8
+	mov r9,  [rsp+8*6]
+	mov r8,r9
+	inc r9 
+	mov qword [rsp+8*12],r8
+	mov qword [rsp+8*6],r9
+	mov qword [rsp+8*9],r10
+	mov qword [rsp+8*10],r11
+	jmp L_244
+	
+L_245:
+	mov r9,0
+	mov r8,r9
+	mov qword [rsp+8*6],r8
+	
+L_247:
+	mov r8,  [rsp+8*6]
+	cmp r8,r13
+	mov r9, 0
+	setl r9B
+	cmp r9, 0
+	mov qword [rsp+8*13],r9
+	je L_248
+	mov r8,r15
+	mov r9,  [rsp+8*6]
 	mov r10,r9
 	add r10,1
 	shl r10,3
-	add r10,r11
-	mov [r10],r8
-	mov r8,r14
-	inc qword r14 
-	mov qword [rsp+8*12],r8
-	mov qword [rsp+8*9],r9
-	mov qword [rsp+8*11],r10
-	mov qword [rsp+8*10],r11
-	jmp L_220
-	
-L_221:
-	mov r8,0
-	mov r14,r8
-	
-L_223:
-	cmp r14,r13
-	mov r8, 0
-	setl r8B
-	cmp r8, 0
-	mov qword [rsp+8*13],r8
-	je L_224
-	mov r8,r15
-	mov r9,r14
-	add r9,1
-	shl r9,3
-	add r9,r8
-	mov r10, [r9]
-	mov r11,r10
+	add r10,r8
+	mov r11, [r10]
 	mov qword [rsp+8*14],r8
 	mov r8,r11
-	mov qword [rsp+8*18],r8
-	mov qword [rsp+8*15],r9
-	mov qword [rsp+8*16],r10
-	mov qword rdi,r11
+	mov qword [rsp+8*15],r10
+	mov r10,r8
+	mov qword rdi,r8
+	mov qword [rsp+8*18],r10
+	mov qword [rsp+8*16],r11
 	mov     rdi, [rsp+8*18]
 	call    toString
 	mov     qword[rsp+8*19], rax
@@ -738,12 +743,14 @@ L_223:
 	mov rdi,[rsp+8*20] 
 	add rdi, 1 
 	call puts
-	mov r8,r14
-	inc qword r14 
+	mov r9,  [rsp+8*6]
+	mov r8,r9
+	inc r9 
 	mov qword [rsp+8*21],r8
-	jmp L_223
+	mov qword [rsp+8*6],r9
+	jmp L_247
 	
-L_224:
+L_248:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

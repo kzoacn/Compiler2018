@@ -663,8 +663,8 @@ main:
 	pop r15
 	mov r8 , rax
 	mov r9,4
-	mov r15,r9
-	mov r10,r15
+	mov r14,r9
+	mov r10,r14
 	mov r11,r10
 	mov qword [rsp+8*1],r8
 	mov qword rdi,r10

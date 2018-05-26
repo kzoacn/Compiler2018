@@ -667,10 +667,10 @@ main:
 	mov qword [rsp+8*1],r8
 	mov r8,3
 	mov r11,r8
-	mov r15,r11
-	mov r14,r9
-	mov r8,r15
-	add r8,r14
+	mov r13,r11
+	mov r15,r9
+	mov r8,r13
+	add r8,r15
 	mov qword rsi,r9
 	mov r9,r8
 	mov r8,r9

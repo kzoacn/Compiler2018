@@ -287,6 +287,11 @@ public class IROptimizer {
         variables.removeIf((var)->gbl.contains(var.name));
         variables.removeIf((var)->var.type.name.contains("const") ||var.name.contains("const") || var.type.name.equals("null"));
         variables.removeIf((var)->var.name.startsWith("t"));
+
+        for(Variable var : variables){
+            if(var.name.length()==1)color.add(var);
+            if(var.name.equals("ans"))color.add(var);
+        }
         for(Map.Entry<Variable,HashSet<Variable> > entry : graph.entrySet()){
             HashSet<Variable> hashSet=entry.getValue();
             hashSet.removeIf((var)->!variables.contains(var));
@@ -314,12 +319,8 @@ public class IROptimizer {
             Variable lucky=null;
             int mx=0;
             for(Variable var : variables){
-                if(degree.get(var)>=registerNumber){
-                    if(degree.get(var)>mx) {
-                        lucky = var;
-                        mx=degree.get(var);
-                    }
-                }
+                lucky = var;
+                break;
             }
 
             variables.remove(lucky);
@@ -331,6 +332,7 @@ public class IROptimizer {
         HashMap<String,Integer>colorMap=new HashMap<String, Integer>();
         boolean[] used=new boolean[10];
         for(int i=0;i<10;i++)used[i]=false;
+        Collections.shuffle(color);
         for(Variable var:color){
             for(int i=0;i<10;i++)visit[i]=false;
             for(Variable var2:graph.get(var))if(colorMap.containsKey(var2.name))

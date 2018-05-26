@@ -719,19 +719,19 @@ main:
 	mov r8,2147483247
 	mov [r10],r8
 	mov r8,0
-	mov r14,r8
+	mov r12,r8
 	mov qword [rsp+8*14],r10
 	mov qword [rsp+8*6],r11
 	
-L_87:
-	cmp r14,r13
+L_111:
+	cmp r12,r13
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
 	mov qword [rsp+8*16],r8
-	je L_88
+	je L_112
 	mov r8,r15
-	mov r9,r14
+	mov r9,r12
 	add r9,1
 	shl r9,3
 	add r9,r8
@@ -754,12 +754,12 @@ L_87:
 	mov rdi,[rsp+8*23] 
 	add rdi, 1 
 	call puts
-	mov r8,r14
-	inc qword r14 
+	mov r8,r12
+	inc qword r12 
 	mov qword [rsp+8*24],r8
-	jmp L_87
+	jmp L_111
 	
-L_88:
+L_112:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

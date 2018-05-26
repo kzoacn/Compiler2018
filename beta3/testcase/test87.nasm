@@ -664,7 +664,7 @@ main:
 	mov r8 , rax
 	mov qword [rsp+8*1],r8
 	
-L_1610:
+L_1634:
 	mov r8,1
 	mov r9,r8
 	mov rcx,29
@@ -675,13 +675,13 @@ L_1610:
 	setl r9B
 	cmp r9, 0
 	mov qword [rsp+8*2],r9
-	jne L_1612
+	jne L_1636
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*2],r8
-	jmp L_1613
+	jmp L_1637
 	
-L_1612:
+L_1636:
 	mov r8,1
 	mov r9,r8
 	mov rcx,29
@@ -697,11 +697,11 @@ L_1612:
 	mov qword [rsp+8*4],r9
 	mov qword [rsp+8*5],r10
 	
-L_1613:
+L_1637:
 	add r15,r15
 	mov r8,  [rsp+8*2]
 	cmp r8, 0
-	je L_1611
+	je L_1635
 	mov r8,  [gbl+8*3]
 	mov r9,  [gbl+8*7]
 	mov r10,r8
@@ -2885,9 +2885,9 @@ L_1613:
 	mov r8,r9
 	mov qword [gbl+8*3],r8
 	mov qword [rsp+8*211],r9
-	jmp L_1610
+	jmp L_1634
 	
-L_1611:
+L_1635:
 	mov r9,  [gbl+8*7]
 	mov r8,r9
 	mov r10,r8

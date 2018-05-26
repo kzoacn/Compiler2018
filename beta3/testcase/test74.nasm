@@ -663,17 +663,17 @@ main:
 	pop r15
 	mov r8 , rax
 	mov r9,t64
-	mov r14,r9
+	mov r13,r9
 	mov r10,t65
 	mov r15,r10
 	mov qword [rsp+8*1],r8
 	mov rdi,  r15
-	mov rsi,  r14
+	mov rsi,  r13
 	call    strls
 	mov qword [rsp+8*4], rax
 	mov r8,  [rsp+8*4]
 	cmp r8, 0
-	je L_1286
+	je L_1310
 	mov r9,t67
 	mov r8,r9
 	mov r10,r8
@@ -682,9 +682,9 @@ main:
 	mov rdi,[rsp+8*6] 
 	add rdi, 1 
 	call puts
-	jmp L_1287
+	jmp L_1311
 	
-L_1286:
+L_1310:
 	mov r9,t71
 	mov r8,r9
 	mov r10,r8
@@ -694,7 +694,7 @@ L_1286:
 	add rdi, 1 
 	call puts
 	
-L_1287:
+L_1311:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

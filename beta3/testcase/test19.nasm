@@ -666,23 +666,23 @@ main:
 	mov r15,r9
 	cmp r15, 0
 	mov qword [rsp+8*1],r8
-	jne L_444
+	jne L_468
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*3],r8
-	jmp L_445
+	jmp L_469
 	
-L_444:
+L_468:
 	mov r8,1
 	cmp r8,0
 	mov r9, 0
 	setg r9B
 	mov qword [rsp+8*3],r9
 	
-L_445:
+L_469:
 	mov r8,  [rsp+8*3]
 	cmp r8, 0
-	je L_446
+	je L_470
 	mov r9,t69
 	mov r8,r9
 	mov r10,r8
@@ -691,9 +691,9 @@ L_445:
 	mov rdi,[rsp+8*5] 
 	add rdi, 1 
 	call puts
-	jmp L_447
+	jmp L_471
 	
-L_446:
+L_470:
 	mov r9,t73
 	mov r8,r9
 	mov r10,r8
@@ -703,19 +703,19 @@ L_446:
 	add rdi, 1 
 	call puts
 	
-L_447:
+L_471:
 	mov r8, 0
 	cmp r15, 0
 	sete r8B
 	cmp r8, 0
 	mov qword [rsp+8*7],r8
-	je L_448
+	je L_472
 	mov r9,1
 	mov r8,r9
 	mov qword [rsp+8*7],r8
-	jmp L_449
+	jmp L_473
 	
-L_448:
+L_472:
 	mov r8,1
 	cmp r8,0
 	mov r9, 0
@@ -724,10 +724,10 @@ L_448:
 	mov qword [rsp+8*8],r9
 	mov qword [rsp+8*7],r10
 	
-L_449:
+L_473:
 	mov r8,  [rsp+8*7]
 	cmp r8, 0
-	je L_450
+	je L_474
 	mov r9,t82
 	mov r8,r9
 	mov r10,r8
@@ -736,9 +736,9 @@ L_449:
 	mov rdi,[rsp+8*9] 
 	add rdi, 1 
 	call puts
-	jmp L_451
+	jmp L_475
 	
-L_450:
+L_474:
 	mov r9,t86
 	mov r8,r9
 	mov r10,r8
@@ -748,17 +748,17 @@ L_450:
 	add rdi, 1 
 	call puts
 	
-L_451:
+L_475:
 	mov r8,0
 	mov r15,r8
 	cmp r15, 0
-	jne L_452
+	jne L_476
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*11],r8
-	jmp L_453
+	jmp L_477
 	
-L_452:
+L_476:
 	mov r8,1
 	mov r9,0
 	cmp r8,r9
@@ -766,16 +766,16 @@ L_452:
 	setne r10B
 	mov qword [rsp+8*11],r10
 	
-L_453:
+L_477:
 	mov r8,  [rsp+8*11]
 	cmp r8, 0
-	jne L_454
+	jne L_478
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*11],r8
-	jmp L_455
+	jmp L_479
 	
-L_454:
+L_478:
 	mov r8,2
 	mov r9,4
 	cmp r8,r9
@@ -785,10 +785,10 @@ L_454:
 	mov qword [rsp+8*12],r10
 	mov qword [rsp+8*11],r11
 	
-L_455:
+L_479:
 	mov r8,  [rsp+8*11]
 	cmp r8, 0
-	je L_456
+	je L_480
 	mov r9,t99
 	mov r8,r9
 	mov r10,r8
@@ -797,9 +797,9 @@ L_455:
 	mov rdi,[rsp+8*13] 
 	add rdi, 1 
 	call puts
-	jmp L_457
+	jmp L_481
 	
-L_456:
+L_480:
 	mov r9,t103
 	mov r8,r9
 	mov r10,r8
@@ -809,7 +809,7 @@ L_456:
 	add rdi, 1 
 	call puts
 	
-L_457:
+L_481:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

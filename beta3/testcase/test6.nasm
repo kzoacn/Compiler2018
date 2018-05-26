@@ -663,10 +663,10 @@ main:
 	pop r15
 	mov r8 , rax
 	mov r9,12
-	mov r15,r9
+	mov r13,r9
 	mov r10,7
 	mov r14,r10
-	mov r11,r15
+	mov r11,r13
 	add r11,r14
 	mov qword [rsp+8*1],r8
 	mov r8,r11
@@ -685,7 +685,7 @@ main:
 	mov rdi,[rsp+8*8] 
 	add rdi, 1 
 	call puts
-	mov r8,r15
+	mov r8,r13
 	sub r8,r14
 	mov r9,r8
 	mov r10,r9
@@ -703,7 +703,7 @@ main:
 	mov rdi,[rsp+8*12] 
 	add rdi, 1 
 	call puts
-	mov r8,r15
+	mov r8,r13
 	imul r8,r14
 	mov r9,r8
 	mov r10,r9
@@ -722,7 +722,7 @@ main:
 	add rdi, 1 
 	call puts
 	xor rdx, rdx
-	mov rax, r15
+	mov rax, r13
 	mov rbx, r14
 	cdq
 	idiv rbx
@@ -744,7 +744,7 @@ main:
 	add rdi, 1 
 	call puts
 	xor rdx, rdx
-	mov rax, r15
+	mov rax, r13
 	mov rbx, r14
 	cdq
 	idiv rbx
@@ -765,7 +765,7 @@ main:
 	mov rdi,[rsp+8*24] 
 	add rdi, 1 
 	call puts
-	mov r8,r15
+	mov r8,r13
 	and r8,r14
 	mov r9,r8
 	mov r10,r9
@@ -783,7 +783,7 @@ main:
 	mov rdi,[rsp+8*28] 
 	add rdi, 1 
 	call puts
-	mov r8,r15
+	mov r8,r13
 	or r8,r14
 	mov r9,r8
 	mov r10,r9
@@ -801,7 +801,7 @@ main:
 	mov rdi,[rsp+8*32] 
 	add rdi, 1 
 	call puts
-	mov r8,r15
+	mov r8,r13
 	xor r8,r14
 	mov r9,r8
 	mov r10,r9
@@ -820,7 +820,7 @@ main:
 	add rdi, 1 
 	call puts
 	mov r8, 0
-	cmp r15, 0
+	cmp r13, 0
 	sete r8B
 	mov r9,r8
 	mov r10,r9
@@ -838,7 +838,7 @@ main:
 	mov rdi,[rsp+8*40] 
 	add rdi, 1 
 	call puts
-	mov r8,r15
+	mov r8,r13
 	neg r8
 	mov r9,r8
 	mov r10,r9
@@ -856,7 +856,7 @@ main:
 	mov rdi,[rsp+8*44] 
 	add rdi, 1 
 	call puts
-	mov r8,r15
+	mov r8,r13
 	not r8
 	mov r9,r8
 	mov r10,r9

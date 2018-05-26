@@ -667,20 +667,20 @@ main:
 	call    mallocArray
 	mov     qword [rsp+8*3], rax
 	mov r8,  [rsp+8*3]
-	mov r15,r8
+	mov r12,r8
 	mov r9,0
 	mov r14,r9
 	mov r10,0
 	mov r13,r10
 	
-L_436:
+L_460:
 	mov r8,  [gbl+8*2]
 	cmp r13,r8
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
 	mov qword [rsp+8*7],r9
-	je L_437
+	je L_461
 	xor rdx, rdx
 	mov rax, r13
 	mov r8,2
@@ -695,8 +695,8 @@ L_436:
 	cmp r11, 0
 	mov qword [rsp+8*8],r9
 	mov qword [rsp+8*9],r11
-	je L_440
-	mov r8,r15
+	je L_464
+	mov r8,r12
 	mov r9,r13
 	add r9,1
 	shl r9,3
@@ -705,11 +705,11 @@ L_436:
 	mov [r9],r10
 	mov qword [rsp+8*10],r8
 	mov qword [rsp+8*11],r9
-	jmp L_438
+	jmp L_462
 	
-L_440:
+L_464:
 	inc qword r14 
-	mov r8,r15
+	mov r8,r12
 	mov r9,r13
 	add r9,1
 	shl r9,3
@@ -718,25 +718,25 @@ L_440:
 	mov qword [rsp+8*12],r8
 	mov qword [rsp+8*13],r9
 	
-L_438:
+L_462:
 	mov r8,r13
 	inc qword r13 
 	mov qword [rsp+8*14],r8
-	jmp L_436
+	jmp L_460
 	
-L_437:
+L_461:
 	mov r8,0
 	mov r13,r8
 	
-L_441:
+L_465:
 	mov r8,  [gbl+8*2]
 	cmp r13,r8
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
 	mov qword [rsp+8*15],r9
-	je L_442
-	mov r8,r15
+	je L_466
+	mov r8,r12
 	mov r9,r13
 	add r9,1
 	shl r9,3
@@ -763,9 +763,9 @@ L_441:
 	mov r8,r13
 	inc qword r13 
 	mov qword [rsp+8*23],r8
-	jmp L_441
+	jmp L_465
 	
-L_442:
+L_466:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]
