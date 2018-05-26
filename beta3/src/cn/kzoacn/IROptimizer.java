@@ -284,7 +284,7 @@ public class IROptimizer {
             degree.put(entry.getKey(),hashSet.size());
         }
 
-        int registerNumber=2;
+        int registerNumber=4;
         while(variables.size()>0){
             ArrayList<Variable>newColor=new ArrayList<Variable>();
             for(Variable var : variables){

@@ -5,7 +5,7 @@ O_FILE="$C_FILE.o"
 NASM_FILE="$C_FILE.nasm"
 NASM_O_FILE="$NASM_FILE.o"
 EXEC_FILE="$C_FILE.run"
-gcc -c -o "$O_FILE" "$C_FILE"
+gcc -c -o "$O_FILE" "$C_FILE" 
 ./objconv -fnasm "$O_FILE" "$NASM_FILE" >null
 sed -i 's|st(0)|st0  |g' "$NASM_FILE"
 sed -i 's|noexecute|         |g' "$NASM_FILE"

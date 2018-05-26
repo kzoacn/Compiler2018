@@ -1,7 +1,7 @@
 
 long* mallocArray(long size){
-    long* s=malloc((size+1)<<4);
-    memset(s,0,(size+1)<<4);
+    long* s=malloc((size+1)<<3);
+    memset(s,0,(size+1)<<3);
     *s=size;
     return s;
 }
@@ -20,20 +20,20 @@ unsigned char* concat(unsigned char *s1,unsigned char *s2){
 
 
 long* address(long st,long pos){
-    return (void*)(st+((pos+1)<<4));
+    return (void*)(st+((pos+1)<<3));
 }
 
-#define addr(st,pos) ((long*)((st)+(((pos)+1)<<4)))
+#define addr(st,pos) ((long*)((st)+(((pos)+1)<<3)))
 
 
-long* multiAddress(unsigned char* st,long* a){
-    long size=*a,i;
-    if(size==0)return st;
-    unsigned char *cur=st;
-    for(i=1;i<size;i++){
-        cur=*addr((long)cur,*addr(a,i-1));
-    }
-    cur=addr((long)cur,*addr(a,size-1));
+long* multiAddress(long* st,long* a){
+	long size=*a,i;
+	long *cur=st;
+	if(size==0)return st;
+	for(i=1;i<size;i++)
+		cur=*address(cur,*address(a,i-1));
+	cur=address(cur,*address(a,size-1));
+	
     return cur;
 }
 

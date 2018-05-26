@@ -115,7 +115,7 @@ public class IRTranslator {
                 return new StringBuffer("rsi");
             return new StringBuffer("[arg+8*" + Integer.toString(variable.constValue) + "]");
         }
-        if(variable.register>0&&variable.register<=2)
+        if(variable.register>0&&variable.register<=8-registerNum)
            return new StringBuffer(" r"+Integer.toString(16-variable.register));
         if(symbolMap.globalVariableMap.containsKey(variable.name))
             return new StringBuffer("[gbl+8*"+Integer.toString(variableIndex.get(variable))+"]");
@@ -885,7 +885,7 @@ public class IRTranslator {
                     readReg(var2);
                     text.append(new StringBuffer("mov "+writeReg(dest)+","+readReg(var2))+"\n\t");
                     text.append(new StringBuffer("add "+writeReg(dest)+",1\n\t"));
-                    text.append(new StringBuffer("shl "+writeReg(dest)+",4\n\t"));
+                    text.append(new StringBuffer("shl "+writeReg(dest)+",3\n\t"));
                     text.append(new StringBuffer("add "+writeReg(dest)+","+readReg(var1))+"\n\t");
 
                     /*text.append(new StringBuffer(
