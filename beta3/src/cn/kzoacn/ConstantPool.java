@@ -6,343 +6,238 @@ import java.io.PrintWriter;
 
 public class ConstantPool {
     static final StringBuffer multiAddressFunction = new StringBuffer("multiAddress:\n" +
-            "        push    rbp\n" +
-            "        mov     rbp, rsp\n" +
-            "        sub     rsp, 48\n" +
-            "        mov     qword [rbp-28H], rdi\n" +
-            "        mov     qword [rbp-30H], rsi\n" +
-            "        mov     rax, qword [rbp-30H]\n" +
-            "        mov     rax, qword [rax]\n" +
-            "        mov     qword [rbp-18H], rax\n" +
-            "        mov     rax, qword [rbp-28H]\n" +
-            "        mov     qword [rbp-10H], rax\n" +
-            "        cmp     qword [rbp-18H], 0\n" +
-            "        jnz     IDG5\n" +
-            "        mov     rax, qword [rbp-28H]\n" +
-            "        jmp     IDG8\n" +
+            "        mov     rcx, qword [rsi]\n" +
+            "        mov     rax, rdi\n" +
+            "        test    rcx, rcx\n" +
+            "        jz      OIII_08\n" +
+            "        cmp     rcx, 1\n" +
+            "        mov     eax, 1\n" +
+            "        jle     OIII_07\n" +
             "\n" +
-            "IDG5:  mov     qword [rbp-8H], 1\n" +
-            "        jmp     IDG7\n" +
+            "OIII_06:  mov     rdx, qword [rsi+rax*8]\n" +
+            "        add     rax, 1\n" +
+            "        cmp     rcx, rax\n" +
+            "        mov     rdi, qword [rdi+rdx*8+8H]\n" +
+            "        jnz     OIII_06\n" +
+            "OIII_07:  mov     rax, qword [rsi+rcx*8]\n" +
+            "        lea     rax, [rdi+rax*8+8H]\n" +
+            "OIII_08:\n" +
             "\n" +
-            "IDG6:  mov     rax, qword [rbp-8H]\n" +
-            "        lea     rdx, [rax-1H]\n" +
-            "        mov     rax, qword [rbp-30H]\n" +
-            "        mov     rsi, rdx\n" +
-            "        mov     rdi, rax\n" +
-            "        call    address\n" +
-            "        mov     rdx, qword [rax]\n" +
-            "        mov     rax, qword [rbp-10H]\n" +
-            "        mov     rsi, rdx\n" +
-            "        mov     rdi, rax\n" +
-            "        call    address\n" +
-            "        mov     rax, qword [rax]\n" +
-            "        mov     qword [rbp-10H], rax\n" +
-            "        add     qword [rbp-8H], 1\n" +
-            "IDG7:  mov     rax, qword [rbp-8H]\n" +
-            "        cmp     rax, qword [rbp-18H]\n" +
-            "        jl      IDG6\n" +
-            "        mov     rax, qword [rbp-18H]\n" +
-            "        lea     rdx, [rax-1H]\n" +
-            "        mov     rax, qword [rbp-30H]\n" +
-            "        mov     rsi, rdx\n" +
-            "        mov     rdi, rax\n" +
-            "        call    address\n" +
-            "        mov     rdx, qword [rax]\n" +
-            "        mov     rax, qword [rbp-10H]\n" +
-            "        mov     rsi, rdx\n" +
-            "        mov     rdi, rax\n" +
-            "        call    address\n" +
-            "        mov     qword [rbp-10H], rax\n" +
-            "        mov     rax, qword [rbp-10H]\n" +
-            "IDG8:  leave\n" +
             "        ret\n");
 
     static final StringBuffer multiArrayFunction = new StringBuffer("_multiArray:\n" +
+            "        push    r14\n" +
+            "        push    r13\n" +
+            "        lea     r13d, [rdi+1H]\n" +
+            "        push    r12\n" +
             "        push    rbp\n" +
-            "        mov     rbp, rsp\n" +
+            "        movsxd  rax, r13d\n" +
             "        push    rbx\n" +
-            "        sub     rsp, 56\n" +
-            "        mov     dword [rbp-34H], edi\n" +
-            "        mov     qword [rbp-40H], rsi\n" +
-            "        mov     eax, dword [rbp-34H]\n" +
-            "        add     eax, 1\n" +
-            "        movsxd  rdx, eax\n" +
-            "        mov     rax, qword [rbp-40H]\n" +
-            "        mov     rax, qword [rax]\n" +
-            "        cmp     rdx, rax\n" +
-            "        jnz     md_9\n" +
-            "        mov     eax, dword [rbp-34H]\n" +
-            "        movsxd  rdx, eax\n" +
-            "        mov     rax, qword [rbp-40H]\n" +
-            "        mov     rsi, rdx\n" +
-            "        mov     rdi, rax\n" +
-            "        call    address\n" +
-            "        mov     rax, qword [rax]\n" +
-            "        mov     rdi, rax\n" +
+            "        cmp     rax, qword [rsi]\n" +
+            "        jz      OIII_11\n" +
+            "        movsxd  rdi, edi\n" +
+            "        mov     rbp, rsi\n" +
+            "        mov     r12, qword [rsi+rdi*8+8H]\n" +
+            "        mov     rdi, r12\n" +
             "        call    mallocArray\n" +
-            "        jmp     mdd_012\n" +
+            "        test    r12, r12\n" +
+            "        mov     r14, rax\n" +
+            "        jle     OIII_10\n" +
+            "        add     r12, 1\n" +
+            "        mov     ebx, 1\n" +
             "\n" +
-            "md_9:  mov     eax, dword [rbp-34H]\n" +
-            "        movsxd  rdx, eax\n" +
-            "        mov     rax, qword [rbp-40H]\n" +
-            "        mov     rsi, rdx\n" +
-            "        mov     rdi, rax\n" +
-            "        call    address\n" +
-            "        mov     rax, qword [rax]\n" +
-            "        mov     qword [rbp-20H], rax\n" +
-            "        mov     rax, qword [rbp-20H]\n" +
-            "        mov     rdi, rax\n" +
-            "        call    mallocArray\n" +
-            "        mov     qword [rbp-28H], rax\n" +
-            "        mov     dword [rbp-14H], 0\n" +
-            "        jmp     mdd_011\n" +
-            "\n" +
-            "mdd_010:  mov     eax, dword [rbp-14H]\n" +
-            "        movsxd  rdx, eax\n" +
-            "        mov     rax, qword [rbp-28H]\n" +
-            "        mov     rsi, rdx\n" +
-            "        mov     rdi, rax\n" +
-            "        call    address\n" +
-            "        mov     rbx, rax\n" +
-            "        mov     eax, dword [rbp-34H]\n" +
-            "        lea     edx, [rax+1H]\n" +
-            "        mov     rax, qword [rbp-40H]\n" +
-            "        mov     rsi, rax\n" +
-            "        mov     edi, edx\n" +
+            "OIII_09:  mov     rsi, rbp\n" +
+            "        mov     edi, r13d\n" +
             "        call    _multiArray\n" +
-            "        mov     qword [rbx], rax\n" +
-            "        add     dword [rbp-14H], 1\n" +
-            "mdd_011:  mov     eax, dword [rbp-14H]\n" +
-            "        cdqe\n" +
-            "        cmp     rax, qword [rbp-20H]\n" +
-            "        jl      mdd_010\n" +
-            "        mov     rax, qword [rbp-28H]\n" +
-            "mdd_012:  add     rsp, 56\n" +
-            "        pop     rbx\n" +
+            "        mov     qword [r14+rbx*8], rax\n" +
+            "        add     rbx, 1\n" +
+            "        cmp     r12, rbx\n" +
+            "        jnz     OIII_09\n" +
+            "OIII_10:  pop     rbx\n" +
+            "        mov     rax, r14\n" +
             "        pop     rbp\n" +
+            "        pop     r12\n" +
+            "        pop     r13\n" +
+            "        pop     r14\n" +
             "        ret\n" +
+            "\n" +
+            "OIII_11:  pop     rbx\n" +
+            "        movsxd  rdi, edi\n" +
+            "        pop     rbp\n" +
+            "        pop     r12\n" +
+            "        pop     r13\n" +
+            "        pop     r14\n" +
+            "        mov     rdi, qword [rsi+rdi*8+8H]\n" +
+            "        jmp     mallocArray\n" +
             "\n" +
             "\n" +
             "multiArray:\n" +
-            "        push    rbp\n" +
-            "        mov     rbp, rsp\n" +
-            "        sub     rsp, 16\n" +
-            "        mov     qword [rbp-8H], rdi\n" +
-            "        mov     rax, qword [rbp-8H]\n" +
-            "        mov     rsi, rax\n" +
-            "        mov     edi, 0\n" +
-            "        call    _multiArray\n" +
-            "        leave\n" +
-            "        ret\n");
+            "        mov     rsi, rdi\n" +
+            "        xor     edi, edi\n" +
+            "        jmp     _multiArray\n");
 
     static final StringBuffer addressFunction = new StringBuffer("address:\n" +
-            "        push    rbp\n" +
-            "        mov     rbp, rsp\n" +
-            "        mov     qword [rbp-8H], rdi\n" +
-            "        mov     qword [rbp-10H], rsi\n" +
-            "        mov     rax, qword [rbp-10H]\n" +
-            "        add     rax, 1\n" +
-            "        lea     rdx, [rax*8]\n" +
-            "        mov     rax, qword [rbp-8H]\n" +
-            "        add     rax, rdx\n" +
-            "        pop     rbp\n" +
+            "        lea     rax, [rdi+rsi*8+8H]\n" +
             "        ret\n");
 
     static final StringBuffer concatFunction = new StringBuffer("concat:\n" +
+            "        push    r13\n" +
+            "        push    r12\n" +
+            "        mov     r13, rdi\n" +
             "        push    rbp\n" +
-            "        mov     rbp, rsp\n" +
-            "        sub     rsp, 48\n" +
-            "        mov     qword [rbp-28H], rdi\n" +
-            "        mov     qword [rbp-30H], rsi\n" +
-            "        mov     rax, qword [rbp-28H]\n" +
-            "        movzx   eax, byte [rax]\n" +
-            "        movzx   edx, al\n" +
-            "        mov     rax, qword [rbp-30H]\n" +
-            "        movzx   eax, byte [rax]\n" +
-            "        movzx   eax, al\n" +
-            "        add     eax, edx\n" +
-            "        add     eax, 2\n" +
-            "        cdqe\n" +
-            "        mov     rdi, rax\n" +
+            "        push    rbx\n" +
+            "        mov     r12, rsi\n" +
+            "        sub     rsp, 8\n" +
+            "        movzx   edx, byte [rdi]\n" +
+            "        movzx   eax, byte [rsi]\n" +
+            "        lea     edi, [rdx+rax+2H]\n" +
+            "        mov     ebx, edx\n" +
+            "        mov     ebp, eax\n" +
+            "        movsxd  rdi, edi\n" +
             "        call    malloc\n" +
-            "        mov     qword [rbp-18H], rax\n" +
-            "        mov     rax, qword [rbp-28H]\n" +
-            "        movzx   edx, byte [rax]\n" +
-            "        mov     rax, qword [rbp-30H]\n" +
-            "        movzx   eax, byte [rax]\n" +
-            "        add     edx, eax\n" +
-            "        mov     rax, qword [rbp-18H]\n" +
+            "        lea     edx, [rbx+rbp]\n" +
+            "        movzx   edi, bl\n" +
+            "        test    rdi, rdi\n" +
             "        mov     byte [rax], dl\n" +
-            "        mov     qword [rbp-8H], 0\n" +
-            "        mov     qword [rbp-10H], 0\n" +
-            "        mov     qword [rbp-8H], 0\n" +
-            "        jmp     md_2\n" +
+            "        jz      OIII_05\n" +
+            "        xor     edx, edx\n" +
             "\n" +
-            "md_1:  add     qword [rbp-10H], 1\n" +
-            "        mov     rdx, qword [rbp-10H]\n" +
-            "        mov     rax, qword [rbp-18H]\n" +
-            "        add     rdx, rax\n" +
-            "        mov     rax, qword [rbp-8H]\n" +
-            "        lea     rcx, [rax+1H]\n" +
-            "        mov     rax, qword [rbp-28H]\n" +
-            "        add     rax, rcx\n" +
-            "        movzx   eax, byte [rax]\n" +
-            "        mov     byte [rdx], al\n" +
-            "        add     qword [rbp-8H], 1\n" +
-            "md_2:  mov     rax, qword [rbp-28H]\n" +
-            "        movzx   eax, byte [rax]\n" +
-            "        movzx   eax, al\n" +
-            "        cmp     rax, qword [rbp-8H]\n" +
-            "        jg      md_1\n" +
-            "        mov     qword [rbp-8H], 0\n" +
-            "        jmp     md_4\n" +
+            "OIII_01:  add     rdx, 1\n" +
+            "        movzx   ecx, byte [r13+rdx]\n" +
+            "        cmp     rdx, rdi\n" +
+            "        mov     byte [rax+rdx], cl\n" +
+            "        jnz     OIII_01\n" +
+            "        lea     rdx, [rdi+1H]\n" +
+            "OIII_02:  movzx   r8d, bpl\n" +
+            "        test    r8, r8\n" +
+            "        jz      OIII_04\n" +
+            "        lea     rsi, [rax+rdi]\n" +
+            "        xor     edx, edx\n" +
             "\n" +
-            "md_3:  add     qword [rbp-10H], 1\n" +
-            "        mov     rdx, qword [rbp-10H]\n" +
-            "        mov     rax, qword [rbp-18H]\n" +
-            "        add     rdx, rax\n" +
-            "        mov     rax, qword [rbp-8H]\n" +
-            "        lea     rcx, [rax+1H]\n" +
-            "        mov     rax, qword [rbp-30H]\n" +
-            "        add     rax, rcx\n" +
-            "        movzx   eax, byte [rax]\n" +
-            "        mov     byte [rdx], al\n" +
-            "        add     qword [rbp-8H], 1\n" +
-            "md_4:  mov     rax, qword [rbp-30H]\n" +
-            "        movzx   eax, byte [rax]\n" +
-            "        movzx   eax, al\n" +
-            "        cmp     rax, qword [rbp-8H]\n" +
-            "        jg      md_3\n" +
-            "        add     qword [rbp-10H], 1\n" +
-            "        mov     rdx, qword [rbp-10H]\n" +
-            "        mov     rax, qword [rbp-18H]\n" +
-            "        add     rax, rdx\n" +
-            "        mov     byte [rax], 0\n" +
-            "        mov     rax, qword [rbp-18H]\n" +
-            "        leave\n" +
-            "        ret\n");
+            "OIII_03:  movzx   ecx, byte [r12+rdx+1H]\n" +
+            "        mov     byte [rsi+rdx+1H], cl\n" +
+            "        add     rdx, 1\n" +
+            "        cmp     rdx, r8\n" +
+            "        jnz     OIII_03\n" +
+            "        lea     rdx, [rdx+rdi+1H]\n" +
+            "OIII_04:  mov     byte [rax+rdx], 0\n" +
+            "        add     rsp, 8\n" +
+            "        pop     rbx\n" +
+            "        pop     rbp\n" +
+            "        pop     r12\n" +
+            "        pop     r13\n" +
+            "        ret\n" +
+            "\n" +
+            "OIII_05:  mov     edx, 1\n" +
+            "        jmp     OIII_02\n");
 
     static final StringBuffer mallocArrayFunction=new StringBuffer("mallocArray:\n" +
-            "        push    rbp\n" +
-            "        mov     rbp, rsp\n" +
-            "        sub     rsp, 32\n" +
-            "        mov     qword [rbp-18H], rdi\n" +
-            "        mov     rax, qword [rbp-18H]\n" +
-            "        add     rax, 1\n" +
-            "        shl     rax, 3\n" +
-            "        mov     rdi, rax\n" +
-            "        call    malloc\n" +
-            "        mov     qword [rbp-8H], rax\n" +
-            "        mov     rax, qword [rbp-18H]\n" +
-            "        add     rax, 1\n" +
-            "        shl     rax, 3\n" +
-            "        mov     rdx, rax\n" +
-            "        mov     rax, qword [rbp-8H]\n" +
-            "        mov     esi, 0\n" +
-            "        mov     rdi, rax\n" +
-            "        call    memset\n" +
-            "        mov     rax, qword [rbp-8H]\n" +
-            "        mov     rdx, qword [rbp-18H]\n" +
-            "        mov     qword [rax], rdx\n" +
-            "        mov     rax, qword [rbp-8H]\n" +
-            "        leave\n" +
+            "        push    rbx\n" +
+            "        mov     rbx, rdi\n" +
+            "        lea     rdi, [rdi*8+8H]\n" +
+            "        mov     esi, 1\n" +
+            "        call    calloc\n" +
+            "        mov     qword [rax], rbx\n" +
+            "        pop     rbx\n" +
             "        ret\n");
 
     static final StringBuffer toStringFunction=new StringBuffer("toString:\n" +
+            "        test    rdi, rdi\n" +
+            "        push    r12\n" +
             "        push    rbp\n" +
-            "        mov     rbp, rsp\n" +
-            "        sub     rsp, 64\n" +
-            "        mov     qword [rbp-38H], rdi\n" +
-            "        mov     qword [rbp-8H], 0\n" +
-            "        mov     qword [rbp-10H], 1\n" +
-            "        cmp     qword [rbp-38H], 0\n" +
-            "        jnz     L_001\n" +
-            "        mov     qword [rbp-8H], 1\n" +
-            "L_001:  cmp     qword [rbp-38H], 0\n" +
-            "        jns     L_002\n" +
-            "        neg     qword [rbp-38H]\n" +
-            "        mov     qword [rbp-10H], -1\n" +
-            "        add     qword [rbp-8H], 1\n" +
-            "L_002:  mov     rax, qword [rbp-38H]\n" +
-            "        mov     qword [rbp-18H], rax\n" +
-            "        jmp     L_004\n" +
+            "        push    rbx\n" +
+            "        je      OIII_18\n" +
+            "        mov     rbx, rdi\n" +
+            "        jns     OIII_19\n" +
+            "        neg     rbx\n" +
+            "OIII_12:\n" +
             "\n" +
-            "L_003:  add     qword [rbp-8H], 1\n" +
-            "        mov     rcx, qword [rbp-18H]\n" +
-            "        mov     rdx, qword 6666666666666667H\n" +
-            "        mov     rax, rcx\n" +
-            "        imul    rdx\n" +
+            "\n" +
+            "\n" +
+            "        db 49H, 0C7H, 0C4H, 0FFH, 0FFH, 0FFH, 0FFH\n" +
+            "\n" +
+            "        db 0BFH, 01H, 00H, 00H, 00H\n" +
+            "OIII_13:  mov     rcx, rbx\n" +
+            "        mov     rsi, qword 6666666666666667H\n" +
+            "        jmp     OIII_15\n" +
+            "\n" +
+            "\n" +
+            "OIII_14:  mov     rdi, rbp\n" +
+            "OIII_15:  mov     rax, rcx\n" +
+            "        sar     rcx, 63\n" +
+            "        lea     rbp, [rdi+1H]\n" +
+            "        imul    rsi\n" +
             "        sar     rdx, 2\n" +
-            "        mov     rax, rcx\n" +
-            "        sar     rax, 63\n" +
-            "        sub     rdx, rax\n" +
-            "        mov     rax, rdx\n" +
-            "        mov     qword [rbp-18H], rax\n" +
-            "L_004:  cmp     qword [rbp-18H], 0\n" +
-            "        jg      L_003\n" +
-            "        mov     rax, qword [rbp-8H]\n" +
-            "        add     rax, 2\n" +
-            "        mov     rdi, rax\n" +
+            "        sub     rdx, rcx\n" +
+            "        mov     rcx, rdx\n" +
+            "        jnz     OIII_14\n" +
+            "        add     rdi, 3\n" +
             "        call    malloc\n" +
-            "        mov     qword [rbp-28H], rax\n" +
-            "        mov     rax, qword [rbp-28H]\n" +
-            "        mov     qword [rbp-20H], rax\n" +
-            "        mov     rax, qword [rbp-8H]\n" +
-            "        mov     edx, eax\n" +
-            "        mov     rax, qword [rbp-20H]\n" +
-            "        mov     byte [rax], dl\n" +
-            "        add     qword [rbp-20H], 1\n" +
-            "        cmp     qword [rbp-10H], -1\n" +
-            "        jnz     L_005\n" +
-            "        mov     rax, qword [rbp-20H]\n" +
-            "        mov     byte [rax], 45\n" +
-            "L_005:  mov     rdx, qword [rbp-8H]\n" +
-            "        mov     rax, qword [rbp-28H]\n" +
-            "        add     rax, rdx\n" +
-            "        mov     qword [rbp-20H], rax\n" +
-            "        cmp     qword [rbp-38H], 0\n" +
-            "        jnz     L_006\n" +
-            "        mov     rax, qword [rbp-20H]\n" +
-            "        mov     byte [rax], 48\n" +
-            "        jmp     L_008\n" +
+            "        cmp     r12, -1\n" +
+            "        mov     byte [rax+rbp+1H], 0\n" +
+            "        mov     rsi, rax\n" +
+            "        mov     byte [rax], bpl\n" +
+            "        jnz     OIII_16\n" +
+            "        mov     byte [rsi+1H], 45\n" +
+            "OIII_16:  lea     rcx, [rsi+rbp]\n" +
+            "        mov     rdi, qword 6666666666666667H\n" +
             "\n" +
-            "L_006:  jmp     L_008\n" +
-            "\n" +
-            "L_007:  mov     rcx, qword [rbp-38H]\n" +
-            "        mov     rdx, qword 6666666666666667H\n" +
-            "        mov     rax, rcx\n" +
-            "        imul    rdx\n" +
-            "        sar     rdx, 2\n" +
-            "        mov     rax, rcx\n" +
+            "OIII_17:  mov     rax, rbx\n" +
+            "        sub     rcx, 1\n" +
+            "        imul    rdi\n" +
+            "        mov     rax, rbx\n" +
             "        sar     rax, 63\n" +
+            "        sar     rdx, 2\n" +
             "        sub     rdx, rax\n" +
-            "        mov     rax, rdx\n" +
-            "        shl     rax, 2\n" +
-            "        add     rax, rdx\n" +
+            "        lea     rax, [rdx+rdx*4]\n" +
             "        add     rax, rax\n" +
-            "        sub     rcx, rax\n" +
-            "        mov     rdx, rcx\n" +
-            "        mov     eax, edx\n" +
-            "        add     eax, 48\n" +
-            "        mov     edx, eax\n" +
-            "        mov     rax, qword [rbp-20H]\n" +
-            "        mov     byte [rax], dl\n" +
-            "        sub     qword [rbp-20H], 1\n" +
-            "        mov     rcx, qword [rbp-38H]\n" +
-            "        mov     rdx, qword 6666666666666667H\n" +
-            "        mov     rax, rcx\n" +
-            "        imul    rdx\n" +
-            "        sar     rdx, 2\n" +
-            "        mov     rax, rcx\n" +
-            "        sar     rax, 63\n" +
-            "        sub     rdx, rax\n" +
-            "        mov     rax, rdx\n" +
-            "        mov     qword [rbp-38H], rax\n" +
-            "L_008:  cmp     qword [rbp-38H], 0\n" +
-            "        jg      L_007\n" +
-            "        mov     rax, qword [rbp-28H]\n" +
-            "        leave\n" +
-            "        ret\n");
+            "        sub     rbx, rax\n" +
+            "        add     ebx, 48\n" +
+            "        mov     byte [rcx+1H], bl\n" +
+            "        test    rdx, rdx\n" +
+            "        mov     rbx, rdx\n" +
+            "        jnz     OIII_17\n" +
+            "        pop     rbx\n" +
+            "        mov     rax, rsi\n" +
+            "        pop     rbp\n" +
+            "        pop     r12\n" +
+            "        ret\n" +
+            "\n" +
+            "OIII_18:  mov     edi, 3\n" +
+            "        call    malloc\n" +
+            "        mov     rsi, rax\n" +
+            "        mov     byte [rax+2H], 0\n" +
+            "        mov     byte [rax], 1\n" +
+            "        mov     byte [rax+1H], 48\n" +
+            "        mov     rax, rsi\n" +
+            "        pop     rbx\n" +
+            "        pop     rbp\n" +
+            "        pop     r12\n" +
+            "        ret\n" +
+            "\n" +
+            "OIII_19:  mov     r12d, 1\n" +
+            "        xor     edi, edi\n" +
+            "        jmp     OIII_13\n");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     static final String specialcase1="int[] int_arr = (new int[2][])[3];";//sorry
     static final String specialcase2="c[0] = (new C[6][6][6][6])[2][3][3];";
     static final String specialcase3="B[][] b = (new B).many()[1][1].many();";

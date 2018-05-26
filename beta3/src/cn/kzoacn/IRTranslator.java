@@ -384,6 +384,7 @@ public class IRTranslator {
         head.append("\t extern    printf\n");
         head.append("\t extern    scanf\n");
         head.append("\t extern    malloc\n");
+        head.append("\t extern    calloc\n");
         head.append("\t extern    strlen\n");
         head.append("\t extern    strcmp\n");
         head.append("\t extern    memset\n");
@@ -955,12 +956,14 @@ public class IRTranslator {
                 case endContext:
                     break;
                 case multiArray:
-                    kickAll();
+                    //kickAll();
+                    kick(var1);
+                    kick(dest);
                     text.append(new StringBuffer(
                                     "mov     rdi, "+varName(var1)+"\n\t" +
                                     "call    multiArray\n\t"+
                                     "mov     qword "+varName(dest)+", rax\n\t"));
-                    clearAll();
+                    //clearAll();
                     break;
                 case multiAddress:
                     kickAll();
