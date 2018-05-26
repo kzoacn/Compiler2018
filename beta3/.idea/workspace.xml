@@ -32,7 +32,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IROptimizer.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="IROptimizer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IROptimizer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="5418">
@@ -41,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IRTranslator.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IRTranslator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="308">
-              <caret line="886" column="110" selection-start-line="886" selection-start-column="110" selection-end-line="886" selection-end-column="110" />
+              <caret line="886" column="92" selection-start-line="886" selection-start-column="92" selection-end-line="886" selection-end-column="92" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -109,7 +109,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find />
+      <find>mov qword</find>
       <find>variable.reg</find>
       <find>getregister</find>
       <find>isConst</find>
@@ -375,12 +375,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ExecTest_test101 - 2018.05.26 at 14h 35m 40s.xml">
-      <configuration name="ExecTest.test101" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExecTest - 2018.05.26 at 14h 36m 39s.xml">
-      <configuration name="ExecTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ExecTest - 2018.05.26 at 14h 42m 52s.xml">
       <configuration name="ExecTest" configurationId="JUnit" />
     </history-entry>
@@ -405,9 +399,16 @@
     <history-entry file="ExecTest - 2018.05.26 at 23h 40m 02s.xml">
       <configuration name="ExecTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ExecTest_test24 - 2018.05.26 at 23h 40m 22s.xml">
+      <configuration name="ExecTest.test24" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecTest - 2018.05.26 at 23h 41m 25s.xml">
+      <configuration name="ExecTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -790,13 +791,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IROptimizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5418">
-          <caret line="310" column="17" selection-start-line="310" selection-start-column="17" selection-end-line="310" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRSimulator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
@@ -830,10 +824,17 @@
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
-          <caret line="886" column="110" selection-start-line="886" selection-start-column="110" selection-end-line="886" selection-end-column="110" />
+          <caret line="886" column="92" selection-start-line="886" selection-start-column="92" selection-end-line="886" selection-end-column="92" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IROptimizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5418">
+          <caret line="310" column="17" selection-start-line="310" selection-start-column="17" selection-end-line="310" selection-end-column="17" />
         </state>
       </provider>
     </entry>
