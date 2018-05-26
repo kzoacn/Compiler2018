@@ -642,22 +642,22 @@ dfs:
 	mov    rbp, rsp
 	sub    rsp, 184
 	mov r8,  rdi
-	mov r15,r8
+	mov r13,r8
 	mov r9,0
 	mov r12,r9
 	mov r10,1
-	mov r13,r10
+	mov r14,r10
 	
 L_499:
 	mov r8,1
 	cmp r8, 0
 	je L_500
-	mov r8,r13
-	inc qword r13 
+	mov r8,r14
+	inc qword r14 
 	mov r9,r12
-	add r9,r13
+	add r9,r14
 	mov r12,r9
-	cmp r13,r15
+	cmp r14,r13
 	mov r10, 0
 	sete r10B
 	cmp r10, 0
@@ -671,7 +671,7 @@ L_499:
 	
 L_502:
 	mov r8,1
-	mov r9,r15
+	mov r9,r13
 	sub r9,r8
 	mov r10,r9
 	mov qword [rsp+8*8],r9

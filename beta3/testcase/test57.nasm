@@ -687,7 +687,7 @@ main:
 	call    mallocArray
 	mov     qword [rsp+8*7], rax
 	mov r8,  [rsp+8*7]
-	mov r14,r8
+	mov r15,r8
 	mov r9,0
 	mov r13,r9
 	
@@ -702,14 +702,14 @@ L_739:
 	mov     rdi, 0
 	call    mallocArray
 	mov     qword [rsp+8*11], rax
-	mov r8,r14
+	mov r8,r15
 	mov r9,r13
 	add r9,1
 	shl r9,3
 	add r9,r8
 	mov r10,  [rsp+8*11]
 	mov [r9],r10
-	mov r11,r14
+	mov r11,r15
 	mov qword [rsp+8*12],r8
 	mov r8,r13
 	add r8,1

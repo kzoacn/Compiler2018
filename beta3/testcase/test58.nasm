@@ -644,7 +644,7 @@ Adder_add:
 	mov r9,  [arg+8*63]
 	mov r8,r9
 	mov r10,  rdi
-	mov r13,r10
+	mov r14,r10
 	mov qword [rsp+8*2],r8
 	mov     rdi, 1
 	call    mallocArray
@@ -666,7 +666,7 @@ Adder_add:
 	mov r8,  [rsp+8*7]
 	mov r8, [r8]
 	mov r9,r8
-	add r9,r13
+	add r9,r14
 	mov rax,r9
 	leave
 	ret

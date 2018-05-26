@@ -669,7 +669,7 @@ main:
 	
 L_114:
 	mov r8,1
-	mov r14,r8
+	mov r13,r8
 	mov r10,0
 	mov r9,r10
 	mov qword [gbl+8*4],r9
@@ -706,12 +706,12 @@ L_117:
 	mov r8, rdx
 	mov r9,r8
 	mov r8,0
-	mov r13,r8
+	mov r12,r8
 	mov qword [gbl+8*10],r9
 	
 L_120:
 	mov r8,  [gbl+8*4]
-	cmp r13,r8
+	cmp r12,r8
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
@@ -728,7 +728,7 @@ L_120:
 	mov r8, [r11]
 	mov qword [rsp+8*17],r11
 	mov r11,r9
-	mov r10,r13
+	mov r10,r12
 	add r10,1
 	shl r10,3
 	add r10,r11
@@ -744,12 +744,12 @@ L_120:
 	mov qword [rsp+8*21],r11
 	je L_124
 	mov r8,0
-	mov r14,r8
+	mov r13,r8
 	jmp L_121
 	
 L_124:
-	mov r8,r13
-	inc qword r13 
+	mov r8,r12
+	inc qword r12 
 	mov qword [rsp+8*23],r8
 	jmp L_120
 	
@@ -762,8 +762,8 @@ L_121:
 	jmp L_117
 	
 L_118:
-	add r15,r15
-	cmp r14, 0
+	add r14,r14
+	cmp r13, 0
 	je L_126
 	jmp L_115
 	
@@ -790,23 +790,23 @@ L_127:
 	mov qword [rsp+8*27],r10
 	je L_128
 	mov r8,0
-	mov r13,r8
+	mov r12,r8
 	
 L_130:
 	mov r8,1
-	mov r9,r13
+	mov r9,r12
 	add r9,r8
 	mov r10,  [gbl+8*5]
 	cmp r9,r10
 	mov r9, 0
 	setl r9B
-	add r15,r15
+	add r14,r14
 	cmp r9, 0
 	mov qword [rsp+8*28],r9
 	je L_131
 	mov r9,  [gbl+8*7]
 	mov r8,r9
-	mov r10,r13
+	mov r10,r12
 	add r10,1
 	shl r10,3
 	add r10,r8
@@ -814,7 +814,7 @@ L_130:
 	mov qword [rsp+8*29],r8
 	mov r8,1
 	mov qword [rsp+8*30],r10
-	mov r10,r13
+	mov r10,r12
 	add r10,r8
 	mov r8,r9
 	mov qword [rsp+8*31],r11
@@ -835,7 +835,7 @@ L_130:
 	je L_134
 	mov r9,  [gbl+8*7]
 	mov r8,r9
-	mov r10,r13
+	mov r10,r12
 	add r10,1
 	shl r10,3
 	add r10,r8
@@ -845,7 +845,7 @@ L_130:
 	mov qword [rsp+8*38],r10
 	mov r10,1
 	mov qword [rsp+8*39],r11
-	mov r11,r13
+	mov r11,r12
 	add r11,r10
 	mov r10,r9
 	mov qword [rsp+8*40],r8
@@ -857,7 +857,7 @@ L_130:
 	mov r10, [r8]
 	mov qword [rsp+8*43],r8
 	mov r8,r9
-	mov r11,r13
+	mov r11,r12
 	add r11,1
 	shl r11,3
 	add r11,r8
@@ -865,7 +865,7 @@ L_130:
 	mov qword [rsp+8*45],r8
 	mov r8,1
 	mov qword [rsp+8*44],r10
-	mov r10,r13
+	mov r10,r12
 	add r10,r8
 	mov r8,r9
 	mov qword [rsp+8*46],r11
@@ -880,8 +880,8 @@ L_130:
 	mov qword [rsp+8*49],r11
 	
 L_134:
-	mov r8,r13
-	inc qword r13 
+	mov r8,r12
+	inc qword r12 
 	mov qword [rsp+8*50],r8
 	jmp L_130
 	

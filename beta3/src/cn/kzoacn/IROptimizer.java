@@ -289,7 +289,10 @@ public class IROptimizer {
         variables.removeIf((var)->var.name.startsWith("t"));
 
         for(Variable var : variables){
-            if(var.name.length()==1)color.add(var);
+            if(var.name.equals("i"))color.add(var);
+            if(var.name.equals("j"))color.add(var);
+            if(var.name.equals("k"))color.add(var);
+            if(var.name.equals("n"))color.add(var);
             if(var.name.equals("ans"))color.add(var);
         }
         for(Map.Entry<Variable,HashSet<Variable> > entry : graph.entrySet()){

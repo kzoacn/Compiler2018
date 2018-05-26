@@ -644,12 +644,12 @@ Adder_add:
 	mov r9,  [arg+8*63]
 	mov r8,r9
 	mov r10,  rdi
-	mov r12,r10
+	mov r14,r10
 	mov r11,  rsi
-	mov r14,r11
+	mov r15,r11
 	mov qword [rsp+8*2],r8
-	mov r8,r12
-	add r8,r14
+	mov r8,r14
+	add r8,r15
 	mov rax,r8
 	leave
 	ret

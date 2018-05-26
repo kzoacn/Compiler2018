@@ -669,14 +669,14 @@ main:
 	call    mallocArray
 	mov     qword [rsp+8*3], rax
 	mov r8,  [rsp+8*3]
-	mov r14,r8
-	mov r9,r14
+	mov r15,r8
+	mov r9,r15
 	mov r10,0
-	mov r13,r10
+	mov r14,r10
 	mov qword [rsp+8*5],r9
 	
 L_507:
-	cmp r13,r12
+	cmp r14,r12
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
@@ -700,7 +700,7 @@ L_507:
 	call    multiAddress
 	mov [rsp+8*10], rax
 	mov r8,  [rsp+8*10]
-	mov [r8],r13
+	mov [r8],r14
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword [rsp+8*11], rax
@@ -766,19 +766,19 @@ L_507:
 	mov r8,  [rsp+8*20]
 	mov r9,0
 	mov [r8],r9
-	mov r10,r13
-	inc qword r13 
+	mov r10,r14
+	inc qword r14 
 	mov qword [rsp+8*22],r10
 	jmp L_507
 	
 L_508:
-	mov r8,r14
+	mov r8,r15
 	mov r9,0
-	mov r13,r9
+	mov r14,r9
 	mov qword [rsp+8*5],r8
 	
 L_510:
-	cmp r13,r12
+	cmp r14,r12
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
@@ -839,8 +839,8 @@ L_510:
 	mov r8,  [rsp+8*33]
 	mov r8, [r8]
 	mov r9,r8
-	mov r10,r13
-	inc qword r13 
+	mov r10,r14
+	inc qword r14 
 	mov qword [rsp+8*33],r8
 	mov qword [rsp+8*5],r9
 	mov qword [rsp+8*34],r10

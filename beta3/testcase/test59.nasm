@@ -669,8 +669,8 @@ main:
 	call    mallocArray
 	mov     qword [rsp+8*3], rax
 	mov r8,  [rsp+8*3]
-	mov r13,r8
-	mov r9,r13
+	mov r15,r8
+	mov r9,r15
 	mov r10,0
 	mov r11,r10
 	add r11,1
@@ -678,7 +678,7 @@ main:
 	add r11,r9
 	mov r8,3
 	mov [r11],r8
-	mov r8,r13
+	mov r8,r15
 	mov qword [rsp+8*5],r9
 	mov r9,1
 	mov r10,r9
@@ -688,7 +688,7 @@ main:
 	mov qword [rsp+8*7],r8
 	mov r8,2
 	mov [r10],r8
-	mov r8,r13
+	mov r8,r15
 	mov r9,0
 	mov qword [rsp+8*8],r10
 	mov r10,r9
@@ -715,7 +715,7 @@ main:
 	mov rdi,[rsp+8*15] 
 	add rdi, 1 
 	call puts
-	mov r8,r13
+	mov r8,r15
 	mov r9,1
 	mov r10,r9
 	add r10,1

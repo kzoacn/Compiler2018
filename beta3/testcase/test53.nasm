@@ -667,8 +667,8 @@ main:
 	call    mallocArray
 	mov     qword [rsp+8*2], rax
 	mov r8,  [rsp+8*2]
-	mov r14,r8
-	mov r9,r14
+	mov r15,r8
+	mov r9,r15
 	mov r10,r9
 	mov r11,r10
 	mov r11, [r11]

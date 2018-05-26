@@ -747,14 +747,14 @@ L_1627:
 	mov r8,r9
 	mov r11,  [rsp+8*2]
 	mov r10,r11
-	mov r9,r10
-	mov r14,r8
+	mov r14,r10
+	mov r13,r8
 	mov qword rsi,r8
+	mov r8,r14
+	add r8,r13
+	mov r9,r8
 	mov r8,r9
-	add r8,r14
-	mov r15,r8
-	mov r8,r15
-	mov qword [rsp+8*20],r9
+	mov qword [rsp+8*23],r9
 	mov r9,r8
 	mov r10,r9
 	mov qword [rsp+8*24],r8

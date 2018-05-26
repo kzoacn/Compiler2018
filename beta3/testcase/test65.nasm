@@ -663,7 +663,7 @@ main:
 	pop r15
 	mov r8 , rax
 	mov r9,100
-	mov r15,r9
+	mov r14,r9
 	mov r10,0
 	mov r12,r10
 	mov r11,t66
@@ -673,7 +673,7 @@ main:
 	mov r12,r8
 	
 L_760:
-	cmp r12,r15
+	cmp r12,r14
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
@@ -702,7 +702,7 @@ L_761:
 	mov r12,r8
 	
 L_763:
-	cmp r12,r15
+	cmp r12,r14
 	mov r8, 0
 	setl r8B
 	cmp r8, 0

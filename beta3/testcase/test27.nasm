@@ -652,22 +652,22 @@ search:
 	mov qword [rsp+8*4],r11
 	je L_426
 	mov r8,0
-	mov r12,r8
+	mov r15,r8
 	
 L_450:
 	mov r8,  [gbl+8*3]
-	cmp r12,r8
+	cmp r15,r8
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
 	mov qword [rsp+8*6],r9
 	je L_451
 	mov r8,0
-	mov r15,r8
+	mov r12,r8
 	
 L_452:
 	mov r8,  [gbl+8*3]
-	cmp r15,r8
+	cmp r12,r8
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
@@ -675,12 +675,12 @@ L_452:
 	je L_453
 	mov r9,  [gbl+8*9]
 	mov r8,r9
-	mov r10,r12
+	mov r10,r15
 	add r10,1
 	shl r10,3
 	add r10,r8
 	mov r11, [r10]
-	cmp r11,r15
+	cmp r11,r12
 	mov qword [rsp+8*10],r8
 	mov r8, 0
 	sete r8B
@@ -714,8 +714,8 @@ L_454:
 	call printf
 	
 L_455:
-	mov r8,r15
-	inc qword r15 
+	mov r8,r12
+	inc qword r12 
 	mov qword [rsp+8*16],r8
 	jmp L_452
 	
@@ -728,8 +728,8 @@ L_453:
 	mov rdi,[rsp+8*17] 
 	add rdi, 1 
 	call puts
-	mov r8,r12
-	inc qword r12 
+	mov r8,r15
+	inc qword r15 
 	mov qword [rsp+8*18],r8
 	jmp L_450
 	
@@ -751,11 +751,11 @@ L_451:
 	
 L_426:
 	mov r8,0
-	mov r13,r8
+	mov r14,r8
 	
 L_428:
 	mov r8,  [gbl+8*3]
-	cmp r13,r8
+	cmp r14,r8
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
@@ -763,7 +763,7 @@ L_428:
 	je L_429
 	mov r9,  [gbl+8*24]
 	mov r8,r9
-	mov r10,r13
+	mov r10,r14
 	add r10,1
 	shl r10,3
 	add r10,r8
@@ -779,7 +779,7 @@ L_428:
 	mov qword [rsp+8*27],r11
 	je L_432
 	mov r8,  [rsp+8*2]
-	mov r9,r13
+	mov r9,r14
 	add r9,r8
 	mov r11,  [gbl+8*30]
 	mov r10,r11
@@ -807,7 +807,7 @@ L_428:
 	mov qword [rsp+8*34],r10
 	je L_434
 	mov r8,  [gbl+8*3]
-	mov r9,r13
+	mov r9,r14
 	add r9,r8
 	mov r10,1
 	mov r9,r9
@@ -841,7 +841,7 @@ L_428:
 	mov qword [rsp+8*39],r11
 	je L_436
 	mov r8,  [gbl+8*3]
-	mov r9,r13
+	mov r9,r14
 	add r9,r8
 	mov r10,1
 	mov r9,r9
@@ -867,7 +867,7 @@ L_428:
 	mov [r11],r9
 	mov r9,  [rsp+8*2]
 	mov qword [rsp+8*41],r10
-	mov r10,r13
+	mov r10,r14
 	add r10,r9
 	mov qword [rsp+8*42],r11
 	mov r11,r8
@@ -889,7 +889,7 @@ L_428:
 	mov r10,  [gbl+8*24]
 	mov r9,r10
 	mov qword [rsp+8*44],r11
-	mov r11,r13
+	mov r11,r14
 	add r11,1
 	shl r11,3
 	add r11,r9
@@ -904,7 +904,7 @@ L_428:
 	add r10,1
 	shl r10,3
 	add r10,r9
-	mov [r10],r13
+	mov [r10],r14
 	mov qword [rsp+8*48],r9
 	mov r9,1
 	mov qword [rsp+8*49],r10
@@ -934,7 +934,7 @@ L_428:
 	mov     qword[rsp+8*53], rax
 	mov r9,  [gbl+8*24]
 	mov r8,r9
-	mov r10,r13
+	mov r10,r14
 	add r10,1
 	shl r10,3
 	add r10,r8
@@ -943,7 +943,7 @@ L_428:
 	mov qword [rsp+8*54],r8
 	mov r8,  [rsp+8*2]
 	mov qword [rsp+8*55],r10
-	mov r10,r13
+	mov r10,r14
 	add r10,r8
 	mov r9,  [gbl+8*30]
 	mov r11,r9
@@ -963,7 +963,7 @@ L_428:
 	mov [r10],r8
 	mov r8,  [gbl+8*3]
 	mov qword [rsp+8*58],r10
-	mov r10,r13
+	mov r10,r14
 	add r10,r8
 	mov qword [rsp+8*57],r11
 	mov r11,1
@@ -995,8 +995,8 @@ L_436:
 L_434:
 	
 L_432:
-	mov r8,r13
-	inc qword r13 
+	mov r8,r14
+	inc qword r14 
 	mov qword [rsp+8*62],r8
 	jmp L_428
 	
@@ -1033,19 +1033,17 @@ main:
 	pop r14
 	pop r15
 	mov r8 , rax
-	mov r10,0
-	mov r9,r10
+	mov r9,0
+	mov r13,r9
 	mov qword [rsp+8*63],r8
-	mov qword [rsp+8*64],r9
 	
 L_437:
-	mov r8,  [rsp+8*64]
-	mov r9,2
-	cmp r8,r9
-	mov r10, 0
-	setl r10B
-	cmp r10, 0
-	mov qword [rsp+8*65],r10
+	mov r8,2
+	cmp r13,r8
+	mov r9, 0
+	setl r9B
+	cmp r9, 0
+	mov qword [rsp+8*65],r9
 	je L_438
 	mov r8,8
 	mov r9,8
@@ -1060,19 +1058,17 @@ L_437:
 	mov     qword [rsp+8*67], rax
 	mov r9,  [gbl+8*30]
 	mov r8,r9
-	mov r10,  [rsp+8*64]
-	mov r11,r10
-	add r11,1
-	shl r11,3
-	add r11,r8
+	mov r10,r13
+	add r10,1
+	shl r10,3
+	add r10,r8
+	mov r11,  [rsp+8*67]
+	mov [r10],r11
 	mov qword [rsp+8*68],r8
-	mov r8,  [rsp+8*67]
-	mov [r11],r8
-	mov r8,r10
-	inc r10 
+	mov r8,r13
+	inc qword r13 
 	mov qword [rsp+8*70],r8
-	mov qword [rsp+8*64],r10
-	mov qword [rsp+8*69],r11
+	mov qword [rsp+8*69],r10
 	jmp L_437
 	
 L_438:

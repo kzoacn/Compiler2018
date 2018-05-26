@@ -663,7 +663,7 @@ main:
 	pop r15
 	mov r8 , rax
 	mov r9,1
-	mov r13,r9
+	mov r15,r9
 	mov r10,0
 	mov r14,r10
 	mov r11,0
@@ -681,7 +681,7 @@ main:
 	
 L_766:
 	xor rdx, rdx
-	mov rax, r13
+	mov rax, r15
 	mov rbx, r14
 	cdq
 	idiv rbx
