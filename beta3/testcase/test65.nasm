@@ -672,13 +672,13 @@ main:
 	mov r8,0
 	mov r15,r8
 	
-L_806:
+L_736:
 	cmp r15,r13
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
 	mov qword [rsp+8*5],r8
-	je L_807
+	je L_737
 	mov     rsi, t71
 	mov     rdi,  r14
 	call    concat
@@ -688,9 +688,9 @@ L_806:
 	mov r9,r15
 	inc qword r15 
 	mov qword [rsp+8*7],r9
-	jmp L_806
+	jmp L_736
 	
-L_807:
+L_737:
 	mov r8,r14
 	mov r9,r8
 	mov qword rdi,r8
@@ -701,13 +701,13 @@ L_807:
 	mov r8,0
 	mov r15,r8
 	
-L_809:
+L_739:
 	cmp r15,r13
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
 	mov qword [rsp+8*10],r8
-	je L_810
+	je L_740
 	mov     rsi, t80
 	mov     rdi,  r14
 	call    concat
@@ -717,9 +717,9 @@ L_809:
 	mov r9,r15
 	inc qword r15 
 	mov qword [rsp+8*12],r9
-	jmp L_809
+	jmp L_739
 	
-L_810:
+L_740:
 	mov r8,r14
 	mov r9,r8
 	mov qword rdi,r8

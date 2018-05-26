@@ -723,13 +723,13 @@ main:
 	mov qword [rsp+8*14],r10
 	mov qword [rsp+8*6],r11
 	
-L_78:
+L_87:
 	cmp r14,r13
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
 	mov qword [rsp+8*16],r8
-	je L_79
+	je L_88
 	mov r8,r15
 	mov r9,r14
 	add r9,1
@@ -757,9 +757,9 @@ L_78:
 	mov r8,r14
 	inc qword r14 
 	mov qword [rsp+8*24],r8
-	jmp L_78
+	jmp L_87
 	
-L_79:
+L_88:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

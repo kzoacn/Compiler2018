@@ -673,13 +673,13 @@ main:
 	setne r8B
 	cmp r8, 0
 	mov qword [rsp+8*4],r8
-	jne L_812
+	jne L_742
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*4],r8
-	jmp L_813
+	jmp L_743
 	
-L_812:
+L_742:
 	xor rdx, rdx
 	mov rax, r15
 	mov rbx, r14
@@ -694,10 +694,10 @@ L_812:
 	mov qword [rsp+8*5],r8
 	mov qword [rsp+8*4],r10
 	
-L_813:
+L_743:
 	mov r8,  [rsp+8*4]
 	cmp r8, 0
-	je L_814
+	je L_744
 	mov r9,t71
 	mov r8,r9
 	mov r10,r8
@@ -706,9 +706,9 @@ L_813:
 	mov rdi,[rsp+8*7] 
 	add rdi, 1 
 	call puts
-	jmp L_815
+	jmp L_745
 	
-L_814:
+L_744:
 	mov r9,t75
 	mov r8,r9
 	mov r10,r8
@@ -718,7 +718,7 @@ L_814:
 	add rdi, 1 
 	call puts
 	
-L_815:
+L_745:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

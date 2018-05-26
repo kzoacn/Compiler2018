@@ -163,7 +163,7 @@ public class IROptimizer {
             line_number++;
             cur=cur.next;
         }
-        if(variables.size()>250){
+        if(variables.size()>350){
             return ir;
         }
         //live analyze
@@ -264,6 +264,15 @@ public class IROptimizer {
                     }
                 }
             }
+            for(Variable var1:def.get(i)){
+                for(Variable var2 : variables){
+                    if(!use.get(i).contains(var2)){
+                        graph.get(var1).add(var2);
+                        graph.get(var2).add(var1);
+                    }
+                }
+            }
+
             //System.err.println();
         }
         for(Variable var:variables){
@@ -334,7 +343,7 @@ public class IROptimizer {
                 }
             }
             if(mex>registerNumber)mex=0;
-            if(used[mex])continue;
+            //if(used[mex])continue;
             used[mex]=true;
             colorMap.put(var.name,mex);
         }

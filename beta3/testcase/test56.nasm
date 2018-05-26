@@ -643,14 +643,14 @@ Adder_add:
 	sub    rsp, 192
 	mov r9,  [arg+8*63]
 	mov r8,r9
-	mov r11,  rdi
-	mov r10,r11
+	mov r10,  rdi
+	mov r14,r10
+	mov r11,  rsi
+	mov r13,r11
 	mov qword [rsp+8*2],r8
-	mov r9,  rsi
-	mov r8,r9
-	mov r11,r10
-	add r11,r8
-	mov rax,r11
+	mov r8,r14
+	add r8,r13
+	mov rax,r8
 	leave
 	ret
 	

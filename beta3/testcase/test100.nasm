@@ -640,14 +640,14 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 240
+	sub    rsp, 128
 	mov     rax, 536870912
         cdqe
         mov     rdi, rax
         call    malloc
         mov     edx, dword 536870912
         movsxd  rdx, edx
-        sub     rdx, 2224
+        sub     rdx, 2112
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
@@ -662,88 +662,26 @@ main:
 	pop r14
 	pop r15
 	mov r8 , rax
-	mov r9,5
-	mov r13,r9
-	mov qword [rsp+8*1],r8
-	mov     rdi,  r13
-	call    mallocArray
-	mov     qword [rsp+8*3], rax
-	mov r8,  [rsp+8*3]
-	mov r15,r8
-	mov r10,0
-	mov r9,r10
-	mov r11,0
-	mov r14,r11
-	mov qword [rsp+8*5],r9
-	
-L_220:
-	cmp r14,r13
-	mov r8, 0
-	setl r8B
-	cmp r8, 0
-	mov qword [rsp+8*7],r8
-	je L_221
-	mov r8,r13
-	sub r8,r14
-	mov r10,  [rsp+8*5]
-	mov r9,r10
-	inc r10 
+	mov r9,1
+	mov r15,r9
+	mov r10,2
+	mov r14,r10
 	mov r11,r15
-	mov qword [rsp+8*5],r10
-	mov r10,r9
-	add r10,1
-	shl r10,3
-	add r10,r11
-	mov [r10],r8
-	mov r8,r14
-	inc qword r14 
-	mov qword [rsp+8*12],r8
-	mov qword [rsp+8*9],r9
-	mov qword [rsp+8*11],r10
-	mov qword [rsp+8*10],r11
-	jmp L_220
-	
-L_221:
-	mov r8,0
-	mov r14,r8
-	
-L_223:
-	cmp r14,r13
-	mov r8, 0
-	setl r8B
-	cmp r8, 0
-	mov qword [rsp+8*13],r8
-	je L_224
-	mov r8,r15
-	mov r9,r14
-	add r9,1
-	shl r9,3
-	add r9,r8
-	mov r10, [r9]
-	mov r11,r10
-	mov qword [rsp+8*14],r8
+	mov qword [rsp+8*1],r8
 	mov r8,r11
-	mov qword [rsp+8*18],r8
-	mov qword [rsp+8*15],r9
-	mov qword [rsp+8*16],r10
+	mov qword [rsp+8*5],r8
 	mov qword rdi,r11
-	mov     rdi, [rsp+8*18]
+	mov     rdi, [rsp+8*5]
 	call    toString
-	mov     qword[rsp+8*19], rax
-	mov r9,  [rsp+8*19]
+	mov     qword[rsp+8*6], rax
+	mov r9,  [rsp+8*6]
 	mov r8,r9
 	mov r10,r8
 	mov qword rdi,r8
-	mov qword [rsp+8*20],r10
-	mov rdi,[rsp+8*20] 
+	mov qword [rsp+8*7],r10
+	mov rdi,[rsp+8*7] 
 	add rdi, 1 
 	call puts
-	mov r8,r14
-	inc qword r14 
-	mov qword [rsp+8*21],r8
-	jmp L_223
-	
-L_224:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]
@@ -753,14 +691,14 @@ L_224:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 240
-	mov r8,  [rsp+8*22]
+	sub    rsp, 128
+	mov r8,  [rsp+8*8]
 	mov rax,r8
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2224
+gbl:         resb   2112
 buff.1788:
         resb    256
 arg:

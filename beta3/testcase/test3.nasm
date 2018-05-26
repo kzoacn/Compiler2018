@@ -668,14 +668,14 @@ main:
 	mov r14,r10
 	mov qword [rsp+8*1],r8
 	
-L_0:
+L_9:
 	mov r8,25
 	cmp r14,r8
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
 	mov qword [rsp+8*4],r9
-	je L_1
+	je L_10
 	mov r8,r14
 	mov r9,r8
 	mov qword rdi,r8
@@ -697,9 +697,9 @@ L_0:
 	mov r15,r14
 	mov r14,r13
 	mov qword [rsp+8*9],r8
-	jmp L_0
+	jmp L_9
 	
-L_1:
+L_10:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

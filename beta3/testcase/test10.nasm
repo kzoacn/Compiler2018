@@ -663,12 +663,12 @@ main:
 	pop r15
 	mov r8 , rax
 	mov r9,6
-	mov r13,r9
+	mov r12,r9
 	mov r11,1
 	mov r10,r11
 	mov qword [rsp+8*1],r8
 	mov qword [rsp+8*3],r10
-	mov     rdi,  r13
+	mov     rdi,  r12
 	call    mallocArray
 	mov     qword [rsp+8*4], rax
 	mov r9,  [rsp+8*4]
@@ -678,23 +678,23 @@ main:
 	mov qword [rsp+8*5],r8
 	mov qword [rsp+8*6],r10
 	
-L_30:
+L_39:
 	mov r9,1
 	mov r8,r9
 	mov r10,0
-	mov r15,r10
+	mov r14,r10
 	mov qword [rsp+8*7],r8
 	
-L_33:
-	cmp r15,r13
+L_42:
+	cmp r14,r12
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
 	mov qword [rsp+8*9],r8
-	je L_34
+	je L_43
 	mov r9,  [rsp+8*5]
 	mov r8,r9
-	mov r10,r15
+	mov r10,r14
 	add r10,1
 	shl r10,3
 	add r10,r8
@@ -714,20 +714,20 @@ L_33:
 	mov r8, rdx
 	mov r11,r8
 	mov r8,0
-	mov r14,r8
+	mov r13,r8
 	mov qword [rsp+8*12],r10
 	mov qword [rsp+8*3],r11
 	
-L_36:
-	cmp r14,r15
+L_45:
+	cmp r13,r14
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
 	mov qword [rsp+8*15],r8
-	je L_37
+	je L_46
 	mov r9,  [rsp+8*5]
 	mov r8,r9
-	mov r10,r15
+	mov r10,r14
 	add r10,1
 	shl r10,3
 	add r10,r8
@@ -735,7 +735,7 @@ L_36:
 	mov qword [rsp+8*16],r8
 	mov r8,r9
 	mov qword [rsp+8*17],r10
-	mov r10,r14
+	mov r10,r13
 	add r10,1
 	shl r10,3
 	add r10,r8
@@ -749,67 +749,67 @@ L_36:
 	mov qword [rsp+8*21],r8
 	mov qword [rsp+8*22],r10
 	mov qword [rsp+8*18],r11
-	je L_40
+	je L_49
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*7],r8
-	jmp L_37
+	jmp L_46
 	
-L_40:
+L_49:
+	mov r8,r13
+	inc qword r13 
+	mov qword [rsp+8*23],r8
+	jmp L_45
+	
+L_46:
 	mov r8,r14
 	inc qword r14 
-	mov qword [rsp+8*23],r8
-	jmp L_36
-	
-L_37:
-	mov r8,r15
-	inc qword r15 
 	mov qword [rsp+8*24],r8
-	jmp L_33
+	jmp L_42
 	
-L_34:
-	add r12,r12
+L_43:
+	add r15,r15
 	mov r8,  [rsp+8*7]
 	cmp r8, 0
-	je L_42
-	jmp L_31
+	je L_51
+	jmp L_40
 	
-L_42:
+L_51:
 	mov r9,  [rsp+8*6]
 	mov r8,r9
 	inc r9 
 	mov qword [rsp+8*26],r8
 	mov qword [rsp+8*6],r9
-	jmp L_30
+	jmp L_39
 	
-L_31:
+L_40:
 	mov r8,0
-	mov r15,r8
+	mov r14,r8
 	
-L_43:
-	cmp r15,r13
+L_52:
+	cmp r14,r12
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
 	mov qword [rsp+8*27],r8
-	je L_44
+	je L_53
 	mov r8,0
-	mov r14,r8
+	mov r13,r8
 	
-L_46:
+L_55:
 	mov r8,1
-	mov r9,r14
+	mov r9,r13
 	add r9,r8
-	cmp r9,r13
+	cmp r9,r12
 	mov r9, 0
 	setl r9B
-	add r12,r12
+	add r15,r15
 	cmp r9, 0
 	mov qword [rsp+8*28],r9
-	je L_47
+	je L_56
 	mov r9,  [rsp+8*5]
 	mov r8,r9
-	mov r10,r14
+	mov r10,r13
 	add r10,1
 	shl r10,3
 	add r10,r8
@@ -817,7 +817,7 @@ L_46:
 	mov qword [rsp+8*29],r8
 	mov r8,1
 	mov qword [rsp+8*30],r10
-	mov r10,r14
+	mov r10,r13
 	add r10,r8
 	mov r8,r9
 	mov qword [rsp+8*31],r11
@@ -835,10 +835,10 @@ L_46:
 	cmp r11, 0
 	mov qword [rsp+8*35],r8
 	mov qword [rsp+8*36],r11
-	je L_50
+	je L_59
 	mov r9,  [rsp+8*5]
 	mov r8,r9
-	mov r10,r14
+	mov r10,r13
 	add r10,1
 	shl r10,3
 	add r10,r8
@@ -848,7 +848,7 @@ L_46:
 	mov qword [rsp+8*38],r10
 	mov r10,1
 	mov qword [rsp+8*39],r11
-	mov r11,r14
+	mov r11,r13
 	add r11,r10
 	mov r10,r9
 	mov qword [rsp+8*40],r8
@@ -860,7 +860,7 @@ L_46:
 	mov r10, [r8]
 	mov qword [rsp+8*43],r8
 	mov r8,r9
-	mov r11,r14
+	mov r11,r13
 	add r11,1
 	shl r11,3
 	add r11,r8
@@ -868,7 +868,7 @@ L_46:
 	mov qword [rsp+8*45],r8
 	mov r8,1
 	mov qword [rsp+8*44],r10
-	mov r10,r14
+	mov r10,r13
 	add r10,r8
 	mov r8,r9
 	mov qword [rsp+8*46],r11
@@ -882,32 +882,32 @@ L_46:
 	mov qword [rsp+8*47],r10
 	mov qword [rsp+8*49],r11
 	
-L_50:
+L_59:
+	mov r8,r13
+	inc qword r13 
+	mov qword [rsp+8*50],r8
+	jmp L_55
+	
+L_56:
 	mov r8,r14
 	inc qword r14 
-	mov qword [rsp+8*50],r8
-	jmp L_46
-	
-L_47:
-	mov r8,r15
-	inc qword r15 
 	mov qword [rsp+8*51],r8
-	jmp L_43
+	jmp L_52
 	
-L_44:
+L_53:
 	mov r8,0
-	mov r15,r8
+	mov r14,r8
 	
-L_51:
-	cmp r15,r13
+L_60:
+	cmp r14,r12
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
 	mov qword [rsp+8*52],r8
-	je L_52
+	je L_61
 	mov r9,  [rsp+8*5]
 	mov r8,r9
-	mov r10,r15
+	mov r10,r14
 	add r10,1
 	shl r10,3
 	add r10,r8
@@ -930,12 +930,12 @@ L_51:
 	mov rdi,[rsp+8*59] 
 	add rdi, 1 
 	call puts
-	mov r8,r15
-	inc qword r15 
+	mov r8,r14
+	inc qword r14 
 	mov qword [rsp+8*60],r8
-	jmp L_51
+	jmp L_60
 	
-L_52:
+L_61:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

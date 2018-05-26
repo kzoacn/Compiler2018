@@ -648,10 +648,10 @@ dfs:
 	mov r10,1
 	mov r14,r10
 	
-L_545:
+L_475:
 	mov r8,1
 	cmp r8, 0
-	je L_546
+	je L_476
 	mov r8,r14
 	inc qword r14 
 	mov r9,r15
@@ -664,12 +664,12 @@ L_545:
 	mov qword [rsp+8*5],r8
 	mov qword [rsp+8*6],r9
 	mov qword [rsp+8*7],r10
-	je L_548
+	je L_478
 	mov rax,r15
 	leave
 	ret
 	
-L_548:
+L_478:
 	mov r8,1
 	mov r9,r13
 	sub r9,r8
@@ -687,9 +687,9 @@ L_548:
 	pop r15
 	mov r8 , rax
 	mov qword [rsp+8*9],r8
-	jmp L_545
+	jmp L_475
 	
-L_546:
+L_476:
 	mov r8,0
 	mov rax,r8
 	leave
