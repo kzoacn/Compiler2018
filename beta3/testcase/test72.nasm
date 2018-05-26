@@ -580,10 +580,7 @@ main:
 	call puts
 	mov r8,r14
 	mov r9,0
-	mov r10,r9
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r9*8+8H]
 	mov r11, [r10]
 	inc r11 
 	mov [r10],r11
@@ -607,10 +604,7 @@ main:
 	call puts
 	mov r8,r14
 	mov r9,0
-	mov r10,r9
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r9*8+8H]
 	mov r11, [r10]
 	inc r11 
 	mov [r10],r11

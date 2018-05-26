@@ -884,11 +884,8 @@ public class IRTranslator {
                     //kickAll();
                     readReg(var1);
                     readReg(var2);
-                    text.append(new StringBuffer("mov "+writeReg(dest)+","+readReg(var2))+"\n\t");
-                    text.append(new StringBuffer("add "+writeReg(dest)+",1\n\t"));
-                    text.append(new StringBuffer("shl "+writeReg(dest)+",3\n\t"));
-                    text.append(new StringBuffer("add "+writeReg(dest)+","+readReg(var1))+"\n\t");
-
+                    text.append(new StringBuffer("lea "+writeReg(dest)+",["+readReg(var1)+"+"+readReg(var2)+"*8+8H]\n\t"));
+//lea     rax, [rdi+rsi*8+8H]
                     /*text.append(new StringBuffer(
                                     "mov     rsi, "+readReg(var2)+"\n\t" +
                                     "mov     rdi, "+readReg(var1)+"\n\t" +

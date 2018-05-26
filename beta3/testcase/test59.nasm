@@ -548,29 +548,20 @@ main:
 	mov r14,r8
 	mov r9,r14
 	mov r10,0
-	mov r11,r10
-	add r11,1
-	shl r11,3
-	add r11,r9
+	lea r11,[r9+r10*8+8H]
 	mov r8,3
 	mov [r11],r8
 	mov r8,r14
 	mov qword [rsp+8*5],r9
 	mov r9,1
-	mov r10,r9
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r9*8+8H]
 	mov qword [rsp+8*7],r8
 	mov r8,2
 	mov [r10],r8
 	mov r8,r14
 	mov r9,0
 	mov qword [rsp+8*8],r10
-	mov r10,r9
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r9*8+8H]
 	mov qword [rsp+8*9],r8
 	mov r8, [r10]
 	mov r9,r8
@@ -593,10 +584,7 @@ main:
 	call puts
 	mov r8,r14
 	mov r9,1
-	mov r10,r9
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r9*8+8H]
 	mov r11, [r10]
 	mov qword [rsp+8*16],r8
 	mov r8,r11

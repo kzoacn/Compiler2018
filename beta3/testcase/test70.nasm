@@ -546,10 +546,7 @@ main:
 	mov r15,r8
 	mov r9,r15
 	mov r10,2
-	mov r11,r10
-	add r11,1
-	shl r11,3
-	add r11,r9
+	lea r11,[r9+r10*8+8H]
 	mov r8,2
 	mov [r11],r8
 	mov r8,r15
@@ -557,10 +554,7 @@ main:
 	mov r9,r8
 	mov r10,2
 	mov qword [rsp+8*5],r11
-	mov r11,r10
-	add r11,1
-	shl r11,3
-	add r11,r9
+	lea r11,[r9+r10*8+8H]
 	mov qword [rsp+8*7],r9
 	mov r9, [r11]
 	mov r10,r9

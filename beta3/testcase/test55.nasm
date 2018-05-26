@@ -550,20 +550,14 @@ main:
 	mov     qword [rsp+8*5], rax
 	mov r8,r15
 	mov r9,0
-	mov r10,r9
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r9*8+8H]
 	mov r11,  [rsp+8*5]
 	mov [r10],r11
 	mov qword [rsp+8*6],r8
 	mov r8,r15
 	mov r9,0
 	mov qword [rsp+8*7],r10
-	mov r10,r9
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r9*8+8H]
 	mov r8, [r10]
 	mov r9,r8
 	mov qword [rsp+8*8],r8

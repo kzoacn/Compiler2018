@@ -520,7 +520,7 @@ Adder_add:
 	mov r9,  [arg+8*63]
 	mov r8,r9
 	mov r10,  rdi
-	mov r14,r10
+	mov r15,r10
 	mov qword [rsp+8*2],r8
 	mov     rdi, 1
 	call    mallocArray
@@ -528,10 +528,7 @@ Adder_add:
 	mov r9,  [rsp+8*5]
 	mov r8,r9
 	mov r10,0
-	mov r8,r10
-	add r8,1
-	shl r8,3
-	add r8,r9
+	lea r8,[r9+r10*8+8H]
 	mov r11,0
 	mov [r8],r11
 	mov qword [rsp+8*6],r8
@@ -542,7 +539,7 @@ Adder_add:
 	mov r8,  [rsp+8*7]
 	mov r8, [r8]
 	mov r9,r8
-	add r9,r14
+	add r9,r15
 	mov rax,r9
 	leave
 	ret
@@ -577,29 +574,26 @@ main:
 	call    mallocArray
 	mov     qword [rsp+8*10], rax
 	mov r8,  [rsp+8*10]
-	mov r15,r8
+	mov r14,r8
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword [rsp+8*12], rax
 	mov r9,  [rsp+8*12]
 	mov r8,r9
 	mov r10,0
-	mov r8,r10
-	add r8,1
-	shl r8,3
-	add r8,r9
+	lea r8,[r9+r10*8+8H]
 	mov r11,0
 	mov [r8],r11
 	mov qword [rsp+8*13],r8
 	mov qword [rsp+8*12],r9
 	mov     rsi, [rsp+8*12]
-	mov     rdi,  r15
+	mov     rdi,  r14
 	call    multiAddress
 	mov [rsp+8*14], rax
 	mov r8,  [rsp+8*14]
 	mov r9,4
 	mov [r8],r9
-	mov r10,r15
+	mov r10,r14
 	mov r8,3
 	mov r11,r8
 	mov r8,r10

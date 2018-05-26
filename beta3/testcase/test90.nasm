@@ -1010,7 +1010,7 @@ gcd1:
 	mov r9,r10
 	mov qword [rsp+8*83],r8
 	mov r8,  [arg+8*10]
-	mov r15,r8
+	mov r14,r8
 	mov qword [rsp+8*84],r9
 	mov r9,  [arg+8*11]
 	mov r11,r9
@@ -1097,7 +1097,7 @@ gcd1:
 	mov r9,r9
 	add r9,r11
 	mov r9,r9
-	add r9,r15
+	add r9,r14
 	mov r10,  [rsp+8*86]
 	mov r9,r9
 	add r9,r10
@@ -1261,7 +1261,7 @@ L_1643:
 	mov qword [arg+8*14],r8
 	mov r8,  [rsp+8*86]
 	mov r11,r8
-	mov r8,r15
+	mov r8,r14
 	mov qword [arg+8*13],r9
 	mov qword [arg+8*12],r10
 	mov r10,  [rsp+8*84]
@@ -1346,7 +1346,7 @@ gcd2:
 	mov r8,r9
 	mov qword [rsp+8*123],r10
 	mov r10,  [arg+8*11]
-	mov r14,r10
+	mov r15,r10
 	mov qword [rsp+8*124],r8
 	mov r8,  [arg+8*12]
 	mov r11,r8
@@ -1434,7 +1434,7 @@ gcd2:
 	mov r9,r9
 	add r9,r10
 	mov r9,r9
-	add r9,r14
+	add r9,r15
 	mov r8,  [rsp+8*126]
 	mov r9,r9
 	add r9,r8
@@ -1592,7 +1592,7 @@ L_1645:
 	mov qword [arg+8*15],r11
 	mov r11,  [rsp+8*126]
 	mov r10,r11
-	mov r11,r14
+	mov r11,r15
 	mov qword [arg+8*14],r8
 	mov qword [arg+8*13],r9
 	mov r9,  [rsp+8*124]

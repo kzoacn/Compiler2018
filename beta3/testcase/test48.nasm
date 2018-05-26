@@ -539,22 +539,19 @@ main:
 	pop r15
 	mov r8 , rax
 	mov r9,5
-	mov r14,r9
+	mov r15,r9
 	mov qword [rsp+8*1],r8
-	mov     rdi,  r14
+	mov     rdi,  r15
 	call    mallocArray
 	mov     qword [rsp+8*3], rax
 	mov r8,  [rsp+8*3]
-	mov r15,r8
+	mov r14,r8
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword [rsp+8*5], rax
-	mov r8,r15
+	mov r8,r14
 	mov r9,1
-	mov r10,r9
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r9*8+8H]
 	mov r11,  [rsp+8*5]
 	mov [r10],r11
 	mov qword [rsp+8*6],r8
@@ -565,25 +562,19 @@ main:
 	mov r9,  [rsp+8*8]
 	mov r8,r9
 	mov r10,0
-	mov r8,r10
-	add r8,1
-	shl r8,3
-	add r8,r9
+	lea r8,[r9+r10*8+8H]
 	mov r11,1
 	mov [r8],r11
 	mov r10,1
-	mov r8,r10
-	add r8,1
-	shl r8,3
-	add r8,r9
+	lea r8,[r9+r10*8+8H]
 	mov r10,0
 	mov [r8],r10
 	mov qword [rsp+8*9],r8
 	mov     rsi, [rsp+8*8]
-	mov     rdi,  r15
+	mov     rdi,  r14
 	call    multiAddress
 	mov [rsp+8*10], rax
-	mov     rdi,  r14
+	mov     rdi,  r15
 	call    mallocArray
 	mov     qword [rsp+8*11], rax
 	mov r8,  [rsp+8*10]
@@ -595,29 +586,20 @@ main:
 	mov r9,  [rsp+8*12]
 	mov r8,r9
 	mov r10,0
-	mov r8,r10
-	add r8,1
-	shl r8,3
-	add r8,r9
+	lea r8,[r9+r10*8+8H]
 	mov r11,1
 	mov [r8],r11
 	mov r10,1
-	mov r8,r10
-	add r8,1
-	shl r8,3
-	add r8,r9
+	lea r8,[r9+r10*8+8H]
 	mov r10,0
 	mov [r8],r10
 	mov r10,2
-	mov r8,r10
-	add r8,1
-	shl r8,3
-	add r8,r9
+	lea r8,[r9+r10*8+8H]
 	mov r10,2
 	mov [r8],r10
 	mov qword [rsp+8*13],r8
 	mov     rsi, [rsp+8*12]
-	mov     rdi,  r15
+	mov     rdi,  r14
 	call    multiAddress
 	mov [rsp+8*14], rax
 	mov r8,  [rsp+8*14]
@@ -629,29 +611,20 @@ main:
 	mov r9,  [rsp+8*15]
 	mov r8,r9
 	mov r10,0
-	mov r8,r10
-	add r8,1
-	shl r8,3
-	add r8,r9
+	lea r8,[r9+r10*8+8H]
 	mov r11,1
 	mov [r8],r11
 	mov r10,1
-	mov r8,r10
-	add r8,1
-	shl r8,3
-	add r8,r9
+	lea r8,[r9+r10*8+8H]
 	mov r10,0
 	mov [r8],r10
 	mov r10,2
-	mov r8,r10
-	add r8,1
-	shl r8,3
-	add r8,r9
+	lea r8,[r9+r10*8+8H]
 	mov r10,2
 	mov [r8],r10
 	mov qword [rsp+8*16],r8
 	mov     rsi, [rsp+8*15]
-	mov     rdi,  r15
+	mov     rdi,  r14
 	call    multiAddress
 	mov [rsp+8*17], rax
 	mov r8,  [rsp+8*17]

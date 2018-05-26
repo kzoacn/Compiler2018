@@ -567,10 +567,7 @@ L_566:
 	mov     qword [rsp+8*8], rax
 	mov r8,r13
 	mov r9,  [gbl+8*6]
-	mov r10,r9
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r9*8+8H]
 	mov r11,  [rsp+8*8]
 	mov [r10],r11
 	mov qword [rsp+8*9],r8
@@ -590,16 +587,10 @@ L_568:
 	je L_569
 	mov r8,r13
 	mov r9,  [gbl+8*6]
-	mov r10,r9
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r9*8+8H]
 	mov r8, [r10]
 	mov r11,  [gbl+8*11]
-	mov r10,r11
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r11*8+8H]
 	mov qword [rsp+8*13],r8
 	mov r8,0
 	mov [r10],r8
@@ -665,17 +656,11 @@ L_549:
 	neg r9
 	mov r10,r13
 	mov r11,  [gbl+8*6]
-	mov r8,r11
-	add r8,1
-	shl r8,3
-	add r8,r10
+	lea r8,[r10+r11*8+8H]
 	mov r10, [r8]
 	mov qword [rsp+8*25],r9
 	mov r9,  [gbl+8*11]
-	mov r8,r9
-	add r8,1
-	shl r8,3
-	add r8,r10
+	lea r8,[r10+r9*8+8H]
 	mov qword [rsp+8*26],r10
 	mov r10,  [rsp+8*25]
 	mov [r8],r10
@@ -708,10 +693,7 @@ L_552:
 	mov r9,  [gbl+8*33]
 	mov r8,r9
 	mov r10,  [gbl+8*30]
-	mov r11,r10
-	add r11,1
-	shl r11,3
-	add r11,r8
+	lea r11,[r8+r10*8+8H]
 	mov qword [rsp+8*34],r8
 	mov r8, [r11]
 	mov qword [rsp+8*35],r11
@@ -720,10 +702,7 @@ L_552:
 	mov r9,  [gbl+8*38]
 	mov r8,r9
 	mov qword [gbl+8*37],r11
-	mov r11,r10
-	add r11,1
-	shl r11,3
-	add r11,r8
+	lea r11,[r8+r10*8+8H]
 	mov qword [rsp+8*39],r8
 	mov r8, [r11]
 	mov qword [rsp+8*40],r11
@@ -731,15 +710,9 @@ L_552:
 	mov qword [rsp+8*41],r8
 	mov r8,r13
 	mov r9,  [gbl+8*37]
-	mov r10,r9
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r9*8+8H]
 	mov r8, [r10]
-	mov r10,r11
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r11*8+8H]
 	mov qword [rsp+8*43],r8
 	mov r8, [r10]
 	mov qword [rsp+8*44],r10
@@ -765,9 +738,9 @@ L_552:
 	mov qword [rsp+8*51],r8
 	mov r8,  [rsp+8*50]
 	mov r11,r8
-	mov r14,r11
+	mov r15,r11
 	mov r9,r10
-	cmp r14,r9
+	cmp r15,r9
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
@@ -783,7 +756,7 @@ L_552:
 	
 L_603:
 	mov r8,0
-	cmp r14,r8
+	cmp r15,r8
 	mov r9, 0
 	setge r9B
 	mov r10,r9
@@ -808,11 +781,11 @@ L_607:
 	mov r8,r9
 	mov r11,  [rsp+8*51]
 	mov r10,r11
-	mov r14,r10
+	mov r15,r10
 	mov qword rsi,r8
 	mov r9,  rsi
 	mov r8,r9
-	cmp r14,r8
+	cmp r15,r8
 	mov r11, 0
 	setl r11B
 	cmp r11, 0
@@ -827,7 +800,7 @@ L_607:
 	
 L_609:
 	mov r8,0
-	cmp r14,r8
+	cmp r15,r8
 	mov r9, 0
 	setge r9B
 	mov r10,r9
@@ -849,16 +822,10 @@ L_608:
 	je L_613
 	mov r8,r13
 	mov r9,  [rsp+8*50]
-	mov r10,r9
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r9*8+8H]
 	mov r8, [r10]
 	mov r11,  [rsp+8*51]
-	mov r10,r11
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r11*8+8H]
 	mov r9, [r10]
 	mov qword [rsp+8*60],r8
 	mov r8,1
@@ -881,10 +848,7 @@ L_608:
 	mov r9,  [gbl+8*33]
 	mov r11,r9
 	mov qword [rsp+8*65],r10
-	mov r10,r8
-	add r10,1
-	shl r10,3
-	add r10,r11
+	lea r10,[r11+r8*8+8H]
 	mov r9,  [rsp+8*50]
 	mov [r10],r9
 	mov qword [gbl+8*31],r8
@@ -893,10 +857,7 @@ L_608:
 	mov r8,r11
 	mov r9,  [gbl+8*31]
 	mov qword [rsp+8*67],r10
-	mov r10,r9
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r9*8+8H]
 	mov r11,  [rsp+8*51]
 	mov [r10],r11
 	mov qword [rsp+8*68],r8
@@ -907,17 +868,11 @@ L_608:
 	add r10,r9
 	mov r11,r13
 	mov r8,  [rsp+8*50]
-	mov r9,r8
-	add r9,1
-	shl r9,3
-	add r9,r11
+	lea r9,[r11+r8*8+8H]
 	mov r11, [r9]
 	mov qword [rsp+8*70],r10
 	mov r10,  [rsp+8*51]
-	mov r9,r10
-	add r9,1
-	shl r9,3
-	add r9,r11
+	lea r9,[r11+r10*8+8H]
 	mov r8,  [rsp+8*70]
 	mov [r9],r8
 	mov r10,  [rsp+8*50]
@@ -950,7 +905,7 @@ L_616:
 	cmp r8, 0
 	je L_617
 	mov r8,1
-	mov r15,r8
+	mov r14,r8
 	
 L_617:
 	
@@ -983,11 +938,11 @@ L_613:
 	mov qword [rsp+8*51],r10
 	mov r10,  [rsp+8*50]
 	mov r11,r10
-	mov r14,r11
+	mov r15,r11
 	mov qword rsi,r8
 	mov r9,  rsi
 	mov r8,r9
-	cmp r14,r8
+	cmp r15,r8
 	mov r10, 0
 	setl r10B
 	cmp r10, 0
@@ -1002,7 +957,7 @@ L_613:
 	
 L_620:
 	mov r8,0
-	cmp r14,r8
+	cmp r15,r8
 	mov r9, 0
 	setge r9B
 	mov r10,r9
@@ -1027,11 +982,11 @@ L_624:
 	mov r8,r9
 	mov r11,  [rsp+8*51]
 	mov r10,r11
-	mov r14,r10
+	mov r15,r10
 	mov qword rsi,r8
 	mov r9,  rsi
 	mov r8,r9
-	cmp r14,r8
+	cmp r15,r8
 	mov r11, 0
 	setl r11B
 	cmp r11, 0
@@ -1046,7 +1001,7 @@ L_624:
 	
 L_626:
 	mov r8,0
-	cmp r14,r8
+	cmp r15,r8
 	mov r9, 0
 	setge r9B
 	mov r10,r9
@@ -1068,16 +1023,10 @@ L_625:
 	je L_630
 	mov r8,r13
 	mov r9,  [rsp+8*50]
-	mov r10,r9
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r9*8+8H]
 	mov r8, [r10]
 	mov r11,  [rsp+8*51]
-	mov r10,r11
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r11*8+8H]
 	mov r9, [r10]
 	mov qword [rsp+8*60],r8
 	mov r8,1
@@ -1100,10 +1049,7 @@ L_625:
 	mov r9,  [gbl+8*33]
 	mov r11,r9
 	mov qword [rsp+8*65],r10
-	mov r10,r8
-	add r10,1
-	shl r10,3
-	add r10,r11
+	lea r10,[r11+r8*8+8H]
 	mov r9,  [rsp+8*50]
 	mov [r10],r9
 	mov qword [gbl+8*31],r8
@@ -1112,10 +1058,7 @@ L_625:
 	mov r8,r11
 	mov r9,  [gbl+8*31]
 	mov qword [rsp+8*67],r10
-	mov r10,r9
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r9*8+8H]
 	mov r11,  [rsp+8*51]
 	mov [r10],r11
 	mov qword [rsp+8*68],r8
@@ -1126,17 +1069,11 @@ L_625:
 	add r10,r9
 	mov r11,r13
 	mov r8,  [rsp+8*50]
-	mov r9,r8
-	add r9,1
-	shl r9,3
-	add r9,r11
+	lea r9,[r11+r8*8+8H]
 	mov r11, [r9]
 	mov qword [rsp+8*70],r10
 	mov r10,  [rsp+8*51]
-	mov r9,r10
-	add r9,1
-	shl r9,3
-	add r9,r11
+	lea r9,[r11+r10*8+8H]
 	mov r8,  [rsp+8*70]
 	mov [r9],r8
 	mov r10,  [rsp+8*50]
@@ -1169,7 +1106,7 @@ L_633:
 	cmp r8, 0
 	je L_634
 	mov r8,1
-	mov r15,r8
+	mov r14,r8
 	
 L_634:
 	
@@ -1202,11 +1139,11 @@ L_630:
 	mov qword [rsp+8*51],r10
 	mov r10,  [rsp+8*50]
 	mov r11,r10
-	mov r14,r11
+	mov r15,r11
 	mov qword rsi,r8
 	mov r9,  rsi
 	mov r8,r9
-	cmp r14,r8
+	cmp r15,r8
 	mov r10, 0
 	setl r10B
 	cmp r10, 0
@@ -1221,7 +1158,7 @@ L_630:
 	
 L_637:
 	mov r8,0
-	cmp r14,r8
+	cmp r15,r8
 	mov r9, 0
 	setge r9B
 	mov r10,r9
@@ -1246,11 +1183,11 @@ L_641:
 	mov r8,r9
 	mov r11,  [rsp+8*51]
 	mov r10,r11
-	mov r14,r10
+	mov r15,r10
 	mov qword rsi,r8
 	mov r9,  rsi
 	mov r8,r9
-	cmp r14,r8
+	cmp r15,r8
 	mov r11, 0
 	setl r11B
 	cmp r11, 0
@@ -1265,7 +1202,7 @@ L_641:
 	
 L_643:
 	mov r8,0
-	cmp r14,r8
+	cmp r15,r8
 	mov r9, 0
 	setge r9B
 	mov r10,r9
@@ -1287,16 +1224,10 @@ L_642:
 	je L_647
 	mov r8,r13
 	mov r9,  [rsp+8*50]
-	mov r10,r9
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r9*8+8H]
 	mov r8, [r10]
 	mov r11,  [rsp+8*51]
-	mov r10,r11
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r11*8+8H]
 	mov r9, [r10]
 	mov qword [rsp+8*60],r8
 	mov r8,1
@@ -1319,10 +1250,7 @@ L_642:
 	mov r9,  [gbl+8*33]
 	mov r11,r9
 	mov qword [rsp+8*65],r10
-	mov r10,r8
-	add r10,1
-	shl r10,3
-	add r10,r11
+	lea r10,[r11+r8*8+8H]
 	mov r9,  [rsp+8*50]
 	mov [r10],r9
 	mov qword [gbl+8*31],r8
@@ -1331,10 +1259,7 @@ L_642:
 	mov r8,r11
 	mov r9,  [gbl+8*31]
 	mov qword [rsp+8*67],r10
-	mov r10,r9
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r9*8+8H]
 	mov r11,  [rsp+8*51]
 	mov [r10],r11
 	mov qword [rsp+8*68],r8
@@ -1345,17 +1270,11 @@ L_642:
 	add r10,r9
 	mov r11,r13
 	mov r8,  [rsp+8*50]
-	mov r9,r8
-	add r9,1
-	shl r9,3
-	add r9,r11
+	lea r9,[r11+r8*8+8H]
 	mov r11, [r9]
 	mov qword [rsp+8*70],r10
 	mov r10,  [rsp+8*51]
-	mov r9,r10
-	add r9,1
-	shl r9,3
-	add r9,r11
+	lea r9,[r11+r10*8+8H]
 	mov r8,  [rsp+8*70]
 	mov [r9],r8
 	mov r10,  [rsp+8*50]
@@ -1388,7 +1307,7 @@ L_650:
 	cmp r8, 0
 	je L_651
 	mov r8,1
-	mov r15,r8
+	mov r14,r8
 	
 L_651:
 	
@@ -1421,11 +1340,11 @@ L_647:
 	mov qword [rsp+8*51],r10
 	mov r10,  [rsp+8*50]
 	mov r11,r10
-	mov r14,r11
+	mov r15,r11
 	mov qword rsi,r8
 	mov r9,  rsi
 	mov r8,r9
-	cmp r14,r8
+	cmp r15,r8
 	mov r10, 0
 	setl r10B
 	cmp r10, 0
@@ -1440,7 +1359,7 @@ L_647:
 	
 L_654:
 	mov r8,0
-	cmp r14,r8
+	cmp r15,r8
 	mov r9, 0
 	setge r9B
 	mov r10,r9
@@ -1465,11 +1384,11 @@ L_658:
 	mov r8,r9
 	mov r11,  [rsp+8*51]
 	mov r10,r11
-	mov r14,r10
+	mov r15,r10
 	mov qword rsi,r8
 	mov r9,  rsi
 	mov r8,r9
-	cmp r14,r8
+	cmp r15,r8
 	mov r11, 0
 	setl r11B
 	cmp r11, 0
@@ -1484,7 +1403,7 @@ L_658:
 	
 L_660:
 	mov r8,0
-	cmp r14,r8
+	cmp r15,r8
 	mov r9, 0
 	setge r9B
 	mov r10,r9
@@ -1506,16 +1425,10 @@ L_659:
 	je L_664
 	mov r8,r13
 	mov r9,  [rsp+8*50]
-	mov r10,r9
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r9*8+8H]
 	mov r8, [r10]
 	mov r11,  [rsp+8*51]
-	mov r10,r11
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r11*8+8H]
 	mov r9, [r10]
 	mov qword [rsp+8*60],r8
 	mov r8,1
@@ -1538,10 +1451,7 @@ L_659:
 	mov r9,  [gbl+8*33]
 	mov r11,r9
 	mov qword [rsp+8*65],r10
-	mov r10,r8
-	add r10,1
-	shl r10,3
-	add r10,r11
+	lea r10,[r11+r8*8+8H]
 	mov r9,  [rsp+8*50]
 	mov [r10],r9
 	mov qword [gbl+8*31],r8
@@ -1550,10 +1460,7 @@ L_659:
 	mov r8,r11
 	mov r9,  [gbl+8*31]
 	mov qword [rsp+8*67],r10
-	mov r10,r9
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r9*8+8H]
 	mov r11,  [rsp+8*51]
 	mov [r10],r11
 	mov qword [rsp+8*68],r8
@@ -1564,17 +1471,11 @@ L_659:
 	add r10,r9
 	mov r11,r13
 	mov r8,  [rsp+8*50]
-	mov r9,r8
-	add r9,1
-	shl r9,3
-	add r9,r11
+	lea r9,[r11+r8*8+8H]
 	mov r11, [r9]
 	mov qword [rsp+8*70],r10
 	mov r10,  [rsp+8*51]
-	mov r9,r10
-	add r9,1
-	shl r9,3
-	add r9,r11
+	lea r9,[r11+r10*8+8H]
 	mov r8,  [rsp+8*70]
 	mov [r9],r8
 	mov r10,  [rsp+8*50]
@@ -1607,7 +1508,7 @@ L_667:
 	cmp r8, 0
 	je L_668
 	mov r8,1
-	mov r15,r8
+	mov r14,r8
 	
 L_668:
 	
@@ -1640,11 +1541,11 @@ L_664:
 	mov qword [rsp+8*51],r10
 	mov r10,  [rsp+8*50]
 	mov r11,r10
-	mov r14,r11
+	mov r15,r11
 	mov qword rsi,r8
 	mov r9,  rsi
 	mov r8,r9
-	cmp r14,r8
+	cmp r15,r8
 	mov r10, 0
 	setl r10B
 	cmp r10, 0
@@ -1659,7 +1560,7 @@ L_664:
 	
 L_671:
 	mov r8,0
-	cmp r14,r8
+	cmp r15,r8
 	mov r9, 0
 	setge r9B
 	mov r10,r9
@@ -1684,11 +1585,11 @@ L_675:
 	mov r8,r9
 	mov r11,  [rsp+8*51]
 	mov r10,r11
-	mov r14,r10
+	mov r15,r10
 	mov qword rsi,r8
 	mov r9,  rsi
 	mov r8,r9
-	cmp r14,r8
+	cmp r15,r8
 	mov r11, 0
 	setl r11B
 	cmp r11, 0
@@ -1703,7 +1604,7 @@ L_675:
 	
 L_677:
 	mov r8,0
-	cmp r14,r8
+	cmp r15,r8
 	mov r9, 0
 	setge r9B
 	mov r10,r9
@@ -1725,16 +1626,10 @@ L_676:
 	je L_681
 	mov r8,r13
 	mov r9,  [rsp+8*50]
-	mov r10,r9
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r9*8+8H]
 	mov r8, [r10]
 	mov r11,  [rsp+8*51]
-	mov r10,r11
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r11*8+8H]
 	mov r9, [r10]
 	mov qword [rsp+8*60],r8
 	mov r8,1
@@ -1757,10 +1652,7 @@ L_676:
 	mov r9,  [gbl+8*33]
 	mov r11,r9
 	mov qword [rsp+8*65],r10
-	mov r10,r8
-	add r10,1
-	shl r10,3
-	add r10,r11
+	lea r10,[r11+r8*8+8H]
 	mov r9,  [rsp+8*50]
 	mov [r10],r9
 	mov qword [gbl+8*31],r8
@@ -1769,10 +1661,7 @@ L_676:
 	mov r8,r11
 	mov r9,  [gbl+8*31]
 	mov qword [rsp+8*67],r10
-	mov r10,r9
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r9*8+8H]
 	mov r11,  [rsp+8*51]
 	mov [r10],r11
 	mov qword [rsp+8*68],r8
@@ -1783,17 +1672,11 @@ L_676:
 	add r10,r9
 	mov r11,r13
 	mov r8,  [rsp+8*50]
-	mov r9,r8
-	add r9,1
-	shl r9,3
-	add r9,r11
+	lea r9,[r11+r8*8+8H]
 	mov r11, [r9]
 	mov qword [rsp+8*70],r10
 	mov r10,  [rsp+8*51]
-	mov r9,r10
-	add r9,1
-	shl r9,3
-	add r9,r11
+	lea r9,[r11+r10*8+8H]
 	mov r8,  [rsp+8*70]
 	mov [r9],r8
 	mov r10,  [rsp+8*50]
@@ -1826,7 +1709,7 @@ L_684:
 	cmp r8, 0
 	je L_685
 	mov r8,1
-	mov r15,r8
+	mov r14,r8
 	
 L_685:
 	
@@ -1859,11 +1742,11 @@ L_681:
 	mov qword [rsp+8*51],r10
 	mov r10,  [rsp+8*50]
 	mov r11,r10
-	mov r14,r11
+	mov r15,r11
 	mov qword rsi,r8
 	mov r9,  rsi
 	mov r8,r9
-	cmp r14,r8
+	cmp r15,r8
 	mov r10, 0
 	setl r10B
 	cmp r10, 0
@@ -1878,7 +1761,7 @@ L_681:
 	
 L_688:
 	mov r8,0
-	cmp r14,r8
+	cmp r15,r8
 	mov r9, 0
 	setge r9B
 	mov r10,r9
@@ -1903,11 +1786,11 @@ L_692:
 	mov r8,r9
 	mov r11,  [rsp+8*51]
 	mov r10,r11
-	mov r14,r10
+	mov r15,r10
 	mov qword rsi,r8
 	mov r9,  rsi
 	mov r8,r9
-	cmp r14,r8
+	cmp r15,r8
 	mov r11, 0
 	setl r11B
 	cmp r11, 0
@@ -1922,7 +1805,7 @@ L_692:
 	
 L_694:
 	mov r8,0
-	cmp r14,r8
+	cmp r15,r8
 	mov r9, 0
 	setge r9B
 	mov r10,r9
@@ -1944,16 +1827,10 @@ L_693:
 	je L_698
 	mov r8,r13
 	mov r9,  [rsp+8*50]
-	mov r10,r9
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r9*8+8H]
 	mov r8, [r10]
 	mov r11,  [rsp+8*51]
-	mov r10,r11
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r11*8+8H]
 	mov r9, [r10]
 	mov qword [rsp+8*60],r8
 	mov r8,1
@@ -1976,10 +1853,7 @@ L_693:
 	mov r9,  [gbl+8*33]
 	mov r11,r9
 	mov qword [rsp+8*65],r10
-	mov r10,r8
-	add r10,1
-	shl r10,3
-	add r10,r11
+	lea r10,[r11+r8*8+8H]
 	mov r9,  [rsp+8*50]
 	mov [r10],r9
 	mov qword [gbl+8*31],r8
@@ -1988,10 +1862,7 @@ L_693:
 	mov r8,r11
 	mov r9,  [gbl+8*31]
 	mov qword [rsp+8*67],r10
-	mov r10,r9
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r9*8+8H]
 	mov r11,  [rsp+8*51]
 	mov [r10],r11
 	mov qword [rsp+8*68],r8
@@ -2002,17 +1873,11 @@ L_693:
 	add r10,r9
 	mov r11,r13
 	mov r8,  [rsp+8*50]
-	mov r9,r8
-	add r9,1
-	shl r9,3
-	add r9,r11
+	lea r9,[r11+r8*8+8H]
 	mov r11, [r9]
 	mov qword [rsp+8*70],r10
 	mov r10,  [rsp+8*51]
-	mov r9,r10
-	add r9,1
-	shl r9,3
-	add r9,r11
+	lea r9,[r11+r10*8+8H]
 	mov r8,  [rsp+8*70]
 	mov [r9],r8
 	mov r10,  [rsp+8*50]
@@ -2045,7 +1910,7 @@ L_701:
 	cmp r8, 0
 	je L_702
 	mov r8,1
-	mov r15,r8
+	mov r14,r8
 	
 L_702:
 	
@@ -2078,11 +1943,11 @@ L_698:
 	mov qword [rsp+8*51],r10
 	mov r10,  [rsp+8*50]
 	mov r11,r10
-	mov r14,r11
+	mov r15,r11
 	mov qword rsi,r8
 	mov r9,  rsi
 	mov r8,r9
-	cmp r14,r8
+	cmp r15,r8
 	mov r10, 0
 	setl r10B
 	cmp r10, 0
@@ -2097,7 +1962,7 @@ L_698:
 	
 L_705:
 	mov r8,0
-	cmp r14,r8
+	cmp r15,r8
 	mov r9, 0
 	setge r9B
 	mov r10,r9
@@ -2122,11 +1987,11 @@ L_709:
 	mov r8,r9
 	mov r11,  [rsp+8*51]
 	mov r10,r11
-	mov r14,r10
+	mov r15,r10
 	mov qword rsi,r8
 	mov r9,  rsi
 	mov r8,r9
-	cmp r14,r8
+	cmp r15,r8
 	mov r11, 0
 	setl r11B
 	cmp r11, 0
@@ -2141,7 +2006,7 @@ L_709:
 	
 L_711:
 	mov r8,0
-	cmp r14,r8
+	cmp r15,r8
 	mov r9, 0
 	setge r9B
 	mov r10,r9
@@ -2163,16 +2028,10 @@ L_710:
 	je L_715
 	mov r8,r13
 	mov r9,  [rsp+8*50]
-	mov r10,r9
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r9*8+8H]
 	mov r8, [r10]
 	mov r11,  [rsp+8*51]
-	mov r10,r11
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r11*8+8H]
 	mov r9, [r10]
 	mov qword [rsp+8*60],r8
 	mov r8,1
@@ -2195,10 +2054,7 @@ L_710:
 	mov r9,  [gbl+8*33]
 	mov r11,r9
 	mov qword [rsp+8*65],r10
-	mov r10,r8
-	add r10,1
-	shl r10,3
-	add r10,r11
+	lea r10,[r11+r8*8+8H]
 	mov r9,  [rsp+8*50]
 	mov [r10],r9
 	mov qword [gbl+8*31],r8
@@ -2207,10 +2063,7 @@ L_710:
 	mov r8,r11
 	mov r9,  [gbl+8*31]
 	mov qword [rsp+8*67],r10
-	mov r10,r9
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r9*8+8H]
 	mov r11,  [rsp+8*51]
 	mov [r10],r11
 	mov qword [rsp+8*68],r8
@@ -2221,17 +2074,11 @@ L_710:
 	add r10,r9
 	mov r11,r13
 	mov r8,  [rsp+8*50]
-	mov r9,r8
-	add r9,1
-	shl r9,3
-	add r9,r11
+	lea r9,[r11+r8*8+8H]
 	mov r11, [r9]
 	mov qword [rsp+8*70],r10
 	mov r10,  [rsp+8*51]
-	mov r9,r10
-	add r9,1
-	shl r9,3
-	add r9,r11
+	lea r9,[r11+r10*8+8H]
 	mov r8,  [rsp+8*70]
 	mov [r9],r8
 	mov r10,  [rsp+8*50]
@@ -2264,7 +2111,7 @@ L_718:
 	cmp r8, 0
 	je L_719
 	mov r8,1
-	mov r15,r8
+	mov r14,r8
 	
 L_719:
 	
@@ -2295,9 +2142,9 @@ L_715:
 	mov qword [rsp+8*51],r11
 	mov r11,  [rsp+8*50]
 	mov r9,r11
-	mov r14,r9
+	mov r15,r9
 	mov r8,r10
-	cmp r14,r8
+	cmp r15,r8
 	mov r11, 0
 	setl r11B
 	cmp r11, 0
@@ -2313,7 +2160,7 @@ L_715:
 	
 L_722:
 	mov r8,0
-	cmp r14,r8
+	cmp r15,r8
 	mov r9, 0
 	setge r9B
 	mov r10,r9
@@ -2338,9 +2185,9 @@ L_726:
 	mov r8,r9
 	mov r11,  [rsp+8*51]
 	mov r10,r11
-	mov r14,r10
+	mov r15,r10
 	mov r9,r8
-	cmp r14,r9
+	cmp r15,r9
 	mov qword rsi,r8
 	mov r8, 0
 	setl r8B
@@ -2356,7 +2203,7 @@ L_726:
 	
 L_728:
 	mov r8,0
-	cmp r14,r8
+	cmp r15,r8
 	mov r9, 0
 	setge r9B
 	mov r10,r9
@@ -2378,16 +2225,10 @@ L_727:
 	je L_732
 	mov r8,r13
 	mov r9,  [rsp+8*50]
-	mov r10,r9
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r9*8+8H]
 	mov r8, [r10]
 	mov r11,  [rsp+8*51]
-	mov r10,r11
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r11*8+8H]
 	mov qword [rsp+8*60],r8
 	mov r8, [r10]
 	mov qword [rsp+8*61],r10
@@ -2409,20 +2250,14 @@ L_727:
 	mov r8,r10
 	mov r9,  [gbl+8*33]
 	mov r11,r9
-	mov r10,r8
-	add r10,1
-	shl r10,3
-	add r10,r11
+	lea r10,[r11+r8*8+8H]
 	mov qword [rsp+8*66],r11
 	mov r11,  [rsp+8*50]
 	mov [r10],r11
 	mov qword [rsp+8*67],r10
 	mov r9,  [gbl+8*38]
 	mov r10,r9
-	mov r11,r8
-	add r11,1
-	shl r11,3
-	add r11,r10
+	lea r11,[r10+r8*8+8H]
 	mov qword [gbl+8*31],r8
 	mov r8,  [rsp+8*51]
 	mov [r11],r8
@@ -2434,17 +2269,11 @@ L_727:
 	add r9,r11
 	mov r10,r13
 	mov r11,  [rsp+8*50]
-	mov r8,r11
-	add r8,1
-	shl r8,3
-	add r8,r10
+	lea r8,[r10+r11*8+8H]
 	mov r10, [r8]
 	mov qword [rsp+8*70],r9
 	mov r9,  [rsp+8*51]
-	mov r8,r9
-	add r8,1
-	shl r8,3
-	add r8,r10
+	lea r8,[r10+r9*8+8H]
 	mov qword [rsp+8*71],r10
 	mov r10,  [rsp+8*70]
 	mov [r8],r10
@@ -2476,7 +2305,7 @@ L_735:
 	cmp r8, 0
 	je L_736
 	mov r8,1
-	mov r15,r8
+	mov r14,r8
 	
 L_736:
 	
@@ -2487,7 +2316,7 @@ L_732:
 	mov r8,r9
 	mov r10,r8
 	mov r11,1
-	cmp r15,r11
+	cmp r14,r11
 	mov qword [rsp+8*76],r8
 	mov r8, 0
 	sete r8B
@@ -2509,7 +2338,7 @@ L_555:
 	
 L_553:
 	mov r8,1
-	cmp r15,r8
+	cmp r14,r8
 	mov r9, 0
 	sete r9B
 	cmp r9, 0
@@ -2517,16 +2346,10 @@ L_553:
 	je L_556
 	mov r8,r13
 	mov r9,  [gbl+8*22]
-	mov r10,r9
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r9*8+8H]
 	mov r8, [r10]
 	mov r11,  [gbl+8*21]
-	mov r10,r11
-	add r10,1
-	shl r10,3
-	add r10,r8
+	lea r10,[r8+r11*8+8H]
 	mov qword [rsp+8*102],r8
 	mov r8, [r10]
 	mov r9,r8

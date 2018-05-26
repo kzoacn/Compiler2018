@@ -692,22 +692,22 @@ main:
 	mov r10,t91
 	mov r9,r10
 	mov r11,t92
-	mov r14,r11
+	mov r13,r11
 	mov qword [rsp+8*22],r8
 	mov r10,t93
 	mov r8,r10
 	mov r10,10
-	mov r13,r10
+	mov r15,r10
 	mov r11,0
 	mov r10,r11
 	mov qword [arg+8*4],r10
 	mov r10,r8
 	mov qword [rsp+8*25],r8
-	mov r8,r14
+	mov r8,r13
 	mov qword [arg+8*2],r8
 	mov r8,r9
 	mov qword rsi,r8
-	mov r8,r13
+	mov r8,r15
 	mov qword rdi,r8
 	mov qword [rsp+8*23],r9
 	mov qword [arg+8*3],r10
@@ -721,8 +721,8 @@ main:
 	pop r14
 	pop r15
 	mov r8 , rax
-	mov r15,r8
-	mov r9,r15
+	mov r14,r8
+	mov r9,r14
 	mov r10,r9
 	mov qword [rsp+8*27],r8
 	mov qword rdi,r9

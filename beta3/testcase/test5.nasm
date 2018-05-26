@@ -541,11 +541,11 @@ main:
 	mov r10,3
 	mov r9,r10
 	mov r11,2
-	mov r14,r11
+	mov r15,r11
 	mov qword [rsp+8*1],r8
 	mov r8,5
-	mov r15,r8
-	cmp r9,r14
+	mov r14,r8
+	cmp r9,r15
 	mov r8, 0
 	setg r8B
 	cmp r8, 0
@@ -559,7 +559,7 @@ main:
 	
 L_38:
 	mov r8,  [rsp+8*2]
-	cmp r8,r15
+	cmp r8,r14
 	mov r9, 0
 	setg r9B
 	mov r10,r9
@@ -575,17 +575,17 @@ L_39:
 	jmp L_41
 	
 L_40:
-	cmp r14,r15
+	cmp r15,r14
 	mov r8, 0
 	setg r8B
 	cmp r8, 0
 	mov qword [rsp+8*8],r8
 	je L_42
-	mov r13,r14
+	mov r13,r15
 	jmp L_43
 	
 L_42:
-	mov r13,r15
+	mov r13,r14
 	
 L_43:
 	

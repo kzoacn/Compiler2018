@@ -741,16 +741,16 @@ L_1299:
 	pop r14
 	pop r15
 	mov r8 , rax
-	mov r14,r8
+	mov r15,r8
 	mov qword [rsp+8*35],r8
 	mov rdi, [rsp+8*31]
-	mov rsi,  r14
+	mov rsi,  r15
 	call    strls
 	mov qword [rsp+8*37], rax
 	mov r8,  [rsp+8*37]
 	cmp r8, 0
 	je L_1300
-	mov     rsi,  r14
+	mov     rsi,  r15
 	mov     rdi, [rsp+8*31]
 	call    concat
 	mov [rsp+8*38], rax
@@ -761,7 +761,7 @@ L_1299:
 	
 L_1300:
 	mov rdi, [rsp+8*31]
-	mov rsi,  r14
+	mov rsi,  r15
 	call    streq
 	mov qword [rsp+8*39], rax
 	mov r8,  [rsp+8*39]
@@ -779,8 +779,8 @@ L_1300:
 	call    ord
 	mov     qword [rsp+8*41], rax
 	mov r8,  [rsp+8*41]
-	mov r13,r8
-	mov r9,r14
+	mov r14,r8
+	mov r9,r15
 	mov r11,0
 	mov r10,r11
 	mov r8,r9
@@ -791,14 +791,14 @@ L_1300:
 	call    ord
 	mov     qword [rsp+8*44], rax
 	mov r8,  [rsp+8*44]
-	mov r15,r8
-	cmp r13,r15
+	mov r13,r8
+	cmp r14,r13
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
 	mov qword [rsp+8*46],r9
 	je L_1305
-	mov     rsi,  r14
+	mov     rsi,  r15
 	mov     rdi, [rsp+8*31]
 	call    concat
 	mov [rsp+8*47], rax
@@ -809,7 +809,7 @@ L_1300:
 	
 L_1305:
 	mov     rsi, [rsp+8*31]
-	mov     rdi,  r14
+	mov     rdi,  r15
 	call    concat
 	mov [rsp+8*48], rax
 	mov r8,  [rsp+8*48]
@@ -819,14 +819,14 @@ L_1305:
 	
 L_1302:
 	mov rdi, [rsp+8*31]
-	mov rsi,  r14
+	mov rsi,  r15
 	call    strgt
 	mov qword [rsp+8*49], rax
 	mov r8,  [rsp+8*49]
 	cmp r8, 0
 	je L_1307
 	mov     rsi, [rsp+8*31]
-	mov     rdi,  r14
+	mov     rdi,  r15
 	call    concat
 	mov [rsp+8*50], rax
 	mov r8,  [rsp+8*50]
