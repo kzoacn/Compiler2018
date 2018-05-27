@@ -826,7 +826,6 @@ L_53:
 	mov r10,1
 	add r8,r10
 	mov r10,1
-	mov r8,r8
 	sub r8,r10
 	mov r10,1
 	add r8,r10

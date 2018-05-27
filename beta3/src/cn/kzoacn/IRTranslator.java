@@ -534,14 +534,15 @@ public class IRTranslator {
                     break;
                 case subtract:
                     //if(inReg(var2) ||!fullReg()) {
-                    if(dest.equals(var2)){
-                        readReg(var1);
-                        readReg(var2);
+                    readReg(var1);
+                    readReg(var2);
+                    if(writeReg(dest).equals(readReg(var1))){
+                        text.append(new StringBuffer("sub " + writeReg(dest) + "," + readReg(var2) + "\n\t"));
+                    }else
+                    if(writeReg(dest).equals(readReg(var2))){
                         text.append(new StringBuffer("sub " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
                         text.append(new StringBuffer("neg " + writeReg(dest) + "\n\t"));
                     }else {
-                        readReg(var1);
-                        readReg(var2);
                         text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
                         text.append(new StringBuffer("sub " + writeReg(dest) + "," + readReg(var2) + "\n\t"));
                     }
@@ -556,9 +557,17 @@ public class IRTranslator {
                     //text.append(new StringBuffer("mov qword "+varName(dest)+",r8 \n\t"));
                     break;
                 case multiply:
-                    readReg(var1);readReg(var2);
-                    text.append(new StringBuffer("mov "+writeReg(dest)+","+readReg(var1)+"\n\t"));
-                    text.append(new StringBuffer("imul "+writeReg(dest)+","+readReg(var2)+"\n\t"));
+                    readReg(var1);
+                    readReg(var2);
+                    if(writeReg(dest).equals(readReg(var1))){
+                        text.append(new StringBuffer("imul " + writeReg(dest) + "," + readReg(var2) + "\n\t"));
+                    }else
+                    if(writeReg(dest).equals(readReg(var2))){
+                        text.append(new StringBuffer("imul " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
+                    }else {
+                        text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
+                        text.append(new StringBuffer("imul " + writeReg(dest) + "," + readReg(var2) + "\n\t"));
+                    }
                     //kickAll();
                     break;
                 case divide:

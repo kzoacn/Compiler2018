@@ -653,13 +653,13 @@ main:
 	mov r10,0
 	mov r12,r10
 	
-L_776:
+L_794:
 	cmp r12,r13
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
 	mov qword [rsp+8*7],r8
-	je L_777
+	je L_795
 	mov r8,r13
 	sub r8,r12
 	mov r9,r14
@@ -675,19 +675,19 @@ L_776:
 	mov qword [rsp+8*9],r9
 	mov qword [rsp+8*11],r10
 	mov qword [rsp+8*10],r11
-	jmp L_776
+	jmp L_794
 	
-L_777:
+L_795:
 	mov r8,0
 	mov r12,r8
 	
-L_779:
+L_797:
 	cmp r12,r13
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
 	mov qword [rsp+8*13],r8
-	je L_780
+	je L_798
 	mov r8,r15
 	lea r9,[r8+r12*8+8H]
 	mov r10, [r9]
@@ -713,9 +713,9 @@ L_779:
 	mov r9,1
 	add r12,r9
 	mov qword [rsp+8*21],r8
-	jmp L_779
+	jmp L_797
 	
-L_780:
+L_798:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

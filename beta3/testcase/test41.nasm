@@ -626,10 +626,10 @@ dfs:
 	mov r10,1
 	mov r14,r10
 	
-L_1031:
+L_1049:
 	mov r8,1
 	cmp r8, 0
-	je L_1032
+	je L_1050
 	mov r8,r14
 	mov r9,1
 	add r14,r9
@@ -643,12 +643,12 @@ L_1031:
 	mov qword [rsp+8*5],r8
 	mov qword [rsp+8*6],r10
 	mov qword [rsp+8*7],r11
-	je L_1034
+	je L_1052
 	mov rax,r15
 	leave
 	ret
 	
-L_1034:
+L_1052:
 	mov r8,1
 	mov r9,r13
 	sub r9,r8
@@ -666,9 +666,9 @@ L_1034:
 	pop r15
 	mov r8 , rax
 	mov qword [rsp+8*9],r8
-	jmp L_1031
+	jmp L_1049
 	
-L_1032:
+L_1050:
 	mov r8,0
 	mov rax,r8
 	leave

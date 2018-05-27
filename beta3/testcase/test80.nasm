@@ -650,7 +650,7 @@ main:
 	mov r8,0
 	mov r15,r8
 	
-L_2069:
+L_2087:
 	mov r14,r13
 	mov r8,r14
 	mov r14,r8
@@ -660,7 +660,7 @@ L_2069:
 	setl r14B
 	cmp r14, 0
 	mov qword [arg+8*63],r8
-	je L_2070
+	je L_2088
 	mov r8,r13
 	lea r14,[r8+r15*8+8H]
 	mov [r14],r15
@@ -668,9 +668,9 @@ L_2069:
 	add r15,r9
 	mov r15,r15
 	mov qword [rsp+8*10],r8
-	jmp L_2069
+	jmp L_2087
 	
-L_2070:
+L_2088:
 	mov r8,  [gbl+8*2]
 	mov r9,1
 	mov r10,r8
@@ -689,14 +689,14 @@ L_2070:
 	mov r15,r9
 	mov qword [rsp+8*13],r10
 	
-L_2128:
+L_2146:
 	mov r8,0
 	cmp r14,r8
 	mov r9, 0
 	setge r9B
 	cmp r9, 0
 	mov qword [rsp+8*18],r9
-	je L_2129
+	je L_2147
 	mov r8,2
 	mov r9,r14
 	imul r9,r8
@@ -713,13 +713,13 @@ L_2128:
 	cmp r11, 0
 	mov qword [rsp+8*19],r9
 	mov qword [rsp+8*20],r11
-	jne L_2130
+	jne L_2148
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*20],r8
-	jmp L_2131
+	jmp L_2149
 	
-L_2130:
+L_2148:
 	mov r8,2
 	mov r9,r14
 	imul r9,r8
@@ -747,13 +747,13 @@ L_2130:
 	mov qword [rsp+8*29],r10
 	mov qword [rsp+8*27],r11
 	
-L_2131:
+L_2149:
 	mov r8,  [rsp+8*30]
 	add r8,r8
 	mov r9,  [rsp+8*20]
 	cmp r9, 0
 	mov qword [rsp+8*30],r8
-	je L_2133
+	je L_2151
 	mov r8,2
 	mov r9,r14
 	imul r9,r8
@@ -762,7 +762,7 @@ L_2131:
 	mov r15,r9
 	mov qword [rsp+8*31],r9
 	
-L_2133:
+L_2151:
 	mov r8,r13
 	lea r9,[r8+r14*8+8H]
 	mov r10, [r9]
@@ -780,7 +780,7 @@ L_2133:
 	mov qword [rsp+8*37],r9
 	mov qword [rsp+8*34],r10
 	mov qword [rsp+8*35],r11
-	je L_2134
+	je L_2152
 	mov r8,r15
 	mov r9,r14
 	mov r10,r9
@@ -818,15 +818,15 @@ L_2133:
 	mov qword [rsp+8*53],r10
 	mov qword [rsp+8*51],r11
 	
-L_2134:
+L_2152:
 	mov r8,1
 	mov r9,r14
 	sub r9,r8
 	mov r14,r9
 	mov qword [rsp+8*56],r9
-	jmp L_2128
+	jmp L_2146
 	
-L_2129:
+L_2147:
 	mov r8,0
 	mov r15,r8
 	mov r15,r15
@@ -836,13 +836,13 @@ L_2129:
 	mov r12,r11
 	mov qword [rsp+8*59],r9
 	
-L_2139:
+L_2157:
 	mov r8,  [gbl+8*2]
 	cmp r12,r8
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	je L_2140
+	je L_2158
 	mov r8,r13
 	mov r9,0
 	lea r15,[r8+r9*8+8H]
@@ -853,7 +853,6 @@ L_2139:
 	sub r15,r12
 	mov qword [rsp+8*62],r8
 	mov r8,1
-	mov r15,r15
 	sub r15,r8
 	mov r8,r13
 	lea r9,[r8+r15*8+8H]
@@ -871,7 +870,6 @@ L_2139:
 	mov r9,r8
 	sub r9,r12
 	mov r10,1
-	mov r9,r9
 	sub r9,r10
 	mov r15,r13
 	lea r15,[r15+r9*8+8H]
@@ -880,7 +878,6 @@ L_2139:
 	mov r15,r8
 	sub r15,r12
 	mov r8,1
-	mov r15,r15
 	sub r15,r8
 	mov r8,r15
 	mov r9,r8
@@ -896,7 +893,7 @@ L_2139:
 	mov qword [rsp+8*76],r10
 	mov qword [rsp+8*77],r11
 	
-L_2141:
+L_2159:
 	mov r8,  [rsp+8*76]
 	mov r9,2
 	mov r10,r8
@@ -910,7 +907,7 @@ L_2141:
 	cmp r10, 0
 	mov qword [rsp+8*30],r9
 	mov qword [rsp+8*79],r10
-	je L_2143
+	je L_2161
 	mov r8,  [rsp+8*76]
 	mov r9,2
 	mov r10,r8
@@ -928,13 +925,13 @@ L_2141:
 	cmp r10, 0
 	mov qword [rsp+8*81],r10
 	mov qword [rsp+8*77],r11
-	jne L_2144
+	jne L_2162
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*81],r8
-	jmp L_2145
+	jmp L_2163
 	
-L_2144:
+L_2162:
 	mov r8,  [rsp+8*76]
 	mov r9,2
 	mov r10,r8
@@ -957,13 +954,13 @@ L_2144:
 	mov qword [rsp+8*81],r9
 	mov qword [rsp+8*86],r10
 	
-L_2145:
+L_2163:
 	mov r8,  [rsp+8*30]
 	add r8,r8
 	mov r9,  [rsp+8*81]
 	cmp r9, 0
 	mov qword [rsp+8*30],r8
-	je L_2147
+	je L_2165
 	mov r8,  [rsp+8*76]
 	mov r9,2
 	mov r15,r8
@@ -973,7 +970,7 @@ L_2145:
 	mov r11,r15
 	mov qword [rsp+8*77],r11
 	
-L_2147:
+L_2165:
 	mov r15,r13
 	mov r8,  [rsp+8*76]
 	lea r15,[r15+r8*8+8H]
@@ -989,7 +986,7 @@ L_2147:
 	cmp r9, 0
 	mov qword [rsp+8*98],r9
 	mov qword [rsp+8*97],r11
-	je L_2148
+	je L_2166
 	mov r15,r13
 	mov r8,  [rsp+8*76]
 	lea r15,[r15+r8*8+8H]
@@ -1012,15 +1009,15 @@ L_2147:
 	mov r8,r11
 	mov qword [rsp+8*76],r8
 	mov qword [rsp+8*107],r10
-	jmp L_2149
+	jmp L_2167
 	
-L_2148:
-	jmp L_2143
+L_2166:
+	jmp L_2161
 	
-L_2149:
-	jmp L_2141
+L_2167:
+	jmp L_2159
 	
-L_2143:
+L_2161:
 	mov r8,0
 	mov r15,r8
 	mov r15,r15
@@ -1028,16 +1025,16 @@ L_2143:
 	mov r15,r12
 	add r15,r9
 	mov r12,r15
-	jmp L_2139
+	jmp L_2157
 	
-L_2140:
+L_2158:
 	mov r8,0
 	mov r15,r8
 	mov r15,r15
 	mov r9,0
 	mov r15,r9
 	
-L_2072:
+L_2090:
 	mov r14,r13
 	mov r8,r14
 	mov r14,r8
@@ -1047,7 +1044,7 @@ L_2072:
 	setl r14B
 	cmp r14, 0
 	mov qword [arg+8*63],r8
-	je L_2073
+	je L_2091
 	mov r14,r13
 	lea r14,[r14+r15*8+8H]
 	mov r14, [r14]
@@ -1072,9 +1069,9 @@ L_2072:
 	mov r8,1
 	add r15,r8
 	mov r15,r15
-	jmp L_2072
+	jmp L_2090
 	
-L_2073:
+L_2091:
 	mov r9,t227
 	mov r8,r9
 	mov r15,r8

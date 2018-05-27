@@ -649,14 +649,14 @@ main:
 	mov r9,0
 	mov r14,r9
 	
-L_1286:
+L_1304:
 	mov r8,5
 	cmp r14,r8
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
 	mov qword [rsp+8*5],r9
-	je L_1287
+	je L_1305
 	mov     rdi, 3
 	call    mallocArray
 	mov     qword [rsp+8*6], rax
@@ -669,14 +669,14 @@ L_1286:
 	mov qword [rsp+8*7],r8
 	mov qword [rsp+8*8],r9
 	
-L_1289:
+L_1307:
 	mov r8,3
 	cmp r13,r8
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
 	mov qword [rsp+8*10],r9
-	je L_1290
+	je L_1308
 	mov     rdi, 2
 	call    mallocArray
 	mov     qword [rsp+8*11], rax
@@ -754,16 +754,16 @@ L_1289:
 	mov r9,1
 	add r13,r9
 	mov qword [rsp+8*29],r8
-	jmp L_1289
+	jmp L_1307
 	
-L_1290:
+L_1308:
 	mov r8,r14
 	mov r9,1
 	add r14,r9
 	mov qword [rsp+8*30],r8
-	jmp L_1286
+	jmp L_1304
 	
-L_1287:
+L_1305:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

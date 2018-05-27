@@ -641,7 +641,7 @@ main:
 	pop r15
 	mov r15 , rax
 	
-L_2166:
+L_2184:
 	mov r8,1
 	mov r9,r8
 	mov rcx,29
@@ -652,13 +652,13 @@ L_2166:
 	setl r9B
 	cmp r9, 0
 	mov qword [rsp+8*2],r9
-	jne L_2168
+	jne L_2186
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*2],r8
-	jmp L_2169
+	jmp L_2187
 	
-L_2168:
+L_2186:
 	mov r8,1
 	mov r9,r8
 	mov rcx,29
@@ -674,13 +674,13 @@ L_2168:
 	mov qword [rsp+8*4],r9
 	mov qword [rsp+8*5],r10
 	
-L_2169:
+L_2187:
 	mov r8,  [rsp+8*6]
 	add r8,r8
 	mov r9,  [rsp+8*2]
 	cmp r9, 0
 	mov qword [rsp+8*6],r8
-	je L_2167
+	je L_2185
 	mov r8,  [gbl+8*3]
 	mov r9,  [gbl+8*7]
 	mov r10,r8
@@ -689,7 +689,6 @@ L_2169:
 	add r10,r11
 	mov r8,r9
 	add r8,r11
-	mov r10,r10
 	sub r10,r8
 	mov r8,  [gbl+8*3]
 	mov r11,r8
@@ -699,7 +698,6 @@ L_2169:
 	add r11,r10
 	mov r8,r9
 	add r8,r10
-	mov r11,r11
 	sub r11,r8
 	mov r8,  [rsp+8*8]
 	add r8,r11
@@ -711,7 +709,6 @@ L_2169:
 	add r10,r8
 	mov r11,r9
 	add r11,r8
-	mov r10,r10
 	sub r10,r11
 	mov r11,  [gbl+8*3]
 	mov r8,r11
@@ -737,7 +734,6 @@ L_2169:
 	add r8,r10
 	mov r10,r9
 	add r10,r11
-	mov r8,r8
 	sub r8,r10
 	mov r10,  [gbl+8*3]
 	mov r11,r10
@@ -747,7 +743,6 @@ L_2169:
 	add r11,r8
 	mov r10,r9
 	add r10,r8
-	mov r11,r11
 	sub r11,r10
 	mov r10,  [gbl+8*3]
 	mov r8,r10
@@ -760,7 +755,6 @@ L_2169:
 	mov r8,  [rsp+8*16]
 	add r8,r9
 	mov r9,  [rsp+8*8]
-	mov r9,r9
 	sub r9,r8
 	mov r8,  [gbl+8*7]
 	mov r10,r8
@@ -785,7 +779,6 @@ L_2169:
 	mov r8,  [rsp+8*24]
 	add r8,r9
 	mov r9,  [rsp+8*22]
-	mov r9,r9
 	sub r9,r8
 	mov r8,r10
 	add r8,r11
@@ -799,10 +792,8 @@ L_2169:
 	add r9,r8
 	mov r8,r10
 	add r8,r11
-	mov r9,r9
 	sub r9,r8
 	mov r8,  [rsp+8*22]
-	mov r8,r8
 	sub r8,r9
 	mov r9,  [gbl+8*3]
 	mov r11,r9
@@ -812,7 +803,6 @@ L_2169:
 	add r11,r8
 	mov r9,r10
 	add r9,r8
-	mov r11,r11
 	sub r11,r9
 	mov r9,  [gbl+8*3]
 	mov r8,r9
@@ -834,15 +824,12 @@ L_2169:
 	add r9,r8
 	mov r8,r10
 	add r8,r11
-	mov r9,r9
 	sub r9,r8
 	mov r8,  [rsp+8*29]
-	mov r8,r8
 	sub r8,r9
 	mov r9,  [rsp+8*22]
 	add r9,r8
 	mov r8,  [rsp+8*8]
-	mov r8,r8
 	sub r8,r9
 	mov r9,  [gbl+8*3]
 	mov r11,r9
@@ -852,7 +839,6 @@ L_2169:
 	add r11,r8
 	mov r9,r10
 	add r9,r8
-	mov r11,r11
 	sub r11,r9
 	mov r9,  [gbl+8*3]
 	mov r8,r9
@@ -862,7 +848,6 @@ L_2169:
 	add r8,r11
 	mov r9,r10
 	add r9,r11
-	mov r8,r8
 	sub r8,r9
 	mov r9,  [rsp+8*35]
 	add r9,r8
@@ -874,7 +859,6 @@ L_2169:
 	add r11,r9
 	mov r8,r10
 	add r8,r9
-	mov r11,r11
 	sub r11,r8
 	mov r8,  [gbl+8*3]
 	mov r9,r8
@@ -898,7 +882,6 @@ L_2169:
 	add r9,r8
 	mov r8,r10
 	add r8,r11
-	mov r9,r9
 	sub r9,r8
 	mov r8,  [gbl+8*3]
 	mov r11,r8
@@ -908,7 +891,6 @@ L_2169:
 	add r11,r9
 	mov r8,r10
 	add r8,r9
-	mov r11,r11
 	sub r11,r8
 	mov r8,  [gbl+8*3]
 	mov r9,r8
@@ -921,7 +903,6 @@ L_2169:
 	mov r9,  [rsp+8*42]
 	add r9,r8
 	mov r8,  [rsp+8*35]
-	mov r8,r8
 	sub r8,r9
 	mov r9,r10
 	add r9,r11
@@ -935,7 +916,6 @@ L_2169:
 	add r8,r9
 	mov r9,r10
 	add r9,r11
-	mov r8,r8
 	sub r8,r9
 	mov r9,  [gbl+8*3]
 	mov r11,r9
@@ -945,7 +925,6 @@ L_2169:
 	add r11,r8
 	mov r9,r10
 	add r9,r8
-	mov r11,r11
 	sub r11,r9
 	mov r9,  [gbl+8*3]
 	mov r8,r9
@@ -969,7 +948,6 @@ L_2169:
 	add r8,r9
 	mov r9,r10
 	add r9,r11
-	mov r8,r8
 	sub r8,r9
 	mov r9,  [gbl+8*3]
 	mov r11,r9
@@ -979,7 +957,6 @@ L_2169:
 	add r11,r8
 	mov r9,r10
 	add r9,r8
-	mov r11,r11
 	sub r11,r9
 	mov r9,  [gbl+8*3]
 	mov r8,r9
@@ -992,10 +969,8 @@ L_2169:
 	mov r8,  [rsp+8*54]
 	add r8,r9
 	mov r9,  [rsp+8*48]
-	mov r9,r9
 	sub r9,r8
 	mov r8,  [rsp+8*35]
-	mov r8,r8
 	sub r8,r9
 	mov r9,  [rsp+8*8]
 	add r9,r8
@@ -1016,7 +991,6 @@ L_2169:
 	sub r14,r10
 	add r14,r11
 	add r15,r14
-	mov r9,r9
 	sub r9,r15
 	mov r14,r10
 	add r14,r11
@@ -1026,16 +1000,13 @@ L_2169:
 	add r14,r15
 	mov r15,r10
 	add r15,r11
-	mov r14,r14
 	sub r14,r15
-	mov r9,r9
 	sub r9,r14
 	mov r13,r8
 	sub r13,r10
 	add r13,r11
 	mov r15,r10
 	add r15,r11
-	mov r13,r13
 	sub r13,r15
 	mov r15,r8
 	sub r15,r10
@@ -1049,9 +1020,7 @@ L_2169:
 	add r15,r14
 	mov r14,r10
 	add r14,r11
-	mov r15,r15
 	sub r15,r14
-	mov r13,r13
 	sub r13,r15
 	add r9,r13
 	mov r13,r8
@@ -1059,7 +1028,6 @@ L_2169:
 	add r13,r11
 	mov r15,r10
 	add r15,r11
-	mov r13,r13
 	sub r13,r15
 	mov r15,r8
 	sub r15,r10
@@ -1073,16 +1041,13 @@ L_2169:
 	add r14,r15
 	mov r15,r10
 	add r15,r11
-	mov r14,r14
 	sub r14,r15
-	mov r13,r13
 	sub r13,r14
 	mov r14,r8
 	sub r14,r10
 	add r14,r11
 	mov r15,r10
 	add r15,r11
-	mov r14,r14
 	sub r14,r15
 	mov r15,r8
 	sub r15,r10
@@ -1099,9 +1064,7 @@ L_2169:
 	add r8,r9
 	mov r15,r10
 	add r15,r11
-	mov r8,r8
 	sub r8,r15
-	mov r14,r14
 	sub r14,r8
 	add r13,r14
 	mov r8,  [rsp+8*60]
@@ -1114,14 +1077,12 @@ L_2169:
 	add r11,r8
 	mov r15,r10
 	add r15,r8
-	mov r11,r11
 	sub r11,r15
 	mov r14,r9
 	sub r14,r10
 	add r14,r8
 	mov r15,r10
 	add r15,r8
-	mov r14,r14
 	sub r14,r15
 	add r11,r14
 	mov r14,r9
@@ -1129,7 +1090,6 @@ L_2169:
 	add r14,r8
 	mov r15,r10
 	add r15,r8
-	mov r14,r14
 	sub r14,r15
 	mov r15,r9
 	sub r15,r10
@@ -1144,21 +1104,18 @@ L_2169:
 	add r14,r15
 	mov r15,r10
 	add r15,r8
-	mov r14,r14
 	sub r14,r15
 	mov r13,r9
 	sub r13,r10
 	add r13,r8
 	mov r15,r10
 	add r15,r8
-	mov r13,r13
 	sub r13,r15
 	mov r15,r9
 	sub r15,r10
 	add r15,r8
 	add r13,r15
 	add r14,r13
-	mov r11,r11
 	sub r11,r14
 	mov r13,r10
 	add r13,r8
@@ -1168,14 +1125,12 @@ L_2169:
 	add r13,r15
 	mov r15,r10
 	add r15,r8
-	mov r13,r13
 	sub r13,r15
 	mov r14,r9
 	sub r14,r10
 	add r14,r8
 	mov r15,r10
 	add r15,r8
-	mov r14,r14
 	sub r14,r15
 	mov qword [rsp+8*85],r11
 	mov r11,r9
@@ -1191,7 +1146,6 @@ L_2169:
 	add r11,r15
 	mov r9,r10
 	add r9,r8
-	mov r11,r11
 	sub r11,r9
 	mov r9,  [gbl+8*3]
 	mov r8,r9
@@ -1201,7 +1155,6 @@ L_2169:
 	add r8,r11
 	mov r9,r10
 	add r9,r11
-	mov r8,r8
 	sub r8,r9
 	mov r9,  [gbl+8*3]
 	mov r11,r9
@@ -1213,15 +1166,12 @@ L_2169:
 	add r9,r11
 	mov r11,  [rsp+8*104]
 	add r11,r9
-	mov r13,r13
 	sub r13,r11
 	mov r9,  [rsp+8*85]
-	mov r9,r9
 	sub r9,r13
 	mov r11,  [rsp+8*60]
 	add r11,r9
 	mov r9,  [rsp+8*8]
-	mov r9,r9
 	sub r9,r11
 	mov r10,r9
 	mov r9,  [gbl+8*3]
@@ -1230,14 +1180,12 @@ L_2169:
 	add r11,r8
 	mov r15,r10
 	add r15,r8
-	mov r11,r11
 	sub r11,r15
 	mov r15,r9
 	sub r15,r10
 	add r15,r8
 	mov r14,r10
 	add r14,r8
-	mov r15,r15
 	sub r15,r14
 	add r11,r15
 	mov r15,r9
@@ -1245,7 +1193,6 @@ L_2169:
 	add r15,r8
 	mov r14,r10
 	add r14,r8
-	mov r15,r15
 	sub r15,r14
 	mov r14,r9
 	sub r14,r10
@@ -1260,21 +1207,18 @@ L_2169:
 	add r15,r14
 	mov r14,r10
 	add r14,r8
-	mov r15,r15
 	sub r15,r14
 	mov r13,r9
 	sub r13,r10
 	add r13,r8
 	mov r14,r10
 	add r14,r8
-	mov r13,r13
 	sub r13,r14
 	mov r14,r9
 	sub r14,r10
 	add r14,r8
 	add r13,r14
 	add r15,r13
-	mov r11,r11
 	sub r11,r15
 	mov r9,r10
 	add r9,r8
@@ -1290,7 +1234,6 @@ L_2169:
 	sub r14,r10
 	add r14,r8
 	add r15,r14
-	mov r9,r9
 	sub r9,r15
 	mov r14,r10
 	add r14,r8
@@ -1300,16 +1243,13 @@ L_2169:
 	add r14,r15
 	mov r15,r10
 	add r15,r8
-	mov r14,r14
 	sub r14,r15
-	mov r9,r9
 	sub r9,r14
 	mov r14,r11
 	sub r14,r10
 	add r14,r8
 	mov r15,r10
 	add r15,r8
-	mov r14,r14
 	sub r14,r15
 	mov r15,r11
 	sub r15,r10
@@ -1323,13 +1263,10 @@ L_2169:
 	add r13,r15
 	mov r15,r10
 	add r15,r8
-	mov r13,r13
 	sub r13,r15
-	mov r14,r14
 	sub r14,r13
 	add r9,r14
 	mov r11,  [rsp+8*110]
-	mov r11,r11
 	sub r11,r9
 	mov r9,  [gbl+8*3]
 	mov r8,r9
@@ -1339,14 +1276,12 @@ L_2169:
 	add r8,r11
 	mov r15,r10
 	add r15,r11
-	mov r8,r8
 	sub r8,r15
 	mov r14,r9
 	sub r14,r10
 	add r14,r11
 	mov r15,r10
 	add r15,r11
-	mov r14,r14
 	sub r14,r15
 	add r8,r14
 	mov r14,r9
@@ -1354,7 +1289,6 @@ L_2169:
 	add r14,r11
 	mov r15,r10
 	add r15,r11
-	mov r14,r14
 	sub r14,r15
 	mov r15,r9
 	sub r15,r10
@@ -1369,21 +1303,18 @@ L_2169:
 	add r15,r14
 	mov r14,r10
 	add r14,r11
-	mov r15,r15
 	sub r15,r14
 	mov r13,r9
 	sub r13,r10
 	add r13,r11
 	mov r14,r10
 	add r14,r11
-	mov r13,r13
 	sub r13,r14
 	mov r14,r9
 	sub r14,r10
 	add r14,r11
 	add r13,r14
 	add r15,r13
-	mov r8,r8
 	sub r8,r15
 	mov r13,r10
 	add r13,r11
@@ -1393,14 +1324,12 @@ L_2169:
 	add r13,r15
 	mov r15,r10
 	add r15,r11
-	mov r13,r13
 	sub r13,r15
 	mov r15,r9
 	sub r15,r10
 	add r15,r11
 	mov r14,r10
 	add r14,r11
-	mov r15,r15
 	sub r15,r14
 	mov r14,r9
 	sub r14,r10
@@ -1415,7 +1344,6 @@ L_2169:
 	add r14,r15
 	mov r15,r10
 	add r15,r11
-	mov r14,r14
 	sub r14,r15
 	mov qword [rsp+8*136],r8
 	mov r8,r9
@@ -1423,7 +1351,6 @@ L_2169:
 	add r8,r11
 	mov r9,r10
 	add r9,r11
-	mov r8,r8
 	sub r8,r9
 	mov r9,  [gbl+8*3]
 	mov r11,r9
@@ -1434,10 +1361,8 @@ L_2169:
 	mov r9,  [rsp+8*158]
 	add r9,r11
 	add r14,r9
-	mov r13,r13
 	sub r13,r14
 	mov r9,  [rsp+8*136]
-	mov r9,r9
 	sub r9,r13
 	mov r11,  [rsp+8*110]
 	add r11,r9
@@ -1455,7 +1380,6 @@ L_2169:
 	sub r15,r10
 	add r15,r8
 	add r14,r15
-	mov r9,r9
 	sub r9,r14
 	mov r14,r10
 	add r14,r8
@@ -1465,16 +1389,13 @@ L_2169:
 	add r14,r15
 	mov r15,r10
 	add r15,r8
-	mov r14,r14
 	sub r14,r15
-	mov r9,r9
 	sub r9,r14
 	mov r14,r11
 	sub r14,r10
 	add r14,r8
 	mov r15,r10
 	add r15,r8
-	mov r14,r14
 	sub r14,r15
 	mov r15,r11
 	sub r15,r10
@@ -1488,9 +1409,7 @@ L_2169:
 	add r13,r15
 	mov r15,r10
 	add r15,r8
-	mov r13,r13
 	sub r13,r15
-	mov r14,r14
 	sub r14,r13
 	add r9,r14
 	mov r14,r11
@@ -1498,7 +1417,6 @@ L_2169:
 	add r14,r8
 	mov r15,r10
 	add r15,r8
-	mov r14,r14
 	sub r14,r15
 	mov r15,r11
 	sub r15,r10
@@ -1512,9 +1430,7 @@ L_2169:
 	add r13,r15
 	mov r15,r10
 	add r15,r8
-	mov r13,r13
 	sub r13,r15
-	mov r14,r14
 	sub r14,r13
 	mov qword [rsp+8*161],r9
 	mov r9,r11
@@ -1522,7 +1438,6 @@ L_2169:
 	add r9,r8
 	mov r15,r10
 	add r15,r8
-	mov r9,r9
 	sub r9,r15
 	mov r8,r11
 	sub r8,r10
@@ -1543,10 +1458,8 @@ L_2169:
 	add r11,r15
 	mov r15,r8
 	add r15,r9
-	mov r11,r11
 	sub r11,r15
 	mov r10,  [rsp+8*180]
-	mov r10,r10
 	sub r10,r11
 	add r14,r10
 	mov r10,  [rsp+8*161]
@@ -1559,14 +1472,12 @@ L_2169:
 	add r9,r10
 	mov r15,r8
 	add r15,r10
-	mov r9,r9
 	sub r9,r15
 	mov r15,r11
 	sub r15,r8
 	add r15,r10
 	mov r14,r8
 	add r14,r10
-	mov r15,r15
 	sub r15,r14
 	add r9,r15
 	mov r14,r11
@@ -1574,7 +1485,6 @@ L_2169:
 	add r14,r10
 	mov r15,r8
 	add r15,r10
-	mov r14,r14
 	sub r14,r15
 	mov r15,r11
 	sub r15,r8
@@ -1591,14 +1501,12 @@ L_2169:
 	add r11,r15
 	mov r15,r8
 	add r15,r10
-	mov r11,r11
 	sub r11,r15
 	mov r15,r9
 	sub r15,r8
 	add r15,r10
 	mov r14,r8
 	add r14,r10
-	mov r15,r15
 	sub r15,r14
 	mov r14,r9
 	sub r14,r8
@@ -1606,7 +1514,6 @@ L_2169:
 	add r15,r14
 	add r11,r15
 	mov r8,  [rsp+8*186]
-	mov r8,r8
 	sub r8,r11
 	mov r11,  [gbl+8*7]
 	mov r14,r11
@@ -1617,7 +1524,6 @@ L_2169:
 	add r14,r15
 	mov r15,r11
 	add r15,r10
-	mov r14,r14
 	sub r14,r15
 	mov qword [rsp+8*186],r8
 	mov r8,r9
@@ -1625,7 +1531,6 @@ L_2169:
 	add r8,r10
 	mov r9,r11
 	add r9,r10
-	mov r8,r8
 	sub r8,r9
 	mov r9,  [gbl+8*3]
 	mov r10,r9
@@ -1648,7 +1553,6 @@ L_2169:
 	add r10,r8
 	mov r8,r11
 	add r8,r9
-	mov r10,r10
 	sub r10,r8
 	mov r8,  [gbl+8*3]
 	mov r9,r8
@@ -1658,7 +1562,6 @@ L_2169:
 	add r9,r10
 	mov r8,r11
 	add r8,r10
-	mov r9,r9
 	sub r9,r8
 	mov r8,  [gbl+8*3]
 	mov r10,r8
@@ -1670,15 +1573,12 @@ L_2169:
 	add r8,r10
 	mov r10,  [rsp+8*205]
 	add r10,r8
-	mov r14,r14
 	sub r14,r10
 	mov r8,  [rsp+8*186]
-	mov r8,r8
 	sub r8,r14
 	mov r10,  [rsp+8*161]
 	add r10,r8
 	mov r8,  [rsp+8*110]
-	mov r8,r8
 	sub r8,r10
 	mov r9,r8
 	mov r8,  [gbl+8*3]
@@ -1687,14 +1587,12 @@ L_2169:
 	add r10,r9
 	mov r15,r11
 	add r15,r9
-	mov r10,r10
 	sub r10,r15
 	mov r14,r8
 	sub r14,r11
 	add r14,r9
 	mov r15,r11
 	add r15,r9
-	mov r14,r14
 	sub r14,r15
 	add r10,r14
 	mov r14,r8
@@ -1702,7 +1600,6 @@ L_2169:
 	add r14,r9
 	mov r15,r11
 	add r15,r9
-	mov r14,r14
 	sub r14,r15
 	mov r15,r8
 	sub r15,r11
@@ -1717,21 +1614,18 @@ L_2169:
 	add r13,r15
 	mov r15,r11
 	add r15,r9
-	mov r13,r13
 	sub r13,r15
 	mov r15,r8
 	sub r15,r11
 	add r15,r9
 	mov r14,r11
 	add r14,r9
-	mov r15,r15
 	sub r15,r14
 	mov r14,r8
 	sub r14,r11
 	add r14,r9
 	add r15,r14
 	add r13,r15
-	mov r10,r10
 	sub r10,r13
 	mov r8,r11
 	add r8,r9
@@ -1749,7 +1643,6 @@ L_2169:
 	add r8,r9
 	add r15,r8
 	mov r8,  [rsp+8*224]
-	mov r8,r8
 	sub r8,r15
 	mov r15,r11
 	add r15,r9
@@ -1760,10 +1653,8 @@ L_2169:
 	add r15,r8
 	mov r8,r11
 	add r8,r9
-	mov r15,r15
 	sub r15,r8
 	mov r8,  [rsp+8*224]
-	mov r8,r8
 	sub r8,r15
 	mov qword [gbl+8*9],r9
 	mov r9,r10
@@ -1773,7 +1664,6 @@ L_2169:
 	add r9,r8
 	mov r15,r11
 	add r15,r8
-	mov r9,r9
 	sub r9,r15
 	mov r8,r10
 	sub r8,r11
@@ -1791,14 +1681,11 @@ L_2169:
 	add r15,r14
 	mov r14,r11
 	add r14,r9
-	mov r15,r15
 	sub r15,r14
-	mov r10,r10
 	sub r10,r15
 	mov r8,  [rsp+8*224]
 	add r8,r10
 	mov r10,  [rsp+8*211]
-	mov r10,r10
 	sub r10,r8
 	mov r8,  [gbl+8*3]
 	mov r12,r8
@@ -1806,14 +1693,12 @@ L_2169:
 	add r12,r9
 	mov r15,r11
 	add r15,r9
-	mov r12,r12
 	sub r12,r15
 	mov r14,r8
 	sub r14,r11
 	add r14,r9
 	mov r15,r11
 	add r15,r9
-	mov r14,r14
 	sub r14,r15
 	add r12,r14
 	mov r14,r8
@@ -1821,7 +1706,6 @@ L_2169:
 	add r14,r9
 	mov r15,r11
 	add r15,r9
-	mov r14,r14
 	sub r14,r15
 	mov r15,r8
 	sub r15,r11
@@ -1836,21 +1720,18 @@ L_2169:
 	add r14,r15
 	mov r15,r11
 	add r15,r9
-	mov r14,r14
 	sub r14,r15
 	mov r13,r8
 	sub r13,r11
 	add r13,r9
 	mov r15,r11
 	add r15,r9
-	mov r13,r13
 	sub r13,r15
 	mov r15,r8
 	sub r15,r11
 	add r15,r9
 	add r13,r15
 	add r14,r13
-	mov r12,r12
 	sub r12,r14
 	mov r15,r11
 	add r15,r9
@@ -1860,14 +1741,12 @@ L_2169:
 	add r15,r14
 	mov r14,r11
 	add r14,r9
-	mov r15,r15
 	sub r15,r14
 	mov r14,r8
 	sub r14,r11
 	add r14,r9
 	mov r13,r11
 	add r13,r9
-	mov r14,r14
 	sub r14,r13
 	mov r13,r8
 	sub r13,r11
@@ -1883,14 +1762,12 @@ L_2169:
 	add r14,r10
 	mov r10,r11
 	add r10,r9
-	mov r14,r14
 	sub r14,r10
 	mov r10,r8
 	sub r10,r11
 	add r10,r9
 	mov r8,r11
 	add r8,r9
-	mov r10,r10
 	sub r10,r8
 	mov r8,  [gbl+8*3]
 	mov r9,r8
@@ -1901,9 +1778,7 @@ L_2169:
 	mov r8,  [rsp+8*259]
 	add r8,r9
 	add r14,r8
-	mov r15,r15
 	sub r15,r14
-	mov r12,r12
 	sub r12,r15
 	mov r8,  [rsp+8*211]
 	add r8,r12
@@ -1920,7 +1795,6 @@ L_2169:
 	sub r13,r11
 	add r13,r10
 	add r15,r13
-	mov r14,r14
 	sub r14,r15
 	mov r13,r11
 	add r13,r10
@@ -1930,16 +1804,13 @@ L_2169:
 	add r13,r15
 	mov r15,r11
 	add r15,r10
-	mov r13,r13
 	sub r13,r15
-	mov r14,r14
 	sub r14,r13
 	mov r15,r9
 	sub r15,r11
 	add r15,r10
 	mov r13,r11
 	add r13,r10
-	mov r15,r15
 	sub r15,r13
 	mov r13,r9
 	sub r13,r11
@@ -1953,9 +1824,7 @@ L_2169:
 	add r12,r13
 	mov r13,r11
 	add r13,r10
-	mov r12,r12
 	sub r12,r13
-	mov r15,r15
 	sub r15,r12
 	add r14,r15
 	mov r13,r9
@@ -1963,7 +1832,6 @@ L_2169:
 	add r13,r10
 	mov r15,r11
 	add r15,r10
-	mov r13,r13
 	sub r13,r15
 	mov r15,r9
 	sub r15,r11
@@ -1978,16 +1846,13 @@ L_2169:
 	add r15,r8
 	mov r8,r11
 	add r8,r10
-	mov r15,r15
 	sub r15,r8
-	mov r13,r13
 	sub r13,r15
 	mov r8,r9
 	sub r8,r11
 	add r8,r10
 	mov r15,r11
 	add r15,r10
-	mov r8,r8
 	sub r8,r15
 	mov r15,r9
 	sub r15,r11
@@ -2003,10 +1868,8 @@ L_2169:
 	add r9,r15
 	mov r15,r11
 	add r15,r10
-	mov r9,r9
 	sub r9,r15
 	mov r8,  [rsp+8*281]
-	mov r8,r8
 	sub r8,r9
 	add r13,r8
 	add r14,r13
@@ -2016,7 +1879,6 @@ L_2169:
 	add r9,r10
 	mov r15,r11
 	add r15,r10
-	mov r9,r9
 	sub r9,r15
 	mov r10,r8
 	sub r10,r11
@@ -2025,7 +1887,6 @@ L_2169:
 	add r10,r9
 	mov r15,r11
 	add r15,r9
-	mov r10,r10
 	sub r10,r15
 	mov r8,  [rsp+8*287]
 	add r8,r10
@@ -2035,7 +1896,6 @@ L_2169:
 	add r13,r9
 	mov r15,r11
 	add r15,r9
-	mov r13,r13
 	sub r13,r15
 	mov r15,r10
 	sub r15,r11
@@ -2052,14 +1912,12 @@ L_2169:
 	add r10,r15
 	mov r15,r11
 	add r15,r9
-	mov r10,r10
 	sub r10,r15
 	mov r15,r8
 	sub r15,r11
 	add r15,r9
 	mov r13,r11
 	add r13,r9
-	mov r15,r15
 	sub r15,r13
 	mov r13,r8
 	sub r13,r11
@@ -2067,7 +1925,6 @@ L_2169:
 	add r15,r13
 	add r10,r15
 	mov r8,  [rsp+8*287]
-	mov r8,r8
 	sub r8,r10
 	mov r15,r11
 	add r15,r9
@@ -2079,14 +1936,12 @@ L_2169:
 	add r15,r8
 	mov r8,r11
 	add r8,r9
-	mov r15,r15
 	sub r15,r8
 	mov r8,r10
 	sub r8,r11
 	add r8,r9
 	mov r10,r11
 	add r10,r9
-	mov r8,r8
 	sub r8,r10
 	mov r10,  [gbl+8*3]
 	mov r9,r10
@@ -2109,7 +1964,6 @@ L_2169:
 	add r10,r8
 	mov r8,r11
 	add r8,r9
-	mov r10,r10
 	sub r10,r8
 	mov r8,  [gbl+8*3]
 	mov r9,r8
@@ -2119,7 +1973,6 @@ L_2169:
 	add r9,r10
 	mov r8,r11
 	add r8,r10
-	mov r9,r9
 	sub r9,r8
 	mov r8,  [gbl+8*3]
 	mov r10,r8
@@ -2131,21 +1984,18 @@ L_2169:
 	add r8,r10
 	mov r10,  [rsp+8*306]
 	add r10,r8
-	mov r15,r15
 	sub r15,r10
 	mov r8,  [rsp+8*287]
-	mov r8,r8
 	sub r8,r15
 	add r14,r8
 	mov r8,  [rsp+8*211]
-	mov r8,r8
 	sub r8,r14
 	mov r10,r8
 	mov qword [rsp+8*211],r8
 	mov qword [gbl+8*3],r10
-	jmp L_2166
+	jmp L_2184
 	
-L_2167:
+L_2185:
 	mov r9,  [gbl+8*7]
 	mov r8,r9
 	mov r15,r8

@@ -654,14 +654,14 @@ main:
 	mov r15,r8
 	mov qword [rsp+8*3],r10
 	
-L_2159:
+L_2177:
 	mov r8,5
 	cmp r15,r8
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
 	mov qword [rsp+8*6],r9
-	je L_2160
+	je L_2178
 	mov r8,r12
 	add r8,r14
 	mov r12,r8
@@ -748,9 +748,9 @@ L_2159:
 	mov r9,1
 	add r15,r9
 	mov qword [rsp+8*29],r8
-	jmp L_2159
+	jmp L_2177
 	
-L_2160:
+L_2178:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

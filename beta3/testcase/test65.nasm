@@ -650,13 +650,13 @@ main:
 	mov r8,0
 	mov r15,r8
 	
-L_1292:
+L_1310:
 	cmp r15,r13
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
 	mov qword [rsp+8*5],r8
-	je L_1293
+	je L_1311
 	mov     rsi, t71
 	mov     rdi,  r14
 	call    concat
@@ -667,9 +667,9 @@ L_1292:
 	mov r10,1
 	add r15,r10
 	mov qword [rsp+8*7],r9
-	jmp L_1292
+	jmp L_1310
 	
-L_1293:
+L_1311:
 	mov r8,r14
 	mov r9,r8
 	mov qword rdi,r8
@@ -680,13 +680,13 @@ L_1293:
 	mov r8,0
 	mov r15,r8
 	
-L_1295:
+L_1313:
 	cmp r15,r13
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
 	mov qword [rsp+8*10],r8
-	je L_1296
+	je L_1314
 	mov     rsi, t80
 	mov     rdi,  r14
 	call    concat
@@ -697,9 +697,9 @@ L_1295:
 	mov r10,1
 	add r15,r10
 	mov qword [rsp+8*12],r9
-	jmp L_1295
+	jmp L_1313
 	
-L_1296:
+L_1314:
 	mov r8,r14
 	mov r9,r8
 	mov qword rdi,r8

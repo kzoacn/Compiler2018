@@ -793,8 +793,8 @@ main:
 	call    multiAddress
 	mov  r15, rax
 	mov r15, [r15]
-	mov r15,r12
-	sub r15,r15
+	sub r15,r12
+	neg r15
 	mov r8,r15
 	mov r15,r8
 	mov qword rdi,r8

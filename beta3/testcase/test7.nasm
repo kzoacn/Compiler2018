@@ -651,13 +651,13 @@ main:
 	mov r9,0
 	mov r14,r9
 	
-L_3092:
+L_3110:
 	cmp r14,r13
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
 	mov qword [rsp+8*6],r8
-	je L_3093
+	je L_3111
 	mov r8,r15
 	lea r9,[r8+r14*8+8H]
 	mov [r9],r14
@@ -688,9 +688,9 @@ L_3092:
 	mov r9,1
 	add r14,r9
 	mov qword [rsp+8*16],r8
-	jmp L_3092
+	jmp L_3110
 	
-L_3093:
+L_3111:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

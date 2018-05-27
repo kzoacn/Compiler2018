@@ -690,13 +690,13 @@ main:
 	mov qword [rsp+8*16],r10
 	mov qword [rsp+8*7],r11
 	
-L_3106:
+L_3124:
 	cmp r15,r13
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
 	mov qword [rsp+8*18],r8
-	je L_3107
+	je L_3125
 	mov r8,r14
 	lea r9,[r8+r15*8+8H]
 	mov r10, [r9]
@@ -709,18 +709,18 @@ L_3106:
 	mov qword [rsp+8*22],r8
 	mov qword [rsp+8*20],r9
 	mov qword [rsp+8*21],r10
-	je L_3110
+	je L_3128
 	mov r12,r15
-	jmp L_3107
+	jmp L_3125
 	
-L_3110:
+L_3128:
 	mov r8,r15
 	mov r9,1
 	add r15,r9
 	mov qword [rsp+8*23],r8
-	jmp L_3106
+	jmp L_3124
 	
-L_3107:
+L_3125:
 	mov r8,r12
 	mov r9,r8
 	mov qword rdi,r8

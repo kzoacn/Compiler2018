@@ -663,7 +663,7 @@ main:
 	setl r15B
 	cmp r15, 0
 	mov qword [arg+8*63],r8
-	je L_1841
+	je L_1859
 	mov r9,t137
 	mov r8,r9
 	mov r15,r8
@@ -677,7 +677,7 @@ main:
 	leave
 	ret
 	
-L_1841:
+L_1859:
 	mov r14,r14
 	mov r8,1
 	mov r15,r13
@@ -741,12 +741,12 @@ calc:
 	cmp r11, 0
 	mov qword [arg+8*63],r10
 	mov qword [rsp+8*24],r11
-	je L_1831
+	je L_1849
 	mov rax,r12
 	leave
 	ret
 	
-L_1831:
+L_1849:
 	xor rdx, rdx
 	mov rax, r14
 	mov r8,2
@@ -822,7 +822,7 @@ L_1831:
 	mov qword [rsp+8*37], rax
 	mov r8,  [rsp+8*37]
 	cmp r8, 0
-	je L_1832
+	je L_1850
 	mov     rsi,  r14
 	mov     rdi,  r13
 	call    concat
@@ -832,14 +832,14 @@ L_1831:
 	leave
 	ret
 	
-L_1832:
+L_1850:
 	mov rdi,  r13
 	mov rsi,  r14
 	call    streq
 	mov qword [rsp+8*39], rax
 	mov r8,  [rsp+8*39]
 	cmp r8, 0
-	je L_1834
+	je L_1852
 	mov r8,r13
 	mov r10,0
 	mov r9,r10
@@ -869,7 +869,7 @@ L_1832:
 	setl r9B
 	cmp r9, 0
 	mov qword [rsp+8*46],r9
-	je L_1837
+	je L_1855
 	mov     rsi,  r14
 	mov     rdi,  r13
 	call    concat
@@ -879,7 +879,7 @@ L_1832:
 	leave
 	ret
 	
-L_1837:
+L_1855:
 	mov     rsi,  r13
 	mov     rdi,  r14
 	call    concat
@@ -889,14 +889,14 @@ L_1837:
 	leave
 	ret
 	
-L_1834:
+L_1852:
 	mov rdi,  r13
 	mov rsi,  r14
 	call    strgt
 	mov qword [rsp+8*49], rax
 	mov r8,  [rsp+8*49]
 	cmp r8, 0
-	je L_1839
+	je L_1857
 	mov     rsi,  r13
 	mov     rdi,  r14
 	call    concat
@@ -906,7 +906,7 @@ L_1834:
 	leave
 	ret
 	
-L_1839:
+L_1857:
 	mov r9,t117
 	mov r8,r9
 	mov r10,r8
