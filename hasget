@@ -1,5 +1,1 @@
-int getnumber(int seed, int num, int y)
-				int x0 = getnumber(l1, round, k);
-				int x1 = getnumber(i, round, k);
-				int x2 = getnumber(j, round, k);
-				int x3 = getnumber(i ^ j, round, k);
+//Target: use loops to calculate calculator of 6!

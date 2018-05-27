@@ -35,8 +35,8 @@
       <file leaf-file-name="IROptimizer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IROptimizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="330" column="59" selection-start-line="330" selection-start-column="59" selection-end-line="330" selection-end-column="59" />
+            <state relative-caret-position="675">
+              <caret line="328" column="33" selection-start-line="328" selection-start-column="33" selection-end-line="328" selection-end-column="33" />
               <folding>
                 <element signature="e#10724#10741#0" expanded="true" />
               </folding>
@@ -378,9 +378,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ExecTest_test103 - 2018.05.27 at 22h 42m 21s.xml">
-      <configuration name="ExecTest.test103" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ExecTest_test103 - 2018.05.27 at 22h 42m 49s.xml">
       <configuration name="ExecTest.test103" configurationId="JUnit" />
     </history-entry>
@@ -408,10 +405,12 @@
     <history-entry file="ExecTest_test97 - 2018.05.27 at 23h 22m 57s.xml">
       <configuration name="ExecTest.test97" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ExecTest - 2018.05.27 at 23h 25m 56s.xml">
+      <configuration name="ExecTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -422,7 +421,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2820513" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2820513" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -432,7 +431,7 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.33760685" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.33760685" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="4" side_tool="true" weight="0.3296875" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -844,8 +843,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IROptimizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="330" column="59" selection-start-line="330" selection-start-column="59" selection-end-line="330" selection-end-column="59" />
+        <state relative-caret-position="675">
+          <caret line="328" column="33" selection-start-line="328" selection-start-column="33" selection-end-line="328" selection-end-column="33" />
           <folding>
             <element signature="e#10724#10741#0" expanded="true" />
           </folding>
