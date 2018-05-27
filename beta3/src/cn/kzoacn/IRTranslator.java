@@ -364,6 +364,7 @@ public class IRTranslator {
     String readReg(Variable var){
         return "r"+getRegister(var,true);
     }
+
     void run(String fileName)throws Exception{
         IROptimizer irOptimizer=new IROptimizer();
         ir=irOptimizer.optimize(ir);

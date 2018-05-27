@@ -12,6 +12,7 @@ int main(){
     bb.mat[0][1]=new A();
     bb.mat[0][1].a=new int[n][];
     bb.mat[0][1].a[2]=new int[4];
+    
     bb.mat[0][1].a[2][3]=5;
     println(toString(bb.mat[0][1].a[2][3]));
 }

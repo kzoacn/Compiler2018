@@ -137,14 +137,19 @@ public class IROptimizer {
             use.add(new HashSet<Variable>());
             in.add(new HashSet<Variable>());
             out.add(new HashSet<Variable>());
+
             if(cur.dest!=null&&!cur.dest.equals(Variable.empty)) {
-                def.get(line_number).add(cur.dest);
+                if(cur.opCode!=OpCode.store)
+                    def.get(line_number).add(cur.dest);
                 variables.add(cur.dest);
                 cur.dest.register=0;
                 if(cur.dest.global)
                     gbl.add(cur.dest.name);
+                if(cur.opCode==OpCode.store)
+                    use.get(line_number).add(cur.dest);
             }
             if(cur.var1!=null&&!cur.var1.equals(Variable.empty)) {
+
                 use.get(line_number).add(cur.var1);
                 variables.add(cur.var1);
                 cur.var1.register=0;
@@ -208,7 +213,7 @@ public class IROptimizer {
 
         Date date=new Date();
         while(true){
-            if((new Date()).getTime()-date.getTime()>10000)
+            if((new Date()).getTime()-date.getTime()>20000)
                 return ir;
             boolean flag=true;
 
@@ -281,7 +286,7 @@ public class IROptimizer {
         ArrayList<Variable>color=new ArrayList<Variable>();
 
 
-        variables.removeIf((var)->var.isTemp);
+        //variables.removeIf((var)->var.isTemp);
         variables.removeIf((var)->gbl.contains(var.name));
         variables.removeIf((var)->var.type.name.contains("const") ||var.name.contains("const") || var.type.name.equals("null"));
         variables.removeIf((var)->var.name.startsWith("t"));
