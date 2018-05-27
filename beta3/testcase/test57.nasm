@@ -668,14 +668,14 @@ main:
 	mov r9,0
 	mov r14,r9
 	
-L_1242:
+L_1271:
 	mov r8,3
 	cmp r14,r8
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
 	mov qword [rsp+8*10],r9
-	je L_1243
+	je L_1272
 	mov     rdi, 0
 	call    mallocArray
 	mov     qword [rsp+8*11], rax
@@ -703,12 +703,13 @@ L_1242:
 	pop r15
 	mov r8 , rax
 	mov r9,r14
-	inc qword r14 
+	mov r10,1
+	add r14,r10
 	mov qword [rsp+8*16],r8
 	mov qword [rsp+8*17],r9
-	jmp L_1242
+	jmp L_1271
 	
-L_1243:
+L_1272:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

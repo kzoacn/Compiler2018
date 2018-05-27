@@ -650,10 +650,8 @@ main:
 	sub r10,r9
 	mov qword [rsp+8*4],r11
 	mov r11,  [gbl+8*3]
-	mov r10,r10
 	add r10,r11
 	mov r8,  [rsp+8*4]
-	mov r8,r8
 	add r8,r10
 	mov r10,r8
 	mov r8,r9

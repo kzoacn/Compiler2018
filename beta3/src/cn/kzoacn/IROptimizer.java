@@ -240,9 +240,6 @@ public class IROptimizer {
         }
 
 
-        System.err.println("----------------------------------------------");
-        tmp.print();
-        System.err.println("----------------------------------------------");
 
 
         //register allocate
@@ -271,8 +268,10 @@ public class IROptimizer {
             }
             for(Variable var1:def.get(i)){
                 for(Variable var2:out.get(i)){
-                    graph.get(var1).add(var2);
-                    graph.get(var2).add(var1);
+                    if(!var1.equals(var2)) {
+                        graph.get(var1).add(var2);
+                        graph.get(var2).add(var1);
+                    }
                 }
             }
 
@@ -326,6 +325,7 @@ public class IROptimizer {
             int mx=0;
             for(Variable var : variables){
                 lucky = var;
+                //break;
             }
 
             variables.remove(lucky);
@@ -334,10 +334,10 @@ public class IROptimizer {
             }
         }
 
-        HashMap<String,Integer>colorMap=new HashMap<String, Integer>();
+        TreeMap<String,Integer>colorMap=new TreeMap<String, Integer>();
         boolean[] used=new boolean[10];
         for(int i=0;i<10;i++)used[i]=false;
-        Collections.shuffle(color);
+        Collections.shuffle(color,new Random(3));
         for(Variable var:color){
             for(int i=0;i<10;i++)visit[i]=false;
             for(Variable var2:graph.get(var))if(colorMap.containsKey(var2.name))
@@ -364,6 +364,9 @@ public class IROptimizer {
                 cur.var2.register=colorMap.get(cur.var2.name);
             cur=cur.next;
         }
+        System.err.println("----------------------------------------------");
+        tmp.print();
+        System.err.println("----------------------------------------------");
 
         return tmp;
     }

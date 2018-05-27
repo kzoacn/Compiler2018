@@ -641,28 +641,28 @@ main:
 	pop r15
 	mov r8 , rax
 	mov r9,5
-	mov r14,r9
+	mov r13,r9
 	mov qword [rsp+8*1],r8
-	mov     rdi,  r14
+	mov     rdi,  r13
 	call    mallocArray
 	mov     qword [rsp+8*3], rax
 	mov r8,  [rsp+8*3]
 	mov r15,r8
 	mov r9,0
-	mov r13,r9
+	mov r14,r9
 	
-L_3063:
-	cmp r13,r14
+L_3092:
+	cmp r14,r13
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
 	mov qword [rsp+8*6],r8
-	je L_3064
+	je L_3093
 	mov r8,r15
-	lea r9,[r8+r13*8+8H]
-	mov [r9],r13
+	lea r9,[r8+r14*8+8H]
+	mov [r9],r14
 	mov r10,r15
-	lea r11,[r10+r13*8+8H]
+	lea r11,[r10+r14*8+8H]
 	mov qword [rsp+8*7],r8
 	mov r8, [r11]
 	mov qword [rsp+8*8],r9
@@ -684,12 +684,13 @@ L_3063:
 	mov rdi,[rsp+8*15] 
 	add rdi, 1 
 	call puts
-	mov r8,r13
-	inc qword r13 
+	mov r8,r14
+	mov r9,1
+	add r14,r9
 	mov qword [rsp+8*16],r8
-	jmp L_3063
+	jmp L_3092
 	
-L_3064:
+L_3093:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

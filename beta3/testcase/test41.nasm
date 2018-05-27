@@ -620,36 +620,37 @@ dfs:
 	mov    rbp, rsp
 	sub    rsp, 184
 	mov r8,  rdi
-	mov r15,r8
+	mov r13,r8
 	mov r9,0
-	mov r14,r9
+	mov r15,r9
 	mov r10,1
-	mov r13,r10
+	mov r14,r10
 	
-L_1002:
+L_1031:
 	mov r8,1
 	cmp r8, 0
-	je L_1003
-	mov r8,r13
-	inc qword r13 
-	mov r9,r14
-	add r9,r13
-	mov r14,r9
-	cmp r13,r15
-	mov r10, 0
-	sete r10B
-	cmp r10, 0
+	je L_1032
+	mov r8,r14
+	mov r9,1
+	add r14,r9
+	mov r10,r15
+	add r10,r14
+	mov r15,r10
+	cmp r14,r13
+	mov r11, 0
+	sete r11B
+	cmp r11, 0
 	mov qword [rsp+8*5],r8
-	mov qword [rsp+8*6],r9
-	mov qword [rsp+8*7],r10
-	je L_1005
-	mov rax,r14
+	mov qword [rsp+8*6],r10
+	mov qword [rsp+8*7],r11
+	je L_1034
+	mov rax,r15
 	leave
 	ret
 	
-L_1005:
+L_1034:
 	mov r8,1
-	mov r9,r15
+	mov r9,r13
 	sub r9,r8
 	mov r10,r9
 	mov qword [rsp+8*8],r9
@@ -665,9 +666,9 @@ L_1005:
 	pop r15
 	mov r8 , rax
 	mov qword [rsp+8*9],r8
-	jmp L_1002
+	jmp L_1031
 	
-L_1003:
+L_1032:
 	mov r8,0
 	mov rax,r8
 	leave

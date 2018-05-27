@@ -622,11 +622,11 @@ Adder_add:
 	mov r8,  [arg+8*63]
 	mov r15,r8
 	mov r9,  rdi
-	mov r15,r9
+	mov r14,r9
 	mov r10,  rsi
-	mov r14,r10
-	mov r11,r15
-	add r11,r14
+	mov r15,r10
+	mov r11,r14
+	add r11,r15
 	mov rax,r11
 	leave
 	ret

@@ -641,12 +641,12 @@ main:
 	pop r15
 	mov r15 , rax
 	mov r8,5
-	mov r14,r8
+	mov r15,r8
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword [rsp+8*3], rax
 	mov r8,  [rsp+8*3]
-	mov r15,r8
+	mov r14,r8
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword [rsp+8*5], rax
@@ -658,10 +658,10 @@ main:
 	mov [r8],r11
 	mov qword [rsp+8*6],r8
 	mov     rsi, [rsp+8*5]
-	mov     rdi,  r15
+	mov     rdi,  r14
 	call    multiAddress
 	mov [rsp+8*7], rax
-	mov     rdi,  r14
+	mov     rdi,  r15
 	call    mallocArray
 	mov     qword [rsp+8*8], rax
 	mov r8,  [rsp+8*7]
@@ -682,7 +682,7 @@ main:
 	mov [r8],r10
 	mov qword [rsp+8*10],r8
 	mov     rsi, [rsp+8*9]
-	mov     rdi,  r15
+	mov     rdi,  r14
 	call    multiAddress
 	mov [rsp+8*11], rax
 	mov     rdi, 1
@@ -710,10 +710,10 @@ main:
 	mov [r8],r10
 	mov qword [rsp+8*14],r8
 	mov     rsi, [rsp+8*13]
-	mov     rdi,  r15
+	mov     rdi,  r14
 	call    multiAddress
 	mov [rsp+8*15], rax
-	mov     rdi,  r14
+	mov     rdi,  r15
 	call    mallocArray
 	mov     qword [rsp+8*16], rax
 	mov r8,  [rsp+8*15]
@@ -742,7 +742,7 @@ main:
 	mov [r8],r10
 	mov qword [rsp+8*18],r8
 	mov     rsi, [rsp+8*17]
-	mov     rdi,  r15
+	mov     rdi,  r14
 	call    multiAddress
 	mov [rsp+8*19], rax
 	mov r8,  [rsp+8*19]
@@ -771,7 +771,7 @@ main:
 	mov [r8],r10
 	mov qword [rsp+8*21],r8
 	mov     rsi, [rsp+8*20]
-	mov     rdi,  r15
+	mov     rdi,  r14
 	call    multiAddress
 	mov  r15, rax
 	mov r15, [r15]

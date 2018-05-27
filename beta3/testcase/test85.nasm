@@ -641,11 +641,11 @@ main:
 	pop r15
 	mov r8 , rax
 	mov r9,1000000000
-	mov r14,r9
+	mov r15,r9
 	mov r10,1234567890
-	mov r15,r10
-	mov r11,r14
-	add r11,r15
+	mov r14,r10
+	mov r11,r15
+	add r11,r14
 	mov qword [rsp+8*1],r8
 	mov r8,r11
 	mov r9,r8

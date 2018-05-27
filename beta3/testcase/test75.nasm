@@ -644,86 +644,79 @@ main:
 	call    mallocArray
 	mov     qword  r15, rax
 	mov r14,r15
-	mov r9,0
-	mov r8,r9
-	mov qword [rsp+8*4],r8
+	mov r8,0
+	mov r13,r8
 	
-L_1823:
-	mov r8,  [rsp+8*4]
-	mov r9,  [gbl+8*5]
-	cmp r8,r9
+L_1852:
+	mov r8,  [gbl+8*5]
+	cmp r13,r8
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	je L_1824
+	je L_1853
 	mov r15,r14
-	mov r8,  [rsp+8*4]
-	lea r15,[r15+r8*8+8H]
-	mov r9,0
-	mov [r15],r9
-	mov r15,r8
-	inc r8 
-	mov qword [rsp+8*4],r8
-	jmp L_1823
-	
-L_1824:
+	lea r15,[r15+r13*8+8H]
+	mov r8,0
+	mov [r15],r8
+	mov r15,r13
 	mov r9,1
-	mov r8,r9
-	mov qword [rsp+8*4],r8
+	add r13,r9
+	jmp L_1852
 	
-L_1826:
-	mov r8,  [rsp+8*4]
-	mov r9,500
-	cmp r8,r9
+L_1853:
+	mov r8,1
+	mov r13,r8
+	
+L_1855:
+	mov r8,500
+	cmp r13,r8
 	mov r15, 0
 	setle r15B
 	cmp r15, 0
-	je L_1827
-	mov r9,  [rsp+8*4]
-	mov r8,r9
+	je L_1856
+	mov r8,r13
+	mov r9,r13
 	mov r10,r9
-	mov r11,r10
+	mov r11,r8
 	mov qword rsi,r8
-	mov r9,  rsi
+	mov qword rdi,r9
+	mov r9,0
 	mov r8,r9
-	mov qword rdi,r10
-	mov r10,0
 	mov r9,r10
-	mov r10,r11
-	mov r15,r10
-	mov qword [rsp+8*15],r8
-	mov r8,237
-	mov qword [rsp+8*17],r9
-	mov r9,r15
-	imul r9,r8
+	mov r15,r9
+	mov qword [rsp+8*15],r11
+	mov r11,237
+	mov qword [rsp+8*17],r8
+	mov r8,r15
+	imul r8,r11
 	xor rdx, rdx
-	mov rax, r9
-	mov qword [rsp+8*14],r11
-	mov r11,  [gbl+8*5]
-	mov rbx, r11
+	mov rax, r8
+	mov qword [rsp+8*14],r10
+	mov r10,  [gbl+8*5]
+	mov rbx, r10
 	cdq
 	idiv rbx
-	mov qword rdi,r10
-	mov r10, rdx
-	mov r15,r10
-	mov r8,r15
-	mov r15,r8
-	mov qword [rsp+8*22],r8
-	mov r8,r14
-	mov qword [rsp+8*19],r9
-	lea r9,[r8+r15*8+8H]
-	mov qword [rsp+8*24],r8
-	mov r8, [r9]
-	mov qword [rsp+8*25],r9
-	mov r9,0
-	cmp r8,r9
-	mov r11, 0
-	sete r11B
-	cmp r11, 0
-	mov qword [rsp+8*26],r8
-	mov qword [rsp+8*20],r10
-	mov qword [rsp+8*28],r11
-	je L_1860
+	mov qword rdi,r9
+	mov r9, rdx
+	mov r15,r9
+	mov r11,r15
+	mov r15,r11
+	mov qword [rsp+8*22],r11
+	mov r11,r14
+	mov qword [rsp+8*19],r8
+	lea r8,[r11+r15*8+8H]
+	mov qword [rsp+8*24],r11
+	mov r11, [r8]
+	mov qword [rsp+8*25],r8
+	mov r8,0
+	cmp r11,r8
+	mov r10, 0
+	sete r10B
+	cmp r10, 0
+	mov qword [rsp+8*20],r9
+	mov qword [rsp+8*28],r10
+	mov qword [rsp+8*26],r11
+	je L_1889
 	mov     rdi, 3
 	call    mallocArray
 	mov     qword [rsp+8*29], rax
@@ -795,9 +788,9 @@ L_1826:
 	mov [r8],r9
 	mov r10,0
 	mov r15,r10
-	jmp L_1862
+	jmp L_1891
 	
-L_1860:
+L_1889:
 	mov r8,r14
 	lea r9,[r8+r15*8+8H]
 	mov r10, [r9]
@@ -807,7 +800,7 @@ L_1860:
 	mov qword [rsp+8*45],r10
 	mov qword [rsp+8*17],r11
 	
-L_1863:
+L_1892:
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword [rsp+8*46], rax
@@ -831,17 +824,16 @@ L_1863:
 	cmp r10, 0
 	mov qword [rsp+8*48],r8
 	mov qword [rsp+8*49],r10
-	je L_1864
+	je L_1893
 	mov     rdi, 1
 	call    mallocArray
-	mov     qword [rsp+8*50], rax
-	mov r8,  [rsp+8*50]
-	mov r15,r8
-	mov r9,0
-	lea r15,[r8+r9*8+8H]
-	mov r10,2
-	mov [r15],r10
-	mov     rsi, [rsp+8*50]
+	mov     qword  r15, rax
+	mov r12,r15
+	mov r8,0
+	lea r12,[r15+r8*8+8H]
+	mov r9,2
+	mov [r12],r9
+	mov     rsi,  r15
 	mov     rdi, [rsp+8*17]
 	call    multiAddress
 	mov  r15, rax
@@ -851,43 +843,23 @@ L_1863:
 	mov r15, 0
 	sete r15B
 	cmp r15, 0
-	je L_1865
+	je L_1894
 	mov     rdi, 1
 	call    mallocArray
-	mov     qword  r15, rax
-	mov r13,r15
+	mov     qword  r12, rax
+	mov r15,r12
 	mov r8,0
-	lea r13,[r15+r8*8+8H]
+	lea r15,[r12+r8*8+8H]
 	mov r9,2
-	mov [r13],r9
-	mov     rsi,  r15
-	mov     rdi, [rsp+8*17]
-	call    multiAddress
-	mov  r13, rax
-	mov     rdi, 3
-	call    mallocArray
-	mov     qword  r15, rax
-	mov [r13],r15
-	mov     rdi, 2
-	call    mallocArray
-	mov     qword [rsp+8*59], rax
-	mov r9,  [rsp+8*59]
-	mov r8,r9
-	mov r10,0
-	lea r8,[r9+r10*8+8H]
-	mov r11,2
-	mov [r8],r11
-	mov r10,1
-	lea r8,[r9+r10*8+8H]
-	mov r10,0
-	mov [r8],r10
-	mov qword [rsp+8*60],r8
-	mov     rsi, [rsp+8*59]
+	mov [r15],r9
+	mov     rsi,  r12
 	mov     rdi, [rsp+8*17]
 	call    multiAddress
 	mov  r15, rax
-	mov r8,  [rsp+8*14]
-	mov [r15],r8
+	mov     rdi, 3
+	call    mallocArray
+	mov     qword  r12, rax
+	mov [r15],r12
 	mov     rdi, 2
 	call    mallocArray
 	mov     qword  r15, rax
@@ -898,10 +870,28 @@ L_1863:
 	mov [r8],r10
 	mov r11,1
 	lea r8,[r15+r11*8+8H]
-	mov r9,2
+	mov r9,0
 	mov [r8],r9
-	mov qword [rsp+8*63],r8
+	mov qword [rsp+8*60],r8
 	mov     rsi,  r15
+	mov     rdi, [rsp+8*17]
+	call    multiAddress
+	mov  r15, rax
+	mov r8,  [rsp+8*14]
+	mov [r15],r8
+	mov     rdi, 2
+	call    mallocArray
+	mov     qword  r12, rax
+	mov r15,r12
+	mov r8,0
+	lea r15,[r12+r8*8+8H]
+	mov r9,2
+	mov [r15],r9
+	mov r10,1
+	lea r15,[r12+r10*8+8H]
+	mov r11,2
+	mov [r15],r11
+	mov     rsi,  r12
 	mov     rdi, [rsp+8*17]
 	call    multiAddress
 	mov [rsp+8*64], rax
@@ -909,7 +899,7 @@ L_1863:
 	mov r9,0
 	mov [r8],r9
 	
-L_1865:
+L_1894:
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword [rsp+8*66], rax
@@ -929,89 +919,82 @@ L_1865:
 	mov r9,r8
 	mov qword [rsp+8*68],r8
 	mov qword [rsp+8*17],r9
-	jmp L_1863
+	jmp L_1892
 	
-L_1864:
+L_1893:
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword [rsp+8*69], rax
-	mov r9,  [rsp+8*69]
-	mov r8,r9
-	mov r10,0
-	lea r8,[r9+r10*8+8H]
-	mov r11,1
-	mov [r8],r11
-	mov qword [rsp+8*70],r8
+	mov r8,  [rsp+8*69]
+	mov r15,r8
+	mov r9,0
+	lea r15,[r8+r9*8+8H]
+	mov r10,1
+	mov [r15],r10
 	mov     rsi, [rsp+8*69]
 	mov     rdi, [rsp+8*17]
 	call    multiAddress
-	mov [rsp+8*71], rax
-	mov r8,  [rsp+8*71]
-	mov r9,  [rsp+8*15]
-	mov [r8],r9
-	mov r10,0
-	mov r15,r10
+	mov  r15, rax
+	mov r8,  [rsp+8*15]
+	mov [r15],r8
+	mov r9,0
+	mov r15,r9
 	
-L_1862:
+L_1891:
 	mov r15,r15
-	mov r8,  [rsp+8*4]
-	mov r15,r8
-	inc r8 
-	mov qword [rsp+8*4],r8
-	jmp L_1826
+	mov r15,r13
+	mov r8,1
+	add r13,r8
+	jmp L_1855
 	
-L_1827:
-	mov r9,1
-	mov r8,r9
-	mov qword [rsp+8*4],r8
+L_1856:
+	mov r8,1
+	mov r13,r8
 	
-L_1829:
-	mov r8,  [rsp+8*4]
-	mov r9,500
-	cmp r8,r9
+L_1858:
+	mov r8,500
+	cmp r13,r8
 	mov r15, 0
 	setle r15B
 	cmp r15, 0
-	je L_1830
-	mov r9,  [rsp+8*4]
+	je L_1859
+	mov r8,r13
+	mov r9,r8
+	mov r11,0
+	mov r10,r11
 	mov r8,r9
-	mov r10,r8
-	mov r9,0
-	mov r11,r9
-	mov r8,r10
 	mov r15,r8
-	mov r9,237
-	mov qword [rsp+8*77],r11
-	mov r11,r15
-	imul r11,r9
+	mov r11,237
+	mov qword [rsp+8*77],r10
+	mov r10,r15
+	imul r10,r11
 	xor rdx, rdx
-	mov rax, r11
-	mov r9,  [gbl+8*5]
-	mov rbx, r9
+	mov rax, r10
+	mov r11,  [gbl+8*5]
+	mov rbx, r11
 	cdq
 	idiv rbx
-	mov qword [rsp+8*75],r10
-	mov r10, rdx
-	mov r15,r10
+	mov qword [rsp+8*75],r9
+	mov r9, rdx
+	mov r15,r9
 	mov r15,r15
-	mov r13,r14
-	lea r15,[r13+r15*8+8H]
+	mov r12,r14
+	lea r15,[r12+r15*8+8H]
 	mov r15, [r15]
-	mov r10,r15
+	mov r9,r15
 	mov qword rdi,r8
-	mov qword [rsp+8*77],r10
-	mov qword [rsp+8*19],r11
+	mov qword [rsp+8*77],r9
+	mov qword [rsp+8*19],r10
 	
-L_1846:
+L_1875:
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword  r15, rax
-	mov r8,r15
+	mov r12,r15
+	mov r8,0
+	lea r12,[r15+r8*8+8H]
 	mov r9,0
-	lea r8,[r15+r9*8+8H]
-	mov r10,0
-	mov [r8],r10
-	mov qword [rsp+8*83],r8
+	mov [r12],r9
 	mov     rsi,  r15
 	mov     rdi, [rsp+8*77]
 	call    multiAddress
@@ -1025,7 +1008,7 @@ L_1846:
 	cmp r10, 0
 	mov qword [rsp+8*84],r8
 	mov qword [rsp+8*85],r10
-	je L_1847
+	je L_1876
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword [rsp+8*86], rax
@@ -1039,26 +1022,23 @@ L_1846:
 	mov     rsi, [rsp+8*86]
 	mov     rdi, [rsp+8*77]
 	call    multiAddress
-	mov [rsp+8*88], rax
-	mov r8,  [rsp+8*88]
-	mov r8, [r8]
-	mov r9,r8
-	mov qword [rsp+8*88],r8
-	mov qword [rsp+8*77],r9
-	jmp L_1846
+	mov  r15, rax
+	mov r15, [r15]
+	mov r8,r15
+	mov qword [rsp+8*77],r8
+	jmp L_1875
 	
-L_1847:
+L_1876:
 	mov     rdi, 1
 	call    mallocArray
-	mov     qword [rsp+8*89], rax
-	mov r9,  [rsp+8*89]
-	mov r8,r9
-	mov r10,0
-	lea r8,[r9+r10*8+8H]
-	mov r11,1
-	mov [r8],r11
+	mov     qword  r15, rax
+	mov r8,r15
+	mov r9,0
+	lea r8,[r15+r9*8+8H]
+	mov r10,1
+	mov [r8],r10
 	mov qword [rsp+8*90],r8
-	mov     rsi, [rsp+8*89]
+	mov     rsi,  r15
 	mov     rdi, [rsp+8*77]
 	call    multiAddress
 	mov  r15, rax
@@ -1077,13 +1057,12 @@ L_1847:
 	mov rdi, r15 
 	add rdi, 1 
 	call puts
-	mov r8,  [rsp+8*4]
-	mov r15,r8
-	inc r8 
-	mov qword [rsp+8*4],r8
-	jmp L_1829
+	mov r15,r13
+	mov r8,1
+	add r13,r8
+	jmp L_1858
 	
-L_1830:
+L_1859:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

@@ -641,17 +641,18 @@ main:
 	pop r15
 	mov r8 , rax
 	mov r9,5
-	mov r14,r9
-	mov r10,r14
-	inc qword r14 
-	mov r15,r10
-	mov r15,r15
-	mov r11,r14
+	mov r15,r9
+	mov r10,r15
+	mov r11,1
+	add r15,r11
+	mov r14,r10
+	mov r14,r14
 	mov qword [rsp+8*1],r8
-	mov r8,r11
-	mov qword [rsp+8*7],r8
+	mov r8,r15
+	mov r9,r8
+	mov qword rdi,r8
+	mov qword [rsp+8*7],r9
 	mov qword [rsp+8*3],r10
-	mov qword rdi,r11
 	mov     rdi, [rsp+8*7]
 	call    toString
 	mov     qword[rsp+8*8], rax

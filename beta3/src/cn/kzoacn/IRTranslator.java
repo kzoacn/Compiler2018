@@ -491,8 +491,19 @@ public class IRTranslator {
                     //kickAll();
                     break;
                 case add:
+                    readReg(var1);
+                    readReg(var2);
+                    if(writeReg(dest).equals(readReg(var1))){
+                        text.append(new StringBuffer("add " + writeReg(dest) + "," + readReg(var2) + "\n\t"));
+                    }else
+                    if(writeReg(dest).equals(readReg(var2))){
+                        text.append(new StringBuffer("add " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
+                    }else {
+                        text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
+                        text.append(new StringBuffer("add " + writeReg(dest) + "," + readReg(var2) + "\n\t"));
+                    }
                     //if(inReg(var2) ||!fullReg()) {
-                    if(dest.equals(var1)&&isConst(var2)&&var2.constValue==1){
+                    /*if(dest.equals(var1)&&isConst(var2)&&var2.constValue==1){
                         if(inReg(var1)) {
                             readReg(var1);
                             text.append(new StringBuffer("inc " + writeReg(dest) + " \n\t"));
@@ -509,7 +520,7 @@ public class IRTranslator {
                         readReg(var2);
                         text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
                         text.append(new StringBuffer("add " + writeReg(dest) + "," + readReg(var2) + "\n\t"));
-                    }
+                    }*/
                     /*}else{
                         readReg(var1);
                         text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
