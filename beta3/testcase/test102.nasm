@@ -910,15 +910,13 @@ L_60:
 	jmp L_56
 	
 L_57:
-	mov r8,r15
-	mov r15,r8
-	mov qword rdi,r8
+	mov rdi,r15
+	mov r15,rdi
 	mov     rdi,  r15
 	call    toString
 	mov     qword r15, rax
-	mov r8,r15
-	mov r15,r8
-	mov qword rdi,r8
+	mov rdi,r15
+	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 
 	call puts

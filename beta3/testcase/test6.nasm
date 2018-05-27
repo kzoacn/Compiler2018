@@ -646,55 +646,49 @@ main:
 	mov r14,r9
 	mov r10,r15
 	add r10,r14
-	mov r11,r10
-	mov r8,r11
-	mov qword [rsp+8*6],r8
+	mov rdi,r10
+	mov r11,rdi
 	mov qword [rsp+8*4],r10
-	mov qword rdi,r11
+	mov qword [rsp+8*6],r11
 	mov     rdi, [rsp+8*6]
 	call    toString
 	mov     qword[rsp+8*7], rax
-	mov r9,  [rsp+8*7]
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*8],r10
+	mov r8,  [rsp+8*7]
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*8],r9
 	mov rdi,[rsp+8*8] 
 	add rdi, 1 
 	call puts
 	mov r8,r15
 	sub r8,r14
-	mov r9,r8
-	mov r10,r9
+	mov rdi,r8
+	mov r9,rdi
 	mov qword [rsp+8*9],r8
-	mov qword rdi,r9
-	mov qword [rsp+8*10],r10
+	mov qword [rsp+8*10],r9
 	mov     rdi, [rsp+8*10]
 	call    toString
 	mov     qword[rsp+8*11], rax
-	mov r9,  [rsp+8*11]
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*12],r10
+	mov r8,  [rsp+8*11]
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*12],r9
 	mov rdi,[rsp+8*12] 
 	add rdi, 1 
 	call puts
 	mov r8,r15
 	imul r8,r14
-	mov r9,r8
-	mov r10,r9
+	mov rdi,r8
+	mov r9,rdi
 	mov qword [rsp+8*13],r8
-	mov qword rdi,r9
-	mov qword [rsp+8*14],r10
+	mov qword [rsp+8*14],r9
 	mov     rdi, [rsp+8*14]
 	call    toString
 	mov     qword[rsp+8*15], rax
-	mov r9,  [rsp+8*15]
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*16],r10
+	mov r8,  [rsp+8*15]
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*16],r9
 	mov rdi,[rsp+8*16] 
 	add rdi, 1 
 	call puts
@@ -704,19 +698,17 @@ main:
 	cdq
 	idiv rbx
 	mov r8, rax
-	mov r9,r8
-	mov r10,r9
+	mov rdi,r8
+	mov r9,rdi
 	mov qword [rsp+8*17],r8
-	mov qword rdi,r9
-	mov qword [rsp+8*18],r10
+	mov qword [rsp+8*18],r9
 	mov     rdi, [rsp+8*18]
 	call    toString
 	mov     qword[rsp+8*19], rax
-	mov r9,  [rsp+8*19]
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*20],r10
+	mov r8,  [rsp+8*19]
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*20],r9
 	mov rdi,[rsp+8*20] 
 	add rdi, 1 
 	call puts
@@ -726,120 +718,106 @@ main:
 	cdq
 	idiv rbx
 	mov r8, rdx
-	mov r9,r8
-	mov r10,r9
+	mov rdi,r8
+	mov r9,rdi
 	mov qword [rsp+8*21],r8
-	mov qword rdi,r9
-	mov qword [rsp+8*22],r10
+	mov qword [rsp+8*22],r9
 	mov     rdi, [rsp+8*22]
 	call    toString
 	mov     qword[rsp+8*23], rax
-	mov r9,  [rsp+8*23]
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*24],r10
+	mov r8,  [rsp+8*23]
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*24],r9
 	mov rdi,[rsp+8*24] 
 	add rdi, 1 
 	call puts
 	mov r8,r15
 	and r8,r14
-	mov r9,r8
-	mov r10,r9
+	mov rdi,r8
+	mov r9,rdi
 	mov qword [rsp+8*25],r8
-	mov qword rdi,r9
-	mov qword [rsp+8*26],r10
+	mov qword [rsp+8*26],r9
 	mov     rdi, [rsp+8*26]
 	call    toString
 	mov     qword[rsp+8*27], rax
-	mov r9,  [rsp+8*27]
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*28],r10
+	mov r8,  [rsp+8*27]
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*28],r9
 	mov rdi,[rsp+8*28] 
 	add rdi, 1 
 	call puts
 	mov r8,r15
 	or r8,r14
-	mov r9,r8
-	mov r10,r9
+	mov rdi,r8
+	mov r9,rdi
 	mov qword [rsp+8*29],r8
-	mov qword rdi,r9
-	mov qword [rsp+8*30],r10
+	mov qword [rsp+8*30],r9
 	mov     rdi, [rsp+8*30]
 	call    toString
 	mov     qword[rsp+8*31], rax
-	mov r9,  [rsp+8*31]
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*32],r10
+	mov r8,  [rsp+8*31]
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*32],r9
 	mov rdi,[rsp+8*32] 
 	add rdi, 1 
 	call puts
 	mov r8,r15
 	xor r8,r14
-	mov r9,r8
-	mov r10,r9
+	mov rdi,r8
+	mov r9,rdi
 	mov qword [rsp+8*33],r8
-	mov qword rdi,r9
-	mov qword [rsp+8*34],r10
+	mov qword [rsp+8*34],r9
 	mov     rdi, [rsp+8*34]
 	call    toString
 	mov     qword[rsp+8*35], rax
-	mov r9,  [rsp+8*35]
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*36],r10
+	mov r8,  [rsp+8*35]
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*36],r9
 	mov rdi,[rsp+8*36] 
 	add rdi, 1 
 	call puts
 	mov r8, 0
 	cmp r15, 0
 	sete r8B
-	mov r9,r8
-	mov r10,r9
+	mov rdi,r8
+	mov r9,rdi
 	mov qword [rsp+8*37],r8
-	mov qword rdi,r9
-	mov qword [rsp+8*38],r10
+	mov qword [rsp+8*38],r9
 	mov     rdi, [rsp+8*38]
 	call    toString
 	mov     qword[rsp+8*39], rax
-	mov r9,  [rsp+8*39]
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*40],r10
+	mov r8,  [rsp+8*39]
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*40],r9
 	mov rdi,[rsp+8*40] 
 	add rdi, 1 
 	call puts
 	mov r14,r15
 	neg r14
-	mov r8,r14
-	mov r14,r8
-	mov qword rdi,r8
+	mov rdi,r14
+	mov r14,rdi
 	mov     rdi,  r14
 	call    toString
 	mov     qword r14, rax
-	mov r8,r14
-	mov r14,r8
-	mov qword rdi,r8
+	mov rdi,r14
+	mov r14,rdi
 	mov rdi, r14 
 	add rdi, 1 
 	call puts
 	mov r15,r15
 	not r15
-	mov r8,r15
-	mov r15,r8
-	mov qword rdi,r8
+	mov rdi,r15
+	mov r15,rdi
 	mov     rdi,  r15
 	call    toString
 	mov     qword r15, rax
-	mov r8,r15
-	mov r15,r8
-	mov qword rdi,r8
+	mov rdi,r15
+	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 
 	call puts

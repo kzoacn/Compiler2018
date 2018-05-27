@@ -1,0 +1,20 @@
+
+bool pd(int x) {
+	int h=0;
+    for (;h <= x; ++h)
+        if (x == h * (h + 1) / 2)
+			return true;
+    return false;
+}
+int main() {
+    int i = 0;
+	int n = 3 * 7 * 10;
+    if (!pd(n)) {
+        println("Sorry, the number n must be a number s.t. there exists i satisfying n=1+2+...+i");
+    }else{
+    	println("Let's start!");
+    }
+    return 0;
+}
+
+

@@ -681,13 +681,13 @@ main:
 	mov r14,r8
 	mov qword [rsp+8*11],r10
 	
-L_702:
+L_867:
 	cmp r14,r12
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
 	mov qword [rsp+8*13],r8
-	je L_703
+	je L_868
 	mov r8,2
 	mov r9,r14
 	add r9,r8
@@ -713,13 +713,13 @@ L_702:
 	mov r13,r8
 	mov qword [rsp+8*18],r11
 	
-L_705:
+L_870:
 	cmp r13,r14
 	mov r8, 0
 	setle r8B
 	cmp r8, 0
 	mov qword [rsp+8*21],r8
-	je L_706
+	je L_871
 	mov r8,1
 	mov r9,r14
 	sub r9,r8
@@ -761,14 +761,14 @@ L_705:
 	mov qword [rsp+8*33],r9
 	mov qword [rsp+8*31],r10
 	mov qword [rsp+8*27],r11
-	jmp L_705
+	jmp L_870
 	
-L_706:
+L_871:
 	mov r8,1
 	add r14,r8
-	jmp L_702
+	jmp L_867
 	
-L_703:
+L_868:
 	mov r8,r15
 	mov r9,6
 	lea r10,[r8+r9*8+8H]
@@ -777,20 +777,18 @@ L_703:
 	lea r10,[r8+r11*8+8H]
 	mov qword [rsp+8*35],r8
 	mov r8, [r10]
-	mov r9,r8
+	mov rdi,r8
 	mov qword [rsp+8*37],r8
-	mov r8,r9
+	mov r8,rdi
 	mov qword [rsp+8*39],r8
-	mov qword rdi,r9
 	mov qword [rsp+8*36],r10
 	mov     rdi, [rsp+8*39]
 	call    toString
 	mov     qword[rsp+8*40], rax
-	mov r9,  [rsp+8*40]
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*41],r10
+	mov r8,  [rsp+8*40]
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*41],r9
 	mov rdi,[rsp+8*41] 
 	add rdi, 1 
 	call puts

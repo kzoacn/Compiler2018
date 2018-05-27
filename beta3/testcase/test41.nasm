@@ -619,17 +619,16 @@ dfs:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 184
-	mov r8,  rdi
-	mov r13,r8
-	mov r9,0
-	mov r15,r9
-	mov r10,1
-	mov r14,r10
+	mov r13,rdi
+	mov r8,0
+	mov r15,r8
+	mov r9,1
+	mov r14,r9
 	
-L_1049:
+L_1026:
 	mov r8,1
 	cmp r8, 0
-	je L_1050
+	je L_1027
 	mov r8,r14
 	mov r9,1
 	add r14,r9
@@ -643,18 +642,17 @@ L_1049:
 	mov qword [rsp+8*5],r8
 	mov qword [rsp+8*6],r10
 	mov qword [rsp+8*7],r11
-	je L_1052
+	je L_1029
 	mov rax,r15
 	leave
 	ret
 	
-L_1052:
+L_1029:
 	mov r8,1
 	mov r9,r13
 	sub r9,r8
-	mov r10,r9
+	mov rdi,r9
 	mov qword [rsp+8*8],r9
-	mov qword rdi,r10
 	push r15
 	push r14
 	push r13
@@ -666,9 +664,9 @@ L_1052:
 	pop r15
 	mov r8 , rax
 	mov qword [rsp+8*9],r8
-	jmp L_1049
+	jmp L_1026
 	
-L_1050:
+L_1027:
 	mov r8,0
 	mov rax,r8
 	leave
@@ -699,10 +697,9 @@ main:
 	pop r14
 	pop r15
 	mov r8 , rax
-	mov r10,5
-	mov r9,r10
+	mov r9,5
+	mov rdi,r9
 	mov qword [rsp+8*10],r8
-	mov qword rdi,r9
 	push r15
 	push r14
 	push r13
@@ -713,19 +710,17 @@ main:
 	pop r14
 	pop r15
 	mov r8 , rax
-	mov r9,r8
-	mov r10,r9
+	mov rdi,r8
+	mov r9,rdi
 	mov qword [rsp+8*11],r8
-	mov qword rdi,r9
-	mov qword [rsp+8*12],r10
+	mov qword [rsp+8*12],r9
 	mov     rdi, [rsp+8*12]
 	call    toString
 	mov     qword[rsp+8*13], rax
-	mov r9,  [rsp+8*13]
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*14],r10
+	mov r8,  [rsp+8*13]
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*14],r9
 	mov rdi,[rsp+8*14] 
 	add rdi, 1 
 	call puts

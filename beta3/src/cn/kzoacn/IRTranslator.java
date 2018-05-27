@@ -334,6 +334,12 @@ public class IRTranslator {
         if(var.register>0){
             return 16-var.register;
         }
+        if(symbolMap.argVariableMap.containsKey(var.name)) {
+            if (var.constValue == 0)
+                return 0;
+            if (var.constValue == 1)
+                return 1;
+        }
         for(int i=8;i<8+registerNum;i++){
             if(!free[i]&&occ[i].equals(var)) {
                 ban[i]=true;
@@ -356,13 +362,22 @@ public class IRTranslator {
     String getReg(Variable var){
         getRegister(var,true);
         getRegister(var,false);
-        return "r"+getRegister(var,true);
+        int reg=getRegister(var,true);
+        if(reg==0)return "rdi";
+        if(reg==1)return "rsi";
+        return "r"+reg;
     }
     String writeReg(Variable var){
-        return "r"+getRegister(var,false);
+        int reg=getRegister(var,false);
+        if(reg==0)return "rdi";
+        if(reg==1)return "rsi";
+        return "r"+reg;
     }
     String readReg(Variable var){
-        return "r"+getRegister(var,true);
+        int reg=getRegister(var,true);
+        if(reg==0)return "rdi";
+        if(reg==1)return "rsi";
+        return "r"+reg;
     }
 
     void run(String fileName)throws Exception{
@@ -467,9 +482,14 @@ public class IRTranslator {
 
             switch (cur.opCode){
                 case not:
-                    text.append(new StringBuffer("mov "+writeReg(dest)+", 0\n\t"));
-                    text.append(new StringBuffer("cmp "+readReg(var1)+", 0\n\t"));
-                    text.append(new StringBuffer("sete "+writeReg(dest)+"B\n\t"));
+                    if(writeReg(dest).equals(readReg(var1))){
+                        text.append(new StringBuffer("cmp "+readReg(var1)+", 0\n\t"));
+                        text.append(new StringBuffer("sete "+writeReg(dest)+"B\n\t"));
+                    }else{
+                        text.append(new StringBuffer("mov "+writeReg(dest)+", 0\n\t"));
+                        text.append(new StringBuffer("cmp "+readReg(var1)+", 0\n\t"));
+                        text.append(new StringBuffer("sete "+writeReg(dest)+"B\n\t"));
+                    }
                     break;
                 case inverse:
                     readReg(var1);

@@ -641,7 +641,7 @@ main:
 	pop r15
 	mov r15 , rax
 	
-L_2184:
+L_2161:
 	mov r8,1
 	mov r9,r8
 	mov rcx,29
@@ -652,13 +652,13 @@ L_2184:
 	setl r9B
 	cmp r9, 0
 	mov qword [rsp+8*2],r9
-	jne L_2186
+	jne L_2163
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*2],r8
-	jmp L_2187
+	jmp L_2164
 	
-L_2186:
+L_2163:
 	mov r8,1
 	mov r9,r8
 	mov rcx,29
@@ -674,13 +674,13 @@ L_2186:
 	mov qword [rsp+8*4],r9
 	mov qword [rsp+8*5],r10
 	
-L_2187:
+L_2164:
 	mov r8,  [rsp+8*6]
 	add r8,r8
 	mov r9,  [rsp+8*2]
 	cmp r9, 0
 	mov qword [rsp+8*6],r8
-	je L_2185
+	je L_2162
 	mov r8,  [gbl+8*3]
 	mov r9,  [gbl+8*7]
 	mov r10,r8
@@ -1883,13 +1883,12 @@ L_2187:
 	mov qword [rsp+8*211],r9
 	mov qword [gbl+8*7],r10
 	mov qword [gbl+8*9],r11
-	jmp L_2184
+	jmp L_2161
 	
-L_2185:
-	mov r9,  [gbl+8*7]
-	mov r8,r9
-	mov r15,r8
-	mov qword rdi,r8
+L_2162:
+	mov r8,  [gbl+8*7]
+	mov rdi,r8
+	mov r15,rdi
 	mov     rdi,  r15
 	call    toString
 	mov     qword r15, rax
@@ -1897,10 +1896,9 @@ L_2185:
 	mov     rdi,  r15
 	call    concat
 	mov  r14, rax
-	mov r9,  [gbl+8*9]
-	mov r8,r9
-	mov r15,r8
-	mov qword rdi,r8
+	mov r8,  [gbl+8*9]
+	mov rdi,r8
+	mov r15,rdi
 	mov     rdi,  r15
 	call    toString
 	mov     qword r15, rax
@@ -1912,10 +1910,9 @@ L_2185:
 	mov     rdi,  r14
 	call    concat
 	mov  r14, rax
-	mov r9,  [gbl+8*3]
-	mov r8,r9
-	mov r15,r8
-	mov qword rdi,r8
+	mov r8,  [gbl+8*3]
+	mov rdi,r8
+	mov r15,rdi
 	mov     rdi,  r15
 	call    toString
 	mov     qword r15, rax
@@ -1923,9 +1920,8 @@ L_2185:
 	mov     rdi,  r14
 	call    concat
 	mov  r14, rax
-	mov r8,r14
-	mov r15,r8
-	mov qword rdi,r8
+	mov rdi,r14
+	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 
 	call puts

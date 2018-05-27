@@ -731,19 +731,17 @@ main:
 	mov [rsp+8*17], rax
 	mov r8,  [rsp+8*17]
 	mov r8, [r8]
-	mov r9,r8
-	mov r10,r9
+	mov rdi,r8
+	mov r9,rdi
 	mov qword [rsp+8*17],r8
-	mov qword rdi,r9
-	mov qword [rsp+8*19],r10
+	mov qword [rsp+8*19],r9
 	mov     rdi, [rsp+8*19]
 	call    toString
 	mov     qword[rsp+8*20], rax
-	mov r9,  [rsp+8*20]
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*21],r10
+	mov r8,  [rsp+8*20]
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*21],r9
 	mov rdi,[rsp+8*21] 
 	add rdi, 1 
 	call puts

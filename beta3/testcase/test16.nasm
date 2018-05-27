@@ -677,20 +677,18 @@ main:
 	lea r10,[r8+r9*8+8H]
 	mov qword [rsp+8*8],r8
 	mov r8, [r10]
-	mov r9,r8
+	mov rdi,r8
 	mov qword [rsp+8*10],r8
-	mov r8,r9
+	mov r8,rdi
 	mov qword [rsp+8*12],r8
-	mov qword rdi,r9
 	mov qword [rsp+8*9],r10
 	mov     rdi, [rsp+8*12]
 	call    toString
 	mov     qword[rsp+8*13], rax
-	mov r9,  [rsp+8*13]
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*14],r10
+	mov r8,  [rsp+8*13]
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*14],r9
 	mov rdi,[rsp+8*14] 
 	add rdi, 1 
 	call puts

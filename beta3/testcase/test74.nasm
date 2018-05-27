@@ -651,28 +651,26 @@ main:
 	mov qword [rsp+8*4], rax
 	mov r8,  [rsp+8*4]
 	cmp r8, 0
-	je L_1860
-	mov r9,t67
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*6],r10
+	je L_1837
+	mov r8,t67
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*6],r9
 	mov rdi,[rsp+8*6] 
 	add rdi, 1 
 	call puts
-	jmp L_1861
+	jmp L_1838
 	
-L_1860:
-	mov r9,t71
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*7],r10
+L_1837:
+	mov r8,t71
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*7],r9
 	mov rdi,[rsp+8*7] 
 	add rdi, 1 
 	call puts
 	
-L_1861:
+L_1838:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

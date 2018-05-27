@@ -760,10 +760,9 @@ main:
 	mov     rdi, [rsp+8*21]
 	call    concat
 	mov [rsp+8*21], rax
-	mov r9,  [rsp+8*21]
-	mov r8,r9
-	mov r13,r8
-	mov qword rdi,r8
+	mov r8,  [rsp+8*21]
+	mov rdi,r8
+	mov r13,rdi
 	mov rdi, r13 
 	add rdi, 1 
 	call puts
@@ -795,15 +794,13 @@ main:
 	mov r15, [r15]
 	sub r15,r12
 	neg r15
-	mov r8,r15
-	mov r15,r8
-	mov qword rdi,r8
+	mov rdi,r15
+	mov r15,rdi
 	mov     rdi,  r15
 	call    toString
 	mov     qword r15, rax
-	mov r8,r15
-	mov r15,r8
-	mov qword rdi,r8
+	mov rdi,r15
+	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 
 	call puts

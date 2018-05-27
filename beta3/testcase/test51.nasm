@@ -833,9 +833,8 @@ main:
 	mov     rdi,  r13
 	call    concat
 	mov  r13, rax
-	mov r8,r13
-	mov r15,r8
-	mov qword rdi,r8
+	mov rdi,r13
+	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 
 	call puts

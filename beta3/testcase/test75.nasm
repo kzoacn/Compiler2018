@@ -647,13 +647,13 @@ main:
 	mov r8,0
 	mov r12,r8
 	
-L_1870:
+L_1847:
 	mov r8,  [gbl+8*5]
 	cmp r12,r8
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	je L_1871
+	je L_1848
 	mov r15,r13
 	lea r15,[r15+r12*8+8H]
 	mov r8,0
@@ -661,62 +661,59 @@ L_1870:
 	mov r15,r12
 	mov r9,1
 	add r12,r9
-	jmp L_1870
+	jmp L_1847
 	
-L_1871:
+L_1848:
 	mov r8,1
 	mov r12,r8
 	
-L_1873:
+L_1850:
 	mov r8,500
 	cmp r12,r8
 	mov r15, 0
 	setle r15B
 	cmp r15, 0
-	je L_1874
-	mov r8,r12
-	mov r9,r12
-	mov r10,r9
-	mov r11,r8
-	mov qword rsi,r8
-	mov qword rdi,r9
-	mov r9,0
-	mov r8,r9
-	mov r9,r10
-	mov r15,r9
-	mov qword [rsp+8*15],r11
+	je L_1851
+	mov rsi,r12
+	mov rdi,r12
+	mov r8,rdi
+	mov r9,rsi
+	mov r11,0
+	mov r10,r11
+	mov rdi,r8
+	mov r15,rdi
 	mov r11,237
-	mov qword [rsp+8*17],r8
-	mov r8,r15
-	imul r8,r11
+	mov qword [rsp+8*15],r9
+	mov r9,r15
+	imul r9,r11
 	xor rdx, rdx
-	mov rax, r8
-	mov qword [rsp+8*14],r10
+	mov rax, r9
+	mov qword [rsp+8*17],r10
 	mov r10,  [gbl+8*5]
 	mov rbx, r10
 	cdq
 	idiv rbx
-	mov qword rdi,r9
-	mov r9, rdx
-	mov r15,r9
+	mov qword [rsp+8*14],r8
+	mov r8, rdx
+	mov r15,r8
 	mov r11,r15
 	mov r15,r11
 	mov qword [rsp+8*22],r11
 	mov r11,r13
-	mov qword [rsp+8*19],r8
-	lea r8,[r11+r15*8+8H]
+	mov qword [rsp+8*19],r9
+	lea r9,[r11+r15*8+8H]
 	mov qword [rsp+8*24],r11
-	mov r11, [r8]
-	mov qword [rsp+8*25],r8
-	mov r8,0
-	cmp r11,r8
+	mov r11, [r9]
+	mov qword [rsp+8*25],r9
+	mov r9,0
+	cmp r11,r9
 	mov r10, 0
 	sete r10B
 	cmp r10, 0
-	mov qword [rsp+8*20],r9
+	mov qword [rsp+8*20],r8
 	mov qword [rsp+8*28],r10
 	mov qword [rsp+8*26],r11
-	je L_1907
+	je L_1884
 	mov     rdi, 3
 	call    mallocArray
 	mov     qword [rsp+8*29], rax
@@ -788,9 +785,9 @@ L_1873:
 	mov [r8],r9
 	mov r10,0
 	mov r15,r10
-	jmp L_1909
+	jmp L_1886
 	
-L_1907:
+L_1884:
 	mov r8,r13
 	lea r9,[r8+r15*8+8H]
 	mov r10, [r9]
@@ -800,7 +797,7 @@ L_1907:
 	mov qword [rsp+8*45],r10
 	mov qword [rsp+8*17],r11
 	
-L_1910:
+L_1887:
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword [rsp+8*46], rax
@@ -824,7 +821,7 @@ L_1910:
 	cmp r10, 0
 	mov qword [rsp+8*48],r8
 	mov qword [rsp+8*49],r10
-	je L_1911
+	je L_1888
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword  r14, rax
@@ -843,7 +840,7 @@ L_1910:
 	mov r15, 0
 	sete r15B
 	cmp r15, 0
-	je L_1912
+	je L_1889
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword  r15, rax
@@ -897,7 +894,7 @@ L_1910:
 	mov r8,0
 	mov [r15],r8
 	
-L_1912:
+L_1889:
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword  r14, rax
@@ -913,9 +910,9 @@ L_1912:
 	mov r15, [r15]
 	mov r8,r15
 	mov qword [rsp+8*17],r8
-	jmp L_1910
+	jmp L_1887
 	
-L_1911:
+L_1888:
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword  r14, rax
@@ -933,32 +930,31 @@ L_1911:
 	mov r9,0
 	mov r15,r9
 	
-L_1909:
+L_1886:
 	mov r15,r15
 	mov r15,r12
 	mov r8,1
 	add r12,r8
-	jmp L_1873
+	jmp L_1850
 	
-L_1874:
+L_1851:
 	mov r8,1
 	mov r12,r8
 	
-L_1876:
+L_1853:
 	mov r8,500
 	cmp r12,r8
 	mov r15, 0
 	setle r15B
 	cmp r15, 0
-	je L_1877
-	mov r8,r12
-	mov r9,r8
-	mov r11,0
-	mov r10,r11
-	mov r8,r9
-	mov r15,r8
+	je L_1854
+	mov rdi,r12
+	mov r8,rdi
+	mov r10,0
+	mov r9,r10
+	mov rdi,r8
+	mov r15,rdi
 	mov r11,237
-	mov qword [rsp+8*77],r10
 	mov r10,r15
 	imul r10,r11
 	xor rdx, rdx
@@ -967,7 +963,7 @@ L_1876:
 	mov rbx, r11
 	cdq
 	idiv rbx
-	mov qword [rsp+8*75],r9
+	mov qword [rsp+8*77],r9
 	mov r9, rdx
 	mov r15,r9
 	mov r15,r15
@@ -975,11 +971,11 @@ L_1876:
 	lea r15,[r14+r15*8+8H]
 	mov r15, [r15]
 	mov r9,r15
-	mov qword rdi,r8
+	mov qword [rsp+8*75],r8
 	mov qword [rsp+8*77],r9
 	mov qword [rsp+8*19],r10
 	
-L_1893:
+L_1870:
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword  r15, rax
@@ -998,7 +994,7 @@ L_1893:
 	mov r15, 0
 	setne r15B
 	cmp r15, 0
-	je L_1894
+	je L_1871
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword  r14, rax
@@ -1014,9 +1010,9 @@ L_1893:
 	mov r15, [r15]
 	mov r8,r15
 	mov qword [rsp+8*77],r8
-	jmp L_1893
+	jmp L_1870
 	
-L_1894:
+L_1871:
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword  r15, rax
@@ -1032,24 +1028,22 @@ L_1894:
 	mov r15, [r15]
 	mov r15,r15
 	mov r15,r15
-	mov r8,r15
-	mov r15,r8
-	mov qword rdi,r8
+	mov rdi,r15
+	mov r15,rdi
 	mov     rdi,  r15
 	call    toString
 	mov     qword r15, rax
-	mov r8,r15
-	mov r15,r8
-	mov qword rdi,r8
+	mov rdi,r15
+	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 
 	call puts
 	mov r15,r12
 	mov r8,1
 	add r12,r8
-	jmp L_1876
+	jmp L_1853
 	
-L_1877:
+L_1854:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

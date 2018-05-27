@@ -646,25 +646,22 @@ main:
 	mov r15,r10
 	mov r11,t66
 	mov r14,r11
+	mov rdi,r13
 	mov qword [rsp+8*1],r8
-	mov r8,r13
-	mov r9,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*6],r9
+	mov r8,rdi
+	mov qword [rsp+8*6],r8
 	mov rdi,[rsp+8*6] 
 	add rdi, 1 
 	call puts
-	mov r8,r15
-	mov r9,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*7],r9
+	mov rdi,r15
+	mov r8,rdi
+	mov qword [rsp+8*7],r8
 	mov rdi,[rsp+8*7] 
 	add rdi, 1 
 	call puts
-	mov r8,r14
-	mov r9,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*8],r9
+	mov rdi,r14
+	mov r8,rdi
+	mov qword [rsp+8*8],r8
 	mov rdi,[rsp+8*8] 
 	add rdi, 1 
 	call puts

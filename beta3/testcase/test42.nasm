@@ -642,11 +642,10 @@ main:
 	mov r8 , rax
 	mov r9,4
 	mov r15,r9
-	mov r10,r15
-	mov r11,r10
+	mov rdi,r15
+	mov r10,rdi
 	mov qword [rsp+8*1],r8
-	mov qword rdi,r10
-	mov qword [rsp+8*4],r11
+	mov qword [rsp+8*4],r10
 	mov     rdi, [rsp+8*4]
 	call    toString
 	mov     qword[rsp+8*5], rax
@@ -654,11 +653,10 @@ main:
 	mov     rdi, t65
 	call    concat
 	mov [rsp+8*6], rax
-	mov r9,  [rsp+8*6]
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*7],r10
+	mov r8,  [rsp+8*6]
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*7],r9
 	mov rdi,[rsp+8*7] 
 	add rdi, 1 
 	call puts

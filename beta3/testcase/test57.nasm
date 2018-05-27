@@ -621,11 +621,10 @@ Hello_say:
 	sub    rsp, 208
 	mov r8,  [arg+8*63]
 	mov r15,r8
-	mov r10,t67
-	mov r9,r10
-	mov r11,r9
-	mov qword rdi,r9
-	mov qword [rsp+8*4],r11
+	mov r9,t67
+	mov rdi,r9
+	mov r10,rdi
+	mov qword [rsp+8*4],r10
 	mov rdi,[rsp+8*4] 
 	add rdi, 1 
 	call puts
@@ -668,14 +667,14 @@ main:
 	mov r9,0
 	mov r14,r9
 	
-L_1289:
+L_1266:
 	mov r8,3
 	cmp r14,r8
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
 	mov qword [rsp+8*10],r9
-	je L_1290
+	je L_1267
 	mov     rdi, 0
 	call    mallocArray
 	mov     qword [rsp+8*11], rax
@@ -707,9 +706,9 @@ L_1289:
 	add r14,r10
 	mov qword [rsp+8*16],r8
 	mov qword [rsp+8*17],r9
-	jmp L_1289
+	jmp L_1266
 	
-L_1290:
+L_1267:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

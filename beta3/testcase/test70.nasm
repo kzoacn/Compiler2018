@@ -659,21 +659,19 @@ main:
 	lea r11,[r9+r10*8+8H]
 	mov qword [rsp+8*7],r9
 	mov r9, [r11]
-	mov r10,r9
+	mov rdi,r9
 	mov qword [rsp+8*9],r9
-	mov r9,r10
+	mov r9,rdi
 	mov qword [gbl+8*6],r8
 	mov qword [rsp+8*11],r9
-	mov qword rdi,r10
 	mov qword [rsp+8*8],r11
 	mov     rdi, [rsp+8*11]
 	call    toString
 	mov     qword[rsp+8*12], rax
-	mov r9,  [rsp+8*12]
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*13],r10
+	mov r8,  [rsp+8*12]
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*13],r9
 	mov rdi,[rsp+8*13] 
 	add rdi, 1 
 	call puts

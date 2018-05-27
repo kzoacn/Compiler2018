@@ -644,56 +644,54 @@ main:
 	mov r15,r9
 	cmp r15, 0
 	mov qword [rsp+8*1],r8
-	jne L_1018
+	jne L_995
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*3],r8
-	jmp L_1019
+	jmp L_996
 	
-L_1018:
+L_995:
 	mov r8,1
 	cmp r8,0
 	mov r9, 0
 	setg r9B
 	mov qword [rsp+8*3],r9
 	
-L_1019:
+L_996:
 	mov r8,  [rsp+8*3]
 	cmp r8, 0
-	je L_1020
-	mov r9,t69
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*5],r10
+	je L_997
+	mov r8,t69
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*5],r9
 	mov rdi,[rsp+8*5] 
 	add rdi, 1 
 	call puts
-	jmp L_1021
+	jmp L_998
 	
-L_1020:
-	mov r9,t73
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*6],r10
+L_997:
+	mov r8,t73
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*6],r9
 	mov rdi,[rsp+8*6] 
 	add rdi, 1 
 	call puts
 	
-L_1021:
+L_998:
 	mov r8, 0
 	cmp r15, 0
 	sete r8B
 	cmp r8, 0
 	mov qword [rsp+8*7],r8
-	je L_1022
+	je L_999
 	mov r9,1
 	mov r8,r9
 	mov qword [rsp+8*7],r8
-	jmp L_1023
+	jmp L_1000
 	
-L_1022:
+L_999:
 	mov r8,1
 	cmp r8,0
 	mov r9, 0
@@ -702,41 +700,39 @@ L_1022:
 	mov qword [rsp+8*8],r9
 	mov qword [rsp+8*7],r10
 	
-L_1023:
+L_1000:
 	mov r8,  [rsp+8*7]
 	cmp r8, 0
-	je L_1024
-	mov r9,t82
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*9],r10
+	je L_1001
+	mov r8,t82
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*9],r9
 	mov rdi,[rsp+8*9] 
 	add rdi, 1 
 	call puts
-	jmp L_1025
+	jmp L_1002
 	
-L_1024:
-	mov r9,t86
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*10],r10
+L_1001:
+	mov r8,t86
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*10],r9
 	mov rdi,[rsp+8*10] 
 	add rdi, 1 
 	call puts
 	
-L_1025:
+L_1002:
 	mov r8,0
 	mov r15,r8
 	cmp r15, 0
-	jne L_1026
+	jne L_1003
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*11],r8
-	jmp L_1027
+	jmp L_1004
 	
-L_1026:
+L_1003:
 	mov r8,1
 	mov r9,0
 	cmp r8,r9
@@ -744,16 +740,16 @@ L_1026:
 	setne r10B
 	mov qword [rsp+8*11],r10
 	
-L_1027:
+L_1004:
 	mov r8,  [rsp+8*11]
 	cmp r8, 0
-	jne L_1028
+	jne L_1005
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*11],r8
-	jmp L_1029
+	jmp L_1006
 	
-L_1028:
+L_1005:
 	mov r8,2
 	mov r9,4
 	cmp r8,r9
@@ -763,31 +759,29 @@ L_1028:
 	mov qword [rsp+8*12],r10
 	mov qword [rsp+8*11],r11
 	
-L_1029:
+L_1006:
 	mov r8,  [rsp+8*11]
 	cmp r8, 0
-	je L_1030
-	mov r9,t99
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*13],r10
+	je L_1007
+	mov r8,t99
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*13],r9
 	mov rdi,[rsp+8*13] 
 	add rdi, 1 
 	call puts
-	jmp L_1031
+	jmp L_1008
 	
-L_1030:
-	mov r9,t103
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*14],r10
+L_1007:
+	mov r8,t103
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*14],r9
 	mov rdi,[rsp+8*14] 
 	add rdi, 1 
 	call puts
 	
-L_1031:
+L_1008:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

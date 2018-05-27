@@ -650,13 +650,13 @@ main:
 	mov r8,0
 	mov r15,r8
 	
-L_1310:
+L_1287:
 	cmp r15,r13
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
 	mov qword [rsp+8*5],r8
-	je L_1311
+	je L_1288
 	mov     rsi, t71
 	mov     rdi,  r14
 	call    concat
@@ -667,26 +667,25 @@ L_1310:
 	mov r10,1
 	add r15,r10
 	mov qword [rsp+8*7],r9
-	jmp L_1310
+	jmp L_1287
 	
-L_1311:
-	mov r8,r14
-	mov r9,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*9],r9
+L_1288:
+	mov rdi,r14
+	mov r8,rdi
+	mov qword [rsp+8*9],r8
 	mov rdi,[rsp+8*9] 
 	add rdi, 1 
 	call puts
 	mov r8,0
 	mov r15,r8
 	
-L_1313:
+L_1290:
 	cmp r15,r13
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
 	mov qword [rsp+8*10],r8
-	je L_1314
+	je L_1291
 	mov     rsi, t80
 	mov     rdi,  r14
 	call    concat
@@ -697,13 +696,12 @@ L_1313:
 	mov r10,1
 	add r15,r10
 	mov qword [rsp+8*12],r9
-	jmp L_1313
+	jmp L_1290
 	
-L_1314:
-	mov r8,r14
-	mov r9,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*13],r9
+L_1291:
+	mov rdi,r14
+	mov r8,rdi
+	mov qword [rsp+8*13],r8
 	mov rdi,[rsp+8*13] 
 	add rdi, 1 
 	call puts

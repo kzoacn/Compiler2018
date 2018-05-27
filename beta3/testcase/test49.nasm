@@ -682,23 +682,23 @@ main:
 	mov r15,r8
 	mov qword [rsp+8*9],r10
 	
-L_1072:
+L_1049:
 	cmp r15,r12
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
 	mov qword [rsp+8*11],r8
-	je L_1073
+	je L_1050
 	mov r8,0
 	mov r14,r8
 	
-L_1075:
+L_1052:
 	cmp r14,r12
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
 	mov qword [rsp+8*13],r8
-	je L_1076
+	je L_1053
 	mov     rdi, 3
 	call    mallocArray
 	mov     qword [rsp+8*14], rax
@@ -728,16 +728,16 @@ L_1075:
 	add r14,r11
 	mov qword [rsp+8*17],r8
 	mov qword [rsp+8*18],r10
-	jmp L_1075
+	jmp L_1052
 	
-L_1076:
+L_1053:
 	mov r8,r15
 	mov r9,1
 	add r15,r9
 	mov qword [rsp+8*19],r8
-	jmp L_1072
+	jmp L_1049
 	
-L_1073:
+L_1050:
 	mov     rdi, 3
 	call    mallocArray
 	mov     qword [rsp+8*20], rax
@@ -762,19 +762,17 @@ L_1073:
 	mov [rsp+8*22], rax
 	mov r8,  [rsp+8*22]
 	mov r8, [r8]
-	mov r9,r8
-	mov r10,r9
+	mov rdi,r8
+	mov r9,rdi
 	mov qword [rsp+8*22],r8
-	mov qword rdi,r9
-	mov qword [rsp+8*24],r10
+	mov qword [rsp+8*24],r9
 	mov     rdi, [rsp+8*24]
 	call    toString
 	mov     qword[rsp+8*25], rax
-	mov r9,  [rsp+8*25]
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*26],r10
+	mov r8,  [rsp+8*25]
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*26],r9
 	mov rdi,[rsp+8*26] 
 	add rdi, 1 
 	call puts

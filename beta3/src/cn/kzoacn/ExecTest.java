@@ -19,7 +19,7 @@ class ExecTest {
 
     @Test
     void testTo40()throws Exception{
-        for(int i=0;i<=28;i++){
+        for(int i=11;i<=20;i++){
             String name="test"+Integer.toString(i);
             test(name);
         }
@@ -47,6 +47,14 @@ class ExecTest {
     @Test
     void test103()throws Exception{
         test("test103");
+    }
+    @Test
+    void test104()throws Exception{
+        test("test104");
+    }
+    @Test
+    void test105()throws Exception{
+        test("test105");
     }
     @Test
     void test28()throws Exception{
@@ -77,8 +85,28 @@ class ExecTest {
         test("test9");
     }
     @Test
+    void test10()throws Exception{
+        test("test10");
+    }
+    @Test
+    void test11()throws Exception{
+        test("test11");
+    }
+    @Test
+    void test12()throws Exception{
+        test("test12");
+    }
+    @Test
+    void test13()throws Exception{
+        test("test13");
+    }
+    @Test
     void test14()throws Exception{
         test("test14");
+    }
+    @Test
+    void test15()throws Exception{
+        test("test15");
     }
     @Test
     void test19()throws Exception{

@@ -306,13 +306,10 @@ public class IROptimizer {
         int registerNumber=4;
 
 
-        //Random allocate
-
-        Random random=new Random(233);
-        for(Variable var:variables)
-            var.register=random.nextInt()%registerNumber+1;
-
         TreeMap<String,Integer>colorMap=new TreeMap<String, Integer>();
+        //greedy allocate
+
+
         for(Variable var:variables){
             for(int i=0;i<10;i++)visit[i]=false;
             for(Variable var2:graph.get(var))if(colorMap.containsKey(var2.name))
@@ -326,9 +323,9 @@ public class IROptimizer {
             }
             if(mex>registerNumber)mex=0;
             //if(used[mex])continue;
-            colorMap.put(var.name,mex);
+            if(mex>0)colorMap.put(var.name,mex);
         }
-        for(Variable var:variables)if(colorMap.get(var.name)==0){
+        for(Variable var:variables)if(!colorMap.containsKey(var.name)){
             for(int i=0;i<10;i++)visit[i]=false;
             for(Variable var2:graph.get(var))if(colorMap.containsKey(var2.name))
                 visit[colorMap.get(var2.name)]=true;
@@ -341,9 +338,10 @@ public class IROptimizer {
             }
             if(mex>registerNumber)mex=0;
             //if(used[mex])continue;
-            colorMap.put(var.name,mex);
+            if(mex>0)colorMap.put(var.name,mex);
         }
-        /*while(variables.size()>0){
+        /*
+        while(variables.size()>0){
             ArrayList<Variable>newColor=new ArrayList<Variable>();
             for(Variable var : variables){
                 if(degree.get(var)<registerNumber){
@@ -392,7 +390,7 @@ public class IROptimizer {
             used[mex]=true;
             colorMap.put(var.name,mex);
         }
-        */
+*/
 
         cur=ir.head;
         while(cur!=null){

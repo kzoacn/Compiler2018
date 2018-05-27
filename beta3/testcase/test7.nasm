@@ -651,13 +651,13 @@ main:
 	mov r9,0
 	mov r14,r9
 	
-L_3110:
+L_3087:
 	cmp r14,r13
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
 	mov qword [rsp+8*6],r8
-	je L_3111
+	je L_3088
 	mov r8,r15
 	lea r9,[r8+r14*8+8H]
 	mov [r9],r14
@@ -665,22 +665,20 @@ L_3110:
 	lea r11,[r10+r14*8+8H]
 	mov qword [rsp+8*7],r8
 	mov r8, [r11]
-	mov qword [rsp+8*8],r9
-	mov r9,r8
+	mov rdi,r8
 	mov qword [rsp+8*11],r8
-	mov r8,r9
+	mov r8,rdi
 	mov qword [rsp+8*13],r8
-	mov qword rdi,r9
+	mov qword [rsp+8*8],r9
 	mov qword [rsp+8*9],r10
 	mov qword [rsp+8*10],r11
 	mov     rdi, [rsp+8*13]
 	call    toString
 	mov     qword[rsp+8*14], rax
-	mov r9,  [rsp+8*14]
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*15],r10
+	mov r8,  [rsp+8*14]
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*15],r9
 	mov rdi,[rsp+8*15] 
 	add rdi, 1 
 	call puts
@@ -688,9 +686,9 @@ L_3110:
 	mov r9,1
 	add r14,r9
 	mov qword [rsp+8*16],r8
-	jmp L_3110
+	jmp L_3087
 	
-L_3111:
+L_3088:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

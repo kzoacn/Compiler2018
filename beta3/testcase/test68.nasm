@@ -640,22 +640,20 @@ main:
 	pop r14
 	pop r15
 	mov r8 , rax
-	mov r10,t64
-	mov r9,r10
-	mov r11,r9
+	mov r9,t64
+	mov rdi,r9
+	mov r10,rdi
 	mov qword [rsp+8*1],r8
-	mov qword rdi,r9
-	mov qword [rsp+8*3],r11
+	mov qword [rsp+8*3],r10
 	mov rdi, format
 	mov rsi,[rsp+8*3] 
 	add rsi, 1 
 	xor rax, rax
 	call printf
-	mov r9,t68
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*4],r10
+	mov r8,t68
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*4],r9
 	mov rdi, format
 	mov rsi,[rsp+8*4] 
 	add rsi, 1 

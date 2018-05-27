@@ -905,15 +905,13 @@ L_72:
 	mov r9,  [rsp+8*29]
 	lea r15,[r15+r9*8+8H]
 	mov r15, [r15]
-	mov r10,r15
-	mov r15,r10
-	mov qword rdi,r10
+	mov rdi,r15
+	mov r15,rdi
 	mov     rdi,  r15
 	call    toString
 	mov     qword r15, rax
-	mov r8,r15
-	mov r15,r8
-	mov qword rdi,r8
+	mov rdi,r15
+	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 
 	call puts

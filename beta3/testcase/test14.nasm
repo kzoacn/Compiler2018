@@ -651,14 +651,14 @@ main:
 	mov r10,0
 	mov r13,r10
 	
-L_1010:
+L_981:
 	mov r8,  [gbl+8*2]
 	cmp r13,r8
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
 	mov qword [rsp+8*7],r9
-	je L_1011
+	je L_982
 	xor rdx, rdx
 	mov rax, r13
 	mov r8,2
@@ -673,16 +673,16 @@ L_1010:
 	cmp r11, 0
 	mov qword [rsp+8*8],r9
 	mov qword [rsp+8*9],r11
-	je L_1014
+	je L_985
 	mov r8,r15
 	lea r9,[r8+r13*8+8H]
 	mov r10,0
 	mov [r9],r10
 	mov qword [rsp+8*10],r8
 	mov qword [rsp+8*11],r9
-	jmp L_1012
+	jmp L_983
 	
-L_1014:
+L_985:
 	mov r8,1
 	add r14,r8
 	mov r9,r15
@@ -691,43 +691,41 @@ L_1014:
 	mov qword [rsp+8*12],r9
 	mov qword [rsp+8*13],r10
 	
-L_1012:
+L_983:
 	mov r8,r13
 	mov r9,1
 	add r13,r9
 	mov qword [rsp+8*14],r8
-	jmp L_1010
+	jmp L_981
 	
-L_1011:
+L_982:
 	mov r8,0
 	mov r13,r8
 	
-L_1015:
+L_986:
 	mov r8,  [gbl+8*2]
 	cmp r13,r8
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
 	mov qword [rsp+8*15],r9
-	je L_1016
+	je L_987
 	mov r8,r15
 	lea r9,[r8+r13*8+8H]
 	mov r10, [r9]
-	mov r11,r10
+	mov rdi,r10
+	mov r11,rdi
 	mov qword [rsp+8*16],r8
-	mov r8,r11
-	mov qword [rsp+8*20],r8
 	mov qword [rsp+8*17],r9
 	mov qword [rsp+8*18],r10
-	mov qword rdi,r11
+	mov qword [rsp+8*20],r11
 	mov     rdi, [rsp+8*20]
 	call    toString
 	mov     qword[rsp+8*21], rax
-	mov r9,  [rsp+8*21]
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*22],r10
+	mov r8,  [rsp+8*21]
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*22],r9
 	mov rdi,[rsp+8*22] 
 	add rdi, 1 
 	call puts
@@ -735,9 +733,9 @@ L_1015:
 	mov r9,1
 	add r13,r9
 	mov qword [rsp+8*23],r8
-	jmp L_1015
+	jmp L_986
 	
-L_1016:
+L_987:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

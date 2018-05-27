@@ -652,13 +652,13 @@ main:
 	setg r8B
 	cmp r8, 0
 	mov qword [rsp+8*5],r8
-	jne L_588
+	jne L_5
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*5],r8
-	jmp L_589
+	jmp L_6
 	
-L_588:
+L_5:
 	cmp r15,r13
 	mov r8, 0
 	setg r8B
@@ -666,29 +666,29 @@ L_588:
 	mov qword [rsp+8*6],r8
 	mov qword [rsp+8*5],r9
 	
-L_589:
+L_6:
 	mov r8,  [rsp+8*5]
 	cmp r8, 0
-	je L_590
+	je L_7
 	mov r15,r15
-	jmp L_591
+	jmp L_8
 	
-L_590:
+L_7:
 	cmp r14,r13
 	mov r8, 0
 	setg r8B
 	cmp r8, 0
 	mov qword [rsp+8*8],r8
-	je L_592
+	je L_9
 	mov r15,r14
-	jmp L_593
+	jmp L_10
 	
-L_592:
+L_9:
 	mov r15,r13
 	
-L_593:
+L_10:
 	
-L_591:
+L_8:
 	mov r8,r15
 	mov r9,r8
 	mov qword rdi,r8

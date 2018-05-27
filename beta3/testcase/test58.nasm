@@ -621,8 +621,7 @@ Adder_add:
 	sub    rsp, 224
 	mov r8,  [arg+8*63]
 	mov r15,r8
-	mov r9,  rdi
-	mov r14,r9
+	mov r14,rdi
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword [rsp+8*5], rax
@@ -695,12 +694,11 @@ main:
 	mov r9,4
 	mov [r8],r9
 	mov r10,r15
-	mov r8,3
-	mov r11,r8
+	mov r11,3
+	mov rdi,r11
 	mov r8,r10
 	mov qword [arg+8*63],r8
 	mov qword [rsp+8*15],r10
-	mov qword rdi,r11
 	push r15
 	push r14
 	push r13
@@ -711,19 +709,17 @@ main:
 	pop r14
 	pop r15
 	mov r8 , rax
-	mov r9,r8
-	mov r10,r9
+	mov rdi,r8
+	mov r9,rdi
 	mov qword [rsp+8*16],r8
-	mov qword rdi,r9
-	mov qword [rsp+8*17],r10
+	mov qword [rsp+8*17],r9
 	mov     rdi, [rsp+8*17]
 	call    toString
 	mov     qword[rsp+8*18], rax
-	mov r9,  [rsp+8*18]
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*19],r10
+	mov r8,  [rsp+8*18]
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*19],r9
 	mov rdi,[rsp+8*19] 
 	add rdi, 1 
 	call puts

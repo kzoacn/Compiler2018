@@ -640,12 +640,11 @@ main:
 	pop r14
 	pop r15
 	mov r8 , rax
-	mov r10,t64
-	mov r9,r10
-	mov r11,r9
+	mov r9,t64
+	mov rdi,r9
+	mov r10,rdi
 	mov qword [rsp+8*1],r8
-	mov qword rdi,r9
-	mov qword [rsp+8*3],r11
+	mov qword [rsp+8*3],r10
 	mov rdi,[rsp+8*3] 
 	add rdi, 1 
 	call puts

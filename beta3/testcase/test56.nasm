@@ -621,13 +621,11 @@ Adder_add:
 	sub    rsp, 192
 	mov r8,  [arg+8*63]
 	mov r15,r8
-	mov r9,  rdi
-	mov r15,r9
-	mov r10,  rsi
-	mov r14,r10
-	mov r11,r15
-	add r11,r14
-	mov rax,r11
+	mov r15,rdi
+	mov r14,rsi
+	mov r9,r15
+	add r9,r14
+	mov rax,r9
 	leave
 	ret
 	
@@ -663,15 +661,13 @@ main:
 	mov r8,  [rsp+8*9]
 	mov r15,r8
 	mov r9,r15
-	mov r11,4
-	mov r10,r11
-	mov qword rsi,r10
-	mov r10,3
-	mov r8,r10
-	mov r10,r9
-	mov qword rdi,r8
+	mov r10,4
+	mov rsi,r10
+	mov r11,3
+	mov rdi,r11
+	mov r8,r9
+	mov qword [arg+8*63],r8
 	mov qword [rsp+8*11],r9
-	mov qword [arg+8*63],r10
 	push r15
 	push r14
 	push r13
@@ -682,19 +678,17 @@ main:
 	pop r14
 	pop r15
 	mov r8 , rax
-	mov r9,r8
-	mov r10,r9
+	mov rdi,r8
+	mov r9,rdi
 	mov qword [rsp+8*12],r8
-	mov qword rdi,r9
-	mov qword [rsp+8*13],r10
+	mov qword [rsp+8*13],r9
 	mov     rdi, [rsp+8*13]
 	call    toString
 	mov     qword[rsp+8*14], rax
-	mov r9,  [rsp+8*14]
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*15],r10
+	mov r8,  [rsp+8*14]
+	mov rdi,r8
+	mov r9,rdi
+	mov qword [rsp+8*15],r9
 	mov rdi,[rsp+8*15] 
 	add rdi, 1 
 	call puts
