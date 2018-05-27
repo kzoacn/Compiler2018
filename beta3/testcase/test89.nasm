@@ -643,15 +643,15 @@ main:
 	mov r9,0
 	mov r14,r9
 	mov r10,0
-	mov r15,r10
+	mov r13,r10
 	mov r11,0
-	mov r13,r11
-	inc qword r14 
-	mov r15,r14
+	mov r15,r11
 	inc qword r14 
 	mov r13,r14
+	inc qword r14 
+	mov r15,r14
 	mov qword [rsp+8*1],r8
-	mov r8,r15
+	mov r8,r13
 	mov r9,r8
 	mov qword rdi,r8
 	mov qword [rsp+8*6],r9
@@ -666,7 +666,7 @@ main:
 	mov rdi,[rsp+8*8] 
 	add rdi, 1 
 	call puts
-	mov r8,r13
+	mov r8,r15
 	mov r9,r8
 	mov qword rdi,r8
 	mov qword [rsp+8*9],r9

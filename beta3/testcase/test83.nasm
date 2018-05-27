@@ -619,15 +619,15 @@ point_set:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 328
-	mov r9,  [arg+8*63]
-	mov r8,r9
-	mov r10,  rdi
-	mov r15,r10
-	mov r11,  rsi
-	mov r14,r11
-	mov r9,0
-	lea r13,[r8+r9*8+8H]
-	mov qword [rsp+8*2],r8
+	mov r8,  [arg+8*63]
+	mov r13,r8
+	mov r9,  rdi
+	mov r15,r9
+	mov r10,  rsi
+	mov r14,r10
+	mov r11,0
+	lea r8,[r13+r11*8+8H]
+	mov qword [rsp+8*7],r8
 	mov     rdi, 0
 	call    mallocArray
 	mov     qword [rsp+8*8], rax
@@ -635,14 +635,13 @@ point_set:
 	mov r8,r9
 	mov qword [rsp+8*9],r8
 	mov     rsi, [rsp+8*8]
-	mov     rdi,  r13
+	mov     rdi, [rsp+8*7]
 	call    multiAddress
 	mov [rsp+8*10], rax
 	mov r8,  [rsp+8*10]
 	mov [r8],r15
-	mov r9,  [rsp+8*2]
-	mov r10,1
-	lea r15,[r9+r10*8+8H]
+	mov r9,1
+	lea r15,[r13+r9*8+8H]
 	mov     rdi, 0
 	call    mallocArray
 	mov     qword [rsp+8*12], rax

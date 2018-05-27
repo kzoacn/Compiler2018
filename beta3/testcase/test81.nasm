@@ -641,7 +641,7 @@ main:
 	pop r15
 	mov r8 , rax
 	mov r9,10
-	mov r13,r9
+	mov r15,r9
 	mov r11,20
 	mov r10,r11
 	mov r14,r10
@@ -667,7 +667,7 @@ main:
 	mov rdi,[rsp+8*10] 
 	add rdi, 1 
 	call puts
-	mov r8,r13
+	mov r8,r15
 	mov r9,r8
 	mov qword rdi,r8
 	mov qword [rsp+8*11],r9

@@ -639,10 +639,9 @@ main:
 	pop r13
 	pop r14
 	pop r15
-	mov r8 , rax
-	mov r9,t64
-	mov r14,r9
-	mov qword [rsp+8*1],r8
+	mov r15 , rax
+	mov r8,t64
+	mov r14,r8
 	mov     rdi, 11
 	call    mallocArray
 	mov     qword [rsp+8*3], rax

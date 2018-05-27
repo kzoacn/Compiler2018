@@ -619,11 +619,10 @@ Adder_add:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 224
-	mov r9,  [arg+8*63]
-	mov r8,r9
-	mov r10,  rdi
-	mov r15,r10
-	mov qword [rsp+8*2],r8
+	mov r8,  [arg+8*63]
+	mov r14,r8
+	mov r9,  rdi
+	mov r15,r9
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword [rsp+8*5], rax
@@ -635,7 +634,7 @@ Adder_add:
 	mov [r8],r11
 	mov qword [rsp+8*6],r8
 	mov     rsi, [rsp+8*5]
-	mov     rdi, [rsp+8*2]
+	mov     rdi,  r14
 	call    multiAddress
 	mov [rsp+8*7], rax
 	mov r8,  [rsp+8*7]

@@ -641,27 +641,27 @@ main:
 	pop r15
 	mov r8 , rax
 	mov r9,t64
-	mov r13,r9
+	mov r15,r9
 	mov r10,t65
-	mov r14,r10
+	mov r13,r10
 	mov r11,t66
-	mov r15,r11
+	mov r14,r11
 	mov qword [rsp+8*1],r8
-	mov r8,r13
+	mov r8,r15
 	mov r9,r8
 	mov qword rdi,r8
 	mov qword [rsp+8*6],r9
 	mov rdi,[rsp+8*6] 
 	add rdi, 1 
 	call puts
-	mov r8,r14
+	mov r8,r13
 	mov r9,r8
 	mov qword rdi,r8
 	mov qword [rsp+8*7],r9
 	mov rdi,[rsp+8*7] 
 	add rdi, 1 
 	call puts
-	mov r8,r15
+	mov r8,r14
 	mov r9,r8
 	mov qword rdi,r8
 	mov qword [rsp+8*8],r9

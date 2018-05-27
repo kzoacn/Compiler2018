@@ -1,11 +1,5 @@
-0a1,11
+0a1,5
 > int getnumber(int seed, int num, int y)
-> 	l1 = getInt();
-> 	r1 = getInt();
-> 	l2 = getInt();
-> 	r2 = getInt();
-> 	l3 = getInt();
-> 	r3 = getInt();
 > 				int x0 = getnumber(l1, round, k);
 > 				int x1 = getnumber(i, round, k);
 > 				int x2 = getnumber(j, round, k);

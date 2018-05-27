@@ -213,8 +213,8 @@ public class IROptimizer {
 
         Date date=new Date();
         while(true){
-            if((new Date()).getTime()-date.getTime()>24000)
-                return ir;
+            //if((new Date()).getTime()-date.getTime()>24000)
+             //   return ir;
             boolean flag=true;
 
             HashSet<Variable> nin;
@@ -289,13 +289,13 @@ public class IROptimizer {
         //variables.removeIf((var)->var.isTemp);
         variables.removeIf((var)->gbl.contains(var.name));
         variables.removeIf((var)->var.type.name.contains("const") ||var.name.contains("const") || var.type.name.equals("null"));
-        variables.removeIf((var)->var.name.startsWith("t"));
+        //variables.removeIf((var)->var.name.startsWith("t"));
 
         for(Variable var : variables){
-            if(var.name.equals("i"))color.add(var);
-            if(var.name.equals("j"))color.add(var);
-            if(var.name.equals("k"))color.add(var);
-            if(var.name.equals("n"))color.add(var);
+            //if(var.name.equals("i"))color.add(var);
+            //if(var.name.equals("j"))color.add(var);
+            //if(var.name.equals("k"))color.add(var);
+            //if(var.name.equals("n"))color.add(var);
             //if(var.name.equals("ans"))color.add(var);
         }
         for(Map.Entry<Variable,HashSet<Variable> > entry : graph.entrySet()){
@@ -326,7 +326,6 @@ public class IROptimizer {
             int mx=0;
             for(Variable var : variables){
                 lucky = var;
-                break;
             }
 
             variables.remove(lucky);

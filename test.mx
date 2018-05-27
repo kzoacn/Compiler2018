@@ -68,12 +68,15 @@ int main()
 	int l3; int r3;
 	int i; int j; int k;
 	
-	l1 = getInt();
-	r1 = getInt();
-	l2 = getInt();
-	r2 = getInt();
-	l3 = getInt();
-	r3 = getInt();
+	l1 = 0 ;
+	r1 = 40;
+	l2 = 100;
+	r2 = 200;
+	l3 = 125;
+	r3 = 250;
+//0 40
+//100 200
+//125 250
 	
 	int round = 30;
 	

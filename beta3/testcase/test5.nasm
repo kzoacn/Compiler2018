@@ -641,12 +641,12 @@ main:
 	pop r15
 	mov r8 , rax
 	mov r9,3
-	mov r15,r9
+	mov r13,r9
 	mov r10,2
-	mov r13,r10
+	mov r15,r10
 	mov r11,5
 	mov r14,r11
-	cmp r15,r13
+	cmp r13,r15
 	mov qword [rsp+8*1],r8
 	mov r8, 0
 	setg r8B
@@ -659,7 +659,7 @@ main:
 	jmp L_542
 	
 L_541:
-	cmp r15,r14
+	cmp r13,r14
 	mov r8, 0
 	setg r8B
 	mov r9,r8
@@ -670,17 +670,17 @@ L_542:
 	mov r8,  [rsp+8*5]
 	cmp r8, 0
 	je L_543
-	mov r15,r15
+	mov r15,r13
 	jmp L_544
 	
 L_543:
-	cmp r13,r14
+	cmp r15,r14
 	mov r8, 0
 	setg r8B
 	cmp r8, 0
 	mov qword [rsp+8*8],r8
 	je L_545
-	mov r15,r13
+	mov r15,r15
 	jmp L_546
 	
 L_545:

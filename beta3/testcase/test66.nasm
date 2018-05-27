@@ -641,26 +641,26 @@ main:
 	pop r15
 	mov r8 , rax
 	mov r9,1
-	mov r14,r9
+	mov r15,r9
 	mov r10,0
-	mov r15,r10
+	mov r14,r10
 	mov r11,0
-	cmp r15,r11
+	cmp r14,r11
 	mov qword [rsp+8*1],r8
 	mov r8, 0
 	setne r8B
 	cmp r8, 0
 	mov qword [rsp+8*4],r8
-	jne L_766
+	jne L_1269
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*4],r8
-	jmp L_767
+	jmp L_1270
 	
-L_766:
+L_1269:
 	xor rdx, rdx
-	mov rax, r14
-	mov rbx, r15
+	mov rax, r15
+	mov rbx, r14
 	cdq
 	idiv rbx
 	mov r8, rax
@@ -672,10 +672,10 @@ L_766:
 	mov qword [rsp+8*5],r8
 	mov qword [rsp+8*4],r10
 	
-L_767:
+L_1270:
 	mov r8,  [rsp+8*4]
 	cmp r8, 0
-	je L_768
+	je L_1271
 	mov r9,t71
 	mov r8,r9
 	mov r10,r8
@@ -684,9 +684,9 @@ L_767:
 	mov rdi,[rsp+8*7] 
 	add rdi, 1 
 	call puts
-	jmp L_769
+	jmp L_1272
 	
-L_768:
+L_1271:
 	mov r9,t75
 	mov r8,r9
 	mov r10,r8
@@ -696,7 +696,7 @@ L_768:
 	add rdi, 1 
 	call puts
 	
-L_769:
+L_1272:
 	mov r8,0
 	mov rax,r8
 	        mov     rsp, qword [trsp]

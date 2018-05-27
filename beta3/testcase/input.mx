@@ -68,12 +68,15 @@ int main()
 	int l3; int r3;
 	int i; int j; int k;
 	
-	l1 = 0;
+	l1 = 0 ;
 	r1 = 40;
 	l2 = 100;
 	r2 = 200;
 	l3 = 125;
 	r3 = 250;
+//0 40
+//100 200
+//125 250
 	
 	int round = 30;
 	
@@ -118,7 +121,9 @@ output
 === timeout ===
 12.0
 === input ===
-
+0 40
+100 200
+125 250
 
 === phase ===
 optim extended
