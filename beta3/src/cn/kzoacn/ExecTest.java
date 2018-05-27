@@ -29,6 +29,10 @@ class ExecTest {
         test("test0");
     }
     @Test
+    void testInput()throws Exception{
+        test("input");
+    }
+    @Test
     void test100()throws Exception{
         test("test100");
     }

@@ -213,7 +213,7 @@ public class IROptimizer {
 
         Date date=new Date();
         while(true){
-            if((new Date()).getTime()-date.getTime()>20000)
+            if((new Date()).getTime()-date.getTime()>24000)
                 return ir;
             boolean flag=true;
 
