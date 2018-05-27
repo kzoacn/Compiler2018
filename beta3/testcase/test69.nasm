@@ -722,7 +722,6 @@ main:
 	mov r10,r9
 	mov r10, [r10]
 	mov r11,255
-	mov r10,r10
 	and r10,r11
 	mov qword [rsp+8*21],r8
 	mov r8,r10

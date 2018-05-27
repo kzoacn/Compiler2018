@@ -470,21 +470,13 @@ public class IRTranslator {
                     text.append(new StringBuffer("mov "+writeReg(dest)+", 0\n\t"));
                     text.append(new StringBuffer("cmp "+readReg(var1)+", 0\n\t"));
                     text.append(new StringBuffer("sete "+writeReg(dest)+"B\n\t"));
-                    //kickAll();
                     break;
                 case inverse:
                     readReg(var1);
                     text.append(new StringBuffer("mov "+writeReg(dest)+","+readReg(var1)+"\n\t"));
                     text.append(new StringBuffer("not "+writeReg(dest)+"\n\t"));
-                    //kickAll();
-                    //text.append(new StringBuffer("mov r8, "+ varName(var1)+"\n\t"));
-                    //text.append(new StringBuffer("not r8\n\t"));
-                    //text.append(new StringBuffer("mov "+varName(dest)+", r8\n\t"));
                     break;
                 case negate:
-                    //text.append(new StringBuffer("mov r8, "+ varName(var1)+"\n\t"));
-                    //text.append(new StringBuffer("neg r8\n\t"));
-                    //text.append(new StringBuffer("mov "+varName(dest)+", r8\n\t"));
                     readReg(var1);
                     text.append(new StringBuffer("mov "+writeReg(dest)+","+readReg(var1)+"\n\t"));
                     text.append(new StringBuffer("neg "+writeReg(dest)+"\n\t"));
@@ -502,35 +494,6 @@ public class IRTranslator {
                         text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
                         text.append(new StringBuffer("add " + writeReg(dest) + "," + readReg(var2) + "\n\t"));
                     }
-                    //if(inReg(var2) ||!fullReg()) {
-                    /*if(dest.equals(var1)&&isConst(var2)&&var2.constValue==1){
-                        if(inReg(var1)) {
-                            readReg(var1);
-                            text.append(new StringBuffer("inc " + writeReg(dest) + " \n\t"));
-                        }else{
-                            text.append(new StringBuffer("inc qword" + varName(dest) + " \n\t"));
-                        }
-                    }else
-                    if(dest.equals(var2)){
-                        readReg(var1);
-                        readReg(var2);
-                        text.append(new StringBuffer("add " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
-                    }else {
-                        readReg(var1);
-                        readReg(var2);
-                        text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
-                        text.append(new StringBuffer("add " + writeReg(dest) + "," + readReg(var2) + "\n\t"));
-                    }*/
-                    /*}else{
-                        readReg(var1);
-                        text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
-                        text.append(new StringBuffer("add " + writeReg(dest) + "," + varName(var2) + "\n\t"));
-                    }*/
-                    //kickAll();
-
-                    //text.append(new StringBuffer("mov r8, "+varName(var1)+"\n\t"));
-                    //text.append(new StringBuffer("add r8, "+varName(var2)+"\n\t"));
-                    //text.append(new StringBuffer("mov qword "+varName(dest)+",r8 \n\t"));
                     break;
                 case subtract:
                     //if(inReg(var2) ||!fullReg()) {
@@ -596,50 +559,48 @@ public class IRTranslator {
                     //kickAll();
                     break;
                 case and:
-                    if(dest.equals(var2)){
-                        readReg(var1);
-                        readReg(var2);
+                    readReg(var1);
+                    readReg(var2);
+                    if(writeReg(dest).equals(readReg(var1))){
+                        text.append(new StringBuffer("and " + writeReg(dest) + "," + readReg(var2) + "\n\t"));
+                    }else
+                    if(writeReg(dest).equals(readReg(var2))){
                         text.append(new StringBuffer("and " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
                     }else {
-                        readReg(var1);
-                        readReg(var2);
                         text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
                         text.append(new StringBuffer("and " + writeReg(dest) + "," + readReg(var2) + "\n\t"));
                     }
                     //kickAll();
                     break;
                 case or:
-                    if(dest.equals(var2)){
-                        readReg(var1);
-                        readReg(var2);
+                    readReg(var1);
+                    readReg(var2);
+                    if(writeReg(dest).equals(readReg(var1))){
+                        text.append(new StringBuffer("or " + writeReg(dest) + "," + readReg(var2) + "\n\t"));
+                    }else
+                    if(writeReg(dest).equals(readReg(var2))){
                         text.append(new StringBuffer("or " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
                     }else {
-                        readReg(var1);
-                        readReg(var2);
                         text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
                         text.append(new StringBuffer("or " + writeReg(dest) + "," + readReg(var2) + "\n\t"));
                     }
                     //kickAll();
                     break;
                 case xor:
-                    if(isConst(var2)){
-                        readReg(var1);
-                        text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
-                        text.append(new StringBuffer("xor " + writeReg(dest) + "," + Integer.valueOf(var2.constValue) + "\n\t"));
+                    readReg(var1);
+                    readReg(var2);
+                    if(writeReg(dest).equals(readReg(var1))){
+                        text.append(new StringBuffer("xor " + writeReg(dest) + "," + readReg(var2) + "\n\t"));
                     }else
-                    if(dest.equals(var2)){
-                        readReg(var1);
-                        readReg(var2);
+                    if(writeReg(dest).equals(readReg(var2))){
                         text.append(new StringBuffer("xor " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
                     }else {
-                        readReg(var1);
-                        readReg(var2);
                         text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
                         text.append(new StringBuffer("xor " + writeReg(dest) + "," + readReg(var2) + "\n\t"));
                     }
                     //kickAll();
                     break;
-                case shiftLeft:
+                case shiftLeft://maybe wrong TODO
                     if(isConst(var2)){
                         readReg(var1);
                         text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));

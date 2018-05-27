@@ -656,7 +656,6 @@ main:
 	mov r15,r8
 	mov r15, [r15]
 	mov r9,255
-	mov r15,r15
 	and r15,r9
 	cmp r15,r13
 	mov r15, 0
@@ -730,7 +729,6 @@ calc:
 	mov r11, [r11]
 	mov qword [rsp+8*21],r9
 	mov r9,255
-	mov r11,r11
 	and r11,r9
 	mov r14,r11
 	mov r9,1

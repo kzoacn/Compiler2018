@@ -213,8 +213,8 @@ public class IROptimizer {
 
         Date date=new Date();
         while(true){
-            //if((new Date()).getTime()-date.getTime()>24000)
-             //   return ir;
+            if((new Date()).getTime()-date.getTime()>24000)
+                return ir;
             boolean flag=true;
 
             HashSet<Variable> nin;

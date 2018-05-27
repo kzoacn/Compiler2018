@@ -845,7 +845,6 @@ L_12:
 	mov qword [arg+8*2],r10
 	mov r10,1
 	sub r9,r10
-	mov r11,r11
 	and r11,r9
 	mov r8,r11
 	mov r10,r8
@@ -912,7 +911,6 @@ L_12:
 	mov qword [arg+8*2],r8
 	mov r8,1
 	sub r10,r8
-	mov r11,r11
 	and r11,r10
 	mov r9,r11
 	mov r8,r9
@@ -967,7 +965,6 @@ L_12:
 	mov qword [arg+8*2],r9
 	mov r9,1
 	sub r11,r9
-	mov r10,r10
 	and r10,r11
 	mov r8,r10
 	mov r15,r8
@@ -1029,7 +1026,6 @@ L_12:
 	shl r11,cl
 	mov r10,1
 	sub r11,r10
-	mov r9,r9
 	and r9,r11
 	mov r10,r9
 	mov r9,r10
@@ -1117,7 +1113,6 @@ L_20:
 	shl r10,cl
 	mov r8,1
 	sub r10,r8
-	mov r11,r11
 	and r11,r10
 	mov r15,r11
 	mov r8,1

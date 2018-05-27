@@ -804,7 +804,6 @@ L_1069:
 	mov r15,r14
 	xor r15,r12
 	mov r8,  [rsp+8*24]
-	mov r15,r15
 	xor r15,r8
 	mov [r13],r15
 	mov r9,r8
