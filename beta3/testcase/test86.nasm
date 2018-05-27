@@ -544,18 +544,18 @@ main:
 	inc r9 
 	mov qword [rsp+8*1],r8
 	mov r8,0
-	mov r14,r8
+	mov r12,r8
 	mov r10,0
 	mov r8,r10
 	mov r10,0
-	mov r14,r10
+	mov r12,r10
 	mov qword [rsp+8*5],r8
 	mov qword [rsp+8*2],r9
 	mov qword [rsp+8*3],r11
 	
 L_1627:
 	mov r8,5
-	cmp r14,r8
+	cmp r12,r8
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
@@ -567,10 +567,10 @@ L_1627:
 	add r10,r9
 	mov r8,r10
 	mov r11,1
-	mov r10,r14
+	mov r10,r12
 	add r10,r11
 	mov r9,r10
-	mov r10,r14
+	mov r10,r12
 	mov r11,r10
 	mov qword [rsp+8*2],r8
 	mov qword [rsp+8*5],r9
@@ -623,14 +623,13 @@ L_1627:
 	mov r8,r9
 	mov r11,  [rsp+8*2]
 	mov r10,r11
-	mov r15,r10
-	mov r13,r8
+	mov r14,r10
+	mov r15,r8
 	mov qword rsi,r8
+	mov r8,r14
+	add r8,r15
+	mov r15,r8
 	mov r8,r15
-	add r8,r13
-	mov r9,r8
-	mov r8,r9
-	mov qword [rsp+8*23],r9
 	mov r9,r8
 	mov r10,r9
 	mov qword [rsp+8*24],r8
@@ -649,8 +648,8 @@ L_1627:
 	mov rdi,[rsp+8*28] 
 	add rdi, 1 
 	call puts
-	mov r8,r14
-	inc qword r14 
+	mov r8,r12
+	inc qword r12 
 	mov qword [rsp+8*29],r8
 	jmp L_1627
 	

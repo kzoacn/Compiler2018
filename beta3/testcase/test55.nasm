@@ -542,7 +542,7 @@ main:
 	mov     rdi, 10
 	call    mallocArray
 	mov     qword [rsp+8*2], rax
-	add r14,r14
+	add r15,r15
 	mov r8,  [rsp+8*2]
 	mov r15,r8
 	mov     rdi, 6

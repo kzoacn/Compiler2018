@@ -549,7 +549,7 @@ main:
 	mov r9,0
 	mov r10,r9
 	mov r9,0
-	mov r13,r9
+	mov r15,r9
 	mov qword [rsp+8*4],r8
 	mov qword [rsp+8*5],r10
 	mov qword [rsp+8*3],r11
@@ -559,7 +559,7 @@ main:
 	mov r8,  [rsp+8*7]
 	mov r14,r8
 	mov r9,0
-	mov r15,r9
+	mov r13,r9
 	
 L_486:
 	mov r8,  [rsp+8*3]
@@ -605,9 +605,9 @@ L_489:
 	mov r11,2
 	mov r9,r10
 	imul r9,r11
-	mov r15,r9
+	mov r13,r9
 	mov r9,0
-	cmp r15,r9
+	cmp r13,r9
 	mov r11, 0
 	sete r11B
 	cmp r11, 0
@@ -636,11 +636,11 @@ L_494:
 	add r10,r11
 	mov r11,r10
 	mov r10,1
-	mov r15,r15
-	sub r15,r10
+	mov r13,r13
+	sub r13,r10
 	xor rdx, rdx
 	mov rax, r11
-	mov rbx, r15
+	mov rbx, r13
 	cdq
 	idiv rbx
 	mov r10, rdx
@@ -651,11 +651,11 @@ L_494:
 	mov qword [rsp+8*23],r9
 	mov r9,  [rsp+8*22]
 	mov [r10],r9
-	mov r9,r15
+	mov r9,r13
 	mov qword [rsp+8*24],r10
 	mov r10,1
-	mov r15,r15
-	sub r15,r10
+	mov r13,r13
+	sub r13,r10
 	xor rdx, rdx
 	mov rax, r11
 	mov rbx, r9
@@ -703,7 +703,7 @@ L_495:
 	cdq
 	idiv rbx
 	mov r9, rax
-	add r9,r13
+	add r9,r15
 	mov r10,r9
 	mov r9,r10
 	mov qword [rsp+8*32],r9
@@ -729,7 +729,7 @@ L_495:
 	cdq
 	idiv rbx
 	mov r10, rdx
-	mov r13,r10
+	mov r15,r10
 	mov qword [rsp+8*35],r10
 	jmp L_489
 	

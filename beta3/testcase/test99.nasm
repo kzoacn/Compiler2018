@@ -539,7 +539,7 @@ main:
 	pop r15
 	mov r8 , rax
 	mov r9,14
-	mov r14,r9
+	mov r13,r9
 	mov r10,0
 	mov r15,r10
 	mov qword [rsp+8*1],r8
@@ -549,7 +549,7 @@ main:
 	
 L_2170:
 	mov r8,  [rsp+8*4]
-	cmp r8,r14
+	cmp r8,r13
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
@@ -561,7 +561,7 @@ L_2170:
 	
 L_2173:
 	mov r8,  [rsp+8*6]
-	cmp r8,r14
+	cmp r8,r13
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
@@ -573,7 +573,7 @@ L_2173:
 	
 L_2176:
 	mov r8,  [rsp+8*8]
-	cmp r8,r14
+	cmp r8,r13
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
@@ -585,7 +585,7 @@ L_2176:
 	
 L_2179:
 	mov r8,  [rsp+8*10]
-	cmp r8,r14
+	cmp r8,r13
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
@@ -597,7 +597,7 @@ L_2179:
 	
 L_2182:
 	mov r8,  [rsp+8*12]
-	cmp r8,r14
+	cmp r8,r13
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
@@ -609,17 +609,17 @@ L_2182:
 	
 L_2185:
 	mov r8,  [rsp+8*14]
-	cmp r8,r14
+	cmp r8,r13
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
 	mov qword [rsp+8*15],r9
 	je L_2186
 	mov r8,0
-	mov r13,r8
+	mov r14,r8
 	
 L_2188:
-	cmp r13,r14
+	cmp r14,r13
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
@@ -689,7 +689,7 @@ L_2194:
 	jmp L_2196
 	
 L_2195:
-	cmp r13,0
+	cmp r14,0
 	mov r8, 0
 	setg r8B
 	mov r9,r8
@@ -712,7 +712,7 @@ L_2198:
 	
 L_2199:
 	mov r8,  [rsp+8*4]
-	cmp r8,r13
+	cmp r8,r14
 	mov r9, 0
 	sete r9B
 	mov r10,r9
@@ -823,7 +823,7 @@ L_2208:
 	jmp L_2210
 	
 L_2209:
-	cmp r13,0
+	cmp r14,0
 	mov r8, 0
 	setg r8B
 	mov r9,r8
@@ -846,7 +846,7 @@ L_2212:
 	
 L_2213:
 	mov r8,  [rsp+8*4]
-	cmp r8,r13
+	cmp r8,r14
 	mov r9, 0
 	sete r9B
 	mov r10,r9
@@ -957,7 +957,7 @@ L_2222:
 	jmp L_2224
 	
 L_2223:
-	cmp r13,0
+	cmp r14,0
 	mov r8, 0
 	setg r8B
 	mov r9,r8
@@ -980,7 +980,7 @@ L_2226:
 	
 L_2227:
 	mov r8,  [rsp+8*4]
-	cmp r8,r13
+	cmp r8,r14
 	mov r9, 0
 	sete r9B
 	mov r10,r9
@@ -1091,7 +1091,7 @@ L_2236:
 	jmp L_2238
 	
 L_2237:
-	cmp r13,0
+	cmp r14,0
 	mov r8, 0
 	setg r8B
 	mov r9,r8
@@ -1114,7 +1114,7 @@ L_2240:
 	
 L_2241:
 	mov r8,  [rsp+8*4]
-	cmp r8,r13
+	cmp r8,r14
 	mov r9, 0
 	sete r9B
 	mov r10,r9
@@ -1225,7 +1225,7 @@ L_2250:
 	jmp L_2252
 	
 L_2251:
-	cmp r13,0
+	cmp r14,0
 	mov r8, 0
 	setg r8B
 	mov r9,r8
@@ -1248,7 +1248,7 @@ L_2254:
 	
 L_2255:
 	mov r8,  [rsp+8*4]
-	cmp r8,r13
+	cmp r8,r14
 	mov r9, 0
 	sete r9B
 	mov r10,r9
@@ -1359,7 +1359,7 @@ L_2264:
 	jmp L_2266
 	
 L_2265:
-	cmp r13,0
+	cmp r14,0
 	mov r8, 0
 	setg r8B
 	mov r9,r8
@@ -1382,7 +1382,7 @@ L_2268:
 	
 L_2269:
 	mov r8,  [rsp+8*4]
-	cmp r8,r13
+	cmp r8,r14
 	mov r9, 0
 	sete r9B
 	mov r10,r9
@@ -1477,7 +1477,7 @@ L_2284:
 	mov qword [rsp+8*77],r8
 	
 L_2286:
-	inc qword r13 
+	inc qword r14 
 	jmp L_2188
 	
 L_2189:

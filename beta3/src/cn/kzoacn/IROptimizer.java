@@ -265,11 +265,9 @@ public class IROptimizer {
                 }
             }
             for(Variable var1:def.get(i)){
-                for(Variable var2 : variables){
-                    if(!use.get(i).contains(var2)){
-                        graph.get(var1).add(var2);
-                        graph.get(var2).add(var1);
-                    }
+                for(Variable var2:out.get(i)){
+                    graph.get(var1).add(var2);
+                    graph.get(var2).add(var1);
                 }
             }
 

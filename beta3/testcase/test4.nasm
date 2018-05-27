@@ -539,7 +539,7 @@ main:
 	pop r15
 	mov r8 , rax
 	mov r9,1
-	mov r13,r9
+	mov r14,r9
 	mov r10,1
 	mov r15,r10
 	mov qword [rsp+8*1],r8
@@ -567,11 +567,11 @@ L_35:
 	mov rdi,[rsp+8*8] 
 	add rdi, 1 
 	call puts
-	mov r8,r13
+	mov r8,r14
 	add r8,r15
-	mov r14,r8
-	mov r13,r15
-	mov r15,r14
+	mov r13,r8
+	mov r14,r15
+	mov r15,r13
 	mov qword [rsp+8*9],r8
 	jmp L_35
 	

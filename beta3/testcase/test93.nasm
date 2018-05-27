@@ -516,14 +516,14 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 152
+	sub    rsp, 168
 	mov     rax, 536870912
         cdqe
         mov     rdi, rax
         call    malloc
         mov     edx, dword 536870912
         movsxd  rdx, edx
-        sub     rdx, 2136
+        sub     rdx, 2152
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
@@ -541,30 +541,33 @@ main:
 	mov r10,1
 	mov r9,r10
 	mov r11,2
-	mov r13,r11
+	mov r15,r11
 	mov qword [rsp+8*1],r8
 	mov r8,3
 	mov r14,r8
 	mov r8,4
-	mov r15,r8
-	mov r8,r13
-	imul r8,r14
-	add r8,r9
-	mov r15,r8
+	mov r13,r8
 	mov r8,r15
+	imul r8,r14
+	mov r10,r8
+	mov r8,r9
+	add r8,r10
+	mov r13,r8
+	mov r8,r13
 	mov qword [rsp+8*2],r9
 	mov r9,r8
 	mov qword rdi,r8
-	mov qword [rsp+8*8],r9
-	mov     rdi, [rsp+8*8]
+	mov qword [rsp+8*10],r9
+	mov qword [rsp+8*7],r10
+	mov     rdi, [rsp+8*10]
 	call    toString
-	mov     qword[rsp+8*9], rax
-	mov r9,  [rsp+8*9]
+	mov     qword[rsp+8*11], rax
+	mov r9,  [rsp+8*11]
 	mov r8,r9
 	mov r10,r8
 	mov qword rdi,r8
-	mov qword [rsp+8*10],r10
-	mov rdi,[rsp+8*10] 
+	mov qword [rsp+8*12],r10
+	mov rdi,[rsp+8*12] 
 	add rdi, 1 
 	call puts
 	mov r8,0
@@ -576,14 +579,14 @@ main:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 152
-	mov r8,  [rsp+8*11]
+	sub    rsp, 168
+	mov r8,  [rsp+8*13]
 	mov rax,r8
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2136
+gbl:         resb   2152
 buff.1788:
         resb    256
 arg:

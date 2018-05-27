@@ -549,18 +549,18 @@ main:
 	mov r10,0
 	mov r9,r10
 	mov r11,0
-	mov r14,r11
+	mov r12,r11
 	mov qword [rsp+8*5],r9
 	
 L_244:
-	cmp r14,r13
+	cmp r12,r13
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
 	mov qword [rsp+8*7],r8
 	je L_245
 	mov r8,r13
-	sub r8,r14
+	sub r8,r12
 	mov r10,  [rsp+8*5]
 	mov r9,r10
 	inc r10 
@@ -568,8 +568,8 @@ L_244:
 	mov qword [rsp+8*5],r10
 	lea r10,[r11+r9*8+8H]
 	mov [r10],r8
-	mov r8,r14
-	inc qword r14 
+	mov r8,r12
+	inc qword r12 
 	mov qword [rsp+8*12],r8
 	mov qword [rsp+8*9],r9
 	mov qword [rsp+8*11],r10
@@ -578,17 +578,17 @@ L_244:
 	
 L_245:
 	mov r8,0
-	mov r14,r8
+	mov r12,r8
 	
 L_247:
-	cmp r14,r13
+	cmp r12,r13
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
 	mov qword [rsp+8*13],r8
 	je L_248
 	mov r8,r15
-	lea r9,[r8+r14*8+8H]
+	lea r9,[r8+r12*8+8H]
 	mov r10, [r9]
 	mov r11,r10
 	mov qword [rsp+8*14],r8
@@ -608,8 +608,8 @@ L_247:
 	mov rdi,[rsp+8*20] 
 	add rdi, 1 
 	call puts
-	mov r8,r14
-	inc qword r14 
+	mov r8,r12
+	inc qword r12 
 	mov qword [rsp+8*21],r8
 	jmp L_247
 	
