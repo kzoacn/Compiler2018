@@ -641,37 +641,37 @@ main:
 	pop r15
 	mov r8 , rax
 	mov r9,5
-	mov r13,r9
+	mov r12,r9
 	mov qword [rsp+8*1],r8
-	mov     rdi,  r13
+	mov     rdi,  r12
 	call    mallocArray
 	mov     qword [rsp+8*3], rax
 	mov r8,  [rsp+8*3]
-	mov r15,r8
+	mov r14,r8
 	mov r9,0
-	mov r14,r9
+	mov r15,r9
 	mov r10,0
-	mov r12,r10
+	mov r13,r10
 	
 L_794:
-	cmp r12,r13
+	cmp r13,r12
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
 	mov qword [rsp+8*7],r8
 	je L_795
-	mov r8,r13
-	sub r8,r12
-	mov r9,r14
+	mov r8,r12
+	sub r8,r13
+	mov r9,r15
 	mov r10,1
-	add r14,r10
-	mov r11,r15
+	add r15,r10
+	mov r11,r14
 	lea r10,[r11+r9*8+8H]
 	mov [r10],r8
-	mov r8,r12
+	mov r8,r13
 	mov qword [rsp+8*12],r8
 	mov r8,1
-	add r12,r8
+	add r13,r8
 	mov qword [rsp+8*9],r9
 	mov qword [rsp+8*11],r10
 	mov qword [rsp+8*10],r11
@@ -679,17 +679,17 @@ L_794:
 	
 L_795:
 	mov r8,0
-	mov r12,r8
+	mov r13,r8
 	
 L_797:
-	cmp r12,r13
+	cmp r13,r12
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
 	mov qword [rsp+8*13],r8
 	je L_798
-	mov r8,r15
-	lea r9,[r8+r12*8+8H]
+	mov r8,r14
+	lea r9,[r8+r13*8+8H]
 	mov r10, [r9]
 	mov r11,r10
 	mov qword [rsp+8*14],r8
@@ -709,9 +709,9 @@ L_797:
 	mov rdi,[rsp+8*20] 
 	add rdi, 1 
 	call puts
-	mov r8,r12
+	mov r8,r13
 	mov r9,1
-	add r12,r9
+	add r13,r9
 	mov qword [rsp+8*21],r8
 	jmp L_797
 	

@@ -304,7 +304,46 @@ public class IROptimizer {
         }
 
         int registerNumber=4;
-        while(variables.size()>0){
+
+
+        //Random allocate
+
+        Random random=new Random(233);
+        for(Variable var:variables)
+            var.register=random.nextInt()%registerNumber+1;
+
+        TreeMap<String,Integer>colorMap=new TreeMap<String, Integer>();
+        for(Variable var:variables){
+            for(int i=0;i<10;i++)visit[i]=false;
+            for(Variable var2:graph.get(var))if(colorMap.containsKey(var2.name))
+                visit[colorMap.get(var2.name)]=true;
+            int mex=0;
+            for(int i=1;i<10;i++){
+                if(!visit[i]){
+                    mex=i;
+                    break;
+                }
+            }
+            if(mex>registerNumber)mex=0;
+            //if(used[mex])continue;
+            colorMap.put(var.name,mex);
+        }
+        for(Variable var:variables)if(colorMap.get(var.name)==0){
+            for(int i=0;i<10;i++)visit[i]=false;
+            for(Variable var2:graph.get(var))if(colorMap.containsKey(var2.name))
+                visit[colorMap.get(var2.name)]=true;
+            int mex=0;
+            for(int i=1;i<10;i++){
+                if(!visit[i]){
+                    mex=i;
+                    break;
+                }
+            }
+            if(mex>registerNumber)mex=0;
+            //if(used[mex])continue;
+            colorMap.put(var.name,mex);
+        }
+        /*while(variables.size()>0){
             ArrayList<Variable>newColor=new ArrayList<Variable>();
             for(Variable var : variables){
                 if(degree.get(var)<registerNumber){
@@ -334,7 +373,6 @@ public class IROptimizer {
             }
         }
 
-        TreeMap<String,Integer>colorMap=new TreeMap<String, Integer>();
         boolean[] used=new boolean[10];
         for(int i=0;i<10;i++)used[i]=false;
         Collections.shuffle(color,new Random(3));
@@ -354,6 +392,8 @@ public class IROptimizer {
             used[mex]=true;
             colorMap.put(var.name,mex);
         }
+        */
+
         cur=ir.head;
         while(cur!=null){
             if(cur.dest!=null&&colorMap.containsKey(cur.dest.name))

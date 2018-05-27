@@ -641,14 +641,14 @@ main:
 	pop r15
 	mov r8 , rax
 	mov r9,10000
-	mov r14,r9
+	mov r15,r9
 	mov r10,0
-	mov r15,r10
+	mov r14,r10
 	mov r11,2800
-	mov r12,r11
+	mov r13,r11
 	mov qword [rsp+8*1],r8
 	mov r8,0
-	mov r13,r8
+	mov r12,r8
 	mov r9,0
 	mov r8,r9
 	mov qword [rsp+8*6],r8
@@ -663,8 +663,8 @@ main:
 	mov qword [rsp+8*9],r10
 	
 L_1036:
-	mov r8,r15
-	sub r8,r12
+	mov r8,r14
+	sub r8,r13
 	mov r9,0
 	cmp r8,r9
 	mov r10, 0
@@ -674,15 +674,15 @@ L_1036:
 	mov qword [rsp+8*11],r10
 	je L_1037
 	xor rdx, rdx
-	mov rax, r14
+	mov rax, r15
 	mov r8,5
 	mov rbx, r8
 	cdq
 	idiv rbx
 	mov r9, rax
-	mov r10,r15
+	mov r10,r14
 	mov r11,1
-	add r15,r11
+	add r14,r11
 	mov r11,  [rsp+8*8]
 	mov r8,r11
 	mov qword [rsp+8*12],r9
@@ -698,9 +698,9 @@ L_1037:
 	
 L_1039:
 	mov r8,0
-	mov r13,r8
+	mov r12,r8
 	mov r9,2
-	mov r10,r12
+	mov r10,r13
 	imul r10,r9
 	mov r11,r10
 	mov r8,0
@@ -715,48 +715,48 @@ L_1039:
 	jmp L_1040
 	
 L_1043:
-	mov r15,r12
+	mov r14,r13
 	
 L_1044:
 	mov r9,  [rsp+8*8]
 	mov r8,r9
-	lea r10,[r8+r15*8+8H]
+	lea r10,[r8+r14*8+8H]
 	mov r11, [r10]
 	mov qword [rsp+8*18],r8
 	mov r8,r11
-	imul r8,r14
-	add r8,r13
-	mov r13,r8
+	imul r8,r15
+	add r8,r12
+	mov r12,r8
 	mov r8,  [rsp+8*9]
 	mov qword [rsp+8*19],r10
 	mov r10,1
 	sub r8,r10
 	xor rdx, rdx
-	mov rax, r13
+	mov rax, r12
 	mov rbx, r8
 	cdq
 	idiv rbx
 	mov r10, rdx
 	mov qword [rsp+8*20],r11
 	mov r11,r9
-	lea r9,[r11+r15*8+8H]
+	lea r9,[r11+r14*8+8H]
 	mov [r9],r10
 	mov qword [rsp+8*24],r9
 	mov r9,r8
 	mov r10,1
 	sub r8,r10
 	xor rdx, rdx
-	mov rax, r13
+	mov rax, r12
 	mov rbx, r9
 	cdq
 	idiv rbx
 	mov qword [rsp+8*9],r8
 	mov r8, rax
-	mov r13,r8
+	mov r12,r8
 	mov r8,1
-	sub r15,r8
+	sub r14,r8
 	mov r8,0
-	cmp r15,r8
+	cmp r14,r8
 	mov qword [rsp+8*25],r9
 	mov r9, 0
 	sete r9B
@@ -767,20 +767,20 @@ L_1044:
 	jmp L_1045
 	
 L_1048:
-	mov r8,r13
-	imul r8,r15
-	mov r13,r8
+	mov r8,r12
+	imul r8,r14
+	mov r12,r8
 	mov qword [rsp+8*28],r8
 	jmp L_1044
 	
 L_1045:
 	mov r8,14
-	mov r9,r12
+	mov r9,r13
 	sub r9,r8
-	mov r12,r9
+	mov r13,r9
 	xor rdx, rdx
-	mov rax, r13
-	mov rbx, r14
+	mov rax, r12
+	mov rbx, r15
 	cdq
 	idiv rbx
 	mov r10, rax
@@ -805,8 +805,8 @@ L_1045:
 	xor rax, rax
 	call printf
 	xor rdx, rdx
-	mov rax, r13
-	mov rbx, r14
+	mov rax, r12
+	mov rbx, r15
 	cdq
 	idiv rbx
 	mov r8, rdx

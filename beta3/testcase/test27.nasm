@@ -620,31 +620,31 @@ search:
 	mov    rbp, rsp
 	sub    rsp, 664
 	mov r8,  rdi
-	mov r12,r8
+	mov r13,r8
 	mov r9,  [gbl+8*3]
-	cmp r12,r9
+	cmp r13,r9
 	mov r10, 0
 	sete r10B
 	cmp r10, 0
 	mov qword [rsp+8*4],r10
 	je L_976
 	mov r8,0
-	mov r14,r8
+	mov r15,r8
 	
 L_1000:
 	mov r8,  [gbl+8*3]
-	cmp r14,r8
+	cmp r15,r8
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
 	mov qword [rsp+8*6],r9
 	je L_1001
 	mov r8,0
-	mov r15,r8
+	mov r14,r8
 	
 L_1002:
 	mov r8,  [gbl+8*3]
-	cmp r15,r8
+	cmp r14,r8
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
@@ -652,9 +652,9 @@ L_1002:
 	je L_1003
 	mov r9,  [gbl+8*9]
 	mov r8,r9
-	lea r10,[r8+r14*8+8H]
+	lea r10,[r8+r15*8+8H]
 	mov r11, [r10]
-	cmp r11,r15
+	cmp r11,r14
 	mov qword [rsp+8*10],r8
 	mov r8, 0
 	sete r8B
@@ -688,9 +688,9 @@ L_1004:
 	call printf
 	
 L_1005:
-	mov r8,r15
+	mov r8,r14
 	mov r9,1
-	add r15,r9
+	add r14,r9
 	mov qword [rsp+8*16],r8
 	jmp L_1002
 	
@@ -703,9 +703,9 @@ L_1003:
 	mov rdi,[rsp+8*17] 
 	add rdi, 1 
 	call puts
-	mov r8,r14
+	mov r8,r15
 	mov r9,1
-	add r14,r9
+	add r15,r9
 	mov qword [rsp+8*18],r8
 	jmp L_1000
 	
@@ -726,11 +726,11 @@ L_1001:
 	
 L_976:
 	mov r8,0
-	mov r13,r8
+	mov r12,r8
 	
 L_978:
 	mov r8,  [gbl+8*3]
-	cmp r13,r8
+	cmp r12,r8
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
@@ -738,7 +738,7 @@ L_978:
 	je L_979
 	mov r9,  [gbl+8*24]
 	mov r8,r9
-	lea r10,[r8+r13*8+8H]
+	lea r10,[r8+r12*8+8H]
 	mov r11, [r10]
 	mov qword [rsp+8*25],r8
 	mov r8,0
@@ -750,8 +750,8 @@ L_978:
 	mov qword [rsp+8*28],r10
 	mov qword [rsp+8*27],r11
 	je L_982
-	mov r8,r13
-	add r8,r12
+	mov r8,r12
+	add r8,r13
 	mov r10,  [gbl+8*30]
 	mov r9,r10
 	mov r11,0
@@ -772,11 +772,11 @@ L_978:
 	mov qword [rsp+8*34],r11
 	je L_984
 	mov r8,  [gbl+8*3]
-	mov r9,r13
+	mov r9,r12
 	add r9,r8
 	mov r10,1
 	sub r9,r10
-	sub r9,r12
+	sub r9,r13
 	mov r10,  [gbl+8*30]
 	mov r11,r10
 	mov r8,1
@@ -796,21 +796,21 @@ L_978:
 	mov qword [rsp+8*36],r11
 	je L_986
 	mov r8,  [gbl+8*3]
-	mov r14,r13
-	add r14,r8
+	mov r15,r12
+	add r15,r8
 	mov r9,1
-	sub r14,r9
-	sub r14,r12
+	sub r15,r9
+	sub r15,r13
 	mov r10,  [gbl+8*30]
-	mov r15,r10
+	mov r14,r10
 	mov r11,1
-	lea r15,[r15+r11*8+8H]
-	mov r15, [r15]
-	lea r15,[r15+r14*8+8H]
+	lea r14,[r14+r11*8+8H]
+	mov r14, [r14]
+	lea r14,[r14+r15*8+8H]
 	mov r9,1
-	mov [r15],r9
-	mov r14,r13
-	add r14,r12
+	mov [r14],r9
+	mov r14,r12
+	add r14,r13
 	mov r15,r10
 	mov r9,0
 	lea r15,[r15+r9*8+8H]
@@ -820,15 +820,15 @@ L_978:
 	mov [r15],r9
 	mov r9,  [gbl+8*24]
 	mov r15,r9
-	lea r15,[r15+r13*8+8H]
+	lea r15,[r15+r12*8+8H]
 	mov r11,1
 	mov [r15],r11
 	mov r11,  [gbl+8*9]
 	mov r15,r11
-	lea r15,[r15+r12*8+8H]
-	mov [r15],r13
+	lea r15,[r15+r13*8+8H]
+	mov [r15],r12
 	mov r8,1
-	mov r15,r12
+	mov r15,r13
 	add r15,r8
 	mov r8,r15
 	mov qword rdi,r8
@@ -851,11 +851,11 @@ L_978:
 	mov     qword r15, rax
 	mov r8,  [gbl+8*24]
 	mov r15,r8
-	lea r15,[r15+r13*8+8H]
+	lea r15,[r15+r12*8+8H]
 	mov r9,0
 	mov [r15],r9
-	mov r14,r13
-	add r14,r12
+	mov r14,r12
+	add r14,r13
 	mov r10,  [gbl+8*30]
 	mov r15,r10
 	mov r11,0
@@ -865,27 +865,27 @@ L_978:
 	mov r9,0
 	mov [r15],r9
 	mov r9,  [gbl+8*3]
-	mov r15,r13
-	add r15,r9
+	mov r14,r12
+	add r14,r9
 	mov r11,1
-	sub r15,r11
-	sub r15,r12
-	mov r14,r10
+	sub r14,r11
+	sub r14,r13
+	mov r15,r10
 	mov r11,1
-	lea r14,[r14+r11*8+8H]
-	mov r14, [r14]
-	lea r14,[r14+r15*8+8H]
+	lea r15,[r15+r11*8+8H]
+	mov r15, [r15]
+	lea r15,[r15+r14*8+8H]
 	mov r11,0
-	mov [r14],r11
+	mov [r15],r11
 	
 L_986:
 	
 L_984:
 	
 L_982:
-	mov r8,r13
+	mov r8,r12
 	mov r9,1
-	add r13,r9
+	add r12,r9
 	mov qword [rsp+8*62],r8
 	jmp L_978
 	
@@ -923,31 +923,31 @@ main:
 	pop r15
 	mov r15 , rax
 	mov r8,0
-	mov r14,r8
+	mov r15,r8
 	
 L_987:
 	mov r8,2
-	cmp r14,r8
-	mov r15, 0
-	setl r15B
-	cmp r15, 0
+	cmp r15,r8
+	mov r14, 0
+	setl r14B
+	cmp r14, 0
 	je L_988
 	mov r8,8
 	mov r9,8
-	mov r15,r8
-	add r15,r9
+	mov r14,r8
+	add r14,r9
 	mov r10,1
-	sub r15,r10
-	mov     rdi,  r15
+	sub r14,r10
+	mov     rdi,  r14
 	call    mallocArray
 	mov     qword  r13, rax
 	mov r8,  [gbl+8*30]
-	mov r15,r8
-	lea r15,[r15+r14*8+8H]
-	mov [r15],r13
-	mov r15,r14
+	mov r14,r8
+	lea r14,[r14+r15*8+8H]
+	mov [r14],r13
+	mov r14,r15
 	mov r9,1
-	add r14,r9
+	add r15,r9
 	jmp L_987
 	
 L_988:

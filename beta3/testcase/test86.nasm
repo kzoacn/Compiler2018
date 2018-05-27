@@ -641,35 +641,35 @@ main:
 	pop r15
 	mov r8 , rax
 	mov r9,3
-	mov r12,r9
-	mov r10,r12
+	mov r14,r9
+	mov r10,r14
 	mov r11,1
-	add r12,r11
+	add r14,r11
 	mov qword [rsp+8*1],r8
 	mov r8,0
-	mov r15,r8
-	mov r8,0
-	mov r14,r8
+	mov r12,r8
 	mov r8,0
 	mov r15,r8
+	mov r8,0
+	mov r12,r8
 	mov qword [rsp+8*3],r10
 	
 L_2177:
 	mov r8,5
-	cmp r15,r8
+	cmp r12,r8
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
 	mov qword [rsp+8*6],r9
 	je L_2178
-	mov r8,r12
-	add r8,r14
-	mov r12,r8
+	mov r8,r14
+	add r8,r15
+	mov r14,r8
 	mov r9,1
-	mov r10,r15
+	mov r10,r12
 	add r10,r9
-	mov r14,r10
-	mov r11,r15
+	mov r15,r10
+	mov r11,r12
 	mov r8,r11
 	mov qword [rsp+8*10],r8
 	mov qword [rsp+8*8],r10
@@ -685,7 +685,7 @@ L_2177:
 	mov rdi,[rsp+8*12] 
 	add rdi, 1 
 	call puts
-	mov r8,r12
+	mov r8,r14
 	mov r9,r8
 	mov qword rdi,r8
 	mov qword [rsp+8*13],r9
@@ -700,7 +700,7 @@ L_2177:
 	mov rdi,[rsp+8*15] 
 	add rdi, 1 
 	call puts
-	mov r8,r14
+	mov r8,r15
 	mov r9,r8
 	mov qword rdi,r8
 	mov qword [rsp+8*16],r9
@@ -715,8 +715,8 @@ L_2177:
 	mov rdi,[rsp+8*18] 
 	add rdi, 1 
 	call puts
-	mov r8,r14
-	mov r9,r12
+	mov r8,r15
+	mov r9,r14
 	mov r13,r9
 	mov r10,r8
 	mov r11,r13
@@ -744,9 +744,9 @@ L_2177:
 	mov rdi,[rsp+8*28] 
 	add rdi, 1 
 	call puts
-	mov r8,r15
+	mov r8,r12
 	mov r9,1
-	add r15,r9
+	add r12,r9
 	mov qword [rsp+8*29],r8
 	jmp L_2177
 	

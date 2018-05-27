@@ -647,14 +647,14 @@ main:
 	call    mallocArray
 	mov     qword [rsp+8*3], rax
 	mov r8,  [rsp+8*3]
-	mov r15,r8
-	mov r13,r15
+	mov r14,r8
+	mov r15,r14
 	mov r9,0
-	mov r12,r9
+	mov r13,r9
 	
 L_1057:
 	mov r8,  [rsp+8*2]
-	cmp r12,r8
+	cmp r13,r8
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
@@ -671,11 +671,11 @@ L_1057:
 	mov [r8],r11
 	mov qword [rsp+8*9],r8
 	mov     rsi, [rsp+8*8]
-	mov     rdi,  r13
+	mov     rdi,  r15
 	call    multiAddress
 	mov [rsp+8*10], rax
 	mov r8,  [rsp+8*10]
-	mov [r8],r12
+	mov [r8],r13
 	mov     rdi, 1
 	call    mallocArray
 	mov     qword [rsp+8*11], rax
@@ -687,7 +687,7 @@ L_1057:
 	mov [r8],r11
 	mov qword [rsp+8*12],r8
 	mov     rsi, [rsp+8*11]
-	mov     rdi,  r13
+	mov     rdi,  r15
 	call    multiAddress
 	mov [rsp+8*13], rax
 	mov     rdi, 2
@@ -707,12 +707,12 @@ L_1057:
 	mov [r8],r11
 	mov qword [rsp+8*16],r8
 	mov     rsi, [rsp+8*15]
-	mov     rdi,  r13
+	mov     rdi,  r15
 	call    multiAddress
 	mov [rsp+8*17], rax
 	mov r8,  [rsp+8*17]
 	mov r8, [r8]
-	mov r13,r8
+	mov r15,r8
 	mov qword [rsp+8*17],r8
 	mov     rdi, 1
 	call    mallocArray
@@ -725,26 +725,26 @@ L_1057:
 	mov [r8],r11
 	mov qword [rsp+8*19],r8
 	mov     rsi, [rsp+8*18]
-	mov     rdi,  r13
+	mov     rdi,  r15
 	call    multiAddress
 	mov [rsp+8*20], rax
 	mov r8,  [rsp+8*20]
 	mov r9,0
 	mov [r8],r9
-	mov r10,r12
+	mov r10,r13
 	mov r11,1
-	add r12,r11
+	add r13,r11
 	mov qword [rsp+8*22],r10
 	jmp L_1057
 	
 L_1058:
-	mov r13,r15
+	mov r15,r14
 	mov r8,0
-	mov r12,r8
+	mov r13,r8
 	
 L_1060:
 	mov r8,  [rsp+8*2]
-	cmp r12,r8
+	cmp r13,r8
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
@@ -761,7 +761,7 @@ L_1060:
 	mov [r8],r11
 	mov qword [rsp+8*25],r8
 	mov     rsi, [rsp+8*24]
-	mov     rdi,  r13
+	mov     rdi,  r15
 	call    multiAddress
 	mov [rsp+8*26], rax
 	mov r8,  [rsp+8*26]
@@ -784,21 +784,21 @@ L_1060:
 	call puts
 	mov     rdi, 1
 	call    mallocArray
-	mov     qword  r15, rax
-	mov r14,r15
+	mov     qword  r12, rax
+	mov r14,r12
 	mov r8,0
-	lea r14,[r15+r8*8+8H]
+	lea r14,[r12+r8*8+8H]
 	mov r9,1
 	mov [r14],r9
-	mov     rsi,  r15
-	mov     rdi,  r13
+	mov     rsi,  r12
+	mov     rdi,  r15
 	call    multiAddress
 	mov  r15, rax
 	mov r15, [r15]
-	mov r13,r15
-	mov r8,r12
+	mov r15,r15
+	mov r8,r13
 	mov r9,1
-	add r12,r9
+	add r13,r9
 	mov qword [rsp+8*34],r8
 	jmp L_1060
 	

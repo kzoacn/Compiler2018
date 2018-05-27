@@ -645,13 +645,13 @@ main:
 	
 L_664:
 	mov r8,1
-	mov r13,r8
+	mov r14,r8
 	mov r9,0
-	mov r14,r9
+	mov r13,r9
 	
 L_667:
 	mov r8,  [gbl+8*5]
-	cmp r14,r8
+	cmp r13,r8
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
@@ -659,7 +659,7 @@ L_667:
 	je L_668
 	mov r9,  [gbl+8*7]
 	mov r8,r9
-	lea r10,[r8+r14*8+8H]
+	lea r10,[r8+r13*8+8H]
 	mov r11,  [gbl+8*10]
 	mov [r10],r11
 	mov qword [rsp+8*8],r8
@@ -680,7 +680,7 @@ L_667:
 	mov qword [gbl+8*10],r11
 	
 L_670:
-	cmp r12,r14
+	cmp r12,r13
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
@@ -688,7 +688,7 @@ L_670:
 	je L_671
 	mov r9,  [gbl+8*7]
 	mov r8,r9
-	lea r10,[r8+r14*8+8H]
+	lea r10,[r8+r13*8+8H]
 	mov r11, [r10]
 	mov qword [rsp+8*16],r8
 	mov r8,r9
@@ -706,7 +706,7 @@ L_670:
 	mov qword [rsp+8*18],r11
 	je L_674
 	mov r8,0
-	mov r13,r8
+	mov r14,r8
 	jmp L_671
 	
 L_674:
@@ -717,16 +717,16 @@ L_674:
 	jmp L_670
 	
 L_671:
-	mov r8,r14
+	mov r8,r13
 	mov r9,1
-	add r14,r9
+	add r13,r9
 	mov qword [rsp+8*24],r8
 	jmp L_667
 	
 L_668:
 	mov r8,  [rsp+8*25]
 	add r8,r8
-	cmp r13, 0
+	cmp r14, 0
 	mov qword [rsp+8*25],r8
 	je L_676
 	jmp L_665
@@ -740,11 +740,11 @@ L_676:
 	
 L_665:
 	mov r8,0
-	mov r14,r8
+	mov r13,r8
 	
 L_677:
 	mov r8,  [gbl+8*5]
-	cmp r14,r8
+	cmp r13,r8
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
@@ -830,19 +830,19 @@ L_684:
 	jmp L_680
 	
 L_681:
-	mov r8,r14
+	mov r8,r13
 	mov r9,1
-	add r14,r9
+	add r13,r9
 	mov qword [rsp+8*51],r8
 	jmp L_677
 	
 L_678:
 	mov r8,0
-	mov r14,r8
+	mov r13,r8
 	
 L_685:
 	mov r8,  [gbl+8*5]
-	cmp r14,r8
+	cmp r13,r8
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
@@ -850,7 +850,7 @@ L_685:
 	je L_686
 	mov r8,  [gbl+8*7]
 	mov r15,r8
-	lea r15,[r15+r14*8+8H]
+	lea r15,[r15+r13*8+8H]
 	mov r15, [r15]
 	mov r9,r15
 	mov r15,r9
@@ -864,9 +864,9 @@ L_685:
 	mov rdi, r15 
 	add rdi, 1 
 	call puts
-	mov r15,r14
+	mov r15,r13
 	mov r8,1
-	add r14,r8
+	add r13,r8
 	jmp L_685
 	
 L_686:

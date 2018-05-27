@@ -649,12 +649,12 @@ main:
 	mov r9,  [rsp+8*3]
 	mov r8,r9
 	mov r10,0
-	mov r14,r10
+	mov r13,r10
 	mov qword [rsp+8*4],r8
 	
 L_1063:
 	mov r8,  [rsp+8*2]
-	cmp r14,r8
+	cmp r13,r8
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
@@ -665,7 +665,7 @@ L_1063:
 	mov     qword [rsp+8*7], rax
 	mov r9,  [rsp+8*4]
 	mov r8,r9
-	lea r10,[r8+r14*8+8H]
+	lea r10,[r8+r13*8+8H]
 	mov r11,  [rsp+8*7]
 	mov [r10],r11
 	mov qword [rsp+8*8],r8
@@ -677,7 +677,7 @@ L_1063:
 	mov r8,r9
 	mov r10,0
 	lea r8,[r9+r10*8+8H]
-	mov [r8],r14
+	mov [r8],r13
 	mov r11,1
 	lea r8,[r9+r11*8+8H]
 	mov r10,0
@@ -711,7 +711,7 @@ L_1066:
 	mov r8,r9
 	mov r10,0
 	lea r8,[r9+r10*8+8H]
-	mov [r8],r14
+	mov [r8],r13
 	mov r11,1
 	lea r8,[r9+r11*8+8H]
 	mov r10,0
@@ -737,7 +737,7 @@ L_1066:
 	mov r8,r9
 	mov r10,0
 	lea r8,[r9+r10*8+8H]
-	mov [r8],r14
+	mov [r8],r13
 	mov r11,1
 	lea r8,[r9+r11*8+8H]
 	mov r10,0
@@ -780,7 +780,7 @@ L_1069:
 	mov r8,r9
 	mov r10,0
 	lea r8,[r9+r10*8+8H]
-	mov [r8],r14
+	mov [r8],r13
 	mov r11,1
 	lea r8,[r9+r11*8+8H]
 	mov r10,0
@@ -800,12 +800,12 @@ L_1069:
 	mov     rsi, [rsp+8*26]
 	mov     rdi, [rsp+8*4]
 	call    multiAddress
-	mov  r13, rax
-	mov r15,r14
+	mov  r14, rax
+	mov r15,r13
 	xor r15,r12
 	mov r8,  [rsp+8*24]
 	xor r15,r8
-	mov [r13],r15
+	mov [r14],r15
 	mov r9,r8
 	mov r10,1
 	add r8,r10
@@ -821,9 +821,9 @@ L_1070:
 	jmp L_1066
 	
 L_1067:
-	mov r8,r14
+	mov r8,r13
 	mov r9,1
-	add r14,r9
+	add r13,r9
 	mov qword [rsp+8*32],r8
 	jmp L_1063
 	
