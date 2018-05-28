@@ -384,6 +384,10 @@ public class IRTranslator {
 
     StringBuffer saveContext(){
         StringBuffer text=new StringBuffer();
+        text.append(new StringBuffer("push r15"+"\n\t"));
+        text.append(new StringBuffer("push r14"+"\n\t"));
+        text.append(new StringBuffer("push r13"+"\n\t"));
+        text.append(new StringBuffer("push r12"+"\n\t"));
         text.append(new StringBuffer("push r11"+"\n\t"));
         text.append(new StringBuffer("push r10"+"\n\t"));
         text.append(new StringBuffer("push r9"+"\n\t"));
@@ -397,6 +401,10 @@ public class IRTranslator {
         text.append(new StringBuffer("pop r9"+"\n\t"));
         text.append(new StringBuffer("pop r10"+"\n\t"));
         text.append(new StringBuffer("pop r11"+"\n\t"));
+        text.append(new StringBuffer("pop r12"+"\n\t"));
+        text.append(new StringBuffer("pop r13"+"\n\t"));
+        text.append(new StringBuffer("pop r14"+"\n\t"));
+        text.append(new StringBuffer("pop r15"+"\n\t"));
         return text;
     }
     void run(String fileName)throws Exception{
@@ -459,6 +467,7 @@ public class IRTranslator {
         head.append("\t extern    strlen\n");
         head.append("\t extern    strcmp\n");
         head.append("\t extern    memset\n");
+        head.append("\t extern    memcpy\n");
         head.append("\t extern    sprintf\n");
         text.append("\t section   .text\n");
         bss.append("\t section   .bss\n");
@@ -477,7 +486,14 @@ public class IRTranslator {
         bss.append("arg:\n" +
                 "        resb    1024\n");
         bss.append("\n" +
-                "trsp:         resb   1024");
+                "trsp:         resb   1024\n");
+        bss.append("s.1809:\n" +
+                "        resb    1\n" +
+                "\n" +
+                "ML_31:\n" +
+                "        resb    319\n");
+        bss.append("mem.1758:\n" +
+                "        resb    536870912");
 
         data.append(new StringBuffer("\nformatln:\n\t"));
         data.append(new StringBuffer("db  \"%s\", 10, 0\n\t"));
@@ -487,7 +503,7 @@ public class IRTranslator {
         data.append(new StringBuffer("db 25H, 6CH, 64H, 00H\n\t"));
         data.append(new StringBuffer("\nGS_32:\n\t"));
         data.append(new StringBuffer("db 25H, 73H, 00H\n\t"));
-        data.append(new StringBuffer("L_031:\n" +
+        data.append(new StringBuffer("ML_32:\n" +
                 "        db 25H, 6CH, 64H, 00H\n"));
 
         for(Map.Entry<Variable,String> entry : constStringPool.entrySet()){
@@ -496,6 +512,7 @@ public class IRTranslator {
             //variableMap.put(entry.getKey(),allocateString(string.substring(1,string.length()-1)));
         }
 
+        text.append(ConstantPool.myallocFunction).append("\n");
         text.append(ConstantPool.toStringFunction).append("\n");
         text.append(ConstantPool.mallocArrayFunction).append("\n");
         text.append(ConstantPool.concatFunction).append("\n");
@@ -730,9 +747,18 @@ public class IRTranslator {
                     kickAll();
 
                     ArrayList<String>registers=new ArrayList<String >();
-                    if(saveRegister.containsKey(cur.line))
-                    for(int reg : saveRegister.get(cur.line))
-                        registers.add(regName.get(16-reg));
+                    //if(saveRegister.containsKey(cur.line))
+                    //for(int reg : saveRegister.get(cur.line))
+                    //    registers.add(regName.get(16-reg));
+
+                    registers.add("r8");
+                    registers.add("r9");
+                    registers.add("r10");
+                    registers.add("r11");
+                    registers.add("r12");
+                    registers.add("r13");
+                    registers.add("r14");
+                    registers.add("r15");
 
                     for(String reg : registers)
                         text.append(new StringBuffer("push "+reg+"\n\t"));
@@ -1023,11 +1049,11 @@ public class IRTranslator {
                     text.append(new StringBuffer("sub    rsp, "+Integer.toString(variableIndex.size()*8+64)+"\n\t")); //TODO
 
                     if(name.equals("main")){
-                        text.append(new StringBuffer("mov     rax, 536870912\n" +
+                        text.append(new StringBuffer("mov     rax, 936870912\n" +
                                 "        cdqe\n" +
                                 "        mov     rdi, rax\n" +
                                 "        call    malloc\n" +
-                                "        mov     edx, dword 536870912\n" +
+                                "        mov     edx, dword 936870912\n" +
                                 "        movsxd  rdx, edx\n" +
                                 "        sub     rdx, "+Integer.toString(variableIndex.size()*8+2048)+"\n" +
                                 "        add     rax, rdx\n" +
@@ -1088,6 +1114,9 @@ public class IRTranslator {
 
 
         result=head.append("\n").append(text).append("\n").append(bss).append("\n").append(data).append("\n");
+        result.append("SECTION .data.rel.local align=8\n" +
+                "\n" +
+                "cur.1759: dq mem.1758\n");
         PrintWriter output = new PrintWriter(new FileOutputStream(new File(fileName)));
         output.println(result.toString());
         output.close();

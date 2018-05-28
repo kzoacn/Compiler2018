@@ -5,6 +5,23 @@ import java.io.FileOutputStream;
 import java.io.PrintWriter;
 
 public class ConstantPool {
+    static final StringBuffer myallocFunction = new StringBuffer("myalloc:\n" +
+            "        push    rbp\n" +
+            "        mov     rbp, rsp\n" +
+            "        mov     qword [rbp-18H], rdi\n" +
+            "        mov     rax, qword [rel cur.1759]\n" +
+            "        mov     qword [rbp-8H], rax\n" +
+            "        mov     rax, qword [rbp-18H]\n" +
+            "        add     rax, 8\n" +
+            "        and     rax, 0FFFFFFFFFFFFFFF8H\n" +
+            "        mov     qword [rbp-18H], rax\n" +
+            "        mov     rdx, qword [rel cur.1759]\n" +
+            "        mov     rax, qword [rbp-18H]\n" +
+            "        add     rax, rdx\n" +
+            "        mov     qword [rel cur.1759], rax\n" +
+            "        mov     rax, qword [rbp-8H]\n" +
+            "        pop     rbp\n" +
+            "        ret\n");
     static final StringBuffer multiAddressFunction = new StringBuffer("multiAddress:\n" +
             "        push    rbp\n" +
             "        mov     rbp, rsp\n" +
@@ -70,7 +87,7 @@ public class ConstantPool {
             "        mov     rax, qword [rbp-40H]\n" +
             "        mov     rax, qword [rax]\n" +
             "        cmp     rdx, rax\n" +
-            "        jnz     L_009\n" +
+            "        jnz     ML_09\n" +
             "        mov     eax, dword [rbp-34H]\n" +
             "        movsxd  rdx, eax\n" +
             "        mov     rax, qword [rbp-40H]\n" +
@@ -80,9 +97,9 @@ public class ConstantPool {
             "        mov     rax, qword [rax]\n" +
             "        mov     rdi, rax\n" +
             "        call    mallocArray\n" +
-            "        jmp     L_012\n" +
+            "        jmp     ML_12\n" +
             "\n" +
-            "L_009:  mov     eax, dword [rbp-34H]\n" +
+            "ML_09:  mov     eax, dword [rbp-34H]\n" +
             "        movsxd  rdx, eax\n" +
             "        mov     rax, qword [rbp-40H]\n" +
             "        mov     rsi, rdx\n" +
@@ -95,9 +112,9 @@ public class ConstantPool {
             "        call    mallocArray\n" +
             "        mov     qword [rbp-28H], rax\n" +
             "        mov     dword [rbp-14H], 0\n" +
-            "        jmp     L_011\n" +
+            "        jmp     ML_11\n" +
             "\n" +
-            "L_010:  mov     eax, dword [rbp-14H]\n" +
+            "ML_10:  mov     eax, dword [rbp-14H]\n" +
             "        movsxd  rdx, eax\n" +
             "        mov     rax, qword [rbp-28H]\n" +
             "        mov     rsi, rdx\n" +
@@ -112,12 +129,12 @@ public class ConstantPool {
             "        call    _multiArray\n" +
             "        mov     qword [rbx], rax\n" +
             "        add     dword [rbp-14H], 1\n" +
-            "L_011:  mov     eax, dword [rbp-14H]\n" +
+            "ML_11:  mov     eax, dword [rbp-14H]\n" +
             "        cdqe\n" +
             "        cmp     rax, qword [rbp-20H]\n" +
-            "        jl      L_010\n" +
+            "        jl      ML_10\n" +
             "        mov     rax, qword [rbp-28H]\n" +
-            "L_012:  add     rsp, 56\n" +
+            "ML_12:  add     rsp, 56\n" +
             "        pop     rbx\n" +
             "        pop     rbp\n" +
             "        ret\n" +
@@ -155,7 +172,7 @@ public class ConstantPool {
             "        add     eax, 2\n" +
             "        cdqe\n" +
             "        mov     rdi, rax\n" +
-            "        call    malloc\n" +
+            "        call    myalloc\n" +
             "        mov     qword [rbp-18H], rax\n" +
             "        mov     rax, qword [rbp-28H]\n" +
             "        movzx   edx, byte [rax]\n" +
@@ -167,9 +184,9 @@ public class ConstantPool {
             "        mov     qword [rbp-8H], 0\n" +
             "        mov     qword [rbp-10H], 0\n" +
             "        mov     qword [rbp-8H], 0\n" +
-            "        jmp     DD2\n" +
+            "        jmp     ML_02\n" +
             "\n" +
-            "DD1:  add     qword [rbp-10H], 1\n" +
+            "ML_01:  add     qword [rbp-10H], 1\n" +
             "        mov     rdx, qword [rbp-10H]\n" +
             "        mov     rax, qword [rbp-18H]\n" +
             "        add     rdx, rax\n" +
@@ -180,15 +197,15 @@ public class ConstantPool {
             "        movzx   eax, byte [rax]\n" +
             "        mov     byte [rdx], al\n" +
             "        add     qword [rbp-8H], 1\n" +
-            "DD2:  mov     rax, qword [rbp-28H]\n" +
+            "ML_02:  mov     rax, qword [rbp-28H]\n" +
             "        movzx   eax, byte [rax]\n" +
             "        movzx   eax, al\n" +
             "        cmp     rax, qword [rbp-8H]\n" +
-            "        jg      DD1\n" +
+            "        jg      ML_01\n" +
             "        mov     qword [rbp-8H], 0\n" +
-            "        jmp     DD4\n" +
+            "        jmp     ML_04\n" +
             "\n" +
-            "DD3:  add     qword [rbp-10H], 1\n" +
+            "ML_03:  add     qword [rbp-10H], 1\n" +
             "        mov     rdx, qword [rbp-10H]\n" +
             "        mov     rax, qword [rbp-18H]\n" +
             "        add     rdx, rax\n" +
@@ -199,11 +216,11 @@ public class ConstantPool {
             "        movzx   eax, byte [rax]\n" +
             "        mov     byte [rdx], al\n" +
             "        add     qword [rbp-8H], 1\n" +
-            "DD4:  mov     rax, qword [rbp-30H]\n" +
+            "ML_04:  mov     rax, qword [rbp-30H]\n" +
             "        movzx   eax, byte [rax]\n" +
             "        movzx   eax, al\n" +
             "        cmp     rax, qword [rbp-8H]\n" +
-            "        jg      DD3\n" +
+            "        jg      ML_03\n" +
             "        add     qword [rbp-10H], 1\n" +
             "        mov     rdx, qword [rbp-10H]\n" +
             "        mov     rax, qword [rbp-18H]\n" +
@@ -214,39 +231,126 @@ public class ConstantPool {
             "        ret\n");
 
     static final StringBuffer mallocArrayFunction=new StringBuffer("mallocArray:\n" +
-            "        push    rbx\n" +
-            "        mov     rbx, rdi\n" +
-            "        lea     rdi, [rdi*8+8H]\n" +
-            "        mov     esi, 1\n" +
-            "        call    calloc\n" +
-            "        mov     qword [rax], rbx\n" +
-            "        pop     rbx\n" +
+            "        push    rbp\n" +
+            "        mov     rbp, rsp\n" +
+            "        sub     rsp, 32\n" +
+            "        mov     qword [rbp-18H], rdi\n" +
+            "        mov     rax, qword [rbp-18H]\n" +
+            "        add     rax, 1\n" +
+            "        shl     rax, 3\n" +
+            "        mov     rdi, rax\n" +
+            "        call    myalloc\n" +
+            "        mov     qword [rbp-8H], rax\n" +
+            "        mov     rax, qword [rbp-18H]\n" +
+            "        add     rax, 1\n" +
+            "        shl     rax, 3\n" +
+            "        mov     rdx, rax\n" +
+            "        mov     rax, qword [rbp-8H]\n" +
+            "        mov     esi, 0\n" +
+            "        mov     rdi, rax\n" +
+            "        call    memset\n" +
+            "        mov     rax, qword [rbp-8H]\n" +
+            "        mov     rdx, qword [rbp-18H]\n" +
+            "        mov     qword [rax], rdx\n" +
+            "        mov     rax, qword [rbp-8H]\n" +
+            "        leave\n" +
             "        ret\n");
 
     static final StringBuffer toStringFunction=new StringBuffer("toString:\n" +
             "        push    rbp\n" +
             "        mov     rbp, rsp\n" +
-            "        sub     rsp, 32\n" +
-            "        mov     qword [rbp-18H], rdi\n" +
-            "        mov     edi, 256\n" +
-            "        call    malloc\n" +
-            "        mov     qword [rbp-8H], rax\n" +
+            "        sub     rsp, 56\n" +
+            "        mov     qword [rbp-38H], rdi\n" +
+            "        mov     qword [rbp-8H], 0\n" +
+            "        mov     qword [rbp-10H], 1\n" +
+            "        cmp     qword [rbp-38H], 0\n" +
+            "        jnz     TS_013\n" +
+            "        mov     qword [rbp-8H], 1\n" +
+            "TS_013:  cmp     qword [rbp-38H], 0\n" +
+            "        jns     TS_014\n" +
+            "        neg     qword [rbp-38H]\n" +
+            "        mov     qword [rbp-10H], -1\n" +
+            "        add     qword [rbp-8H], 1\n" +
+            "TS_014:  mov     rax, qword [rbp-38H]\n" +
+            "        mov     qword [rbp-18H], rax\n" +
+            "        jmp     TS_016\n" +
+            "\n" +
+            "TS_015:  add     qword [rbp-8H], 1\n" +
+            "        mov     rcx, qword [rbp-18H]\n" +
+            "        mov     rdx, qword 6666666666666667H\n" +
+            "        mov     rax, rcx\n" +
+            "        imul    rdx\n" +
+            "        sar     rdx, 2\n" +
+            "        mov     rax, rcx\n" +
+            "        sar     rax, 63\n" +
+            "        sub     rdx, rax\n" +
+            "        mov     rax, rdx\n" +
+            "        mov     qword [rbp-18H], rax\n" +
+            "TS_016:  cmp     qword [rbp-18H], 0\n" +
+            "        jg      TS_015\n" +
             "        mov     rax, qword [rbp-8H]\n" +
-            "        lea     rcx, [rax+1H]\n" +
-            "        mov     rax, qword [rbp-18H]\n" +
-            "        mov     rdx, rax\n" +
-            "        lea     rsi, [rel L_031]\n" +
-            "        mov     rdi, rcx\n" +
-            "        mov     eax, 0\n" +
-            "        call    sprintf\n" +
-            "        mov     rax, qword [rbp-8H]\n" +
-            "        add     rax, 1\n" +
+            "        add     rax, 2\n" +
             "        mov     rdi, rax\n" +
-            "        call    strlen\n" +
+            "        call    myalloc\n" +
+            "        mov     qword [rbp-28H], rax\n" +
+            "        mov     rax, qword [rbp-8H]\n" +
+            "        lea     rdx, [rax+1H]\n" +
+            "        mov     rax, qword [rbp-28H]\n" +
+            "        add     rax, rdx\n" +
+            "        mov     byte [rax], 0\n" +
+            "        mov     rax, qword [rbp-28H]\n" +
+            "        mov     qword [rbp-20H], rax\n" +
+            "        mov     rax, qword [rbp-8H]\n" +
             "        mov     edx, eax\n" +
-            "        mov     rax, qword [rbp-8H]\n" +
+            "        mov     rax, qword [rbp-20H]\n" +
             "        mov     byte [rax], dl\n" +
-            "        mov     rax, qword [rbp-8H]\n" +
+            "        add     qword [rbp-20H], 1\n" +
+            "        cmp     qword [rbp-10H], -1\n" +
+            "        jnz     TS_017\n" +
+            "        mov     rax, qword [rbp-20H]\n" +
+            "        mov     byte [rax], 45\n" +
+            "TS_017:  mov     rdx, qword [rbp-8H]\n" +
+            "        mov     rax, qword [rbp-28H]\n" +
+            "        add     rax, rdx\n" +
+            "        mov     qword [rbp-20H], rax\n" +
+            "        cmp     qword [rbp-38H], 0\n" +
+            "        jnz     TS_019\n" +
+            "        mov     rax, qword [rbp-20H]\n" +
+            "        mov     byte [rax], 48\n" +
+            "        jmp     TS_019\n" +
+            "\n" +
+            "TS_018:  mov     rcx, qword [rbp-38H]\n" +
+            "        mov     rdx, qword 6666666666666667H\n" +
+            "        mov     rax, rcx\n" +
+            "        imul    rdx\n" +
+            "        sar     rdx, 2\n" +
+            "        mov     rax, rcx\n" +
+            "        sar     rax, 63\n" +
+            "        sub     rdx, rax\n" +
+            "        mov     rax, rdx\n" +
+            "        shl     rax, 2\n" +
+            "        add     rax, rdx\n" +
+            "        add     rax, rax\n" +
+            "        sub     rcx, rax\n" +
+            "        mov     rdx, rcx\n" +
+            "        mov     eax, edx\n" +
+            "        lea     edx, [rax+30H]\n" +
+            "        mov     rax, qword [rbp-20H]\n" +
+            "        mov     byte [rax], dl\n" +
+            "        sub     qword [rbp-20H], 1\n" +
+            "        mov     rcx, qword [rbp-38H]\n" +
+            "        mov     rdx, qword 6666666666666667H\n" +
+            "        mov     rax, rcx\n" +
+            "        imul    rdx\n" +
+            "        sar     rdx, 2\n" +
+            "        mov     rax, rcx\n" +
+            "        sar     rax, 63\n" +
+            "        sub     rdx, rax\n" +
+            "        mov     rax, rdx\n" +
+            "        mov     qword [rbp-38H], rax\n" +
+            "TS_019:  cmp     qword [rbp-38H], 0\n" +
+            "        jg      TS_018\n" +
+            "        mov     rax, qword [rbp-28H]\n" +
             "        leave\n" +
             "        ret\n");
 

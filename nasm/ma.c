@@ -1,13 +1,22 @@
 
+void* myalloc(long size){
+	static char mem[512<<20];
+	static char *cur=mem;
+	char *ans=cur;
+	size=((size+8)>>3)<<3;
+	cur+=size;
+	return ans;
+}
+
 long* mallocArray(long size){
-    long* s=malloc((size+1)<<3);
+    long* s=myalloc((size+1)<<3);
     memset(s,0,(size+1)<<3);
     *s=size;
     return s;
 }
 
 unsigned char* concat(unsigned char *s1,unsigned char *s2){
-    unsigned char *s=malloc((unsigned char)*s1 + (unsigned char)*s2 +2 );
+    unsigned char *s=myalloc((unsigned char)*s1 + (unsigned char)*s2 +2 );
     *s=(unsigned char)*s1 + (unsigned char)*s2;
     long i=0,j=0;
     for(i=0;i< *s1 ;i++)
@@ -57,13 +66,39 @@ long* multiArray(long* a){
 unsigned char* toString(long x){
 
 
-    char *s=malloc(256);
-	sprintf(s+1,"%ld",x);	
-	*s=strlen(s+1);
-	
+    long len=0,flag=1;
+    if(x==0)
+        len=1;
+    if(x<0){
+        x=-x;
+        flag=-1;
+        len++;
+    }
+    long y=x;
+    while(y>0){
+        len++;
+        y/=10;
+    }
+    unsigned char *s=myalloc(len+2);
+    *(s+len+1)=0;
+    unsigned char *c=s;
+    *c=(unsigned char)len&255;
+    c++;
+    
+    if(flag==-1){
+        *c='-';
+    }
+    c=s+len;
+    if(x==0)
+        *c='0';
+   
+    while(x>0){
+        *c=(unsigned char)(x%10+'0');
+        c--;
+        x/=10;
+    }
     return s;
 }
-
 long getInt(){
     long x;
     scanf("%ld",&x);
@@ -73,7 +108,7 @@ char* getString(){
     static char buff[256];
     scanf("%s",buff);
     long len=strlen(buff),i;
-    char *s=malloc(len+2);
+    char *s=myalloc(len+2);
     *s=len;
     for(i=1;i<=len;i++)
         *(s+i)=buff[i-1];
@@ -84,7 +119,7 @@ char* getString(){
 
 char* substring(long left,long right){
     unsigned char *sthis=(unsigned char*)0xffffff;
-    char *t=malloc(right-left+1+2);
+    char *t=myalloc(right-left+1+2);
     *t=right-left+1;
     long i,j=0;
     for(i=left;i<=right;i++)
