@@ -637,7 +637,11 @@ main:
 	mov     rdi, 100
 	push r11
 	push r10
+	push r9
+	push r8
 	call    mallocArray
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword [rsp+8*2], rax
@@ -708,7 +712,11 @@ L_1819:
 	mov     rdi, 3
 	push r11
 	push r10
+	push r9
+	push r8
 	call    mallocArray
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword [rsp+8*28], rax
@@ -721,7 +729,11 @@ L_1819:
 	mov     rdi, 2
 	push r11
 	push r10
+	push r9
+	push r8
 	call    mallocArray
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword [rsp+8*31], rax
@@ -739,7 +751,11 @@ L_1819:
 	mov     rdi,  r12
 	push r11
 	push r10
+	push r9
+	push r8
 	call    multiAddress
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov [rsp+8*33], rax
@@ -748,7 +764,11 @@ L_1819:
 	mov     rdi, 2
 	push r11
 	push r10
+	push r9
+	push r8
 	call    mallocArray
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword [rsp+8*34], rax
@@ -766,7 +786,11 @@ L_1819:
 	mov     rdi,  r12
 	push r11
 	push r10
+	push r9
+	push r8
 	call    multiAddress
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov [rsp+8*36], rax
@@ -775,7 +799,11 @@ L_1819:
 	mov     rdi, 2
 	push r11
 	push r10
+	push r9
+	push r8
 	call    mallocArray
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword [rsp+8*37], rax
@@ -793,7 +821,11 @@ L_1819:
 	mov     rdi,  r12
 	push r11
 	push r10
+	push r9
+	push r8
 	call    multiAddress
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov [rsp+8*39], rax
@@ -836,7 +868,11 @@ L_1836:
 	mov     rdi, 1
 	push r11
 	push r10
+	push r9
+	push r8
 	call    mallocArray
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword  r14, rax
@@ -849,7 +885,11 @@ L_1836:
 	mov     rdi,  r13
 	push r11
 	push r10
+	push r9
+	push r8
 	call    multiAddress
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov  r15, rax
@@ -860,7 +900,11 @@ L_1836:
 	mov     rdi,  r15
 	push r11
 	push r10
+	push r9
+	push r8
 	call    toString
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword r15, rax
@@ -870,7 +914,11 @@ L_1836:
 	add rdi, 1 
 	push r11
 	push r10
+	push r9
+	push r8
 	call puts
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov rbx,0

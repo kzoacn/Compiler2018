@@ -661,7 +661,11 @@ L_922:
 	add rdi, 1 
 	push r11
 	push r10
+	push r9
+	push r8
 	call puts
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	jmp L_924
@@ -675,7 +679,11 @@ L_923:
 	add rdi, 1 
 	push r11
 	push r10
+	push r9
+	push r8
 	call puts
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	
@@ -712,7 +720,11 @@ L_926:
 	add rdi, 1 
 	push r11
 	push r10
+	push r9
+	push r8
 	call puts
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	jmp L_928
@@ -726,7 +738,11 @@ L_927:
 	add rdi, 1 
 	push r11
 	push r10
+	push r9
+	push r8
 	call puts
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	
@@ -779,7 +795,11 @@ L_932:
 	add rdi, 1 
 	push r11
 	push r10
+	push r9
+	push r8
 	call puts
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	jmp L_934
@@ -793,7 +813,11 @@ L_933:
 	add rdi, 1 
 	push r11
 	push r10
+	push r9
+	push r8
 	call puts
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	

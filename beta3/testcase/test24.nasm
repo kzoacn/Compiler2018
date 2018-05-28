@@ -646,16 +646,18 @@ main:
 	mov     rdi, 2801
 	push r11
 	push r10
+	push r9
+	push r8
 	call    mallocArray
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword [rsp+8*7], rax
-	mov rdx,  [rsp+8*7]
-	mov rbx,rdx
+	mov rbx,  [rsp+8*7]
+	mov r10,rbx
 	mov rdx,0
-	mov rax,rdx
-	mov qword [rsp+8*8],rbx
-	mov qword [rsp+8*9],rax
+	mov r9,rdx
 	
 L_939:
 	mov rbx,r14
@@ -677,8 +679,7 @@ L_939:
 	mov rbx,r14
 	mov rdx,1
 	add r14,rdx
-	mov rdx,  [rsp+8*8]
-	mov rax,rdx
+	mov rax,r10
 	lea rdx,[rax+rbx*8+8H]
 	mov qword [rsp+8*13],rbx
 	mov rbx,  [rsp+8*12]
@@ -695,14 +696,14 @@ L_942:
 	mov rdx,2
 	mov rax,r13
 	imul rax,rdx
-	mov rbx,rax
-	mov rdx,0
-	cmp rbx,rdx
-	mov rax, 0
-	sete al
-	cmp rax, 0
-	mov qword [rsp+8*9],rbx
-	mov qword [rsp+8*17],rax
+	mov r9,rax
+	mov rbx,0
+	cmp r9,rbx
+	mov rdx, 0
+	sete dl
+	cmp rdx, 0
+	mov qword [rsp+8*17],rdx
+	mov qword [rsp+8*16],rax
 	je L_946
 	jmp L_943
 	
@@ -710,40 +711,34 @@ L_946:
 	mov r14,r13
 	
 L_947:
-	mov rdx,  [rsp+8*8]
-	mov rbx,rdx
-	lea rax,[rbx+r14*8+8H]
+	mov rbx,r10
+	lea rdx,[rbx+r14*8+8H]
+	mov rax, [rdx]
 	mov qword [rsp+8*18],rbx
-	mov rbx, [rax]
-	mov qword [rsp+8*19],rax
-	mov rax,rbx
-	imul rax,r15
-	add rax,r12
-	mov r12,rax
-	mov qword [rsp+8*20],rbx
-	mov rbx,  [rsp+8*9]
-	mov rax,1
-	sub rbx,rax
-	mov qword [rsp+8*9],rbx
+	mov rbx,rax
+	imul rbx,r15
+	add rbx,r12
+	mov r12,rbx
+	mov rbx,1
+	sub r9,rbx
+	mov qword [rsp+8*19],rdx
+	mov qword [rsp+8*20],rax
 	xor rdx, rdx
 	mov rax,  r12
-	mov rbx, [rsp+8*9]
+	mov rbx,  r9
 	cdq
 	idiv rbx
 	mov [rsp+8*22], rdx
-	mov rdx,  [rsp+8*8]
-	mov rbx,rdx
-	lea rax,[rbx+r14*8+8H]
+	mov rbx,r10
+	lea rdx,[rbx+r14*8+8H]
+	mov rax,  [rsp+8*22]
+	mov [rdx],rax
 	mov qword [rsp+8*23],rbx
-	mov rbx,  [rsp+8*22]
-	mov [rax],rbx
-	mov rdx,  [rsp+8*9]
-	mov rbx,rdx
-	mov qword [rsp+8*24],rax
-	mov rax,1
-	sub rdx,rax
+	mov rbx,r9
+	mov qword [rsp+8*24],rdx
+	mov rdx,1
+	sub r9,rdx
 	mov qword [rsp+8*25],rbx
-	mov qword [rsp+8*9],rdx
 	xor rdx, rdx
 	mov rax,  r12
 	mov rbx, [rsp+8*25]
@@ -791,7 +786,11 @@ L_948:
 	mov     rdi, [rsp+8*32]
 	push r11
 	push r10
+	push r9
+	push r8
 	call    toString
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword[rsp+8*33], rax
@@ -805,7 +804,11 @@ L_948:
 	xor rax, rax
 	push r11
 	push r10
+	push r9
+	push r8
 	call printf
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	xor rdx, rdx
@@ -827,7 +830,11 @@ L_943:
 	add rdi, 1 
 	push r11
 	push r10
+	push r9
+	push r8
 	call puts
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov rbx,0

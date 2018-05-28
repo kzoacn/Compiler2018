@@ -636,7 +636,11 @@ main:
 	mov     rdi, 5
 	push r11
 	push r10
+	push r9
+	push r8
 	call    mallocArray
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword [rsp+8*2], rax
@@ -656,7 +660,11 @@ L_1207:
 	mov     rdi, 3
 	push r11
 	push r10
+	push r9
+	push r8
 	call    mallocArray
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword [rsp+8*6], rax
@@ -680,7 +688,11 @@ L_1210:
 	mov     rdi, 2
 	push r11
 	push r10
+	push r9
+	push r8
 	call    mallocArray
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword [rsp+8*11], rax
@@ -746,7 +758,11 @@ L_1210:
 	mov     rdi, [rsp+8*26]
 	push r11
 	push r10
+	push r9
+	push r8
 	call    toString
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword[rsp+8*27], rax
@@ -758,7 +774,11 @@ L_1210:
 	add rdi, 1 
 	push r11
 	push r10
+	push r9
+	push r8
 	call puts
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov rbx,r13

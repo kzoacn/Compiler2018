@@ -727,7 +727,11 @@ L_1232:
 	mov     rdi, [rsp+8*23]
 	push r11
 	push r10
+	push r9
+	push r8
 	call    toString
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword[rsp+8*24], rax
@@ -735,7 +739,11 @@ L_1232:
 	mov     rdi, [rsp+8*24]
 	push r11
 	push r10
+	push r9
+	push r8
 	call    concat
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov [rsp+8*25], rax
@@ -745,7 +753,11 @@ L_1232:
 	mov     rdi, [rsp+8*26]
 	push r11
 	push r10
+	push r9
+	push r8
 	call    toString
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword[rsp+8*27], rax
@@ -753,7 +765,11 @@ L_1232:
 	mov     rdi, [rsp+8*25]
 	push r11
 	push r10
+	push r9
+	push r8
 	call    concat
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov [rsp+8*25], rax
@@ -765,7 +781,11 @@ L_1232:
 	add rdi, 1 
 	push r11
 	push r10
+	push r9
+	push r8
 	call puts
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	
@@ -814,7 +834,11 @@ L_1227:
 	mov     rdi, [rsp+8*36]
 	push r11
 	push r10
+	push r9
+	push r8
 	call    toString
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword[rsp+8*37], rax
@@ -822,7 +846,11 @@ L_1227:
 	mov     rdi, t114
 	push r11
 	push r10
+	push r9
+	push r8
 	call    concat
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov [rsp+8*38], rax
@@ -834,7 +862,11 @@ L_1227:
 	add rdi, 1 
 	push r11
 	push r10
+	push r9
+	push r8
 	call puts
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov rbx,0
@@ -853,7 +885,11 @@ global_init:
 	mov     rdi, 15001
 	push r11
 	push r10
+	push r9
+	push r8
 	call    mallocArray
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword [gbl+8*40], rax

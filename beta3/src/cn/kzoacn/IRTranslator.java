@@ -386,15 +386,15 @@ public class IRTranslator {
         StringBuffer text=new StringBuffer();
         text.append(new StringBuffer("push r11"+"\n\t"));
         text.append(new StringBuffer("push r10"+"\n\t"));
-        //text.append(new StringBuffer("push r9"+"\n\t"));
-        //text.append(new StringBuffer("push r8"+"\n\t"));
+        text.append(new StringBuffer("push r9"+"\n\t"));
+        text.append(new StringBuffer("push r8"+"\n\t"));
         return text;
     }
     StringBuffer resumeContext(){
         StringBuffer text=new StringBuffer();
 
-        //text.append(new StringBuffer("pop r8"+"\n\t"));
-        //text.append(new StringBuffer("pop r9"+"\n\t"));
+        text.append(new StringBuffer("pop r8"+"\n\t"));
+        text.append(new StringBuffer("pop r9"+"\n\t"));
         text.append(new StringBuffer("pop r10"+"\n\t"));
         text.append(new StringBuffer("pop r11"+"\n\t"));
         return text;

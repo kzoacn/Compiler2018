@@ -664,7 +664,11 @@ main:
 	add rdi, 1 
 	push r11
 	push r10
+	push r9
+	push r8
 	call puts
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov rbx,0
@@ -687,7 +691,11 @@ L_1762:
 	mov     rdi, rdi
 	push r11
 	push r10
+	push r9
+	push r8
 	call    substring
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov  r15, rax
@@ -703,7 +711,11 @@ L_1762:
 	add rdi, 1 
 	push r11
 	push r10
+	push r9
+	push r8
 	call puts
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov rbx,0
@@ -761,7 +773,11 @@ L_1752:
 	mov     rdi, rdi
 	push r11
 	push r10
+	push r9
+	push r8
 	call    substring
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov [rsp+8*29], rax
@@ -790,7 +806,11 @@ L_1752:
 	mov     rdi, rdi
 	push r11
 	push r10
+	push r9
+	push r8
 	call    substring
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov [rsp+8*34], rax
@@ -806,7 +826,11 @@ L_1752:
 	mov rsi,  r15
 	push r11
 	push r10
+	push r9
+	push r8
 	call    strls
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov qword [rsp+8*37], rax
@@ -817,7 +841,11 @@ L_1752:
 	mov     rdi,  r12
 	push r11
 	push r10
+	push r9
+	push r8
 	call    concat
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov [rsp+8*38], rax
@@ -831,7 +859,11 @@ L_1753:
 	mov rsi,  r15
 	push r11
 	push r10
+	push r9
+	push r8
 	call    streq
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov qword [rsp+8*39], rax
@@ -870,7 +902,11 @@ L_1753:
 	mov     rdi,  r12
 	push r11
 	push r10
+	push r9
+	push r8
 	call    concat
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov [rsp+8*47], rax
@@ -884,7 +920,11 @@ L_1758:
 	mov     rdi,  r15
 	push r11
 	push r10
+	push r9
+	push r8
 	call    concat
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov [rsp+8*48], rax
@@ -898,7 +938,11 @@ L_1755:
 	mov rsi,  r15
 	push r11
 	push r10
+	push r9
+	push r8
 	call    strgt
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov qword [rsp+8*49], rax
@@ -909,7 +953,11 @@ L_1755:
 	mov     rdi,  r15
 	push r11
 	push r10
+	push r9
+	push r8
 	call    concat
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov [rsp+8*50], rax
@@ -927,7 +975,11 @@ L_1760:
 	add rdi, 1 
 	push r11
 	push r10
+	push r9
+	push r8
 	call puts
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov rbx,0

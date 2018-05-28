@@ -634,48 +634,56 @@ main:
 	call global_init
 	pop r15
 	mov r15 , rax
-	mov rdx,5
-	mov rbx,rdx
-	mov qword [rsp+8*2],rbx
-	mov     rdi, [rsp+8*2]
+	mov rbx,5
+	mov r10,rbx
+	mov     rdi,  r10
 	push r11
 	push r10
+	push r9
+	push r8
 	call    mallocArray
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword [rsp+8*3], rax
-	mov rdx,  [rsp+8*3]
-	mov rbx,rdx
-	mov rax,0
-	mov r13,rax
-	mov qword [rsp+8*4],rbx
+	mov rbx,  [rsp+8*3]
+	mov r9,rbx
+	mov rdx,0
+	mov r13,rdx
 	
 L_966:
-	mov rbx,  [rsp+8*2]
-	cmp r13,rbx
-	mov rdx, 0
-	setl dl
-	cmp rdx, 0
-	mov qword [rsp+8*6],rdx
+	cmp r13,r10
+	mov rbx, 0
+	setl bl
+	cmp rbx, 0
+	mov qword [rsp+8*6],rbx
 	je L_967
 	mov     rdi, 1
 	push r11
 	push r10
+	push r9
+	push r8
 	call    mallocArray
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword [rsp+8*7], rax
-	mov rdx,  [rsp+8*4]
-	mov rbx,rdx
-	lea rax,[rbx+r13*8+8H]
+	mov rbx,r9
+	lea rdx,[rbx+r13*8+8H]
+	mov rax,  [rsp+8*7]
+	mov [rdx],rax
 	mov qword [rsp+8*8],rbx
-	mov rbx,  [rsp+8*7]
-	mov [rax],rbx
-	mov qword [rsp+8*9],rax
+	mov qword [rsp+8*9],rdx
 	mov     rdi, 2
 	push r11
 	push r10
+	push r9
+	push r8
 	call    mallocArray
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword [rsp+8*10], rax
@@ -690,17 +698,25 @@ L_966:
 	mov [rbx],rax
 	mov qword [rsp+8*11],rbx
 	mov     rsi, [rsp+8*10]
-	mov     rdi, [rsp+8*4]
+	mov     rdi,  r9
 	push r11
 	push r10
+	push r9
+	push r8
 	call    multiAddress
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov [rsp+8*12], rax
-	mov     rdi, [rsp+8*2]
+	mov     rdi,  r10
 	push r11
 	push r10
+	push r9
+	push r8
 	call    mallocArray
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword [rsp+8*13], rax
@@ -711,17 +727,20 @@ L_966:
 	mov r12,rax
 	
 L_969:
-	mov rbx,  [rsp+8*2]
-	cmp r12,rbx
-	mov rdx, 0
-	setl dl
-	cmp rdx, 0
-	mov qword [rsp+8*15],rdx
+	cmp r12,r10
+	mov rbx, 0
+	setl bl
+	cmp rbx, 0
+	mov qword [rsp+8*15],rbx
 	je L_970
 	mov     rdi, 3
 	push r11
 	push r10
+	push r9
+	push r8
 	call    mallocArray
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword [rsp+8*16], rax
@@ -739,17 +758,25 @@ L_969:
 	mov [rbx],r12
 	mov qword [rsp+8*17],rbx
 	mov     rsi, [rsp+8*16]
-	mov     rdi, [rsp+8*4]
+	mov     rdi,  r9
 	push r11
 	push r10
+	push r9
+	push r8
 	call    multiAddress
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov [rsp+8*18], rax
 	mov     rdi, 1
 	push r11
 	push r10
+	push r9
+	push r8
 	call    mallocArray
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword [rsp+8*19], rax
@@ -759,7 +786,11 @@ L_969:
 	mov     rdi, 4
 	push r11
 	push r10
+	push r9
+	push r8
 	call    mallocArray
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword [rsp+8*20], rax
@@ -781,17 +812,25 @@ L_969:
 	mov [rbx],rax
 	mov qword [rsp+8*21],rbx
 	mov     rsi, [rsp+8*20]
-	mov     rdi, [rsp+8*4]
+	mov     rdi,  r9
 	push r11
 	push r10
+	push r9
+	push r8
 	call    multiAddress
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov [rsp+8*22], rax
-	mov     rdi, [rsp+8*2]
+	mov     rdi,  r10
 	push r11
 	push r10
+	push r9
+	push r8
 	call    mallocArray
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword [rsp+8*23], rax
@@ -802,17 +841,20 @@ L_969:
 	mov r11,rax
 	
 L_972:
-	mov rbx,  [rsp+8*2]
-	cmp r11,rbx
-	mov rdx, 0
-	setl dl
-	cmp rdx, 0
-	mov qword [rsp+8*25],rdx
+	cmp r11,r10
+	mov rbx, 0
+	setl bl
+	cmp rbx, 0
+	mov qword [rsp+8*25],rbx
 	je L_973
 	mov     rdi, 5
 	push r11
 	push r10
+	push r9
+	push r8
 	call    mallocArray
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword [rsp+8*26], rax
@@ -837,10 +879,14 @@ L_972:
 	mov [rbx],r11
 	mov qword [rsp+8*27],rbx
 	mov     rsi, [rsp+8*26]
-	mov     rdi, [rsp+8*4]
+	mov     rdi,  r9
 	push r11
 	push r10
+	push r9
+	push r8
 	call    multiAddress
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov  r14, rax
@@ -872,7 +918,11 @@ L_967:
 	mov     rdi, 5
 	push r11
 	push r10
+	push r9
+	push r8
 	call    mallocArray
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword  r14, rax
@@ -898,10 +948,14 @@ L_967:
 	mov rbx,4
 	mov [r15],rbx
 	mov     rsi,  r14
-	mov     rdi, [rsp+8*4]
+	mov     rdi,  r9
 	push r11
 	push r10
+	push r9
+	push r8
 	call    multiAddress
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov  r15, rax
@@ -911,7 +965,11 @@ L_967:
 	mov     rdi,  r15
 	push r11
 	push r10
+	push r9
+	push r8
 	call    toString
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword r15, rax
@@ -921,7 +979,11 @@ L_967:
 	add rdi, 1 
 	push r11
 	push r10
+	push r9
+	push r8
 	call puts
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov rbx,0

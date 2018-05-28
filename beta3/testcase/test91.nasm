@@ -638,7 +638,11 @@ cd:
 	mov     rdi, t66
 	push r11
 	push r10
+	push r9
+	push r8
 	call    concat
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov [rsp+8*12], rax
@@ -646,7 +650,11 @@ cd:
 	mov     rdi, [rsp+8*12]
 	push r11
 	push r10
+	push r9
+	push r8
 	call    concat
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov [rsp+8*12], rax
@@ -654,7 +662,11 @@ cd:
 	mov     rdi, [rsp+8*12]
 	push r11
 	push r10
+	push r9
+	push r8
 	call    concat
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov [rsp+8*12], rax
@@ -666,7 +678,11 @@ cd:
 	add rdi, 1 
 	push r11
 	push r10
+	push r9
+	push r8
 	call puts
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov rbx,r15
@@ -705,7 +721,11 @@ L_2094:
 	mov     rdi, t78
 	push r11
 	push r10
+	push r9
+	push r8
 	call    concat
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov [rsp+8*17], rax
@@ -713,7 +733,11 @@ L_2094:
 	mov     rdi, [rsp+8*17]
 	push r11
 	push r10
+	push r9
+	push r8
 	call    concat
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov [rsp+8*17], rax
@@ -721,7 +745,11 @@ L_2094:
 	mov     rdi, [rsp+8*17]
 	push r11
 	push r10
+	push r9
+	push r8
 	call    concat
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov [rsp+8*17], rax
@@ -733,7 +761,11 @@ L_2094:
 	add rdi, 1 
 	push r11
 	push r10
+	push r9
+	push r8
 	call puts
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov rbx,1
@@ -808,7 +840,11 @@ main:
 	mov     rdi, [rsp+8*29]
 	push r11
 	push r10
+	push r9
+	push r8
 	call    toString
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword[rsp+8*30], rax
@@ -820,7 +856,11 @@ main:
 	add rdi, 1 
 	push r11
 	push r10
+	push r9
+	push r8
 	call puts
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov rbx,0

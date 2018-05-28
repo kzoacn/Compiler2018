@@ -643,7 +643,11 @@ main:
 	xor rax, rax
 	push r11
 	push r10
+	push r9
+	push r8
 	call printf
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov rbx,t68
@@ -656,7 +660,11 @@ main:
 	xor rax, rax
 	push r11
 	push r10
+	push r9
+	push r8
 	call printf
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov rbx,0

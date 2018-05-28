@@ -668,7 +668,11 @@ L_2074:
 	mov     rdi, [rsp+8*10]
 	push r11
 	push r10
+	push r9
+	push r8
 	call    toString
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword[rsp+8*11], rax
@@ -680,7 +684,11 @@ L_2074:
 	add rdi, 1 
 	push r11
 	push r10
+	push r9
+	push r8
 	call puts
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov rdi,r14
@@ -689,7 +697,11 @@ L_2074:
 	mov     rdi, [rsp+8*13]
 	push r11
 	push r10
+	push r9
+	push r8
 	call    toString
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword[rsp+8*14], rax
@@ -701,7 +713,11 @@ L_2074:
 	add rdi, 1 
 	push r11
 	push r10
+	push r9
+	push r8
 	call puts
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov rdi,r15
@@ -710,7 +726,11 @@ L_2074:
 	mov     rdi, [rsp+8*16]
 	push r11
 	push r10
+	push r9
+	push r8
 	call    toString
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword[rsp+8*17], rax
@@ -722,7 +742,11 @@ L_2074:
 	add rdi, 1 
 	push r11
 	push r10
+	push r9
+	push r8
 	call puts
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov rsi,r15
@@ -742,7 +766,11 @@ L_2074:
 	mov     rdi, [rsp+8*26]
 	push r11
 	push r10
+	push r9
+	push r8
 	call    toString
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword[rsp+8*27], rax
@@ -754,7 +782,11 @@ L_2074:
 	add rdi, 1 
 	push r11
 	push r10
+	push r9
+	push r8
 	call puts
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov rbx,r12

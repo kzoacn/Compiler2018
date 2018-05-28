@@ -641,7 +641,11 @@ main:
 	mov     rdi,  r12
 	push r11
 	push r10
+	push r9
+	push r8
 	call    mallocArray
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword [rsp+8*3], rax
@@ -731,33 +735,31 @@ L_3013:
 	mov rbx,r15
 	lea rdx,[rbx+r13*8+8H]
 	mov rax, [rdx]
+	mov r10,rax
 	mov qword [rsp+8*28],rbx
-	mov rbx,rax
-	mov qword [rsp+8*29],rdx
-	mov rdx,1
-	mov qword [rsp+8*30],rax
-	mov rax,r13
-	add rax,rdx
-	mov rdx,r15
-	mov qword [rsp+8*31],rbx
-	lea rbx,[rdx+rax*8+8H]
-	mov qword [rsp+8*33],rdx
-	mov rdx, [rbx]
-	mov qword [rsp+8*34],rbx
-	mov rbx,r15
-	lea rax,[rbx+r13*8+8H]
-	mov [rax],rdx
-	mov qword [rsp+8*36],rbx
 	mov rbx,1
-	mov qword [rsp+8*35],rdx
+	mov qword [rsp+8*29],rdx
+	mov rdx,r13
+	add rdx,rbx
+	mov rbx,r15
+	mov qword [rsp+8*30],rax
+	lea rax,[rbx+rdx*8+8H]
+	mov qword [rsp+8*33],rbx
+	mov rbx, [rax]
+	mov rdx,r15
+	mov qword [rsp+8*34],rax
+	lea rax,[rdx+r13*8+8H]
+	mov [rax],rbx
+	mov qword [rsp+8*35],rbx
+	mov rbx,1
+	mov qword [rsp+8*36],rdx
 	mov rdx,r13
 	add rdx,rbx
 	mov rbx,r15
 	mov qword [rsp+8*37],rax
 	lea rax,[rbx+rdx*8+8H]
+	mov [rax],r10
 	mov qword [rsp+8*39],rbx
-	mov rbx,  [rsp+8*31]
-	mov [rax],rbx
 	mov qword [rsp+8*38],rdx
 	mov qword [rsp+8*40],rax
 	
@@ -797,7 +799,11 @@ L_3018:
 	mov     rdi,  r13
 	push r11
 	push r10
+	push r9
+	push r8
 	call    toString
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov     qword[rsp+8*49], rax
@@ -808,7 +814,11 @@ L_3018:
 	add rdi, 1 
 	push r11
 	push r10
+	push r9
+	push r8
 	call puts
+	pop r8
+	pop r9
 	pop r10
 	pop r11
 	mov rbx,r14
