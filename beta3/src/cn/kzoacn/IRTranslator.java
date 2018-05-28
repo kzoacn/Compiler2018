@@ -747,18 +747,18 @@ public class IRTranslator {
                     kickAll();
 
                     ArrayList<String>registers=new ArrayList<String >();
-                    //if(saveRegister.containsKey(cur.line))
-                    //for(int reg : saveRegister.get(cur.line))
-                    //    registers.add(regName.get(16-reg));
+                    if(saveRegister.containsKey(cur.line))
+                    for(int reg : saveRegister.get(cur.line))
+                        registers.add(regName.get(16-reg));
 
-                    registers.add("r8");
+                    /*registers.add("r8");
                     registers.add("r9");
                     registers.add("r10");
                     registers.add("r11");
                     registers.add("r12");
                     registers.add("r13");
                     registers.add("r14");
-                    registers.add("r15");
+                    registers.add("r15");*/
 
                     for(String reg : registers)
                         text.append(new StringBuffer("push "+reg+"\n\t"));

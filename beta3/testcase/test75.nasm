@@ -666,23 +666,9 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
-	push r8
-	push r9
-	push r10
-	push r11
-	push r12
-	push r13
-	push r14
 	push r15
 	call global_init
 	pop r15
-	pop r14
-	pop r13
-	pop r12
-	pop r11
-	pop r10
-	pop r9
-	pop r8
 	mov r15 , rax
 	mov     rdi, 100
 	push r15
@@ -736,14 +722,16 @@ L_1776:
 	je L_1777
 	mov rsi,r12
 	mov rdi,r12
-	mov r9,rdi
-	mov r10,rsi
-	mov rbx,0
-	mov r11,rbx
-	mov rdi,r9
+	mov rbx,rdi
+	mov rdx,rsi
+	mov rax,0
+	mov r11,rax
+	mov rdi,rbx
 	mov r15,rdi
-	mov rdx,237
-	imul r15,rdx
+	mov rax,237
+	imul r15,rax
+	mov qword [rsp+8*14],rbx
+	mov qword [rsp+8*15],rdx
 	xor rdx, rdx
 	mov rax,  r15
 	mov rbx, [gbl+8*5]
@@ -831,7 +819,8 @@ L_1776:
 	pop r14
 	pop r15
 	mov  r15, rax
-	mov [r15],r9
+	mov rbx,  [rsp+8*14]
+	mov [r15],rbx
 	mov     rdi, 2
 	push r15
 	push r14
@@ -879,7 +868,8 @@ L_1776:
 	pop r14
 	pop r15
 	mov  r15, rax
-	mov [r15],r10
+	mov rbx,  [rsp+8*15]
+	mov [r15],rbx
 	mov     rdi, 2
 	push r15
 	push r14
@@ -985,7 +975,8 @@ L_1813:
 	pop r15
 	mov  r15, rax
 	mov r15, [r15]
-	cmp r15,r9
+	mov rbx,  [rsp+8*14]
+	cmp r15,rbx
 	mov r15, 0
 	setne r15B
 	cmp r15, 0
@@ -1153,7 +1144,8 @@ L_1813:
 	pop r14
 	pop r15
 	mov  r15, rax
-	mov [r15],r9
+	mov rbx,  [rsp+8*14]
+	mov [r15],rbx
 	mov     rdi, 2
 	push r15
 	push r14
@@ -1299,9 +1291,10 @@ L_1814:
 	pop r14
 	pop r15
 	mov  r15, rax
-	mov [r15],r10
-	mov rbx,0
-	mov r15,rbx
+	mov rbx,  [rsp+8*15]
+	mov [r15],rbx
+	mov rdx,0
+	mov r15,rdx
 	
 L_1812:
 	mov r15,r15
@@ -1322,13 +1315,14 @@ L_1779:
 	cmp r15, 0
 	je L_1780
 	mov rdi,r12
-	mov r10,rdi
-	mov rbx,0
-	mov r11,rbx
-	mov rdi,r10
+	mov rbx,rdi
+	mov rdx,0
+	mov r11,rdx
+	mov rdi,rbx
 	mov r15,rdi
-	mov rdx,237
-	imul r15,rdx
+	mov rax,237
+	imul r15,rax
+	mov qword [rsp+8*74],rbx
 	xor rdx, rdx
 	mov rax,  r15
 	mov rbx, [gbl+8*5]
@@ -1388,7 +1382,8 @@ L_1796:
 	pop r15
 	mov  r15, rax
 	mov r15, [r15]
-	cmp r15,r10
+	mov rbx,  [rsp+8*74]
+	cmp r15,rbx
 	mov r15, 0
 	setne r15B
 	cmp r15, 0

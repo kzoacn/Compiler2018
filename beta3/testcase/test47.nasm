@@ -666,27 +666,14 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
-	push r8
-	push r9
-	push r10
-	push r11
-	push r12
-	push r13
-	push r14
 	push r15
 	call global_init
 	pop r15
-	pop r14
-	pop r13
-	pop r12
-	pop r11
-	pop r10
-	pop r9
-	pop r8
 	mov r15 , rax
-	mov rbx,5
-	mov r10,rbx
-	mov     rdi,  r10
+	mov rdx,5
+	mov rbx,rdx
+	mov qword [rsp+8*2],rbx
+	mov     rdi, [rsp+8*2]
 	push r15
 	push r14
 	push r13
@@ -705,12 +692,14 @@ main:
 	pop r14
 	pop r15
 	mov     qword  r15, rax
-	mov r9,r15
-	mov rbx,0
-	mov r13,rbx
+	mov rbx,r15
+	mov rdx,0
+	mov r13,rdx
+	mov qword [rsp+8*4],rbx
 	
 L_966:
-	cmp r13,r10
+	mov rbx,  [rsp+8*2]
+	cmp r13,rbx
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
@@ -734,7 +723,8 @@ L_966:
 	pop r14
 	pop r15
 	mov     qword  r15, rax
-	mov r14,r9
+	mov rbx,  [rsp+8*4]
+	mov r14,rbx
 	lea r14,[r14+r13*8+8H]
 	mov [r14],r15
 	mov     rdi, 2
@@ -765,7 +755,7 @@ L_966:
 	mov rax,0
 	mov [r14],rax
 	mov     rsi,  r15
-	mov     rdi,  r9
+	mov     rdi, [rsp+8*4]
 	push r15
 	push r14
 	push r13
@@ -784,7 +774,7 @@ L_966:
 	pop r14
 	pop r15
 	mov  r14, rax
-	mov     rdi,  r10
+	mov     rdi, [rsp+8*2]
 	push r15
 	push r14
 	push r13
@@ -808,7 +798,8 @@ L_966:
 	mov r12,rbx
 	
 L_969:
-	cmp r12,r10
+	mov rbx,  [rsp+8*2]
+	cmp r12,rbx
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
@@ -844,7 +835,7 @@ L_969:
 	lea r14,[r15+rbx*8+8H]
 	mov [r14],r12
 	mov     rsi,  r15
-	mov     rdi,  r9
+	mov     rdi, [rsp+8*4]
 	push r15
 	push r14
 	push r13
@@ -918,7 +909,7 @@ L_969:
 	mov rbx,0
 	mov [r15],rbx
 	mov     rsi,  r14
-	mov     rdi,  r9
+	mov     rdi, [rsp+8*4]
 	push r15
 	push r14
 	push r13
@@ -937,7 +928,7 @@ L_969:
 	pop r14
 	pop r15
 	mov  r14, rax
-	mov     rdi,  r10
+	mov     rdi, [rsp+8*2]
 	push r15
 	push r14
 	push r13
@@ -961,7 +952,8 @@ L_969:
 	mov r11,rbx
 	
 L_972:
-	cmp r11,r10
+	mov rbx,  [rsp+8*2]
+	cmp r11,rbx
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
@@ -1004,7 +996,7 @@ L_972:
 	lea r14,[r15+rbx*8+8H]
 	mov [r14],r11
 	mov     rsi,  r15
-	mov     rdi,  r9
+	mov     rdi, [rsp+8*4]
 	push r15
 	push r14
 	push r13
@@ -1086,7 +1078,7 @@ L_967:
 	mov rbx,4
 	mov [r15],rbx
 	mov     rsi,  r14
-	mov     rdi,  r9
+	mov     rdi, [rsp+8*4]
 	push r15
 	push r14
 	push r13

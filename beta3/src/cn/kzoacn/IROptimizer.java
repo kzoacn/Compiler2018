@@ -304,7 +304,7 @@ public class IROptimizer {
             degree.put(entry.getKey(),hashSet.size());
         }
 
-        int registerNumber=4;
+        int registerNumber=5;
 
 
         //greedy allocate

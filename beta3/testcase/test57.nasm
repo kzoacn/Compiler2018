@@ -698,23 +698,11 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
-	push r8
-	push r9
-	push r10
-	push r11
-	push r12
-	push r13
-	push r14
 	push r15
+	push r14
 	call global_init
-	pop r15
 	pop r14
-	pop r13
-	pop r12
-	pop r11
-	pop r10
-	pop r9
-	pop r8
+	pop r15
 	mov r15 , rax
 	mov     rdi, 3
 	push r15
@@ -773,23 +761,15 @@ L_1192:
 	mov r15, [r15]
 	mov rbx,r15
 	mov qword [arg+8*63],rbx
-	push r8
-	push r9
-	push r10
-	push r11
-	push r12
-	push r13
-	push r14
 	push r15
+	push r14
+	push r13
+	push r12
 	call Hello_say
-	pop r15
-	pop r14
-	pop r13
 	pop r12
-	pop r11
-	pop r10
-	pop r9
-	pop r8
+	pop r13
+	pop r14
+	pop r15
 	mov r15 , rax
 	mov r15,r12
 	mov rbx,1

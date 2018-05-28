@@ -666,23 +666,9 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
-	push r8
-	push r9
-	push r10
-	push r11
-	push r12
-	push r13
-	push r14
 	push r15
 	call global_init
 	pop r15
-	pop r14
-	pop r13
-	pop r12
-	pop r11
-	pop r10
-	pop r9
-	pop r8
 	mov r15 , rax
 	mov rbx,1
 	mov r14,rbx
@@ -727,14 +713,15 @@ L_889:
 	mov rbx,  [gbl+8*7]
 	mov r15,rbx
 	lea r15,[r15+r12*8+8H]
-	mov r9, [r15]
+	mov rdx, [r15]
 	mov r15,rbx
 	lea r15,[r15+r11*8+8H]
 	mov r15, [r15]
-	cmp r9,r15
+	cmp rdx,r15
 	mov r15, 0
 	sete r15B
 	cmp r15, 0
+	mov qword [rsp+8*17],rdx
 	je L_893
 	mov rbx,0
 	mov r13,rbx
@@ -785,8 +772,10 @@ L_899:
 	cmp r15,rdx
 	mov r15, 0
 	setl r15B
-	add r10,r10
+	mov rax,  [rsp+8*27]
+	add rax,rax
 	cmp r15, 0
+	mov qword [rsp+8*27],rax
 	je L_900
 	mov rbx,  [gbl+8*7]
 	mov r15,rbx
