@@ -670,9 +670,8 @@ main:
 	call global_init
 	pop r15
 	mov r15 , rax
-	mov rdx,5
-	mov rbx,rdx
-	mov qword [rsp+8*2],rbx
+	mov rbx,5
+	mov r10,rbx
 	mov     rdi, 2
 	push r15
 	push r14
@@ -698,8 +697,7 @@ main:
 	mov r11,rbx
 	
 L_960:
-	mov rbx,  [rsp+8*2]
-	cmp r11,rbx
+	cmp r11,r10
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
@@ -916,8 +914,7 @@ L_961:
 	mov r11,rbx
 	
 L_963:
-	mov rbx,  [rsp+8*2]
-	cmp r11,rbx
+	cmp r11,r10
 	mov r15, 0
 	setl r15B
 	cmp r15, 0

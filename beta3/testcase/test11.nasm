@@ -676,9 +676,8 @@ main:
 	mov r15,r14
 	sub r15,rdx
 	mov rax,r15
-	mov rdx,1
-	mov rbx,rdx
-	mov qword [rsp+8*5],rbx
+	mov rbx,1
+	mov r10,rbx
 	mov qword [rsp+8*4],rax
 	mov     rdi, [rsp+8*4]
 	push r15
@@ -721,9 +720,8 @@ L_859:
 	mov r15,r11
 	mov rbx,  [rsp+8*10]
 	lea r15,[r15+rbx*8+8H]
-	mov rdx,  [rsp+8*5]
-	mov [r15],rdx
-	mov r15,rdx
+	mov [r15],r10
+	mov r15,r10
 	imul r15,r13
 	xor rdx, rdx
 	mov rax,  r15
@@ -731,11 +729,10 @@ L_859:
 	cdq
 	idiv rbx
 	mov  r15, rdx
-	mov rbx,r15
-	mov rax,0
-	mov rdx,rax
-	mov qword [rsp+8*5],rbx
-	mov qword [rsp+8*15],rdx
+	mov r10,r15
+	mov rdx,0
+	mov rbx,rdx
+	mov qword [rsp+8*15],rbx
 	
 L_862:
 	mov rbx,  [rsp+8*15]

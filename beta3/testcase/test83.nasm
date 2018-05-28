@@ -658,11 +658,10 @@ point_set:
 	mov rbx,  [arg+8*63]
 	mov r15,rbx
 	mov r11,rdi
-	mov rdx,rsi
-	mov rax,0
-	lea rbx,[r15+rax*8+8H]
-	mov qword [rsp+8*7],rbx
-	mov qword [rsp+8*6],rdx
+	mov r10,rsi
+	mov rdx,0
+	lea rax,[r15+rdx*8+8H]
+	mov qword [rsp+8*7],rax
 	mov     rdi, 0
 	push r15
 	push r14
@@ -746,8 +745,7 @@ point_set:
 	pop r14
 	pop r15
 	mov  r15, rax
-	mov rbx,  [rsp+8*6]
-	mov [r15],rbx
+	mov [r15],r10
 	mov rax,r12
 	leave
 	ret

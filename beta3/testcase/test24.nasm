@@ -676,12 +676,11 @@ main:
 	mov r12,rdx
 	mov rax,2800
 	mov r11,rax
+	mov rbx,0
+	mov r10,rbx
 	mov rdx,0
 	mov rbx,rdx
-	mov rax,0
-	mov rdx,rax
-	mov qword [rsp+8*5],rbx
-	mov qword [rsp+8*6],rdx
+	mov qword [rsp+8*6],rbx
 	mov     rdi, 2801
 	push r15
 	push r14
@@ -725,29 +724,27 @@ L_939:
 	mov r15,r12
 	mov rbx,1
 	add r12,rbx
-	mov rax,  [rsp+8*8]
-	mov rdx,rax
-	lea r15,[rdx+r15*8+8H]
+	mov rdx,  [rsp+8*8]
+	mov r10,rdx
+	lea r15,[r10+r15*8+8H]
 	mov [r15],r14
-	mov qword [rsp+8*14],rdx
 	jmp L_939
 	
 L_940:
 	
 L_942:
-	mov rdx,0
-	mov rbx,rdx
-	mov rax,2
+	mov rbx,0
+	mov r10,rbx
+	mov rdx,2
 	mov r15,r11
-	imul r15,rax
-	mov rdx,r15
-	mov rax,0
-	cmp rdx,rax
+	imul r15,rdx
+	mov rax,r15
+	mov rbx,0
+	cmp rax,rbx
 	mov r15, 0
 	sete r15B
 	cmp r15, 0
-	mov qword [rsp+8*5],rbx
-	mov qword [rsp+8*9],rdx
+	mov qword [rsp+8*9],rax
 	je L_946
 	jmp L_943
 	
@@ -760,16 +757,14 @@ L_947:
 	lea r15,[r15+r12*8+8H]
 	mov r15, [r15]
 	imul r15,r13
-	mov rdx,  [rsp+8*5]
-	add r15,rdx
-	mov rdx,r15
-	mov rax,  [rsp+8*9]
-	mov rbx,1
-	sub rax,rbx
-	mov qword [rsp+8*5],rdx
-	mov qword [rsp+8*9],rax
+	add r15,r10
+	mov r10,r15
+	mov rdx,  [rsp+8*9]
+	mov rax,1
+	sub rdx,rax
+	mov qword [rsp+8*9],rdx
 	xor rdx, rdx
-	mov rax, [rsp+8*5]
+	mov rax,  r10
 	mov rbx, [rsp+8*9]
 	cdq
 	idiv rbx
@@ -784,29 +779,26 @@ L_947:
 	sub rdx,rax
 	mov qword [rsp+8*9],rdx
 	xor rdx, rdx
-	mov rax, [rsp+8*5]
+	mov rax,  r10
 	mov rbx,  r15
 	cdq
 	idiv rbx
 	mov  r15, rax
-	mov rbx,r15
-	mov rdx,1
-	sub r12,rdx
-	mov rax,0
-	cmp r12,rax
+	mov r10,r15
+	mov rbx,1
+	sub r12,rbx
+	mov rdx,0
+	cmp r12,rdx
 	mov r15, 0
 	sete r15B
 	cmp r15, 0
-	mov qword [rsp+8*5],rbx
 	je L_951
 	jmp L_948
 	
 L_951:
-	mov rbx,  [rsp+8*5]
-	mov r15,rbx
+	mov r15,r10
 	imul r15,r12
-	mov rbx,r15
-	mov qword [rsp+8*5],rbx
+	mov r10,r15
 	jmp L_947
 	
 L_948:
@@ -815,7 +807,7 @@ L_948:
 	sub r15,rbx
 	mov r11,r15
 	xor rdx, rdx
-	mov rax, [rsp+8*5]
+	mov rax,  r10
 	mov rbx,  r13
 	cdq
 	idiv rbx
@@ -867,7 +859,7 @@ L_948:
 	pop r14
 	pop r15
 	xor rdx, rdx
-	mov rax, [rsp+8*5]
+	mov rax,  r10
 	mov rbx,  r13
 	cdq
 	idiv rbx

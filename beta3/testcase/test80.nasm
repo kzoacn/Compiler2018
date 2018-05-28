@@ -670,10 +670,9 @@ main:
 	call global_init
 	pop r15
 	mov r15 , rax
-	mov rdx,9987
-	mov rbx,rdx
-	mov qword [gbl+8*2],rbx
-	mov     rdi, [gbl+8*2]
+	mov rbx,9987
+	mov r10,rbx
+	mov     rdi,  r10
 	push r15
 	push r14
 	push r13
@@ -717,10 +716,9 @@ L_1990:
 	jmp L_1990
 	
 L_1991:
-	mov rbx,  [gbl+8*2]
-	mov rdx,1
-	mov r15,rbx
-	sub r15,rdx
+	mov rbx,1
+	mov r15,r10
+	sub r15,rbx
 	xor rdx, rdx
 	mov rax,  r15
 	mov rbx, 2
@@ -749,8 +747,7 @@ L_2045:
 	imul r15,rdx
 	mov rax,1
 	add r15,rax
-	mov rbx,  [gbl+8*2]
-	cmp r15,rbx
+	cmp r15,r10
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
@@ -842,8 +839,7 @@ L_2046:
 	mov r12,rax
 	
 L_2055:
-	mov rbx,  [gbl+8*2]
-	cmp r12,rbx
+	cmp r12,r10
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
@@ -853,26 +849,25 @@ L_2055:
 	lea r15,[r15+rbx*8+8H]
 	mov r15, [r15]
 	mov r14,r15
-	mov rdx,  [gbl+8*2]
-	mov r15,rdx
+	mov r15,r10
 	sub r15,r12
-	mov rax,1
-	sub r15,rax
+	mov rdx,1
+	sub r15,rdx
 	mov r11,r13
 	lea r15,[r11+r15*8+8H]
 	mov r11, [r15]
 	mov r15,r13
-	mov rbx,0
-	lea r15,[r15+rbx*8+8H]
+	mov rax,0
+	lea r15,[r15+rax*8+8H]
 	mov [r15],r11
-	mov r11,rdx
+	mov r11,r10
 	sub r11,r12
 	mov rbx,1
 	sub r11,rbx
 	mov r15,r13
 	lea r15,[r15+r11*8+8H]
 	mov [r15],r14
-	mov r15,rdx
+	mov r15,r10
 	sub r15,r12
 	mov rbx,1
 	sub r15,rbx

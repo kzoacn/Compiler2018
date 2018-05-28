@@ -655,18 +655,16 @@ cd:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 320
-	mov rbx,rdi
+	mov r10,rdi
 	mov r13,rsi
-	mov rdx,  [arg+8*2]
-	mov r12,rdx
-	mov rax,  [arg+8*3]
-	mov r11,rax
-	mov qword [rsp+8*2],rbx
-	mov rbx,  [arg+8*4]
-	mov r15,rbx
-	mov rdx,  [rsp+8*2]
-	mov rax,1
-	cmp rdx,rax
+	mov rbx,  [arg+8*2]
+	mov r12,rbx
+	mov rdx,  [arg+8*3]
+	mov r11,rdx
+	mov rax,  [arg+8*4]
+	mov r15,rax
+	mov rbx,1
+	cmp r10,rbx
 	mov r14, 0
 	sete r14B
 	cmp r14, 0
@@ -758,23 +756,24 @@ cd:
 	jmp L_2095
 	
 L_2094:
-	mov rbx,  [rsp+8*2]
-	mov rdx,1
-	mov r14,rbx
-	sub r14,rdx
-	mov rax,r15
-	mov rdx,r12
+	mov rbx,1
+	mov r14,r10
+	sub r14,rbx
+	mov rdx,r15
+	mov rax,r12
 	mov rbx,r11
 	mov rsi,r13
 	mov rdi,r14
 	mov qword [arg+8*2],rbx
-	mov qword [arg+8*3],rdx
-	mov qword [arg+8*4],rax
+	mov qword [arg+8*4],rdx
+	mov qword [arg+8*3],rax
 	push r15
 	push r13
 	push r12
 	push r11
+	push r10
 	call cd
+	pop r10
 	pop r11
 	pop r12
 	pop r13
@@ -862,18 +861,17 @@ L_2094:
 	pop r13
 	pop r14
 	pop r15
-	mov rbx,  [rsp+8*2]
-	mov rdx,1
-	mov r14,rbx
-	sub r14,rdx
-	mov rax,r15
-	mov rbx,r11
-	mov rdx,r13
+	mov rbx,1
+	mov r14,r10
+	sub r14,rbx
+	mov rdx,r15
+	mov rax,r11
+	mov rbx,r13
 	mov rsi,r12
 	mov rdi,r14
-	mov qword [arg+8*3],rbx
-	mov qword [arg+8*2],rdx
-	mov qword [arg+8*4],rax
+	mov qword [arg+8*2],rbx
+	mov qword [arg+8*4],rdx
+	mov qword [arg+8*3],rax
 	push r15
 	call cd
 	pop r15

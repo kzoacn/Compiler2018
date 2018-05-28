@@ -670,10 +670,9 @@ main:
 	call global_init
 	pop r15
 	mov r15 , rax
-	mov rdx,5
-	mov rbx,rdx
-	mov qword [rsp+8*2],rbx
-	mov     rdi, [rsp+8*2]
+	mov rbx,5
+	mov r10,rbx
+	mov     rdi,  r10
 	push r15
 	push r14
 	push r13
@@ -698,8 +697,7 @@ main:
 	mov qword [rsp+8*4],rbx
 	
 L_966:
-	mov rbx,  [rsp+8*2]
-	cmp r13,rbx
+	cmp r13,r10
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
@@ -774,7 +772,7 @@ L_966:
 	pop r14
 	pop r15
 	mov  r14, rax
-	mov     rdi, [rsp+8*2]
+	mov     rdi,  r10
 	push r15
 	push r14
 	push r13
@@ -798,8 +796,7 @@ L_966:
 	mov r12,rbx
 	
 L_969:
-	mov rbx,  [rsp+8*2]
-	cmp r12,rbx
+	cmp r12,r10
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
@@ -928,7 +925,7 @@ L_969:
 	pop r14
 	pop r15
 	mov  r14, rax
-	mov     rdi, [rsp+8*2]
+	mov     rdi,  r10
 	push r15
 	push r14
 	push r13
@@ -952,8 +949,7 @@ L_969:
 	mov r11,rbx
 	
 L_972:
-	mov rbx,  [rsp+8*2]
-	cmp r11,rbx
+	cmp r11,r10
 	mov r15, 0
 	setl r15B
 	cmp r15, 0

@@ -667,7 +667,9 @@ main:
         mov     rsp, rax
         mov     eax, 0
 	push r15
+	push r10
 	call global_init
+	pop r10
 	pop r15
 	mov r15 , rax
 	
@@ -700,10 +702,8 @@ L_2083:
 	mov r15,r15
 	
 L_2084:
-	mov rbx,  [rsp+8*6]
-	add rbx,rbx
+	add r10,r10
 	cmp r15, 0
-	mov qword [rsp+8*6],rbx
 	je L_2082
 	mov rbx,  [gbl+8*3]
 	mov rdx,  [gbl+8*7]

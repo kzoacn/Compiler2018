@@ -803,11 +803,10 @@ L_68:
 	mov qword [gbl+8*23],rbx
 	
 L_70:
-	mov rbx,r11
-	mov rax,1
-	mov rdx,rax
-	mov qword [rsp+8*29],rbx
-	mov qword [rsp+8*30],rdx
+	mov r10,r11
+	mov rdx,1
+	mov rbx,rdx
+	mov qword [rsp+8*30],rbx
 	
 L_71:
 	mov rbx,  [rsp+8*30]
@@ -826,8 +825,7 @@ L_74:
 	mov rbx,  [rsp+8*30]
 	lea r15,[r15+rbx*8+8H]
 	mov r15, [r15]
-	mov rdx,  [rsp+8*29]
-	imul r15,rdx
+	imul r15,r10
 	cmp r15,r13
 	mov r15, 0
 	setle r15B
@@ -840,8 +838,7 @@ L_75:
 	mov rbx,  [rsp+8*30]
 	lea r15,[r15+rbx*8+8H]
 	mov r15, [r15]
-	mov rdx,  [rsp+8*29]
-	imul r15,rdx
+	imul r15,r10
 	mov r14,r15
 	cmp r14,r13
 	mov r15, 0
@@ -861,7 +858,7 @@ L_77:
 	lea r15,[r15+rax*8+8H]
 	mov r15, [r15]
 	xor rdx, rdx
-	mov rax, [rsp+8*29]
+	mov rax,  r10
 	mov rbx,  r15
 	cdq
 	idiv rbx
@@ -874,45 +871,42 @@ L_77:
 	je L_78
 	mov rbx,  [rsp+8*13]
 	mov r15,rbx
-	mov rdx,  [rsp+8*29]
-	lea r15,[r15+rdx*8+8H]
-	mov rax, [r15]
+	lea r15,[r15+r10*8+8H]
+	mov rdx, [r15]
 	mov r15,r12
-	mov rbx,  [rsp+8*30]
-	lea r15,[r15+rbx*8+8H]
+	mov rax,  [rsp+8*30]
+	lea r15,[r15+rax*8+8H]
 	mov r15, [r15]
-	mov rdx,rax
-	imul rdx,r15
-	mov qword [rsp+8*51],rax
-	mov rax,  [rsp+8*13]
-	mov r15,rax
+	mov rbx,rdx
+	imul rbx,r15
+	mov qword [rsp+8*51],rdx
+	mov rdx,  [rsp+8*13]
+	mov r15,rdx
 	lea r15,[r15+r14*8+8H]
-	mov [r15],rdx
-	mov qword [rsp+8*55],rdx
+	mov [r15],rbx
+	mov qword [rsp+8*55],rbx
 	jmp L_72
 	
 L_78:
 	mov rbx,  [rsp+8*13]
 	mov r15,rbx
-	mov rdx,  [rsp+8*29]
-	lea r15,[r15+rdx*8+8H]
+	lea r15,[r15+r10*8+8H]
 	mov r14, [r15]
 	mov r15,r12
-	mov rax,  [rsp+8*30]
-	lea r15,[r15+rax*8+8H]
+	mov rdx,  [rsp+8*30]
+	lea r15,[r15+rdx*8+8H]
 	mov r15, [r15]
-	mov rbx,1
-	sub r15,rbx
+	mov rax,1
+	sub r15,rax
 	imul r14,r15
 	mov r15,r12
-	lea r15,[r15+rax*8+8H]
+	lea r15,[r15+rdx*8+8H]
 	mov r15, [r15]
-	imul r15,rdx
-	mov rax,  [rsp+8*13]
-	mov rbx,rax
-	lea r15,[rbx+r15*8+8H]
+	imul r15,r10
+	mov rax,rbx
+	lea r15,[rax+r15*8+8H]
 	mov [r15],r14
-	mov qword [rsp+8*70],rbx
+	mov qword [rsp+8*70],rax
 	
 L_73:
 	mov rbx,  [rsp+8*30]
@@ -925,8 +919,7 @@ L_73:
 L_72:
 	mov rbx,  [rsp+8*13]
 	mov r15,rbx
-	mov rdx,  [rsp+8*29]
-	lea r15,[r15+rdx*8+8H]
+	lea r15,[r15+r10*8+8H]
 	mov r15, [r15]
 	mov rdi,r15
 	mov r15,rdi

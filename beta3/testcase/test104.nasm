@@ -680,11 +680,10 @@ main:
 	mov qword [rsp+8*3],rax
 	mov rax,210
 	mov rbx,rax
-	mov qword [rsp+8*4],rdx
-	mov rdx,0
-	mov rax,rdx
+	mov rax,0
+	mov r10,rax
 	mov qword [gbl+8*5],rbx
-	mov qword [gbl+8*6],rax
+	mov qword [rsp+8*4],rdx
 	mov     rdi, 100
 	push r15
 	push r14
@@ -724,17 +723,15 @@ main:
 	mov r15,rdi
 	
 L_159:
-	mov rbx,  [gbl+8*6]
-	cmp rbx,r15
+	cmp r10,r15
 	mov r14, 0
 	setle r14B
 	cmp r14, 0
 	je L_160
-	mov rbx,  [gbl+8*6]
-	mov rdx,1
-	mov r14,rbx
-	add r14,rdx
-	imul r14,rbx
+	mov rbx,1
+	mov r14,r10
+	add r14,rbx
+	imul r14,r10
 	xor rdx, rdx
 	mov rax,  r14
 	mov rbx, 2
@@ -751,10 +748,8 @@ L_159:
 	jmp L_163
 	
 L_161:
-	mov rbx,  [gbl+8*6]
-	mov rdx,1
-	add rbx,rdx
-	mov qword [gbl+8*6],rbx
+	mov rbx,1
+	add r10,rbx
 	jmp L_159
 	
 L_160:
@@ -1318,8 +1313,7 @@ L_133:
 	mov     qword  r15, rax
 	mov r15,r15
 	mov rbx,  [gbl+8*40]
-	mov rdx,  [gbl+8*6]
-	cmp rbx,rdx
+	cmp rbx,r10
 	mov r14, 0
 	setne r14B
 	cmp r14, 0

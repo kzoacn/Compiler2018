@@ -667,7 +667,9 @@ main:
         mov     rsp, rax
         mov     eax, 0
 	push r15
+	push r10
 	call global_init
+	pop r10
 	pop r15
 	mov r15 , rax
 	mov rbx,1
@@ -772,10 +774,8 @@ L_899:
 	cmp r15,rdx
 	mov r15, 0
 	setl r15B
-	mov rax,  [rsp+8*27]
-	add rax,rax
+	add r10,r10
 	cmp r15, 0
-	mov qword [rsp+8*27],rax
 	je L_900
 	mov rbx,  [gbl+8*7]
 	mov r15,rbx
