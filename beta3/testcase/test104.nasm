@@ -631,21 +631,7 @@ main:
         mov     rsp, rax
         mov     eax, 0
 	push r15
-	push r14
-	push r13
-	push r12
-	push r11
-	push r10
-	push r9
-	push r8
 	call global_init
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	pop r12
-	pop r13
-	pop r14
 	pop r15
 	mov r15 , rax
 	mov rdx,0
@@ -853,7 +839,11 @@ L_166:
 	mov qword [rsp+8*44],rbx
 	mov qword [gbl+8*43],rax
 	mov     rdi, [rsp+8*44]
+	push r11
+	push r10
 	call    toString
+	pop r10
+	pop r11
 	mov     qword[rsp+8*45], rax
 	mov rbx,  [rsp+8*45]
 	mov rdi,rbx
@@ -1093,11 +1083,19 @@ L_177:
 	mov qword [rsp+8*72],rdx
 	mov qword [rsp+8*73],rax
 	mov     rdi, [rsp+8*74]
+	push r11
+	push r10
 	call    toString
+	pop r10
+	pop r11
 	mov     qword[rsp+8*75], rax
 	mov     rsi, t107
 	mov     rdi, [rsp+8*75]
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov [rsp+8*76], rax
 	mov rbx,  [rsp+8*76]
 	mov rdi,rbx
@@ -1430,15 +1428,27 @@ L_248:
 	mov r15,rdi
 	mov qword [rsp+8*4],rbx
 	mov     rdi,  r15
+	push r11
+	push r10
 	call    toString
+	pop r10
+	pop r11
 	mov     qword r15, rax
 	mov     rsi,  r15
 	mov     rdi, t285
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov  r15, rax
 	mov     rsi, t291
 	mov     rdi,  r15
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov  r15, rax
 	mov rdi,r15
 	mov r15,rdi
@@ -1623,11 +1633,19 @@ L_187:
 	mov qword [rsp+8*72],rdx
 	mov qword [rsp+8*73],rax
 	mov     rdi, [rsp+8*74]
+	push r11
+	push r10
 	call    toString
+	pop r10
+	pop r11
 	mov     qword[rsp+8*75], rax
 	mov     rsi, t107
 	mov     rdi, [rsp+8*75]
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov [rsp+8*76], rax
 	mov rbx,  [rsp+8*76]
 	mov rdi,rbx
@@ -1668,15 +1686,27 @@ L_134:
 	mov rdi,rbx
 	mov r15,rdi
 	mov     rdi,  r15
+	push r11
+	push r10
 	call    toString
+	pop r10
+	pop r11
 	mov     qword r15, rax
 	mov     rsi,  r15
 	mov     rdi, t301
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov  r15, rax
 	mov     rsi, t306
 	mov     rdi,  r15
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov  r15, rax
 	mov rdi,r15
 	mov r15,rdi

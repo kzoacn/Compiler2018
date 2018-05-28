@@ -631,21 +631,7 @@ main:
         mov     rsp, rax
         mov     eax, 0
 	push r15
-	push r14
-	push r13
-	push r12
-	push r11
-	push r10
-	push r9
-	push r8
 	call global_init
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	pop r12
-	pop r13
-	pop r14
 	pop r15
 	mov r15 , rax
 	mov rbx,t122
@@ -699,25 +685,15 @@ L_1762:
 	mov qword [arg+8*63],rax
 	mov     rsi, rsi
 	mov     rdi, rdi
+	push r11
+	push r10
 	call    substring
+	pop r10
+	pop r11
 	mov  r15, rax
 	mov rdi,r15
 	push r15
-	push r14
-	push r13
-	push r12
-	push r11
-	push r10
-	push r9
-	push r8
 	call calc
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	pop r12
-	pop r13
-	pop r14
 	pop r15
 	mov r15 , rax
 	mov r15,r15
@@ -783,24 +759,18 @@ L_1752:
 	mov qword [rsp+8*27],rdx
 	mov     rsi, rsi
 	mov     rdi, rdi
+	push r11
+	push r10
 	call    substring
+	pop r10
+	pop r11
 	mov [rsp+8*29], rax
 	mov rbx,  [rsp+8*29]
 	mov rdi,rbx
 	push r15
 	push r14
 	push r13
-	push r12
-	push r11
-	push r10
-	push r9
-	push r8
 	call calc
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	pop r12
 	pop r13
 	pop r14
 	pop r15
@@ -818,40 +788,38 @@ L_1752:
 	mov qword [rsp+8*32],rdx
 	mov     rsi, rsi
 	mov     rdi, rdi
+	push r11
+	push r10
 	call    substring
+	pop r10
+	pop r11
 	mov [rsp+8*34], rax
 	mov rbx,  [rsp+8*34]
 	mov rdi,rbx
-	push r15
-	push r14
-	push r13
 	push r12
-	push r11
-	push r10
-	push r9
-	push r8
 	call calc
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	pop r12
-	pop r13
-	pop r14
-	pop r15
 	mov rbx , rax
 	mov r15,rbx
 	mov qword [rsp+8*35],rbx
 	mov rdi,  r12
 	mov rsi,  r15
+	push r11
+	push r10
 	call    strls
+	pop r10
+	pop r11
 	mov qword [rsp+8*37], rax
 	mov rbx,  [rsp+8*37]
 	cmp rbx, 0
 	je L_1753
 	mov     rsi,  r15
 	mov     rdi,  r12
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov [rsp+8*38], rax
 	mov rbx,  [rsp+8*38]
 	mov rax,rbx
@@ -861,7 +829,11 @@ L_1752:
 L_1753:
 	mov rdi,  r12
 	mov rsi,  r15
+	push r11
+	push r10
 	call    streq
+	pop r10
+	pop r11
 	mov qword [rsp+8*39], rax
 	mov rbx,  [rsp+8*39]
 	cmp rbx, 0
@@ -896,7 +868,11 @@ L_1753:
 	je L_1758
 	mov     rsi,  r15
 	mov     rdi,  r12
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov [rsp+8*47], rax
 	mov rbx,  [rsp+8*47]
 	mov rax,rbx
@@ -906,7 +882,11 @@ L_1753:
 L_1758:
 	mov     rsi,  r12
 	mov     rdi,  r15
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov [rsp+8*48], rax
 	mov rbx,  [rsp+8*48]
 	mov rax,rbx
@@ -916,14 +896,22 @@ L_1758:
 L_1755:
 	mov rdi,  r12
 	mov rsi,  r15
+	push r11
+	push r10
 	call    strgt
+	pop r10
+	pop r11
 	mov qword [rsp+8*49], rax
 	mov rbx,  [rsp+8*49]
 	cmp rbx, 0
 	je L_1760
 	mov     rsi,  r12
 	mov     rdi,  r15
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov [rsp+8*50], rax
 	mov rbx,  [rsp+8*50]
 	mov rax,rbx

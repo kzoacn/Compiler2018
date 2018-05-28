@@ -636,15 +636,27 @@ cd:
 	je L_2094
 	mov     rsi,  r14
 	mov     rdi, t66
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov [rsp+8*12], rax
 	mov     rsi, t68
 	mov     rdi, [rsp+8*12]
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov [rsp+8*12], rax
 	mov     rsi,  r12
 	mov     rdi, [rsp+8*12]
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov [rsp+8*12], rax
 	mov rbx,  [rsp+8*12]
 	mov rdi,rbx
@@ -677,37 +689,41 @@ L_2094:
 	mov rdi,rax
 	mov qword [arg+8*3],rbx
 	mov qword [arg+8*2],rdx
-	push r15
 	push r14
 	push r13
 	push r12
 	push r11
-	push r10
-	push r9
-	push r8
 	call cd
-	pop r8
-	pop r9
-	pop r10
 	pop r11
 	pop r12
 	pop r13
 	pop r14
-	pop r15
 	mov rbx , rax
 	mov r15,rbx
 	mov qword [rsp+8*16],rbx
 	mov     rsi,  r14
 	mov     rdi, t78
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov [rsp+8*17], rax
 	mov     rsi, t80
 	mov     rdi, [rsp+8*17]
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov [rsp+8*17], rax
 	mov     rsi,  r12
 	mov     rdi, [rsp+8*17]
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov [rsp+8*17], rax
 	mov rbx,  [rsp+8*17]
 	mov rdi,rbx
@@ -733,23 +749,7 @@ L_2094:
 	mov rdi,rax
 	mov qword [arg+8*3],rbx
 	mov qword [arg+8*2],rdx
-	push r15
-	push r14
-	push r13
-	push r12
-	push r11
-	push r10
-	push r9
-	push r8
 	call cd
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
 	mov rbx , rax
 	mov r15,rbx
 	mov rdx,r15
@@ -778,23 +778,7 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
-	push r15
-	push r14
-	push r13
-	push r12
-	push r11
-	push r10
-	push r9
-	push r8
 	call global_init
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
 	mov rbx , rax
 	mov rdx,t91
 	mov r15,rdx
@@ -814,23 +798,7 @@ main:
 	mov rsi,r15
 	mov rdi,r13
 	mov qword [arg+8*2],rbx
-	push r15
-	push r14
-	push r13
-	push r12
-	push r11
-	push r10
-	push r9
-	push r8
 	call cd
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
 	mov rbx , rax
 	mov r15,rbx
 	mov rdi,r15
@@ -838,7 +806,11 @@ main:
 	mov qword [rsp+8*27],rbx
 	mov qword [rsp+8*29],rdx
 	mov     rdi, [rsp+8*29]
+	push r11
+	push r10
 	call    toString
+	pop r10
+	pop r11
 	mov     qword[rsp+8*30], rax
 	mov rbx,  [rsp+8*30]
 	mov rdi,rbx

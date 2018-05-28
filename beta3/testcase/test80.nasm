@@ -631,21 +631,7 @@ main:
         mov     rsp, rax
         mov     eax, 0
 	push r15
-	push r14
-	push r13
-	push r12
-	push r11
-	push r10
-	push r9
-	push r8
 	call global_init
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	pop r12
-	pop r13
-	pop r14
 	pop r15
 	mov r15 , rax
 	mov rdx,9987
@@ -1032,11 +1018,19 @@ L_1993:
 	mov rdi,r15
 	mov r15,rdi
 	mov     rdi,  r15
+	push r11
+	push r10
 	call    toString
+	pop r10
+	pop r11
 	mov     qword r15, rax
 	mov     rsi, t222
 	mov     rdi,  r15
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov  r15, rax
 	mov rdi,r15
 	mov r15,rdi

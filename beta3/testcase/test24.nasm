@@ -630,23 +630,7 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
-	push r15
-	push r14
-	push r13
-	push r12
-	push r11
-	push r10
-	push r9
-	push r8
 	call global_init
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
 	mov rbx , rax
 	mov rdx,10000
 	mov r15,rdx
@@ -805,7 +789,11 @@ L_948:
 	mov qword [rsp+8*30],rbx
 	mov qword [rsp+8*32],rdx
 	mov     rdi, [rsp+8*32]
+	push r11
+	push r10
 	call    toString
+	pop r10
+	pop r11
 	mov     qword[rsp+8*33], rax
 	mov rbx,  [rsp+8*33]
 	mov rdi,rbx

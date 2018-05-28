@@ -631,21 +631,7 @@ main:
         mov     rsp, rax
         mov     eax, 0
 	push r15
-	push r14
-	push r13
-	push r12
-	push r11
-	push r10
-	push r9
-	push r8
 	call global_init
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	pop r12
-	pop r13
-	pop r14
 	pop r15
 	mov r15 , rax
 	mov rdx,1
@@ -3659,7 +3645,11 @@ L_2213:
 	mov qword [arg+8*63],rdx
 	mov     rsi, rsi
 	mov     rdi, rdi
+	push r11
+	push r10
 	call    substring
+	pop r10
+	pop r11
 	mov [rsp+8*113], rax
 	mov rbx,  [rsp+8*113]
 	mov r14,rbx
@@ -3673,7 +3663,11 @@ L_2216:
 	mov r14,r14
 	mov     rsi,  r14
 	mov     rdi,  r13
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov  r14, rax
 	mov r13,r14
 	jmp L_2217
@@ -3729,7 +3723,11 @@ L_2219:
 	mov qword [arg+8*63],rdx
 	mov     rsi, rsi
 	mov     rdi, rdi
+	push r11
+	push r10
 	call    substring
+	pop r10
+	pop r11
 	mov [rsp+8*113], rax
 	mov rbx,  [rsp+8*113]
 	mov r14,rbx
@@ -3743,7 +3741,11 @@ L_2222:
 	mov r14,r14
 	mov     rsi,  r14
 	mov     rdi,  r13
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov  r14, rax
 	mov r13,r14
 	
@@ -3758,7 +3760,11 @@ L_2210:
 	mov r15,r15
 	mov     rsi, t222
 	mov     rdi,  r15
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov  r15, rax
 	mov rdi,r15
 	mov r15,rdi
@@ -3846,7 +3852,11 @@ L_2230:
 	mov qword [arg+8*63],rdx
 	mov     rsi, rsi
 	mov     rdi, rdi
+	push r11
+	push r10
 	call    substring
+	pop r10
+	pop r11
 	mov [rsp+8*113], rax
 	mov rbx,  [rsp+8*113]
 	mov r14,rbx
@@ -3860,7 +3870,11 @@ L_2233:
 	mov r14,r14
 	mov     rsi,  r14
 	mov     rdi,  r13
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov  r14, rax
 	mov r13,r14
 	jmp L_2234
@@ -3916,7 +3930,11 @@ L_2236:
 	mov qword [arg+8*63],rdx
 	mov     rsi, rsi
 	mov     rdi, rdi
+	push r11
+	push r10
 	call    substring
+	pop r10
+	pop r11
 	mov [rsp+8*113], rax
 	mov rbx,  [rsp+8*113]
 	mov r14,rbx
@@ -3930,7 +3948,11 @@ L_2239:
 	mov r14,r14
 	mov     rsi,  r14
 	mov     rdi,  r13
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov  r14, rax
 	mov r13,r14
 	
@@ -3945,7 +3967,11 @@ L_2227:
 	mov r15,r15
 	mov     rsi, t229
 	mov     rdi,  r15
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov  r15, rax
 	mov rdi,r15
 	mov r15,rdi
@@ -4033,7 +4059,11 @@ L_2247:
 	mov qword [arg+8*63],rdx
 	mov     rsi, rsi
 	mov     rdi, rdi
+	push r11
+	push r10
 	call    substring
+	pop r10
+	pop r11
 	mov [rsp+8*113], rax
 	mov rbx,  [rsp+8*113]
 	mov r14,rbx
@@ -4047,7 +4077,11 @@ L_2250:
 	mov r14,r14
 	mov     rsi,  r14
 	mov     rdi,  r13
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov  r14, rax
 	mov r13,r14
 	jmp L_2251
@@ -4103,7 +4137,11 @@ L_2253:
 	mov qword [arg+8*63],rdx
 	mov     rsi, rsi
 	mov     rdi, rdi
+	push r11
+	push r10
 	call    substring
+	pop r10
+	pop r11
 	mov [rsp+8*113], rax
 	mov rbx,  [rsp+8*113]
 	mov r14,rbx
@@ -4117,7 +4155,11 @@ L_2256:
 	mov r14,r14
 	mov     rsi,  r14
 	mov     rdi,  r13
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov  r14, rax
 	mov r13,r14
 	
@@ -4132,7 +4174,11 @@ L_2244:
 	mov r15,r15
 	mov     rsi, t236
 	mov     rdi,  r15
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov  r15, rax
 	mov rdi,r15
 	mov r15,rdi
@@ -4220,7 +4266,11 @@ L_2264:
 	mov qword [arg+8*63],rdx
 	mov     rsi, rsi
 	mov     rdi, rdi
+	push r11
+	push r10
 	call    substring
+	pop r10
+	pop r11
 	mov [rsp+8*113], rax
 	mov rbx,  [rsp+8*113]
 	mov r14,rbx
@@ -4234,7 +4284,11 @@ L_2267:
 	mov r14,r14
 	mov     rsi,  r14
 	mov     rdi,  r13
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov  r14, rax
 	mov r13,r14
 	jmp L_2268
@@ -4287,7 +4341,11 @@ L_2270:
 	mov qword [arg+8*63],rbx
 	mov     rsi, rsi
 	mov     rdi, rdi
+	push r11
+	push r10
 	call    substring
+	pop r10
+	pop r11
 	mov [rsp+8*113], rax
 	mov rbx,  [rsp+8*113]
 	mov r14,rbx
@@ -4301,7 +4359,11 @@ L_2273:
 	mov r14,r14
 	mov     rsi,  r14
 	mov     rdi,  r13
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov  r14, rax
 	mov r13,r14
 	
@@ -4316,7 +4378,11 @@ L_2261:
 	mov r15,r15
 	mov     rsi, t243
 	mov     rdi,  r15
+	push r11
+	push r10
 	call    concat
+	pop r10
+	pop r11
 	mov  r15, rax
 	mov rdi,r15
 	mov r15,rdi

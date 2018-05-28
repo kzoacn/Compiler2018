@@ -3,7 +3,7 @@ package cn.kzoacn;
 import java.util.*;
 
 public class IROptimizer {
-
+    public HashMap<Integer,HashSet<Integer> >saveRegister=new HashMap<Integer, HashSet<Integer>>();
     IR optimize(IR ir){
         ArrayList<ArrayList<Integer> >edgeList=new ArrayList<ArrayList<Integer> >();
         IR tmp=new IR();
@@ -219,7 +219,7 @@ public class IROptimizer {
 
             HashSet<Variable> nin;
             HashSet<Variable> nout;
-            for(int i=0;i<line_number;i++){
+            for(int i=line_number-1;i>=0;i--){
                 nin=new HashSet<Variable>();
                 nout=new HashSet<Variable>();
                 for(Variable var : use.get(i))
@@ -393,13 +393,31 @@ public class IROptimizer {
 */
 
         cur=ir.head;
+        line_number=0;
         while(cur!=null){
+            cur.line=line_number++;
             if(cur.dest!=null&&colorMap.containsKey(cur.dest.name))
                 cur.dest.register=colorMap.get(cur.dest.name);
             if(cur.var1!=null&&colorMap.containsKey(cur.var1.name))
                 cur.var1.register=colorMap.get(cur.var1.name);
             if(cur.var2!=null&&colorMap.containsKey(cur.var2.name))
                 cur.var2.register=colorMap.get(cur.var2.name);
+
+            if(cur.opCode==OpCode.call){
+                saveRegister.put(cur.line, new HashSet<>());
+                for(Variable var : in.get(cur.line)){
+                    if(colorMap.containsKey(var.name))
+                        saveRegister.get(cur.line).add(colorMap.get(var.name));
+                }
+                for(Variable var : def.get(cur.line)){
+                    if(colorMap.containsKey(var.name))
+                        saveRegister.get(cur.line).add(colorMap.get(var.name));
+                }
+                for(Variable var : out.get(cur.line)){
+                    if(colorMap.containsKey(var.name))
+                        saveRegister.get(cur.line).add(colorMap.get(var.name));
+                }
+            }
             cur=cur.next;
         }
         System.err.println("----------------------------------------------");

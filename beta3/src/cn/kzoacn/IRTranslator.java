@@ -4,10 +4,7 @@ package cn.kzoacn;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
 
 public class IRTranslator {
 
@@ -440,6 +437,7 @@ public class IRTranslator {
 
         IROptimizer irOptimizer=new IROptimizer();
         ir=irOptimizer.optimize(ir);
+        HashMap<Integer,HashSet<Integer>>saveRegister=irOptimizer.saveRegister;
         for(int i=0;i<8+registerNum;i++) {
             free[i] = true;
             ban[i] = false;
@@ -728,23 +726,20 @@ public class IRTranslator {
                 case call:
                     kickAll();
 
-                    text.append(new StringBuffer("push r15"+"\n\t"));
-                    text.append(new StringBuffer("push r14"+"\n\t"));
-                    text.append(new StringBuffer("push r13"+"\n\t"));
-                    text.append(new StringBuffer("push r12"+"\n\t"));
-                    text.append(new StringBuffer("push r11"+"\n\t"));
-                    text.append(new StringBuffer("push r10"+"\n\t"));
-                    text.append(new StringBuffer("push r9"+"\n\t"));
-                    text.append(new StringBuffer("push r8"+"\n\t"));
+                    ArrayList<String>registers=new ArrayList<String >();
+                    if(saveRegister.containsKey(cur.line))
+                    for(int reg : saveRegister.get(cur.line))
+                        registers.add(regName.get(16-reg));
+
+                    for(String reg : registers)
+                        text.append(new StringBuffer("push "+reg+"\n\t"));
+
                     text.append(new StringBuffer("call "+name+"\n\t"));
-                    text.append(new StringBuffer("pop r8"+"\n\t"));
-                    text.append(new StringBuffer("pop r9"+"\n\t"));
-                    text.append(new StringBuffer("pop r10"+"\n\t"));
-                    text.append(new StringBuffer("pop r11"+"\n\t"));
-                    text.append(new StringBuffer("pop r12"+"\n\t"));
-                    text.append(new StringBuffer("pop r13"+"\n\t"));
-                    text.append(new StringBuffer("pop r14"+"\n\t"));
-                    text.append(new StringBuffer("pop r15"+"\n\t"));
+
+                    Collections.reverse(registers);
+                    for(String reg : registers)
+                        text.append(new StringBuffer("pop "+reg+"\n\t"));
+
                     clearAll();
                     text.append(new StringBuffer("mov "+writeReg(dest)+" , rax\n\t"));
 
@@ -849,42 +844,54 @@ public class IRTranslator {
                     kickAll();
                     text.append(new StringBuffer("mov rdi, "+varName(var1)+"\n\t"));
                     text.append(new StringBuffer("mov rsi, "+varName(var2)+"\n\t"));
+                    text.append(saveContext());
                     text.append(new StringBuffer("call    strls\n\t"));
+                    text.append(resumeContext());
                     text.append(new StringBuffer("mov qword "+varName(dest)+", rax\n\t"));
                     break;
                 case strleq:
                     kickAll();
                     text.append(new StringBuffer("mov rdi, "+varName(var1)+"\n\t"));
                     text.append(new StringBuffer("mov rsi, "+varName(var2)+"\n\t"));
+                    text.append(saveContext());
                     text.append(new StringBuffer("call    strle\n\t"));
+                    text.append(resumeContext());
                     text.append(new StringBuffer("mov qword "+varName(dest)+", rax\n\t"));
                     break;
                 case strequal:
                     kickAll();
                     text.append(new StringBuffer("mov rdi, "+varName(var1)+"\n\t"));
                     text.append(new StringBuffer("mov rsi, "+varName(var2)+"\n\t"));
+                    text.append(saveContext());
                     text.append(new StringBuffer("call    streq\n\t"));
+                    text.append(resumeContext());
                     text.append(new StringBuffer("mov qword "+varName(dest)+", rax\n\t"));
                     break;
                 case strinequal:
                     kickAll();
                     text.append(new StringBuffer("mov rdi, "+varName(var1)+"\n\t"));
                     text.append(new StringBuffer("mov rsi, "+varName(var2)+"\n\t"));
+                    text.append(saveContext());
                     text.append(new StringBuffer("call    strne\n\t"));
+                    text.append(resumeContext());
                     text.append(new StringBuffer("mov qword "+varName(dest)+", rax\n\t"));
                     break;
                 case strgeq:
                     kickAll();
                     text.append(new StringBuffer("mov rdi, "+varName(var1)+"\n\t"));
                     text.append(new StringBuffer("mov rsi, "+varName(var2)+"\n\t"));
+                    text.append(saveContext());
                     text.append(new StringBuffer("call    strge\n\t"));
+                    text.append(resumeContext());
                     text.append(new StringBuffer("mov qword "+varName(dest)+", rax\n\t"));
                     break;
                 case strgreater:
                     kickAll();
                     text.append(new StringBuffer("mov rdi, "+varName(var1)+"\n\t"));
                     text.append(new StringBuffer("mov rsi, "+varName(var2)+"\n\t"));
+                    text.append(saveContext());
                     text.append(new StringBuffer("call    strgt\n\t"));
+                    text.append(resumeContext());
                     text.append(new StringBuffer("mov qword "+varName(dest)+", rax\n\t"));
                     break;
                 case jmp:
@@ -928,11 +935,12 @@ public class IRTranslator {
                     break;
                 case concat:
                     kickAll();
-                    text.append(new StringBuffer(
-                            "mov     rsi, "+varName(var2)+"\n\t" +
-                            "mov     rdi, "+varName(var1)+"\n\t" +
-                            "call    concat\n\t") +
-                            "mov "+varName(dest)+", rax\n\t");
+                    text.append(new StringBuffer("mov     rsi, "+varName(var2)+"\n\t"));
+                    text.append(new StringBuffer("mov     rdi, "+varName(var1)+"\n\t"));
+                    text.append(saveContext());
+                    text.append(new StringBuffer("call    concat\n\t"));
+                    text.append(resumeContext());
+                    text.append(new StringBuffer("mov "+varName(dest)+", rax\n\t"));
                     clearAll();
                     break;
                 case load:
@@ -991,10 +999,11 @@ public class IRTranslator {
                     break;
                 case toString:
                     kickAll();
-                    text.append(new StringBuffer(
-                            "mov     rdi, "+varName(var1)+"\n\t" +
-                            "call    toString\n\t"+
-                            "mov     qword"+varName(dest)+", rax\n\t"));
+                    text.append(new StringBuffer("mov     rdi, "+varName(var1)+"\n\t"));
+                    text.append(saveContext());
+                    text.append(new StringBuffer("call    toString\n\t"));
+                    text.append(resumeContext());
+                    text.append(new StringBuffer("mov     qword"+varName(dest)+", rax\n\t"));
                     clearAll();
                     break;
                 case saveContext:
@@ -1047,11 +1056,12 @@ public class IRTranslator {
                     break;
                 case substring:
                     kickAll();
-                    text.append(new StringBuffer(
-                                    "mov     rsi, "+varName(var2)+"\n\t" +
-                                    "mov     rdi, "+varName(var1)+"\n\t" +
-                                    "call    substring\n\t") +
-                                    "mov "+varName(dest)+", rax\n\t");
+                    text.append(new StringBuffer("mov     rsi, "+varName(var2)+"\n\t"));
+                    text.append(new StringBuffer("mov     rdi, "+varName(var1)+"\n\t"));
+                    text.append(saveContext());
+                    text.append(new StringBuffer("call    substring\n\t"));
+                    text.append(resumeContext());
+                    text.append(new StringBuffer("mov "+varName(dest)+", rax\n\t"));
                     clearAll();
                     break;
                 case parseInt:

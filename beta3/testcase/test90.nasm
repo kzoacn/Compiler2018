@@ -918,13 +918,7 @@ L_2088:
 	push r13
 	push r12
 	push r11
-	push r10
-	push r9
-	push r8
 	call gcd
-	pop r8
-	pop r9
-	pop r10
 	pop r11
 	pop r12
 	pop r13
@@ -1021,23 +1015,7 @@ L_2088:
 	mov rdi,rdx
 	mov qword [arg+8*2],rbx
 	mov qword [arg+8*3],rax
-	push r15
-	push r14
-	push r13
-	push r12
-	push r11
-	push r10
-	push r9
-	push r8
 	call gcd1
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
 	mov rbx , rax
 	mov rax,rbx
 	leave
@@ -1315,23 +1293,7 @@ L_2090:
 	mov rdi,rbx
 	mov qword [arg+8*2],rdx
 	mov qword [arg+8*3],rax
-	push r15
-	push r14
-	push r13
-	push r12
-	push r11
-	push r10
-	push r9
-	push r8
 	call gcd2
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
 	mov rbx , rax
 	mov rax,rbx
 	leave
@@ -1611,21 +1573,7 @@ L_2092:
 	mov qword [arg+8*2],rdx
 	mov qword [arg+8*3],rax
 	push r15
-	push r14
-	push r13
-	push r12
-	push r11
-	push r10
-	push r9
-	push r8
 	call gcd
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	pop r12
-	pop r13
-	pop r14
 	pop r15
 	mov r15 , rax
 	mov rax,r15
@@ -1648,21 +1596,7 @@ main:
         mov     rsp, rax
         mov     eax, 0
 	push r15
-	push r14
-	push r13
-	push r12
-	push r11
-	push r10
-	push r9
-	push r8
 	call global_init
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	pop r12
-	pop r13
-	pop r14
 	pop r15
 	mov r15 , rax
 	mov rdx,58
@@ -1760,21 +1694,7 @@ main:
 	mov rdi,rbx
 	mov qword [arg+8*30],rax
 	push r15
-	push r14
-	push r13
-	push r12
-	push r11
-	push r10
-	push r9
-	push r8
 	call gcd
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	pop r12
-	pop r13
-	pop r14
 	pop r15
 	mov r15 , rax
 	mov rbx,1024
@@ -1782,7 +1702,11 @@ main:
 	mov rdi,r15
 	mov r15,rdi
 	mov     rdi,  r15
+	push r11
+	push r10
 	call    toString
+	pop r10
+	pop r11
 	mov     qword r15, rax
 	mov rdi,r15
 	mov r15,rdi

@@ -1,2 +1,2 @@
 0a1
-> // Target: Simulate a Bulgarian-solitaire game.
+> 	k = getInt();
