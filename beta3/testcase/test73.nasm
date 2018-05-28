@@ -691,7 +691,7 @@ main:
 	setl r13B
 	cmp r13, 0
 	mov qword [arg+8*63],rbx
-	je L_1762
+	je L_2382
 	mov rbx,t137
 	mov rdi,rbx
 	mov r15,rdi
@@ -720,7 +720,7 @@ main:
 	leave
 	ret
 	
-L_1762:
+L_2382:
 	mov r14,r14
 	mov rbx,1
 	sub r15,rbx
@@ -800,12 +800,12 @@ calc:
 	sete r13B
 	cmp r13, 0
 	mov qword [arg+8*63],rbx
-	je L_1752
+	je L_2372
 	mov rax,r14
 	leave
 	ret
 	
-L_1752:
+L_2372:
 	xor rdx, rdx
 	mov rax,  r15
 	mov rbx, 2
@@ -910,7 +910,7 @@ L_1752:
 	pop r15
 	mov qword  r15, rax
 	cmp r15, 0
-	je L_1753
+	je L_2373
 	mov     rsi,  r14
 	mov     rdi,  r12
 	push r15
@@ -935,7 +935,7 @@ L_1752:
 	leave
 	ret
 	
-L_1753:
+L_2373:
 	mov rdi,  r12
 	mov rsi,  r14
 	push r15
@@ -957,7 +957,7 @@ L_1753:
 	pop r15
 	mov qword  r15, rax
 	cmp r15, 0
-	je L_1755
+	je L_2375
 	mov r15,r12
 	mov rbx,0
 	mov rdi,rbx
@@ -980,7 +980,7 @@ L_1753:
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	je L_1758
+	je L_2378
 	mov     rsi,  r14
 	mov     rdi,  r12
 	push r15
@@ -1005,7 +1005,7 @@ L_1753:
 	leave
 	ret
 	
-L_1758:
+L_2378:
 	mov     rsi,  r12
 	mov     rdi,  r14
 	push r15
@@ -1030,7 +1030,7 @@ L_1758:
 	leave
 	ret
 	
-L_1755:
+L_2375:
 	mov rdi,  r12
 	mov rsi,  r14
 	push r15
@@ -1052,7 +1052,7 @@ L_1755:
 	pop r15
 	mov qword  r15, rax
 	cmp r15, 0
-	je L_1760
+	je L_2380
 	mov     rsi,  r12
 	mov     rdi,  r14
 	push r15
@@ -1077,7 +1077,7 @@ L_1755:
 	leave
 	ret
 	
-L_1760:
+L_2380:
 	mov rbx,t117
 	mov rdi,rbx
 	mov r15,rdi

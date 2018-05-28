@@ -673,20 +673,20 @@ main:
 	mov rbx,1
 	mov r15,rbx
 	cmp r15, 0
-	jne L_921
+	jne L_1541
 	mov rbx,0
 	mov r14,rbx
-	jmp L_922
+	jmp L_1542
 	
-L_921:
+L_1541:
 	mov rbx,1
 	cmp rbx,0
 	mov r14, 0
 	setg r14B
 	
-L_922:
+L_1542:
 	cmp r14, 0
-	je L_923
+	je L_1543
 	mov rbx,t69
 	mov rdi,rbx
 	mov r14,rdi
@@ -709,9 +709,9 @@ L_922:
 	pop r13
 	pop r14
 	pop r15
-	jmp L_924
+	jmp L_1544
 	
-L_923:
+L_1543:
 	mov rbx,t73
 	mov rdi,rbx
 	mov r14,rdi
@@ -735,25 +735,25 @@ L_923:
 	pop r14
 	pop r15
 	
-L_924:
+L_1544:
 	cmp r15, 0
 	sete r15B
 	cmp r15, 0
-	je L_925
+	je L_1545
 	mov rbx,1
 	mov r15,rbx
-	jmp L_926
+	jmp L_1546
 	
-L_925:
+L_1545:
 	mov rbx,1
 	cmp rbx,0
 	mov r15, 0
 	setg r15B
 	mov r15,r15
 	
-L_926:
+L_1546:
 	cmp r15, 0
-	je L_927
+	je L_1547
 	mov rbx,t82
 	mov rdi,rbx
 	mov r15,rdi
@@ -776,9 +776,9 @@ L_926:
 	pop r13
 	pop r14
 	pop r15
-	jmp L_928
+	jmp L_1548
 	
-L_927:
+L_1547:
 	mov rbx,t86
 	mov rdi,rbx
 	mov r15,rdi
@@ -802,30 +802,30 @@ L_927:
 	pop r14
 	pop r15
 	
-L_928:
+L_1548:
 	mov rbx,0
 	mov r15,rbx
 	cmp r15, 0
-	jne L_929
+	jne L_1549
 	mov rbx,0
 	mov r15,rbx
-	jmp L_930
+	jmp L_1550
 	
-L_929:
+L_1549:
 	mov rbx,1
 	mov rdx,0
 	cmp rbx,rdx
 	mov r15, 0
 	setne r15B
 	
-L_930:
+L_1550:
 	cmp r15, 0
-	jne L_931
+	jne L_1551
 	mov rbx,0
 	mov r15,rbx
-	jmp L_932
+	jmp L_1552
 	
-L_931:
+L_1551:
 	mov rbx,2
 	mov rdx,4
 	cmp rbx,rdx
@@ -833,9 +833,9 @@ L_931:
 	setne r15B
 	mov r15,r15
 	
-L_932:
+L_1552:
 	cmp r15, 0
-	je L_933
+	je L_1553
 	mov rbx,t99
 	mov rdi,rbx
 	mov r15,rdi
@@ -858,9 +858,9 @@ L_932:
 	pop r13
 	pop r14
 	pop r15
-	jmp L_934
+	jmp L_1554
 	
-L_933:
+L_1553:
 	mov rbx,t103
 	mov rdi,rbx
 	mov r15,rdi
@@ -884,7 +884,7 @@ L_933:
 	pop r14
 	pop r15
 	
-L_934:
+L_1554:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

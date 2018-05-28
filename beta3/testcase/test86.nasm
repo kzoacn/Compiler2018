@@ -682,13 +682,13 @@ main:
 	mov rbx,0
 	mov r12,rbx
 	
-L_2074:
+L_2694:
 	mov rbx,5
 	cmp r12,rbx
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	je L_2075
+	je L_2695
 	mov r15,r13
 	add r15,r14
 	mov r13,r15
@@ -875,9 +875,9 @@ L_2074:
 	mov r15,r12
 	mov rbx,1
 	add r12,rbx
-	jmp L_2074
+	jmp L_2694
 	
-L_2075:
+L_2695:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

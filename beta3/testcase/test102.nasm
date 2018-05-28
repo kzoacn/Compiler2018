@@ -835,11 +835,10 @@ L_53:
 	cdq
 	idiv rbx
 	mov  r15, rax
-	mov rbx,r15
-	mov rdx,4
+	mov r9,r15
+	mov rbx,4
 	mov r15,r10
-	imul r15,rdx
-	mov qword [rsp+8*25],rbx
+	imul r15,rbx
 	xor rdx, rdx
 	mov rax,  r15
 	mov rbx, 100
@@ -865,16 +864,14 @@ L_53:
 	idiv rbx
 	mov  r14, rax
 	add r14,r10
-	mov rbx,  [rsp+8*25]
 	mov r15,r11
-	add r15,rbx
-	mov rdx,r12
-	lea r15,[rdx+r15*8+8H]
-	mov rdx, [r15]
-	mov rax,  [rsp+8*27]
-	lea r15,[rdx+rax*8+8H]
+	add r15,r9
+	mov r9,r12
+	lea r15,[r9+r15*8+8H]
+	mov r9, [r15]
+	mov rbx,  [rsp+8*27]
+	lea r15,[r9+rbx*8+8H]
 	mov [r15],r14
-	mov qword [rsp+8*30],rdx
 	
 L_55:
 	mov r15,r10

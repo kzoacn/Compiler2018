@@ -695,7 +695,7 @@ main:
 	pop r15
 	mov qword  r15, rax
 	cmp r15, 0
-	je L_1763
+	je L_2383
 	mov rbx,t67
 	mov rdi,rbx
 	mov r15,rdi
@@ -718,9 +718,9 @@ main:
 	pop r13
 	pop r14
 	pop r15
-	jmp L_1764
+	jmp L_2384
 	
-L_1763:
+L_2383:
 	mov rbx,t71
 	mov rdi,rbx
 	mov r15,rdi
@@ -744,7 +744,7 @@ L_1763:
 	pop r14
 	pop r15
 	
-L_1764:
+L_2384:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

@@ -660,8 +660,7 @@ point_set:
 	mov r11,rdi
 	mov r10,rsi
 	mov rdx,0
-	lea rax,[r15+rdx*8+8H]
-	mov qword [rsp+8*7],rax
+	lea r9,[r15+rdx*8+8H]
 	mov     rdi, 0
 	push r15
 	push r14
@@ -683,7 +682,7 @@ point_set:
 	mov     qword  r13, rax
 	mov r14,r13
 	mov     rsi,  r13
-	mov     rdi, [rsp+8*7]
+	mov     rdi,  r9
 	push r15
 	push r14
 	push r13

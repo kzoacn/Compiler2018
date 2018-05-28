@@ -670,10 +670,9 @@ main:
 	call global_init
 	pop r15
 	mov r15 , rax
-	mov rdx,5
-	mov rbx,rdx
-	mov qword [rsp+8*2],rbx
-	mov     rdi, [rsp+8*2]
+	mov rbx,5
+	mov r9,rbx
+	mov     rdi,  r9
 	push r15
 	push r14
 	push r13
@@ -721,29 +720,27 @@ main:
 	mov rbx,0
 	mov r11,rbx
 	
-L_3010:
-	mov rbx,  [rsp+8*2]
-	cmp r11,rbx
+L_3630:
+	cmp r11,r9
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	je L_3011
+	je L_3631
 	mov rbx,0
 	mov r10,rbx
 	
-L_3013:
+L_3633:
 	mov rbx,1
 	mov r15,r10
 	add r15,rbx
-	mov rdx,  [rsp+8*2]
-	cmp r15,rdx
+	cmp r15,r9
 	mov r15, 0
 	setl r15B
-	mov rax,  [rsp+8*19]
-	add rax,rax
+	mov rdx,  [rsp+8*19]
+	add rdx,rdx
 	cmp r15, 0
-	mov qword [rsp+8*19],rax
-	je L_3014
+	mov qword [rsp+8*19],rdx
+	je L_3634
 	mov r15,r12
 	lea r15,[r15+r10*8+8H]
 	mov r15, [r15]
@@ -757,7 +754,7 @@ L_3013:
 	mov r15, 0
 	setg r15B
 	cmp r15, 0
-	je L_3017
+	je L_3637
 	mov r15,r12
 	lea r15,[r15+r10*8+8H]
 	mov r15, [r15]
@@ -778,29 +775,28 @@ L_3013:
 	lea r15,[r15+r14*8+8H]
 	mov [r15],r13
 	
-L_3017:
+L_3637:
 	mov r15,r10
 	mov rbx,1
 	add r10,rbx
-	jmp L_3013
+	jmp L_3633
 	
-L_3014:
+L_3634:
 	mov r15,r11
 	mov rbx,1
 	add r11,rbx
-	jmp L_3010
+	jmp L_3630
 	
-L_3011:
+L_3631:
 	mov rbx,0
 	mov r11,rbx
 	
-L_3018:
-	mov rbx,  [rsp+8*2]
-	cmp r11,rbx
+L_3638:
+	cmp r11,r9
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	je L_3019
+	je L_3639
 	mov r15,r12
 	lea r15,[r15+r11*8+8H]
 	mov r15, [r15]
@@ -849,9 +845,9 @@ L_3018:
 	mov r15,r11
 	mov rbx,1
 	add r11,rbx
-	jmp L_3018
+	jmp L_3638
 	
-L_3019:
+L_3639:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

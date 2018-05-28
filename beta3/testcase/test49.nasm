@@ -784,21 +784,21 @@ main:
 	mov rbx,0
 	mov r13,rbx
 	
-L_975:
+L_1595:
 	cmp r13,r10
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	je L_976
+	je L_1596
 	mov rbx,0
 	mov r12,rbx
 	
-L_978:
+L_1598:
 	cmp r12,r10
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	je L_979
+	je L_1599
 	mov     rdi, 3
 	push r15
 	push r14
@@ -855,15 +855,15 @@ L_978:
 	mov r15,r12
 	mov rbx,1
 	add r12,rbx
-	jmp L_978
+	jmp L_1598
 	
-L_979:
+L_1599:
 	mov r15,r13
 	mov rbx,1
 	add r13,rbx
-	jmp L_975
+	jmp L_1595
 	
-L_976:
+L_1596:
 	mov     rdi, 3
 	push r15
 	push r14

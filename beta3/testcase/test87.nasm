@@ -673,7 +673,7 @@ main:
 	pop r15
 	mov r15 , rax
 	
-L_2081:
+L_2701:
 	mov rbx,1
 	mov r15,rbx
 	mov rcx,29
@@ -683,12 +683,12 @@ L_2081:
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	jne L_2083
+	jne L_2703
 	mov rbx,0
 	mov r15,rbx
-	jmp L_2084
+	jmp L_2704
 	
-L_2083:
+L_2703:
 	mov rbx,1
 	mov r15,rbx
 	mov rcx,29
@@ -701,10 +701,10 @@ L_2083:
 	setg r15B
 	mov r15,r15
 	
-L_2084:
+L_2704:
 	add r10,r10
 	cmp r15, 0
-	je L_2082
+	je L_2702
 	mov rbx,  [gbl+8*3]
 	mov rdx,  [gbl+8*7]
 	mov r14,rbx
@@ -843,38 +843,505 @@ L_2084:
 	add r15,r12
 	add r11,r15
 	sub r13,r11
-	mov rbx,rdx
-	add rbx,rax
-	mov qword [rsp+8*48],rbx
-	mov rbx,  [gbl+8*3]
+	mov r9,rdx
+	add r9,rax
 	mov r15,rbx
 	sub r15,rdx
 	add r15,rax
-	mov rbx,  [rsp+8*48]
-	add rbx,r15
+	add r9,r15
 	mov r15,rdx
 	add r15,rax
+	sub r9,r15
+	mov r12,rbx
+	sub r12,rdx
+	add r12,rax
+	mov r15,rdx
+	add r15,rax
+	sub r12,r15
+	mov r15,rbx
+	sub r15,rdx
+	add r15,rax
+	add r12,r15
+	add r9,r12
+	mov r11,rdx
+	add r11,rax
+	mov r15,rbx
+	sub r15,rdx
+	add r15,rax
+	add r11,r15
+	mov r15,rdx
+	add r15,rax
+	sub r11,r15
+	mov r12,rbx
+	sub r12,rdx
+	add r12,rax
+	mov r15,rdx
+	add r15,rax
+	sub r12,r15
+	mov r15,rbx
+	sub r15,rdx
+	add r15,rax
+	add r12,r15
+	add r11,r12
+	sub r9,r11
+	sub r13,r9
+	add r14,r13
+	mov r11,rdx
+	add r11,rax
+	mov r15,rbx
+	sub r15,rdx
+	add r15,rax
+	add r11,r15
+	mov r13,rdx
+	add r13,rax
+	mov r15,rbx
+	sub r15,rdx
+	add r15,rax
+	add r13,r15
+	sub r11,r13
+	mov r13,rdx
+	add r13,rax
+	mov r15,rbx
+	sub r15,rdx
+	add r15,rax
+	add r13,r15
+	mov r15,rdx
+	add r15,rax
+	sub r13,r15
+	sub r11,r13
+	mov r12,rbx
+	sub r12,rdx
+	add r12,rax
+	mov r15,rdx
+	add r15,rax
+	sub r12,r15
+	mov r15,rbx
+	sub r15,rdx
+	add r15,rax
+	add r12,r15
+	mov r13,rdx
+	add r13,rax
+	mov r15,rbx
+	sub r15,rdx
+	add r15,rax
+	add r13,r15
+	mov r15,rdx
+	add r15,rax
+	sub r13,r15
+	sub r12,r13
+	add r11,r12
+	mov r12,rbx
+	sub r12,rdx
+	add r12,rax
+	mov r15,rdx
+	add r15,rax
+	sub r12,r15
+	mov r15,rbx
+	sub r15,rdx
+	add r15,rax
+	add r12,r15
+	mov r13,rdx
+	add r13,rax
+	mov r15,rbx
+	sub r15,rdx
+	add r15,rax
+	add r13,r15
+	mov r15,rdx
+	add r15,rax
+	sub r13,r15
+	sub r12,r13
+	mov r13,rbx
+	sub r13,rdx
+	add r13,rax
+	mov r15,rdx
+	add r15,rax
+	sub r13,r15
+	mov r15,rbx
+	sub r15,rdx
+	add r15,rax
+	add r13,r15
+	mov r9,rdx
+	add r9,rax
+	mov r15,rbx
+	sub r15,rdx
+	add r15,rax
+	add r9,r15
+	mov r15,rdx
+	add r15,rax
+	sub r9,r15
+	sub r13,r9
+	add r12,r13
+	add r11,r12
+	mov r9,rbx
+	sub r9,rdx
+	add r9,rax
+	mov r15,rdx
+	add r15,rax
+	sub r9,r15
+	mov r13,rbx
+	sub r13,rdx
+	add r13,rax
+	mov r15,rdx
+	add r15,rax
+	sub r13,r15
+	add r9,r13
+	mov r15,rbx
+	sub r15,rdx
+	add r15,rax
+	mov r13,rdx
+	add r13,rax
+	sub r15,r13
+	mov r13,rbx
+	sub r13,rdx
+	add r13,rax
+	add r15,r13
+	add r9,r15
+	mov r12,rdx
+	add r12,rax
+	mov r15,rbx
+	sub r15,rdx
+	add r15,rax
+	add r12,r15
+	mov r15,rdx
+	add r15,rax
+	sub r12,r15
+	mov r13,rbx
+	sub r13,rdx
+	add r13,rax
+	mov r15,rdx
+	add r15,rax
+	sub r13,r15
+	mov r15,rbx
+	sub r15,rdx
+	add r15,rax
+	add r13,r15
+	add r12,r13
+	sub r9,r12
+	mov r12,rdx
+	add r12,rax
+	mov r15,rbx
+	sub r15,rdx
+	add r15,rax
+	add r12,r15
+	mov r15,rdx
+	add r15,rax
+	sub r12,r15
+	mov r13,rbx
+	sub r13,rdx
+	add r13,rax
+	mov r15,rdx
+	add r15,rax
+	sub r13,r15
+	mov r15,rbx
+	sub r15,rdx
+	add r15,rax
+	add r13,r15
+	add r12,r13
+	mov r13,rdx
+	add r13,rax
+	mov r15,rbx
+	sub r15,rdx
+	add r15,rax
+	add r13,r15
+	mov r15,rdx
+	add r15,rax
+	sub r13,r15
+	mov r15,rbx
+	sub r15,rdx
+	add r15,rax
+	mov rbx,rdx
+	add rbx,rax
+	sub r15,rbx
+	mov rbx,  [gbl+8*3]
+	mov rax,rbx
+	sub rax,rdx
+	mov rbx,  [gbl+8*9]
+	add rax,rbx
+	add r15,rax
+	add r13,r15
+	sub r12,r13
+	sub r9,r12
+	add r11,r9
+	sub r14,r11
+	mov rdx,r14
+	mov rax,  [gbl+8*3]
+	mov rbx,rax
+	sub rbx,rdx
+	mov qword [gbl+8*7],rdx
+	mov rdx,  [gbl+8*9]
+	add rbx,rdx
+	mov rax,  [gbl+8*7]
+	mov r15,rax
+	add r15,rdx
 	sub rbx,r15
 	mov rdx,  [gbl+8*3]
-	mov rax,  [gbl+8*7]
+	mov r14,rdx
+	sub r14,rax
+	mov qword [rsp+8*110],rbx
+	mov rbx,  [gbl+8*9]
+	add r14,rbx
+	mov r15,rax
+	add r15,rbx
+	sub r14,r15
+	mov rdx,  [rsp+8*110]
+	add rdx,r14
+	mov rbx,  [gbl+8*3]
+	mov r15,rbx
+	sub r15,rax
+	mov qword [rsp+8*110],rdx
+	mov rdx,  [gbl+8*9]
+	add r15,rdx
+	mov r14,rax
+	add r14,rdx
+	sub r15,r14
+	mov r14,rbx
+	sub r14,rax
+	add r14,rdx
+	add r15,r14
+	mov rbx,  [rsp+8*110]
+	add rbx,r15
+	mov r14,rax
+	add r14,rdx
+	mov qword [rsp+8*110],rbx
+	mov rbx,  [gbl+8*3]
+	mov r15,rbx
+	sub r15,rax
+	add r15,rdx
+	add r14,r15
+	mov r15,rax
+	add r15,rdx
+	sub r14,r15
+	mov r13,rbx
+	sub r13,rax
+	add r13,rdx
+	mov r15,rax
+	add r15,rdx
+	sub r13,r15
+	mov r15,rbx
+	sub r15,rax
+	add r15,rdx
+	add r13,r15
+	add r14,r13
+	mov rbx,  [rsp+8*110]
+	sub rbx,r14
+	mov r12,rax
+	add r12,rdx
+	mov qword [rsp+8*110],rbx
+	mov rbx,  [gbl+8*3]
+	mov r15,rbx
+	sub r15,rax
+	add r15,rdx
+	add r12,r15
+	mov r15,rax
+	add r15,rdx
+	mov r14,rbx
+	sub r14,rax
+	add r14,rdx
+	add r15,r14
+	sub r12,r15
+	mov r15,rax
+	add r15,rdx
+	mov r14,rbx
+	sub r14,rax
+	add r14,rdx
+	add r15,r14
+	mov r14,rax
+	add r14,rdx
+	sub r15,r14
+	sub r12,r15
+	mov r14,rbx
+	sub r14,rax
+	add r14,rdx
+	mov r15,rax
+	add r15,rdx
+	sub r14,r15
+	mov r15,rbx
+	sub r15,rax
+	add r15,rdx
+	add r14,r15
+	mov r15,rax
+	add r15,rdx
+	mov r13,rbx
+	sub r13,rax
+	add r13,rdx
+	add r15,r13
+	mov r13,rax
+	add r13,rdx
+	sub r15,r13
+	sub r14,r15
+	add r12,r14
+	mov rbx,  [rsp+8*110]
+	sub rbx,r12
+	mov rdx,  [gbl+8*3]
 	mov r12,rdx
 	sub r12,rax
-	mov qword [rsp+8*48],rbx
+	mov qword [rsp+8*110],rbx
 	mov rbx,  [gbl+8*9]
 	add r12,rbx
 	mov r15,rax
 	add r15,rbx
 	sub r12,r15
+	mov r14,rdx
+	sub r14,rax
+	add r14,rbx
+	mov r15,rax
+	add r15,rbx
+	sub r14,r15
+	add r12,r14
+	mov r14,rdx
+	sub r14,rax
+	add r14,rbx
+	mov r15,rax
+	add r15,rbx
+	sub r14,r15
+	mov r15,rdx
+	sub r15,rax
+	add r15,rbx
+	add r14,r15
+	add r12,r14
+	mov r13,rax
+	add r13,rbx
+	mov r15,rdx
+	sub r15,rax
+	add r15,rbx
+	add r13,r15
+	mov r15,rax
+	add r15,rbx
+	sub r13,r15
+	mov r14,rdx
+	sub r14,rax
+	add r14,rbx
+	mov r15,rax
+	add r15,rbx
+	sub r14,r15
+	mov r15,rdx
+	sub r15,rax
+	add r15,rbx
+	add r14,r15
+	add r13,r14
+	sub r12,r13
+	mov r13,rax
+	add r13,rbx
+	mov r15,rdx
+	sub r15,rax
+	add r15,rbx
+	add r13,r15
+	mov r15,rax
+	add r15,rbx
+	sub r13,r15
+	mov r14,rdx
+	sub r14,rax
+	add r14,rbx
+	mov r15,rax
+	add r15,rbx
+	sub r14,r15
+	mov r15,rdx
+	sub r15,rax
+	add r15,rbx
+	add r14,r15
+	add r13,r14
+	mov r15,rax
+	add r15,rbx
+	mov r14,rdx
+	sub r14,rax
+	add r14,rbx
+	add r15,r14
+	mov r14,rax
+	add r14,rbx
+	sub r15,r14
+	mov r11,rdx
+	sub r11,rax
+	add r11,rbx
+	mov r14,rax
+	add r14,rbx
+	sub r11,r14
+	mov r14,rdx
+	sub r14,rax
+	add r14,rbx
+	add r11,r14
+	add r15,r11
+	sub r13,r15
+	sub r12,r13
+	mov rdx,  [rsp+8*110]
+	add rdx,r12
+	mov r12,rax
+	add r12,rbx
+	mov qword [rsp+8*110],rdx
+	mov rdx,  [gbl+8*3]
 	mov r15,rdx
 	sub r15,rax
 	add r15,rbx
 	add r12,r15
-	mov rdx,  [rsp+8*48]
-	add rdx,r12
+	mov r14,rax
+	add r14,rbx
+	mov r15,rdx
+	sub r15,rax
+	add r15,rbx
+	add r14,r15
+	sub r12,r14
+	mov r14,rax
+	add r14,rbx
+	mov r15,rdx
+	sub r15,rax
+	add r15,rbx
+	add r14,r15
+	mov r15,rax
+	add r15,rbx
+	sub r14,r15
+	sub r12,r14
+	mov r13,rdx
+	sub r13,rax
+	add r13,rbx
+	mov r15,rax
+	add r15,rbx
+	sub r13,r15
+	mov r15,rdx
+	sub r15,rax
+	add r15,rbx
+	add r13,r15
+	mov r14,rax
+	add r14,rbx
+	mov r15,rdx
+	sub r15,rax
+	add r15,rbx
+	add r14,r15
+	mov r15,rax
+	add r15,rbx
+	sub r14,r15
+	sub r13,r14
+	add r12,r13
+	mov r13,rdx
+	sub r13,rax
+	add r13,rbx
+	mov r15,rax
+	add r15,rbx
+	sub r13,r15
+	mov r15,rdx
+	sub r15,rax
+	add r15,rbx
+	add r13,r15
+	mov r15,rax
+	add r15,rbx
+	mov r14,rdx
+	sub r14,rax
+	add r14,rbx
+	add r15,r14
+	mov r14,rax
+	add r14,rbx
+	sub r15,r14
+	sub r13,r15
+	mov r14,rdx
+	sub r14,rax
+	add r14,rbx
+	mov r15,rax
+	add r15,rbx
+	sub r14,r15
+	mov r15,rdx
+	sub r15,rax
+	add r15,rbx
+	add r14,r15
 	mov r11,rax
 	add r11,rbx
-	mov qword [rsp+8*48],rdx
-	mov rdx,  [gbl+8*3]
 	mov r15,rdx
 	sub r15,rax
 	add r15,rbx
@@ -882,971 +1349,463 @@ L_2084:
 	mov r15,rax
 	add r15,rbx
 	sub r11,r15
-	mov r12,rdx
-	sub r12,rax
-	add r12,rbx
-	mov r15,rax
-	add r15,rbx
-	sub r12,r15
-	mov r15,rdx
-	sub r15,rax
-	add r15,rbx
-	add r12,r15
-	add r11,r12
-	mov rdx,  [rsp+8*48]
-	sub rdx,r11
-	sub r13,rdx
-	add r14,r13
-	mov r11,rax
+	sub r14,r11
+	add r13,r14
+	add r12,r13
+	mov r11,rdx
+	sub r11,rax
 	add r11,rbx
-	mov rdx,  [gbl+8*3]
+	mov r15,rax
+	add r15,rbx
+	sub r11,r15
 	mov r15,rdx
 	sub r15,rax
 	add r15,rbx
+	mov r14,rax
+	add r14,rbx
+	sub r15,r14
 	add r11,r15
+	mov r14,rdx
+	sub r14,rax
+	add r14,rbx
+	mov r15,rax
+	add r15,rbx
+	sub r14,r15
+	mov r15,rdx
+	sub r15,rax
+	add r15,rbx
+	add r14,r15
+	add r11,r14
 	mov r13,rax
 	add r13,rbx
 	mov r15,rdx
 	sub r15,rax
 	add r15,rbx
 	add r13,r15
+	mov r15,rax
+	add r15,rbx
+	sub r13,r15
+	mov r14,rdx
+	sub r14,rax
+	add r14,rbx
+	mov r15,rax
+	add r15,rbx
+	sub r14,r15
+	mov r15,rdx
+	sub r15,rax
+	add r15,rbx
+	add r14,r15
+	add r13,r14
 	sub r11,r13
-	mov r13,rax
-	add r13,rbx
-	mov r15,rdx
-	sub r15,rax
-	add r15,rbx
-	add r13,r15
 	mov r15,rax
 	add r15,rbx
-	sub r13,r15
-	sub r11,r13
-	mov r12,rdx
-	sub r12,rax
-	add r12,rbx
-	mov r15,rax
-	add r15,rbx
-	sub r12,r15
-	mov r15,rdx
-	sub r15,rax
-	add r15,rbx
-	add r12,r15
-	mov r13,rax
-	add r13,rbx
-	mov r15,rdx
-	sub r15,rax
-	add r15,rbx
-	add r13,r15
-	mov r15,rax
-	add r15,rbx
-	sub r13,r15
-	sub r12,r13
-	add r11,r12
-	mov r12,rdx
-	sub r12,rax
-	add r12,rbx
-	mov r15,rax
-	add r15,rbx
-	sub r12,r15
-	mov r15,rdx
-	sub r15,rax
-	add r15,rbx
-	add r12,r15
-	mov r13,rax
-	add r13,rbx
-	mov r15,rdx
-	sub r15,rax
-	add r15,rbx
-	add r13,r15
-	mov r15,rax
-	add r15,rbx
-	sub r13,r15
-	sub r12,r13
+	mov r14,rdx
+	sub r14,rax
+	add r14,rbx
+	add r15,r14
+	mov r14,rax
+	add r14,rbx
+	sub r15,r14
 	mov r13,rdx
 	sub r13,rax
 	add r13,rbx
-	mov r15,rax
-	add r15,rbx
-	sub r13,r15
-	mov r15,rdx
-	sub r15,rax
-	add r15,rbx
-	add r13,r15
-	mov rdx,rax
-	add rdx,rbx
-	mov rbx,  [gbl+8*3]
-	mov r15,rbx
-	sub r15,rax
-	mov qword [rsp+8*82],rdx
-	mov rdx,  [gbl+8*9]
-	add r15,rdx
-	mov rbx,  [rsp+8*82]
-	add rbx,r15
-	mov r15,rax
-	add r15,rdx
-	sub rbx,r15
-	sub r13,rbx
-	add r12,r13
-	add r11,r12
-	mov rbx,  [gbl+8*3]
-	mov rdx,rbx
-	sub rdx,rax
-	mov rbx,  [gbl+8*9]
-	add rdx,rbx
-	mov r15,rax
-	add r15,rbx
-	sub rdx,r15
-	mov rbx,  [gbl+8*3]
-	mov r13,rbx
-	sub r13,rax
-	mov qword [rsp+8*85],rdx
-	mov rdx,  [gbl+8*9]
-	add r13,rdx
-	mov r15,rax
-	add r15,rdx
-	sub r13,r15
-	mov rbx,  [rsp+8*85]
-	add rbx,r13
-	mov rdx,  [gbl+8*3]
-	mov r15,rdx
-	sub r15,rax
-	mov qword [rsp+8*85],rbx
-	mov rbx,  [gbl+8*9]
-	add r15,rbx
-	mov r13,rax
-	add r13,rbx
-	sub r15,r13
-	mov r13,rdx
-	sub r13,rax
-	add r13,rbx
+	mov r14,rax
+	add r14,rbx
+	sub r13,r14
+	mov r14,rdx
+	sub r14,rax
+	add r14,rbx
+	add r13,r14
 	add r15,r13
-	mov rdx,  [rsp+8*85]
-	add rdx,r15
-	mov r12,rax
-	add r12,rbx
-	mov qword [rsp+8*85],rdx
-	mov rdx,  [gbl+8*3]
-	mov r15,rdx
-	sub r15,rax
-	add r15,rbx
-	add r12,r15
-	mov r15,rax
-	add r15,rbx
-	sub r12,r15
-	mov r13,rdx
-	sub r13,rax
-	add r13,rbx
-	mov r15,rax
-	add r15,rbx
-	sub r13,r15
-	mov r15,rdx
-	sub r15,rax
-	add r15,rbx
-	add r13,r15
-	add r12,r13
-	mov rdx,  [rsp+8*85]
-	sub rdx,r12
-	mov r12,rax
-	add r12,rbx
-	mov qword [rsp+8*85],rdx
-	mov rdx,  [gbl+8*3]
-	mov r15,rdx
-	sub r15,rax
-	add r15,rbx
-	add r12,r15
-	mov r15,rax
-	add r15,rbx
-	sub r12,r15
-	mov r13,rdx
-	sub r13,rax
-	add r13,rbx
-	mov r15,rax
-	add r15,rbx
-	sub r13,r15
-	mov r15,rdx
-	sub r15,rax
-	add r15,rbx
-	add r13,r15
-	add r12,r13
 	mov r13,rax
 	add r13,rbx
-	mov r15,rdx
-	sub r15,rax
-	add r15,rbx
-	add r13,r15
-	mov r15,rax
-	add r15,rbx
-	sub r13,r15
-	mov r15,rdx
-	sub r15,rax
-	add r15,rbx
-	mov rdx,rax
-	add rdx,rbx
-	sub r15,rdx
+	mov r14,rdx
+	sub r14,rax
+	add r14,rbx
+	add r13,r14
+	mov r14,rax
+	add r14,rbx
+	sub r13,r14
+	mov r9,rdx
+	sub r9,rax
+	add r9,rbx
+	mov r14,rax
+	add r14,rbx
+	sub r9,r14
+	mov r14,rdx
+	sub r14,rax
+	add r14,rbx
+	add r9,r14
+	add r13,r9
+	sub r15,r13
+	sub r11,r15
+	add r12,r11
+	mov rdx,  [rsp+8*110]
+	sub rdx,r12
+	mov rbx,rdx
 	mov rdx,  [gbl+8*3]
+	mov qword [gbl+8*9],rbx
 	mov rbx,rdx
 	sub rbx,rax
 	mov rdx,  [gbl+8*9]
 	add rbx,rdx
-	add r15,rbx
-	add r13,r15
-	sub r12,r13
-	mov rbx,  [rsp+8*85]
-	sub rbx,r12
-	add r11,rbx
-	sub r14,r11
-	mov rax,r14
-	mov rbx,  [gbl+8*3]
-	mov rdx,rbx
-	sub rdx,rax
-	mov rbx,  [gbl+8*9]
-	add rdx,rbx
-	mov r15,rax
-	add r15,rbx
-	sub rdx,r15
-	mov rbx,  [gbl+8*3]
-	mov r14,rbx
-	sub r14,rax
-	mov qword [rsp+8*110],rdx
-	mov rdx,  [gbl+8*9]
-	add r14,rdx
 	mov r15,rax
 	add r15,rdx
-	sub r14,r15
-	mov rbx,  [rsp+8*110]
-	add rbx,r14
+	sub rbx,r15
 	mov rdx,  [gbl+8*3]
-	mov r15,rdx
-	sub r15,rax
-	mov qword [rsp+8*110],rbx
-	mov rbx,  [gbl+8*9]
-	add r15,rbx
-	mov r14,rax
-	add r14,rbx
-	sub r15,r14
 	mov r14,rdx
 	sub r14,rax
-	add r14,rbx
-	add r15,r14
-	mov rdx,  [rsp+8*110]
-	add rdx,r15
-	mov r14,rax
-	add r14,rbx
-	mov qword [rsp+8*110],rdx
-	mov rdx,  [gbl+8*3]
-	mov r15,rdx
-	sub r15,rax
-	add r15,rbx
-	add r14,r15
-	mov r15,rax
-	add r15,rbx
-	sub r14,r15
-	mov r13,rdx
-	sub r13,rax
-	add r13,rbx
-	mov r15,rax
-	add r15,rbx
-	sub r13,r15
-	mov r15,rdx
-	sub r15,rax
-	add r15,rbx
-	add r13,r15
-	add r14,r13
-	mov rdx,  [rsp+8*110]
-	sub rdx,r14
-	mov r12,rax
-	add r12,rbx
-	mov qword [rsp+8*110],rdx
-	mov rdx,  [gbl+8*3]
-	mov r15,rdx
-	sub r15,rax
-	add r15,rbx
-	add r12,r15
-	mov r15,rax
-	add r15,rbx
-	mov r14,rdx
-	sub r14,rax
-	add r14,rbx
-	add r15,r14
-	sub r12,r15
-	mov r15,rax
-	add r15,rbx
-	mov r14,rdx
-	sub r14,rax
-	add r14,rbx
-	add r15,r14
-	mov r14,rax
-	add r14,rbx
-	sub r15,r14
-	sub r12,r15
-	mov r14,rdx
-	sub r14,rax
-	add r14,rbx
-	mov r15,rax
-	add r15,rbx
-	sub r14,r15
-	mov r15,rdx
-	sub r15,rax
-	add r15,rbx
-	add r14,r15
-	mov r15,rax
-	add r15,rbx
-	mov r13,rdx
-	sub r13,rax
-	add r13,rbx
-	add r15,r13
-	mov r13,rax
-	add r13,rbx
-	sub r15,r13
-	sub r14,r15
-	add r12,r14
-	mov rdx,  [rsp+8*110]
-	sub rdx,r12
-	mov rbx,  [gbl+8*3]
-	mov r12,rbx
-	sub r12,rax
-	mov qword [rsp+8*110],rdx
-	mov rdx,  [gbl+8*9]
-	add r12,rdx
-	mov r15,rax
-	add r15,rdx
-	sub r12,r15
-	mov r14,rbx
-	sub r14,rax
-	add r14,rdx
-	mov r15,rax
-	add r15,rdx
-	sub r14,r15
-	add r12,r14
-	mov r14,rbx
-	sub r14,rax
-	add r14,rdx
-	mov r15,rax
-	add r15,rdx
-	sub r14,r15
-	mov r15,rbx
-	sub r15,rax
-	add r15,rdx
-	add r14,r15
-	add r12,r14
-	mov r13,rax
-	add r13,rdx
-	mov r15,rbx
-	sub r15,rax
-	add r15,rdx
-	add r13,r15
-	mov r15,rax
-	add r15,rdx
-	sub r13,r15
-	mov r14,rbx
-	sub r14,rax
-	add r14,rdx
-	mov r15,rax
-	add r15,rdx
-	sub r14,r15
-	mov r15,rbx
-	sub r15,rax
-	add r15,rdx
-	add r14,r15
-	add r13,r14
-	sub r12,r13
-	mov r13,rax
-	add r13,rdx
-	mov r15,rbx
-	sub r15,rax
-	add r15,rdx
-	add r13,r15
-	mov r15,rax
-	add r15,rdx
-	sub r13,r15
-	mov r14,rbx
-	sub r14,rax
-	add r14,rdx
-	mov r15,rax
-	add r15,rdx
-	sub r14,r15
-	mov r15,rbx
-	sub r15,rax
-	add r15,rdx
-	add r14,r15
-	add r13,r14
-	mov r15,rax
-	add r15,rdx
-	mov r14,rbx
-	sub r14,rax
-	add r14,rdx
-	add r15,r14
-	mov r14,rax
-	add r14,rdx
-	sub r15,r14
-	mov r11,rbx
-	sub r11,rax
-	add r11,rdx
-	mov r14,rax
-	add r14,rdx
-	sub r11,r14
-	mov r14,rbx
-	sub r14,rax
-	add r14,rdx
-	add r11,r14
-	add r15,r11
-	sub r13,r15
-	sub r12,r13
-	mov rbx,  [rsp+8*110]
-	add rbx,r12
-	mov r12,rax
-	add r12,rdx
-	mov qword [rsp+8*110],rbx
-	mov rbx,  [gbl+8*3]
-	mov r15,rbx
-	sub r15,rax
-	add r15,rdx
-	add r12,r15
-	mov r14,rax
-	add r14,rdx
-	mov r15,rbx
-	sub r15,rax
-	add r15,rdx
-	add r14,r15
-	sub r12,r14
-	mov r14,rax
-	add r14,rdx
-	mov r15,rbx
-	sub r15,rax
-	add r15,rdx
-	add r14,r15
-	mov r15,rax
-	add r15,rdx
-	sub r14,r15
-	sub r12,r14
-	mov r13,rbx
-	sub r13,rax
-	add r13,rdx
-	mov r15,rax
-	add r15,rdx
-	sub r13,r15
-	mov r15,rbx
-	sub r15,rax
-	add r15,rdx
-	add r13,r15
-	mov r14,rax
-	add r14,rdx
-	mov r15,rbx
-	sub r15,rax
-	add r15,rdx
-	add r14,r15
-	mov r15,rax
-	add r15,rdx
-	sub r14,r15
-	sub r13,r14
-	add r12,r13
-	mov r13,rbx
-	sub r13,rax
-	add r13,rdx
-	mov r15,rax
-	add r15,rdx
-	sub r13,r15
-	mov r15,rbx
-	sub r15,rax
-	add r15,rdx
-	add r13,r15
-	mov r15,rax
-	add r15,rdx
-	mov r14,rbx
-	sub r14,rax
-	add r14,rdx
-	add r15,r14
-	mov r14,rax
-	add r14,rdx
-	sub r15,r14
-	sub r13,r15
-	mov r14,rbx
-	sub r14,rax
-	add r14,rdx
-	mov r15,rax
-	add r15,rdx
-	sub r14,r15
-	mov r15,rbx
-	sub r15,rax
-	add r15,rdx
-	add r14,r15
-	mov r11,rax
-	add r11,rdx
-	mov r15,rbx
-	sub r15,rax
-	add r15,rdx
-	add r11,r15
-	mov r15,rax
-	add r15,rdx
-	sub r11,r15
-	sub r14,r11
-	add r13,r14
-	add r12,r13
-	mov r11,rbx
-	sub r11,rax
-	add r11,rdx
-	mov r15,rax
-	add r15,rdx
-	sub r11,r15
-	mov r15,rbx
-	sub r15,rax
-	add r15,rdx
-	mov r14,rax
-	add r14,rdx
-	sub r15,r14
-	add r11,r15
-	mov r14,rbx
-	sub r14,rax
-	add r14,rdx
-	mov r15,rax
-	add r15,rdx
-	sub r14,r15
-	mov r15,rbx
-	sub r15,rax
-	add r15,rdx
-	add r14,r15
-	add r11,r14
-	mov r13,rax
-	add r13,rdx
-	mov r15,rbx
-	sub r15,rax
-	add r15,rdx
-	add r13,r15
-	mov r15,rax
-	add r15,rdx
-	sub r13,r15
-	mov r14,rbx
-	sub r14,rax
-	add r14,rdx
-	mov r15,rax
-	add r15,rdx
-	sub r14,r15
-	mov r15,rbx
-	sub r15,rax
-	add r15,rdx
-	add r14,r15
-	add r13,r14
-	sub r11,r13
-	mov r15,rax
-	add r15,rdx
-	mov r14,rbx
-	sub r14,rax
-	add r14,rdx
-	add r15,r14
-	mov r14,rax
-	add r14,rdx
-	sub r15,r14
-	mov r13,rbx
-	sub r13,rax
-	add r13,rdx
-	mov r14,rax
-	add r14,rdx
-	sub r13,r14
-	mov r14,rbx
-	sub r14,rax
-	add r14,rdx
-	add r13,r14
-	add r15,r13
-	mov r13,rax
-	add r13,rdx
-	mov r14,rbx
-	sub r14,rax
-	add r14,rdx
-	add r13,r14
-	mov r14,rax
-	add r14,rdx
-	sub r13,r14
-	mov rdx,rbx
-	sub rdx,rax
-	mov rbx,  [gbl+8*9]
-	add rdx,rbx
-	mov r14,rax
-	add r14,rbx
-	sub rdx,r14
-	mov rbx,  [gbl+8*3]
-	mov r14,rbx
-	sub r14,rax
-	mov qword [rsp+8*208],rdx
-	mov rdx,  [gbl+8*9]
-	add r14,rdx
-	mov rbx,  [rsp+8*208]
-	add rbx,r14
-	add r13,rbx
-	sub r15,r13
-	sub r11,r15
-	add r12,r11
-	mov rbx,  [rsp+8*110]
-	sub rbx,r12
-	mov rdx,rbx
-	mov rbx,  [gbl+8*3]
-	mov qword [gbl+8*9],rdx
-	mov rdx,rbx
-	sub rdx,rax
-	mov rbx,  [gbl+8*9]
-	add rdx,rbx
-	mov r15,rax
-	add r15,rbx
-	sub rdx,r15
-	mov rbx,  [gbl+8*3]
-	mov r14,rbx
-	sub r14,rax
-	mov qword [rsp+8*211],rdx
-	mov rdx,  [gbl+8*9]
-	add r14,rdx
-	mov r15,rax
-	add r15,rdx
-	sub r14,r15
-	mov rbx,  [rsp+8*211]
-	add rbx,r14
-	mov rdx,  [gbl+8*3]
-	mov r15,rdx
-	sub r15,rax
 	mov qword [rsp+8*211],rbx
 	mov rbx,  [gbl+8*9]
+	add r14,rbx
+	mov r15,rax
 	add r15,rbx
-	mov r14,rax
-	add r14,rbx
-	sub r15,r14
-	mov r14,rdx
-	sub r14,rax
-	add r14,rbx
-	add r15,r14
+	sub r14,r15
 	mov rdx,  [rsp+8*211]
-	add rdx,r15
-	mov r13,rax
-	add r13,rbx
+	add rdx,r14
+	mov rbx,  [gbl+8*3]
+	mov r15,rbx
+	sub r15,rax
 	mov qword [rsp+8*211],rdx
-	mov rdx,  [gbl+8*3]
-	mov r15,rdx
-	sub r15,rax
-	add r15,rbx
-	add r13,r15
-	mov r15,rax
-	add r15,rbx
-	sub r13,r15
-	mov r15,rdx
-	sub r15,rax
-	add r15,rbx
+	mov rdx,  [gbl+8*9]
+	add r15,rdx
 	mov r14,rax
-	add r14,rbx
+	add r14,rdx
 	sub r15,r14
-	mov r14,rdx
+	mov r14,rbx
 	sub r14,rax
-	add r14,rbx
+	add r14,rdx
 	add r15,r14
-	add r13,r15
-	mov rdx,  [rsp+8*211]
-	sub rdx,r13
+	mov rbx,  [rsp+8*211]
+	add rbx,r15
 	mov r13,rax
-	add r13,rbx
-	mov qword [rsp+8*211],rdx
-	mov rdx,  [gbl+8*3]
-	mov r15,rdx
+	add r13,rdx
+	mov qword [rsp+8*211],rbx
+	mov rbx,  [gbl+8*3]
+	mov r15,rbx
 	sub r15,rax
-	add r15,rbx
+	add r15,rdx
 	add r13,r15
 	mov r15,rax
-	add r15,rbx
-	mov r14,rdx
+	add r15,rdx
+	sub r13,r15
+	mov r15,rbx
+	sub r15,rax
+	add r15,rdx
+	mov r14,rax
+	add r14,rdx
+	sub r15,r14
+	mov r14,rbx
 	sub r14,rax
-	add r14,rbx
+	add r14,rdx
+	add r15,r14
+	add r13,r15
+	mov rbx,  [rsp+8*211]
+	sub rbx,r13
+	mov r13,rax
+	add r13,rdx
+	mov qword [rsp+8*211],rbx
+	mov rbx,  [gbl+8*3]
+	mov r15,rbx
+	sub r15,rax
+	add r15,rdx
+	add r13,r15
+	mov r15,rax
+	add r15,rdx
+	mov r14,rbx
+	sub r14,rax
+	add r14,rdx
 	add r15,r14
 	sub r13,r15
 	mov r15,rax
-	add r15,rbx
-	mov r14,rdx
+	add r15,rdx
+	mov r14,rbx
 	sub r14,rax
-	add r14,rbx
+	add r14,rdx
 	add r15,r14
 	mov r14,rax
-	add r14,rbx
+	add r14,rdx
 	sub r15,r14
 	sub r13,r15
-	mov r12,rdx
+	mov r12,rbx
 	sub r12,rax
-	add r12,rbx
+	add r12,rdx
 	mov r15,rax
-	add r15,rbx
+	add r15,rdx
 	sub r12,r15
-	mov r15,rdx
+	mov r15,rbx
 	sub r15,rax
-	add r15,rbx
+	add r15,rdx
 	add r12,r15
 	mov r15,rax
-	add r15,rbx
-	mov r14,rdx
+	add r15,rdx
+	mov r14,rbx
 	sub r14,rax
-	add r14,rbx
+	add r14,rdx
 	add r15,r14
 	mov r14,rax
-	add r14,rbx
+	add r14,rdx
 	sub r15,r14
 	sub r12,r15
 	add r13,r12
-	mov rdx,  [rsp+8*211]
-	sub rdx,r13
-	mov rbx,  [gbl+8*3]
-	mov r12,rbx
+	mov rbx,  [rsp+8*211]
+	sub rbx,r13
+	mov rdx,  [gbl+8*3]
+	mov r12,rdx
 	sub r12,rax
-	mov qword [rsp+8*211],rdx
-	mov rdx,  [gbl+8*9]
-	add r12,rdx
+	mov qword [rsp+8*211],rbx
+	mov rbx,  [gbl+8*9]
+	add r12,rbx
 	mov r15,rax
-	add r15,rdx
+	add r15,rbx
 	sub r12,r15
-	mov r14,rbx
+	mov r14,rdx
 	sub r14,rax
-	add r14,rdx
+	add r14,rbx
 	mov r15,rax
-	add r15,rdx
+	add r15,rbx
 	sub r14,r15
 	add r12,r14
-	mov r14,rbx
+	mov r14,rdx
 	sub r14,rax
-	add r14,rdx
+	add r14,rbx
 	mov r15,rax
-	add r15,rdx
+	add r15,rbx
 	sub r14,r15
-	mov r15,rbx
+	mov r15,rdx
 	sub r15,rax
-	add r15,rdx
+	add r15,rbx
 	add r14,r15
 	add r12,r14
 	mov r13,rax
-	add r13,rdx
-	mov r15,rbx
+	add r13,rbx
+	mov r15,rdx
 	sub r15,rax
-	add r15,rdx
+	add r15,rbx
 	add r13,r15
 	mov r15,rax
-	add r15,rdx
+	add r15,rbx
 	sub r13,r15
-	mov r15,rbx
+	mov r15,rdx
 	sub r15,rax
-	add r15,rdx
+	add r15,rbx
 	mov r14,rax
-	add r14,rdx
+	add r14,rbx
 	sub r15,r14
-	mov r14,rbx
+	mov r14,rdx
 	sub r14,rax
-	add r14,rdx
+	add r14,rbx
 	add r15,r14
 	add r13,r15
 	sub r12,r13
 	mov r14,rax
-	add r14,rdx
-	mov r15,rbx
+	add r14,rbx
+	mov r15,rdx
 	sub r15,rax
-	add r15,rdx
+	add r15,rbx
 	add r14,r15
 	mov r15,rax
-	add r15,rdx
+	add r15,rbx
 	sub r14,r15
-	mov r13,rbx
+	mov r13,rdx
 	sub r13,rax
-	add r13,rdx
+	add r13,rbx
 	mov r15,rax
-	add r15,rdx
+	add r15,rbx
 	sub r13,r15
-	mov r15,rbx
+	mov r15,rdx
 	sub r15,rax
-	add r15,rdx
+	add r15,rbx
 	add r13,r15
 	add r14,r13
 	mov r15,rax
-	add r15,rdx
-	mov r13,rbx
+	add r15,rbx
+	mov r13,rdx
 	sub r13,rax
-	add r13,rdx
+	add r13,rbx
 	add r15,r13
 	mov r13,rax
-	add r13,rdx
+	add r13,rbx
 	sub r15,r13
-	mov r11,rbx
+	mov r11,rdx
 	sub r11,rax
-	add r11,rdx
+	add r11,rbx
 	mov r13,rax
-	add r13,rdx
+	add r13,rbx
 	sub r11,r13
-	mov r13,rbx
+	mov r13,rdx
 	sub r13,rax
-	add r13,rdx
+	add r13,rbx
 	add r11,r13
 	add r15,r11
 	sub r14,r15
 	sub r12,r14
-	mov rbx,  [rsp+8*211]
-	add rbx,r12
+	mov rdx,  [rsp+8*211]
+	add rdx,r12
 	mov r12,rax
-	add r12,rdx
-	mov qword [rsp+8*211],rbx
-	mov rbx,  [gbl+8*3]
-	mov r15,rbx
+	add r12,rbx
+	mov qword [rsp+8*211],rdx
+	mov rdx,  [gbl+8*3]
+	mov r15,rdx
 	sub r15,rax
-	add r15,rdx
+	add r15,rbx
 	add r12,r15
 	mov r14,rax
-	add r14,rdx
-	mov r15,rbx
+	add r14,rbx
+	mov r15,rdx
 	sub r15,rax
-	add r15,rdx
+	add r15,rbx
 	add r14,r15
 	sub r12,r14
 	mov r14,rax
-	add r14,rdx
-	mov r15,rbx
+	add r14,rbx
+	mov r15,rdx
 	sub r15,rax
-	add r15,rdx
+	add r15,rbx
 	add r14,r15
 	mov r15,rax
-	add r15,rdx
+	add r15,rbx
 	sub r14,r15
 	sub r12,r14
-	mov r13,rbx
+	mov r13,rdx
 	sub r13,rax
-	add r13,rdx
+	add r13,rbx
 	mov r15,rax
-	add r15,rdx
+	add r15,rbx
 	sub r13,r15
-	mov r15,rbx
+	mov r15,rdx
 	sub r15,rax
-	add r15,rdx
+	add r15,rbx
 	add r13,r15
 	mov r14,rax
-	add r14,rdx
-	mov r15,rbx
+	add r14,rbx
+	mov r15,rdx
 	sub r15,rax
-	add r15,rdx
+	add r15,rbx
 	add r14,r15
 	mov r15,rax
-	add r15,rdx
+	add r15,rbx
 	sub r14,r15
 	sub r13,r14
 	add r12,r13
-	mov r14,rbx
+	mov r14,rdx
 	sub r14,rax
-	add r14,rdx
+	add r14,rbx
 	mov r15,rax
-	add r15,rdx
+	add r15,rbx
 	sub r14,r15
-	mov r15,rbx
+	mov r15,rdx
 	sub r15,rax
-	add r15,rdx
+	add r15,rbx
 	add r14,r15
 	mov r15,rax
-	add r15,rdx
-	mov r13,rbx
+	add r15,rbx
+	mov r13,rdx
 	sub r13,rax
-	add r13,rdx
+	add r13,rbx
 	add r15,r13
 	mov r13,rax
-	add r13,rdx
+	add r13,rbx
 	sub r15,r13
 	sub r14,r15
-	mov r11,rbx
+	mov r11,rdx
 	sub r11,rax
-	add r11,rdx
+	add r11,rbx
 	mov r15,rax
-	add r15,rdx
+	add r15,rbx
 	sub r11,r15
-	mov r15,rbx
+	mov r15,rdx
 	sub r15,rax
-	add r15,rdx
+	add r15,rbx
 	add r11,r15
 	mov r13,rax
-	add r13,rdx
-	mov r15,rbx
+	add r13,rbx
+	mov r15,rdx
 	sub r15,rax
-	add r15,rdx
+	add r15,rbx
 	add r13,r15
 	mov r15,rax
-	add r15,rdx
+	add r15,rbx
 	sub r13,r15
 	sub r11,r13
 	add r14,r11
 	add r12,r14
-	mov r11,rbx
+	mov r11,rdx
 	sub r11,rax
-	add r11,rdx
+	add r11,rbx
 	mov r15,rax
-	add r15,rdx
+	add r15,rbx
 	sub r11,r15
-	mov r14,rbx
+	mov r14,rdx
 	sub r14,rax
-	add r14,rdx
+	add r14,rbx
 	mov r15,rax
-	add r15,rdx
+	add r15,rbx
 	sub r14,r15
 	add r11,r14
-	mov r15,rbx
+	mov r15,rdx
 	sub r15,rax
-	add r15,rdx
+	add r15,rbx
 	mov r14,rax
-	add r14,rdx
+	add r14,rbx
 	sub r15,r14
-	mov r14,rbx
+	mov r14,rdx
 	sub r14,rax
-	add r14,rdx
+	add r14,rbx
 	add r15,r14
 	add r11,r15
 	mov r13,rax
-	add r13,rdx
-	mov r15,rbx
+	add r13,rbx
+	mov r15,rdx
 	sub r15,rax
-	add r15,rdx
+	add r15,rbx
 	add r13,r15
 	mov r15,rax
-	add r15,rdx
+	add r15,rbx
 	sub r13,r15
-	mov r14,rbx
+	mov r14,rdx
 	sub r14,rax
-	add r14,rdx
+	add r14,rbx
 	mov r15,rax
-	add r15,rdx
+	add r15,rbx
 	sub r14,r15
-	mov r15,rbx
+	mov r15,rdx
 	sub r15,rax
-	add r15,rdx
+	add r15,rbx
 	add r14,r15
 	add r13,r14
 	sub r11,r13
 	mov r15,rax
-	add r15,rdx
-	mov r14,rbx
-	sub r14,rax
-	add r14,rdx
-	add r15,r14
-	mov r14,rax
-	add r14,rdx
-	sub r15,r14
-	mov r13,rbx
-	sub r13,rax
-	add r13,rdx
-	mov r14,rax
-	add r14,rdx
-	sub r13,r14
-	mov r14,rbx
-	sub r14,rax
-	add r14,rdx
-	add r13,r14
-	add r15,r13
-	mov rbx,rax
-	add rbx,rdx
-	mov qword [rsp+8*306],rbx
-	mov rbx,  [gbl+8*3]
-	mov r14,rbx
-	sub r14,rax
-	add r14,rdx
-	mov rbx,  [rsp+8*306]
-	add rbx,r14
-	mov r14,rax
-	add r14,rdx
-	sub rbx,r14
-	mov rdx,  [gbl+8*3]
+	add r15,rbx
 	mov r14,rdx
 	sub r14,rax
-	mov qword [rsp+8*306],rbx
-	mov rbx,  [gbl+8*9]
+	add r14,rbx
+	add r15,r14
+	mov r14,rax
+	add r14,rbx
+	sub r15,r14
+	mov r13,rdx
+	sub r13,rax
+	add r13,rbx
+	mov r14,rax
+	add r14,rbx
+	sub r13,r14
+	mov r14,rdx
+	sub r14,rax
+	add r14,rbx
+	add r13,r14
+	add r15,r13
+	mov r9,rax
+	add r9,rbx
+	mov r14,rdx
+	sub r14,rax
+	add r14,rbx
+	add r9,r14
+	mov r14,rax
+	add r14,rbx
+	sub r9,r14
+	mov r14,rdx
+	sub r14,rax
 	add r14,rbx
 	mov r13,rax
 	add r13,rbx
@@ -1855,20 +1814,18 @@ L_2084:
 	sub r13,rax
 	add r13,rbx
 	add r14,r13
-	mov rdx,  [rsp+8*306]
-	add rdx,r14
-	sub r15,rdx
+	add r9,r14
+	sub r15,r9
 	sub r11,r15
 	add r12,r11
 	mov rdx,  [rsp+8*211]
 	sub rdx,r12
-	mov qword [gbl+8*7],rax
 	mov rax,rdx
 	mov qword [rsp+8*211],rdx
 	mov qword [gbl+8*3],rax
-	jmp L_2081
+	jmp L_2701
 	
-L_2082:
+L_2702:
 	mov rbx,  [gbl+8*7]
 	mov rdi,rbx
 	mov r15,rdi

@@ -661,10 +661,10 @@ dfs:
 	mov rdx,1
 	mov r14,rdx
 	
-L_952:
+L_1572:
 	mov rbx,1
 	cmp rbx, 0
-	je L_953
+	je L_1573
 	mov r13,r14
 	mov rbx,1
 	add r14,rbx
@@ -674,12 +674,12 @@ L_952:
 	mov r13, 0
 	sete r13B
 	cmp r13, 0
-	je L_955
+	je L_1575
 	mov rax,r15
 	leave
 	ret
 	
-L_955:
+L_1575:
 	mov rbx,1
 	mov r13,r12
 	sub r13,rbx
@@ -694,9 +694,9 @@ L_955:
 	pop r14
 	pop r15
 	mov r13 , rax
-	jmp L_952
+	jmp L_1572
 	
-L_953:
+L_1573:
 	mov rbx,0
 	mov rax,rbx
 	leave

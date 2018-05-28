@@ -695,12 +695,12 @@ main:
 	mov rbx,0
 	mov r14,rbx
 	
-L_3007:
+L_3627:
 	cmp r14,r12
 	mov r13, 0
 	setl r13B
 	cmp r13, 0
-	je L_3008
+	je L_3628
 	mov r13,r15
 	lea r13,[r13+r14*8+8H]
 	mov [r13],r14
@@ -752,9 +752,9 @@ L_3007:
 	mov r13,r14
 	mov rbx,1
 	add r14,rbx
-	jmp L_3007
+	jmp L_3627
 	
-L_3008:
+L_3628:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

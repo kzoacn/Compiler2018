@@ -675,19 +675,19 @@ main:
 	mov rbx,1
 	mov r14,rbx
 	
-L_883:
+L_1503:
 	mov rbx,1
 	mov r13,rbx
 	mov rdx,0
 	mov r12,rdx
 	
-L_886:
+L_1506:
 	mov rbx,  [gbl+8*5]
 	cmp r12,rbx
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	je L_887
+	je L_1507
 	mov rbx,  [gbl+8*7]
 	mov r15,rbx
 	lea r15,[r15+r12*8+8H]
@@ -706,67 +706,66 @@ L_886:
 	mov r11,rdx
 	mov qword [gbl+8*10],rbx
 	
-L_889:
+L_1509:
 	cmp r11,r12
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	je L_890
+	je L_1510
 	mov rbx,  [gbl+8*7]
 	mov r15,rbx
 	lea r15,[r15+r12*8+8H]
-	mov rdx, [r15]
+	mov r9, [r15]
 	mov r15,rbx
 	lea r15,[r15+r11*8+8H]
 	mov r15, [r15]
-	cmp rdx,r15
+	cmp r9,r15
 	mov r15, 0
 	sete r15B
 	cmp r15, 0
-	mov qword [rsp+8*17],rdx
-	je L_893
+	je L_1513
 	mov rbx,0
 	mov r13,rbx
-	jmp L_890
+	jmp L_1510
 	
-L_893:
+L_1513:
 	mov r15,r11
 	mov rbx,1
 	add r11,rbx
-	jmp L_889
+	jmp L_1509
 	
-L_890:
+L_1510:
 	mov r15,r12
 	mov rbx,1
 	add r12,rbx
-	jmp L_886
+	jmp L_1506
 	
-L_887:
+L_1507:
 	cmp r13, 0
-	je L_895
-	jmp L_884
+	je L_1515
+	jmp L_1504
 	
-L_895:
+L_1515:
 	mov r15,r14
 	mov rbx,1
 	add r14,rbx
-	jmp L_883
+	jmp L_1503
 	
-L_884:
+L_1504:
 	mov rbx,0
 	mov r12,rbx
 	
-L_896:
+L_1516:
 	mov rbx,  [gbl+8*5]
 	cmp r12,rbx
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	je L_897
+	je L_1517
 	mov rbx,0
 	mov r11,rbx
 	
-L_899:
+L_1519:
 	mov rbx,1
 	mov r15,r11
 	add r15,rbx
@@ -776,7 +775,7 @@ L_899:
 	setl r15B
 	add r10,r10
 	cmp r15, 0
-	je L_900
+	je L_1520
 	mov rbx,  [gbl+8*7]
 	mov r15,rbx
 	lea r15,[r15+r11*8+8H]
@@ -791,7 +790,7 @@ L_899:
 	mov r15, 0
 	setg r15B
 	cmp r15, 0
-	je L_903
+	je L_1523
 	mov rbx,  [gbl+8*7]
 	mov r15,rbx
 	lea r15,[r15+r11*8+8H]
@@ -813,29 +812,29 @@ L_899:
 	lea r15,[r14+r15*8+8H]
 	mov [r15],r13
 	
-L_903:
+L_1523:
 	mov r15,r11
 	mov rbx,1
 	add r11,rbx
-	jmp L_899
+	jmp L_1519
 	
-L_900:
+L_1520:
 	mov r15,r12
 	mov rbx,1
 	add r12,rbx
-	jmp L_896
+	jmp L_1516
 	
-L_897:
+L_1517:
 	mov rbx,0
 	mov r12,rbx
 	
-L_904:
+L_1524:
 	mov rbx,  [gbl+8*5]
 	cmp r12,rbx
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	je L_905
+	je L_1525
 	mov rbx,  [gbl+8*7]
 	mov r15,rbx
 	lea r15,[r15+r12*8+8H]
@@ -885,9 +884,9 @@ L_904:
 	mov r15,r12
 	mov rbx,1
 	add r12,rbx
-	jmp L_904
+	jmp L_1524
 	
-L_905:
+L_1525:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

@@ -720,12 +720,12 @@ main:
 	mov rbx,0
 	mov r13,rbx
 	
-L_880:
+L_1500:
 	cmp r13,r12
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	je L_881
+	je L_1501
 	mov r15,r14
 	lea r15,[r15+r13*8+8H]
 	mov r15, [r15]
@@ -774,9 +774,9 @@ L_880:
 	mov r15,r13
 	mov rbx,1
 	add r13,rbx
-	jmp L_880
+	jmp L_1500
 	
-L_881:
+L_1501:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]
