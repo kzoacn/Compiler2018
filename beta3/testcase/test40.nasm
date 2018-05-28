@@ -666,9 +666,23 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
 	push r15
 	call global_init
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov rbx,  [gbl+8*2]
 	mov rdx,1
@@ -693,17 +707,17 @@ main:
 	pop r14
 	pop r15
 	mov     qword  r15, rax
-	mov r12,r15
+	mov r13,r15
 	mov rbx,1
-	mov r13,rbx
+	mov r11,rbx
 	
-L_1439:
+L_1463:
 	mov rbx,  [gbl+8*2]
-	cmp r13,rbx
-	mov r15, 0
-	setle r15B
-	cmp r15, 0
-	je L_1440
+	cmp r11,rbx
+	mov r14, 0
+	setle r14B
+	cmp r14, 0
+	je L_1464
 	mov rbx,  [gbl+8*8]
 	mov rdx,7
 	mov r15,rbx
@@ -721,26 +735,38 @@ L_1439:
 	mov r15,rbx
 	add r15,rdx
 	mov r15,r15
-	mov r15,r15
-	mov r14,r12
-	lea r14,[r14+r13*8+8H]
-	mov [r14],r15
-	mov r15,r13
+	mov r14,r15
+	mov r12,r13
+	lea r12,[r12+r11*8+8H]
+	mov [r12],r14
+	mov r14,r11
 	mov rax,1
-	add r13,rax
+	add r11,rax
 	mov qword [gbl+8*8],rbx
-	jmp L_1439
+	jmp L_1463
 	
-L_1440:
+L_1464:
 	mov rbx,  [gbl+8*2]
 	mov rsi,rbx
 	mov rdx,1
 	mov rdi,rdx
-	push r15
+	push r8
+	push r9
+	push r10
+	push r11
 	push r12
+	push r13
+	push r14
+	push r15
 	call dp
-	pop r12
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov rdi,r15
 	mov r15,rdi
@@ -794,134 +820,147 @@ dp:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 496
-	mov r10,rdi
-	mov r9,rsi
-	cmp r10,r9
+	mov r11,rdi
+	mov rbx,rsi
+	cmp r11,rbx
 	mov r15, 0
 	setg r15B
 	cmp r15, 0
-	je L_1431
+	mov qword [rsp+8*23],rbx
+	je L_1455
 	mov rbx,0
 	mov rax,rbx
 	leave
 	ret
 	
-L_1431:
+L_1455:
 	mov rbx,  [gbl+8*25]
 	mov r15,rbx
-	lea r15,[r15+r10*8+8H]
+	lea r15,[r15+r11*8+8H]
 	mov r15, [r15]
-	lea r15,[r15+r9*8+8H]
+	mov rdx,  [rsp+8*23]
+	lea r15,[r15+rdx*8+8H]
 	mov r15, [r15]
-	mov rdx,0
-	cmp r15,rdx
+	mov rax,0
+	cmp r15,rax
 	mov r15, 0
 	setne r15B
 	cmp r15, 0
-	je L_1433
+	je L_1457
 	mov rbx,  [gbl+8*25]
 	mov r15,rbx
-	lea r15,[r15+r10*8+8H]
+	lea r15,[r15+r11*8+8H]
 	mov r15, [r15]
-	lea r15,[r15+r9*8+8H]
+	mov rdx,  [rsp+8*23]
+	lea r15,[r15+rdx*8+8H]
 	mov r15, [r15]
 	mov rax,r15
 	leave
 	ret
 	
-L_1433:
-	cmp r10,r9
+L_1457:
+	mov rbx,  [rsp+8*23]
+	cmp r11,rbx
 	mov r15, 0
 	sete r15B
 	cmp r15, 0
-	je L_1435
-	mov r15,r12
-	lea r15,[r15+r10*8+8H]
+	je L_1459
+	mov r15,r13
+	lea r15,[r15+r11*8+8H]
 	mov r15, [r15]
 	mov rax,r15
 	leave
 	ret
 	
-L_1435:
+L_1459:
 	mov rbx,0
-	mov r13,rbx
-	mov r11,r10
+	mov r9,rbx
+	mov r12,r11
 	
-L_1436:
-	cmp r11,r9
+L_1460:
+	mov rbx,  [rsp+8*23]
+	cmp r12,rbx
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	je L_1437
-	mov rsi,r11
-	mov rdi,r10
-	push r14
-	push r13
-	push r12
-	push r11
-	push r10
+	je L_1461
+	mov rsi,r12
+	mov rdi,r11
+	push r8
 	push r9
-	call dp
-	pop r9
-	pop r10
-	pop r11
-	pop r12
-	pop r13
-	pop r14
-	mov r14 , rax
-	mov rbx,2
-	mov r15,r11
-	add r15,rbx
-	mov rsi,r9
-	mov rdi,r15
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
 	push r15
-	push r14
-	push r13
-	push r12
-	push r11
-	push r10
-	push r9
 	call dp
-	pop r9
-	pop r10
-	pop r11
-	pop r12
-	pop r13
-	pop r14
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
+	mov r10 , rax
+	mov rbx,2
+	mov r15,r12
+	add r15,rbx
+	mov rdx,  [rsp+8*23]
+	mov rsi,rdx
+	mov rdi,r15
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
+	push r15
+	call dp
+	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
-	add r15,r14
+	add r15,r10
 	mov rsi,r15
-	mov rdi,r13
-	mov r14,rdi
-	mov r13,rsi
-	cmp r14,r13
+	mov rdi,r9
+	mov r10,rdi
+	mov r14,rsi
+	cmp r10,r14
 	mov r15, 0
 	setg r15B
 	cmp r15, 0
-	je L_1449
+	je L_1473
+	mov r15,r10
+	jmp L_1475
+	
+L_1473:
 	mov r15,r14
-	jmp L_1451
 	
-L_1449:
-	mov r15,r13
-	
-L_1451:
+L_1475:
 	mov r15,r15
-	mov r13,r15
-	mov r15,r11
+	mov r9,r15
+	mov r15,r12
 	mov rbx,1
-	add r11,rbx
-	jmp L_1436
+	add r12,rbx
+	jmp L_1460
 	
-L_1437:
+L_1461:
 	mov rbx,  [gbl+8*25]
 	mov r15,rbx
-	lea r15,[r15+r10*8+8H]
+	lea r15,[r15+r11*8+8H]
 	mov r15, [r15]
-	lea r15,[r15+r9*8+8H]
-	mov [r15],r13
-	mov rax,r13
+	mov rdx,  [rsp+8*23]
+	lea r15,[r15+rdx*8+8H]
+	mov [r15],r9
+	mov rax,r9
 	leave
 	ret
 	

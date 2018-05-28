@@ -661,13 +661,13 @@ f:
 	mov r14, 0
 	setle r14B
 	cmp r14, 0
-	je L_1421
+	je L_1445
 	mov rbx,0
 	mov rax,rbx
 	leave
 	ret
 	
-L_1421:
+L_1445:
 	mov rbx,t68
 	mov rdi,rbx
 	mov r14,rdi
@@ -737,9 +737,23 @@ L_1421:
 	mov rbx,1
 	sub r15,rbx
 	mov rdi,r15
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
 	push r15
 	call g
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov rbx,0
 	mov rax,rbx
@@ -750,20 +764,129 @@ g:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 272
+	mov r13,rdi
+	mov rbx,0
+	cmp r13,rbx
+	mov r15, 0
+	setle r15B
+	cmp r15, 0
+	je L_1447
+	mov rbx,0
+	mov rax,rbx
+	leave
+	ret
+	
+L_1447:
+	mov rbx,t85
+	mov rdi,rbx
+	mov r15,rdi
+	mov rdi, format
+	mov rsi, r15 
+	add rsi, 1 
+	xor rax, rax
+	push r15
+	push r14
+	push r13
+	push r12
+	push r11
+	push r10
+	push r9
+	push r8
+	call printf
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	pop r12
+	pop r13
+	pop r14
+	pop r15
+	mov rdi,r13
+	mov r15,rdi
+	mov     rdi,  r15
+	push r15
+	push r14
+	push r13
+	push r12
+	push r11
+	push r10
+	push r9
+	push r8
+	call    toString
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	pop r12
+	pop r13
+	pop r14
+	pop r15
+	mov     qword r15, rax
+	mov rdi,r15
+	mov r15,rdi
+	mov rdi, r15 
+	add rdi, 1 
+	push r15
+	push r14
+	push r13
+	push r12
+	push r11
+	push r10
+	push r9
+	push r8
+	call puts
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	pop r12
+	pop r13
+	pop r14
+	pop r15
+	mov rbx,1
+	sub r13,rbx
+	mov rdi,r13
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
+	push r15
+	call h
+	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
+	mov r15 , rax
+	mov rbx,0
+	mov rax,rbx
+	leave
+	ret
+	
+h:
+	push   rbp
+	mov    rbp, rsp
+	sub    rsp, 272
 	mov r14,rdi
 	mov rbx,0
 	cmp r14,rbx
 	mov r15, 0
 	setle r15B
 	cmp r15, 0
-	je L_1423
+	je L_1449
 	mov rbx,0
 	mov rax,rbx
 	leave
 	ret
 	
-L_1423:
-	mov rbx,t85
+L_1449:
+	mov rbx,t102
 	mov rdi,rbx
 	mov r15,rdi
 	mov rdi, format
@@ -832,104 +955,23 @@ L_1423:
 	mov rbx,1
 	sub r14,rbx
 	mov rdi,r14
-	push r15
-	call h
-	pop r15
-	mov r15 , rax
-	mov rbx,0
-	mov rax,rbx
-	leave
-	ret
-	
-h:
-	push   rbp
-	mov    rbp, rsp
-	sub    rsp, 272
-	mov r15,rdi
-	mov rbx,0
-	cmp r15,rbx
-	mov r14, 0
-	setle r14B
-	cmp r14, 0
-	je L_1425
-	mov rbx,0
-	mov rax,rbx
-	leave
-	ret
-	
-L_1425:
-	mov rbx,t102
-	mov rdi,rbx
-	mov r14,rdi
-	mov rdi, format
-	mov rsi, r14 
-	add rsi, 1 
-	xor rax, rax
-	push r15
-	push r14
-	push r13
-	push r12
-	push r11
-	push r10
-	push r9
 	push r8
-	call printf
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
-	mov rdi,r15
-	mov r14,rdi
-	mov     rdi,  r14
-	push r15
-	push r14
-	push r13
-	push r12
-	push r11
-	push r10
 	push r9
-	push r8
-	call    toString
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
-	mov     qword r14, rax
-	mov rdi,r14
-	mov r14,rdi
-	mov rdi, r14 
-	add rdi, 1 
-	push r15
-	push r14
-	push r13
-	push r12
-	push r11
 	push r10
-	push r9
-	push r8
-	call puts
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
-	mov rbx,1
-	sub r15,rbx
-	mov rdi,r15
+	push r11
+	push r12
+	push r13
+	push r14
 	push r15
 	call f
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov rbx,0
 	mov rax,rbx
@@ -951,15 +993,43 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
 	push r15
 	call global_init
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov rbx,5
 	mov rdi,rbx
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
 	push r15
 	call f
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov rbx,0
 	mov rax,rbx

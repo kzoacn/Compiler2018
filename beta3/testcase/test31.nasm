@@ -666,30 +666,56 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
 	push r15
 	call global_init
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov rbx,1
-	mov r15,rbx
+	mov r12,rbx
 	
-L_1389:
+L_1413:
 	mov rbx,10
-	cmp r15,rbx
-	mov r14, 0
-	setle r14B
-	cmp r14, 0
-	je L_1390
-	mov rdi,r15
-	push r15
+	cmp r12,rbx
+	mov r15, 0
+	setle r15B
+	cmp r15, 0
+	je L_1414
+	mov rdi,r12
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
 	push r14
+	push r15
 	call fib
-	pop r14
 	pop r15
-	mov r14 , rax
-	mov rdi,r14
-	mov r14,rdi
-	mov     rdi,  r14
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
+	mov r15 , rax
+	mov rdi,r15
+	mov r15,rdi
+	mov     rdi,  r15
 	push r15
 	push r14
 	push r13
@@ -707,10 +733,10 @@ L_1389:
 	pop r13
 	pop r14
 	pop r15
-	mov     qword r14, rax
-	mov rdi,r14
-	mov r14,rdi
-	mov rdi, r14 
+	mov     qword r15, rax
+	mov rdi,r15
+	mov r15,rdi
+	mov rdi, r15 
 	add rdi, 1 
 	push r15
 	push r14
@@ -729,12 +755,12 @@ L_1389:
 	pop r13
 	pop r14
 	pop r15
-	mov r14,r15
+	mov r15,r12
 	mov rbx,1
-	add r15,rbx
-	jmp L_1389
+	add r12,rbx
+	jmp L_1413
 	
-L_1390:
+L_1414:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]
@@ -745,38 +771,61 @@ fib:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 200
-	mov r13,rdi
+	mov r14,rdi
 	mov rbx,1
-	cmp r13,rbx
+	cmp r14,rbx
 	mov r15, 0
 	setle r15B
 	cmp r15, 0
-	je L_1388
-	mov rax,r13
+	je L_1412
+	mov rax,r14
 	leave
 	ret
 	
-L_1388:
+L_1412:
 	mov rbx,1
-	mov r15,r13
+	mov r15,r14
 	sub r15,rbx
 	mov rdi,r15
-	push r14
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
 	push r13
-	call fib
-	pop r13
-	pop r14
-	mov r14 , rax
-	mov rbx,2
-	mov r15,r13
-	sub r15,rbx
-	mov rdi,r15
-	push r15
 	push r14
+	push r15
 	call fib
-	pop r14
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
+	mov rbx,2
+	sub r14,rbx
+	mov rdi,r14
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
+	push r15
+	call fib
+	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
+	mov r14 , rax
 	add r15,r14
 	mov rax,r15
 	leave

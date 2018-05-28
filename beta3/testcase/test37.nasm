@@ -666,16 +666,30 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
 	push r15
 	call global_init
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov rbx,  [gbl+8*2]
 	cmp rbx,0
 	mov r15, 0
 	setg r15B
 	cmp r15, 0
-	je L_1419
+	je L_1443
 	mov rbx,  [gbl+8*2]
 	mov r15,rbx
 	mov rdx,1
@@ -724,7 +738,7 @@ main:
 	pop r14
 	pop r15
 	
-L_1419:
+L_1443:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

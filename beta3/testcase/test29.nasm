@@ -666,9 +666,23 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
 	push r15
 	call global_init
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov rdx,10000
 	mov rbx,rdx
@@ -676,60 +690,60 @@ main:
 	mov rsi,rax
 	mov rdx,2
 	mov rdi,rdx
-	mov r14,rdi
-	mov r13,rsi
-	mov r15,rbx
+	mov r13,rdi
+	mov r14,rsi
+	mov r10,rbx
 	mov qword [arg+8*2],rbx
 	mov rbx,1
-	mov r12,rbx
-	mov r11,r14
+	mov r9,rbx
+	mov r12,r13
 	
-L_1382:
-	cmp r13,0
-	mov r14, 0
-	setg r14B
-	cmp r14, 0
-	je L_1383
+L_1406:
+	cmp r14,0
+	mov r15, 0
+	setg r15B
+	cmp r15, 0
+	je L_1407
 	mov rbx,1
-	mov r14,r13
-	and r14,rbx
+	mov r15,r14
+	and r15,rbx
 	mov rdx,1
-	cmp r14,rdx
-	mov r14, 0
-	sete r14B
-	cmp r14, 0
-	je L_1384
-	mov r14,r12
-	imul r14,r11
+	cmp r15,rdx
+	mov r13, 0
+	sete r13B
+	cmp r13, 0
+	je L_1408
+	mov r15,r9
+	imul r15,r12
 	xor rdx, rdx
-	mov rax,  r14
-	mov rbx,  r15
+	mov rax,  r15
+	mov rbx,  r10
 	cdq
 	idiv rbx
-	mov  r14, rdx
-	mov r12,r14
+	mov  r15, rdx
+	mov r9,r15
 	
-L_1384:
-	mov r14,r11
-	imul r14,r11
-	xor rdx, rdx
-	mov rax,  r14
-	mov rbx,  r15
-	cdq
-	idiv rbx
-	mov  r14, rdx
-	mov r11,r14
+L_1408:
+	mov r13,r12
+	imul r13,r12
 	xor rdx, rdx
 	mov rax,  r13
+	mov rbx,  r10
+	cdq
+	idiv rbx
+	mov  r13, rdx
+	mov r12,r13
+	xor rdx, rdx
+	mov rax,  r14
 	mov rbx, 2
 	cdq
 	idiv rbx
 	mov  r14, rax
-	mov r13,r14
-	jmp L_1382
+	mov r14,r14
+	jmp L_1406
 	
-L_1383:
-	mov r15,r12
+L_1407:
+	mov r15,r9
 	mov r15,r15
 	mov rdi,r15
 	mov r15,rdi

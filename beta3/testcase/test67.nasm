@@ -666,79 +666,91 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
-	push r15
+	push r8
+	push r9
+	push r10
 	push r11
+	push r12
+	push r13
+	push r14
+	push r15
 	call global_init
-	pop r11
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov rbx,1
-	mov r12,rbx
+	mov r11,rbx
 	
-L_1843:
+L_1867:
 	mov rbx,  [gbl+8*3]
-	cmp r12,rbx
+	cmp r11,rbx
 	mov r15, 0
 	setle r15B
 	cmp r15, 0
-	je L_1844
+	je L_1868
 	mov rbx,  [gbl+8*5]
 	mov r15,rbx
-	lea r15,[r15+r12*8+8H]
+	lea r15,[r15+r11*8+8H]
 	mov rdx,1
 	mov [r15],rdx
-	mov r15,r12
+	mov r15,r11
 	mov rax,1
-	add r12,rax
-	jmp L_1843
+	add r11,rax
+	jmp L_1867
 	
-L_1844:
+L_1868:
 	mov rbx,2
-	mov r12,rbx
+	mov r11,rbx
 	
-L_1846:
+L_1870:
 	mov rbx,  [gbl+8*3]
-	cmp r12,rbx
+	cmp r11,rbx
 	mov r15, 0
 	setle r15B
 	cmp r15, 0
-	je L_1847
+	je L_1871
 	mov rbx,  [gbl+8*5]
 	mov r15,rbx
-	lea r15,[r15+r12*8+8H]
+	lea r15,[r15+r11*8+8H]
 	mov r15, [r15]
 	cmp r15, 0
-	je L_1850
+	je L_1874
 	mov rbx,2
 	mov r14,rbx
-	cmp r12,3
+	cmp r11,3
 	mov r15, 0
 	setg r15B
 	cmp r15, 0
-	jne L_1851
+	jne L_1875
 	mov rbx,0
 	mov r15,rbx
-	jmp L_1852
+	jmp L_1876
 	
-L_1851:
+L_1875:
 	mov rbx,2
-	mov r15,r12
-	sub r15,rbx
+	mov r13,r11
+	sub r13,rbx
 	mov rdx,  [gbl+8*5]
-	mov r13,rdx
-	lea r15,[r13+r15*8+8H]
+	mov r15,rdx
+	lea r15,[r15+r13*8+8H]
 	mov r15, [r15]
 	mov r15,r15
 	
-L_1852:
+L_1876:
 	cmp r15, 0
-	je L_1854
+	je L_1878
 	mov rbx,  [gbl+8*19]
 	mov r15,rbx
 	mov rdx,1
 	add rbx,rdx
 	mov rax,2
-	mov r15,r12
+	mov r15,r11
 	sub r15,rax
 	mov rdi,r15
 	mov r15,rdi
@@ -782,7 +794,7 @@ L_1852:
 	pop r14
 	pop r15
 	mov  r13, rax
-	mov rdi,r12
+	mov rdi,r11
 	mov r15,rdi
 	mov     rdi,  r15
 	push r15
@@ -845,39 +857,39 @@ L_1852:
 	pop r14
 	pop r15
 	
-L_1854:
+L_1878:
 	
-L_1855:
-	mov r15,r12
+L_1879:
+	mov r15,r11
 	imul r15,r14
 	mov rbx,  [gbl+8*3]
 	cmp r15,rbx
 	mov r15, 0
 	setle r15B
-	add r11,r11
+	add r12,r12
 	cmp r15, 0
-	je L_1856
-	mov r13,r12
-	imul r13,r14
+	je L_1880
+	mov r15,r11
+	imul r15,r14
 	mov rbx,  [gbl+8*5]
-	mov r15,rbx
-	lea r15,[r15+r13*8+8H]
+	mov r13,rbx
+	lea r15,[r13+r15*8+8H]
 	mov rdx,0
 	mov [r15],rdx
 	mov r15,r14
 	mov rax,1
 	add r14,rax
-	jmp L_1855
+	jmp L_1879
 	
-L_1856:
+L_1880:
 	
-L_1850:
-	mov r15,r12
+L_1874:
+	mov r15,r11
 	mov rbx,1
-	add r12,rbx
-	jmp L_1846
+	add r11,rbx
+	jmp L_1870
 	
-L_1847:
+L_1871:
 	mov rbx,  [gbl+8*19]
 	mov rdi,rbx
 	mov r15,rdi

@@ -666,9 +666,23 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
 	push r15
 	call global_init
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov rbx,1000000
 	mov r11,rbx
@@ -855,13 +869,13 @@ L_299:
 	pop r13
 	pop r14
 	pop r15
-	mov  r14, rax
+	mov  r10, rax
 	mov rbx,1
-	mov r15,r13
-	add r15,rbx
-	mov rdi,r15
-	mov r15,rdi
-	mov     rdi,  r15
+	mov r14,r13
+	add r14,rbx
+	mov rdi,r14
+	mov r14,rdi
+	mov     rdi,  r14
 	push r15
 	push r14
 	push r13
@@ -879,9 +893,9 @@ L_299:
 	pop r13
 	pop r14
 	pop r15
-	mov     qword r15, rax
-	mov     rsi,  r15
-	mov     rdi,  r14
+	mov     qword r14, rax
+	mov     rsi,  r14
+	mov     rdi,  r10
 	push r15
 	push r14
 	push r13
@@ -899,9 +913,9 @@ L_299:
 	pop r13
 	pop r14
 	pop r15
-	mov  r14, rax
+	mov  r10, rax
 	mov     rsi, t97
-	mov     rdi,  r14
+	mov     rdi,  r10
 	push r15
 	push r14
 	push r13
@@ -919,13 +933,13 @@ L_299:
 	pop r13
 	pop r14
 	pop r15
-	mov  r14, rax
+	mov  r10, rax
 	mov rbx,2
-	mov r15,r13
-	add r15,rbx
-	mov r15,r15
-	neg r15
-	mov rdi,r15
+	mov r14,r13
+	add r14,rbx
+	mov r14,r14
+	neg r14
+	mov rdi,r14
 	mov r15,rdi
 	mov     rdi,  r15
 	push r15
@@ -945,9 +959,9 @@ L_299:
 	pop r13
 	pop r14
 	pop r15
-	mov     qword r15, rax
-	mov     rsi,  r15
-	mov     rdi,  r14
+	mov     qword r14, rax
+	mov     rsi,  r14
+	mov     rdi,  r10
 	push r15
 	push r14
 	push r13
@@ -965,8 +979,8 @@ L_299:
 	pop r13
 	pop r14
 	pop r15
-	mov  r14, rax
-	mov r14,r14
+	mov  r10, rax
+	mov r14,r10
 	xor rdx, rdx
 	mov rax,  r12
 	mov rbx, 100000

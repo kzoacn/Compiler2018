@@ -655,48 +655,57 @@ dfs:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 184
-	mov r12,rdi
+	mov r11,rdi
 	mov rbx,0
-	mov r15,rbx
+	mov r12,rbx
 	mov rdx,1
-	mov r14,rdx
+	mov r10,rdx
 	
-L_1572:
+L_1596:
 	mov rbx,1
 	cmp rbx, 0
-	je L_1573
-	mov r13,r14
+	je L_1597
+	mov r15,r10
 	mov rbx,1
-	add r14,rbx
-	add r15,r14
-	mov r15,r15
-	cmp r14,r12
-	mov r13, 0
-	sete r13B
-	cmp r13, 0
-	je L_1575
-	mov rax,r15
+	add r10,rbx
+	mov r15,r12
+	add r15,r10
+	mov r12,r15
+	cmp r10,r11
+	mov r15, 0
+	sete r15B
+	cmp r15, 0
+	je L_1599
+	mov rax,r12
 	leave
 	ret
 	
-L_1575:
+L_1599:
 	mov rbx,1
-	mov r13,r12
-	sub r13,rbx
-	mov rdi,r13
-	push r15
-	push r14
-	push r13
+	mov r15,r11
+	sub r15,rbx
+	mov rdi,r15
+	push r8
+	push r9
+	push r10
+	push r11
 	push r12
+	push r13
+	push r14
+	push r15
 	call dfs
-	pop r12
-	pop r13
-	pop r14
 	pop r15
-	mov r13 , rax
-	jmp L_1572
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
+	mov r15 , rax
+	jmp L_1596
 	
-L_1573:
+L_1597:
 	mov rbx,0
 	mov rax,rbx
 	leave
@@ -717,15 +726,43 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
 	push r15
 	call global_init
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov rbx,5
 	mov rdi,rbx
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
 	push r15
 	call dfs
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov rdi,r15
 	mov r15,rdi

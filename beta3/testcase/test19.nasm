@@ -666,27 +666,41 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
 	push r15
 	call global_init
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov rbx,1
 	mov r15,rbx
 	cmp r15, 0
-	jne L_1541
+	jne L_1565
 	mov rbx,0
 	mov r14,rbx
-	jmp L_1542
+	jmp L_1566
 	
-L_1541:
+L_1565:
 	mov rbx,1
 	cmp rbx,0
 	mov r14, 0
 	setg r14B
 	
-L_1542:
+L_1566:
 	cmp r14, 0
-	je L_1543
+	je L_1567
 	mov rbx,t69
 	mov rdi,rbx
 	mov r14,rdi
@@ -709,9 +723,9 @@ L_1542:
 	pop r13
 	pop r14
 	pop r15
-	jmp L_1544
+	jmp L_1568
 	
-L_1543:
+L_1567:
 	mov rbx,t73
 	mov rdi,rbx
 	mov r14,rdi
@@ -735,25 +749,25 @@ L_1543:
 	pop r14
 	pop r15
 	
-L_1544:
+L_1568:
 	cmp r15, 0
 	sete r15B
 	cmp r15, 0
-	je L_1545
+	je L_1569
 	mov rbx,1
 	mov r15,rbx
-	jmp L_1546
+	jmp L_1570
 	
-L_1545:
+L_1569:
 	mov rbx,1
 	cmp rbx,0
 	mov r15, 0
 	setg r15B
 	mov r15,r15
 	
-L_1546:
+L_1570:
 	cmp r15, 0
-	je L_1547
+	je L_1571
 	mov rbx,t82
 	mov rdi,rbx
 	mov r15,rdi
@@ -776,9 +790,9 @@ L_1546:
 	pop r13
 	pop r14
 	pop r15
-	jmp L_1548
+	jmp L_1572
 	
-L_1547:
+L_1571:
 	mov rbx,t86
 	mov rdi,rbx
 	mov r15,rdi
@@ -802,30 +816,30 @@ L_1547:
 	pop r14
 	pop r15
 	
-L_1548:
+L_1572:
 	mov rbx,0
 	mov r15,rbx
 	cmp r15, 0
-	jne L_1549
+	jne L_1573
 	mov rbx,0
 	mov r15,rbx
-	jmp L_1550
+	jmp L_1574
 	
-L_1549:
+L_1573:
 	mov rbx,1
 	mov rdx,0
 	cmp rbx,rdx
 	mov r15, 0
 	setne r15B
 	
-L_1550:
+L_1574:
 	cmp r15, 0
-	jne L_1551
+	jne L_1575
 	mov rbx,0
 	mov r15,rbx
-	jmp L_1552
+	jmp L_1576
 	
-L_1551:
+L_1575:
 	mov rbx,2
 	mov rdx,4
 	cmp rbx,rdx
@@ -833,9 +847,9 @@ L_1551:
 	setne r15B
 	mov r15,r15
 	
-L_1552:
+L_1576:
 	cmp r15, 0
-	je L_1553
+	je L_1577
 	mov rbx,t99
 	mov rdi,rbx
 	mov r15,rdi
@@ -858,9 +872,9 @@ L_1552:
 	pop r13
 	pop r14
 	pop r15
-	jmp L_1554
+	jmp L_1578
 	
-L_1553:
+L_1577:
 	mov rbx,t103
 	mov rdi,rbx
 	mov r15,rdi
@@ -884,7 +898,7 @@ L_1553:
 	pop r14
 	pop r15
 	
-L_1554:
+L_1578:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

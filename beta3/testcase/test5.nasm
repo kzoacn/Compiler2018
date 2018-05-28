@@ -666,52 +666,66 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
 	push r15
 	call global_init
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov rbx,3
 	mov r15,rbx
 	mov rdx,2
-	mov r14,rdx
+	mov r13,rdx
 	mov rax,5
-	mov r13,rax
-	cmp r15,r14
-	mov r12, 0
-	setg r12B
-	cmp r12, 0
-	jne L_951
-	mov rbx,0
-	mov r12,rbx
-	jmp L_952
-	
-L_951:
+	mov r12,rax
 	cmp r15,r13
-	mov r12, 0
-	setg r12B
-	mov r12,r12
+	mov r14, 0
+	setg r14B
+	cmp r14, 0
+	jne L_975
+	mov rbx,0
+	mov r14,rbx
+	jmp L_976
 	
-L_952:
-	cmp r12, 0
-	je L_953
+L_975:
+	cmp r15,r12
+	mov r14, 0
+	setg r14B
+	mov r14,r14
+	
+L_976:
+	cmp r14, 0
+	je L_977
 	mov r15,r15
-	jmp L_954
+	jmp L_978
 	
-L_953:
-	cmp r14,r13
+L_977:
+	cmp r13,r12
 	mov r15, 0
 	setg r15B
 	cmp r15, 0
-	je L_955
-	mov r15,r14
-	jmp L_956
-	
-L_955:
+	je L_979
 	mov r15,r13
+	jmp L_980
 	
-L_956:
+L_979:
+	mov r15,r12
 	
-L_954:
+L_980:
+	
+L_978:
 	mov rdi,r15
 	mov r15,rdi
 	mov     rdi,  r15

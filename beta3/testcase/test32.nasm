@@ -655,36 +655,50 @@ gcd:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 240
-	mov r14,rdi
+	mov r15,rdi
 	mov r13,rsi
 	xor rdx, rdx
-	mov rax,  r14
+	mov rax,  r15
 	mov rbx,  r13
 	cdq
 	idiv rbx
-	mov  r15, rdx
+	mov  r14, rdx
 	mov rbx,0
-	cmp r15,rbx
-	mov r15, 0
-	sete r15B
-	cmp r15, 0
-	je L_1392
+	cmp r14,rbx
+	mov r14, 0
+	sete r14B
+	cmp r14, 0
+	je L_1416
 	mov rax,r13
 	leave
 	ret
 	
-L_1392:
+L_1416:
 	xor rdx, rdx
-	mov rax,  r14
+	mov rax,  r15
 	mov rbx,  r13
 	cdq
 	idiv rbx
 	mov  r15, rdx
 	mov rsi,r15
 	mov rdi,r13
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
 	push r15
 	call gcd
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov rax,r15
 	leave
@@ -705,17 +719,45 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
 	push r15
 	call global_init
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov rbx,1
 	mov rsi,rbx
 	mov rdx,10
 	mov rdi,rdx
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
 	push r15
 	call gcd
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov rdi,r15
 	mov r15,rdi
@@ -763,9 +805,23 @@ main:
 	mov rsi,rbx
 	mov rdx,34986
 	mov rdi,rdx
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
 	push r15
 	call gcd
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov rdi,r15
 	mov r15,rdi
@@ -813,9 +869,23 @@ main:
 	mov rsi,rbx
 	mov rdx,2907
 	mov rdi,rdx
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
 	push r15
 	call gcd
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov rdi,r15
 	mov r15,rdi

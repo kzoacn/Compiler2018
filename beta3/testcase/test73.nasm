@@ -666,12 +666,26 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
 	push r15
 	call global_init
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov rbx,t122
-	mov r14,rbx
+	mov r12,rbx
 	mov rdx,t123
 	mov r15,rdx
 	mov r15,r15
@@ -679,19 +693,19 @@ main:
 	mov qword [arg+8*63],rax
 	call    parseInt
 	mov     qword  r15, rax
-	mov r15,r15
-	mov r13,r14
-	mov rbx,r13
-	mov r13,rbx
-	mov r13, [r13]
+	mov r13,r15
+	mov r15,r12
+	mov rbx,r15
+	mov r15,rbx
+	mov r15, [r15]
 	mov rdx,255
-	and r13,rdx
-	cmp r13,r15
-	mov r13, 0
-	setl r13B
-	cmp r13, 0
+	and r15,rdx
+	cmp r15,r13
+	mov r15, 0
+	setl r15B
+	cmp r15, 0
 	mov qword [arg+8*63],rbx
-	je L_2382
+	je L_2406
 	mov rbx,t137
 	mov rdi,rbx
 	mov r15,rdi
@@ -720,9 +734,10 @@ main:
 	leave
 	ret
 	
-L_2382:
-	mov r14,r14
+L_2406:
+	mov r14,r12
 	mov rbx,1
+	mov r15,r13
 	sub r15,rbx
 	mov rsi,r15
 	mov rdx,0
@@ -750,9 +765,23 @@ L_2382:
 	pop r15
 	mov  r15, rax
 	mov rdi,r15
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
 	push r15
 	call calc
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov r15,r15
 	mov rdi,r15
@@ -786,41 +815,41 @@ calc:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 480
-	mov r14,rdi
-	mov r15,r14
+	mov r10,rdi
+	mov r15,r10
 	mov rbx,r15
 	mov r15,rbx
 	mov r15, [r15]
 	mov rdx,255
 	and r15,rdx
-	mov r15,r15
+	mov r12,r15
 	mov rax,1
-	cmp rax,r15
-	mov r13, 0
-	sete r13B
-	cmp r13, 0
+	cmp rax,r12
+	mov r15, 0
+	sete r15B
+	cmp r15, 0
 	mov qword [arg+8*63],rbx
-	je L_2372
-	mov rax,r14
+	je L_2396
+	mov rax,r10
 	leave
 	ret
 	
-L_2372:
+L_2396:
 	xor rdx, rdx
-	mov rax,  r15
+	mov rax,  r12
 	mov rbx, 2
 	cdq
 	idiv rbx
-	mov  r13, rax
-	mov r13,r13
-	mov r12,r14
+	mov  r15, rax
+	mov r13,r15
+	mov r15,r10
 	mov rbx,1
-	mov r11,r13
-	sub r11,rbx
-	mov rsi,r11
+	mov r14,r13
+	sub r14,rbx
+	mov rsi,r14
 	mov rdx,0
 	mov rdi,rdx
-	mov rax,r12
+	mov rax,r15
 	mov qword [arg+8*63],rax
 	mov     rsi, rsi
 	mov     rdi, rdi
@@ -841,21 +870,30 @@ L_2372:
 	pop r13
 	pop r14
 	pop r15
-	mov  r12, rax
-	mov rdi,r12
-	push r15
-	push r14
-	push r13
+	mov  r15, rax
+	mov rdi,r15
+	push r8
+	push r9
+	push r10
+	push r11
 	push r12
+	push r13
+	push r14
+	push r15
 	call calc
-	pop r12
-	pop r13
-	pop r14
 	pop r15
-	mov r12 , rax
-	mov r12,r12
-	mov r14,r14
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
+	mov r15 , rax
+	mov r11,r15
+	mov r14,r10
 	mov rbx,1
+	mov r15,r12
 	sub r15,rbx
 	mov rsi,r15
 	mov rdi,r13
@@ -882,15 +920,27 @@ L_2372:
 	pop r15
 	mov  r15, rax
 	mov rdi,r15
-	push r15
+	push r8
+	push r9
+	push r10
+	push r11
 	push r12
+	push r13
+	push r14
+	push r15
 	call calc
-	pop r12
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
-	mov r14,r15
-	mov rdi,  r12
-	mov rsi,  r14
+	mov r13,r15
+	mov rdi,  r11
+	mov rsi,  r13
 	push r15
 	push r14
 	push r13
@@ -910,9 +960,9 @@ L_2372:
 	pop r15
 	mov qword  r15, rax
 	cmp r15, 0
-	je L_2373
-	mov     rsi,  r14
-	mov     rdi,  r12
+	je L_2397
+	mov     rsi,  r13
+	mov     rdi,  r11
 	push r15
 	push r14
 	push r13
@@ -935,9 +985,9 @@ L_2372:
 	leave
 	ret
 	
-L_2373:
-	mov rdi,  r12
-	mov rsi,  r14
+L_2397:
+	mov rdi,  r11
+	mov rsi,  r13
 	push r15
 	push r14
 	push r13
@@ -957,17 +1007,8 @@ L_2373:
 	pop r15
 	mov qword  r15, rax
 	cmp r15, 0
-	je L_2375
-	mov r15,r12
-	mov rbx,0
-	mov rdi,rbx
-	mov rdx,r15
-	mov qword [arg+8*63],rdx
-	mov     rdi, rdi
-	call    ord
-	mov     qword  r15, rax
-	mov r13,r15
-	mov r15,r14
+	je L_2399
+	mov r15,r11
 	mov rbx,0
 	mov rdi,rbx
 	mov rdx,r15
@@ -976,13 +1017,22 @@ L_2373:
 	call    ord
 	mov     qword  r15, rax
 	mov r15,r15
-	cmp r13,r15
+	mov r14,r13
+	mov rbx,0
+	mov rdi,rbx
+	mov rdx,r14
+	mov qword [arg+8*63],rdx
+	mov     rdi, rdi
+	call    ord
+	mov     qword  r14, rax
+	mov r14,r14
+	cmp r15,r14
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	je L_2378
-	mov     rsi,  r14
-	mov     rdi,  r12
+	je L_2402
+	mov     rsi,  r13
+	mov     rdi,  r11
 	push r15
 	push r14
 	push r13
@@ -1005,9 +1055,9 @@ L_2373:
 	leave
 	ret
 	
-L_2378:
-	mov     rsi,  r12
-	mov     rdi,  r14
+L_2402:
+	mov     rsi,  r11
+	mov     rdi,  r13
 	push r15
 	push r14
 	push r13
@@ -1030,9 +1080,9 @@ L_2378:
 	leave
 	ret
 	
-L_2375:
-	mov rdi,  r12
-	mov rsi,  r14
+L_2399:
+	mov rdi,  r11
+	mov rsi,  r13
 	push r15
 	push r14
 	push r13
@@ -1052,9 +1102,9 @@ L_2375:
 	pop r15
 	mov qword  r15, rax
 	cmp r15, 0
-	je L_2380
-	mov     rsi,  r12
-	mov     rdi,  r14
+	je L_2404
+	mov     rsi,  r11
+	mov     rdi,  r13
 	push r15
 	push r14
 	push r13
@@ -1077,7 +1127,7 @@ L_2375:
 	leave
 	ret
 	
-L_2380:
+L_2404:
 	mov rbx,t117
 	mov rdi,rbx
 	mov r15,rdi

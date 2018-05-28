@@ -666,27 +666,41 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
 	push r15
 	call global_init
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov rbx,100
-	mov r13,rbx
+	mov r11,rbx
 	mov rdx,0
 	mov r15,rdx
 	mov rax,t66
-	mov r14,rax
+	mov r12,rax
 	mov rbx,0
 	mov r15,rbx
 	
-L_1833:
-	cmp r15,r13
-	mov r12, 0
-	setl r12B
-	cmp r12, 0
-	je L_1834
+L_1857:
+	cmp r15,r11
+	mov r14, 0
+	setl r14B
+	cmp r14, 0
+	je L_1858
 	mov     rsi, t71
-	mov     rdi,  r14
+	mov     rdi,  r12
 	push r15
 	push r14
 	push r13
@@ -704,15 +718,15 @@ L_1833:
 	pop r13
 	pop r14
 	pop r15
-	mov  r14, rax
-	mov r14,r14
-	mov r12,r15
+	mov  r13, rax
+	mov r12,r13
+	mov r14,r15
 	mov rbx,1
 	add r15,rbx
-	jmp L_1833
+	jmp L_1857
 	
-L_1834:
-	mov rdi,r14
+L_1858:
+	mov rdi,r12
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 
@@ -736,14 +750,14 @@ L_1834:
 	mov rbx,0
 	mov r15,rbx
 	
-L_1836:
-	cmp r15,r13
-	mov r12, 0
-	setl r12B
-	cmp r12, 0
-	je L_1837
+L_1860:
+	cmp r15,r11
+	mov r14, 0
+	setl r14B
+	cmp r14, 0
+	je L_1861
 	mov     rsi, t80
-	mov     rdi,  r14
+	mov     rdi,  r12
 	push r15
 	push r14
 	push r13
@@ -761,15 +775,15 @@ L_1836:
 	pop r13
 	pop r14
 	pop r15
-	mov  r14, rax
-	mov r14,r14
-	mov r12,r15
+	mov  r13, rax
+	mov r12,r13
+	mov r14,r15
 	mov rbx,1
 	add r15,rbx
-	jmp L_1836
+	jmp L_1860
 	
-L_1837:
-	mov rdi,r14
+L_1861:
+	mov rdi,r12
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 

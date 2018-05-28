@@ -666,9 +666,23 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
 	push r15
 	call global_init
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov rbx,3
 	mov r13,rbx
@@ -678,24 +692,24 @@ main:
 	mov rax,0
 	mov r12,rax
 	mov rbx,0
-	mov r14,rbx
+	mov r10,rbx
 	mov rbx,0
 	mov r12,rbx
 	
-L_2694:
+L_2718:
 	mov rbx,5
 	cmp r12,rbx
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	je L_2695
+	je L_2719
 	mov r15,r13
-	add r15,r14
+	add r15,r10
 	mov r13,r15
 	mov rbx,1
 	mov r15,r12
 	add r15,rbx
-	mov r14,r15
+	mov r10,r15
 	mov rdi,r12
 	mov r15,rdi
 	mov     rdi,  r15
@@ -780,7 +794,7 @@ L_2694:
 	pop r13
 	pop r14
 	pop r15
-	mov rdi,r14
+	mov rdi,r10
 	mov r15,rdi
 	mov     rdi,  r15
 	push r15
@@ -822,11 +836,11 @@ L_2694:
 	pop r13
 	pop r14
 	pop r15
-	mov rsi,r14
+	mov rsi,r10
 	mov rdi,r13
 	mov r15,rdi
-	mov r11,rsi
-	add r15,r11
+	mov r14,rsi
+	add r15,r14
 	mov r15,r15
 	mov r15,r15
 	mov r15,r15
@@ -875,9 +889,9 @@ L_2694:
 	mov r15,r12
 	mov rbx,1
 	add r12,rbx
-	jmp L_2694
+	jmp L_2718
 	
-L_2695:
+L_2719:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

@@ -666,30 +666,44 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
 	push r15
 	call global_init
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov rbx,5
 	mov r15,rbx
 	mov rdx,1
-	mov r14,rdx
+	mov r13,rdx
 	mov rax,0
-	mov r13,rax
+	mov r12,rax
 	mov rbx,10
-	cmp r13,rbx
-	mov r12, 0
-	sete r12B
-	cmp r12, 0
-	jne L_1394
+	cmp r12,rbx
+	mov r14, 0
+	sete r14B
+	cmp r14, 0
+	jne L_1418
 	mov rbx,0
-	mov r12,rbx
-	jmp L_1395
+	mov r14,rbx
+	jmp L_1419
 	
-L_1394:
+L_1418:
 	xor rdx, rdx
 	mov rax,  r15
-	mov rbx,  r14
+	mov rbx,  r13
 	cdq
 	idiv rbx
 	mov  r14, rax
@@ -697,33 +711,33 @@ L_1394:
 	cmp r14,rbx
 	mov r14, 0
 	sete r14B
-	mov r12,r14
+	mov r14,r14
 	
-L_1395:
-	cmp r12, 0
-	jne L_1396
+L_1419:
+	cmp r14, 0
+	jne L_1420
 	mov rbx,0
-	mov r12,rbx
-	jmp L_1397
+	mov r14,rbx
+	jmp L_1421
 	
-L_1396:
+L_1420:
 	mov rbx,5
 	cmp r15,rbx
 	mov r15, 0
 	sete r15B
-	mov r12,r15
+	mov r14,r15
 	
-L_1397:
+L_1421:
 	mov r15, 0
-	cmp r12, 0
+	cmp r14, 0
 	sete r15B
 	cmp r15, 0
-	je L_1399
+	je L_1423
 	mov rbx,30
-	mov r13,rbx
+	mov r12,rbx
 	
-L_1399:
-	mov rdi,r13
+L_1423:
+	mov rdi,r12
 	mov r15,rdi
 	mov     rdi,  r15
 	push r15

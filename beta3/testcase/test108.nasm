@@ -654,14 +654,14 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 160
+	sub    rsp, 208
 	mov     rax, 936870912
         cdqe
         mov     rdi, rax
         call    malloc
         mov     edx, dword 936870912
         movsxd  rdx, edx
-        sub     rdx, 2144
+        sub     rdx, 2192
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
@@ -684,102 +684,93 @@ main:
 	pop r9
 	pop r8
 	mov r15 , rax
+	mov rbx,1
+	mov r15,rbx
+	mov rdx,2
+	mov r15,rdx
+	mov rax,3
+	mov r15,rax
+	mov rbx,t82
+	mov rdi,rbx
+	mov r15,rdi
+	mov rdi, r15 
+	add rdi, 1 
+	push r15
+	push r14
+	push r13
+	push r12
+	push r11
+	push r10
+	push r9
+	push r8
+	call puts
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	pop r12
+	pop r13
+	pop r14
+	pop r15
+	mov rbx,1
+	mov r15,rbx
+	mov rdx,2
+	mov r15,rdx
+	mov rax,t72
+	mov rdi,rax
+	mov r15,rdi
+	mov rdi, r15 
+	add rdi, 1 
+	push r15
+	push r14
+	push r13
+	push r12
+	push r11
+	push r10
+	push r9
+	push r8
+	call puts
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	pop r12
+	pop r13
+	pop r14
+	pop r15
+	mov rbx,1
+	mov r15,rbx
+	mov rdx,t65
+	mov rdi,rdx
+	mov r15,rdi
+	mov rdi, r15 
+	add rdi, 1 
+	push r15
+	push r14
+	push r13
+	push r12
+	push r11
+	push r10
+	push r9
+	push r8
+	call puts
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	pop r12
+	pop r13
+	pop r14
+	pop r15
 	mov rbx,0
 	mov r15,rbx
+	mov r15,r15
 	mov rdx,0
-	mov r14,rdx
+	mov r15,rdx
+	mov r15,r15
 	mov rax,0
-	mov r13,rax
-	mov rbx,1
-	add r15,rbx
-	mov r14,r15
-	mov rbx,1
-	add r15,rbx
-	mov r13,r15
-	mov rdi,r14
-	mov r15,rdi
-	mov     rdi,  r15
-	push r15
-	push r14
-	push r13
-	push r12
-	push r11
-	push r10
-	push r9
-	push r8
-	call    toString
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
-	mov     qword r15, rax
-	mov rdi,r15
-	mov r15,rdi
-	mov rdi, r15 
-	add rdi, 1 
-	push r15
-	push r14
-	push r13
-	push r12
-	push r11
-	push r10
-	push r9
-	push r8
-	call puts
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
-	mov rdi,r13
-	mov r15,rdi
-	mov     rdi,  r15
-	push r15
-	push r14
-	push r13
-	push r12
-	push r11
-	push r10
-	push r9
-	push r8
-	call    toString
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
-	mov     qword r15, rax
-	mov rdi,r15
-	mov r15,rdi
-	mov rdi, r15 
-	add rdi, 1 
-	push r15
-	push r14
-	push r13
-	push r12
-	push r11
-	push r10
-	push r9
-	push r8
-	call puts
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
+	mov r15,rax
+	mov r15,r15
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]
@@ -789,14 +780,14 @@ main:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 160
-	mov rbx,  [rsp+8*12]
+	sub    rsp, 208
+	mov rbx,  [rsp+8*18]
 	mov rax,rbx
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2144
+gbl:         resb   2192
 buff.1788:
         resb    256
 arg:
@@ -825,6 +816,15 @@ GS_32:
 	db 25H, 73H, 00H
 	ML_32:
         db 25H, 6CH, 64H, 00H
+
+t65:
+	 db 6,"call f" ,0
+
+t72:
+	 db 6,"call g" ,0
+
+t82:
+	 db 6,"call h" ,0
 
 SECTION .data.rel.local align=8
 

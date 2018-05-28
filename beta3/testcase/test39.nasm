@@ -661,13 +661,13 @@ f:
 	mov r14, 0
 	sete r14B
 	cmp r14, 0
-	je L_1427
+	je L_1451
 	mov rbx,0
 	mov rax,rbx
 	leave
 	ret
 	
-L_1427:
+L_1451:
 	mov rbx,  [gbl+8*4]
 	mov r14,rbx
 	mov rdx,1
@@ -676,9 +676,23 @@ L_1427:
 	sub r15,rax
 	mov rdi,r15
 	mov qword [gbl+8*4],rbx
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
 	push r15
 	call f
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov rbx,  [gbl+8*4]
 	mov r15,rbx
@@ -705,15 +719,43 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
 	push r15
 	call global_init
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov rbx,5
 	mov rdi,rbx
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
 	push r15
 	call f
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov rbx,  [gbl+8*4]
 	mov rdi,rbx

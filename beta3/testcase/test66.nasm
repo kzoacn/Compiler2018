@@ -666,9 +666,23 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r8
+	push r9
+	push r10
+	push r11
+	push r12
+	push r13
+	push r14
 	push r15
 	call global_init
 	pop r15
+	pop r14
+	pop r13
+	pop r12
+	pop r11
+	pop r10
+	pop r9
+	pop r8
 	mov r15 , rax
 	mov rbx,1
 	mov r15,rbx
@@ -679,12 +693,12 @@ main:
 	mov r13, 0
 	setne r13B
 	cmp r13, 0
-	jne L_1839
+	jne L_1863
 	mov rbx,0
 	mov r13,rbx
-	jmp L_1840
+	jmp L_1864
 	
-L_1839:
+L_1863:
 	xor rdx, rdx
 	mov rax,  r15
 	mov rbx,  r14
@@ -697,9 +711,9 @@ L_1839:
 	setl r15B
 	mov r13,r15
 	
-L_1840:
+L_1864:
 	cmp r13, 0
-	je L_1841
+	je L_1865
 	mov rbx,t71
 	mov rdi,rbx
 	mov r15,rdi
@@ -722,9 +736,9 @@ L_1840:
 	pop r13
 	pop r14
 	pop r15
-	jmp L_1842
+	jmp L_1866
 	
-L_1841:
+L_1865:
 	mov rbx,t75
 	mov rdi,rbx
 	mov r15,rdi
@@ -748,7 +762,7 @@ L_1841:
 	pop r14
 	pop r15
 	
-L_1842:
+L_1866:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]
