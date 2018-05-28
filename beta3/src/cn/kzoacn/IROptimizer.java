@@ -127,7 +127,7 @@ public class IROptimizer {
         lineMap=new HashMap<String, Integer>();
 
         HashSet<String>gbl=new HashSet<String>();
-        for(int i=0;i<128;i++) {
+        for(int i=0;i<64;i++) {
             gbl.add("t" + Integer.toString(i));
         }
         while(cur!=null){
@@ -290,8 +290,9 @@ public class IROptimizer {
         variables.removeIf((var)->var.type.name.contains("const") ||var.name.contains("const") || var.type.name.equals("null"));
         //variables.removeIf((var)->var.name.startsWith("t"));
 
+        TreeMap<String,Integer>colorMap=new TreeMap<String, Integer>();
         for(Variable var : variables){
-            //if(var.name.equals("i"))color.add(var);
+            //if(var.name.equals("i"))colorMap.put(var.name,1);
             //if(var.name.equals("j"))color.add(var);
             //if(var.name.equals("k"))color.add(var);
             //if(var.name.equals("n"))color.add(var);
@@ -306,7 +307,6 @@ public class IROptimizer {
         int registerNumber=8;
 
 
-        TreeMap<String,Integer>colorMap=new TreeMap<String, Integer>();
         //greedy allocate
 
 

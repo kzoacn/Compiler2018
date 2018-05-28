@@ -7,103 +7,33 @@
 	 extern    strlen
 	 extern    strcmp
 	 extern    memset
+	 extern    sprintf
 
 	 section   .text
 toString:
         push    rbp
         mov     rbp, rsp
-        sub     rsp, 64
-        mov     qword [rbp-38H], rdi
-        mov     qword [rbp-8H], 0
-        mov     qword [rbp-10H], 1
-        cmp     qword [rbp-38H], 0
-        jnz     DD13
-        mov     qword [rbp-8H], 1
-DD13:  cmp     qword [rbp-38H], 0
-        jns     DD14
-        neg     qword [rbp-38H]
-        mov     qword [rbp-10H], -1
-        add     qword [rbp-8H], 1
-DD14:  mov     rax, qword [rbp-38H]
-        mov     qword [rbp-18H], rax
-        jmp     DD16
-
-DD15:  add     qword [rbp-8H], 1
-        mov     rcx, qword [rbp-18H]
-        mov     rdx, qword 6666666666666667H
-        mov     rax, rcx
-        imul    rdx
-        sar     rdx, 2
-        mov     rax, rcx
-        sar     rax, 63
-        sub     rdx, rax
-        mov     rax, rdx
-        mov     qword [rbp-18H], rax
-DD16:  cmp     qword [rbp-18H], 0
-        jg      DD15
-        mov     rax, qword [rbp-8H]
-        add     rax, 2
-        mov     rdi, rax
+        sub     rsp, 32
+        mov     qword [rbp-18H], rdi
+        mov     edi, 256
         call    malloc
-        mov     qword [rbp-28H], rax
+        mov     qword [rbp-8H], rax
         mov     rax, qword [rbp-8H]
-        lea     rdx, [rax+1H]
-        mov     rax, qword [rbp-28H]
-        add     rax, rdx
-        mov     byte [rax], 0
-        mov     rax, qword [rbp-28H]
-        mov     qword [rbp-20H], rax
+        lea     rcx, [rax+1H]
+        mov     rax, qword [rbp-18H]
+        mov     rdx, rax
+        lea     rsi, [rel L_031]
+        mov     rdi, rcx
+        mov     eax, 0
+        call    sprintf
         mov     rax, qword [rbp-8H]
+        add     rax, 1
+        mov     rdi, rax
+        call    strlen
         mov     edx, eax
-        mov     rax, qword [rbp-20H]
+        mov     rax, qword [rbp-8H]
         mov     byte [rax], dl
-        add     qword [rbp-20H], 1
-        cmp     qword [rbp-10H], -1
-        jnz     DD17
-        mov     rax, qword [rbp-20H]
-        mov     byte [rax], 45
-DD17:  mov     rdx, qword [rbp-8H]
-        mov     rax, qword [rbp-28H]
-        add     rax, rdx
-        mov     qword [rbp-20H], rax
-        cmp     qword [rbp-38H], 0
-        jnz     DD19
-        mov     rax, qword [rbp-20H]
-        mov     byte [rax], 48
-        jmp     DD19
-
-DD18:  mov     rcx, qword [rbp-38H]
-        mov     rdx, qword 6666666666666667H
-        mov     rax, rcx
-        imul    rdx
-        sar     rdx, 2
-        mov     rax, rcx
-        sar     rax, 63
-        sub     rdx, rax
-        mov     rax, rdx
-        shl     rax, 2
-        add     rax, rdx
-        add     rax, rax
-        sub     rcx, rax
-        mov     rdx, rcx
-        mov     eax, edx
-        lea     edx, [rax+30H]
-        mov     rax, qword [rbp-20H]
-        mov     byte [rax], dl
-        sub     qword [rbp-20H], 1
-        mov     rcx, qword [rbp-38H]
-        mov     rdx, qword 6666666666666667H
-        mov     rax, rcx
-        imul    rdx
-        sar     rdx, 2
-        mov     rax, rcx
-        sar     rax, 63
-        sub     rdx, rax
-        mov     rax, rdx
-        mov     qword [rbp-38H], rax
-DD19:  cmp     qword [rbp-38H], 0
-        jg      DD18
-        mov     rax, qword [rbp-28H]
+        mov     rax, qword [rbp-8H]
         leave
         ret
 
@@ -618,95 +548,75 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 216
+	sub    rsp, 192
 	mov     rax, 536870912
         cdqe
         mov     rdi, rax
         call    malloc
         mov     edx, dword 536870912
         movsxd  rdx, edx
-        sub     rdx, 2200
+        sub     rdx, 2176
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	push r15
 	call global_init
-	mov rbx , rax
-	mov rdx,0
-	mov r15,rdx
-	mov rax,3
-	mov qword [rsp+8*1],rbx
-	mov rbx,7
-	mov rdx,rax
-	imul rdx,rbx
-	mov rbx,10
-	mov rax,rdx
-	imul rax,rbx
-	mov r15,rax
-	mov rdi,r15
-	mov r14,rdi
+	pop r15
+	mov r15 , rax
 	mov rbx,0
 	mov r15,rbx
-	mov qword [rsp+8*3],rdx
-	mov qword [rsp+8*4],rax
+	mov rdx,210
+	mov r15,rdx
+	mov rdi,r15
+	mov r13,rdi
+	mov rax,0
+	mov r14,rax
 	
 L_293:
-	cmp r15,r14
-	mov rbx, 0
-	setle bl
-	cmp rbx, 0
-	mov qword [rsp+8*9],rbx
+	cmp r14,r13
+	mov r15, 0
+	setle r15B
+	cmp r15, 0
 	je L_294
 	mov rbx,1
-	mov rdx,r15
-	add rdx,rbx
-	mov rax,r15
-	imul rax,rdx
-	mov qword [rsp+8*10],rdx
-	mov qword [rsp+8*11],rax
+	mov r15,r14
+	add r15,rbx
+	imul r15,r14
 	xor rdx, rdx
-	mov rax, [rsp+8*11]
+	mov rax,  r15
 	mov rbx, 2
 	cdq
 	idiv rbx
-	mov [rsp+8*12], rax
-	mov rbx,  [rsp+8*12]
-	cmp r14,rbx
-	mov rdx, 0
-	sete dl
-	cmp rdx, 0
-	mov qword [rsp+8*13],rdx
+	mov  r15, rax
+	cmp r13,r15
+	mov r15, 0
+	sete r15B
+	cmp r15, 0
 	je L_295
-	mov rdx,1
-	mov rbx,rdx
-	mov qword [rsp+8*14],rbx
+	mov rbx,1
+	mov r15,rbx
 	jmp L_297
 	
 L_295:
 	mov rbx,1
-	add r15,rbx
+	add r14,rbx
 	jmp L_293
 	
 L_294:
-	mov rdx,0
-	mov rbx,rdx
-	mov qword [rsp+8*14],rbx
+	mov rbx,0
+	mov r15,rbx
 	
 L_297:
-	mov rdx,  [rsp+8*14]
-	mov rbx,rdx
-	mov rax, 0
-	cmp rbx, 0
-	sete al
-	cmp rax, 0
-	mov qword [rsp+8*15],rbx
-	mov qword [rsp+8*16],rax
+	mov r15,r15
+	cmp r15, 0
+	sete r15B
+	cmp r15, 0
 	je L_285
-	mov rbx,t85
+	mov rbx,t84
 	mov rdi,rbx
-	mov rdx,rdi
-	mov qword [rsp+8*17],rdx
-	mov rdi,[rsp+8*17] 
+	mov r15,rdi
+	mov rdi, r15 
 	add rdi, 1 
 	push r11
 	push r10
@@ -720,11 +630,10 @@ L_297:
 	jmp L_286
 	
 L_285:
-	mov rbx,t89
+	mov rbx,t88
 	mov rdi,rbx
-	mov rdx,rdi
-	mov qword [rsp+8*18],rdx
-	mov rdi,[rsp+8*18] 
+	mov r15,rdi
+	mov rdi, r15 
 	add rdi, 1 
 	push r11
 	push r10
@@ -746,14 +655,14 @@ L_286:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 216
-	mov rbx,  [rsp+8*19]
+	sub    rsp, 192
+	mov rbx,  [rsp+8*16]
 	mov rax,rbx
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2200
+gbl:         resb   2176
 buff.1788:
         resb    256
 arg:
@@ -773,11 +682,13 @@ GS_31:
 	
 GS_32:
 	db 25H, 73H, 00H
-	
-t85:
+	L_031:
+        db 25H, 6CH, 64H, 00H
+
+t84:
 	 db 79,"Sorry, the number n must be a number s.t. there exists i satisfying n=1+2+...+i" ,0
 
-t89:
+t88:
 	 db 12,"Let's start!" ,0
 
 

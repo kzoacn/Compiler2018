@@ -226,98 +226,27 @@ public class ConstantPool {
     static final StringBuffer toStringFunction=new StringBuffer("toString:\n" +
             "        push    rbp\n" +
             "        mov     rbp, rsp\n" +
-            "        sub     rsp, 64\n" +
-            "        mov     qword [rbp-38H], rdi\n" +
-            "        mov     qword [rbp-8H], 0\n" +
-            "        mov     qword [rbp-10H], 1\n" +
-            "        cmp     qword [rbp-38H], 0\n" +
-            "        jnz     DD13\n" +
-            "        mov     qword [rbp-8H], 1\n" +
-            "DD13:  cmp     qword [rbp-38H], 0\n" +
-            "        jns     DD14\n" +
-            "        neg     qword [rbp-38H]\n" +
-            "        mov     qword [rbp-10H], -1\n" +
-            "        add     qword [rbp-8H], 1\n" +
-            "DD14:  mov     rax, qword [rbp-38H]\n" +
-            "        mov     qword [rbp-18H], rax\n" +
-            "        jmp     DD16\n" +
-            "\n" +
-            "DD15:  add     qword [rbp-8H], 1\n" +
-            "        mov     rcx, qword [rbp-18H]\n" +
-            "        mov     rdx, qword 6666666666666667H\n" +
-            "        mov     rax, rcx\n" +
-            "        imul    rdx\n" +
-            "        sar     rdx, 2\n" +
-            "        mov     rax, rcx\n" +
-            "        sar     rax, 63\n" +
-            "        sub     rdx, rax\n" +
-            "        mov     rax, rdx\n" +
-            "        mov     qword [rbp-18H], rax\n" +
-            "DD16:  cmp     qword [rbp-18H], 0\n" +
-            "        jg      DD15\n" +
-            "        mov     rax, qword [rbp-8H]\n" +
-            "        add     rax, 2\n" +
-            "        mov     rdi, rax\n" +
+            "        sub     rsp, 32\n" +
+            "        mov     qword [rbp-18H], rdi\n" +
+            "        mov     edi, 256\n" +
             "        call    malloc\n" +
-            "        mov     qword [rbp-28H], rax\n" +
+            "        mov     qword [rbp-8H], rax\n" +
             "        mov     rax, qword [rbp-8H]\n" +
-            "        lea     rdx, [rax+1H]\n" +
-            "        mov     rax, qword [rbp-28H]\n" +
-            "        add     rax, rdx\n" +
-            "        mov     byte [rax], 0\n" +
-            "        mov     rax, qword [rbp-28H]\n" +
-            "        mov     qword [rbp-20H], rax\n" +
+            "        lea     rcx, [rax+1H]\n" +
+            "        mov     rax, qword [rbp-18H]\n" +
+            "        mov     rdx, rax\n" +
+            "        lea     rsi, [rel L_031]\n" +
+            "        mov     rdi, rcx\n" +
+            "        mov     eax, 0\n" +
+            "        call    sprintf\n" +
             "        mov     rax, qword [rbp-8H]\n" +
+            "        add     rax, 1\n" +
+            "        mov     rdi, rax\n" +
+            "        call    strlen\n" +
             "        mov     edx, eax\n" +
-            "        mov     rax, qword [rbp-20H]\n" +
+            "        mov     rax, qword [rbp-8H]\n" +
             "        mov     byte [rax], dl\n" +
-            "        add     qword [rbp-20H], 1\n" +
-            "        cmp     qword [rbp-10H], -1\n" +
-            "        jnz     DD17\n" +
-            "        mov     rax, qword [rbp-20H]\n" +
-            "        mov     byte [rax], 45\n" +
-            "DD17:  mov     rdx, qword [rbp-8H]\n" +
-            "        mov     rax, qword [rbp-28H]\n" +
-            "        add     rax, rdx\n" +
-            "        mov     qword [rbp-20H], rax\n" +
-            "        cmp     qword [rbp-38H], 0\n" +
-            "        jnz     DD19\n" +
-            "        mov     rax, qword [rbp-20H]\n" +
-            "        mov     byte [rax], 48\n" +
-            "        jmp     DD19\n" +
-            "\n" +
-            "DD18:  mov     rcx, qword [rbp-38H]\n" +
-            "        mov     rdx, qword 6666666666666667H\n" +
-            "        mov     rax, rcx\n" +
-            "        imul    rdx\n" +
-            "        sar     rdx, 2\n" +
-            "        mov     rax, rcx\n" +
-            "        sar     rax, 63\n" +
-            "        sub     rdx, rax\n" +
-            "        mov     rax, rdx\n" +
-            "        shl     rax, 2\n" +
-            "        add     rax, rdx\n" +
-            "        add     rax, rax\n" +
-            "        sub     rcx, rax\n" +
-            "        mov     rdx, rcx\n" +
-            "        mov     eax, edx\n" +
-            "        lea     edx, [rax+30H]\n" +
-            "        mov     rax, qword [rbp-20H]\n" +
-            "        mov     byte [rax], dl\n" +
-            "        sub     qword [rbp-20H], 1\n" +
-            "        mov     rcx, qword [rbp-38H]\n" +
-            "        mov     rdx, qword 6666666666666667H\n" +
-            "        mov     rax, rcx\n" +
-            "        imul    rdx\n" +
-            "        sar     rdx, 2\n" +
-            "        mov     rax, rcx\n" +
-            "        sar     rax, 63\n" +
-            "        sub     rdx, rax\n" +
-            "        mov     rax, rdx\n" +
-            "        mov     qword [rbp-38H], rax\n" +
-            "DD19:  cmp     qword [rbp-38H], 0\n" +
-            "        jg      DD18\n" +
-            "        mov     rax, qword [rbp-28H]\n" +
+            "        mov     rax, qword [rbp-8H]\n" +
             "        leave\n" +
             "        ret\n");
 

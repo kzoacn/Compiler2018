@@ -459,6 +459,7 @@ public class IRTranslator {
         head.append("\t extern    strlen\n");
         head.append("\t extern    strcmp\n");
         head.append("\t extern    memset\n");
+        head.append("\t extern    sprintf\n");
         text.append("\t section   .text\n");
         bss.append("\t section   .bss\n");
         data.append("\t section   .data\n");
@@ -486,6 +487,8 @@ public class IRTranslator {
         data.append(new StringBuffer("db 25H, 6CH, 64H, 00H\n\t"));
         data.append(new StringBuffer("\nGS_32:\n\t"));
         data.append(new StringBuffer("db 25H, 73H, 00H\n\t"));
+        data.append(new StringBuffer("L_031:\n" +
+                "        db 25H, 6CH, 64H, 00H\n"));
 
         for(Map.Entry<Variable,String> entry : constStringPool.entrySet()){
             String string=entry.getValue();

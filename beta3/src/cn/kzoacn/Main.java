@@ -2039,6 +2039,9 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         IR stmt = new IR();
         if(ctx.statementOrBlock()!=null)
             stmt=visit(ctx.statementOrBlock());
+        else {
+            stmt.push(new Quad(OpCode.jmp,endLabel));//TODO maybe wrong
+        }
         symbolMap.prevScope();
         ir.concat(A);
         ir.push(new Quad(OpCode.label,startLabel));
@@ -2448,7 +2451,25 @@ class MVisitor extends MxstarBaseVisitor<IR>{
     @Override public IR visitMulDivMod(MxstarParser.MulDivModContext ctx) {
         IR ir0=visit(ctx.expression(0));
         IR ir1=visit(ctx.expression(1));
-        Variable temp = nextVariable(symbolMap.operate(ir0.last.dest.type,ctx.op.getText(),ir1.last.dest.type) );
+
+        if(ir0.last.dest.type.equals(VariableType.CONST_INT)&&ir1.last.dest.type.equals(VariableType.CONST_INT)){
+            IR ir=new IR();
+            int a=ir0.last.dest.constValue,b=ir1.last.dest.constValue;
+            int c=0;
+
+            if(ctx.op.getText().equals("*"))
+                c=a*b;
+            if(ctx.op.getText().equals("/"))
+                c=a/b;
+            if(ctx.op.getText().equals("%"))
+                c=a%b;
+            Variable tmp=nextConst(c,VariableType.CONST_INT);
+
+            ir.push(new Quad(OpCode.move,tmp,tmp,tmp));
+            return ir;
+        }
+
+        Variable temp = buildVariableLeft(ir0.last.dest,ctx.op.getText(),ir1.last.dest);
         temp.isTemp=true;
         OpCode opCode=OpCode.multiply;
         if(ctx.op.getText().equals("*"))

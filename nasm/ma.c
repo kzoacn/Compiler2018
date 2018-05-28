@@ -57,37 +57,10 @@ long* multiArray(long* a){
 unsigned char* toString(long x){
 
 
-    long len=0,flag=1;
-    if(x==0)
-        len=1;
-    if(x<0){
-        x=-x;
-        flag=-1;
-        len++;
-    }
-    long y=x;
-    while(y>0){
-        len++;
-        y/=10;
-    }
-    unsigned char *s=malloc(len+2);
-    *(s+len+1)=0;
-    unsigned char *c=s;
-    *c=(unsigned char)len&255;
-    c++;
-    
-    if(flag==-1){
-        *c='-';
-    }
-    c=s+len;
-    if(x==0)
-        *c='0';
-   
-    while(x>0){
-        *c=(unsigned char)(x%10+'0');
-        c--;
-        x/=10;
-    }
+    char *s=malloc(256);
+	sprintf(s+1,"%ld",x);	
+	*s=strlen(s+1);
+	
     return s;
 }
 
