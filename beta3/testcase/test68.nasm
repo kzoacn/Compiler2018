@@ -634,33 +634,49 @@ main:
 	push r14
 	push r13
 	push r12
+	push r11
+	push r10
+	push r9
+	push r8
 	call global_init
+	pop r8
+	pop r9
+	pop r10
+	pop r11
 	pop r12
 	pop r13
 	pop r14
 	pop r15
-	mov r8 , rax
-	mov r9,t64
-	mov rdi,r9
-	mov r10,rdi
-	mov qword [rsp+8*1],r8
-	mov qword [rsp+8*3],r10
+	mov rbx , rax
+	mov rdx,t64
+	mov rdi,rdx
+	mov rax,rdi
+	mov qword [rsp+8*1],rbx
+	mov qword [rsp+8*3],rax
 	mov rdi, format
 	mov rsi,[rsp+8*3] 
 	add rsi, 1 
 	xor rax, rax
+	push r11
+	push r10
 	call printf
-	mov r8,t68
-	mov rdi,r8
-	mov r9,rdi
-	mov qword [rsp+8*4],r9
+	pop r10
+	pop r11
+	mov rbx,t68
+	mov rdi,rbx
+	mov rdx,rdi
+	mov qword [rsp+8*4],rdx
 	mov rdi, format
 	mov rsi,[rsp+8*4] 
 	add rsi, 1 
 	xor rax, rax
+	push r11
+	push r10
 	call printf
-	mov r8,0
-	mov rax,r8
+	pop r10
+	pop r11
+	mov rbx,0
+	mov rax,rbx
 	        mov     rsp, qword [trsp]
 	leave
 	ret
@@ -669,8 +685,8 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 104
-	mov r8,  [rsp+8*5]
-	mov rax,r8
+	mov rbx,  [rsp+8*5]
+	mov rax,rbx
 	leave
 	ret
 	

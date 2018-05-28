@@ -634,78 +634,88 @@ main:
 	push r14
 	push r13
 	push r12
+	push r11
+	push r10
+	push r9
+	push r8
 	call global_init
+	pop r8
+	pop r9
+	pop r10
+	pop r11
 	pop r12
 	pop r13
 	pop r14
 	pop r15
-	mov r8 , rax
-	mov r9,3
-	mov r15,r9
-	mov r10,2
-	mov r14,r10
-	mov r11,5
-	mov r13,r11
+	mov rbx , rax
+	mov rdx,3
+	mov r15,rdx
+	mov rax,2
+	mov r14,rax
+	mov qword [rsp+8*1],rbx
+	mov rbx,5
+	mov r13,rbx
 	cmp r15,r14
-	mov qword [rsp+8*1],r8
-	mov r8, 0
-	setg r8B
-	cmp r8, 0
-	mov qword [rsp+8*5],r8
-	jne L_5
-	mov r9,0
-	mov r8,r9
-	mov qword [rsp+8*5],r8
-	jmp L_6
+	mov rbx, 0
+	setg bl
+	cmp rbx, 0
+	mov qword [rsp+8*5],rbx
+	jne L_807
+	mov rdx,0
+	mov rbx,rdx
+	mov qword [rsp+8*5],rbx
+	jmp L_808
 	
-L_5:
+L_807:
 	cmp r15,r13
-	mov r8, 0
-	setg r8B
-	mov r9,r8
-	mov qword [rsp+8*6],r8
-	mov qword [rsp+8*5],r9
+	mov rbx, 0
+	setg bl
+	mov rdx,rbx
+	mov qword [rsp+8*6],rbx
+	mov qword [rsp+8*5],rdx
 	
-L_6:
-	mov r8,  [rsp+8*5]
-	cmp r8, 0
-	je L_7
+L_808:
+	mov rbx,  [rsp+8*5]
+	cmp rbx, 0
+	je L_809
 	mov r15,r15
-	jmp L_8
+	jmp L_810
 	
-L_7:
+L_809:
 	cmp r14,r13
-	mov r8, 0
-	setg r8B
-	cmp r8, 0
-	mov qword [rsp+8*8],r8
-	je L_9
+	mov rbx, 0
+	setg bl
+	cmp rbx, 0
+	mov qword [rsp+8*8],rbx
+	je L_811
 	mov r15,r14
-	jmp L_10
+	jmp L_812
 	
-L_9:
+L_811:
 	mov r15,r13
 	
-L_10:
+L_812:
 	
-L_8:
-	mov r8,r15
-	mov r9,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*10],r9
+L_810:
+	mov rdi,r15
+	mov rbx,rdi
+	mov qword [rsp+8*10],rbx
 	mov     rdi, [rsp+8*10]
 	call    toString
 	mov     qword[rsp+8*11], rax
-	mov r9,  [rsp+8*11]
-	mov r8,r9
-	mov r10,r8
-	mov qword rdi,r8
-	mov qword [rsp+8*12],r10
+	mov rbx,  [rsp+8*11]
+	mov rdi,rbx
+	mov rdx,rdi
+	mov qword [rsp+8*12],rdx
 	mov rdi,[rsp+8*12] 
 	add rdi, 1 
+	push r11
+	push r10
 	call puts
-	mov r8,0
-	mov rax,r8
+	pop r10
+	pop r11
+	mov rbx,0
+	mov rax,rbx
 	        mov     rsp, qword [trsp]
 	leave
 	ret
@@ -714,8 +724,8 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 168
-	mov r8,  [rsp+8*13]
-	mov rax,r8
+	mov rbx,  [rsp+8*13]
+	mov rax,rbx
 	leave
 	ret
 	

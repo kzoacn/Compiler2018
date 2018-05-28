@@ -634,14 +634,22 @@ main:
 	push r14
 	push r13
 	push r12
+	push r11
+	push r10
+	push r9
+	push r8
 	call global_init
+	pop r8
+	pop r9
+	pop r10
+	pop r11
 	pop r12
 	pop r13
 	pop r14
 	pop r15
-	mov r8 , rax
-	mov r9,0
-	mov rax,r9
+	mov rbx , rax
+	mov rdx,0
+	mov rax,rdx
 	        mov     rsp, qword [trsp]
 	leave
 	ret
@@ -650,8 +658,8 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 80
-	mov r8,  [rsp+8*2]
-	mov rax,r8
+	mov rbx,  [rsp+8*2]
+	mov rax,rbx
 	leave
 	ret
 	

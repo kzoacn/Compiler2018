@@ -634,102 +634,119 @@ main:
 	push r14
 	push r13
 	push r12
+	push r11
+	push r10
+	push r9
+	push r8
 	call global_init
+	pop r8
+	pop r9
+	pop r10
+	pop r11
 	pop r12
 	pop r13
 	pop r14
 	pop r15
-	mov r8 , rax
-	mov r9,0
-	mov r15,r9
-	mov r10,3
-	mov r11,7
-	mov qword [rsp+8*1],r8
-	mov r8,r10
-	imul r8,r11
-	mov r9,10
-	mov r10,r8
-	imul r10,r9
-	mov r15,r10
+	mov rbx , rax
+	mov rdx,0
+	mov r15,rdx
+	mov rax,3
+	mov qword [rsp+8*1],rbx
+	mov rbx,7
+	mov rdx,rax
+	imul rdx,rbx
+	mov rbx,10
+	mov rax,rdx
+	imul rax,rbx
+	mov r15,rax
 	mov rdi,r15
 	mov r14,rdi
-	mov r8,0
-	mov r15,r8
-	mov qword [rsp+8*4],r10
+	mov rbx,0
+	mov r15,rbx
+	mov qword [rsp+8*3],rdx
+	mov qword [rsp+8*4],rax
 	
 L_293:
 	cmp r15,r14
-	mov r8, 0
-	setle r8B
-	cmp r8, 0
-	mov qword [rsp+8*9],r8
+	mov rbx, 0
+	setle bl
+	cmp rbx, 0
+	mov qword [rsp+8*9],rbx
 	je L_294
-	mov r8,1
-	mov r9,r15
-	add r9,r8
-	mov r10,r15
-	imul r10,r9
+	mov rbx,1
+	mov rdx,r15
+	add rdx,rbx
+	mov rax,r15
+	imul rax,rdx
+	mov qword [rsp+8*10],rdx
+	mov qword [rsp+8*11],rax
 	xor rdx, rdx
-	mov rax, r10
-	mov r11,2
-	mov rbx, r11
+	mov rax, [rsp+8*11]
+	mov rbx, 2
 	cdq
 	idiv rbx
-	mov r8, rax
-	cmp r14,r8
-	mov r9, 0
-	sete r9B
-	cmp r9, 0
-	mov qword [rsp+8*12],r8
-	mov qword [rsp+8*13],r9
-	mov qword [rsp+8*11],r10
+	mov [rsp+8*12], rax
+	mov rbx,  [rsp+8*12]
+	cmp r14,rbx
+	mov rdx, 0
+	sete dl
+	cmp rdx, 0
+	mov qword [rsp+8*13],rdx
 	je L_295
-	mov r9,1
-	mov r8,r9
-	mov qword [rsp+8*14],r8
+	mov rdx,1
+	mov rbx,rdx
+	mov qword [rsp+8*14],rbx
 	jmp L_297
 	
 L_295:
-	mov r8,1
-	add r15,r8
+	mov rbx,1
+	add r15,rbx
 	jmp L_293
 	
 L_294:
-	mov r9,0
-	mov r8,r9
-	mov qword [rsp+8*14],r8
+	mov rdx,0
+	mov rbx,rdx
+	mov qword [rsp+8*14],rbx
 	
 L_297:
-	mov r9,  [rsp+8*14]
-	mov r8,r9
-	mov r10, 0
-	cmp r8, 0
-	sete r10B
-	cmp r10, 0
-	mov qword [rsp+8*15],r8
-	mov qword [rsp+8*16],r10
+	mov rdx,  [rsp+8*14]
+	mov rbx,rdx
+	mov rax, 0
+	cmp rbx, 0
+	sete al
+	cmp rax, 0
+	mov qword [rsp+8*15],rbx
+	mov qword [rsp+8*16],rax
 	je L_285
-	mov r8,t85
-	mov rdi,r8
-	mov r9,rdi
-	mov qword [rsp+8*17],r9
+	mov rbx,t85
+	mov rdi,rbx
+	mov rdx,rdi
+	mov qword [rsp+8*17],rdx
 	mov rdi,[rsp+8*17] 
 	add rdi, 1 
+	push r11
+	push r10
 	call puts
+	pop r10
+	pop r11
 	jmp L_286
 	
 L_285:
-	mov r8,t89
-	mov rdi,r8
-	mov r9,rdi
-	mov qword [rsp+8*18],r9
+	mov rbx,t89
+	mov rdi,rbx
+	mov rdx,rdi
+	mov qword [rsp+8*18],rdx
 	mov rdi,[rsp+8*18] 
 	add rdi, 1 
+	push r11
+	push r10
 	call puts
+	pop r10
+	pop r11
 	
 L_286:
-	mov r8,0
-	mov rax,r8
+	mov rbx,0
+	mov rax,rbx
 	        mov     rsp, qword [trsp]
 	leave
 	ret
@@ -738,8 +755,8 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 216
-	mov r8,  [rsp+8*19]
-	mov rax,r8
+	mov rbx,  [rsp+8*19]
+	mov rax,rbx
 	leave
 	ret
 	

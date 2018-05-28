@@ -634,472 +634,488 @@ main:
 	push r14
 	push r13
 	push r12
+	push r11
+	push r10
+	push r9
+	push r8
 	call global_init
+	pop r8
+	pop r9
+	pop r10
+	pop r11
 	pop r12
 	pop r13
 	pop r14
 	pop r15
 	mov r15 , rax
-	mov r8,110
-	mov rdi,r8
+	mov rbx,110
+	mov rdi,rbx
 	mov r15,rdi
 	mov     rdi,  r15
+	push r11
+	push r10
 	call    mallocArray
+	pop r10
+	pop r11
 	mov     qword [rsp+8*4], rax
-	mov r9,  [rsp+8*4]
-	mov r8,r9
-	mov r11,0
-	mov r10,r11
-	mov qword [gbl+8*5],r8
-	mov qword [gbl+8*6],r10
+	mov rdx,  [rsp+8*4]
+	mov rbx,rdx
+	mov rdx,0
+	mov rax,rdx
+	mov qword [gbl+8*5],rbx
+	mov qword [gbl+8*6],rax
 	
-L_1998:
-	mov r8,  [gbl+8*6]
-	cmp r8,r15
-	mov r9, 0
-	setl r9B
-	cmp r9, 0
-	mov qword [rsp+8*7],r9
-	je L_1999
+L_1924:
+	mov rbx,  [gbl+8*6]
+	cmp rbx,r15
+	mov rdx, 0
+	setl dl
+	cmp rdx, 0
+	mov qword [rsp+8*7],rdx
+	je L_1925
 	mov     rdi,  r15
+	push r11
+	push r10
 	call    mallocArray
+	pop r10
+	pop r11
 	mov     qword [rsp+8*8], rax
-	mov r9,  [gbl+8*5]
-	mov r8,r9
-	mov r10,  [gbl+8*6]
-	lea r11,[r8+r10*8+8H]
-	mov qword [rsp+8*9],r8
-	mov r8,  [rsp+8*8]
-	mov [r11],r8
-	mov qword [rsp+8*10],r11
-	mov r11,0
-	mov r8,r11
-	mov qword [gbl+8*11],r8
+	mov rdx,  [gbl+8*5]
+	mov rbx,rdx
+	mov rax,  [gbl+8*6]
+	lea rdx,[rbx+rax*8+8H]
+	mov qword [rsp+8*9],rbx
+	mov rbx,  [rsp+8*8]
+	mov [rdx],rbx
+	mov qword [rsp+8*10],rdx
+	mov rdx,0
+	mov rbx,rdx
+	mov qword [gbl+8*11],rbx
 	
-L_2000:
-	mov r8,  [gbl+8*11]
-	cmp r8,r15
-	mov r9, 0
-	setl r9B
-	cmp r9, 0
-	mov qword [rsp+8*12],r9
-	je L_2001
-	mov r9,  [gbl+8*5]
-	mov r8,r9
-	mov r10,  [gbl+8*6]
-	lea r11,[r8+r10*8+8H]
-	mov r8, [r11]
-	mov r9,  [gbl+8*11]
-	lea r11,[r8+r9*8+8H]
-	mov qword [rsp+8*13],r8
-	mov r8,0
-	mov [r11],r8
-	mov r8,r9
-	mov qword [rsp+8*15],r8
-	mov r8,1
-	add r9,r8
-	mov qword [gbl+8*11],r9
-	mov qword [rsp+8*14],r11
-	jmp L_2000
+L_1926:
+	mov rbx,  [gbl+8*11]
+	cmp rbx,r15
+	mov rdx, 0
+	setl dl
+	cmp rdx, 0
+	mov qword [rsp+8*12],rdx
+	je L_1927
+	mov rdx,  [gbl+8*5]
+	mov rbx,rdx
+	mov rax,  [gbl+8*6]
+	lea rdx,[rbx+rax*8+8H]
+	mov rbx, [rdx]
+	mov rax,  [gbl+8*11]
+	lea rdx,[rbx+rax*8+8H]
+	mov qword [rsp+8*13],rbx
+	mov rbx,0
+	mov [rdx],rbx
+	mov rbx,rax
+	mov qword [rsp+8*15],rbx
+	mov rbx,1
+	add rax,rbx
+	mov qword [rsp+8*14],rdx
+	mov qword [gbl+8*11],rax
+	jmp L_1926
 	
-L_2001:
-	mov r9,  [gbl+8*6]
-	mov r8,r9
-	mov r10,1
-	add r9,r10
-	mov qword [rsp+8*16],r8
-	mov qword [gbl+8*6],r9
-	jmp L_1998
+L_1927:
+	mov rdx,  [gbl+8*6]
+	mov rbx,rdx
+	mov rax,1
+	add rdx,rax
+	mov qword [rsp+8*16],rbx
+	mov qword [gbl+8*6],rdx
+	jmp L_1924
 	
-L_1999:
-	mov r8,0
-	mov r15,r8
+L_1925:
+	mov rbx,0
+	mov r15,rbx
 	mov r15,r15
-	mov r9,0
-	mov r15,r9
-	mov r10,99
-	mov r12,r10
-	mov r8,100
-	mov r11,r8
-	mov r9,0
-	mov r8,r9
-	mov rsi,r11
+	mov rdx,0
+	mov r15,rdx
+	mov rax,99
+	mov r12,rax
+	mov rdx,100
+	mov rbx,rdx
+	mov rdx,0
+	mov r11,rdx
+	mov rsi,rbx
 	mov rdi,r12
 	mov r14,rdi
 	mov r15,rsi
-	mov r10,1
-	mov r9,r10
-	mov qword [rsp+8*22],r8
-	mov qword [gbl+8*6],r9
-	mov qword [rsp+8*21],r11
+	mov rax,1
+	mov rdx,rax
+	mov qword [rsp+8*21],rbx
+	mov qword [gbl+8*6],rdx
 	
-L_2006:
-	mov r8,  [gbl+8*6]
-	mov r9,49
-	cmp r8,r9
-	mov r10, 0
-	setle r10B
-	cmp r10, 0
-	mov qword [rsp+8*26],r10
-	je L_2007
-	mov r9,50
-	mov r8,r9
-	mov qword [gbl+8*11],r8
+L_1932:
+	mov rbx,  [gbl+8*6]
+	mov rdx,49
+	cmp rbx,rdx
+	mov rax, 0
+	setle al
+	cmp rax, 0
+	mov qword [rsp+8*26],rax
+	je L_1933
+	mov rdx,50
+	mov rbx,rdx
+	mov qword [gbl+8*11],rbx
 	
-L_2008:
-	mov r8,98
-	mov r9,  [gbl+8*6]
-	mov r10,r8
-	sub r10,r9
-	mov r11,1
-	add r10,r11
-	mov r8,  [gbl+8*11]
-	cmp r8,r10
-	mov r10, 0
-	setle r10B
+L_1934:
+	mov rbx,98
+	mov rdx,  [gbl+8*6]
+	mov rax,rbx
+	sub rax,rdx
+	mov rbx,1
+	add rax,rbx
+	mov rbx,  [gbl+8*11]
+	cmp rbx,rax
+	mov rax, 0
+	setle al
 	add r13,r13
-	cmp r10, 0
-	mov qword [rsp+8*27],r10
-	je L_2010
-	mov r9,  [gbl+8*5]
-	mov r8,r9
-	mov r10,  [gbl+8*6]
-	lea r11,[r8+r10*8+8H]
-	mov r8, [r11]
-	mov r9,  [gbl+8*11]
-	lea r11,[r8+r9*8+8H]
-	mov qword [rsp+8*29],r8
-	mov r8,1
-	mov [r11],r8
-	mov r8,r9
-	mov qword [rsp+8*31],r8
-	mov r8,1
-	add r9,r8
-	mov qword [gbl+8*11],r9
-	mov qword [rsp+8*30],r11
-	jmp L_2008
+	cmp rax, 0
+	mov qword [rsp+8*27],rax
+	je L_1936
+	mov rdx,  [gbl+8*5]
+	mov rbx,rdx
+	mov rax,  [gbl+8*6]
+	lea rdx,[rbx+rax*8+8H]
+	mov rbx, [rdx]
+	mov rax,  [gbl+8*11]
+	lea rdx,[rbx+rax*8+8H]
+	mov qword [rsp+8*29],rbx
+	mov rbx,1
+	mov [rdx],rbx
+	mov rbx,rax
+	mov qword [rsp+8*31],rbx
+	mov rbx,1
+	add rax,rbx
+	mov qword [rsp+8*30],rdx
+	mov qword [gbl+8*11],rax
+	jmp L_1934
 	
-L_2010:
-	mov r9,  [gbl+8*6]
-	mov r8,r9
-	mov r10,1
-	add r9,r10
-	mov qword [rsp+8*32],r8
-	mov qword [gbl+8*6],r9
-	jmp L_2006
+L_1936:
+	mov rdx,  [gbl+8*6]
+	mov rbx,rdx
+	mov rax,1
+	add rdx,rax
+	mov qword [rsp+8*32],rbx
+	mov qword [gbl+8*6],rdx
+	jmp L_1932
 	
-L_2007:
-	mov r9,1
-	mov r8,r9
-	mov qword [gbl+8*6],r8
+L_1933:
+	mov rdx,1
+	mov rbx,rdx
+	mov qword [gbl+8*6],rbx
 	
-L_2013:
-	mov r8,  [gbl+8*6]
-	mov r9,49
-	cmp r8,r9
-	mov r10, 0
-	setle r10B
-	cmp r10, 0
-	mov qword [rsp+8*33],r10
-	je L_2014
-	mov r9,  [gbl+8*5]
-	mov r8,r9
-	lea r10,[r8+r14*8+8H]
-	mov r8, [r10]
-	mov r11,  [gbl+8*6]
-	lea r10,[r8+r11*8+8H]
-	mov qword [rsp+8*34],r8
-	mov r8,1
-	mov [r10],r8
-	mov r8,r11
-	mov qword [rsp+8*36],r8
-	mov r8,1
-	add r11,r8
-	mov qword [rsp+8*35],r10
-	mov qword [gbl+8*6],r11
-	jmp L_2013
+L_1939:
+	mov rbx,  [gbl+8*6]
+	mov rdx,49
+	cmp rbx,rdx
+	mov rax, 0
+	setle al
+	cmp rax, 0
+	mov qword [rsp+8*33],rax
+	je L_1940
+	mov rdx,  [gbl+8*5]
+	mov rbx,rdx
+	lea rax,[rbx+r14*8+8H]
+	mov rbx, [rax]
+	mov rdx,  [gbl+8*6]
+	lea rax,[rbx+rdx*8+8H]
+	mov qword [rsp+8*34],rbx
+	mov rbx,1
+	mov [rax],rbx
+	mov rbx,rdx
+	mov qword [rsp+8*36],rbx
+	mov rbx,1
+	add rdx,rbx
+	mov qword [gbl+8*6],rdx
+	mov qword [rsp+8*35],rax
+	jmp L_1939
 	
-L_2014:
-	mov r9,50
-	mov r8,r9
-	mov qword [gbl+8*6],r8
+L_1940:
+	mov rdx,50
+	mov rbx,rdx
+	mov qword [gbl+8*6],rbx
 	
-L_2016:
-	mov r8,  [gbl+8*6]
-	mov r9,98
-	cmp r8,r9
-	mov r10, 0
-	setle r10B
-	cmp r10, 0
-	mov qword [rsp+8*37],r10
-	je L_2017
-	mov r9,  [gbl+8*5]
-	mov r8,r9
-	mov r10,  [gbl+8*6]
-	lea r11,[r8+r10*8+8H]
-	mov r8, [r11]
-	lea r11,[r8+r15*8+8H]
-	mov qword [rsp+8*38],r8
-	mov r8,1
-	mov [r11],r8
-	mov r8,r10
-	mov qword [rsp+8*40],r8
-	mov r8,1
-	add r10,r8
-	mov qword [gbl+8*6],r10
-	mov qword [rsp+8*39],r11
-	jmp L_2016
+L_1942:
+	mov rbx,  [gbl+8*6]
+	mov rdx,98
+	cmp rbx,rdx
+	mov rax, 0
+	setle al
+	cmp rax, 0
+	mov qword [rsp+8*37],rax
+	je L_1943
+	mov rdx,  [gbl+8*5]
+	mov rbx,rdx
+	mov rax,  [gbl+8*6]
+	lea rdx,[rbx+rax*8+8H]
+	mov rbx, [rdx]
+	lea rdx,[rbx+r15*8+8H]
+	mov qword [rsp+8*38],rbx
+	mov rbx,1
+	mov [rdx],rbx
+	mov rbx,rax
+	mov qword [rsp+8*40],rbx
+	mov rbx,1
+	add rax,rbx
+	mov qword [rsp+8*39],rdx
+	mov qword [gbl+8*6],rax
+	jmp L_1942
 	
-L_2017:
-	mov r8,0
-	mov r15,r8
+L_1943:
+	mov rbx,0
+	mov r15,rbx
 	mov r15,r15
 	
-L_1953:
-	mov r9,  [rsp+8*22]
-	mov r8,r9
+L_1879:
+	mov rbx,r11
 	mov rsi,r12
-	mov r10,  [rsp+8*21]
-	mov rdi,r10
+	mov rdx,  [rsp+8*21]
+	mov rdi,rdx
 	mov r13,rdi
 	mov r14,rsi
-	mov r15,r8
-	mov qword [arg+8*2],r8
-	mov r8,0
-	mov r11,r8
-	mov r9,1
-	mov r8,r9
-	mov r10,1
-	mov r9,r10
-	mov qword [gbl+8*48],r8
-	mov qword [gbl+8*6],r9
-	mov qword [gbl+8*47],r11
+	mov r15,rbx
+	mov qword [arg+8*2],rbx
+	mov rbx,0
+	mov rax,rbx
+	mov rdx,1
+	mov rbx,rdx
+	mov qword [gbl+8*47],rax
+	mov rax,1
+	mov rdx,rax
+	mov qword [gbl+8*48],rbx
+	mov qword [gbl+8*6],rdx
 	
-L_2021:
-	mov r8,  [gbl+8*6]
-	cmp r8,r13
-	mov r9, 0
-	setle r9B
-	cmp r9, 0
-	mov qword [rsp+8*49],r9
-	je L_2022
-	mov r8,  [gbl+8*50]
-	mov r15,r8
-	mov r9,  [gbl+8*6]
-	lea r15,[r15+r9*8+8H]
-	mov r10,0
-	mov [r15],r10
-	mov r15,r9
-	mov r11,1
-	add r9,r11
-	mov qword [gbl+8*6],r9
-	jmp L_2021
+L_1947:
+	mov rbx,  [gbl+8*6]
+	cmp rbx,r13
+	mov rdx, 0
+	setle dl
+	cmp rdx, 0
+	mov qword [rsp+8*49],rdx
+	je L_1948
+	mov rbx,  [gbl+8*50]
+	mov r15,rbx
+	mov rdx,  [gbl+8*6]
+	lea r15,[r15+rdx*8+8H]
+	mov rax,0
+	mov [r15],rax
+	mov r15,rdx
+	mov rax,1
+	add rdx,rax
+	mov qword [gbl+8*6],rdx
+	jmp L_1947
 	
-L_2022:
-	mov r8,  [gbl+8*54]
-	mov r15,r8
-	mov r9,1
-	lea r15,[r15+r9*8+8H]
+L_1948:
+	mov rbx,  [gbl+8*54]
+	mov r15,rbx
+	mov rdx,1
+	lea r15,[r15+rdx*8+8H]
 	mov [r15],r14
-	mov r10,  [gbl+8*50]
-	mov r15,r10
+	mov rax,  [gbl+8*50]
+	mov r15,rax
 	lea r15,[r15+r14*8+8H]
-	mov r11,1
-	mov [r15],r11
-	mov r9,  [gbl+8*59]
-	mov r15,r9
+	mov rdx,1
+	mov [r15],rdx
+	mov rdx,  [gbl+8*59]
+	mov r15,rdx
 	lea r15,[r15+r14*8+8H]
-	mov r11,0
-	mov [r15],r11
-	mov r11,0
-	mov r15,r11
+	mov rbx,0
+	mov [r15],rbx
+	mov rbx,0
+	mov r15,rbx
 	
-L_2024:
-	mov r8,  [gbl+8*47]
-	mov r9,  [gbl+8*48]
-	cmp r8,r9
+L_1950:
+	mov rbx,  [gbl+8*47]
+	mov rdx,  [gbl+8*48]
+	cmp rbx,rdx
 	mov r14, 0
 	setl r14B
 	cmp r14, 0
-	jne L_2025
-	mov r8,0
-	mov r14,r8
-	jmp L_2026
+	jne L_1951
+	mov rbx,0
+	mov r14,rbx
+	jmp L_1952
 	
-L_2025:
-	mov r8,0
-	cmp r15,r8
+L_1951:
+	mov rbx,0
+	cmp r15,rbx
 	mov r14, 0
 	sete r14B
 	mov r14,r14
 	
-L_2026:
+L_1952:
 	cmp r14, 0
-	je L_2027
-	mov r8,  [gbl+8*47]
-	mov r14,r8
-	mov r9,1
-	add r8,r9
-	mov r10,  [gbl+8*54]
-	mov r14,r10
-	lea r14,[r14+r8*8+8H]
+	je L_1953
+	mov rbx,  [gbl+8*47]
+	mov r14,rbx
+	mov rdx,1
+	add rbx,rdx
+	mov rax,  [gbl+8*54]
+	mov r14,rax
+	lea r14,[r14+rbx*8+8H]
 	mov r14, [r14]
-	mov r11,r14
-	mov qword [gbl+8*47],r8
-	mov r9,1
-	mov r8,r9
-	mov qword [gbl+8*11],r8
-	mov qword [gbl+8*6],r11
+	mov qword [gbl+8*47],rbx
+	mov rbx,r14
+	mov rax,1
+	mov rdx,rax
+	mov qword [gbl+8*6],rbx
+	mov qword [gbl+8*11],rdx
 	
-L_2028:
-	mov r8,  [gbl+8*11]
-	cmp r8,r13
+L_1954:
+	mov rbx,  [gbl+8*11]
+	cmp rbx,r13
 	mov r14, 0
 	setle r14B
 	cmp r14, 0
-	je L_2029
-	mov r8,  [gbl+8*5]
-	mov r14,r8
-	mov r9,  [gbl+8*6]
-	lea r14,[r14+r9*8+8H]
+	je L_1955
+	mov rbx,  [gbl+8*5]
+	mov r14,rbx
+	mov rdx,  [gbl+8*6]
+	lea r14,[r14+rdx*8+8H]
 	mov r14, [r14]
-	mov r10,  [gbl+8*11]
-	lea r14,[r14+r10*8+8H]
+	mov rax,  [gbl+8*11]
+	lea r14,[r14+rax*8+8H]
 	mov r14, [r14]
 	cmp r14,0
 	mov r14, 0
 	setg r14B
 	cmp r14, 0
-	jne L_2030
-	mov r8,0
-	mov r14,r8
-	jmp L_2031
+	jne L_1956
+	mov rbx,0
+	mov r14,rbx
+	jmp L_1957
 	
-L_2030:
-	mov r8,  [gbl+8*50]
-	mov r14,r8
-	mov r9,  [gbl+8*11]
-	lea r14,[r14+r9*8+8H]
+L_1956:
+	mov rbx,  [gbl+8*50]
+	mov r14,rbx
+	mov rdx,  [gbl+8*11]
+	lea r14,[r14+rdx*8+8H]
 	mov r14, [r14]
-	mov r10,0
-	cmp r14,r10
+	mov rax,0
+	cmp r14,rax
 	mov r14, 0
 	sete r14B
 	mov r14,r14
 	
-L_2031:
+L_1957:
 	cmp r14, 0
-	je L_2032
-	mov r8,  [gbl+8*50]
-	mov r14,r8
-	mov r9,  [gbl+8*11]
-	lea r14,[r14+r9*8+8H]
-	mov r10,1
-	mov [r14],r10
-	mov r11,  [gbl+8*48]
-	mov r14,r11
-	mov r10,1
-	add r11,r10
-	mov r10,  [gbl+8*54]
-	mov r14,r10
-	lea r14,[r14+r11*8+8H]
-	mov [r14],r9
-	mov r8,  [gbl+8*59]
-	mov r14,r8
-	lea r14,[r14+r9*8+8H]
-	mov r10,  [gbl+8*6]
-	mov [r14],r10
-	cmp r11,r13
+	je L_1958
+	mov rbx,  [gbl+8*50]
+	mov r14,rbx
+	mov rdx,  [gbl+8*11]
+	lea r14,[r14+rdx*8+8H]
+	mov rax,1
+	mov [r14],rax
+	mov rax,  [gbl+8*48]
+	mov r14,rax
+	mov rbx,1
+	add rax,rbx
+	mov rbx,  [gbl+8*54]
+	mov r14,rbx
+	lea r14,[r14+rax*8+8H]
+	mov [r14],rdx
+	mov rbx,  [gbl+8*59]
+	mov r14,rbx
+	lea r14,[r14+rdx*8+8H]
+	mov qword [gbl+8*48],rax
+	mov rax,  [gbl+8*6]
+	mov [r14],rax
+	mov rbx,  [gbl+8*48]
+	cmp rbx,r13
 	mov r14, 0
 	sete r14B
 	cmp r14, 0
-	mov qword [gbl+8*48],r11
-	je L_2033
-	mov r8,1
-	mov r15,r8
+	je L_1959
+	mov rbx,1
+	mov r15,rbx
 	
-L_2033:
+L_1959:
 	
-L_2032:
-	mov r8,  [gbl+8*11]
-	mov r14,r8
-	mov r9,1
-	add r8,r9
-	mov qword [gbl+8*11],r8
-	jmp L_2028
+L_1958:
+	mov rbx,  [gbl+8*11]
+	mov r14,rbx
+	mov rdx,1
+	add rbx,rdx
+	mov qword [gbl+8*11],rbx
+	jmp L_1954
 	
-L_2029:
-	jmp L_2024
+L_1955:
+	jmp L_1950
 	
-L_2027:
+L_1953:
 	mov r15,r15
 	mov r15,r15
 	cmp r15,0
 	mov r15, 0
 	setg r15B
 	cmp r15, 0
-	je L_1954
-	mov r8,  [rsp+8*21]
-	mov rdi,r8
+	je L_1880
+	mov rbx,  [rsp+8*21]
+	mov rdi,rbx
 	mov r15,rdi
-	mov r9,r15
-	mov r10,  [gbl+8*90]
-	mov r15,r10
-	mov r11,1
-	add r10,r11
-	mov qword [gbl+8*6],r9
-	mov qword [gbl+8*90],r10
+	mov rdx,r15
+	mov rax,  [gbl+8*90]
+	mov r15,rax
+	mov rbx,1
+	add rax,rbx
+	mov qword [gbl+8*6],rdx
+	mov qword [gbl+8*90],rax
 	
-L_2037:
-	mov r8,  [gbl+8*59]
-	mov r15,r8
-	mov r9,  [gbl+8*6]
-	lea r15,[r15+r9*8+8H]
+L_1963:
+	mov rbx,  [gbl+8*59]
+	mov r15,rbx
+	mov rdx,  [gbl+8*6]
+	lea r15,[r15+rdx*8+8H]
 	mov r15, [r15]
 	cmp r15,0
 	mov r15, 0
 	setg r15B
 	cmp r15, 0
-	je L_2038
-	mov r8,  [gbl+8*59]
-	mov r15,r8
-	mov r9,  [gbl+8*6]
-	lea r15,[r15+r9*8+8H]
+	je L_1964
+	mov rbx,  [gbl+8*59]
+	mov r15,rbx
+	mov rdx,  [gbl+8*6]
+	lea r15,[r15+rdx*8+8H]
 	mov r15, [r15]
-	mov r10,r15
-	mov r11,  [gbl+8*5]
-	mov r15,r11
-	lea r15,[r15+r10*8+8H]
+	mov rax,r15
+	mov rbx,  [gbl+8*5]
+	mov r15,rbx
+	lea r15,[r15+rax*8+8H]
 	mov r15, [r15]
-	lea r15,[r15+r9*8+8H]
+	lea r15,[r15+rdx*8+8H]
 	mov r14, [r15]
 	mov r13,r14
-	mov r8,1
-	sub r14,r8
+	mov rbx,1
+	sub r14,rbx
 	mov [r15],r14
-	mov r15,r11
-	lea r15,[r15+r9*8+8H]
+	mov rbx,  [gbl+8*5]
+	mov r15,rbx
+	lea r15,[r15+rdx*8+8H]
 	mov r15, [r15]
-	lea r15,[r15+r10*8+8H]
+	lea r15,[r15+rax*8+8H]
 	mov r13, [r15]
 	mov r14,r13
-	mov r8,1
-	add r13,r8
+	mov rbx,1
+	add r13,rbx
 	mov [r15],r13
-	mov r9,r10
-	mov qword [gbl+8*6],r9
-	mov qword [gbl+8*11],r10
-	jmp L_2037
+	mov rdx,rax
+	mov qword [gbl+8*6],rdx
+	mov qword [gbl+8*11],rax
+	jmp L_1963
 	
-L_2038:
-	mov r8,0
-	mov r15,r8
+L_1964:
+	mov rbx,0
+	mov r15,rbx
 	mov r15,r15
-	jmp L_1953
+	jmp L_1879
 	
-L_1954:
-	mov r8,  [gbl+8*90]
-	mov rdi,r8
+L_1880:
+	mov rbx,  [gbl+8*90]
+	mov rdi,rbx
 	mov r15,rdi
 	mov     rdi,  r15
 	call    toString
@@ -1108,9 +1124,13 @@ L_1954:
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 
+	push r11
+	push r10
 	call puts
-	mov r8,0
-	mov rax,r8
+	pop r10
+	pop r11
+	mov rbx,0
+	mov rax,rbx
 	        mov     rsp, qword [trsp]
 	leave
 	ret
@@ -1119,29 +1139,41 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 984
-	mov r9,0
-	mov r8,r9
-	mov qword [gbl+8*90],r8
+	mov rdx,0
+	mov rbx,rdx
+	mov qword [gbl+8*90],rbx
 	mov     rdi, 110
+	push r11
+	push r10
 	call    mallocArray
+	pop r10
+	pop r11
 	mov     qword [gbl+8*112], rax
-	mov r9,  [gbl+8*112]
-	mov r8,r9
-	mov qword [gbl+8*50],r8
+	mov rdx,  [gbl+8*112]
+	mov rbx,rdx
+	mov qword [gbl+8*50],rbx
 	mov     rdi, 110
+	push r11
+	push r10
 	call    mallocArray
+	pop r10
+	pop r11
 	mov     qword [gbl+8*113], rax
-	mov r9,  [gbl+8*113]
-	mov r8,r9
-	mov qword [gbl+8*59],r8
+	mov rdx,  [gbl+8*113]
+	mov rbx,rdx
+	mov qword [gbl+8*59],rbx
 	mov     rdi, 110
+	push r11
+	push r10
 	call    mallocArray
+	pop r10
+	pop r11
 	mov     qword [gbl+8*114], rax
-	mov r9,  [gbl+8*114]
-	mov r8,r9
-	mov qword [gbl+8*54],r8
-	mov r8,  [rsp+8*115]
-	mov rax,r8
+	mov rdx,  [gbl+8*114]
+	mov rbx,rdx
+	mov qword [gbl+8*54],rbx
+	mov rbx,  [rsp+8*115]
+	mov rax,rbx
 	leave
 	ret
 	

@@ -634,156 +634,188 @@ main:
 	push r14
 	push r13
 	push r12
+	push r11
+	push r10
+	push r9
+	push r8
 	call global_init
+	pop r8
+	pop r9
+	pop r10
+	pop r11
 	pop r12
 	pop r13
 	pop r14
 	pop r15
-	mov r8 , rax
-	mov r9,1
-	mov r15,r9
+	mov rbx , rax
+	mov rdx,1
+	mov r15,rdx
 	cmp r15, 0
-	mov qword [rsp+8*1],r8
-	jne L_995
-	mov r9,0
-	mov r8,r9
-	mov qword [rsp+8*3],r8
-	jmp L_996
+	mov qword [rsp+8*1],rbx
+	jne L_921
+	mov rdx,0
+	mov rbx,rdx
+	mov qword [rsp+8*3],rbx
+	jmp L_922
 	
-L_995:
-	mov r8,1
-	cmp r8,0
-	mov r9, 0
-	setg r9B
-	mov qword [rsp+8*3],r9
+L_921:
+	mov rbx,1
+	cmp rbx,0
+	mov rdx, 0
+	setg dl
+	mov qword [rsp+8*3],rdx
 	
-L_996:
-	mov r8,  [rsp+8*3]
-	cmp r8, 0
-	je L_997
-	mov r8,t69
-	mov rdi,r8
-	mov r9,rdi
-	mov qword [rsp+8*5],r9
+L_922:
+	mov rbx,  [rsp+8*3]
+	cmp rbx, 0
+	je L_923
+	mov rbx,t69
+	mov rdi,rbx
+	mov rdx,rdi
+	mov qword [rsp+8*5],rdx
 	mov rdi,[rsp+8*5] 
 	add rdi, 1 
+	push r11
+	push r10
 	call puts
-	jmp L_998
+	pop r10
+	pop r11
+	jmp L_924
 	
-L_997:
-	mov r8,t73
-	mov rdi,r8
-	mov r9,rdi
-	mov qword [rsp+8*6],r9
+L_923:
+	mov rbx,t73
+	mov rdi,rbx
+	mov rdx,rdi
+	mov qword [rsp+8*6],rdx
 	mov rdi,[rsp+8*6] 
 	add rdi, 1 
+	push r11
+	push r10
 	call puts
+	pop r10
+	pop r11
 	
-L_998:
-	mov r8, 0
+L_924:
+	mov rbx, 0
 	cmp r15, 0
-	sete r8B
-	cmp r8, 0
-	mov qword [rsp+8*7],r8
-	je L_999
-	mov r9,1
-	mov r8,r9
-	mov qword [rsp+8*7],r8
-	jmp L_1000
+	sete bl
+	cmp rbx, 0
+	mov qword [rsp+8*7],rbx
+	je L_925
+	mov rdx,1
+	mov rbx,rdx
+	mov qword [rsp+8*7],rbx
+	jmp L_926
 	
-L_999:
-	mov r8,1
-	cmp r8,0
-	mov r9, 0
-	setg r9B
-	mov r10,r9
-	mov qword [rsp+8*8],r9
-	mov qword [rsp+8*7],r10
+L_925:
+	mov rbx,1
+	cmp rbx,0
+	mov rdx, 0
+	setg dl
+	mov rax,rdx
+	mov qword [rsp+8*8],rdx
+	mov qword [rsp+8*7],rax
 	
-L_1000:
-	mov r8,  [rsp+8*7]
-	cmp r8, 0
-	je L_1001
-	mov r8,t82
-	mov rdi,r8
-	mov r9,rdi
-	mov qword [rsp+8*9],r9
+L_926:
+	mov rbx,  [rsp+8*7]
+	cmp rbx, 0
+	je L_927
+	mov rbx,t82
+	mov rdi,rbx
+	mov rdx,rdi
+	mov qword [rsp+8*9],rdx
 	mov rdi,[rsp+8*9] 
 	add rdi, 1 
+	push r11
+	push r10
 	call puts
-	jmp L_1002
+	pop r10
+	pop r11
+	jmp L_928
 	
-L_1001:
-	mov r8,t86
-	mov rdi,r8
-	mov r9,rdi
-	mov qword [rsp+8*10],r9
+L_927:
+	mov rbx,t86
+	mov rdi,rbx
+	mov rdx,rdi
+	mov qword [rsp+8*10],rdx
 	mov rdi,[rsp+8*10] 
 	add rdi, 1 
+	push r11
+	push r10
 	call puts
+	pop r10
+	pop r11
 	
-L_1002:
-	mov r8,0
-	mov r15,r8
+L_928:
+	mov rbx,0
+	mov r15,rbx
 	cmp r15, 0
-	jne L_1003
-	mov r9,0
-	mov r8,r9
-	mov qword [rsp+8*11],r8
-	jmp L_1004
+	jne L_929
+	mov rdx,0
+	mov rbx,rdx
+	mov qword [rsp+8*11],rbx
+	jmp L_930
 	
-L_1003:
-	mov r8,1
-	mov r9,0
-	cmp r8,r9
-	mov r10, 0
-	setne r10B
-	mov qword [rsp+8*11],r10
+L_929:
+	mov rbx,1
+	mov rdx,0
+	cmp rbx,rdx
+	mov rax, 0
+	setne al
+	mov qword [rsp+8*11],rax
 	
-L_1004:
-	mov r8,  [rsp+8*11]
-	cmp r8, 0
-	jne L_1005
-	mov r9,0
-	mov r8,r9
-	mov qword [rsp+8*11],r8
-	jmp L_1006
+L_930:
+	mov rbx,  [rsp+8*11]
+	cmp rbx, 0
+	jne L_931
+	mov rdx,0
+	mov rbx,rdx
+	mov qword [rsp+8*11],rbx
+	jmp L_932
 	
-L_1005:
-	mov r8,2
-	mov r9,4
-	cmp r8,r9
-	mov r10, 0
-	setne r10B
-	mov r11,r10
-	mov qword [rsp+8*12],r10
-	mov qword [rsp+8*11],r11
+L_931:
+	mov rbx,2
+	mov rdx,4
+	cmp rbx,rdx
+	mov rax, 0
+	setne al
+	mov rbx,rax
+	mov qword [rsp+8*11],rbx
+	mov qword [rsp+8*12],rax
 	
-L_1006:
-	mov r8,  [rsp+8*11]
-	cmp r8, 0
-	je L_1007
-	mov r8,t99
-	mov rdi,r8
-	mov r9,rdi
-	mov qword [rsp+8*13],r9
+L_932:
+	mov rbx,  [rsp+8*11]
+	cmp rbx, 0
+	je L_933
+	mov rbx,t99
+	mov rdi,rbx
+	mov rdx,rdi
+	mov qword [rsp+8*13],rdx
 	mov rdi,[rsp+8*13] 
 	add rdi, 1 
+	push r11
+	push r10
 	call puts
-	jmp L_1008
+	pop r10
+	pop r11
+	jmp L_934
 	
-L_1007:
-	mov r8,t103
-	mov rdi,r8
-	mov r9,rdi
-	mov qword [rsp+8*14],r9
+L_933:
+	mov rbx,t103
+	mov rdi,rbx
+	mov rdx,rdi
+	mov qword [rsp+8*14],rdx
 	mov rdi,[rsp+8*14] 
 	add rdi, 1 
+	push r11
+	push r10
 	call puts
+	pop r10
+	pop r11
 	
-L_1008:
-	mov r8,0
-	mov rax,r8
+L_934:
+	mov rbx,0
+	mov rax,rbx
 	        mov     rsp, qword [trsp]
 	leave
 	ret
@@ -792,8 +824,8 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 184
-	mov r8,  [rsp+8*15]
-	mov rax,r8
+	mov rbx,  [rsp+8*15]
+	mov rax,rbx
 	leave
 	ret
 	

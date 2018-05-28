@@ -634,98 +634,124 @@ main:
 	push r14
 	push r13
 	push r12
+	push r11
+	push r10
+	push r9
+	push r8
 	call global_init
+	pop r8
+	pop r9
+	pop r10
+	pop r11
 	pop r12
 	pop r13
 	pop r14
 	pop r15
-	mov r8 , rax
-	mov r9,0
-	mov r15,r9
-	mov qword [rsp+8*1],r8
+	mov rbx , rax
+	mov rdx,0
+	mov r15,rdx
+	mov qword [rsp+8*1],rbx
 	mov     rdi, 5
+	push r11
+	push r10
 	call    mallocArray
+	pop r10
+	pop r11
 	mov     qword [rsp+8*3], rax
-	mov r8,  [rsp+8*3]
-	mov r14,r8
-	mov r9,1
-	add r15,r9
+	mov rbx,  [rsp+8*3]
+	mov r14,rbx
+	mov rdx,1
+	add r15,rdx
 	mov rdi,r15
-	mov r10,rdi
-	mov qword [rsp+8*6],r10
+	mov rax,rdi
+	mov qword [rsp+8*6],rax
 	mov     rdi, [rsp+8*6]
 	call    toString
 	mov     qword[rsp+8*7], rax
-	mov r8,  [rsp+8*7]
-	mov rdi,r8
-	mov r9,rdi
-	mov qword [rsp+8*8],r9
+	mov rbx,  [rsp+8*7]
+	mov rdi,rbx
+	mov rdx,rdi
+	mov qword [rsp+8*8],rdx
 	mov rdi,[rsp+8*8] 
 	add rdi, 1 
+	push r11
+	push r10
 	call puts
-	mov r8,1
-	add r15,r8
+	pop r10
+	pop r11
+	mov rbx,1
+	add r15,rbx
 	mov rdi,r15
-	mov r9,rdi
-	mov qword [rsp+8*9],r9
+	mov rdx,rdi
+	mov qword [rsp+8*9],rdx
 	mov     rdi, [rsp+8*9]
 	call    toString
 	mov     qword[rsp+8*10], rax
-	mov r8,  [rsp+8*10]
-	mov rdi,r8
-	mov r9,rdi
-	mov qword [rsp+8*11],r9
+	mov rbx,  [rsp+8*10]
+	mov rdi,rbx
+	mov rdx,rdi
+	mov qword [rsp+8*11],rdx
 	mov rdi,[rsp+8*11] 
 	add rdi, 1 
+	push r11
+	push r10
 	call puts
-	mov r8,r14
-	mov r9,0
-	lea r10,[r8+r9*8+8H]
-	mov r11, [r10]
-	mov qword [rsp+8*12],r8
-	mov r8,1
-	add r11,r8
-	mov [r10],r11
-	mov rdi,r11
-	mov r8,rdi
-	mov qword [rsp+8*15],r8
-	mov qword [rsp+8*13],r10
-	mov qword [rsp+8*14],r11
+	pop r10
+	pop r11
+	mov rbx,r14
+	mov rdx,0
+	lea rax,[rbx+rdx*8+8H]
+	mov qword [rsp+8*12],rbx
+	mov rbx, [rax]
+	mov rdx,1
+	add rbx,rdx
+	mov [rax],rbx
+	mov rdi,rbx
+	mov rbx,rdi
+	mov qword [rsp+8*15],rbx
+	mov qword [rsp+8*13],rax
 	mov     rdi, [rsp+8*15]
 	call    toString
 	mov     qword[rsp+8*16], rax
-	mov r8,  [rsp+8*16]
-	mov rdi,r8
-	mov r9,rdi
-	mov qword [rsp+8*17],r9
+	mov rbx,  [rsp+8*16]
+	mov rdi,rbx
+	mov rdx,rdi
+	mov qword [rsp+8*17],rdx
 	mov rdi,[rsp+8*17] 
 	add rdi, 1 
+	push r11
+	push r10
 	call puts
-	mov r8,r14
-	mov r9,0
-	lea r10,[r8+r9*8+8H]
-	mov r11, [r10]
-	mov qword [rsp+8*18],r8
-	mov r8,1
-	add r11,r8
-	mov [r10],r11
-	mov rdi,r11
-	mov r8,rdi
-	mov qword [rsp+8*21],r8
-	mov qword [rsp+8*19],r10
-	mov qword [rsp+8*20],r11
+	pop r10
+	pop r11
+	mov rbx,r14
+	mov rdx,0
+	lea rax,[rbx+rdx*8+8H]
+	mov qword [rsp+8*18],rbx
+	mov rbx, [rax]
+	mov rdx,1
+	add rbx,rdx
+	mov [rax],rbx
+	mov rdi,rbx
+	mov rbx,rdi
+	mov qword [rsp+8*21],rbx
+	mov qword [rsp+8*19],rax
 	mov     rdi, [rsp+8*21]
 	call    toString
 	mov     qword[rsp+8*22], rax
-	mov r8,  [rsp+8*22]
-	mov rdi,r8
-	mov r9,rdi
-	mov qword [rsp+8*23],r9
+	mov rbx,  [rsp+8*22]
+	mov rdi,rbx
+	mov rdx,rdi
+	mov qword [rsp+8*23],rdx
 	mov rdi,[rsp+8*23] 
 	add rdi, 1 
+	push r11
+	push r10
 	call puts
-	mov r8,0
-	mov rax,r8
+	pop r10
+	pop r11
+	mov rbx,0
+	mov rax,rbx
 	        mov     rsp, qword [trsp]
 	leave
 	ret
@@ -734,8 +760,8 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 256
-	mov r8,  [rsp+8*24]
-	mov rax,r8
+	mov rbx,  [rsp+8*24]
+	mov rax,rbx
 	leave
 	ret
 	

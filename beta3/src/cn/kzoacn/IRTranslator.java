@@ -115,7 +115,7 @@ public class IRTranslator {
                 return new StringBuffer("rsi");
             return new StringBuffer("[arg+8*" + Integer.toString(variable.constValue) + "]");
         }
-        if(variable.register>0&&variable.register<=8-registerNum)
+        if(variable.register>0&&variable.register<=8)
            return new StringBuffer(" r"+Integer.toString(16-variable.register));
         if(symbolMap.globalVariableMap.containsKey(variable.name))
             return new StringBuffer("[gbl+8*"+Integer.toString(variableIndex.get(variable))+"]");
@@ -152,7 +152,9 @@ public class IRTranslator {
         StringBuffer cmd=new StringBuffer();
         cmd.append("mov rdi,"+ varName(var) +" \n\t");
         cmd.append("add rdi, 1 \n\t");
+        cmd.append(saveContext());
         cmd.append("call puts\n\t");
+        cmd.append(resumeContext());
         /*StringBuffer cmd=new StringBuffer();
         cmd.append("mov rdi, formatln\n\t");
         cmd.append("mov rsi,"+ varName(var) +" \n\t");
@@ -167,7 +169,9 @@ public class IRTranslator {
         cmd.append("mov rsi,"+ varName(var) +" \n\t");
         cmd.append("add rsi, 1 \n\t");
         cmd.append("xor rax, rax\n\t");
+        cmd.append(saveContext());
         cmd.append("call printf\n\t");
+        cmd.append(resumeContext());
         return  cmd;
     }
     String format(String s){
@@ -217,30 +221,31 @@ public class IRTranslator {
     static boolean[] ban=new boolean[16];
     static int[] lastUsedTime=new int[16];
     static int russ=10;
-    static final int registerNum=4;
+    static final int registerNum=3;
+    HashMap<Integer,String>regName=new HashMap<Integer, String>();
     void kick(int x){
 
         if(writeBack[x]) {
             if (!isConst(occ[x]))
-                text.append(new StringBuffer("mov qword " + varName(occ[x]) + ",r" + Integer.toString(x) + "\n\t"));
+                text.append(new StringBuffer("mov qword " + varName(occ[x]) + "," + regName.get(x) + "\n\t"));
         }
         writeBack[x]=false;
         free[x]=true;
         occ[x]=null;
     }
     void kick(Variable var){
-        for(int i=8;i<8+registerNum;i++){
+        for(int i=2;i<2+registerNum;i++){
             if(!free[i]&&occ[i].equals(var))
                 kick(i);
         }
     }
     void kickAll(){
-        for(int i=0;i<8+registerNum;i++)if(!free[i])
+        for(int i=2;i<2+registerNum;i++)if(!free[i])
             kick(i);
     }
     void kickLocal(){
         //symbolMap.globalVariableMap.containsKey(variable.name)
-        for(int i=0;i<8+registerNum;i++)if(!free[i]){
+        for(int i=0;i<2+registerNum;i++)if(!free[i]){
             if(symbolMap.globalVariableMap.containsKey(occ[i].name)){
                 kick(i);
             }else{
@@ -256,7 +261,7 @@ public class IRTranslator {
     }
 
     void unlock(){
-        for(int i=8;i<8+registerNum;i++){
+        for(int i=2;i<2+registerNum;i++){
             ban[i]=false;
         }
     }
@@ -276,7 +281,7 @@ public class IRTranslator {
 
         int mn=2000000000;
         int mx=-1;
-        for(int i=8;i<8+registerNum;i++){
+        for(int i=2;i<2+registerNum;i++){
             if(ban[i])continue;
             if(variableLastIndex.get(occ[i])<currentLine){
                 if(occ[i].isTemp)
@@ -301,9 +306,9 @@ public class IRTranslator {
     void put(int i,Variable var,boolean read){
         if(read) {
             if (isConst(var)) {
-                text.append(new StringBuffer("mov r" + Integer.toString(i) + "," + varName(var) + "\n\t"));
+                text.append(new StringBuffer("mov " + regName.get(i) + "," + varName(var) + "\n\t"));
             } else {
-                text.append(new StringBuffer("mov r" + Integer.toString(i) + ",  " + varName(var) + "\n\t"));
+                text.append(new StringBuffer("mov " + regName.get(i) + ",  " + varName(var) + "\n\t"));
             }
         }else{
             writeBack[i]=true;
@@ -314,7 +319,7 @@ public class IRTranslator {
         lastUsedTime[i]=currentLine;
     }
     boolean inReg(Variable var){
-        for(int i=8;i<8+registerNum;i++){
+        for(int i=2;i<2+registerNum;i++){
             if(!free[i]&&occ[i].equals(var)) {
                 return true;
             }
@@ -322,7 +327,7 @@ public class IRTranslator {
         return false;
     }
     boolean fullReg(){
-        for(int i=8;i<8+registerNum;i++){
+        for(int i=2;i<2+registerNum;i++){
             if(free[i]) {
                 return false;
             }
@@ -340,7 +345,7 @@ public class IRTranslator {
             if (var.constValue == 1)
                 return 1;
         }
-        for(int i=8;i<8+registerNum;i++){
+        for(int i=2;i<2+registerNum;i++){
             if(!free[i]&&occ[i].equals(var)) {
                 ban[i]=true;
                 lastUsedTime[i]=currentLine;
@@ -349,7 +354,7 @@ public class IRTranslator {
                 return i;
             }
         }
-        for(int i=8;i<8+registerNum;i++){
+        for(int i=2;i<2+registerNum;i++){
             if(free[i]) {
                 put(i,var,read);
                 return i;
@@ -363,24 +368,76 @@ public class IRTranslator {
         getRegister(var,true);
         getRegister(var,false);
         int reg=getRegister(var,true);
-        if(reg==0)return "rdi";
-        if(reg==1)return "rsi";
+        if(regName.containsKey(reg))
+            return regName.get(reg);
         return "r"+reg;
     }
     String writeReg(Variable var){
         int reg=getRegister(var,false);
-        if(reg==0)return "rdi";
-        if(reg==1)return "rsi";
+        if(regName.containsKey(reg))
+            return regName.get(reg);
         return "r"+reg;
     }
     String readReg(Variable var){
         int reg=getRegister(var,true);
-        if(reg==0)return "rdi";
-        if(reg==1)return "rsi";
+        if(regName.containsKey(reg))
+            return regName.get(reg);
         return "r"+reg;
     }
 
+    StringBuffer saveContext(){
+        StringBuffer text=new StringBuffer();
+        text.append(new StringBuffer("push r11"+"\n\t"));
+        text.append(new StringBuffer("push r10"+"\n\t"));
+        //text.append(new StringBuffer("push r9"+"\n\t"));
+        //text.append(new StringBuffer("push r8"+"\n\t"));
+        return text;
+    }
+    StringBuffer resumeContext(){
+        StringBuffer text=new StringBuffer();
+
+        //text.append(new StringBuffer("pop r8"+"\n\t"));
+        //text.append(new StringBuffer("pop r9"+"\n\t"));
+        text.append(new StringBuffer("pop r10"+"\n\t"));
+        text.append(new StringBuffer("pop r11"+"\n\t"));
+        return text;
+    }
     void run(String fileName)throws Exception{
+        HashMap<String,String>lowbit=new HashMap<String, String>();
+        lowbit.put("rax","al");
+        lowbit.put("rbx","bl");
+        lowbit.put("rcx","cl");
+        lowbit.put("rdx","dl");
+        lowbit.put("r8","r8B");
+        lowbit.put("r9","r9B");
+        lowbit.put("r10","r10B");
+        lowbit.put("r11","r11B");
+        lowbit.put("r12","r12B");
+        lowbit.put("r13","r13B");
+        lowbit.put("r14","r14B");
+        lowbit.put("r15","r15B");
+
+        regName.put(0,"rdi");
+        regName.put(1,"rsi");
+        //regName.put(2,"rax");
+        //regName.put(3,"rax");
+        //regName.put(4,"rax");
+        //regName.put(5,"rax");
+        //regName.put(6,"rax");
+        //regName.put(7,"rax");
+        regName.put(2,"rbx");
+        regName.put(3,"rdx");
+        regName.put(4,"rax");
+
+        regName.put(8,"r8");
+        regName.put(9,"r9");
+        regName.put(10,"r10");
+        regName.put(11,"r11");
+        regName.put(12,"r12");
+        regName.put(13,"r13");
+        regName.put(14,"r14");
+        regName.put(15,"r15");
+
         IROptimizer irOptimizer=new IROptimizer();
         ir=irOptimizer.optimize(ir);
         for(int i=0;i<8+registerNum;i++) {
@@ -484,11 +541,11 @@ public class IRTranslator {
                 case not:
                     if(writeReg(dest).equals(readReg(var1))){
                         text.append(new StringBuffer("cmp "+readReg(var1)+", 0\n\t"));
-                        text.append(new StringBuffer("sete "+writeReg(dest)+"B\n\t"));
+                        text.append(new StringBuffer("sete "+lowbit.get(writeReg(dest))+"\n\t"));
                     }else{
                         text.append(new StringBuffer("mov "+writeReg(dest)+", 0\n\t"));
                         text.append(new StringBuffer("cmp "+readReg(var1)+", 0\n\t"));
-                        text.append(new StringBuffer("sete "+writeReg(dest)+"B\n\t"));
+                        text.append(new StringBuffer("sete "+lowbit.get(writeReg(dest))+"\n\t"));
                     }
                     break;
                 case inverse:
@@ -554,12 +611,13 @@ public class IRTranslator {
                     //kickAll();
                     break;
                 case divide:
+                    kickAll();
                     text.append(new StringBuffer("xor rdx, rdx\n\t"));
-                    text.append(new StringBuffer("mov rax, "+readReg(var1)+"\n\t"));
-                    text.append(new StringBuffer("mov rbx, "+readReg(var2)+"\n\t"));
+                    text.append(new StringBuffer("mov rax, "+varName(var1)+"\n\t"));
+                    text.append(new StringBuffer("mov rbx, "+varName(var2)+"\n\t"));
                     text.append(new StringBuffer("cdq\n\t"));
                     text.append(new StringBuffer("idiv rbx\n\t"));
-                    text.append(new StringBuffer("mov "+writeReg(dest)+", rax\n\t"));
+                    text.append(new StringBuffer("mov "+varName(dest)+", rax\n\t"));
                     //kickAll();
                     /*
                     fileOut.print("xor edx,edx\n");
@@ -570,12 +628,13 @@ public class IRTranslator {
                     fileOut.printf("mov %s, eax\n",getNum(cur.dest));*/
                     break;
                 case mod:
+                    kickAll();
                     text.append(new StringBuffer("xor rdx, rdx\n\t"));
-                    text.append(new StringBuffer("mov rax, "+readReg(var1)+"\n\t"));
-                    text.append(new StringBuffer("mov rbx, "+readReg(var2)+"\n\t"));
+                    text.append(new StringBuffer("mov rax, "+varName(var1)+"\n\t"));
+                    text.append(new StringBuffer("mov rbx, "+varName(var2)+"\n\t"));
                     text.append(new StringBuffer("cdq\n\t"));
                     text.append(new StringBuffer("idiv rbx\n\t"));
-                    text.append(new StringBuffer("mov "+writeReg(dest)+", rdx\n\t"));
+                    text.append(new StringBuffer("mov "+varName(dest)+", rdx\n\t"));
                     //kickAll();
                     break;
                 case and:
@@ -673,7 +732,15 @@ public class IRTranslator {
                     text.append(new StringBuffer("push r14"+"\n\t"));
                     text.append(new StringBuffer("push r13"+"\n\t"));
                     text.append(new StringBuffer("push r12"+"\n\t"));
+                    text.append(new StringBuffer("push r11"+"\n\t"));
+                    text.append(new StringBuffer("push r10"+"\n\t"));
+                    text.append(new StringBuffer("push r9"+"\n\t"));
+                    text.append(new StringBuffer("push r8"+"\n\t"));
                     text.append(new StringBuffer("call "+name+"\n\t"));
+                    text.append(new StringBuffer("pop r8"+"\n\t"));
+                    text.append(new StringBuffer("pop r9"+"\n\t"));
+                    text.append(new StringBuffer("pop r10"+"\n\t"));
+                    text.append(new StringBuffer("pop r11"+"\n\t"));
                     text.append(new StringBuffer("pop r12"+"\n\t"));
                     text.append(new StringBuffer("pop r13"+"\n\t"));
                     text.append(new StringBuffer("pop r14"+"\n\t"));
@@ -700,7 +767,7 @@ public class IRTranslator {
 
                     text.append(new StringBuffer("cmp "+ readReg(var1)+","+readReg(var2)+"\n\t"));
                     text.append(new StringBuffer("mov "+writeReg(dest)+", 0\n\t"));
-                    text.append(new StringBuffer("setl "+writeReg(dest)+"B\n\t"));
+                    text.append(new StringBuffer("setl "+lowbit.get(writeReg(dest))+"\n\t"));
                     //kickAll();
 
 
@@ -714,7 +781,7 @@ public class IRTranslator {
                 case leq:
                     text.append(new StringBuffer("cmp "+ readReg(var1)+","+readReg(var2)+"\n\t"));
                     text.append(new StringBuffer("mov "+writeReg(dest)+", 0\n\t"));
-                    text.append(new StringBuffer("setle "+writeReg(dest)+"B\n\t"));
+                    text.append(new StringBuffer("setle "+lowbit.get(writeReg(dest))+"\n\t"));
                     //kickAll();
                     /*text.append(new StringBuffer("mov r8, "+varName(var1)+"\n\t"));
                     text.append(new StringBuffer("mov r9, "+varName(var2)+"\n\t"));
@@ -725,7 +792,7 @@ public class IRTranslator {
                 case equal:
                     text.append(new StringBuffer("cmp "+ readReg(var1)+","+readReg(var2)+"\n\t"));
                     text.append(new StringBuffer("mov "+writeReg(dest)+", 0\n\t"));
-                    text.append(new StringBuffer("sete "+writeReg(dest)+"B\n\t"));
+                    text.append(new StringBuffer("sete "+lowbit.get(writeReg(dest))+"\n\t"));
                     //kickAll();
                     /*text.append(new StringBuffer("mov r8, "+varName(var1)+"\n\t"));
                     text.append(new StringBuffer("mov r9, "+varName(var2)+"\n\t"));
@@ -736,7 +803,7 @@ public class IRTranslator {
                 case inequal:
                     text.append(new StringBuffer("cmp "+ readReg(var1)+","+readReg(var2)+"\n\t"));
                     text.append(new StringBuffer("mov "+writeReg(dest)+", 0\n\t"));
-                    text.append(new StringBuffer("setne "+writeReg(dest)+"B\n\t"));
+                    text.append(new StringBuffer("setne "+lowbit.get(writeReg(dest))+"\n\t"));
                     //kickAll();
                     /*text.append(new StringBuffer("mov r8, "+varName(var1)+"\n\t"));
                     text.append(new StringBuffer("mov r9, "+varName(var2)+"\n\t"));
@@ -747,7 +814,7 @@ public class IRTranslator {
                 case geq:
                     text.append(new StringBuffer("cmp "+ readReg(var1)+","+readReg(var2)+"\n\t"));
                     text.append(new StringBuffer("mov "+writeReg(dest)+", 0\n\t"));
-                    text.append(new StringBuffer("setge "+writeReg(dest)+"B\n\t"));
+                    text.append(new StringBuffer("setge "+lowbit.get(writeReg(dest))+"\n\t"));
                     //kickAll();
                     /*text.append(new StringBuffer("mov r8, "+varName(var1)+"\n\t"));
                     text.append(new StringBuffer("mov r9, "+varName(var2)+"\n\t"));
@@ -759,11 +826,11 @@ public class IRTranslator {
                     if(isConst(var2)){
                         text.append(new StringBuffer("cmp " + readReg(var1) + "," + Integer.toString(var2.constValue) + "\n\t"));
                         text.append(new StringBuffer("mov " + writeReg(dest) + ", 0\n\t"));
-                        text.append(new StringBuffer("setg " + writeReg(dest) + "B\n\t"));
+                        text.append(new StringBuffer("setg " + lowbit.get(writeReg(dest))+"\n\t"));
                     }else {
                         text.append(new StringBuffer("cmp " + readReg(var1) + "," + readReg(var2) + "\n\t"));
                         text.append(new StringBuffer("mov " + writeReg(dest) + ", 0\n\t"));
-                        text.append(new StringBuffer("setg " + writeReg(dest) + "B\n\t"));
+                        text.append(new StringBuffer("setg " + lowbit.get(writeReg(dest))+"\n\t"));
                     }
                     //kickAll();
                     /*text.append(new StringBuffer("mov r8, "+varName(var1)+"\n\t"));
@@ -836,9 +903,9 @@ public class IRTranslator {
                     break;
                 case jne:
                     kickAll();
-                    text.append(new StringBuffer("mov r8, "+varName(var1)+"\n\t"));
-                    text.append(new StringBuffer("mov r9, "+varName(var2)+"\n\t"));
-                    text.append(new StringBuffer("cmp r8, r9\n\t"));
+                    text.append(new StringBuffer("mov rdx, "+varName(var1)+"\n\t"));
+                    text.append(new StringBuffer("mov rbx, "+varName(var2)+"\n\t"));
+                    text.append(new StringBuffer("cmp rdx, rbx\n\t"));
                     text.append(new StringBuffer("jne "+varName(dest)+"\n\t"));
                     break;
                 case malloc:
@@ -852,10 +919,11 @@ public class IRTranslator {
                 case mallocArray:
 
                     kickAll();
-                    text.append(new StringBuffer(
-                                    "mov     rdi, "+varName(var1)+"\n\t" +
-                                    "call    mallocArray\n\t"+
-                                    "mov     qword "+varName(dest)+", rax\n\t"));
+                    text.append(new StringBuffer("mov     rdi, "+varName(var1)+"\n\t"));
+                    text.append(saveContext());
+                    text.append(new StringBuffer("call    mallocArray\n\t"));
+                    text.append(resumeContext());
+                    text.append(new StringBuffer("mov     qword "+varName(dest)+", rax\n\t"));
                     clearAll();
                     break;
                 case concat:
@@ -907,14 +975,18 @@ public class IRTranslator {
                     break;
                 case getString:
                     kickAll();
-                    text.append(new StringBuffer("call    getString\n\t" +
-                            "mov     "+ varName(dest) +", rax\n\t"));
+                    text.append(saveContext());
+                    text.append(new StringBuffer("call    getString\n\t"));
+                    text.append(resumeContext());
+                    text.append(new StringBuffer("mov     "+ varName(dest) +", rax\n\t"));
                     clearAll();
                     break;
                 case getInt:
                     kickAll();
-                    text.append(new StringBuffer("call    getInt\n\t" +
-                                                "mov     "+ varName(dest) +", rax\n\t"));
+                    text.append(saveContext());
+                    text.append(new StringBuffer("call    getInt\n\t"));
+                    text.append(resumeContext());
+                    text.append(new StringBuffer("mov     "+ varName(dest) +", rax\n\t"));
                     clearAll();
                     break;
                 case toString:
@@ -955,22 +1027,22 @@ public class IRTranslator {
                 case endContext:
                     break;
                 case multiArray:
-                    //kickAll();
-                    kick(var1);
-                    kick(dest);
-                    text.append(new StringBuffer(
-                                    "mov     rdi, "+varName(var1)+"\n\t" +
-                                    "call    multiArray\n\t"+
-                                    "mov     qword "+varName(dest)+", rax\n\t"));
+                    kickAll();
+                    text.append(new StringBuffer("mov     rdi, "+varName(var1)+"\n\t"));
+                    text.append(saveContext());
+                    text.append(new StringBuffer("call    multiArray\n\t"));
+                    text.append(resumeContext());
+                    text.append(new StringBuffer("mov     qword "+varName(dest)+", rax\n\t"));
                     //clearAll();
                     break;
                 case multiAddress:
                     kickAll();
-                    text.append(new StringBuffer(
-                                    "mov     rsi, "+varName(var2)+"\n\t" +
-                                    "mov     rdi, "+varName(var1)+"\n\t" +
-                                    "call    multiAddress\n\t") +
-                                    "mov "+varName(dest)+", rax\n\t");
+                    text.append(new StringBuffer("mov     rsi, "+varName(var2)+"\n\t"));
+                    text.append(new StringBuffer("mov     rdi, "+varName(var1)+"\n\t"));
+                    text.append(saveContext());
+                    text.append(new StringBuffer("call    multiAddress\n\t"));
+                    text.append(resumeContext());
+                    text.append(new StringBuffer("mov "+varName(dest)+", rax\n\t"));
                     clearAll();
                     break;
                 case substring:

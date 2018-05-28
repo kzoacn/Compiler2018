@@ -634,79 +634,95 @@ main:
 	push r14
 	push r13
 	push r12
+	push r11
+	push r10
+	push r9
+	push r8
 	call global_init
+	pop r8
+	pop r9
+	pop r10
+	pop r11
 	pop r12
 	pop r13
 	pop r14
 	pop r15
-	mov r8 , rax
-	mov r9,100
-	mov r13,r9
-	mov r10,0
-	mov r15,r10
-	mov r11,t66
-	mov r14,r11
-	mov qword [rsp+8*1],r8
-	mov r8,0
-	mov r15,r8
+	mov rbx , rax
+	mov rdx,100
+	mov r13,rdx
+	mov rax,0
+	mov r15,rax
+	mov qword [rsp+8*1],rbx
+	mov rbx,t66
+	mov r14,rbx
+	mov rbx,0
+	mov r15,rbx
 	
-L_1287:
+L_1213:
 	cmp r15,r13
-	mov r8, 0
-	setl r8B
-	cmp r8, 0
-	mov qword [rsp+8*5],r8
-	je L_1288
+	mov rbx, 0
+	setl bl
+	cmp rbx, 0
+	mov qword [rsp+8*5],rbx
+	je L_1214
 	mov     rsi, t71
 	mov     rdi,  r14
 	call    concat
 	mov [rsp+8*6], rax
-	mov r8,  [rsp+8*6]
-	mov r14,r8
-	mov r9,r15
-	mov r10,1
-	add r15,r10
-	mov qword [rsp+8*7],r9
-	jmp L_1287
+	mov rbx,  [rsp+8*6]
+	mov r14,rbx
+	mov rdx,r15
+	mov rax,1
+	add r15,rax
+	mov qword [rsp+8*7],rdx
+	jmp L_1213
 	
-L_1288:
+L_1214:
 	mov rdi,r14
-	mov r8,rdi
-	mov qword [rsp+8*9],r8
+	mov rbx,rdi
+	mov qword [rsp+8*9],rbx
 	mov rdi,[rsp+8*9] 
 	add rdi, 1 
+	push r11
+	push r10
 	call puts
-	mov r8,0
-	mov r15,r8
+	pop r10
+	pop r11
+	mov rbx,0
+	mov r15,rbx
 	
-L_1290:
+L_1216:
 	cmp r15,r13
-	mov r8, 0
-	setl r8B
-	cmp r8, 0
-	mov qword [rsp+8*10],r8
-	je L_1291
+	mov rbx, 0
+	setl bl
+	cmp rbx, 0
+	mov qword [rsp+8*10],rbx
+	je L_1217
 	mov     rsi, t80
 	mov     rdi,  r14
 	call    concat
 	mov [rsp+8*11], rax
-	mov r8,  [rsp+8*11]
-	mov r14,r8
-	mov r9,r15
-	mov r10,1
-	add r15,r10
-	mov qword [rsp+8*12],r9
-	jmp L_1290
+	mov rbx,  [rsp+8*11]
+	mov r14,rbx
+	mov rdx,r15
+	mov rax,1
+	add r15,rax
+	mov qword [rsp+8*12],rdx
+	jmp L_1216
 	
-L_1291:
+L_1217:
 	mov rdi,r14
-	mov r8,rdi
-	mov qword [rsp+8*13],r8
+	mov rbx,rdi
+	mov qword [rsp+8*13],rbx
 	mov rdi,[rsp+8*13] 
 	add rdi, 1 
+	push r11
+	push r10
 	call puts
-	mov r8,0
-	mov rax,r8
+	pop r10
+	pop r11
+	mov rbx,0
+	mov rax,rbx
 	        mov     rsp, qword [trsp]
 	leave
 	ret
@@ -715,8 +731,8 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 176
-	mov r8,  [rsp+8*14]
-	mov rax,r8
+	mov rbx,  [rsp+8*14]
+	mov rax,rbx
 	leave
 	ret
 	

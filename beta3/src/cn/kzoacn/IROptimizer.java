@@ -303,7 +303,7 @@ public class IROptimizer {
             degree.put(entry.getKey(),hashSet.size());
         }
 
-        int registerNumber=4;
+        int registerNumber=5;
 
 
         TreeMap<String,Integer>colorMap=new TreeMap<String, Integer>();

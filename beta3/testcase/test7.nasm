@@ -634,63 +634,79 @@ main:
 	push r14
 	push r13
 	push r12
+	push r11
+	push r10
+	push r9
+	push r8
 	call global_init
+	pop r8
+	pop r9
+	pop r10
+	pop r11
 	pop r12
 	pop r13
 	pop r14
 	pop r15
-	mov r8 , rax
-	mov r9,5
-	mov r13,r9
-	mov qword [rsp+8*1],r8
+	mov rbx , rax
+	mov rdx,5
+	mov r13,rdx
+	mov qword [rsp+8*1],rbx
 	mov     rdi,  r13
+	push r11
+	push r10
 	call    mallocArray
+	pop r10
+	pop r11
 	mov     qword [rsp+8*3], rax
-	mov r8,  [rsp+8*3]
-	mov r15,r8
-	mov r9,0
-	mov r14,r9
+	mov rbx,  [rsp+8*3]
+	mov r15,rbx
+	mov rdx,0
+	mov r14,rdx
 	
-L_3087:
+L_3007:
 	cmp r14,r13
-	mov r8, 0
-	setl r8B
-	cmp r8, 0
-	mov qword [rsp+8*6],r8
-	je L_3088
-	mov r8,r15
-	lea r9,[r8+r14*8+8H]
-	mov [r9],r14
-	mov r10,r15
-	lea r11,[r10+r14*8+8H]
-	mov qword [rsp+8*7],r8
-	mov r8, [r11]
-	mov rdi,r8
-	mov qword [rsp+8*11],r8
-	mov r8,rdi
-	mov qword [rsp+8*13],r8
-	mov qword [rsp+8*8],r9
-	mov qword [rsp+8*9],r10
-	mov qword [rsp+8*10],r11
+	mov rbx, 0
+	setl bl
+	cmp rbx, 0
+	mov qword [rsp+8*6],rbx
+	je L_3008
+	mov rbx,r15
+	lea rdx,[rbx+r14*8+8H]
+	mov [rdx],r14
+	mov rax,r15
+	mov qword [rsp+8*7],rbx
+	lea rbx,[rax+r14*8+8H]
+	mov qword [rsp+8*8],rdx
+	mov rdx, [rbx]
+	mov rdi,rdx
+	mov qword [rsp+8*10],rbx
+	mov rbx,rdi
+	mov qword [rsp+8*13],rbx
+	mov qword [rsp+8*11],rdx
+	mov qword [rsp+8*9],rax
 	mov     rdi, [rsp+8*13]
 	call    toString
 	mov     qword[rsp+8*14], rax
-	mov r8,  [rsp+8*14]
-	mov rdi,r8
-	mov r9,rdi
-	mov qword [rsp+8*15],r9
+	mov rbx,  [rsp+8*14]
+	mov rdi,rbx
+	mov rdx,rdi
+	mov qword [rsp+8*15],rdx
 	mov rdi,[rsp+8*15] 
 	add rdi, 1 
+	push r11
+	push r10
 	call puts
-	mov r8,r14
-	mov r9,1
-	add r14,r9
-	mov qword [rsp+8*16],r8
-	jmp L_3087
+	pop r10
+	pop r11
+	mov rbx,r14
+	mov rdx,1
+	add r14,rdx
+	mov qword [rsp+8*16],rbx
+	jmp L_3007
 	
-L_3088:
-	mov r8,0
-	mov rax,r8
+L_3008:
+	mov rbx,0
+	mov rax,rbx
 	        mov     rsp, qword [trsp]
 	leave
 	ret
@@ -699,8 +715,8 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 200
-	mov r8,  [rsp+8*17]
-	mov rax,r8
+	mov rbx,  [rsp+8*17]
+	mov rax,rbx
 	leave
 	ret
 	

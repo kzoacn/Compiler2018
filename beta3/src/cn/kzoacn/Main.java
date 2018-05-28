@@ -1951,8 +1951,8 @@ class MVisitor extends MxstarBaseVisitor<IR>{
 
         ir.concat(exp);
 
-        if(!VariableType.BOOL.match(exp.last.dest.type))
-            ir.push(Quad.quadError("exp must be bool if"));
+        //if(!VariableType.BOOL.match(exp.last.dest.type))
+        //    ir.push(Quad.quadError("exp must be bool if"));
 
         String falseLable=nextLabel();
         String outLable=nextLabel();
