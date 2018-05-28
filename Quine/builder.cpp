@@ -10,11 +10,12 @@ void head(){
 }
 vector<string>s,c;
 void modifySlast3(){
-    int size=s.size()+5;
+    int size=s.size()+6;
     s.push_back("println(s[0]);");
     s.push_back("for(i=0;i<"+to_string(c.size())+";i++)println(c2(i)+a2q+c[i]+a2q+co);");
     s.push_back("for(i=0;i<"+to_string(size)+";i++)println(s2(i)+a2q+s[i]+a2q+co);");
     s.push_back("for(i=1;i<"+to_string(size)+";i++)println(s[i]);");
+    s.push_back("return 0;");
     s.push_back("}");
 }
 
@@ -79,7 +80,7 @@ int main(){
     }
     for(auto str:vec)
         cout<<str<<endl;
-    s.push_back("int main(){int i=0;");
+    s.push_back("int main(){int i=0;// Quine is a a program that produces its source code as output.");
     cout<<s[0]<<endl;
     for(int i=0;i<c.size();i++)
         printf("c[%d]=\"%s\";\n",i,c[i].c_str());

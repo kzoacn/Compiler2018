@@ -308,12 +308,16 @@ public class IROptimizer {
 
 
         //greedy allocate
-
+        Random random=new Random(0);
+        for(Variable var:variables)
+            colorMap.put(var.name,random.nextInt(registerNumber)+1);
 
         for(Variable var:variables){
             for(int i=0;i<10;i++)visit[i]=false;
-            for(Variable var2:graph.get(var))if(colorMap.containsKey(var2.name))
-                visit[colorMap.get(var2.name)]=true;
+            for(Variable var2:graph.get(var))if(colorMap.containsKey(var2.name)) {
+                System.err.println(colorMap.get(var2.name));
+                visit[colorMap.get(var2.name)] = true;
+            }
             int mex=0;
             for(int i=1;i<10;i++){
                 if(!visit[i]){
@@ -323,7 +327,12 @@ public class IROptimizer {
             }
             if(mex>registerNumber)mex=0;
             //if(used[mex])continue;
-            if(mex>0)colorMap.put(var.name,mex);
+            if(mex>0){
+                colorMap.put(var.name,mex);
+            }else{
+                colorMap.remove(var.name);
+            }
+
         }
         for(Variable var:variables)if(!colorMap.containsKey(var.name)){
             for(int i=0;i<10;i++)visit[i]=false;
@@ -340,6 +349,7 @@ public class IROptimizer {
             //if(used[mex])continue;
             if(mex>0)colorMap.put(var.name,mex);
         }
+
         /*
         while(variables.size()>0){
             ArrayList<Variable>newColor=new ArrayList<Variable>();

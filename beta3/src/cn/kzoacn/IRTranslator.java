@@ -139,8 +139,8 @@ public class IRTranslator {
     }
     StringBuffer mov(Variable var,Variable dest){
         if(variableIndex.containsKey(var)&&variableIndex.containsKey(dest)){
-            return new StringBuffer("mov "+"r8, "+varName(var)+"\n\t"
-                                    +"mov qword "+varName(dest)+" ,r8\n\t");
+            return new StringBuffer("mov "+"rcx, "+varName(var)+"\n\t"
+                                    +"mov qword "+varName(dest)+" ,rcx\n\t");
         }
 
         return new StringBuffer("mov qword "+varName(dest)+" ,"+varName(var)+"\n\t");
@@ -747,18 +747,18 @@ public class IRTranslator {
                     kickAll();
 
                     ArrayList<String>registers=new ArrayList<String >();
-                    if(saveRegister.containsKey(cur.line))
-                    for(int reg : saveRegister.get(cur.line))
-                        registers.add(regName.get(16-reg));
+                    //if(saveRegister.containsKey(cur.line))
+                    //for(int reg : saveRegister.get(cur.line))
+                    //    registers.add(regName.get(16-reg));
 
-                    /*registers.add("r8");
+                    registers.add("r8");
                     registers.add("r9");
                     registers.add("r10");
                     registers.add("r11");
                     registers.add("r12");
                     registers.add("r13");
                     registers.add("r14");
-                    registers.add("r15");*/
+                    registers.add("r15");
 
                     for(String reg : registers)
                         text.append(new StringBuffer("push "+reg+"\n\t"));
@@ -945,12 +945,12 @@ public class IRTranslator {
                     text.append(new StringBuffer("jne "+varName(dest)+"\n\t"));
                     break;
                 case malloc:
-                    kickAll();
+                    /*kickAll();
                     text.append(new StringBuffer(
                                     "mov     rdi, "+readReg(var1)+"\n\t" +
                                     "call    malloc\n\t"+
                                     "mov     qword "+writeReg(dest)+", rax\n\t"));
-                    clearAll();
+                    clearAll();*/
                     break;
                 case mallocArray:
 
@@ -973,7 +973,7 @@ public class IRTranslator {
                     clearAll();
                     break;
                 case load:
-                    getReg(var1);
+                    //getReg(var1);
                     text.append(new StringBuffer("mov "+writeReg(dest)+", ["+readReg(var1)+"]\n\t"));
                     //kickAll();
                     //text.append(new StringBuffer("mov r8, "+varName(var1)+"\n\t"));
