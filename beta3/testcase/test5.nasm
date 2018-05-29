@@ -684,43 +684,43 @@ main:
 	pop r15
 	mov r15 , rax
 	mov rbx,3
-	mov r14,rbx
+	mov r13,rbx
 	mov rdx,2
-	mov r13,rdx
+	mov r15,rdx
 	mov rax,5
-	mov r12,rax
-	cmp r14,r13
-	mov r15, 0
-	setg r15B
-	cmp r15, 0
+	mov r14,rax
+	cmp r13,r15
+	mov r12, 0
+	setg r12B
+	cmp r12, 0
 	jne L_999
 	mov rbx,0
-	mov r15,rbx
+	mov r12,rbx
 	jmp L_1000
 	
 L_999:
-	cmp r14,r12
-	mov r15, 0
-	setg r15B
-	mov r15,r15
+	cmp r13,r14
+	mov r12, 0
+	setg r12B
+	mov r12,r12
 	
 L_1000:
-	cmp r15, 0
+	cmp r12, 0
 	je L_1001
-	mov r15,r14
+	mov r15,r13
 	jmp L_1002
 	
 L_1001:
-	cmp r13,r12
-	mov r15, 0
-	setg r15B
-	cmp r15, 0
+	cmp r15,r14
+	mov r13, 0
+	setg r13B
+	cmp r13, 0
 	je L_1003
-	mov r15,r13
+	mov r15,r15
 	jmp L_1004
 	
 L_1003:
-	mov r15,r12
+	mov r15,r14
 	
 L_1004:
 	

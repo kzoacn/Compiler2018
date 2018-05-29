@@ -694,13 +694,13 @@ main:
 	pop r10
 	pop r11
 	mov     qword  r15, rax
+	mov r15,r15
 	mov r14,r15
-	mov r15,r14
 	mov rbx,2
-	lea r15,[r15+rbx*8+8H]
+	lea r14,[r14+rbx*8+8H]
 	mov rdx,2
-	mov [r15],rdx
-	mov rax,r14
+	mov [r14],rdx
+	mov rax,r15
 	mov r15,rax
 	mov rbx,2
 	lea r15,[r15+rbx*8+8H]

@@ -656,11 +656,11 @@ Hello_say:
 	mov    rbp, rsp
 	sub    rsp, 208
 	mov rbx,  [arg+8*63]
-	mov r15,rbx
+	mov r14,rbx
 	mov rdx,t67
 	mov rdi,rdx
-	mov r15,rdi
-	mov rdi, r15 
+	mov r14,rdi
+	mov rdi, r14 
 	add rdi, 1 
 	push r11
 	push r10
@@ -671,7 +671,7 @@ Hello_say:
 	pop r9
 	pop r10
 	pop r11
-	mov rax,r11
+	mov rax,r15
 	leave
 	ret
 	
@@ -704,11 +704,11 @@ main:
         mov     rsp, rax
         mov     eax, 0
 	push r15
-	push r11
+	push r14
 	call global_init
-	pop r11
+	pop r14
 	pop r15
-	mov r15 , rax
+	mov r14 , rax
 	mov     rdi, 3
 	push r11
 	push r10
@@ -719,17 +719,17 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword  r15, rax
-	mov r13,r15
+	mov     qword  r14, rax
+	mov r14,r14
 	mov rbx,0
-	mov r12,rbx
+	mov r13,rbx
 	
 L_1870:
 	mov rbx,3
-	cmp r12,rbx
-	mov r15, 0
-	setl r15B
-	cmp r15, 0
+	cmp r13,rbx
+	mov r12, 0
+	setl r12B
+	cmp r12, 0
 	je L_1871
 	mov     rdi, 0
 	push r11
@@ -741,28 +741,28 @@ L_1870:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword  r14, rax
-	mov r15,r13
-	lea r15,[r15+r12*8+8H]
-	mov [r15],r14
-	mov r15,r13
-	lea r15,[r15+r12*8+8H]
-	mov r15, [r15]
-	mov rbx,r15
+	mov     qword  r12, rax
+	mov r11,r14
+	lea r11,[r11+r13*8+8H]
+	mov [r11],r12
+	mov r12,r14
+	lea r12,[r12+r13*8+8H]
+	mov r12, [r12]
+	mov rbx,r12
 	mov qword [arg+8*63],rbx
 	push r15
+	push r14
 	push r13
 	push r12
-	push r11
 	call Hello_say
-	pop r11
 	pop r12
 	pop r13
+	pop r14
 	pop r15
-	mov r15 , rax
-	mov r15,r12
+	mov r12 , rax
+	mov r12,r13
 	mov rbx,1
-	add r12,rbx
+	add r13,rbx
 	jmp L_1870
 	
 L_1871:

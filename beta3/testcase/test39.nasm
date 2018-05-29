@@ -655,12 +655,12 @@ f:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 168
-	mov r14,rdi
+	mov r15,rdi
 	mov rbx,0
-	cmp r14,rbx
-	mov r15, 0
-	sete r15B
-	cmp r15, 0
+	cmp r15,rbx
+	mov r14, 0
+	sete r14B
+	cmp r14, 0
 	je L_1480
 	mov rbx,0
 	mov rax,rbx
@@ -669,12 +669,12 @@ f:
 	
 L_1480:
 	mov rbx,  [gbl+8*4]
-	mov r15,rbx
+	mov r14,rbx
 	mov rdx,1
 	add rbx,rdx
 	mov rax,1
-	sub r14,rax
-	mov rdi,r14
+	sub r15,rax
+	mov rdi,r15
 	mov qword [gbl+8*4],rbx
 	push r15
 	call f

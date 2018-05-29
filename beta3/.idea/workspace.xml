@@ -32,8 +32,8 @@
       <file leaf-file-name="IROptimizer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IROptimizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="316" column="2" selection-start-line="316" selection-start-column="2" selection-end-line="316" selection-end-column="2" />
+            <state relative-caret-position="408">
+              <caret line="316" column="78" selection-start-line="316" selection-start-column="78" selection-end-line="316" selection-end-column="78" />
               <folding>
                 <element signature="e#137#164#0" expanded="true" />
                 <element signature="e#252#273#0" expanded="true" />
@@ -55,7 +55,7 @@
       <file leaf-file-name="IRTranslator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="693">
+            <state relative-caret-position="-3240">
               <caret line="780" selection-start-line="780" selection-end-line="780" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -117,7 +117,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>toStringf</find>
       <find>bss</find>
       <find>r8</find>
       <find>rcx</find>
@@ -146,6 +145,7 @@
       <find>globalVariable</find>
       <find>Variabledefin</find>
       <find>10</find>
+      <find>sort</find>
       <find>IRO</find>
     </findStrings>
   </component>
@@ -427,7 +427,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32905984" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.12286325" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -855,7 +855,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
+        <state relative-caret-position="-3240">
           <caret line="780" selection-start-line="780" selection-end-line="780" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -870,8 +870,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IROptimizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="316" column="2" selection-start-line="316" selection-start-column="2" selection-end-line="316" selection-end-column="2" />
+        <state relative-caret-position="408">
+          <caret line="316" column="78" selection-start-line="316" selection-start-column="78" selection-end-line="316" selection-end-column="78" />
           <folding>
             <element signature="e#137#164#0" expanded="true" />
             <element signature="e#252#273#0" expanded="true" />

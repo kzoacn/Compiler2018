@@ -684,26 +684,26 @@ main:
 	pop r15
 	mov r15 , rax
 	mov rbx,1
-	mov r14,rbx
-	cmp r14, 0
+	mov r15,rbx
+	cmp r15, 0
 	jne L_1594
 	mov rbx,0
-	mov r15,rbx
+	mov r14,rbx
 	jmp L_1595
 	
 L_1594:
 	mov rbx,1
 	cmp rbx,0
-	mov r15, 0
-	setg r15B
+	mov r14, 0
+	setg r14B
 	
 L_1595:
-	cmp r15, 0
+	cmp r14, 0
 	je L_1596
 	mov rbx,t69
 	mov rdi,rbx
-	mov r15,rdi
-	mov rdi, r15 
+	mov r14,rdi
+	mov rdi, r14 
 	add rdi, 1 
 	push r11
 	push r10
@@ -719,8 +719,8 @@ L_1595:
 L_1596:
 	mov rbx,t73
 	mov rdi,rbx
-	mov r15,rdi
-	mov rdi, r15 
+	mov r14,rdi
+	mov rdi, r14 
 	add rdi, 1 
 	push r11
 	push r10
@@ -733,8 +733,7 @@ L_1596:
 	pop r11
 	
 L_1597:
-	mov r15, 0
-	cmp r14, 0
+	cmp r15, 0
 	sete r15B
 	cmp r15, 0
 	je L_1598
@@ -786,8 +785,8 @@ L_1600:
 	
 L_1601:
 	mov rbx,0
-	mov r14,rbx
-	cmp r14, 0
+	mov r15,rbx
+	cmp r15, 0
 	jne L_1602
 	mov rbx,0
 	mov r15,rbx

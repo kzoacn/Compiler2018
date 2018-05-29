@@ -827,7 +827,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
             if(function.parameterList.size()!=1)continue;
             if(!function.parameterList.get(0).equals(VariableType.INT))continue;
             if(!function.returnType.equals(VariableType.INT))continue;
-            boolean flag=true;
+            boolean flag=false;//close
             Quad head=tmpIR.head;
             while(head!=null){
                 if(head.opCode==OpCode.call){

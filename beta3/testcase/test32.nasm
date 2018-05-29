@@ -656,32 +656,32 @@ gcd:
 	mov    rbp, rsp
 	sub    rsp, 240
 	mov r14,rdi
-	mov r13,rsi
+	mov r15,rsi
 	xor rdx, rdx
 	mov rax,  r14
-	mov rbx,  r13
+	mov rbx,  r15
 	cdq
 	idiv rbx
-	mov  r15, rdx
+	mov  r13, rdx
 	mov rbx,0
-	cmp r15,rbx
-	mov r15, 0
-	sete r15B
-	cmp r15, 0
+	cmp r13,rbx
+	mov r13, 0
+	sete r13B
+	cmp r13, 0
 	je L_1445
-	mov rax,r13
+	mov rax,r15
 	leave
 	ret
 	
 L_1445:
 	xor rdx, rdx
 	mov rax,  r14
-	mov rbx,  r13
+	mov rbx,  r15
 	cdq
 	idiv rbx
-	mov  r15, rdx
-	mov rsi,r15
-	mov rdi,r13
+	mov  r14, rdx
+	mov rsi,r14
+	mov rdi,r15
 	push r15
 	call gcd
 	pop r15

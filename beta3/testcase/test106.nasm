@@ -684,12 +684,12 @@ main:
 	pop r15
 	mov r15 , rax
 	mov rbx,1000000
-	mov r11,rbx
+	mov r15,rbx
 	mov rdx,t65
 	mov rdi,rdx
-	mov r15,rdi
+	mov r14,rdi
 	mov rdi, format
-	mov rsi, r15 
+	mov rsi, r14 
 	add rsi, 1 
 	xor rax, rax
 	push r11
@@ -702,13 +702,13 @@ main:
 	pop r10
 	pop r11
 	mov rbx,2
-	mov r15,r11
-	imul r15,rbx
+	mov r14,r15
+	imul r14,rbx
 	mov rdx,1
-	add r15,rdx
-	mov rdi,r15
-	mov r15,rdi
-	mov     rdi,  r15
+	add r14,rdx
+	mov rdi,r14
+	mov r14,rdi
+	mov     rdi,  r14
 	push r11
 	push r10
 	push r9
@@ -718,9 +718,9 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r15, rax
+	mov     qword r14, rax
 	mov     rsi, t75
-	mov     rdi,  r15
+	mov     rdi,  r14
 	push r11
 	push r10
 	push r9
@@ -731,9 +731,9 @@ main:
 	pop r10
 	pop r11
 	mov  r14, rax
-	mov rdi,r11
-	mov r15,rdi
-	mov     rdi,  r15
+	mov rdi,r15
+	mov r13,rdi
+	mov     rdi,  r13
 	push r11
 	push r10
 	push r9
@@ -743,8 +743,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r15, rax
-	mov     rsi,  r15
+	mov     qword r13, rax
+	mov     rsi,  r13
 	mov     rdi,  r14
 	push r11
 	push r10
@@ -757,8 +757,8 @@ main:
 	pop r11
 	mov  r14, rax
 	mov rdi,r14
-	mov r15,rdi
-	mov rdi, r15 
+	mov r14,rdi
+	mov rdi, r14 
 	add rdi, 1 
 	push r11
 	push r10
@@ -772,17 +772,17 @@ main:
 	mov rbx,1
 	mov r13,rbx
 	mov rdx,0
-	mov r12,rdx
+	mov r14,rdx
 	
 L_299:
-	cmp r12,r11
-	mov r15, 0
-	setl r15B
-	cmp r15, 0
+	cmp r14,r15
+	mov r12, 0
+	setl r12B
+	cmp r12, 0
 	je L_300
 	mov rdi,r13
-	mov r15,rdi
-	mov     rdi,  r15
+	mov r12,rdi
+	mov     rdi,  r12
 	push r11
 	push r10
 	push r9
@@ -792,9 +792,9 @@ L_299:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r15, rax
+	mov     qword r12, rax
 	mov     rsi, t90
-	mov     rdi,  r15
+	mov     rdi,  r12
 	push r11
 	push r10
 	push r9
@@ -804,13 +804,13 @@ L_299:
 	pop r9
 	pop r10
 	pop r11
-	mov  r14, rax
+	mov  r12, rax
 	mov rbx,1
-	mov r15,r13
-	add r15,rbx
-	mov rdi,r15
-	mov r15,rdi
-	mov     rdi,  r15
+	mov r11,r13
+	add r11,rbx
+	mov rdi,r11
+	mov r11,rdi
+	mov     rdi,  r11
 	push r11
 	push r10
 	push r9
@@ -820,9 +820,9 @@ L_299:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r15, rax
-	mov     rsi,  r15
-	mov     rdi,  r14
+	mov     qword r11, rax
+	mov     rsi,  r11
+	mov     rdi,  r12
 	push r11
 	push r10
 	push r9
@@ -832,9 +832,9 @@ L_299:
 	pop r9
 	pop r10
 	pop r11
-	mov  r14, rax
+	mov  r12, rax
 	mov     rsi, t97
-	mov     rdi,  r14
+	mov     rdi,  r12
 	push r11
 	push r10
 	push r9
@@ -844,15 +844,15 @@ L_299:
 	pop r9
 	pop r10
 	pop r11
-	mov  r14, rax
+	mov  r12, rax
 	mov rbx,2
-	mov r15,r13
-	add r15,rbx
-	mov r15,r15
-	neg r15
-	mov rdi,r15
-	mov r15,rdi
-	mov     rdi,  r15
+	mov r11,r13
+	add r11,rbx
+	mov r11,r11
+	neg r11
+	mov rdi,r11
+	mov r11,rdi
+	mov     rdi,  r11
 	push r11
 	push r10
 	push r9
@@ -862,9 +862,9 @@ L_299:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r15, rax
-	mov     rsi,  r15
-	mov     rdi,  r14
+	mov     qword r11, rax
+	mov     rsi,  r11
+	mov     rdi,  r12
 	push r11
 	push r10
 	push r9
@@ -874,23 +874,23 @@ L_299:
 	pop r9
 	pop r10
 	pop r11
-	mov  r14, rax
-	mov r14,r14
+	mov  r12, rax
+	mov r12,r12
 	xor rdx, rdx
-	mov rax,  r12
+	mov rax,  r14
 	mov rbx, 100000
 	cdq
 	idiv rbx
-	mov  r15, rdx
+	mov  r11, rdx
 	mov rbx,0
-	cmp r15,rbx
-	mov r15, 0
-	sete r15B
-	cmp r15, 0
+	cmp r11,rbx
+	mov r11, 0
+	sete r11B
+	cmp r11, 0
 	je L_303
-	mov rdi,r14
-	mov r15,rdi
-	mov rdi, r15 
+	mov rdi,r12
+	mov r12,rdi
+	mov rdi, r12 
 	add rdi, 1 
 	push r11
 	push r10
@@ -904,11 +904,10 @@ L_299:
 	
 L_303:
 	mov rbx,2
-	mov r15,r13
-	add r15,rbx
-	mov r13,r15
+	add r13,rbx
+	mov r13,r13
 	mov rdx,1
-	add r12,rdx
+	add r14,rdx
 	jmp L_299
 	
 L_300:

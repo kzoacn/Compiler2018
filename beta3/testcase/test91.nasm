@@ -655,19 +655,19 @@ cd:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 320
-	mov r14,rdi
+	mov r11,rdi
 	mov r13,rsi
 	mov rbx,  [arg+8*2]
 	mov r12,rbx
 	mov rdx,  [arg+8*3]
-	mov r11,rdx
+	mov r14,rdx
 	mov rax,  [arg+8*4]
-	mov r10,rax
+	mov r15,rax
 	mov rbx,1
-	cmp r14,rbx
-	mov r15, 0
-	sete r15B
-	cmp r15, 0
+	cmp r11,rbx
+	mov r10, 0
+	sete r10B
+	cmp r10, 0
 	je L_3816
 	mov     rsi,  r13
 	mov     rdi, t66
@@ -680,9 +680,9 @@ cd:
 	pop r9
 	pop r10
 	pop r11
-	mov  r15, rax
+	mov  r13, rax
 	mov     rsi, t68
-	mov     rdi,  r15
+	mov     rdi,  r13
 	push r11
 	push r10
 	push r9
@@ -692,9 +692,9 @@ cd:
 	pop r9
 	pop r10
 	pop r11
-	mov  r15, rax
-	mov     rsi,  r11
-	mov     rdi,  r15
+	mov  r13, rax
+	mov     rsi,  r14
+	mov     rdi,  r13
 	push r11
 	push r10
 	push r9
@@ -704,10 +704,10 @@ cd:
 	pop r9
 	pop r10
 	pop r11
-	mov  r15, rax
-	mov rdi,r15
-	mov r15,rdi
-	mov rdi, r15 
+	mov  r13, rax
+	mov rdi,r13
+	mov r14,rdi
+	mov rdi, r14 
 	add rdi, 1 
 	push r11
 	push r10
@@ -718,20 +718,20 @@ cd:
 	pop r9
 	pop r10
 	pop r11
-	mov r15,r10
+	mov r14,r15
 	mov rbx,1
-	add r10,rbx
+	add r15,rbx
 	jmp L_3817
 	
 L_3816:
 	mov rbx,1
-	mov r15,r14
-	sub r15,rbx
-	mov rdx,r10
+	mov r10,r11
+	sub r10,rbx
+	mov rdx,r15
 	mov rax,r12
-	mov rbx,r11
+	mov rbx,r14
 	mov rsi,r13
-	mov rdi,r15
+	mov rdi,r10
 	mov qword [arg+8*2],rbx
 	mov qword [arg+8*4],rdx
 	mov qword [arg+8*3],rax
@@ -747,7 +747,7 @@ L_3816:
 	pop r14
 	pop r15
 	mov r15 , rax
-	mov r10,r15
+	mov r15,r15
 	mov     rsi,  r13
 	mov     rdi, t78
 	push r11
@@ -759,9 +759,9 @@ L_3816:
 	pop r9
 	pop r10
 	pop r11
-	mov  r15, rax
+	mov  r10, rax
 	mov     rsi, t80
-	mov     rdi,  r15
+	mov     rdi,  r10
 	push r11
 	push r10
 	push r9
@@ -771,9 +771,9 @@ L_3816:
 	pop r9
 	pop r10
 	pop r11
-	mov  r15, rax
-	mov     rsi,  r11
-	mov     rdi,  r15
+	mov  r10, rax
+	mov     rsi,  r14
+	mov     rdi,  r10
 	push r11
 	push r10
 	push r9
@@ -783,10 +783,10 @@ L_3816:
 	pop r9
 	pop r10
 	pop r11
-	mov  r15, rax
-	mov rdi,r15
-	mov r15,rdi
-	mov rdi, r15 
+	mov  r10, rax
+	mov rdi,r10
+	mov r10,rdi
+	mov rdi, r10 
 	add rdi, 1 
 	push r11
 	push r10
@@ -798,13 +798,12 @@ L_3816:
 	pop r10
 	pop r11
 	mov rbx,1
-	mov r15,r14
-	sub r15,rbx
-	mov rdx,r10
-	mov rax,r11
+	sub r11,rbx
+	mov rdx,r15
+	mov rax,r14
 	mov rbx,r13
 	mov rsi,r12
-	mov rdi,r15
+	mov rdi,r11
 	mov qword [arg+8*2],rbx
 	mov qword [arg+8*4],rdx
 	mov qword [arg+8*3],rax
@@ -812,13 +811,13 @@ L_3816:
 	call cd
 	pop r15
 	mov r15 , rax
-	mov r10,r15
-	mov r15,r10
+	mov r15,r15
+	mov r14,r15
 	mov rbx,1
-	add r10,rbx
+	add r15,rbx
 	
 L_3817:
-	mov rax,r10
+	mov rax,r15
 	leave
 	ret
 	

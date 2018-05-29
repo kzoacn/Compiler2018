@@ -694,67 +694,67 @@ main:
 	pop r10
 	pop r11
 	mov     qword  r15, rax
-	mov r13,r15
+	mov r15,r15
 	mov rbx,0
-	mov r14,rbx
+	mov r13,rbx
 	mov rdx,0
-	mov r12,rdx
+	mov r14,rdx
 	
 L_1580:
 	mov rbx,  [gbl+8*2]
-	cmp r12,rbx
-	mov r15, 0
-	setl r15B
-	cmp r15, 0
+	cmp r14,rbx
+	mov r12, 0
+	setl r12B
+	cmp r12, 0
 	je L_1581
 	xor rdx, rdx
-	mov rax,  r12
+	mov rax,  r14
 	mov rbx, 2
 	cdq
 	idiv rbx
-	mov  r15, rdx
+	mov  r12, rdx
 	mov rbx,1
-	cmp r15,rbx
-	mov r15, 0
-	sete r15B
-	cmp r15, 0
+	cmp r12,rbx
+	mov r12, 0
+	sete r12B
+	cmp r12, 0
 	je L_1584
-	mov r15,r13
-	lea r15,[r15+r12*8+8H]
+	mov r12,r15
+	lea r12,[r12+r14*8+8H]
 	mov rbx,0
-	mov [r15],rbx
+	mov [r12],rbx
 	jmp L_1582
 	
 L_1584:
 	mov rbx,1
-	add r14,rbx
-	mov r15,r13
-	lea r15,[r15+r12*8+8H]
-	mov [r15],r14
+	add r13,rbx
+	mov r12,r15
+	lea r12,[r12+r14*8+8H]
+	mov [r12],r13
 	
 L_1582:
-	mov r15,r12
+	mov r12,r14
 	mov rbx,1
-	add r12,rbx
+	add r14,rbx
 	jmp L_1580
 	
 L_1581:
 	mov rbx,0
-	mov r12,rbx
+	mov r14,rbx
 	
 L_1585:
 	mov rbx,  [gbl+8*2]
-	cmp r12,rbx
-	mov r15, 0
-	setl r15B
-	cmp r15, 0
+	cmp r14,rbx
+	mov r13, 0
+	setl r13B
+	cmp r13, 0
 	je L_1586
-	mov r15,r13
-	lea r15,[r15+r12*8+8H]
-	mov r15, [r15]
-	mov rdi,r15
-	mov r15,rdi
-	mov     rdi,  r15
+	mov r13,r15
+	lea r13,[r13+r14*8+8H]
+	mov r13, [r13]
+	mov rdi,r13
+	mov r13,rdi
+	mov     rdi,  r13
 	push r11
 	push r10
 	push r9
@@ -764,10 +764,10 @@ L_1585:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r15, rax
-	mov rdi,r15
-	mov r15,rdi
-	mov rdi, r15 
+	mov     qword r13, rax
+	mov rdi,r13
+	mov r13,rdi
+	mov rdi, r13 
 	add rdi, 1 
 	push r11
 	push r10
@@ -778,9 +778,9 @@ L_1585:
 	pop r9
 	pop r10
 	pop r11
-	mov r15,r12
+	mov r13,r14
 	mov rbx,1
-	add r12,rbx
+	add r14,rbx
 	jmp L_1585
 	
 L_1586:
