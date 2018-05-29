@@ -694,7 +694,7 @@ main:
 	call global_init
 	pop r15
 	mov r15 , rax
-	mov rbx,200
+	mov rbx,5
 	mov rdi,rbx
 	push r15
 	call fib

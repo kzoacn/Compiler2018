@@ -314,7 +314,7 @@ public class IROptimizer {
 //            colorMap.put(var.name,random.nextInt(registerNumber)+1);
 
         ArrayList<Variable>arrayList=new ArrayList<Variable>(variables);
-        arrayList.sort((var1, var2) -> graph.get(var1).size() - graph.get(var2).size());
+//        arrayList.sort((var1, var2) -> graph.get(var1).size() - graph.get(var2).size());
         for(Variable var:arrayList){
             for(int i=0;i<10;i++)visit[i]=false;
             for(Variable var2:graph.get(var))if(colorMap.containsKey(var2.name)) {
