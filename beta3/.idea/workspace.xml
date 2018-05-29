@@ -29,10 +29,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="IROptimizer.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="IROptimizer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IROptimizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
+            <state relative-caret-position="4715">
               <caret line="335" column="2" selection-start-line="335" selection-start-column="2" selection-end-line="335" selection-end-column="2" />
               <folding>
                 <element signature="e#137#164#0" expanded="true" />
@@ -51,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IRTranslator.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IRTranslator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="403" column="8" selection-start-line="403" selection-start-column="8" selection-end-line="403" selection-end-column="8" />
+            <state relative-caret-position="7448">
+              <caret line="424" lean-forward="true" selection-start-line="424" selection-end-line="424" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1827#1845#0" expanded="true" />
@@ -112,7 +112,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>toString</find>
       <find>multi</find>
       <find>multipl</find>
       <find>toString:</find>
@@ -137,11 +136,12 @@
       <find>ord</find>
       <find>rsp</find>
       <find>substring</find>
-      <find>10</find>
       <find>call</find>
       <find>x111</find>
       <find>sdf</find>
       <find>err</find>
+      <find>10</find>
+      <find>saveC</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -422,7 +422,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39529914" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32905984" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -818,16 +818,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/ConstantPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6726">
-          <caret line="354" column="26" selection-start-line="354" selection-start-column="26" selection-end-line="354" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/ExecTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
@@ -838,9 +828,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/ConstantPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6726">
+          <caret line="354" column="26" selection-start-line="354" selection-start-column="26" selection-end-line="354" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7448">
+          <caret line="424" lean-forward="true" selection-start-line="424" selection-end-line="424" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1827#1845#0" expanded="true" />
+            <element signature="e#1910#1928#0" expanded="true" />
+            <element signature="e#7276#7293#0" expanded="true" />
+            <element signature="e#12828#12844#0" expanded="true" />
+            <element signature="e#29337#29346#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IROptimizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
+        <state relative-caret-position="4715">
           <caret line="335" column="2" selection-start-line="335" selection-start-column="2" selection-end-line="335" selection-end-column="2" />
           <folding>
             <element signature="e#137#164#0" expanded="true" />
@@ -854,21 +869,6 @@
             <element signature="e#8374#8392#0" expanded="true" />
             <element signature="e#9654#9664#0" expanded="true" />
             <element signature="e#10022#10039#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="403" column="8" selection-start-line="403" selection-start-column="8" selection-end-line="403" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1827#1845#0" expanded="true" />
-            <element signature="e#1910#1928#0" expanded="true" />
-            <element signature="e#7276#7293#0" expanded="true" />
-            <element signature="e#12828#12844#0" expanded="true" />
-            <element signature="e#29337#29346#0" expanded="true" />
           </folding>
         </state>
       </provider>
