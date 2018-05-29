@@ -656,11 +656,11 @@ point_set:
 	mov    rbp, rsp
 	sub    rsp, 328
 	mov rbx,  [arg+8*63]
-	mov r15,rbx
+	mov r12,rbx
 	mov r11,rdi
 	mov r10,rsi
 	mov rdx,0
-	lea r9,[r15+rdx*8+8H]
+	lea r13,[r12+rdx*8+8H]
 	mov     rdi, 0
 	push r11
 	push r10
@@ -671,10 +671,10 @@ point_set:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword  r13, rax
-	mov r14,r13
-	mov     rsi,  r13
-	mov     rdi,  r9
+	mov     qword  r14, rax
+	mov r15,r14
+	mov     rsi,  r14
+	mov     rdi,  r13
 	push r11
 	push r10
 	push r9
@@ -684,10 +684,10 @@ point_set:
 	pop r9
 	pop r10
 	pop r11
-	mov  r14, rax
-	mov [r14],r11
+	mov  r15, rax
+	mov [r15],r11
 	mov rbx,1
-	lea r13,[r15+rbx*8+8H]
+	lea r13,[r12+rbx*8+8H]
 	mov     rdi, 0
 	push r11
 	push r10
@@ -713,7 +713,7 @@ point_set:
 	pop r11
 	mov  r15, rax
 	mov [r15],r10
-	mov rax,r12
+	mov rax,r9
 	leave
 	ret
 	
@@ -746,9 +746,9 @@ main:
         mov     rsp, rax
         mov     eax, 0
 	push r15
-	push r12
+	push r9
 	call global_init
-	pop r12
+	pop r9
 	pop r15
 	mov r15 , rax
 	mov     rdi, 2
@@ -772,9 +772,9 @@ main:
 	mov qword [arg+8*63],rax
 	push r15
 	push r13
-	push r12
+	push r9
 	call point_set
-	pop r12
+	pop r9
 	pop r13
 	pop r15
 	mov r15 , rax

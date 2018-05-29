@@ -683,16 +683,17 @@ main:
 	call global_init
 	pop r15
 	mov r15 , rax
-	mov rbx,10000
-	mov r13,rbx
+	mov rdx,10000
+	mov rbx,rdx
+	mov rax,0
+	mov r11,rax
+	mov rdx,2800
+	mov r9,rdx
 	mov rdx,0
 	mov r12,rdx
-	mov rax,2800
-	mov r11,rax
-	mov rbx,0
-	mov r10,rbx
-	mov rbx,0
-	mov r9,rbx
+	mov rdx,0
+	mov r10,rdx
+	mov qword [rsp+8*2],rbx
 	mov     rdi, 2801
 	push r11
 	push r10
@@ -705,13 +706,12 @@ main:
 	pop r11
 	mov     qword  r15, rax
 	mov r8,r15
-	mov rdx,0
-	mov rbx,rdx
-	mov qword [rsp+8*9],rbx
+	mov rbx,0
+	mov r13,rbx
 	
 L_1600:
-	mov r15,r12
-	sub r15,r11
+	mov r15,r11
+	sub r15,r9
 	mov rbx,0
 	cmp r15,rbx
 	mov r15, 0
@@ -719,76 +719,72 @@ L_1600:
 	cmp r15, 0
 	je L_1601
 	xor rdx, rdx
-	mov rax,  r13
+	mov rax, [rsp+8*2]
 	mov rbx, 5
 	cdq
 	idiv rbx
-	mov  r14, rax
-	mov r15,r12
+	mov  r13, rax
+	mov r15,r11
 	mov rbx,1
-	add r12,rbx
-	mov r10,r8
-	lea r15,[r10+r15*8+8H]
-	mov [r15],r14
+	add r11,rbx
+	mov r14,r8
+	lea r15,[r14+r15*8+8H]
+	mov [r15],r13
 	jmp L_1600
 	
 L_1601:
 	
 L_1603:
 	mov rbx,0
-	mov r10,rbx
+	mov r12,rbx
 	mov rdx,2
-	mov r15,r11
+	mov r15,r9
 	imul r15,rdx
-	mov rax,r15
-	mov rbx,0
-	cmp rax,rbx
+	mov r13,r15
+	mov rax,0
+	cmp r13,rax
 	mov r15, 0
 	sete r15B
 	cmp r15, 0
-	mov qword [rsp+8*9],rax
 	je L_1607
 	jmp L_1604
 	
 L_1607:
-	mov r12,r11
+	mov r11,r9
 	
 L_1608:
 	mov r15,r8
-	lea r15,[r15+r12*8+8H]
+	lea r15,[r15+r11*8+8H]
 	mov r15, [r15]
-	imul r15,r13
-	add r15,r10
-	mov r10,r15
-	mov rbx,  [rsp+8*9]
+	mov rbx,  [rsp+8*2]
+	imul r15,rbx
+	add r15,r12
+	mov r12,r15
 	mov rdx,1
-	sub rbx,rdx
-	mov qword [rsp+8*9],rbx
+	sub r13,rdx
 	xor rdx, rdx
-	mov rax,  r10
-	mov rbx, [rsp+8*9]
+	mov rax,  r12
+	mov rbx,  r13
 	cdq
 	idiv rbx
-	mov  r15, rdx
-	mov r14,r8
-	lea r14,[r14+r12*8+8H]
-	mov [r14],r15
-	mov rbx,  [rsp+8*9]
-	mov r15,rbx
-	mov rdx,1
-	sub rbx,rdx
-	mov qword [rsp+8*9],rbx
+	mov  r14, rdx
+	mov r15,r8
+	lea r15,[r15+r11*8+8H]
+	mov [r15],r14
+	mov r15,r13
+	mov rbx,1
+	sub r13,rbx
 	xor rdx, rdx
-	mov rax,  r10
+	mov rax,  r12
 	mov rbx,  r15
 	cdq
 	idiv rbx
 	mov  r15, rax
-	mov r10,r15
+	mov r12,r15
 	mov rbx,1
-	sub r12,rbx
+	sub r11,rbx
 	mov rdx,0
-	cmp r12,rdx
+	cmp r11,rdx
 	mov r15, 0
 	sete r15B
 	cmp r15, 0
@@ -796,23 +792,23 @@ L_1608:
 	jmp L_1609
 	
 L_1612:
-	mov r15,r10
-	imul r15,r12
-	mov r10,r15
+	mov r15,r12
+	imul r15,r11
+	mov r12,r15
 	jmp L_1608
 	
 L_1609:
 	mov rbx,14
-	mov r15,r11
+	mov r15,r9
 	sub r15,rbx
-	mov r11,r15
+	mov r9,r15
 	xor rdx, rdx
-	mov rax,  r10
-	mov rbx,  r13
+	mov rax,  r12
+	mov rbx, [rsp+8*2]
 	cdq
 	idiv rbx
 	mov  r15, rax
-	add r15,r9
+	add r15,r10
 	mov rdi,r15
 	mov r15,rdi
 	mov     rdi,  r15
@@ -842,12 +838,12 @@ L_1609:
 	pop r10
 	pop r11
 	xor rdx, rdx
-	mov rax,  r10
-	mov rbx,  r13
+	mov rax,  r12
+	mov rbx, [rsp+8*2]
 	cdq
 	idiv rbx
 	mov  r15, rdx
-	mov r9,r15
+	mov r10,r15
 	jmp L_1603
 	
 L_1604:

@@ -698,10 +698,10 @@ main:
 	mov     qword  r15, rax
 	mov r9,r15
 	mov rbx,0
-	mov r13,rbx
+	mov r11,rbx
 	
 L_1627:
-	cmp r13,r10
+	cmp r11,r10
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
@@ -716,10 +716,10 @@ L_1627:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword  r15, rax
-	mov r14,r9
-	lea r14,[r14+r13*8+8H]
-	mov [r14],r15
+	mov     qword  r14, rax
+	mov r15,r9
+	lea r15,[r15+r11*8+8H]
+	mov [r15],r14
 	mov     rdi, 2
 	push r11
 	push r10
@@ -734,7 +734,7 @@ L_1627:
 	mov r14,r15
 	mov rbx,0
 	lea r14,[r15+rbx*8+8H]
-	mov [r14],r13
+	mov [r14],r11
 	mov rdx,1
 	lea r14,[r15+rdx*8+8H]
 	mov rax,0
@@ -786,7 +786,7 @@ L_1630:
 	mov r14,r15
 	mov rbx,0
 	lea r14,[r15+rbx*8+8H]
-	mov [r14],r13
+	mov [r14],r11
 	mov rdx,1
 	lea r14,[r15+rdx*8+8H]
 	mov rax,0
@@ -832,7 +832,7 @@ L_1630:
 	mov r15,r14
 	mov rbx,0
 	lea r15,[r14+rbx*8+8H]
-	mov [r15],r13
+	mov [r15],r11
 	mov rdx,1
 	lea r15,[r14+rdx*8+8H]
 	mov rax,0
@@ -869,10 +869,10 @@ L_1630:
 	mov     qword  r15, rax
 	mov [r14],r15
 	mov rbx,0
-	mov r11,rbx
+	mov r13,rbx
 	
 L_1633:
-	cmp r11,r10
+	cmp r13,r10
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
@@ -891,7 +891,7 @@ L_1633:
 	mov r14,r15
 	mov rbx,0
 	lea r14,[r15+rbx*8+8H]
-	mov [r14],r13
+	mov [r14],r11
 	mov rdx,1
 	lea r14,[r15+rdx*8+8H]
 	mov rax,0
@@ -905,7 +905,7 @@ L_1633:
 	mov [r14],rbx
 	mov rbx,4
 	lea r14,[r15+rbx*8+8H]
-	mov [r14],r11
+	mov [r14],r13
 	mov     rsi,  r15
 	mov     rdi,  r9
 	push r11
@@ -918,13 +918,13 @@ L_1633:
 	pop r10
 	pop r11
 	mov  r14, rax
-	mov r15,r13
-	xor r15,r12
-	xor r15,r11
-	mov [r14],r15
 	mov r15,r11
+	xor r15,r12
+	xor r15,r13
+	mov [r14],r15
+	mov r15,r13
 	mov rbx,1
-	add r11,rbx
+	add r13,rbx
 	jmp L_1633
 	
 L_1634:
@@ -934,9 +934,9 @@ L_1634:
 	jmp L_1630
 	
 L_1631:
-	mov r15,r13
+	mov r15,r11
 	mov rbx,1
-	add r13,rbx
+	add r11,rbx
 	jmp L_1627
 	
 L_1628:

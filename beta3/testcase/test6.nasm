@@ -684,11 +684,11 @@ main:
 	pop r15
 	mov r15 , rax
 	mov rbx,12
-	mov r14,rbx
+	mov r13,rbx
 	mov rdx,7
-	mov r13,rdx
-	mov r15,r14
-	add r15,r13
+	mov r14,rdx
+	mov r15,r13
+	add r15,r14
 	mov rdi,r15
 	mov r15,rdi
 	mov     rdi,  r15
@@ -715,8 +715,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov r15,r14
-	sub r15,r13
+	mov r15,r13
+	sub r15,r14
 	mov rdi,r15
 	mov r15,rdi
 	mov     rdi,  r15
@@ -743,8 +743,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov r15,r14
-	imul r15,r13
+	mov r15,r13
+	imul r15,r14
 	mov rdi,r15
 	mov r15,rdi
 	mov     rdi,  r15
@@ -772,8 +772,8 @@ main:
 	pop r10
 	pop r11
 	xor rdx, rdx
-	mov rax,  r14
-	mov rbx,  r13
+	mov rax,  r13
+	mov rbx,  r14
 	cdq
 	idiv rbx
 	mov  r15, rax
@@ -804,8 +804,8 @@ main:
 	pop r10
 	pop r11
 	xor rdx, rdx
-	mov rax,  r14
-	mov rbx,  r13
+	mov rax,  r13
+	mov rbx,  r14
 	cdq
 	idiv rbx
 	mov  r15, rdx
@@ -835,8 +835,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov r15,r14
-	and r15,r13
+	mov r15,r13
+	and r15,r14
 	mov rdi,r15
 	mov r15,rdi
 	mov     rdi,  r15
@@ -863,8 +863,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov r15,r14
-	or r15,r13
+	mov r15,r13
+	or r15,r14
 	mov rdi,r15
 	mov r15,rdi
 	mov     rdi,  r15
@@ -891,8 +891,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov r15,r14
-	xor r15,r13
+	mov r15,r13
+	xor r15,r14
 	mov rdi,r15
 	mov r15,rdi
 	mov     rdi,  r15
@@ -920,7 +920,7 @@ main:
 	pop r10
 	pop r11
 	mov r15, 0
-	cmp r14, 0
+	cmp r13, 0
 	sete r15B
 	mov rdi,r15
 	mov r15,rdi
@@ -948,7 +948,7 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov r15,r14
+	mov r15,r13
 	neg r15
 	mov rdi,r15
 	mov r15,rdi
@@ -976,7 +976,7 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov r15,r14
+	mov r15,r13
 	not r15
 	mov rdi,r15
 	mov r15,rdi

@@ -655,12 +655,12 @@ f:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 272
-	mov r15,rdi
+	mov r14,rdi
 	mov rbx,0
-	cmp r15,rbx
-	mov r14, 0
-	setle r14B
-	cmp r14, 0
+	cmp r14,rbx
+	mov r15, 0
+	setle r15B
+	cmp r15, 0
 	je L_1462
 	mov rbx,0
 	mov rax,rbx
@@ -670,9 +670,9 @@ f:
 L_1462:
 	mov rbx,t68
 	mov rdi,rbx
-	mov r14,rdi
+	mov r15,rdi
 	mov rdi, format
-	mov rsi, r14 
+	mov rsi, r15 
 	add rsi, 1 
 	xor rax, rax
 	push r11
@@ -684,9 +684,9 @@ L_1462:
 	pop r9
 	pop r10
 	pop r11
-	mov rdi,r15
-	mov r14,rdi
-	mov     rdi,  r14
+	mov rdi,r14
+	mov r15,rdi
+	mov     rdi,  r15
 	push r11
 	push r10
 	push r9
@@ -696,10 +696,10 @@ L_1462:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r14, rax
-	mov rdi,r14
-	mov r14,rdi
-	mov rdi, r14 
+	mov     qword r15, rax
+	mov rdi,r15
+	mov r15,rdi
+	mov rdi, r15 
 	add rdi, 1 
 	push r11
 	push r10
@@ -711,8 +711,8 @@ L_1462:
 	pop r10
 	pop r11
 	mov rbx,1
-	sub r15,rbx
-	mov rdi,r15
+	sub r14,rbx
+	mov rdi,r14
 	push r15
 	call g
 	pop r15
@@ -797,12 +797,12 @@ h:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 272
-	mov r15,rdi
+	mov r14,rdi
 	mov rbx,0
-	cmp r15,rbx
-	mov r14, 0
-	setle r14B
-	cmp r14, 0
+	cmp r14,rbx
+	mov r15, 0
+	setle r15B
+	cmp r15, 0
 	je L_1466
 	mov rbx,0
 	mov rax,rbx
@@ -812,9 +812,9 @@ h:
 L_1466:
 	mov rbx,t102
 	mov rdi,rbx
-	mov r14,rdi
+	mov r15,rdi
 	mov rdi, format
-	mov rsi, r14 
+	mov rsi, r15 
 	add rsi, 1 
 	xor rax, rax
 	push r11
@@ -826,9 +826,9 @@ L_1466:
 	pop r9
 	pop r10
 	pop r11
-	mov rdi,r15
-	mov r14,rdi
-	mov     rdi,  r14
+	mov rdi,r14
+	mov r15,rdi
+	mov     rdi,  r15
 	push r11
 	push r10
 	push r9
@@ -838,10 +838,10 @@ L_1466:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r14, rax
-	mov rdi,r14
-	mov r14,rdi
-	mov rdi, r14 
+	mov     qword r15, rax
+	mov rdi,r15
+	mov r15,rdi
+	mov rdi, r15 
 	add rdi, 1 
 	push r11
 	push r10
@@ -853,8 +853,8 @@ L_1466:
 	pop r10
 	pop r11
 	mov rbx,1
-	sub r15,rbx
-	mov rdi,r15
+	sub r14,rbx
+	mov rdi,r14
 	push r15
 	call f
 	pop r15

@@ -719,27 +719,27 @@ L_1453:
 	
 L_1454:
 	mov rbx,0
-	mov r15,rbx
+	mov r14,rbx
 	mov rdx,0
 	mov r12,rdx
 	
 L_1456:
 	cmp r12,r11
-	mov r14, 0
-	setl r14B
-	cmp r14, 0
+	mov r15, 0
+	setl r15B
+	cmp r15, 0
 	je L_1457
-	mov r14,r13
-	lea r14,[r14+r12*8+8H]
-	mov r14, [r14]
+	mov r15,r13
+	lea r15,[r15+r12*8+8H]
+	mov r15, [r15]
 	add r15,r14
-	mov r15,r15
+	mov r14,r15
 	mov rbx,1
 	add r12,rbx
 	jmp L_1456
 	
 L_1457:
-	mov rdi,r15
+	mov rdi,r14
 	mov r15,rdi
 	mov     rdi,  r15
 	push r11

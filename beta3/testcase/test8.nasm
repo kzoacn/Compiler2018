@@ -680,14 +680,14 @@ main:
         mov     rsp, rax
         mov     eax, 0
 	push r15
-	push r8
+	push r10
 	call global_init
-	pop r8
+	pop r10
 	pop r15
 	mov r15 , rax
 	mov rbx,5
-	mov r9,rbx
-	mov     rdi,  r9
+	mov r8,rbx
+	mov     rdi,  r8
 	push r11
 	push r10
 	push r9
@@ -698,28 +698,28 @@ main:
 	pop r10
 	pop r11
 	mov     qword  r15, rax
-	mov r12,r15
-	mov r15,r12
+	mov r9,r15
+	mov r15,r9
 	mov rbx,0
 	lea r15,[r15+rbx*8+8H]
 	mov rdx,1
 	mov [r15],rdx
-	mov r15,r12
+	mov r15,r9
 	mov rax,1
 	lea r15,[r15+rax*8+8H]
 	mov rbx,5
 	mov [r15],rbx
-	mov r15,r12
+	mov r15,r9
 	mov rbx,2
 	lea r15,[r15+rbx*8+8H]
 	mov rbx,2
 	mov [r15],rbx
-	mov r15,r12
+	mov r15,r9
 	mov rbx,3
 	lea r15,[r15+rbx*8+8H]
 	mov rbx,4
 	mov [r15],rbx
-	mov r15,r12
+	mov r15,r9
 	mov rbx,4
 	lea r15,[r15+rbx*8+8H]
 	mov rbx,3
@@ -728,62 +728,62 @@ main:
 	mov r11,rbx
 	
 L_3671:
-	cmp r11,r9
+	cmp r11,r8
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
 	je L_3672
 	mov rbx,0
-	mov r10,rbx
+	mov r12,rbx
 	
 L_3674:
 	mov rbx,1
-	mov r15,r10
+	mov r15,r12
 	add r15,rbx
-	cmp r15,r9
+	cmp r15,r8
 	mov r15, 0
 	setl r15B
-	add r8,r8
+	add r10,r10
 	cmp r15, 0
 	je L_3675
-	mov r15,r12
-	lea r15,[r15+r10*8+8H]
-	mov r15, [r15]
+	mov r15,r9
+	lea r15,[r15+r12*8+8H]
+	mov r13, [r15]
 	mov rbx,1
-	mov r14,r10
-	add r14,rbx
-	mov r13,r12
-	lea r14,[r13+r14*8+8H]
-	mov r14, [r14]
-	cmp r15,r14
+	mov r15,r12
+	add r15,rbx
+	mov r14,r9
+	lea r15,[r14+r15*8+8H]
+	mov r15, [r15]
+	cmp r13,r15
 	mov r15, 0
 	setg r15B
 	cmp r15, 0
 	je L_3678
-	mov r15,r12
-	lea r15,[r15+r10*8+8H]
+	mov r15,r9
+	lea r15,[r15+r12*8+8H]
 	mov r15, [r15]
 	mov r13,r15
 	mov rbx,1
-	mov r14,r10
+	mov r14,r12
 	add r14,rbx
-	mov r15,r12
+	mov r15,r9
 	lea r15,[r15+r14*8+8H]
 	mov r14, [r15]
-	mov r15,r12
-	lea r15,[r15+r10*8+8H]
+	mov r15,r9
+	lea r15,[r15+r12*8+8H]
 	mov [r15],r14
 	mov rdx,1
-	mov r14,r10
+	mov r14,r12
 	add r14,rdx
-	mov r15,r12
+	mov r15,r9
 	lea r15,[r15+r14*8+8H]
 	mov [r15],r13
 	
 L_3678:
-	mov r15,r10
+	mov r15,r12
 	mov rbx,1
-	add r10,rbx
+	add r12,rbx
 	jmp L_3674
 	
 L_3675:
@@ -797,12 +797,12 @@ L_3672:
 	mov r11,rbx
 	
 L_3679:
-	cmp r11,r9
+	cmp r11,r8
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
 	je L_3680
-	mov r15,r12
+	mov r15,r9
 	lea r15,[r15+r11*8+8H]
 	mov r15, [r15]
 	mov rdi,r15

@@ -708,14 +708,14 @@ L_1198:
 	setl r15B
 	cmp r15, 0
 	je L_1199
-	mov r15,r9
-	sub r15,r10
-	mov r14,r12
+	mov r13,r9
+	sub r13,r10
+	mov r15,r12
 	mov rbx,1
 	add r12,rbx
-	mov r13,r11
-	lea r14,[r13+r14*8+8H]
-	mov [r14],r15
+	mov r14,r11
+	lea r15,[r14+r15*8+8H]
+	mov [r15],r13
 	mov r15,r10
 	mov rdx,1
 	add r10,rdx

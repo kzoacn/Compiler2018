@@ -684,25 +684,25 @@ main:
 	pop r15
 	mov r15 , rax
 	mov rbx,1
-	mov r15,rbx
+	mov r14,rbx
 	
 L_1430:
 	mov rbx,10
-	cmp r15,rbx
-	mov r14, 0
-	setle r14B
-	cmp r14, 0
+	cmp r14,rbx
+	mov r15, 0
+	setle r15B
+	cmp r15, 0
 	je L_1431
-	mov rdi,r15
+	mov rdi,r14
 	push r15
 	push r14
 	call fib
 	pop r14
 	pop r15
-	mov r14 , rax
-	mov rdi,r14
-	mov r14,rdi
-	mov     rdi,  r14
+	mov r15 , rax
+	mov rdi,r15
+	mov r15,rdi
+	mov     rdi,  r15
 	push r11
 	push r10
 	push r9
@@ -712,10 +712,10 @@ L_1430:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r14, rax
-	mov rdi,r14
-	mov r14,rdi
-	mov rdi, r14 
+	mov     qword r15, rax
+	mov rdi,r15
+	mov r15,rdi
+	mov rdi, r15 
 	add rdi, 1 
 	push r11
 	push r10
@@ -726,9 +726,9 @@ L_1430:
 	pop r9
 	pop r10
 	pop r11
-	mov r14,r15
+	mov r15,r14
 	mov rbx,1
-	add r15,rbx
+	add r14,rbx
 	jmp L_1430
 	
 L_1431:

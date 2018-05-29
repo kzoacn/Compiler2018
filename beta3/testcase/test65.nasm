@@ -684,19 +684,19 @@ main:
 	pop r15
 	mov r15 , rax
 	mov rbx,100
-	mov r13,rbx
+	mov r12,rbx
 	mov rdx,0
-	mov r15,rdx
+	mov r13,rdx
 	mov rax,t66
 	mov r14,rax
 	mov rbx,0
-	mov r15,rbx
+	mov r13,rbx
 	
 L_1874:
-	cmp r15,r13
-	mov r12, 0
-	setl r12B
-	cmp r12, 0
+	cmp r13,r12
+	mov r15, 0
+	setl r15B
+	cmp r15, 0
 	je L_1875
 	mov     rsi, t71
 	mov     rdi,  r14
@@ -709,11 +709,11 @@ L_1874:
 	pop r9
 	pop r10
 	pop r11
-	mov  r14, rax
-	mov r14,r14
-	mov r12,r15
+	mov  r15, rax
+	mov r14,r15
+	mov r15,r13
 	mov rbx,1
-	add r15,rbx
+	add r13,rbx
 	jmp L_1874
 	
 L_1875:
@@ -731,13 +731,13 @@ L_1875:
 	pop r10
 	pop r11
 	mov rbx,0
-	mov r15,rbx
+	mov r13,rbx
 	
 L_1877:
-	cmp r15,r13
-	mov r12, 0
-	setl r12B
-	cmp r12, 0
+	cmp r13,r12
+	mov r15, 0
+	setl r15B
+	cmp r15, 0
 	je L_1878
 	mov     rsi, t80
 	mov     rdi,  r14
@@ -750,11 +750,11 @@ L_1877:
 	pop r9
 	pop r10
 	pop r11
-	mov  r14, rax
-	mov r14,r14
-	mov r12,r15
+	mov  r15, rax
+	mov r14,r15
+	mov r15,r13
 	mov rbx,1
-	add r15,rbx
+	add r13,rbx
 	jmp L_1877
 	
 L_1878:

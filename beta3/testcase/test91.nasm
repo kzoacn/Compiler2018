@@ -655,19 +655,19 @@ cd:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 320
-	mov r10,rdi
+	mov r14,rdi
 	mov r13,rsi
 	mov rbx,  [arg+8*2]
 	mov r12,rbx
 	mov rdx,  [arg+8*3]
 	mov r11,rdx
 	mov rax,  [arg+8*4]
-	mov r15,rax
+	mov r10,rax
 	mov rbx,1
-	cmp r10,rbx
-	mov r14, 0
-	sete r14B
-	cmp r14, 0
+	cmp r14,rbx
+	mov r15, 0
+	sete r15B
+	cmp r15, 0
 	je L_2755
 	mov     rsi,  r13
 	mov     rdi, t66
@@ -680,9 +680,9 @@ cd:
 	pop r9
 	pop r10
 	pop r11
-	mov  r14, rax
+	mov  r15, rax
 	mov     rsi, t68
-	mov     rdi,  r14
+	mov     rdi,  r15
 	push r11
 	push r10
 	push r9
@@ -692,9 +692,9 @@ cd:
 	pop r9
 	pop r10
 	pop r11
-	mov  r14, rax
+	mov  r15, rax
 	mov     rsi,  r11
-	mov     rdi,  r14
+	mov     rdi,  r15
 	push r11
 	push r10
 	push r9
@@ -704,10 +704,10 @@ cd:
 	pop r9
 	pop r10
 	pop r11
-	mov  r14, rax
-	mov rdi,r14
-	mov r14,rdi
-	mov rdi, r14 
+	mov  r15, rax
+	mov rdi,r15
+	mov r15,rdi
+	mov rdi, r15 
 	add rdi, 1 
 	push r11
 	push r10
@@ -718,36 +718,36 @@ cd:
 	pop r9
 	pop r10
 	pop r11
-	mov r14,r15
+	mov r15,r10
 	mov rbx,1
-	add r15,rbx
+	add r10,rbx
 	jmp L_2756
 	
 L_2755:
 	mov rbx,1
-	mov r14,r10
-	sub r14,rbx
-	mov rdx,r15
+	mov r15,r14
+	sub r15,rbx
+	mov rdx,r10
 	mov rax,r12
 	mov rbx,r11
 	mov rsi,r13
-	mov rdi,r14
+	mov rdi,r15
 	mov qword [arg+8*2],rbx
 	mov qword [arg+8*4],rdx
 	mov qword [arg+8*3],rax
 	push r15
+	push r14
 	push r13
 	push r12
 	push r11
-	push r10
 	call cd
-	pop r10
 	pop r11
 	pop r12
 	pop r13
+	pop r14
 	pop r15
 	mov r15 , rax
-	mov r15,r15
+	mov r10,r15
 	mov     rsi,  r13
 	mov     rdi, t78
 	push r11
@@ -759,9 +759,9 @@ L_2755:
 	pop r9
 	pop r10
 	pop r11
-	mov  r14, rax
+	mov  r15, rax
 	mov     rsi, t80
-	mov     rdi,  r14
+	mov     rdi,  r15
 	push r11
 	push r10
 	push r9
@@ -771,9 +771,9 @@ L_2755:
 	pop r9
 	pop r10
 	pop r11
-	mov  r14, rax
+	mov  r15, rax
 	mov     rsi,  r11
-	mov     rdi,  r14
+	mov     rdi,  r15
 	push r11
 	push r10
 	push r9
@@ -783,10 +783,10 @@ L_2755:
 	pop r9
 	pop r10
 	pop r11
-	mov  r14, rax
-	mov rdi,r14
-	mov r14,rdi
-	mov rdi, r14 
+	mov  r15, rax
+	mov rdi,r15
+	mov r15,rdi
+	mov rdi, r15 
 	add rdi, 1 
 	push r11
 	push r10
@@ -798,13 +798,13 @@ L_2755:
 	pop r10
 	pop r11
 	mov rbx,1
-	mov r14,r10
-	sub r14,rbx
-	mov rdx,r15
+	mov r15,r14
+	sub r15,rbx
+	mov rdx,r10
 	mov rax,r11
 	mov rbx,r13
 	mov rsi,r12
-	mov rdi,r14
+	mov rdi,r15
 	mov qword [arg+8*2],rbx
 	mov qword [arg+8*4],rdx
 	mov qword [arg+8*3],rax
@@ -812,13 +812,13 @@ L_2755:
 	call cd
 	pop r15
 	mov r15 , rax
-	mov r15,r15
-	mov r14,r15
+	mov r10,r15
+	mov r15,r10
 	mov rbx,1
-	add r15,rbx
+	add r10,rbx
 	
 L_2756:
-	mov rax,r15
+	mov rax,r10
 	leave
 	ret
 	

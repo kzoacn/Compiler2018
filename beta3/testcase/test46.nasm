@@ -696,8 +696,8 @@ main:
 	pop r10
 	pop r11
 	mov     qword  r15, rax
-	mov r12,r15
-	mov r13,r12
+	mov r13,r15
+	mov r12,r13
 	mov rbx,0
 	mov r11,rbx
 	
@@ -724,7 +724,7 @@ L_1621:
 	mov rdx,0
 	mov [r14],rdx
 	mov     rsi,  r15
-	mov     rdi,  r13
+	mov     rdi,  r12
 	push r11
 	push r10
 	push r9
@@ -753,7 +753,7 @@ L_1621:
 	mov rdx,1
 	mov [r14],rdx
 	mov     rsi,  r15
-	mov     rdi,  r13
+	mov     rdi,  r12
 	push r11
 	push r10
 	push r9
@@ -793,7 +793,7 @@ L_1621:
 	mov rdx,1
 	mov [r14],rdx
 	mov     rsi,  r15
-	mov     rdi,  r13
+	mov     rdi,  r12
 	push r11
 	push r10
 	push r9
@@ -805,7 +805,7 @@ L_1621:
 	pop r11
 	mov  r15, rax
 	mov r15, [r15]
-	mov r13,r15
+	mov r12,r15
 	mov     rdi, 1
 	push r11
 	push r10
@@ -823,7 +823,7 @@ L_1621:
 	mov rdx,1
 	mov [r15],rdx
 	mov     rsi,  r14
-	mov     rdi,  r13
+	mov     rdi,  r12
 	push r11
 	push r10
 	push r9
@@ -842,7 +842,7 @@ L_1621:
 	jmp L_1621
 	
 L_1622:
-	mov r13,r12
+	mov r12,r13
 	mov rbx,0
 	mov r11,rbx
 	
@@ -869,7 +869,7 @@ L_1624:
 	mov rdx,0
 	mov [r15],rdx
 	mov     rsi,  r14
-	mov     rdi,  r13
+	mov     rdi,  r12
 	push r11
 	push r10
 	push r9
@@ -924,7 +924,7 @@ L_1624:
 	mov rdx,1
 	mov [r15],rdx
 	mov     rsi,  r14
-	mov     rdi,  r13
+	mov     rdi,  r12
 	push r11
 	push r10
 	push r9
@@ -936,7 +936,7 @@ L_1624:
 	pop r11
 	mov  r15, rax
 	mov r15, [r15]
-	mov r13,r15
+	mov r12,r15
 	mov r15,r11
 	mov rbx,1
 	add r11,rbx

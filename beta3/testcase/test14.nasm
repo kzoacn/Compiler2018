@@ -694,9 +694,9 @@ main:
 	pop r10
 	pop r11
 	mov     qword  r15, rax
-	mov r14,r15
+	mov r13,r15
 	mov rbx,0
-	mov r13,rbx
+	mov r14,rbx
 	mov rdx,0
 	mov r12,rdx
 	
@@ -719,7 +719,7 @@ L_1568:
 	sete r15B
 	cmp r15, 0
 	je L_1572
-	mov r15,r14
+	mov r15,r13
 	lea r15,[r15+r12*8+8H]
 	mov rbx,0
 	mov [r15],rbx
@@ -727,10 +727,10 @@ L_1568:
 	
 L_1572:
 	mov rbx,1
-	add r13,rbx
-	mov r15,r14
+	add r14,rbx
+	mov r15,r13
 	lea r15,[r15+r12*8+8H]
-	mov [r15],r13
+	mov [r15],r14
 	
 L_1570:
 	mov r15,r12
@@ -749,7 +749,7 @@ L_1573:
 	setl r15B
 	cmp r15, 0
 	je L_1574
-	mov r15,r14
+	mov r15,r13
 	lea r15,[r15+r12*8+8H]
 	mov r15, [r15]
 	mov rdi,r15

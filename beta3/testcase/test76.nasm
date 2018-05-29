@@ -694,7 +694,7 @@ main:
 	pop r10
 	pop r11
 	mov     qword  r15, rax
-	mov r12,r15
+	mov r10,r15
 	mov rbx,0
 	mov r14,rbx
 	
@@ -705,7 +705,7 @@ L_2479:
 	setl r15B
 	cmp r15, 0
 	je L_2480
-	mov r15,r12
+	mov r15,r10
 	lea r15,[r15+r14*8+8H]
 	mov rbx,0
 	mov [r15],rbx
@@ -719,11 +719,11 @@ L_2480:
 	mov rsi,rbx
 	mov rdx,1
 	mov rdi,rdx
-	mov r11,rdi
-	mov r13,rsi
+	mov r13,rdi
+	mov r11,rsi
 	mov rax,0
 	mov r15,rax
-	mov rdi,r11
+	mov rdi,r13
 	mov r15,rdi
 	mov rbx,237
 	imul r15,rbx
@@ -735,9 +735,9 @@ L_2480:
 	mov  r15, rdx
 	mov r15,r15
 	mov r15,r15
-	mov r10,r15
-	mov r15,r12
-	lea r15,[r15+r10*8+8H]
+	mov r12,r15
+	mov r15,r10
+	lea r15,[r15+r12*8+8H]
 	mov r15, [r15]
 	mov rbx,0
 	cmp r15,rbx
@@ -755,10 +755,10 @@ L_2480:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword  r15, rax
-	mov r14,r12
-	lea r14,[r14+r10*8+8H]
-	mov [r14],r15
+	mov     qword  r14, rax
+	mov r15,r10
+	lea r15,[r15+r12*8+8H]
+	mov [r15],r14
 	mov     rdi, 2
 	push r11
 	push r10
@@ -773,45 +773,13 @@ L_2480:
 	mov r14,r15
 	mov rbx,0
 	lea r14,[r15+rbx*8+8H]
-	mov [r14],r10
+	mov [r14],r12
 	mov rdx,1
 	lea r14,[r15+rdx*8+8H]
 	mov rax,0
 	mov [r14],rax
 	mov     rsi,  r15
-	mov     rdi,  r12
-	push r11
-	push r10
-	push r9
-	push r8
-	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	mov  r15, rax
-	mov [r15],r11
-	mov     rdi, 2
-	push r11
-	push r10
-	push r9
-	push r8
-	call    mallocArray
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	mov     qword  r14, rax
-	mov r15,r14
-	mov rbx,0
-	lea r15,[r14+rbx*8+8H]
-	mov [r15],r10
-	mov rdx,1
-	lea r15,[r14+rdx*8+8H]
-	mov rax,1
-	mov [r15],rax
-	mov     rsi,  r14
-	mov     rdi,  r12
+	mov     rdi,  r10
 	push r11
 	push r10
 	push r9
@@ -837,13 +805,45 @@ L_2480:
 	mov r15,r14
 	mov rbx,0
 	lea r15,[r14+rbx*8+8H]
-	mov [r15],r10
+	mov [r15],r12
+	mov rdx,1
+	lea r15,[r14+rdx*8+8H]
+	mov rax,1
+	mov [r15],rax
+	mov     rsi,  r14
+	mov     rdi,  r10
+	push r11
+	push r10
+	push r9
+	push r8
+	call    multiAddress
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r15, rax
+	mov [r15],r11
+	mov     rdi, 2
+	push r11
+	push r10
+	push r9
+	push r8
+	call    mallocArray
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword  r14, rax
+	mov r15,r14
+	mov rbx,0
+	lea r15,[r14+rbx*8+8H]
+	mov [r15],r12
 	mov rdx,1
 	lea r15,[r14+rdx*8+8H]
 	mov rax,2
 	mov [r15],rax
 	mov     rsi,  r14
-	mov     rdi,  r12
+	mov     rdi,  r10
 	push r11
 	push r10
 	push r9
@@ -881,7 +881,7 @@ L_2497:
 	mov  r15, rdx
 	mov r15,r15
 	mov r14,r15
-	mov r15,r12
+	mov r15,r10
 	lea r15,[r15+r14*8+8H]
 	mov r15, [r15]
 	mov r13,r15

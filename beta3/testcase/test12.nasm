@@ -696,43 +696,43 @@ main:
 	pop r10
 	pop r11
 	mov     qword  r15, rax
-	mov r14,r15
-	mov r15,r14
+	mov r13,r15
+	mov r15,r13
 	mov rbx,0
 	lea r15,[r15+rbx*8+8H]
 	mov rdx,127
 	mov [r15],rdx
-	mov r15,r14
+	mov r15,r13
 	mov rax,1
 	lea r15,[r15+rax*8+8H]
 	mov rbx,128
 	mov [r15],rbx
-	mov r15,r14
+	mov r15,r13
 	mov rbx,2
 	lea r15,[r15+rbx*8+8H]
 	mov rbx,255
 	mov [r15],rbx
-	mov r15,r14
+	mov r15,r13
 	mov rbx,3
 	lea r15,[r15+rbx*8+8H]
 	mov rbx,256
 	mov [r15],rbx
-	mov r15,r14
+	mov r15,r13
 	mov rbx,4
 	lea r15,[r15+rbx*8+8H]
 	mov rbx,2147483247
 	mov [r15],rbx
 	mov rbx,0
-	mov r13,rbx
+	mov r14,rbx
 	
 L_1541:
-	cmp r13,r12
+	cmp r14,r12
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
 	je L_1542
-	mov r15,r14
-	lea r15,[r15+r13*8+8H]
+	mov r15,r13
+	lea r15,[r15+r14*8+8H]
 	mov r15, [r15]
 	mov rdi,r15
 	mov r15,rdi
@@ -760,9 +760,9 @@ L_1541:
 	pop r9
 	pop r10
 	pop r11
-	mov r15,r13
+	mov r15,r14
 	mov rbx,1
-	add r13,rbx
+	add r14,rbx
 	jmp L_1541
 	
 L_1542:

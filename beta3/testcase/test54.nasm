@@ -684,7 +684,7 @@ main:
 	call global_init
 	pop r14
 	pop r15
-	mov r14 , rax
+	mov r15 , rax
 	mov     rdi, 5
 	push r11
 	push r10
@@ -695,9 +695,9 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword  r14, rax
-	add r15,r15
-	mov r13,r14
+	mov     qword  r15, rax
+	add r14,r14
+	mov r13,r15
 	mov     rdi, 4
 	push r11
 	push r10
@@ -723,11 +723,11 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword  r15, rax
-	mov r14,r13
+	mov     qword  r14, rax
+	mov r15,r13
 	mov rbx,1
-	lea r14,[r14+rbx*8+8H]
-	mov [r14],r15
+	lea r15,[r15+rbx*8+8H]
+	mov [r15],r14
 	mov     rdi, 2
 	push r11
 	push r10
@@ -738,11 +738,11 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword  r15, rax
-	mov r14,r13
+	mov     qword  r14, rax
+	mov r15,r13
 	mov rbx,2
-	lea r14,[r14+rbx*8+8H]
-	mov [r14],r15
+	lea r15,[r15+rbx*8+8H]
+	mov [r15],r14
 	mov     rdi, 1
 	push r11
 	push r10

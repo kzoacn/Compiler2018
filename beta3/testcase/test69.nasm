@@ -684,7 +684,7 @@ main:
 	pop r15
 	mov r15 , rax
 	mov rbx,t64
-	mov r13,rbx
+	mov r14,rbx
 	mov     rdi, 11
 	push r11
 	push r10
@@ -696,8 +696,8 @@ main:
 	pop r10
 	pop r11
 	mov     qword  r15, rax
-	mov r14,r15
-	mov r15,r13
+	mov r13,r15
+	mov r15,r14
 	mov rbx,r15
 	mov qword [arg+8*63],rbx
 	push r11
@@ -736,7 +736,7 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov r15,r13
+	mov r15,r14
 	mov rbx,5
 	mov rsi,rbx
 	mov rdx,2
@@ -768,7 +768,7 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov r15,r13
+	mov r15,r14
 	mov rbx,6
 	mov rdi,rbx
 	mov rdx,r15
@@ -810,7 +810,7 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov r15,r13
+	mov r15,r14
 	mov rbx,r15
 	mov r15,rbx
 	mov r15, [r15]
@@ -843,7 +843,7 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov r15,r14
+	mov r15,r13
 	mov rbx,r15
 	mov r15,rbx
 	mov r15, [r15]

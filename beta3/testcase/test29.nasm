@@ -689,56 +689,56 @@ main:
 	mov rsi,rax
 	mov rdx,2
 	mov rdi,rdx
-	mov r14,rdi
+	mov r15,rdi
 	mov r13,rsi
-	mov r15,rbx
+	mov r11,rbx
 	mov qword [arg+8*2],rbx
 	mov rbx,1
 	mov r12,rbx
-	mov r11,r14
+	mov r14,r15
 	
 L_1423:
 	cmp r13,0
-	mov r14, 0
-	setg r14B
-	cmp r14, 0
+	mov r15, 0
+	setg r15B
+	cmp r15, 0
 	je L_1424
 	mov rbx,1
-	mov r14,r13
-	and r14,rbx
+	mov r15,r13
+	and r15,rbx
 	mov rdx,1
-	cmp r14,rdx
-	mov r14, 0
-	sete r14B
-	cmp r14, 0
+	cmp r15,rdx
+	mov r15, 0
+	sete r15B
+	cmp r15, 0
 	je L_1425
-	mov r14,r12
-	imul r14,r11
+	mov r15,r12
+	imul r15,r14
 	xor rdx, rdx
-	mov rax,  r14
-	mov rbx,  r15
+	mov rax,  r15
+	mov rbx,  r11
 	cdq
 	idiv rbx
-	mov  r14, rdx
-	mov r12,r14
+	mov  r15, rdx
+	mov r12,r15
 	
 L_1425:
-	mov r14,r11
-	imul r14,r11
+	mov r15,r14
+	imul r15,r14
 	xor rdx, rdx
-	mov rax,  r14
-	mov rbx,  r15
+	mov rax,  r15
+	mov rbx,  r11
 	cdq
 	idiv rbx
-	mov  r14, rdx
-	mov r11,r14
+	mov  r15, rdx
+	mov r14,r15
 	xor rdx, rdx
 	mov rax,  r13
 	mov rbx, 2
 	cdq
 	idiv rbx
-	mov  r14, rax
-	mov r13,r14
+	mov  r15, rax
+	mov r13,r15
 	jmp L_1423
 	
 L_1424:

@@ -671,7 +671,7 @@ Hello_say:
 	pop r9
 	pop r10
 	pop r11
-	mov rax,r14
+	mov rax,r11
 	leave
 	ret
 	
@@ -704,9 +704,9 @@ main:
         mov     rsp, rax
         mov     eax, 0
 	push r15
-	push r14
+	push r11
 	call global_init
-	pop r14
+	pop r11
 	pop r15
 	mov r15 , rax
 	mov     rdi, 3
@@ -741,23 +741,23 @@ L_1853:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword  r15, rax
-	mov r11,r13
-	lea r11,[r11+r12*8+8H]
-	mov [r11],r15
+	mov     qword  r14, rax
+	mov r15,r13
+	lea r15,[r15+r12*8+8H]
+	mov [r15],r14
 	mov r15,r13
 	lea r15,[r15+r12*8+8H]
 	mov r15, [r15]
 	mov rbx,r15
 	mov qword [arg+8*63],rbx
 	push r15
-	push r14
 	push r13
 	push r12
+	push r11
 	call Hello_say
+	pop r11
 	pop r12
 	pop r13
-	pop r14
 	pop r15
 	mov r15 , rax
 	mov r15,r12

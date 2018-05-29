@@ -657,33 +657,34 @@ dfs:
 	sub    rsp, 184
 	mov r12,rdi
 	mov rbx,0
-	mov r15,rbx
+	mov r14,rbx
 	mov rdx,1
-	mov r14,rdx
+	mov r13,rdx
 	
 L_1613:
 	mov rbx,1
 	cmp rbx, 0
 	je L_1614
-	mov r13,r14
+	mov r15,r13
 	mov rbx,1
-	add r14,rbx
-	add r15,r14
-	mov r15,r15
-	cmp r14,r12
-	mov r13, 0
-	sete r13B
-	cmp r13, 0
+	add r13,rbx
+	mov r15,r14
+	add r15,r13
+	mov r14,r15
+	cmp r13,r12
+	mov r15, 0
+	sete r15B
+	cmp r15, 0
 	je L_1616
-	mov rax,r15
+	mov rax,r14
 	leave
 	ret
 	
 L_1616:
 	mov rbx,1
-	mov r13,r12
-	sub r13,rbx
-	mov rdi,r13
+	mov r15,r12
+	sub r15,rbx
+	mov rdi,r15
 	push r15
 	push r14
 	push r13
@@ -693,7 +694,7 @@ L_1616:
 	pop r13
 	pop r14
 	pop r15
-	mov r13 , rax
+	mov r15 , rax
 	jmp L_1613
 	
 L_1614:
