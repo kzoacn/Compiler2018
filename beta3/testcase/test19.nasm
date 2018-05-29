@@ -659,6 +659,19 @@ main:
         cdqe
         mov     rdi, rax
         call    malloc
+	        mov rbx,0
+	        mov rsi,0
+	        mov rdi,0
+	        mov rcx,0
+	        mov rdx,0
+			mov r8,0
+			mov r9,0
+			mov r10,0
+			mov r11,0
+			mov r12,0
+			mov r13,0
+			mov r14,0
+			mov r15,0
         mov     edx, dword 936870912
         movsxd  rdx, edx
         sub     rdx, 2168
@@ -666,50 +679,32 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
-	push r8
-	push r9
-	push r10
-	push r11
-	push r12
-	push r13
-	push r14
 	push r15
 	call global_init
 	pop r15
-	pop r14
-	pop r13
-	pop r12
-	pop r11
-	pop r10
-	pop r9
-	pop r8
 	mov r15 , rax
 	mov rbx,1
 	mov r15,rbx
 	cmp r15, 0
-	jne L_1565
+	jne L_1582
 	mov rbx,0
 	mov r14,rbx
-	jmp L_1566
+	jmp L_1583
 	
-L_1565:
+L_1582:
 	mov rbx,1
 	cmp rbx,0
 	mov r14, 0
 	setg r14B
 	
-L_1566:
+L_1583:
 	cmp r14, 0
-	je L_1567
+	je L_1584
 	mov rbx,t69
 	mov rdi,rbx
 	mov r14,rdi
 	mov rdi, r14 
 	add rdi, 1 
-	push r15
-	push r14
-	push r13
-	push r12
 	push r11
 	push r10
 	push r9
@@ -719,22 +714,14 @@ L_1566:
 	pop r9
 	pop r10
 	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
-	jmp L_1568
+	jmp L_1585
 	
-L_1567:
+L_1584:
 	mov rbx,t73
 	mov rdi,rbx
 	mov r14,rdi
 	mov rdi, r14 
 	add rdi, 1 
-	push r15
-	push r14
-	push r13
-	push r12
 	push r11
 	push r10
 	push r9
@@ -744,39 +731,31 @@ L_1567:
 	pop r9
 	pop r10
 	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
 	
-L_1568:
+L_1585:
 	cmp r15, 0
 	sete r15B
 	cmp r15, 0
-	je L_1569
+	je L_1586
 	mov rbx,1
 	mov r15,rbx
-	jmp L_1570
+	jmp L_1587
 	
-L_1569:
+L_1586:
 	mov rbx,1
 	cmp rbx,0
 	mov r15, 0
 	setg r15B
 	mov r15,r15
 	
-L_1570:
+L_1587:
 	cmp r15, 0
-	je L_1571
+	je L_1588
 	mov rbx,t82
 	mov rdi,rbx
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 
-	push r15
-	push r14
-	push r13
-	push r12
 	push r11
 	push r10
 	push r9
@@ -786,22 +765,14 @@ L_1570:
 	pop r9
 	pop r10
 	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
-	jmp L_1572
+	jmp L_1589
 	
-L_1571:
+L_1588:
 	mov rbx,t86
 	mov rdi,rbx
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 
-	push r15
-	push r14
-	push r13
-	push r12
 	push r11
 	push r10
 	push r9
@@ -811,35 +782,31 @@ L_1571:
 	pop r9
 	pop r10
 	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
 	
-L_1572:
+L_1589:
 	mov rbx,0
 	mov r15,rbx
 	cmp r15, 0
-	jne L_1573
+	jne L_1590
 	mov rbx,0
 	mov r15,rbx
-	jmp L_1574
+	jmp L_1591
 	
-L_1573:
+L_1590:
 	mov rbx,1
 	mov rdx,0
 	cmp rbx,rdx
 	mov r15, 0
 	setne r15B
 	
-L_1574:
+L_1591:
 	cmp r15, 0
-	jne L_1575
+	jne L_1592
 	mov rbx,0
 	mov r15,rbx
-	jmp L_1576
+	jmp L_1593
 	
-L_1575:
+L_1592:
 	mov rbx,2
 	mov rdx,4
 	cmp rbx,rdx
@@ -847,18 +814,14 @@ L_1575:
 	setne r15B
 	mov r15,r15
 	
-L_1576:
+L_1593:
 	cmp r15, 0
-	je L_1577
+	je L_1594
 	mov rbx,t99
 	mov rdi,rbx
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 
-	push r15
-	push r14
-	push r13
-	push r12
 	push r11
 	push r10
 	push r9
@@ -868,22 +831,14 @@ L_1576:
 	pop r9
 	pop r10
 	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
-	jmp L_1578
+	jmp L_1595
 	
-L_1577:
+L_1594:
 	mov rbx,t103
 	mov rdi,rbx
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 
-	push r15
-	push r14
-	push r13
-	push r12
 	push r11
 	push r10
 	push r9
@@ -893,12 +848,8 @@ L_1577:
 	pop r9
 	pop r10
 	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
 	
-L_1578:
+L_1595:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

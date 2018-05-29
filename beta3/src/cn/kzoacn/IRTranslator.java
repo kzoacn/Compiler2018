@@ -384,14 +384,15 @@ public class IRTranslator {
 
     StringBuffer saveContext(){
         StringBuffer text=new StringBuffer();
-        text.append(new StringBuffer("push r15"+"\n\t"));
-        text.append(new StringBuffer("push r14"+"\n\t"));
-        text.append(new StringBuffer("push r13"+"\n\t"));
-        text.append(new StringBuffer("push r12"+"\n\t"));
+        //text.append(new StringBuffer("push r15"+"\n\t"));
+        //text.append(new StringBuffer("push r14"+"\n\t"));
+        //text.append(new StringBuffer("push r13"+"\n\t"));
+        //text.append(new StringBuffer("push r12"+"\n\t"));
         text.append(new StringBuffer("push r11"+"\n\t"));
         text.append(new StringBuffer("push r10"+"\n\t"));
         text.append(new StringBuffer("push r9"+"\n\t"));
         text.append(new StringBuffer("push r8"+"\n\t"));
+
         return text;
     }
     StringBuffer resumeContext(){
@@ -401,10 +402,10 @@ public class IRTranslator {
         text.append(new StringBuffer("pop r9"+"\n\t"));
         text.append(new StringBuffer("pop r10"+"\n\t"));
         text.append(new StringBuffer("pop r11"+"\n\t"));
-        text.append(new StringBuffer("pop r12"+"\n\t"));
-        text.append(new StringBuffer("pop r13"+"\n\t"));
-        text.append(new StringBuffer("pop r14"+"\n\t"));
-        text.append(new StringBuffer("pop r15"+"\n\t"));
+        //text.append(new StringBuffer("pop r12"+"\n\t"));
+        //text.append(new StringBuffer("pop r13"+"\n\t"));
+        //text.append(new StringBuffer("pop r14"+"\n\t"));
+        //text.append(new StringBuffer("pop r15"+"\n\t"));
         return text;
     }
     void run(String fileName)throws Exception{
@@ -747,18 +748,18 @@ public class IRTranslator {
                     kickAll();
 
                     ArrayList<String>registers=new ArrayList<String >();
-                    //if(saveRegister.containsKey(cur.line))
-                    //for(int reg : saveRegister.get(cur.line))
-                    //    registers.add(regName.get(16-reg));
+                    if(saveRegister.containsKey(cur.line))
+                    for(int reg : saveRegister.get(cur.line))
+                        registers.add(regName.get(16-reg));
 
-                    registers.add("r8");
-                    registers.add("r9");
-                    registers.add("r10");
-                    registers.add("r11");
-                    registers.add("r12");
-                    registers.add("r13");
-                    registers.add("r14");
-                    registers.add("r15");
+                    //registers.add("r8");
+                    //registers.add("r9");
+                    //registers.add("r10");
+                    //registers.add("r11");
+                    //registers.add("r12");
+                    //registers.add("r13");
+                    //registers.add("r14");
+                    //registers.add("r15");
 
                     for(String reg : registers)
                         text.append(new StringBuffer("push "+reg+"\n\t"));
@@ -1051,9 +1052,22 @@ public class IRTranslator {
                     if(name.equals("main")){
                         text.append(new StringBuffer("mov     rax, 936870912\n" +
                                 "        cdqe\n" +
-                                "        mov     rdi, rax\n" +
-                                "        call    malloc\n" +
-                                "        mov     edx, dword 936870912\n" +
+                                "        mov     rdi, rax\n" ));
+                        text.append(new StringBuffer("        call    malloc\n"));
+                        text.append(new StringBuffer("\t        mov rbx,0\n" +
+                                "\t        mov rsi,0\n" +
+                                "\t        mov rdi,0\n" +
+                                "\t        mov rcx,0\n" +
+                                "\t        mov rdx,0\n" +
+                                "\t\t\tmov r8,0\n" +
+                                "\t\t\tmov r9,0\n" +
+                                "\t\t\tmov r10,0\n" +
+                                "\t\t\tmov r11,0\n" +
+                                "\t\t\tmov r12,0\n" +
+                                "\t\t\tmov r13,0\n" +
+                                "\t\t\tmov r14,0\n" +
+                                "\t\t\tmov r15,0\n"));
+                        text.append(new StringBuffer("        mov     edx, dword 936870912\n" +
                                 "        movsxd  rdx, edx\n" +
                                 "        sub     rdx, "+Integer.toString(variableIndex.size()*8+2048)+"\n" +
                                 "        add     rax, rdx\n" +
@@ -1095,17 +1109,19 @@ public class IRTranslator {
                     break;
                 case parseInt:
                     kickAll();
-                    text.append(new StringBuffer(
-                                    "call    parseInt\n\t"+
-                                    "mov     qword "+varName(dest)+", rax\n\t"));
+                    text.append(saveContext());
+                    text.append(new StringBuffer("call    parseInt\n\t"));
+                    text.append(resumeContext());
+                    text.append(new StringBuffer("mov     qword "+varName(dest)+", rax\n\t"));
                     clearAll();
                     break;
                 case ord:
                     kickAll();
-                    text.append(new StringBuffer(
-                                    "mov     rdi, "+varName(var1)+"\n\t" +
-                                    "call    ord\n\t"+
-                                    "mov     qword "+varName(dest)+", rax\n\t"));
+                    text.append(new StringBuffer("mov     rdi, "+varName(var1)+"\n\t"));
+                    text.append(saveContext());
+                    text.append(new StringBuffer("call    ord\n\t"));
+                    text.append(resumeContext());
+                    text.append(new StringBuffer("mov     qword "+varName(dest)+", rax\n\t"));
                     clearAll();
                     break;
 

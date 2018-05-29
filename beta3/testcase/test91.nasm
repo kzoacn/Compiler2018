@@ -655,26 +655,22 @@ cd:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 320
-	mov r15,rdi
-	mov r12,rsi
+	mov r10,rdi
+	mov r13,rsi
 	mov rbx,  [arg+8*2]
-	mov r13,rbx
+	mov r12,rbx
 	mov rdx,  [arg+8*3]
 	mov r11,rdx
 	mov rax,  [arg+8*4]
-	mov r10,rax
+	mov r15,rax
 	mov rbx,1
-	cmp r15,rbx
+	cmp r10,rbx
 	mov r14, 0
 	sete r14B
 	cmp r14, 0
-	je L_2738
-	mov     rsi,  r12
+	je L_2755
+	mov     rsi,  r13
 	mov     rdi, t66
-	push r15
-	push r14
-	push r13
-	push r12
 	push r11
 	push r10
 	push r9
@@ -684,134 +680,9 @@ cd:
 	pop r9
 	pop r10
 	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
-	mov  r15, rax
+	mov  r14, rax
 	mov     rsi, t68
-	mov     rdi,  r15
-	push r15
-	push r14
-	push r13
-	push r12
-	push r11
-	push r10
-	push r9
-	push r8
-	call    concat
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
-	mov  r15, rax
-	mov     rsi,  r11
-	mov     rdi,  r15
-	push r15
-	push r14
-	push r13
-	push r12
-	push r11
-	push r10
-	push r9
-	push r8
-	call    concat
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
-	mov  r15, rax
-	mov rdi,r15
-	mov r15,rdi
-	mov rdi, r15 
-	add rdi, 1 
-	push r15
-	push r14
-	push r13
-	push r12
-	push r11
-	push r10
-	push r9
-	push r8
-	call puts
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
-	mov r15,r10
-	mov rbx,1
-	add r10,rbx
-	jmp L_2739
-	
-L_2738:
-	mov rbx,1
-	mov r14,r15
-	sub r14,rbx
-	mov rdx,r10
-	mov rax,r13
-	mov rbx,r11
-	mov rsi,r12
-	mov rdi,r14
-	mov qword [arg+8*2],rbx
-	mov qword [arg+8*4],rdx
-	mov qword [arg+8*3],rax
-	push r8
-	push r9
-	push r10
-	push r11
-	push r12
-	push r13
-	push r14
-	push r15
-	call cd
-	pop r15
-	pop r14
-	pop r13
-	pop r12
-	pop r11
-	pop r10
-	pop r9
-	pop r8
-	mov r14 , rax
-	mov r10,r14
-	mov     rsi,  r12
-	mov     rdi, t78
-	push r15
-	push r14
-	push r13
-	push r12
-	push r11
-	push r10
-	push r9
-	push r8
-	call    concat
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
-	mov  r14, rax
-	mov     rsi, t80
 	mov     rdi,  r14
-	push r15
-	push r14
-	push r13
-	push r12
 	push r11
 	push r10
 	push r9
@@ -821,17 +692,9 @@ L_2738:
 	pop r9
 	pop r10
 	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
 	mov  r14, rax
 	mov     rsi,  r11
 	mov     rdi,  r14
-	push r15
-	push r14
-	push r13
-	push r12
 	push r11
 	push r10
 	push r9
@@ -841,19 +704,11 @@ L_2738:
 	pop r9
 	pop r10
 	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
 	mov  r14, rax
 	mov rdi,r14
 	mov r14,rdi
 	mov rdi, r14 
 	add rdi, 1 
-	push r15
-	push r14
-	push r13
-	push r12
 	push r11
 	push r10
 	push r9
@@ -863,45 +718,107 @@ L_2738:
 	pop r9
 	pop r10
 	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
+	mov r14,r15
 	mov rbx,1
-	sub r15,rbx
-	mov rdx,r10
-	mov rax,r11
-	mov rbx,r12
+	add r15,rbx
+	jmp L_2756
+	
+L_2755:
+	mov rbx,1
+	mov r14,r10
+	sub r14,rbx
+	mov rdx,r15
+	mov rax,r12
+	mov rbx,r11
 	mov rsi,r13
-	mov rdi,r15
+	mov rdi,r14
 	mov qword [arg+8*2],rbx
 	mov qword [arg+8*4],rdx
 	mov qword [arg+8*3],rax
-	push r8
-	push r9
-	push r10
-	push r11
-	push r12
+	push r15
 	push r13
-	push r14
+	push r12
+	push r11
+	push r10
+	call cd
+	pop r10
+	pop r11
+	pop r12
+	pop r13
+	pop r15
+	mov r15 , rax
+	mov r15,r15
+	mov     rsi,  r13
+	mov     rdi, t78
+	push r11
+	push r10
+	push r9
+	push r8
+	call    concat
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r14, rax
+	mov     rsi, t80
+	mov     rdi,  r14
+	push r11
+	push r10
+	push r9
+	push r8
+	call    concat
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r14, rax
+	mov     rsi,  r11
+	mov     rdi,  r14
+	push r11
+	push r10
+	push r9
+	push r8
+	call    concat
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r14, rax
+	mov rdi,r14
+	mov r14,rdi
+	mov rdi, r14 
+	add rdi, 1 
+	push r11
+	push r10
+	push r9
+	push r8
+	call puts
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov rbx,1
+	mov r14,r10
+	sub r14,rbx
+	mov rdx,r15
+	mov rax,r11
+	mov rbx,r13
+	mov rsi,r12
+	mov rdi,r14
+	mov qword [arg+8*2],rbx
+	mov qword [arg+8*4],rdx
+	mov qword [arg+8*3],rax
 	push r15
 	call cd
 	pop r15
-	pop r14
-	pop r13
-	pop r12
-	pop r11
-	pop r10
-	pop r9
-	pop r8
 	mov r15 , rax
-	mov r10,r15
-	mov r15,r10
+	mov r15,r15
+	mov r14,r15
 	mov rbx,1
-	add r10,rbx
+	add r15,rbx
 	
-L_2739:
-	mov rax,r10
+L_2756:
+	mov rax,r15
 	leave
 	ret
 	
@@ -913,6 +830,19 @@ main:
         cdqe
         mov     rdi, rax
         call    malloc
+	        mov rbx,0
+	        mov rsi,0
+	        mov rdi,0
+	        mov rcx,0
+	        mov rdx,0
+			mov r8,0
+			mov r9,0
+			mov r10,0
+			mov r11,0
+			mov r12,0
+			mov r13,0
+			mov r14,0
+			mov r15,0
         mov     edx, dword 936870912
         movsxd  rdx, edx
         sub     rdx, 2304
@@ -920,67 +850,35 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
-	push r8
-	push r9
-	push r10
-	push r11
-	push r12
-	push r13
-	push r14
 	push r15
 	call global_init
 	pop r15
-	pop r14
-	pop r13
-	pop r12
-	pop r11
-	pop r10
-	pop r9
-	pop r8
 	mov r15 , rax
 	mov rbx,t91
 	mov r15,rbx
 	mov rdx,t92
-	mov r13,rdx
+	mov r12,rdx
 	mov rax,t93
 	mov r14,rax
 	mov rbx,10
-	mov r12,rbx
+	mov r13,rbx
 	mov rdx,0
 	mov rbx,rdx
 	mov qword [arg+8*4],rbx
 	mov rbx,r14
 	mov qword [arg+8*3],rbx
-	mov rbx,r13
+	mov rbx,r12
 	mov rsi,r15
-	mov rdi,r12
+	mov rdi,r13
 	mov qword [arg+8*2],rbx
-	push r8
-	push r9
-	push r10
-	push r11
-	push r12
-	push r13
-	push r14
 	push r15
 	call cd
 	pop r15
-	pop r14
-	pop r13
-	pop r12
-	pop r11
-	pop r10
-	pop r9
-	pop r8
 	mov r15 , rax
 	mov r15,r15
 	mov rdi,r15
 	mov r15,rdi
 	mov     rdi,  r15
-	push r15
-	push r14
-	push r13
-	push r12
 	push r11
 	push r10
 	push r9
@@ -990,19 +888,11 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
 	mov     qword r15, rax
 	mov rdi,r15
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 
-	push r15
-	push r14
-	push r13
-	push r12
 	push r11
 	push r10
 	push r9
@@ -1012,10 +902,6 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

@@ -304,18 +304,18 @@ public class IROptimizer {
             degree.put(entry.getKey(),hashSet.size());
         }
 
-        int registerNumber=7;
+        int registerNumber=8;
 
 
         //greedy allocate
-        Random random=new Random(0);
-        for(Variable var:variables)
-            colorMap.put(var.name,random.nextInt(registerNumber)+1);
+        boolean[] used=new boolean[10];
+//        Random random=new Random(0);
+//        for(Variable var:variables)
+//            colorMap.put(var.name,random.nextInt(registerNumber)+1);
 
         for(Variable var:variables){
             for(int i=0;i<10;i++)visit[i]=false;
             for(Variable var2:graph.get(var))if(colorMap.containsKey(var2.name)) {
-                System.err.println(colorMap.get(var2.name));
                 visit[colorMap.get(var2.name)] = true;
             }
             int mex=0;
@@ -326,7 +326,7 @@ public class IROptimizer {
                 }
             }
             if(mex>registerNumber)mex=0;
-            //if(used[mex])continue;
+
             if(mex>0){
                 colorMap.put(var.name,mex);
             }else{
@@ -334,21 +334,15 @@ public class IROptimizer {
             }
 
         }
-        for(Variable var:variables)if(!colorMap.containsKey(var.name)){
-            for(int i=0;i<10;i++)visit[i]=false;
+
+        for(Variable var:variables)if(colorMap.containsKey(var.name)){
+
             for(Variable var2:graph.get(var))if(colorMap.containsKey(var2.name))
-                visit[colorMap.get(var2.name)]=true;
-            int mex=0;
-            for(int i=1;i<10;i++){
-                if(!visit[i]){
-                    mex=i;
-                    break;
+                if(colorMap.get(var.name).equals(colorMap.get(var2.name))){
+                    System.err.println(var.name+" "+var2.name);
+                    System.err.println("sdf");
                 }
             }
-            if(mex>registerNumber)mex=0;
-            //if(used[mex])continue;
-            if(mex>0)colorMap.put(var.name,mex);
-        }
 
         /*
         while(variables.size()>0){

@@ -655,57 +655,48 @@ dfs:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 184
-	mov r11,rdi
+	mov r12,rdi
 	mov rbx,0
-	mov r12,rbx
+	mov r15,rbx
 	mov rdx,1
-	mov r10,rdx
+	mov r14,rdx
 	
-L_1596:
+L_1613:
 	mov rbx,1
 	cmp rbx, 0
-	je L_1597
-	mov r15,r10
+	je L_1614
+	mov r13,r14
 	mov rbx,1
-	add r10,rbx
-	mov r15,r12
-	add r15,r10
-	mov r12,r15
-	cmp r10,r11
-	mov r15, 0
-	sete r15B
-	cmp r15, 0
-	je L_1599
-	mov rax,r12
+	add r14,rbx
+	add r15,r14
+	mov r15,r15
+	cmp r14,r12
+	mov r13, 0
+	sete r13B
+	cmp r13, 0
+	je L_1616
+	mov rax,r15
 	leave
 	ret
 	
-L_1599:
+L_1616:
 	mov rbx,1
-	mov r15,r11
-	sub r15,rbx
-	mov rdi,r15
-	push r8
-	push r9
-	push r10
-	push r11
-	push r12
-	push r13
-	push r14
+	mov r13,r12
+	sub r13,rbx
+	mov rdi,r13
 	push r15
+	push r14
+	push r13
+	push r12
 	call dfs
-	pop r15
-	pop r14
-	pop r13
 	pop r12
-	pop r11
-	pop r10
-	pop r9
-	pop r8
-	mov r15 , rax
-	jmp L_1596
+	pop r13
+	pop r14
+	pop r15
+	mov r13 , rax
+	jmp L_1613
 	
-L_1597:
+L_1614:
 	mov rbx,0
 	mov rax,rbx
 	leave
@@ -719,6 +710,19 @@ main:
         cdqe
         mov     rdi, rax
         call    malloc
+	        mov rbx,0
+	        mov rsi,0
+	        mov rdi,0
+	        mov rcx,0
+	        mov rdx,0
+			mov r8,0
+			mov r9,0
+			mov r10,0
+			mov r11,0
+			mov r12,0
+			mov r13,0
+			mov r14,0
+			mov r15,0
         mov     edx, dword 936870912
         movsxd  rdx, edx
         sub     rdx, 2168
@@ -726,51 +730,19 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
-	push r8
-	push r9
-	push r10
-	push r11
-	push r12
-	push r13
-	push r14
 	push r15
 	call global_init
 	pop r15
-	pop r14
-	pop r13
-	pop r12
-	pop r11
-	pop r10
-	pop r9
-	pop r8
 	mov r15 , rax
 	mov rbx,5
 	mov rdi,rbx
-	push r8
-	push r9
-	push r10
-	push r11
-	push r12
-	push r13
-	push r14
 	push r15
 	call dfs
 	pop r15
-	pop r14
-	pop r13
-	pop r12
-	pop r11
-	pop r10
-	pop r9
-	pop r8
 	mov r15 , rax
 	mov rdi,r15
 	mov r15,rdi
 	mov     rdi,  r15
-	push r15
-	push r14
-	push r13
-	push r12
 	push r11
 	push r10
 	push r9
@@ -780,19 +752,11 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
 	mov     qword r15, rax
 	mov rdi,r15
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 
-	push r15
-	push r14
-	push r13
-	push r12
 	push r11
 	push r10
 	push r9
@@ -802,10 +766,6 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

@@ -659,6 +659,19 @@ main:
         cdqe
         mov     rdi, rax
         call    malloc
+	        mov rbx,0
+	        mov rsi,0
+	        mov rdi,0
+	        mov rcx,0
+	        mov rdx,0
+			mov r8,0
+			mov r9,0
+			mov r10,0
+			mov r11,0
+			mov r12,0
+			mov r13,0
+			mov r14,0
+			mov r15,0
         mov     edx, dword 936870912
         movsxd  rdx, edx
         sub     rdx, 2120
@@ -666,23 +679,9 @@ main:
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
-	push r8
-	push r9
-	push r10
-	push r11
-	push r12
-	push r13
-	push r14
 	push r15
 	call global_init
 	pop r15
-	pop r14
-	pop r13
-	pop r12
-	pop r11
-	pop r10
-	pop r9
-	pop r8
 	mov r15 , rax
 	mov rbx,1
 	mov r15,rbx
@@ -693,12 +692,12 @@ main:
 	mov r13, 0
 	setne r13B
 	cmp r13, 0
-	jne L_1863
+	jne L_1880
 	mov rbx,0
 	mov r13,rbx
-	jmp L_1864
+	jmp L_1881
 	
-L_1863:
+L_1880:
 	xor rdx, rdx
 	mov rax,  r15
 	mov rbx,  r14
@@ -711,18 +710,14 @@ L_1863:
 	setl r15B
 	mov r13,r15
 	
-L_1864:
+L_1881:
 	cmp r13, 0
-	je L_1865
+	je L_1882
 	mov rbx,t71
 	mov rdi,rbx
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 
-	push r15
-	push r14
-	push r13
-	push r12
 	push r11
 	push r10
 	push r9
@@ -732,22 +727,14 @@ L_1864:
 	pop r9
 	pop r10
 	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
-	jmp L_1866
+	jmp L_1883
 	
-L_1865:
+L_1882:
 	mov rbx,t75
 	mov rdi,rbx
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 
-	push r15
-	push r14
-	push r13
-	push r12
 	push r11
 	push r10
 	push r9
@@ -757,12 +744,8 @@ L_1865:
 	pop r9
 	pop r10
 	pop r11
-	pop r12
-	pop r13
-	pop r14
-	pop r15
 	
-L_1866:
+L_1883:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

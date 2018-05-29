@@ -81,7 +81,7 @@ int main()
 	int ans1 = 0;
 	int ans2 = 0;
 	int ans3 = 0;
-	
+	//int l=0;
 	for(i=l1; i<r1; i++)
 		for(j=l2; j<r2; j++)
 			for(k=l3; k<r3; k++)
@@ -97,6 +97,7 @@ int main()
 				ans1 = ans1 + xorshift(x1 ^ y, 1);
 				ans2 = ans2 + xorshift(x2 ^ y, 1);
 				ans3 = ans3 + xorshift(x3 ^ y, 1);
+				//println("aaaa");
 			}
 	
 	print(toStringHex(ans0) + " ");
@@ -104,7 +105,7 @@ int main()
 	print(toStringHex(ans2) + " ");
 	print(toStringHex(ans3) + " ");
 	println("");
-	
+	//l++;
 	
 	return 0;
 }
