@@ -701,12 +701,12 @@ main:
 	mov rbx,0
 	mov r11,rbx
 	
-L_1621:
+L_1638:
 	cmp r11,r10
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	je L_1622
+	je L_1639
 	mov     rdi, 1
 	push r11
 	push r10
@@ -839,19 +839,19 @@ L_1621:
 	mov r15,r11
 	mov rdx,1
 	add r11,rdx
-	jmp L_1621
+	jmp L_1638
 	
-L_1622:
+L_1639:
 	mov r12,r13
 	mov rbx,0
 	mov r11,rbx
 	
-L_1624:
+L_1641:
 	cmp r11,r10
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	je L_1625
+	je L_1642
 	mov     rdi, 1
 	push r11
 	push r10
@@ -940,9 +940,9 @@ L_1624:
 	mov r15,r11
 	mov rbx,1
 	add r11,rbx
-	jmp L_1624
+	jmp L_1641
 	
-L_1625:
+L_1642:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

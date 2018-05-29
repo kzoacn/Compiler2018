@@ -702,12 +702,12 @@ main:
 	mov rdx,0
 	mov r12,rdx
 	
-L_1453:
+L_1465:
 	cmp r12,r11
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	je L_1454
+	je L_1466
 	mov rbx,1
 	add r14,rbx
 	mov r15,r13
@@ -715,20 +715,20 @@ L_1453:
 	mov [r15],r14
 	mov rdx,1
 	add r12,rdx
-	jmp L_1453
+	jmp L_1465
 	
-L_1454:
+L_1466:
 	mov rbx,0
 	mov r14,rbx
 	mov rdx,0
 	mov r12,rdx
 	
-L_1456:
+L_1468:
 	cmp r12,r11
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	je L_1457
+	je L_1469
 	mov r15,r13
 	lea r15,[r15+r12*8+8H]
 	mov r15, [r15]
@@ -736,9 +736,9 @@ L_1456:
 	mov r14,r15
 	mov rbx,1
 	add r12,rbx
-	jmp L_1456
+	jmp L_1468
 	
-L_1457:
+L_1469:
 	mov rdi,r14
 	mov r15,rdi
 	mov     rdi,  r15

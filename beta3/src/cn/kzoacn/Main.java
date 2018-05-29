@@ -818,8 +818,99 @@ class MVisitor extends MxstarBaseVisitor<IR>{
     IR IROptimize(){
         IR functionIR=new IR();
         HashMap<String,ArrayList<String> >callList =new HashMap<String, ArrayList<String> >();
-        int T=50;
+        //try_memorize
+        ArrayList<Variable>memoryVariable=new ArrayList<Variable>();
+        for (Map.Entry<String, IR> entry : funcIR.entrySet()) {
+            IR tmpIR = entry.getValue();
+            String name=entry.getKey();
+            Function function=symbolMap.functionMap.get(name);
+            if(function.parameterList.size()!=1)continue;
+            if(!function.parameterList.get(0).equals(VariableType.INT))continue;
+            if(!function.returnType.equals(VariableType.INT))continue;
+            boolean flag=true;
+            Quad head=tmpIR.head;
+            while(head!=null){
+                if(head.opCode==OpCode.call){
+                    if(!head.name.equals(name))
+                        flag=false;
+                }
+                if(head.var1!=null&&!head.var1.equals(argList.get(0))&&symbolMap.globalVariableMap.containsKey(head.var1.name))
+                    flag=false;
+                if(head.var2!=null&&!head.var2.equals(argList.get(0))&&symbolMap.globalVariableMap.containsKey(head.var2.name))
+                    flag=false;
+                if(head.dest!=null&&!head.dest.equals(argList.get(0))&&symbolMap.globalVariableMap.containsKey(head.dest.name))
+                    flag=false;
+                head=head.next;
+            }
+            if(!flag)continue;
+            Variable.isGlobal=true;
+            symbolMap.global=true;
+            Variable memory=new Variable("mem_"+name,new VariableType("int",1,false));
+            symbolMap.putSymbol(memory.name,memory.type);
+            Variable.isGlobal=false;
+            symbolMap.global=false;
+            memoryVariable.add(memory);
+            head=tmpIR.head;
+            Quad prev=head;
+            Variable cond1=nextVariable(VariableType.BOOL);
+            Variable cond2=nextVariable(VariableType.BOOL);
+            Variable cond3=nextVariable(VariableType.BOOL);
+            Variable cond4=nextVariable(VariableType.BOOL);
+            Variable adr=nextVariable(VariableType.INT);
+            Variable val=nextVariable(VariableType.INT);
+            Variable arg=nextVariable(VariableType.INT);
+            while(head!=null){
+                IR tmp=new IR();
+                if(head.opCode==OpCode.enterFunction){
+                    String falseLabel=nextLabel();
+                    tmp.push(new Quad(OpCode.move,argList.get(0),Variable.empty,arg));
+                    tmp.push(new Quad(OpCode.less,arg,nextConst(250,VariableType.CONST_INT),cond1));
+                    tmp.push(new Quad(OpCode.greater,arg,nextConst(0,VariableType.CONST_INT),cond2));
+                    tmp.push(new Quad(OpCode.and,cond1,cond2,cond3));
+                    tmp.push(new Quad(OpCode.jz,cond3,Variable.empty,falseLabel));
+                    tmp.push(new Quad(OpCode.address,memory,arg,adr));
+                    tmp.push(new Quad(OpCode.load,adr,Variable.empty,val));
+                    tmp.push(new Quad(OpCode.greater,val,nextConst(0,VariableType.CONST_INT),cond4));
+                    tmp.push(new Quad(OpCode.jz,cond4,Variable.empty,falseLabel));
+                    tmp.push(new Quad(OpCode.ret,val,Variable.empty,name));
+                    tmp.push(new Quad(OpCode.label,falseLabel));
+                    tmp.last.next=head.next;
+                    head.next=tmp.head;
+                }
+                if(head.opCode==OpCode.ret){
+                    String falseLabel=nextLabel();
+                    tmp.push(new Quad(OpCode.jz,cond3,Variable.empty,falseLabel));
+                    tmp.push(new Quad(OpCode.address,memory,arg,adr));
+                    tmp.push(new Quad(OpCode.store,head.var1,Variable.empty,adr));
+                    tmp.push(new Quad(OpCode.label,falseLabel));
+                    prev.next=tmp.head;
+                    tmp.last.next=head;
+                }
+                prev=head;
+                head=head.next;
+            }
+        }
 
+        for (Map.Entry<String, IR> entry : funcIR.entrySet()) {
+            String name=entry.getKey();
+            IR tmpIR = entry.getValue();
+            if(memoryVariable.isEmpty())continue;
+            if(name.equals("main")){
+                Quad head=tmpIR.head;
+                while(head!=null){
+                    IR tmp=new IR();
+                    if(head.opCode==OpCode.enterFunction){
+                        for(Variable var : memoryVariable)
+                            tmp.push(new Quad(OpCode.mallocArray,nextConst(256,VariableType.CONST_INT),Variable.empty,var));
+                        tmp.last.next=head.next;
+                        head.next=tmp.head;
+                    }
+                    head=head.next;
+                }
+            }
+        }
+        int T=50;
+        //inline
         while(T-->0) {
             for (Map.Entry<String, IR> entry : funcIR.entrySet()) {
                 IR tmpIR = entry.getValue();

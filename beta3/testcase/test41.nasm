@@ -654,17 +654,49 @@ strne:
 dfs:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 184
+	sub    rsp, 248
+	mov r10,rdi
+	mov rbx,250
+	cmp r10,rbx
+	mov r14, 0
+	setl r14B
+	cmp r10,0
+	mov r15, 0
+	setg r15B
+	mov r11,r14
+	and r11,r15
+	cmp r11, 0
+	je L_1629
+	mov rbx,  [gbl+8*6]
+	lea r15,[rbx+r10*8+8H]
+	mov r14, [r15]
+	cmp r14,0
+	mov r15, 0
+	setg r15B
+	cmp r15, 0
+	je L_1629
+	cmp r11, 0
+	je L_1630
+	mov rbx,  [gbl+8*6]
+	lea r15,[rbx+r10*8+8H]
+	mov [r15],r14
+	
+L_1630:
+	mov rax,r14
+	leave
+	ret
+	
+L_1629:
 	mov r12,rdi
 	mov rbx,0
 	mov r14,rbx
 	mov rdx,1
 	mov r13,rdx
 	
-L_1613:
+L_1625:
 	mov rbx,1
 	cmp rbx, 0
-	je L_1614
+	je L_1626
 	mov r15,r13
 	mov rbx,1
 	add r13,rbx
@@ -675,12 +707,19 @@ L_1613:
 	mov r15, 0
 	sete r15B
 	cmp r15, 0
-	je L_1616
+	je L_1628
+	cmp r11, 0
+	je L_1631
+	mov rbx,  [gbl+8*6]
+	lea r15,[rbx+r10*8+8H]
+	mov [r15],r14
+	
+L_1631:
 	mov rax,r14
 	leave
 	ret
 	
-L_1616:
+L_1628:
 	mov rbx,1
 	mov r15,r12
 	sub r15,rbx
@@ -689,15 +728,27 @@ L_1616:
 	push r14
 	push r13
 	push r12
+	push r11
+	push r10
 	call dfs
+	pop r10
+	pop r11
 	pop r12
 	pop r13
 	pop r14
 	pop r15
 	mov r15 , rax
-	jmp L_1613
+	jmp L_1625
 	
-L_1614:
+L_1626:
+	cmp r11, 0
+	je L_1632
+	mov rbx,  [gbl+8*6]
+	lea r15,[rbx+r10*8+8H]
+	mov rdx,0
+	mov [r15],rdx
+	
+L_1632:
 	mov rbx,0
 	mov rax,rbx
 	leave
@@ -706,7 +757,7 @@ L_1614:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 184
+	sub    rsp, 248
 	mov     rax, 936870912
         cdqe
         mov     rdi, rax
@@ -726,11 +777,22 @@ main:
 			mov r15,0
         mov     edx, dword 936870912
         movsxd  rdx, edx
-        sub     rdx, 2168
+        sub     rdx, 2232
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	mov     rdi, 256
+	push r11
+	push r10
+	push r9
+	push r8
+	call    mallocArray
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword [gbl+8*6], rax
 	push r15
 	call global_init
 	pop r15
@@ -776,14 +838,14 @@ main:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 184
-	mov rbx,  [rsp+8*15]
+	sub    rsp, 248
+	mov rbx,  [rsp+8*23]
 	mov rax,rbx
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2168
+gbl:         resb   2232
 buff.1788:
         resb    256
 arg:

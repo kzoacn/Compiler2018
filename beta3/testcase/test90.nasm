@@ -746,13 +746,13 @@ gcd:
 	mov r14,rax
 	mov qword [rsp+8*64],rdx
 	
-L_2746:
+L_3807:
 	mov rbx,10
 	cmp r14,rbx
 	mov r15, 0
 	setle r15B
 	cmp r15, 0
-	je L_2747
+	je L_3808
 	mov r15,r13
 	add r15,r12
 	mov rbx,  [rsp+8*10]
@@ -818,9 +818,9 @@ L_2746:
 	mov rdx,1
 	add r14,rdx
 	mov qword [rsp+8*68],rbx
-	jmp L_2746
+	jmp L_3807
 	
-L_2747:
+L_3808:
 	xor rdx, rdx
 	mov rax,  r11
 	mov rbx, [rsp+8*4]
@@ -832,13 +832,13 @@ L_2747:
 	mov r15, 0
 	sete r15B
 	cmp r15, 0
-	je L_2749
+	je L_3810
 	mov rbx,  [rsp+8*4]
 	mov rax,rbx
 	leave
 	ret
 	
-L_2749:
+L_3810:
 	xor rdx, rdx
 	mov rax,  r11
 	mov rbx, [rsp+8*4]
@@ -1210,13 +1210,13 @@ gcd1:
 	mov r15, 0
 	sete r15B
 	cmp r15, 0
-	je L_2751
+	je L_3812
 	mov rbx,  [rsp+8*75]
 	mov rax,rbx
 	leave
 	ret
 	
-L_2751:
+L_3812:
 	xor rdx, rdx
 	mov rax,  r13
 	mov rbx, [rsp+8*75]
@@ -1481,13 +1481,13 @@ gcd2:
 	mov r15, 0
 	sete r15B
 	cmp r15, 0
-	je L_2753
+	je L_3814
 	mov rbx,  [rsp+8*113]
 	mov rax,rbx
 	leave
 	ret
 	
-L_2753:
+L_3814:
 	xor rdx, rdx
 	mov rax,  r14
 	mov rbx, [rsp+8*113]
