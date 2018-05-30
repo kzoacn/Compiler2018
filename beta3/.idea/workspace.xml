@@ -77,8 +77,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="829" column="25" selection-start-line="829" selection-start-column="20" selection-end-line="829" selection-end-column="25" />
+            <state relative-caret-position="988">
+              <caret line="891" column="9" lean-forward="true" selection-start-line="891" selection-start-column="9" selection-end-line="891" selection-end-column="9" />
               <folding>
                 <element signature="e#10078#10095#0" expanded="true" />
                 <element signature="e#10150#10167#0" expanded="true" />
@@ -522,18 +522,6 @@
           <properties />
           <option name="timeStamp" value="187" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/cn/kzoacn/Main.java</url>
-          <line>893</line>
-          <properties />
-          <option name="timeStamp" value="191" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/cn/kzoacn/Main.java</url>
-          <line>845</line>
-          <properties />
-          <option name="timeStamp" value="192" />
-        </line-breakpoint>
       </breakpoints>
       <option name="time" value="193" />
     </breakpoint-manager>
@@ -882,8 +870,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="829" column="25" selection-start-line="829" selection-start-column="20" selection-end-line="829" selection-end-column="25" />
+        <state relative-caret-position="988">
+          <caret line="891" column="9" lean-forward="true" selection-start-line="891" selection-start-column="9" selection-end-line="891" selection-end-column="9" />
           <folding>
             <element signature="e#10078#10095#0" expanded="true" />
             <element signature="e#10150#10167#0" expanded="true" />

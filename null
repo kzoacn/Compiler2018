@@ -1,5 +1,5 @@
 
-Input file: test.c.o, output file: test.c.nasm
+Input file: tmp.c.o, output file: tmp.c.nasm
 Converting from ELF64 to Disassembly64
 
   0 Debug sections removed
