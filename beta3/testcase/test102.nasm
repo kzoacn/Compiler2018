@@ -840,7 +840,7 @@ L_53:
 	mov rax,  r11
 	mov rbx, 100
 	cdq
-	idiv rbx
+	idiv ebx
 	mov  r11, rdx
 	mov r10,r11
 	mov rbx,100

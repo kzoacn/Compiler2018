@@ -700,12 +700,12 @@ main:
 	mov rbx,0
 	mov r13,rbx
 	
-L_4744:
+L_3670:
 	cmp r13,r15
 	mov r12, 0
 	setl r12B
 	cmp r12, 0
-	je L_4745
+	je L_3671
 	mov r12,r14
 	lea r12,[r12+r13*8+8H]
 	mov [r12],r13
@@ -741,9 +741,9 @@ L_4744:
 	mov r12,r13
 	mov rbx,1
 	add r13,rbx
-	jmp L_4744
+	jmp L_3670
 	
-L_4745:
+L_3671:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

@@ -1658,7 +1658,7 @@ L_330:
 	mov rax,  r14
 	mov rbx, 10
 	cdq
-	idiv rbx
+	idiv ebx
 	mov  r12, rdx
 	mov rbx,0
 	cmp r12,rbx

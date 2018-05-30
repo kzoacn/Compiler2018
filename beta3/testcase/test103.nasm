@@ -844,7 +844,7 @@ L_77:
 	mov rax,  r10
 	mov rbx, [rsp+8*46]
 	cdq
-	idiv rbx
+	idiv ebx
 	mov [rsp+8*47], rdx
 	mov rbx,  [rsp+8*47]
 	mov rdx,0

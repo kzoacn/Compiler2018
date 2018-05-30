@@ -714,38 +714,38 @@ main:
 	mov qword [rsp+8*9],rbx
 	mov qword [rsp+8*8],rdx
 	
-L_3863:
+L_2789:
 	mov rbx,  [rsp+8*3]
 	cmp r9,rbx
 	mov rdx, 0
 	setl dl
 	cmp rdx, 0
 	mov qword [rsp+8*14],rdx
-	je L_3864
+	je L_2790
 	mov rdx,  [rsp+8*4]
 	mov rbx,rdx
 	mov qword [rsp+8*15],rbx
 	
-L_3866:
+L_2792:
 	mov rbx,  [rsp+8*15]
 	cmp rbx,r11
 	mov rdx, 0
 	setl dl
 	cmp rdx, 0
 	mov qword [rsp+8*16],rdx
-	je L_3867
+	je L_2793
 	mov rdx,  [rsp+8*6]
 	mov rbx,rdx
 	mov qword [rsp+8*17],rbx
 	
-L_3869:
+L_2795:
 	mov rbx,  [rsp+8*17]
 	cmp rbx,r10
 	mov rdx, 0
 	setl dl
 	cmp rdx, 0
 	mov qword [rsp+8*18],rdx
-	je L_3870
+	je L_2796
 	mov rdx,  [rsp+8*17]
 	mov rbx,rdx
 	mov rax,  [rsp+8*8]
@@ -784,7 +784,7 @@ L_3869:
 	mov qword [rsp+8*31],rdx
 	mov qword [rsp+8*29],rax
 	
-L_4226:
+L_3152:
 	mov rbx,  [rsp+8*28]
 	mov rdx,10
 	mov rax,rbx
@@ -796,7 +796,7 @@ L_4226:
 	add r12,r12
 	cmp rax, 0
 	mov qword [rsp+8*32],rax
-	je L_4228
+	je L_3154
 	mov rbx,13
 	mov rsi,rbx
 	mov rdx,  [rsp+8*30]
@@ -964,9 +964,9 @@ L_4226:
 	add rdx,rax
 	mov qword [rsp+8*58],rbx
 	mov qword [rsp+8*31],rdx
-	jmp L_4226
+	jmp L_3152
 	
-L_4228:
+L_3154:
 	mov rbx,  [rsp+8*30]
 	mov rdx,123456789
 	mov rax,rbx
@@ -1140,7 +1140,7 @@ L_4228:
 	mov qword [rsp+8*31],rdx
 	mov qword [rsp+8*29],rax
 	
-L_4258:
+L_3184:
 	mov rbx,  [rsp+8*28]
 	mov rdx,10
 	mov rax,rbx
@@ -1152,7 +1152,7 @@ L_4258:
 	add r12,r12
 	cmp rax, 0
 	mov qword [rsp+8*32],rax
-	je L_4260
+	je L_3186
 	mov rbx,13
 	mov rsi,rbx
 	mov rdx,  [rsp+8*30]
@@ -1320,9 +1320,9 @@ L_4258:
 	add rdx,rax
 	mov qword [rsp+8*58],rbx
 	mov qword [rsp+8*31],rdx
-	jmp L_4258
+	jmp L_3184
 	
-L_4260:
+L_3186:
 	mov rbx,  [rsp+8*30]
 	mov rdx,123456789
 	mov rax,rbx
@@ -1496,7 +1496,7 @@ L_4260:
 	mov qword [rsp+8*29],rdx
 	mov qword [rsp+8*31],rax
 	
-L_4290:
+L_3216:
 	mov rbx,  [rsp+8*28]
 	mov rdx,10
 	mov rax,rbx
@@ -1508,7 +1508,7 @@ L_4290:
 	add r12,r12
 	cmp rax, 0
 	mov qword [rsp+8*32],rax
-	je L_4292
+	je L_3218
 	mov rbx,13
 	mov rsi,rbx
 	mov rdx,  [rsp+8*30]
@@ -1676,9 +1676,9 @@ L_4290:
 	add rdx,rax
 	mov qword [rsp+8*58],rbx
 	mov qword [rsp+8*31],rdx
-	jmp L_4290
+	jmp L_3216
 	
-L_4292:
+L_3218:
 	mov rbx,  [rsp+8*30]
 	mov rdx,123456789
 	mov rax,rbx
@@ -1855,7 +1855,7 @@ L_4292:
 	mov qword [rsp+8*31],rdx
 	mov qword [rsp+8*29],rax
 	
-L_4322:
+L_3248:
 	mov rbx,  [rsp+8*28]
 	mov rdx,10
 	mov rax,rbx
@@ -1867,7 +1867,7 @@ L_4322:
 	add r12,r12
 	cmp rax, 0
 	mov qword [rsp+8*32],rax
-	je L_4324
+	je L_3250
 	mov rbx,13
 	mov rsi,rbx
 	mov rdx,  [rsp+8*30]
@@ -2035,9 +2035,9 @@ L_4322:
 	add rdx,rax
 	mov qword [rsp+8*58],rbx
 	mov qword [rsp+8*31],rdx
-	jmp L_4322
+	jmp L_3248
 	
-L_4324:
+L_3250:
 	mov rbx,  [rsp+8*30]
 	mov rdx,123456789
 	mov rax,rbx
@@ -2188,7 +2188,7 @@ L_4324:
 	mov qword [rsp+8*29],rdx
 	mov qword [rsp+8*31],rax
 	
-L_4034:
+L_2960:
 	mov rbx,  [rsp+8*28]
 	mov rdx,10
 	mov rax,rbx
@@ -2200,7 +2200,7 @@ L_4034:
 	add r12,r12
 	cmp rax, 0
 	mov qword [rsp+8*32],rax
-	je L_4036
+	je L_2962
 	mov rbx,13
 	mov rsi,rbx
 	mov rdx,  [rsp+8*30]
@@ -2368,9 +2368,9 @@ L_4034:
 	add rdx,rax
 	mov qword [rsp+8*58],rbx
 	mov qword [rsp+8*31],rdx
-	jmp L_4034
+	jmp L_2960
 	
-L_4036:
+L_2962:
 	mov rbx,  [rsp+8*30]
 	mov rdx,123456789
 	mov rax,rbx
@@ -2398,7 +2398,7 @@ L_4036:
 	mov qword [rsp+8*29],rdx
 	mov qword [rsp+8*31],rax
 	
-L_4054:
+L_2980:
 	mov rbx,  [rsp+8*28]
 	mov rdx,10
 	mov rax,rbx
@@ -2410,7 +2410,7 @@ L_4054:
 	add r12,r12
 	cmp rax, 0
 	mov qword [rsp+8*32],rax
-	je L_4056
+	je L_2982
 	mov rbx,13
 	mov rsi,rbx
 	mov rdx,  [rsp+8*30]
@@ -2578,9 +2578,9 @@ L_4054:
 	add rdx,rax
 	mov qword [rsp+8*58],rbx
 	mov qword [rsp+8*31],rdx
-	jmp L_4054
+	jmp L_2980
 	
-L_4056:
+L_2982:
 	mov rbx,  [rsp+8*30]
 	mov rdx,123456789
 	mov rax,rbx
@@ -2611,7 +2611,7 @@ L_4056:
 	mov qword [rsp+8*31],rdx
 	mov qword [rsp+8*29],rax
 	
-L_4074:
+L_3000:
 	mov rbx,  [rsp+8*28]
 	mov rdx,10
 	mov rax,rbx
@@ -2623,7 +2623,7 @@ L_4074:
 	add r12,r12
 	cmp rax, 0
 	mov qword [rsp+8*32],rax
-	je L_4076
+	je L_3002
 	mov rbx,13
 	mov rsi,rbx
 	mov rdx,  [rsp+8*30]
@@ -2791,9 +2791,9 @@ L_4074:
 	add rdx,rax
 	mov qword [rsp+8*58],rbx
 	mov qword [rsp+8*31],rdx
-	jmp L_4074
+	jmp L_3000
 	
-L_4076:
+L_3002:
 	mov rbx,  [rsp+8*30]
 	mov rdx,123456789
 	mov rax,rbx
@@ -2827,7 +2827,7 @@ L_4076:
 	mov qword [rsp+8*31],rdx
 	mov qword [rsp+8*29],rax
 	
-L_4094:
+L_3020:
 	mov rbx,  [rsp+8*28]
 	mov rdx,10
 	mov rax,rbx
@@ -2839,7 +2839,7 @@ L_4094:
 	add r12,r12
 	cmp rax, 0
 	mov qword [rsp+8*32],rax
-	je L_4096
+	je L_3022
 	mov rbx,13
 	mov rsi,rbx
 	mov rdx,  [rsp+8*30]
@@ -3007,9 +3007,9 @@ L_4094:
 	add rdx,rax
 	mov qword [rsp+8*58],rbx
 	mov qword [rsp+8*31],rdx
-	jmp L_4094
+	jmp L_3020
 	
-L_4096:
+L_3022:
 	mov rbx,  [rsp+8*30]
 	mov rdx,123456789
 	mov rax,rbx
@@ -3045,7 +3045,7 @@ L_4096:
 	mov qword [rsp+8*31],rdx
 	mov qword [rsp+8*29],rax
 	
-L_4114:
+L_3040:
 	mov rbx,  [rsp+8*28]
 	mov rdx,10
 	mov rax,rbx
@@ -3057,7 +3057,7 @@ L_4114:
 	add r12,r12
 	cmp rax, 0
 	mov qword [rsp+8*32],rax
-	je L_4116
+	je L_3042
 	mov rbx,13
 	mov rsi,rbx
 	mov rdx,  [rsp+8*30]
@@ -3225,9 +3225,9 @@ L_4114:
 	add rdx,rax
 	mov qword [rsp+8*58],rbx
 	mov qword [rsp+8*31],rdx
-	jmp L_4114
+	jmp L_3040
 	
-L_4116:
+L_3042:
 	mov rbx,  [rsp+8*30]
 	mov rdx,123456789
 	mov rax,rbx
@@ -3260,7 +3260,7 @@ L_4116:
 	mov qword [rsp+8*29],rdx
 	mov qword [rsp+8*31],rax
 	
-L_4134:
+L_3060:
 	mov rbx,  [rsp+8*28]
 	mov rdx,10
 	mov rax,rbx
@@ -3272,7 +3272,7 @@ L_4134:
 	add r12,r12
 	cmp rax, 0
 	mov qword [rsp+8*32],rax
-	je L_4136
+	je L_3062
 	mov rbx,13
 	mov rsi,rbx
 	mov rdx,  [rsp+8*30]
@@ -3440,9 +3440,9 @@ L_4134:
 	add rdx,rax
 	mov qword [rsp+8*58],rbx
 	mov qword [rsp+8*31],rdx
-	jmp L_4134
+	jmp L_3060
 	
-L_4136:
+L_3062:
 	mov rbx,  [rsp+8*30]
 	mov rdx,123456789
 	mov rax,rbx
@@ -3474,7 +3474,7 @@ L_4136:
 	mov qword [rsp+8*30],rbx
 	mov qword [rsp+8*31],rdx
 	
-L_4154:
+L_3080:
 	mov rbx,  [rsp+8*28]
 	mov rdx,10
 	mov rax,rbx
@@ -3486,7 +3486,7 @@ L_4154:
 	add r12,r12
 	cmp rax, 0
 	mov qword [rsp+8*32],rax
-	je L_4156
+	je L_3082
 	mov rbx,13
 	mov rsi,rbx
 	mov rdx,  [rsp+8*30]
@@ -3646,9 +3646,9 @@ L_4154:
 	add rax,rdx
 	mov qword [rsp+8*30],rbx
 	mov qword [rsp+8*31],rax
-	jmp L_4154
+	jmp L_3080
 	
-L_4156:
+L_3082:
 	mov rbx,  [rsp+8*30]
 	mov rdx,123456789
 	mov rax,rbx
@@ -3666,25 +3666,25 @@ L_4156:
 	add rdx,rbx
 	mov qword [rsp+8*17],rdx
 	mov qword [rsp+8*59],rax
-	jmp L_3869
+	jmp L_2795
 	
-L_3870:
+L_2796:
 	mov rdx,  [rsp+8*15]
 	mov rbx,rdx
 	mov rax,1
 	add rdx,rax
 	mov qword [rsp+8*95],rbx
 	mov qword [rsp+8*15],rdx
-	jmp L_3866
+	jmp L_2792
 	
-L_3867:
+L_2793:
 	mov rbx,r9
 	mov rdx,1
 	add r9,rdx
 	mov qword [rsp+8*96],rbx
-	jmp L_3863
+	jmp L_2789
 	
-L_3864:
+L_2790:
 	mov rbx,  [rsp+8*9]
 	mov rdi,rbx
 	mov r12,rdi
@@ -3693,13 +3693,13 @@ L_3864:
 	mov rax,28
 	mov r11,rax
 	
-L_3946:
+L_2872:
 	mov rbx,0
 	cmp r11,rbx
 	mov r9, 0
 	setge r9B
 	cmp r9, 0
-	je L_3947
+	je L_2873
 	mov r9,r12
 	mov rcx,r11
 	shr r9,cl
@@ -3711,7 +3711,7 @@ L_3946:
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
-	je L_3948
+	je L_2874
 	mov rbx,48
 	add r9,rbx
 	mov rdi,r9
@@ -3721,21 +3721,21 @@ L_3946:
 	mov r8, 0
 	setge r8B
 	cmp r8, 0
-	jne L_3949
+	jne L_2875
 	mov rbx,0
 	mov r8,rbx
-	jmp L_3950
+	jmp L_2876
 	
-L_3949:
+L_2875:
 	mov rbx,126
 	cmp r9,rbx
 	mov r8, 0
 	setle r8B
 	mov r8,r8
 	
-L_3950:
+L_2876:
 	cmp r8, 0
-	je L_3951
+	je L_2877
 	mov rdx,  [gbl+8*108]
 	mov rbx,rdx
 	mov rax,32
@@ -3762,13 +3762,13 @@ L_3950:
 	pop r11
 	mov  r9, rax
 	mov r9,r9
-	jmp L_3953
+	jmp L_2879
 	
-L_3951:
+L_2877:
 	mov rbx,t125
 	mov r9,rbx
 	
-L_3953:
+L_2879:
 	mov r9,r9
 	mov     rsi,  r9
 	mov     rdi,  r10
@@ -3783,9 +3783,9 @@ L_3953:
 	pop r11
 	mov  r10, rax
 	mov r10,r10
-	jmp L_3954
+	jmp L_2880
 	
-L_3948:
+L_2874:
 	mov rbx,65
 	add r9,rbx
 	mov rdx,10
@@ -3797,21 +3797,21 @@ L_3948:
 	mov r8, 0
 	setge r8B
 	cmp r8, 0
-	jne L_3955
+	jne L_2881
 	mov rbx,0
 	mov r8,rbx
-	jmp L_3956
+	jmp L_2882
 	
-L_3955:
+L_2881:
 	mov rbx,126
 	cmp r9,rbx
 	mov r8, 0
 	setle r8B
 	mov r8,r8
 	
-L_3956:
+L_2882:
 	cmp r8, 0
-	je L_3957
+	je L_2883
 	mov rdx,  [gbl+8*108]
 	mov rbx,rdx
 	mov rax,32
@@ -3838,13 +3838,13 @@ L_3956:
 	pop r11
 	mov  r9, rax
 	mov r9,r9
-	jmp L_3959
+	jmp L_2885
 	
-L_3957:
+L_2883:
 	mov rbx,t125
 	mov r9,rbx
 	
-L_3959:
+L_2885:
 	mov r9,r9
 	mov     rsi,  r9
 	mov     rdi,  r10
@@ -3860,13 +3860,13 @@ L_3959:
 	mov  r10, rax
 	mov r10,r10
 	
-L_3954:
+L_2880:
 	mov rbx,4
 	sub r11,rbx
 	mov r11,r11
-	jmp L_3946
+	jmp L_2872
 	
-L_3947:
+L_2873:
 	mov r12,r10
 	mov r12,r12
 	mov     rsi, t222
@@ -3903,13 +3903,13 @@ L_3947:
 	mov rdx,28
 	mov r11,rdx
 	
-L_3963:
+L_2889:
 	mov rbx,0
 	cmp r11,rbx
 	mov r9, 0
 	setge r9B
 	cmp r9, 0
-	je L_3964
+	je L_2890
 	mov r9,r12
 	mov rcx,r11
 	shr r9,cl
@@ -3921,7 +3921,7 @@ L_3963:
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
-	je L_3965
+	je L_2891
 	mov rbx,48
 	add r9,rbx
 	mov rdi,r9
@@ -3931,21 +3931,21 @@ L_3963:
 	mov r8, 0
 	setge r8B
 	cmp r8, 0
-	jne L_3966
+	jne L_2892
 	mov rbx,0
 	mov r8,rbx
-	jmp L_3967
+	jmp L_2893
 	
-L_3966:
+L_2892:
 	mov rbx,126
 	cmp r9,rbx
 	mov r8, 0
 	setle r8B
 	mov r8,r8
 	
-L_3967:
+L_2893:
 	cmp r8, 0
-	je L_3968
+	je L_2894
 	mov rdx,  [gbl+8*108]
 	mov rbx,rdx
 	mov rax,32
@@ -3972,13 +3972,13 @@ L_3967:
 	pop r11
 	mov  r9, rax
 	mov r9,r9
-	jmp L_3970
+	jmp L_2896
 	
-L_3968:
+L_2894:
 	mov rbx,t125
 	mov r9,rbx
 	
-L_3970:
+L_2896:
 	mov r9,r9
 	mov     rsi,  r9
 	mov     rdi,  r10
@@ -3993,9 +3993,9 @@ L_3970:
 	pop r11
 	mov  r10, rax
 	mov r10,r10
-	jmp L_3971
+	jmp L_2897
 	
-L_3965:
+L_2891:
 	mov rbx,65
 	add r9,rbx
 	mov rdx,10
@@ -4007,21 +4007,21 @@ L_3965:
 	mov r8, 0
 	setge r8B
 	cmp r8, 0
-	jne L_3972
+	jne L_2898
 	mov rbx,0
 	mov r8,rbx
-	jmp L_3973
+	jmp L_2899
 	
-L_3972:
+L_2898:
 	mov rbx,126
 	cmp r9,rbx
 	mov r8, 0
 	setle r8B
 	mov r8,r8
 	
-L_3973:
+L_2899:
 	cmp r8, 0
-	je L_3974
+	je L_2900
 	mov rdx,  [gbl+8*108]
 	mov rbx,rdx
 	mov rax,32
@@ -4048,13 +4048,13 @@ L_3973:
 	pop r11
 	mov  r9, rax
 	mov r9,r9
-	jmp L_3976
+	jmp L_2902
 	
-L_3974:
+L_2900:
 	mov rbx,t125
 	mov r9,rbx
 	
-L_3976:
+L_2902:
 	mov r9,r9
 	mov     rsi,  r9
 	mov     rdi,  r10
@@ -4070,13 +4070,13 @@ L_3976:
 	mov  r10, rax
 	mov r10,r10
 	
-L_3971:
+L_2897:
 	mov rbx,4
 	sub r11,rbx
 	mov r11,r11
-	jmp L_3963
+	jmp L_2889
 	
-L_3964:
+L_2890:
 	mov r12,r10
 	mov r13,r12
 	mov     rsi, t229
@@ -4113,13 +4113,13 @@ L_3964:
 	mov rdx,28
 	mov r11,rdx
 	
-L_3980:
+L_2906:
 	mov rbx,0
 	cmp r11,rbx
 	mov r9, 0
 	setge r9B
 	cmp r9, 0
-	je L_3981
+	je L_2907
 	mov r9,r12
 	mov rcx,r11
 	shr r9,cl
@@ -4131,7 +4131,7 @@ L_3980:
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
-	je L_3982
+	je L_2908
 	mov rbx,48
 	add r9,rbx
 	mov rdi,r9
@@ -4141,21 +4141,21 @@ L_3980:
 	mov r8, 0
 	setge r8B
 	cmp r8, 0
-	jne L_3983
+	jne L_2909
 	mov rbx,0
 	mov r8,rbx
-	jmp L_3984
+	jmp L_2910
 	
-L_3983:
+L_2909:
 	mov rbx,126
 	cmp r9,rbx
 	mov r8, 0
 	setle r8B
 	mov r8,r8
 	
-L_3984:
+L_2910:
 	cmp r8, 0
-	je L_3985
+	je L_2911
 	mov rdx,  [gbl+8*108]
 	mov rbx,rdx
 	mov rax,32
@@ -4182,13 +4182,13 @@ L_3984:
 	pop r11
 	mov  r9, rax
 	mov r9,r9
-	jmp L_3987
+	jmp L_2913
 	
-L_3985:
+L_2911:
 	mov rbx,t125
 	mov r9,rbx
 	
-L_3987:
+L_2913:
 	mov r9,r9
 	mov     rsi,  r9
 	mov     rdi,  r10
@@ -4203,9 +4203,9 @@ L_3987:
 	pop r11
 	mov  r10, rax
 	mov r10,r10
-	jmp L_3988
+	jmp L_2914
 	
-L_3982:
+L_2908:
 	mov rbx,65
 	add r9,rbx
 	mov rdx,10
@@ -4217,21 +4217,21 @@ L_3982:
 	mov r8, 0
 	setge r8B
 	cmp r8, 0
-	jne L_3989
+	jne L_2915
 	mov rbx,0
 	mov r8,rbx
-	jmp L_3990
+	jmp L_2916
 	
-L_3989:
+L_2915:
 	mov rbx,126
 	cmp r9,rbx
 	mov r8, 0
 	setle r8B
 	mov r8,r8
 	
-L_3990:
+L_2916:
 	cmp r8, 0
-	je L_3991
+	je L_2917
 	mov rdx,  [gbl+8*108]
 	mov rbx,rdx
 	mov rax,32
@@ -4258,13 +4258,13 @@ L_3990:
 	pop r11
 	mov  r9, rax
 	mov r9,r9
-	jmp L_3993
+	jmp L_2919
 	
-L_3991:
+L_2917:
 	mov rbx,t125
 	mov r9,rbx
 	
-L_3993:
+L_2919:
 	mov r9,r9
 	mov     rsi,  r9
 	mov     rdi,  r10
@@ -4280,13 +4280,13 @@ L_3993:
 	mov  r10, rax
 	mov r10,r10
 	
-L_3988:
+L_2914:
 	mov rbx,4
 	sub r11,rbx
 	mov r11,r11
-	jmp L_3980
+	jmp L_2906
 	
-L_3981:
+L_2907:
 	mov r12,r10
 	mov r14,r12
 	mov     rsi, t236
@@ -4323,13 +4323,13 @@ L_3981:
 	mov rdx,28
 	mov r11,rdx
 	
-L_3997:
+L_2923:
 	mov rbx,0
 	cmp r11,rbx
 	mov r9, 0
 	setge r9B
 	cmp r9, 0
-	je L_3998
+	je L_2924
 	mov r9,r12
 	mov rcx,r11
 	shr r9,cl
@@ -4341,7 +4341,7 @@ L_3997:
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
-	je L_3999
+	je L_2925
 	mov rbx,48
 	add r9,rbx
 	mov rdi,r9
@@ -4351,21 +4351,21 @@ L_3997:
 	mov r8, 0
 	setge r8B
 	cmp r8, 0
-	jne L_4000
+	jne L_2926
 	mov rbx,0
 	mov r8,rbx
-	jmp L_4001
+	jmp L_2927
 	
-L_4000:
+L_2926:
 	mov rbx,126
 	cmp r9,rbx
 	mov r8, 0
 	setle r8B
 	mov r8,r8
 	
-L_4001:
+L_2927:
 	cmp r8, 0
-	je L_4002
+	je L_2928
 	mov rdx,  [gbl+8*108]
 	mov rbx,rdx
 	mov rax,32
@@ -4392,13 +4392,13 @@ L_4001:
 	pop r11
 	mov  r9, rax
 	mov r9,r9
-	jmp L_4004
+	jmp L_2930
 	
-L_4002:
+L_2928:
 	mov rbx,t125
 	mov r9,rbx
 	
-L_4004:
+L_2930:
 	mov r9,r9
 	mov     rsi,  r9
 	mov     rdi,  r10
@@ -4413,9 +4413,9 @@ L_4004:
 	pop r11
 	mov  r10, rax
 	mov r10,r10
-	jmp L_4005
+	jmp L_2931
 	
-L_3999:
+L_2925:
 	mov rbx,65
 	add r9,rbx
 	mov rdx,10
@@ -4427,21 +4427,21 @@ L_3999:
 	mov r8, 0
 	setge r8B
 	cmp r8, 0
-	jne L_4006
+	jne L_2932
 	mov rbx,0
 	mov r8,rbx
-	jmp L_4007
+	jmp L_2933
 	
-L_4006:
+L_2932:
 	mov rbx,126
 	cmp r9,rbx
 	mov r8, 0
 	setle r8B
 	mov r8,r8
 	
-L_4007:
+L_2933:
 	cmp r8, 0
-	je L_4008
+	je L_2934
 	mov rdx,  [gbl+8*108]
 	mov rbx,rdx
 	mov rax,32
@@ -4467,13 +4467,13 @@ L_4007:
 	pop r11
 	mov  r9, rax
 	mov r9,r9
-	jmp L_4010
+	jmp L_2936
 	
-L_4008:
+L_2934:
 	mov rbx,t125
 	mov r9,rbx
 	
-L_4010:
+L_2936:
 	mov r9,r9
 	mov     rsi,  r9
 	mov     rdi,  r10
@@ -4489,13 +4489,13 @@ L_4010:
 	mov  r10, rax
 	mov r10,r10
 	
-L_4005:
+L_2931:
 	mov rbx,4
 	sub r11,rbx
 	mov r11,r11
-	jmp L_3997
+	jmp L_2923
 	
-L_3998:
+L_2924:
 	mov r12,r10
 	mov r15,r12
 	mov     rsi, t243

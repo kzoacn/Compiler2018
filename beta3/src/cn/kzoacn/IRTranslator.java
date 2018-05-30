@@ -635,7 +635,7 @@ public class IRTranslator {
                     text.append(new StringBuffer("mov rax, "+varName(var1)+"\n\t"));
                     text.append(new StringBuffer("mov rbx, "+varName(var2)+"\n\t"));
                     text.append(new StringBuffer("cdq\n\t"));
-                    text.append(new StringBuffer("idiv rbx\n\t"));
+                    text.append(new StringBuffer("idiv ebx\n\t"));
                     text.append(new StringBuffer("mov "+varName(dest)+", rax\n\t"));
                     //kickAll();
                     /*
@@ -652,7 +652,7 @@ public class IRTranslator {
                     text.append(new StringBuffer("mov rax, "+varName(var1)+"\n\t"));
                     text.append(new StringBuffer("mov rbx, "+varName(var2)+"\n\t"));
                     text.append(new StringBuffer("cdq\n\t"));
-                    text.append(new StringBuffer("idiv rbx\n\t"));
+                    text.append(new StringBuffer("idiv ebx\n\t"));
                     text.append(new StringBuffer("mov "+varName(dest)+", rdx\n\t"));
                     //kickAll();
                     break;

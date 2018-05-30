@@ -719,7 +719,7 @@ main:
 	mov rax, [gbl+8*9]
 	mov rbx, [gbl+8*10]
 	cdq
-	idiv rbx
+	idiv ebx
 	mov  r11, rdx
 	mov rbx,r11
 	mov rdi,r10
@@ -819,7 +819,7 @@ L_127:
 	mov rax, [gbl+8*27]
 	mov rbx, [gbl+8*12]
 	cdq
-	idiv rbx
+	idiv ebx
 	mov [rsp+8*30], rdx
 	mov rbx,  [gbl+8*10]
 	mov rdx,  [rsp+8*30]
@@ -872,7 +872,7 @@ L_166:
 	mov rax,  r11
 	mov rbx, 10
 	cdq
-	idiv rbx
+	idiv ebx
 	mov  r11, rdx
 	mov rbx,1
 	add r11,rbx
@@ -922,7 +922,7 @@ L_128:
 	mov rax, [gbl+8*27]
 	mov rbx, [gbl+8*12]
 	cdq
-	idiv rbx
+	idiv ebx
 	mov [rsp+8*30], rdx
 	mov rbx,  [gbl+8*10]
 	mov rdx,  [rsp+8*30]
@@ -976,7 +976,7 @@ L_170:
 	mov rax, [rsp+8*46]
 	mov rbx, 10
 	cdq
-	idiv rbx
+	idiv ebx
 	mov [rsp+8*47], rdx
 	mov rbx,  [rsp+8*47]
 	mov rdx,1
@@ -1008,7 +1008,7 @@ L_131:
 	mov rax, [gbl+8*27]
 	mov rbx, [gbl+8*12]
 	cdq
-	idiv rbx
+	idiv ebx
 	mov [rsp+8*30], rdx
 	mov rbx,  [gbl+8*10]
 	mov rdx,  [rsp+8*30]
@@ -1060,7 +1060,7 @@ L_174:
 	mov rax, [rsp+8*54]
 	mov rbx, 10
 	cdq
-	idiv rbx
+	idiv ebx
 	mov [rsp+8*55], rdx
 	mov rbx,  [rsp+8*55]
 	mov rdx,1

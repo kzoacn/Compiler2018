@@ -880,7 +880,7 @@ L_299:
 	mov rax,  r14
 	mov rbx, 100000
 	cdq
-	idiv rbx
+	idiv ebx
 	mov  r11, rdx
 	mov rbx,0
 	cmp r11,rbx

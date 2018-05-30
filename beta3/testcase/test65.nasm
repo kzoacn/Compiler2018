@@ -692,12 +692,12 @@ main:
 	mov rbx,0
 	mov r14,rbx
 	
-L_1891:
+L_1876:
 	cmp r14,r15
 	mov r12, 0
 	setl r12B
 	cmp r12, 0
-	je L_1892
+	je L_1877
 	mov     rsi, t71
 	mov     rdi,  r13
 	push r11
@@ -714,9 +714,9 @@ L_1891:
 	mov r12,r14
 	mov rbx,1
 	add r14,rbx
-	jmp L_1891
+	jmp L_1876
 	
-L_1892:
+L_1877:
 	mov rdi,r13
 	mov r14,rdi
 	mov rdi, r14 
@@ -733,12 +733,12 @@ L_1892:
 	mov rbx,0
 	mov r14,rbx
 	
-L_1894:
+L_1879:
 	cmp r14,r15
 	mov r12, 0
 	setl r12B
 	cmp r12, 0
-	je L_1895
+	je L_1880
 	mov     rsi, t80
 	mov     rdi,  r13
 	push r11
@@ -755,9 +755,9 @@ L_1894:
 	mov r12,r14
 	mov rbx,1
 	add r14,rbx
-	jmp L_1894
+	jmp L_1879
 	
-L_1895:
+L_1880:
 	mov rdi,r13
 	mov r15,rdi
 	mov rdi, r15 

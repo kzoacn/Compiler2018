@@ -673,14 +673,14 @@ qsrt:
 	mov r11, [r11]
 	mov r11,r11
 	
-L_1156:
+L_1151:
 	cmp r15,r13
 	mov r10, 0
 	setle r10B
 	cmp r10, 0
-	je L_1157
+	je L_1152
 	
-L_1158:
+L_1153:
 	mov rbx,  [gbl+8*8]
 	mov r10,rbx
 	lea r10,[r10+r15*8+8H]
@@ -689,15 +689,15 @@ L_1158:
 	mov r10, 0
 	setl r10B
 	cmp r10, 0
-	je L_1159
+	je L_1154
 	mov r10,r15
 	mov rbx,1
 	add r15,rbx
-	jmp L_1158
+	jmp L_1153
 	
-L_1159:
+L_1154:
 	
-L_1160:
+L_1155:
 	mov rbx,  [gbl+8*8]
 	mov r10,rbx
 	lea r10,[r10+r13*8+8H]
@@ -706,18 +706,18 @@ L_1160:
 	mov r10, 0
 	setg r10B
 	cmp r10, 0
-	je L_1161
+	je L_1156
 	mov r10,r13
 	mov rbx,1
 	sub r13,rbx
-	jmp L_1160
+	jmp L_1155
 	
-L_1161:
+L_1156:
 	cmp r15,r13
 	mov r10, 0
 	setle r10B
 	cmp r10, 0
-	je L_1163
+	je L_1158
 	mov rbx,  [gbl+8*8]
 	mov r10,rbx
 	lea r10,[r10+r15*8+8H]
@@ -739,15 +739,15 @@ L_1161:
 	mov rax,1
 	sub r13,rax
 	
-L_1163:
-	jmp L_1156
+L_1158:
+	jmp L_1151
 	
-L_1157:
+L_1152:
 	cmp r12,r13
 	mov r11, 0
 	setl r11B
 	cmp r11, 0
-	je L_1165
+	je L_1160
 	mov rsi,r13
 	mov rdi,r12
 	push r15
@@ -759,12 +759,12 @@ L_1157:
 	pop r15
 	mov r13 , rax
 	
-L_1165:
+L_1160:
 	cmp r15,r14
 	mov r13, 0
 	setl r13B
 	cmp r13, 0
-	je L_1167
+	je L_1162
 	mov rsi,r14
 	mov rdi,r15
 	push r15
@@ -772,7 +772,7 @@ L_1165:
 	pop r15
 	mov r15 , rax
 	
-L_1167:
+L_1162:
 	mov rbx,0
 	mov rax,rbx
 	leave
@@ -813,13 +813,13 @@ main:
 	mov rbx,1
 	mov r15,rbx
 	
-L_1168:
+L_1163:
 	mov rbx,  [gbl+8*44]
 	cmp r15,rbx
 	mov r14, 0
 	setle r14B
 	cmp r14, 0
-	je L_1169
+	je L_1164
 	mov rbx,  [gbl+8*44]
 	mov rdx,1
 	mov r14,rbx
@@ -832,9 +832,9 @@ L_1168:
 	mov r14,r15
 	mov rdx,1
 	add r15,rdx
-	jmp L_1168
+	jmp L_1163
 	
-L_1169:
+L_1164:
 	mov rbx,  [gbl+8*44]
 	mov rsi,rbx
 	mov rdx,1
@@ -846,13 +846,13 @@ L_1169:
 	mov rbx,1
 	mov r15,rbx
 	
-L_1171:
+L_1166:
 	mov rbx,  [gbl+8*44]
 	cmp r15,rbx
 	mov r14, 0
 	setle r14B
 	cmp r14, 0
-	je L_1172
+	je L_1167
 	mov rbx,  [gbl+8*8]
 	mov r14,rbx
 	lea r14,[r14+r15*8+8H]
@@ -904,9 +904,9 @@ L_1171:
 	mov r14,r15
 	mov rbx,1
 	add r15,rbx
-	jmp L_1171
+	jmp L_1166
 	
-L_1172:
+L_1167:
 	mov rbx,t137
 	mov rdi,rbx
 	mov r15,rdi
