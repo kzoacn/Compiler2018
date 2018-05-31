@@ -661,13 +661,13 @@ f:
 	mov r14, 0
 	sete r14B
 	cmp r14, 0
-	je L_1187
+	je L_1205
 	mov rbx,0
 	mov rax,rbx
 	leave
 	ret
 	
-L_1187:
+L_1205:
 	mov rbx,  [gbl+8*4]
 	mov r14,rbx
 	mov rdx,1

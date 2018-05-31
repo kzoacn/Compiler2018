@@ -676,15 +676,7 @@ Adder_add:
 	mov [r12],rdx
 	mov     rsi,  r13
 	mov     rdi,  r15
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r12, rax
 	mov r12, [r12]
 	mov r15,r12
@@ -755,15 +747,7 @@ main:
 	mov [r13],rdx
 	mov     rsi,  r15
 	mov     rdi,  r14
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r13, rax
 	mov rbx,4
 	mov [r13],rbx

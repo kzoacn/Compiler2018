@@ -675,15 +675,7 @@ point_set:
 	mov r9,r10
 	mov     rsi,  r10
 	mov     rdi,  r11
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r9, rax
 	mov [r9],r13
 	mov rbx,1
@@ -702,15 +694,7 @@ point_set:
 	mov r11,r14
 	mov     rsi,  r14
 	mov     rdi,  r13
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r11, rax
 	mov [r11],r12
 	mov rax,r15
@@ -796,15 +780,7 @@ main:
 	mov [r14],rdx
 	mov     rsi,  r15
 	mov     rdi,  r13
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r14, rax
 	mov r14, [r14]
 	mov rdi,r14
@@ -851,15 +827,7 @@ main:
 	mov [r14],rdx
 	mov     rsi,  r15
 	mov     rdi,  r13
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r14, rax
 	mov r14, [r14]
 	mov rdi,r14

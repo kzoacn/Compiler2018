@@ -686,7 +686,7 @@ main:
 	pop r15
 	mov r14 , rax
 	
-L_3510:
+L_3528:
 	mov rbx,1
 	mov r14,rbx
 	mov rcx,29
@@ -696,12 +696,12 @@ L_3510:
 	mov r14, 0
 	setl r14B
 	cmp r14, 0
-	jne L_3512
+	jne L_3530
 	mov rbx,0
 	mov r14,rbx
-	jmp L_3513
+	jmp L_3531
 	
-L_3512:
+L_3530:
 	mov rbx,1
 	mov r13,rbx
 	mov rcx,29
@@ -714,10 +714,10 @@ L_3512:
 	setg r12B
 	mov r14,r12
 	
-L_3513:
+L_3531:
 	add r15,r15
 	cmp r14, 0
-	je L_3511
+	je L_3529
 	mov rbx,  [gbl+8*3]
 	mov rdx,  [gbl+8*7]
 	mov r14,rbx
@@ -1786,9 +1786,9 @@ L_3513:
 	mov qword [gbl+8*3],rbx
 	mov qword [gbl+8*7],rdx
 	mov qword [gbl+8*9],rax
-	jmp L_3510
+	jmp L_3528
 	
-L_3511:
+L_3529:
 	mov rbx,  [gbl+8*7]
 	mov rdi,rbx
 	mov r15,rdi

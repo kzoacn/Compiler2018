@@ -709,7 +709,7 @@ main:
 	mov r11,r13
 	and r11,r12
 	cmp r11, 0
-	je L_3497
+	je L_3515
 	mov rbx,  [gbl+8*1]
 	lea r13,[rbx+r14*8+8H]
 	mov r12, [r13]
@@ -717,31 +717,31 @@ main:
 	mov r10, 0
 	setg r10B
 	cmp r10, 0
-	je L_3497
+	je L_3515
 	cmp r11, 0
-	je L_3498
+	je L_3516
 	mov rbx,  [gbl+8*1]
 	lea r13,[rbx+r14*8+8H]
 	mov [r13],r12
 	
-L_3498:
+L_3516:
 	mov r10,r12
-	jmp L_3500
+	jmp L_3518
 	
-L_3497:
+L_3515:
 	mov r12,rdi
 	mov r9,r12
 	imul r9,r12
 	cmp r11, 0
-	je L_3501
+	je L_3519
 	mov rbx,  [gbl+8*1]
 	lea r13,[rbx+r14*8+8H]
 	mov [r13],r9
 	
-L_3501:
+L_3519:
 	mov r10,r9
 	
-L_3500:
+L_3518:
 	mov r14,r10
 	mov rdi,r14
 	mov r14,rdi

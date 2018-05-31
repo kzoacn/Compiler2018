@@ -1081,9 +1081,9 @@ public class IRTranslator {
                 case multiArray:
                     kickAll();
                     text.append(new StringBuffer("mov     rdi, "+varName(var1)+"\n\t"));
-                    text.append(saveContext());
+                    //text.append(saveContext());
                     text.append(new StringBuffer("call    multiArray\n\t"));
-                    text.append(resumeContext());
+                    //text.append(resumeContext());
                     text.append(new StringBuffer("mov     qword "+varName(dest)+", rax\n\t"));
                     //clearAll();
                     break;
@@ -1091,9 +1091,9 @@ public class IRTranslator {
                     kickAll();
                     text.append(new StringBuffer("mov     rsi, "+varName(var2)+"\n\t"));
                     text.append(new StringBuffer("mov     rdi, "+varName(var1)+"\n\t"));
-                    text.append(saveContext());
+                    //text.append(saveContext());
                     text.append(new StringBuffer("call    multiAddress\n\t"));
-                    text.append(resumeContext());
+                   // text.append(resumeContext());
                     text.append(new StringBuffer("mov "+varName(dest)+", rax\n\t"));
                     clearAll();
                     break;

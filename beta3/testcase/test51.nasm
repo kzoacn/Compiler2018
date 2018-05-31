@@ -715,15 +715,7 @@ main:
 	mov [r12],rdx
 	mov     rsi,  r14
 	mov     rdi,  r13
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r12, rax
 	mov     rdi,  r15
 	push r11
@@ -759,15 +751,7 @@ main:
 	mov [r14],rbx
 	mov     rsi,  r15
 	mov     rdi,  r13
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r14, rax
 	mov rbx,t89
 	mov [r14],rbx
@@ -793,15 +777,7 @@ main:
 	mov [r14],rbx
 	mov     rsi,  r15
 	mov     rdi,  r13
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r14, rax
 	mov rbx,t101
 	mov [r14],rbx
@@ -827,15 +803,7 @@ main:
 	mov [r14],rbx
 	mov     rsi,  r15
 	mov     rdi,  r13
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r14, rax
 	mov rbx,t113
 	mov [r14],rbx
@@ -861,15 +829,7 @@ main:
 	mov [r14],rbx
 	mov     rsi,  r15
 	mov     rdi,  r13
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r14, rax
 	mov rbx,t125
 	mov [r14],rbx
@@ -896,15 +856,7 @@ main:
 	mov [r12],rbx
 	mov     rsi,  r14
 	mov     rdi,  r15
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r12, rax
 	mov r12, [r12]
 	mov     rdi, 2
@@ -929,15 +881,7 @@ main:
 	mov [r11],rbx
 	mov     rsi,  r14
 	mov     rdi,  r15
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r11, rax
 	mov r11, [r11]
 	mov     rsi,  r11
@@ -974,15 +918,7 @@ main:
 	mov [r11],rbx
 	mov     rsi,  r12
 	mov     rdi,  r13
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r11, rax
 	mov r11, [r11]
 	mov     rsi,  r11
@@ -1019,15 +955,7 @@ main:
 	mov [r12],rbx
 	mov     rsi,  r13
 	mov     rdi,  r15
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r12, rax
 	mov r12, [r12]
 	mov     rsi,  r12

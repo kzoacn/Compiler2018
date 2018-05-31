@@ -703,15 +703,7 @@ main:
 	lea r13,[r14+rdx*8+8H]
 	mov [r13],r15
 	mov     rdi,  r14
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiArray
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov     qword  r14, rax
 	mov r14,r14
 	mov r13,r14
@@ -725,12 +717,12 @@ main:
 	mov rbx,1
 	mov r13,rbx
 	
-L_832:
+L_1313:
 	cmp r13,r15
 	mov r12, 0
 	setl r12B
 	cmp r12, 0
-	je L_833
+	je L_1314
 	mov r12,r14
 	lea r12,[r12+r13*8+8H]
 	mov r12, [r12]
@@ -741,12 +733,12 @@ L_832:
 	mov rax,1
 	mov r12,rax
 	
-L_835:
+L_1316:
 	cmp r12,r13
 	mov r11, 0
 	setle r11B
 	cmp r11, 0
-	je L_836
+	je L_1317
 	mov rbx,1
 	mov r10,r13
 	sub r10,rbx
@@ -775,14 +767,14 @@ L_835:
 	mov r11,r12
 	mov rbx,1
 	add r12,rbx
-	jmp L_835
+	jmp L_1316
 	
-L_836:
+L_1317:
 	mov rbx,1
 	add r13,rbx
-	jmp L_832
+	jmp L_1313
 	
-L_833:
+L_1314:
 	mov r15,r14
 	mov rbx,6
 	lea r15,[r15+rbx*8+8H]

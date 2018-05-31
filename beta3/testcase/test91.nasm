@@ -668,7 +668,7 @@ cd:
 	mov r10, 0
 	sete r10B
 	cmp r10, 0
-	je L_3523
+	je L_3541
 	mov     rsi,  r14
 	mov     rdi, t66
 	push r11
@@ -721,9 +721,9 @@ cd:
 	mov r10,r11
 	mov rbx,1
 	add r11,rbx
-	jmp L_3524
+	jmp L_3542
 	
-L_3523:
+L_3541:
 	mov rbx,1
 	mov r10,r15
 	sub r10,rbx
@@ -817,7 +817,7 @@ L_3523:
 	mov rbx,1
 	add r11,rbx
 	
-L_3524:
+L_3542:
 	mov rax,r11
 	leave
 	ret

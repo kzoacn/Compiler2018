@@ -703,15 +703,7 @@ main:
 	lea r13,[r14+rdx*8+8H]
 	mov [r13],r15
 	mov     rdi,  r14
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiArray
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov     qword  r14, rax
 	mov r15,r14
 	mov r14,r15

@@ -715,15 +715,7 @@ main:
 	mov rbx,7
 	mov [r14],rbx
 	mov     rdi,  r15
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiArray
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov     qword  r15, rax
 	mov r12,r15
 	mov r15,r12

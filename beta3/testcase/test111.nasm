@@ -713,15 +713,7 @@ main:
 	mov [r15],rdx
 	mov     rsi,  r13
 	mov     rdi,  r14
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r15, rax
 	mov rbx,t138
 	mov [r15],rbx
@@ -743,15 +735,7 @@ main:
 	mov [r15],rdx
 	mov     rsi,  r13
 	mov     rdi,  r14
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r15, rax
 	mov rbx,0
 	mov [r15],rbx
@@ -785,15 +769,7 @@ main:
 	mov [r13],rdx
 	mov     rsi,  r12
 	mov     rdi,  r15
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r13, rax
 	mov rbx,t160
 	mov [r13],rbx
@@ -815,15 +791,7 @@ main:
 	mov [r13],rdx
 	mov     rsi,  r12
 	mov     rdi,  r15
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r13, rax
 	mov rbx,  [gbl+8*18]
 	mov [r13],rbx
@@ -850,15 +818,7 @@ main:
 	mov [r11],rdx
 	mov     rsi,  r12
 	mov     rdi,  r14
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r12, rax
 	mov r12, [r12]
 	mov rbx,100
@@ -866,7 +826,7 @@ main:
 	mov r12, 0
 	setle r12B
 	cmp r12, 0
-	je L_6
+	je L_497
 	mov     rsi, t77
 	mov     rdi,  r13
 	push r11
@@ -897,15 +857,7 @@ main:
 	mov [r12],rdx
 	mov     rsi,  r11
 	mov     rdi,  r14
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r12, rax
 	mov r12, [r12]
 	mov     rsi,  r12
@@ -945,9 +897,9 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	jmp L_7
+	jmp L_498
 	
-L_6:
+L_497:
 	mov     rsi, t92
 	mov     rdi,  r13
 	push r11
@@ -978,15 +930,7 @@ L_6:
 	mov [r12],rdx
 	mov     rsi,  r11
 	mov     rdi,  r14
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r12, rax
 	mov r12, [r12]
 	mov     rsi,  r12
@@ -1027,7 +971,7 @@ L_6:
 	pop r10
 	pop r11
 	
-L_7:
+L_498:
 	mov     rdi, 1
 	push r11
 	push r10
@@ -1046,15 +990,7 @@ L_7:
 	mov [r13],rdx
 	mov     rsi,  r12
 	mov     rdi,  r14
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r13, rax
 	mov     rdi, 1
 	push r11
@@ -1074,15 +1010,7 @@ L_7:
 	mov [r12],rdx
 	mov     rsi,  r11
 	mov     rdi,  r14
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r14, rax
 	mov r14, [r14]
 	mov rbx,  [gbl+8*43]
@@ -1114,15 +1042,7 @@ L_7:
 	mov [r11],rdx
 	mov     rsi,  r12
 	mov     rdi,  r14
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r12, rax
 	mov r12, [r12]
 	mov rbx,100
@@ -1130,7 +1050,7 @@ L_7:
 	mov r12, 0
 	setle r12B
 	cmp r12, 0
-	je L_10
+	je L_501
 	mov     rsi, t77
 	mov     rdi,  r13
 	push r11
@@ -1161,15 +1081,7 @@ L_7:
 	mov [r12],rdx
 	mov     rsi,  r11
 	mov     rdi,  r14
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r12, rax
 	mov r12, [r12]
 	mov     rsi,  r12
@@ -1209,9 +1121,9 @@ L_7:
 	pop r9
 	pop r10
 	pop r11
-	jmp L_11
+	jmp L_502
 	
-L_10:
+L_501:
 	mov     rsi, t92
 	mov     rdi,  r13
 	push r11
@@ -1242,15 +1154,7 @@ L_10:
 	mov [r12],rdx
 	mov     rsi,  r11
 	mov     rdi,  r14
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r12, rax
 	mov r12, [r12]
 	mov     rsi,  r12
@@ -1291,7 +1195,7 @@ L_10:
 	pop r10
 	pop r11
 	
-L_11:
+L_502:
 	mov     rdi, 1
 	push r11
 	push r10
@@ -1310,15 +1214,7 @@ L_11:
 	mov [r13],rdx
 	mov     rsi,  r12
 	mov     rdi,  r14
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r13, rax
 	mov     rdi, 1
 	push r11
@@ -1338,15 +1234,7 @@ L_11:
 	mov [r12],rdx
 	mov     rsi,  r11
 	mov     rdi,  r14
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r14, rax
 	mov r14, [r14]
 	mov rbx,  [gbl+8*43]
@@ -1378,15 +1266,7 @@ L_11:
 	mov [r11],rdx
 	mov     rsi,  r12
 	mov     rdi,  r14
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r12, rax
 	mov r12, [r12]
 	mov rbx,100
@@ -1394,7 +1274,7 @@ L_11:
 	mov r12, 0
 	setle r12B
 	cmp r12, 0
-	je L_14
+	je L_505
 	mov     rsi, t77
 	mov     rdi,  r13
 	push r11
@@ -1425,15 +1305,7 @@ L_11:
 	mov [r12],rdx
 	mov     rsi,  r11
 	mov     rdi,  r14
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r12, rax
 	mov r12, [r12]
 	mov     rsi,  r12
@@ -1473,9 +1345,9 @@ L_11:
 	pop r9
 	pop r10
 	pop r11
-	jmp L_15
+	jmp L_506
 	
-L_14:
+L_505:
 	mov     rsi, t92
 	mov     rdi,  r13
 	push r11
@@ -1506,15 +1378,7 @@ L_14:
 	mov [r12],rdx
 	mov     rsi,  r11
 	mov     rdi,  r14
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r12, rax
 	mov r12, [r12]
 	mov     rsi,  r12
@@ -1555,7 +1419,7 @@ L_14:
 	pop r10
 	pop r11
 	
-L_15:
+L_506:
 	mov     rdi, 1
 	push r11
 	push r10
@@ -1574,15 +1438,7 @@ L_15:
 	mov [r13],rdx
 	mov     rsi,  r12
 	mov     rdi,  r14
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r13, rax
 	mov     rdi, 1
 	push r11
@@ -1602,15 +1458,7 @@ L_15:
 	mov [r12],rdx
 	mov     rsi,  r11
 	mov     rdi,  r14
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r14, rax
 	mov r14, [r14]
 	mov rbx,  [gbl+8*43]

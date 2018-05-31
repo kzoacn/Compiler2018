@@ -700,12 +700,12 @@ main:
 	mov rbx,0
 	mov r14,rbx
 	
-L_1351:
+L_1369:
 	cmp r14,r15
 	mov r12, 0
 	setl r12B
 	cmp r12, 0
-	je L_1352
+	je L_1370
 	mov     rdi, 1
 	push r11
 	push r10
@@ -741,15 +741,7 @@ L_1351:
 	mov [r11],rax
 	mov     rsi,  r12
 	mov     rdi,  r13
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r11, rax
 	mov     rdi,  r15
 	push r11
@@ -766,12 +758,12 @@ L_1351:
 	mov rbx,0
 	mov r12,rbx
 	
-L_1354:
+L_1372:
 	cmp r12,r15
 	mov r11, 0
 	setl r11B
 	cmp r11, 0
-	je L_1355
+	je L_1373
 	mov     rdi, 3
 	push r11
 	push r10
@@ -796,15 +788,7 @@ L_1354:
 	mov [r10],r12
 	mov     rsi,  r11
 	mov     rdi,  r13
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r10, rax
 	mov     rdi, 1
 	push r11
@@ -846,15 +830,7 @@ L_1354:
 	mov [r10],rbx
 	mov     rsi,  r11
 	mov     rdi,  r13
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r10, rax
 	mov     rdi,  r15
 	push r11
@@ -871,12 +847,12 @@ L_1354:
 	mov rbx,0
 	mov r11,rbx
 	
-L_1357:
+L_1375:
 	cmp r11,r15
 	mov r10, 0
 	setl r10B
 	cmp r10, 0
-	je L_1358
+	je L_1376
 	mov     rdi, 5
 	push r11
 	push r10
@@ -908,15 +884,7 @@ L_1357:
 	mov [r9],r11
 	mov     rsi,  r10
 	mov     rdi,  r13
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r9, rax
 	mov r10,r14
 	xor r10,r12
@@ -925,21 +893,21 @@ L_1357:
 	mov r10,r11
 	mov rbx,1
 	add r11,rbx
-	jmp L_1357
+	jmp L_1375
 	
-L_1358:
+L_1376:
 	mov r11,r12
 	mov rbx,1
 	add r12,rbx
-	jmp L_1354
+	jmp L_1372
 	
-L_1355:
+L_1373:
 	mov r12,r14
 	mov rbx,1
 	add r14,rbx
-	jmp L_1351
+	jmp L_1369
 	
-L_1352:
+L_1370:
 	mov     rdi, 5
 	push r11
 	push r10
@@ -974,15 +942,7 @@ L_1352:
 	mov [r14],rbx
 	mov     rsi,  r15
 	mov     rdi,  r13
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r14, rax
 	mov r14, [r14]
 	mov rdi,r14

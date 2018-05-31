@@ -715,15 +715,7 @@ main:
 	mov [r12],rdx
 	mov     rsi,  r14
 	mov     rdi,  r13
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r12, rax
 	mov     rdi, 2
 	push r11
@@ -743,15 +735,7 @@ main:
 	lea r11,[r14+rdx*8+8H]
 	mov [r11],r15
 	mov     rdi,  r14
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiArray
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov     qword  r14, rax
 	mov [r12],r14
 	mov     rdi, 3
@@ -780,15 +764,7 @@ main:
 	mov [r12],rbx
 	mov     rsi,  r14
 	mov     rdi,  r13
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r12, rax
 	mov     rdi, 1
 	push r11
@@ -832,15 +808,7 @@ main:
 	mov [r12],rbx
 	mov     rsi,  r14
 	mov     rdi,  r13
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r12, rax
 	mov     rdi,  r15
 	push r11
@@ -888,15 +856,7 @@ main:
 	mov [r14],rbx
 	mov     rsi,  r15
 	mov     rdi,  r13
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r14, rax
 	mov     rdi, 4
 	push r11
@@ -948,15 +908,7 @@ main:
 	mov [r14],rbx
 	mov     rsi,  r15
 	mov     rdi,  r13
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r14, rax
 	mov rbx,5
 	mov [r14],rbx
@@ -998,15 +950,7 @@ main:
 	mov [r14],rbx
 	mov     rsi,  r15
 	mov     rdi,  r13
-	push r11
-	push r10
-	push r9
-	push r8
 	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
 	mov  r14, rax
 	mov r14, [r14]
 	mov rdi,r14
