@@ -684,59 +684,59 @@ main:
 	pop r15
 	mov r15 , rax
 	mov rbx,5
-	mov r14,rbx
+	mov r15,rbx
 	mov rdx,1
-	mov r13,rdx
+	mov r14,rdx
 	mov rax,0
-	mov r15,rax
+	mov r13,rax
 	mov rbx,10
-	cmp r15,rbx
+	cmp r13,rbx
 	mov r12, 0
 	sete r12B
 	cmp r12, 0
-	jne L_1437
+	jne L_1154
 	mov rbx,0
 	mov r12,rbx
-	jmp L_1438
+	jmp L_1155
 	
-L_1437:
+L_1154:
 	xor rdx, rdx
-	mov rax,  r14
-	mov rbx,  r13
+	mov rax,  r15
+	mov rbx,  r14
 	cdq
-	idiv rbx
-	mov  r13, rax
+	idiv ebx
+	mov  r14, rax
 	mov rbx,0
-	cmp r13,rbx
-	mov r13, 0
-	sete r13B
-	mov r12,r13
-	
-L_1438:
-	cmp r12, 0
-	jne L_1439
-	mov rbx,0
-	mov r12,rbx
-	jmp L_1440
-	
-L_1439:
-	mov rbx,5
 	cmp r14,rbx
 	mov r14, 0
 	sete r14B
 	mov r12,r14
 	
-L_1440:
-	mov r14, 0
+L_1155:
 	cmp r12, 0
-	sete r14B
-	cmp r14, 0
-	je L_1442
-	mov rbx,30
-	mov r15,rbx
+	jne L_1156
+	mov rbx,0
+	mov r12,rbx
+	jmp L_1157
 	
-L_1442:
-	mov rdi,r15
+L_1156:
+	mov rbx,5
+	cmp r15,rbx
+	mov r15, 0
+	sete r15B
+	mov r12,r15
+	
+L_1157:
+	mov r15, 0
+	cmp r12, 0
+	sete r15B
+	cmp r15, 0
+	je L_1159
+	mov rbx,30
+	mov r13,rbx
+	
+L_1159:
+	mov rdi,r13
 	mov r15,rdi
 	mov     rdi,  r15
 	push r11

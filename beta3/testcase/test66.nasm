@@ -692,17 +692,17 @@ main:
 	mov r13, 0
 	setne r13B
 	cmp r13, 0
-	jne L_1882
+	jne L_1604
 	mov rbx,0
 	mov r13,rbx
-	jmp L_1883
+	jmp L_1605
 	
-L_1882:
+L_1604:
 	xor rdx, rdx
 	mov rax,  r15
 	mov rbx,  r14
 	cdq
-	idiv rbx
+	idiv ebx
 	mov  r15, rax
 	mov rbx,5
 	cmp r15,rbx
@@ -710,9 +710,9 @@ L_1882:
 	setl r15B
 	mov r13,r15
 	
-L_1883:
+L_1605:
 	cmp r13, 0
-	je L_1884
+	je L_1606
 	mov rbx,t71
 	mov rdi,rbx
 	mov r15,rdi
@@ -727,9 +727,9 @@ L_1883:
 	pop r9
 	pop r10
 	pop r11
-	jmp L_1885
+	jmp L_1607
 	
-L_1884:
+L_1606:
 	mov rbx,t75
 	mov rdi,rbx
 	mov r15,rdi
@@ -745,7 +745,7 @@ L_1884:
 	pop r10
 	pop r11
 	
-L_1885:
+L_1607:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

@@ -684,18 +684,18 @@ main:
 	pop r15
 	mov r15 , rax
 	mov rbx,1
-	mov r14,rbx
+	mov r15,rbx
 	mov rdx,1
-	mov r15,rdx
+	mov r14,rdx
 	
-L_989:
+L_701:
 	mov rbx,25
-	cmp r15,rbx
+	cmp r14,rbx
 	mov r13, 0
 	setl r13B
 	cmp r13, 0
-	je L_990
-	mov rdi,r15
+	je L_702
+	mov rdi,r14
 	mov r13,rdi
 	mov     rdi,  r13
 	push r11
@@ -721,13 +721,13 @@ L_989:
 	pop r9
 	pop r10
 	pop r11
-	add r14,r15
-	mov r13,r14
-	mov r14,r15
-	mov r15,r13
-	jmp L_989
+	add r15,r14
+	mov r13,r15
+	mov r15,r14
+	mov r14,r13
+	jmp L_701
 	
-L_990:
+L_702:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

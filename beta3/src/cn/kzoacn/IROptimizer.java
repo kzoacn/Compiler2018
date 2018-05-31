@@ -312,7 +312,7 @@ public class IROptimizer {
 //        Random random=new Random(0);
 //        for(Variable var:variables)
 //            colorMap.put(var.name,random.nextInt(registerNumber)+1);
-
+/*
         ArrayList<Variable>arrayList=new ArrayList<Variable>(variables);
         arrayList.sort((var1, var2) -> graph.get(var2).size() - graph.get(var1).size());
         for(Variable var:arrayList){
@@ -346,7 +346,7 @@ public class IROptimizer {
                 }
             }
 
-        /*
+*/
         while(variables.size()>0){
             ArrayList<Variable>newColor=new ArrayList<Variable>();
             for(Variable var : variables){
@@ -377,9 +377,8 @@ public class IROptimizer {
             }
         }
 
-        boolean[] used=new boolean[10];
         for(int i=0;i<10;i++)used[i]=false;
-        Collections.shuffle(color,new Random(3));
+//        Collections.shuffle(color,new Random(3));
         for(Variable var:color){
             for(int i=0;i<10;i++)visit[i]=false;
             for(Variable var2:graph.get(var))if(colorMap.containsKey(var2.name))
@@ -394,9 +393,9 @@ public class IROptimizer {
             if(mex>registerNumber)mex=0;
             //if(used[mex])continue;
             used[mex]=true;
-            colorMap.put(var.name,mex);
+            if(mex>0)colorMap.put(var.name,mex);
         }
-*/
+
 
         cur=ir.head;
         line_number=0;

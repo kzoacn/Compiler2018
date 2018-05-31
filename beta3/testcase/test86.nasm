@@ -684,33 +684,34 @@ main:
 	pop r15
 	mov r15 , rax
 	mov rbx,3
-	mov r15,rbx
-	mov r14,r15
+	mov r12,rbx
+	mov r15,r12
 	mov rdx,1
-	add r15,rdx
+	add r12,rdx
 	mov rax,0
-	mov r14,rax
+	mov r11,rax
 	mov rbx,0
 	mov r13,rbx
 	mov rbx,0
-	mov r14,rbx
+	mov r11,rbx
 	
-L_2737:
+L_3503:
 	mov rbx,5
-	cmp r14,rbx
-	mov r12, 0
-	setl r12B
-	cmp r12, 0
-	je L_2738
+	cmp r11,rbx
+	mov r15, 0
+	setl r15B
+	cmp r15, 0
+	je L_3504
+	mov r15,r12
 	add r15,r13
-	mov r15,r15
+	mov r12,r15
 	mov rbx,1
-	mov r13,r14
-	add r13,rbx
-	mov r13,r13
-	mov rdi,r14
-	mov r12,rdi
-	mov     rdi,  r12
+	mov r15,r11
+	add r15,rbx
+	mov r13,r15
+	mov rdi,r11
+	mov r15,rdi
+	mov     rdi,  r15
 	push r11
 	push r10
 	push r9
@@ -720,10 +721,10 @@ L_2737:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r12, rax
-	mov rdi,r12
-	mov r12,rdi
-	mov rdi, r12 
+	mov     qword r15, rax
+	mov rdi,r15
+	mov r15,rdi
+	mov rdi, r15 
 	add rdi, 1 
 	push r11
 	push r10
@@ -734,9 +735,9 @@ L_2737:
 	pop r9
 	pop r10
 	pop r11
-	mov rdi,r15
-	mov r12,rdi
-	mov     rdi,  r12
+	mov rdi,r12
+	mov r15,rdi
+	mov     rdi,  r15
 	push r11
 	push r10
 	push r9
@@ -746,10 +747,10 @@ L_2737:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r12, rax
-	mov rdi,r12
-	mov r12,rdi
-	mov rdi, r12 
+	mov     qword r15, rax
+	mov rdi,r15
+	mov r15,rdi
+	mov rdi, r15 
 	add rdi, 1 
 	push r11
 	push r10
@@ -761,8 +762,8 @@ L_2737:
 	pop r10
 	pop r11
 	mov rdi,r13
-	mov r12,rdi
-	mov     rdi,  r12
+	mov r15,rdi
+	mov     rdi,  r15
 	push r11
 	push r10
 	push r9
@@ -772,10 +773,10 @@ L_2737:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r12, rax
-	mov rdi,r12
-	mov r12,rdi
-	mov rdi, r12 
+	mov     qword r15, rax
+	mov rdi,r15
+	mov r15,rdi
+	mov rdi, r15 
 	add rdi, 1 
 	push r11
 	push r10
@@ -787,16 +788,16 @@ L_2737:
 	pop r10
 	pop r11
 	mov rsi,r13
-	mov rdi,r15
-	mov r12,rdi
-	mov r11,rsi
-	add r12,r11
-	mov r12,r12
-	mov r12,r12
-	mov r12,r12
 	mov rdi,r12
-	mov r12,rdi
-	mov     rdi,  r12
+	mov r15,rdi
+	mov r14,rsi
+	add r15,r14
+	mov r15,r15
+	mov r15,r15
+	mov r15,r15
+	mov rdi,r15
+	mov r15,rdi
+	mov     rdi,  r15
 	push r11
 	push r10
 	push r9
@@ -806,10 +807,10 @@ L_2737:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r12, rax
-	mov rdi,r12
-	mov r12,rdi
-	mov rdi, r12 
+	mov     qword r15, rax
+	mov rdi,r15
+	mov r15,rdi
+	mov rdi, r15 
 	add rdi, 1 
 	push r11
 	push r10
@@ -820,12 +821,12 @@ L_2737:
 	pop r9
 	pop r10
 	pop r11
-	mov r12,r14
+	mov r15,r11
 	mov rbx,1
-	add r14,rbx
-	jmp L_2737
+	add r11,rbx
+	jmp L_3503
 	
-L_2738:
+L_3504:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

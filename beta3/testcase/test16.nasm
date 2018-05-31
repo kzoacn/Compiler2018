@@ -713,16 +713,16 @@ main:
 	pop r10
 	pop r11
 	mov     qword  r14, rax
+	mov r14,r14
 	mov r15,r14
-	mov r14,r15
 	mov rbx,0
-	lea r14,[r14+rbx*8+8H]
-	mov r14, [r14]
+	lea r15,[r15+rbx*8+8H]
+	mov r15, [r15]
 	mov rdx,0
-	lea r14,[r14+rdx*8+8H]
+	lea r15,[r15+rdx*8+8H]
 	mov rax,2
-	mov [r14],rax
-	mov r15,r15
+	mov [r15],rax
+	mov r15,r14
 	mov rbx,0
 	lea r15,[r15+rbx*8+8H]
 	mov r15, [r15]

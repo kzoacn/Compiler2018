@@ -661,13 +661,13 @@ f:
 	mov r14, 0
 	setle r14B
 	cmp r14, 0
-	je L_1464
+	je L_1181
 	mov rbx,0
 	mov rax,rbx
 	leave
 	ret
 	
-L_1464:
+L_1181:
 	mov rbx,t68
 	mov rdi,rbx
 	mov r14,rdi
@@ -726,24 +726,24 @@ g:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 272
-	mov r15,rdi
+	mov r14,rdi
 	mov rbx,0
-	cmp r15,rbx
-	mov r14, 0
-	setle r14B
-	cmp r14, 0
-	je L_1466
+	cmp r14,rbx
+	mov r15, 0
+	setle r15B
+	cmp r15, 0
+	je L_1183
 	mov rbx,0
 	mov rax,rbx
 	leave
 	ret
 	
-L_1466:
+L_1183:
 	mov rbx,t85
 	mov rdi,rbx
-	mov r14,rdi
+	mov r15,rdi
 	mov rdi, format
-	mov rsi, r14 
+	mov rsi, r15 
 	add rsi, 1 
 	xor rax, rax
 	push r11
@@ -755,9 +755,9 @@ L_1466:
 	pop r9
 	pop r10
 	pop r11
-	mov rdi,r15
-	mov r14,rdi
-	mov     rdi,  r14
+	mov rdi,r14
+	mov r15,rdi
+	mov     rdi,  r15
 	push r11
 	push r10
 	push r9
@@ -767,10 +767,10 @@ L_1466:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r14, rax
-	mov rdi,r14
-	mov r14,rdi
-	mov rdi, r14 
+	mov     qword r15, rax
+	mov rdi,r15
+	mov r15,rdi
+	mov rdi, r15 
 	add rdi, 1 
 	push r11
 	push r10
@@ -782,8 +782,8 @@ L_1466:
 	pop r10
 	pop r11
 	mov rbx,1
-	sub r15,rbx
-	mov rdi,r15
+	sub r14,rbx
+	mov rdi,r14
 	push r15
 	call h
 	pop r15
@@ -803,13 +803,13 @@ h:
 	mov r14, 0
 	setle r14B
 	cmp r14, 0
-	je L_1468
+	je L_1185
 	mov rbx,0
 	mov rax,rbx
 	leave
 	ret
 	
-L_1468:
+L_1185:
 	mov rbx,t102
 	mov rdi,rbx
 	mov r14,rdi

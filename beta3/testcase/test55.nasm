@@ -708,11 +708,11 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword  r14, rax
-	mov r13,r15
+	mov     qword  r13, rax
+	mov r14,r15
 	mov rbx,0
-	lea r13,[r13+rbx*8+8H]
-	mov [r13],r14
+	lea r14,[r14+rbx*8+8H]
+	mov [r14],r13
 	mov r15,r15
 	mov rdx,0
 	lea r15,[r15+rdx*8+8H]
