@@ -690,33 +690,33 @@ main:
 	mov rdx,2
 	mov rdi,rdx
 	mov r15,rdi
-	mov r13,rsi
-	mov r14,rbx
+	mov r14,rsi
+	mov r13,rbx
 	mov qword [arg+8*2],rbx
 	mov rbx,1
 	mov r12,rbx
 	mov r11,r15
 	
 L_1137:
-	cmp r13,0
+	cmp r14,0
 	mov r15, 0
 	setg r15B
 	cmp r15, 0
 	je L_1138
 	mov rbx,1
-	mov r15,r13
+	mov r15,r14
 	and r15,rbx
 	mov rdx,1
 	cmp r15,rdx
-	mov r15, 0
-	sete r15B
-	cmp r15, 0
+	mov r10, 0
+	sete r10B
+	cmp r10, 0
 	je L_1139
 	mov r15,r12
 	imul r15,r11
 	xor rdx, rdx
 	mov rax,  r15
-	mov rbx,  r14
+	mov rbx,  r13
 	cdq
 	idiv ebx
 	mov  r15, rdx
@@ -727,24 +727,24 @@ L_1139:
 	imul r15,r11
 	xor rdx, rdx
 	mov rax,  r15
-	mov rbx,  r14
+	mov rbx,  r13
 	cdq
 	idiv ebx
 	mov  r15, rdx
 	mov r11,r15
 	xor rdx, rdx
-	mov rax,  r13
+	mov rax,  r14
 	mov rbx, 2
 	cdq
 	idiv ebx
 	mov  r15, rax
-	mov r13,r15
+	mov r14,r15
 	jmp L_1137
 	
 L_1138:
 	mov r15,r12
-	mov r15,r15
-	mov rdi,r15
+	mov r14,r15
+	mov rdi,r14
 	mov r15,rdi
 	mov     rdi,  r15
 	push r11
@@ -756,8 +756,8 @@ L_1138:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r15, rax
-	mov rdi,r15
+	mov     qword r14, rax
+	mov rdi,r14
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 

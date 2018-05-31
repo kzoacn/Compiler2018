@@ -697,8 +697,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r15, rax
-	mov     rsi,  r15
+	mov     qword r14, rax
+	mov     rsi,  r14
 	mov     rdi, t65
 	push r11
 	push r10

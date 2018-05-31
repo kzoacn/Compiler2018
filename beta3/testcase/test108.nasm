@@ -739,13 +739,13 @@ main:
 	pop r11
 	mov rbx,0
 	mov r15,rbx
-	mov r15,r15
+	mov r14,r15
 	mov rdx,0
 	mov r15,rdx
-	mov r15,r15
+	mov r14,r15
 	mov rax,0
 	mov r15,rax
-	mov r15,r15
+	mov r14,r15
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

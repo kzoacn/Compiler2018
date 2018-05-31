@@ -655,98 +655,98 @@ dfs:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 248
-	mov r12,rdi
+	mov r15,rdi
 	mov rbx,250
-	cmp r12,rbx
+	cmp r15,rbx
 	mov r14, 0
 	setl r14B
-	cmp r12,0
-	mov r15, 0
-	setg r15B
-	mov r13,r14
-	and r13,r15
-	cmp r13, 0
+	cmp r15,0
+	mov r13, 0
+	setg r13B
+	mov r12,r14
+	and r12,r13
+	cmp r12, 0
 	je L_1336
 	mov rbx,  [gbl+8*6]
-	lea r15,[rbx+r12*8+8H]
-	mov r14, [r15]
-	cmp r14,0
-	mov r15, 0
-	setg r15B
-	cmp r15, 0
+	lea r14,[rbx+r15*8+8H]
+	mov r13, [r14]
+	cmp r13,0
+	mov r11, 0
+	setg r11B
+	cmp r11, 0
 	je L_1336
-	cmp r13, 0
+	cmp r12, 0
 	je L_1337
 	mov rbx,  [gbl+8*6]
-	lea r15,[rbx+r12*8+8H]
-	mov [r15],r14
+	lea r14,[rbx+r15*8+8H]
+	mov [r14],r13
 	
 L_1337:
-	mov rax,r14
+	mov rax,r13
 	leave
 	ret
 	
 L_1336:
-	mov r10,rdi
+	mov r13,rdi
 	mov rbx,0
-	mov r14,rbx
+	mov r11,rbx
 	mov rdx,1
-	mov r11,rdx
+	mov r10,rdx
 	
 L_1332:
 	mov rbx,1
 	cmp rbx, 0
 	je L_1333
-	mov r15,r11
+	mov r9,r10
 	mov rbx,1
-	add r11,rbx
-	mov r15,r14
-	add r15,r11
-	mov r14,r15
-	cmp r11,r10
-	mov r15, 0
-	sete r15B
-	cmp r15, 0
+	add r10,rbx
+	mov r9,r11
+	add r9,r10
+	mov r11,r9
+	cmp r10,r13
+	mov r9, 0
+	sete r9B
+	cmp r9, 0
 	je L_1335
-	cmp r13, 0
+	cmp r12, 0
 	je L_1338
 	mov rbx,  [gbl+8*6]
-	lea r15,[rbx+r12*8+8H]
-	mov [r15],r14
+	lea r14,[rbx+r15*8+8H]
+	mov [r14],r11
 	
 L_1338:
-	mov rax,r14
+	mov rax,r11
 	leave
 	ret
 	
 L_1335:
 	mov rbx,1
-	mov r15,r10
-	sub r15,rbx
-	mov rdi,r15
+	mov r9,r13
+	sub r9,rbx
+	mov rdi,r9
 	push r15
-	push r14
 	push r13
 	push r12
 	push r11
 	push r10
+	push r9
 	call dfs
+	pop r9
 	pop r10
 	pop r11
 	pop r12
 	pop r13
-	pop r14
 	pop r15
-	mov r15 , rax
+	mov r9 , rax
 	jmp L_1332
 	
 L_1333:
-	cmp r13, 0
+	cmp r12, 0
 	je L_1339
 	mov rbx,  [gbl+8*6]
-	lea r15,[rbx+r12*8+8H]
+	lea r14,[rbx+r15*8+8H]
 	mov rdx,0
-	mov [r15],rdx
+	mov [r14],rdx
 	
 L_1339:
 	mov rbx,0
@@ -815,8 +815,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r15, rax
-	mov rdi,r15
+	mov     qword r14, rax
+	mov rdi,r14
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 

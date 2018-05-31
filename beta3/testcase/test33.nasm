@@ -705,9 +705,9 @@ L_1154:
 	mov rbx,  r14
 	cdq
 	idiv ebx
-	mov  r14, rax
+	mov  r11, rax
 	mov rbx,0
-	cmp r14,rbx
+	cmp r11,rbx
 	mov r14, 0
 	sete r14B
 	mov r12,r14
@@ -722,9 +722,9 @@ L_1155:
 L_1156:
 	mov rbx,5
 	cmp r15,rbx
-	mov r15, 0
-	sete r15B
-	mov r12,r15
+	mov r14, 0
+	sete r14B
+	mov r12,r14
 	
 L_1157:
 	mov r15, 0
@@ -748,8 +748,8 @@ L_1159:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r15, rax
-	mov rdi,r15
+	mov     qword r14, rax
+	mov rdi,r14
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 

@@ -696,446 +696,477 @@ main:
 	mov r15 , rax
 	mov rbx,0
 	mov r15,rbx
-	mov r15,r15
-	mov r15,r15
-	mov r15,r15
-	mov r15,r15
-	mov r15,r15
-	mov r15,r15
-	mov r15,r15
-	mov r15,r15
-	mov rdx,350
-	mov r14,rdx
-	mov rbx,0
-	mov rax,rbx
-	mov rbx,0
-	mov r15,rbx
-	mov r15,r15
-	mov r15,r15
-	mov r15,r15
-	mov r15,r15
-	mov r15,r15
-	mov r15,r15
-	mov r15,r15
-	mov r15,r15
-	mov r15,r15
-	mov r15,r15
-	mov rbx,0
-	mov r10,rbx
-	mov qword [rsp+8*13],rax
+	mov r14,r15
+	mov r15,r14
+	mov r14,r15
+	mov r15,r14
+	mov r14,r15
+	mov r15,r14
+	mov r14,r15
+	mov r15,r14
+	mov rax,350
+	mov rdx,rax
+	mov rax,0
+	mov rbx,rax
+	mov rax,0
+	mov r13,rax
+	mov r12,r13
+	mov r13,r12
+	mov r12,r13
+	mov r13,r12
+	mov r12,r13
+	mov r13,r12
+	mov r12,r13
+	mov r13,r12
+	mov r12,r13
+	mov r13,r12
+	mov qword [rsp+8*12],rdx
+	mov rdx,0
+	mov rax,rdx
+	mov qword [rsp+8*13],rbx
+	mov qword [rsp+8*25],rax
 	
 L_491:
-	cmp r10,r14
-	mov r15, 0
-	setl r15B
-	cmp r15, 0
+	mov rbx,  [rsp+8*25]
+	mov rdx,  [rsp+8*12]
+	cmp rbx,rdx
+	mov r12, 0
+	setl r12B
+	cmp r12, 0
 	je L_492
-	mov rbx,0
-	mov r13,rbx
+	mov rdx,0
+	mov rbx,rdx
+	mov qword [rsp+8*27],rbx
 	
 L_494:
-	cmp r13,r14
-	mov r15, 0
-	setl r15B
-	cmp r15, 0
+	mov rbx,  [rsp+8*27]
+	mov rdx,  [rsp+8*12]
+	cmp rbx,rdx
+	mov r11, 0
+	setl r11B
+	cmp r11, 0
 	je L_495
-	mov rbx,0
-	mov r12,rbx
+	mov rdx,0
+	mov rbx,rdx
+	mov qword [rsp+8*29],rbx
 	
 L_497:
-	cmp r12,r14
-	mov r15, 0
-	setl r15B
-	cmp r15, 0
+	mov rbx,  [rsp+8*29]
+	mov rdx,  [rsp+8*12]
+	cmp rbx,rdx
+	mov r10, 0
+	setl r10B
+	cmp r10, 0
 	je L_498
-	cmp r10,0
-	mov r15, 0
-	setg r15B
-	cmp r15, 0
+	mov rbx,  [rsp+8*25]
+	cmp rbx,0
+	mov r10, 0
+	setg r10B
+	cmp r10, 0
 	jne L_500
 	mov rbx,0
-	mov r15,rbx
+	mov r10,rbx
 	jmp L_501
 	
 L_500:
 	xor rdx, rdx
-	mov rax,  r10
+	mov rax, [rsp+8*25]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov  r15, rdx
+	mov  r9, rdx
 	mov rbx,0
-	cmp r15,rbx
-	mov r15, 0
-	sete r15B
-	mov r15,r15
+	cmp r9,rbx
+	mov r8, 0
+	sete r8B
+	mov r10,r8
 	
 L_501:
-	cmp r15, 0
+	cmp r10, 0
 	je L_504
 	mov rbx,1
-	mov r15,rbx
+	mov r10,rbx
 	jmp L_505
 	
 L_504:
-	cmp r13,0
-	mov r15, 0
-	setg r15B
-	cmp r15, 0
+	mov rbx,  [rsp+8*27]
+	cmp rbx,0
+	mov r9, 0
+	setg r9B
+	cmp r9, 0
 	jne L_502
 	mov rbx,0
-	mov r15,rbx
+	mov r9,rbx
 	jmp L_503
 	
 L_502:
 	xor rdx, rdx
-	mov rax,  r13
+	mov rax, [rsp+8*27]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov  r15, rdx
+	mov  r8, rdx
 	mov rbx,0
-	cmp r15,rbx
-	mov r15, 0
-	sete r15B
-	mov r15,r15
+	cmp r8,rbx
+	mov r13, 0
+	sete r13B
+	mov r9,r13
 	
 L_503:
-	mov r15,r15
+	mov r10,r9
 	
 L_505:
-	cmp r15, 0
+	cmp r10, 0
 	je L_508
 	mov rbx,1
-	mov r15,rbx
+	mov r10,rbx
 	jmp L_509
 	
 L_508:
-	cmp r12,0
-	mov r15, 0
-	setg r15B
-	cmp r15, 0
+	mov rbx,  [rsp+8*29]
+	cmp rbx,0
+	mov r13, 0
+	setg r13B
+	cmp r13, 0
 	jne L_506
 	mov rbx,0
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_507
 	
 L_506:
 	xor rdx, rdx
-	mov rax,  r12
+	mov rax, [rsp+8*29]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov  r15, rdx
+	mov  r9, rdx
 	mov rbx,0
-	cmp r15,rbx
-	mov r15, 0
-	sete r15B
-	mov r15,r15
+	cmp r9,rbx
+	mov r8, 0
+	sete r8B
+	mov r13,r8
 	
 L_507:
-	mov r15,r15
+	mov r10,r13
 	
 L_509:
-	cmp r15, 0
+	cmp r10, 0
 	je L_512
 	mov rbx,1
-	mov r15,rbx
+	mov r10,rbx
 	jmp L_513
 	
 L_512:
-	mov r15,r10
-	add r15,r13
-	add r15,r12
-	cmp r15,0
-	mov r15, 0
-	setg r15B
-	cmp r15, 0
+	mov rbx,  [rsp+8*25]
+	mov rdx,  [rsp+8*27]
+	mov r13,rbx
+	add r13,rdx
+	mov rax,  [rsp+8*29]
+	add r13,rax
+	cmp r13,0
+	mov r13, 0
+	setg r13B
+	cmp r13, 0
 	jne L_510
 	mov rbx,0
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_511
 	
 L_510:
 	xor rdx, rdx
-	mov rax,  r12
+	mov rax, [rsp+8*29]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov  r15, rdx
+	mov  r9, rdx
 	mov rbx,0
-	cmp r15,rbx
-	mov r15, 0
-	sete r15B
-	mov r15,r15
+	cmp r9,rbx
+	mov r8, 0
+	sete r8B
+	mov r13,r8
 	
 L_511:
-	mov r15,r15
+	mov r10,r13
 	
 L_513:
-	cmp r15, 0
+	cmp r10, 0
 	je L_516
 	mov rbx,1
-	mov r15,rbx
+	mov r10,rbx
 	jmp L_517
 	
 L_516:
-	mov r15,r10
-	imul r15,r13
-	imul r15,r12
-	cmp r15,0
-	mov r15, 0
-	setg r15B
-	cmp r15, 0
+	mov rbx,  [rsp+8*25]
+	mov rdx,  [rsp+8*27]
+	mov r13,rbx
+	imul r13,rdx
+	mov rax,  [rsp+8*29]
+	imul r13,rax
+	cmp r13,0
+	mov r13, 0
+	setg r13B
+	cmp r13, 0
 	jne L_514
 	mov rbx,0
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_515
 	
 L_514:
 	xor rdx, rdx
-	mov rax,  r12
+	mov rax, [rsp+8*29]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov  r15, rdx
+	mov  r9, rdx
 	mov rbx,0
-	cmp r15,rbx
-	mov r15, 0
-	sete r15B
-	mov r15,r15
+	cmp r9,rbx
+	mov r8, 0
+	sete r8B
+	mov r13,r8
 	
 L_515:
-	mov r15,r15
+	mov r10,r13
 	
 L_517:
-	mov r11,r15
-	cmp r10,0
-	mov r15, 0
-	setg r15B
-	cmp r15, 0
+	mov r13,r10
+	mov rbx,  [rsp+8*25]
+	cmp rbx,0
+	mov r10, 0
+	setg r10B
+	cmp r10, 0
 	jne L_518
 	mov rbx,0
-	mov r15,rbx
+	mov r10,rbx
 	jmp L_519
 	
 L_518:
 	xor rdx, rdx
-	mov rax,  r10
+	mov rax, [rsp+8*25]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov  r15, rdx
+	mov  r9, rdx
 	mov rbx,0
-	cmp r15,rbx
-	mov r15, 0
-	sete r15B
-	mov r15,r15
+	cmp r9,rbx
+	mov r8, 0
+	sete r8B
+	mov r10,r8
 	
 L_519:
-	cmp r15, 0
+	cmp r10, 0
 	je L_522
 	mov rbx,1
-	mov r15,rbx
+	mov r10,rbx
 	jmp L_523
 	
 L_522:
-	cmp r13,0
-	mov r15, 0
-	setg r15B
-	cmp r15, 0
+	mov rbx,  [rsp+8*27]
+	cmp rbx,0
+	mov r9, 0
+	setg r9B
+	cmp r9, 0
 	jne L_520
 	mov rbx,0
-	mov r15,rbx
+	mov r9,rbx
 	jmp L_521
 	
 L_520:
 	xor rdx, rdx
-	mov rax,  r13
+	mov rax, [rsp+8*27]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov  r15, rdx
+	mov  r8, rdx
 	mov rbx,0
-	cmp r15,rbx
-	mov r15, 0
-	sete r15B
-	mov r15,r15
+	cmp r8,rbx
+	mov r14, 0
+	sete r14B
+	mov r9,r14
 	
 L_521:
-	mov r15,r15
+	mov r10,r9
 	
 L_523:
-	cmp r15, 0
+	cmp r10, 0
 	je L_526
 	mov rbx,1
-	mov r15,rbx
+	mov r10,rbx
 	jmp L_527
 	
 L_526:
-	cmp r12,0
-	mov r15, 0
-	setg r15B
-	cmp r15, 0
+	mov rbx,  [rsp+8*29]
+	cmp rbx,0
+	mov r14, 0
+	setg r14B
+	cmp r14, 0
 	jne L_524
 	mov rbx,0
-	mov r15,rbx
+	mov r14,rbx
 	jmp L_525
 	
 L_524:
 	xor rdx, rdx
-	mov rax,  r12
+	mov rax, [rsp+8*29]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov  r15, rdx
+	mov  r9, rdx
 	mov rbx,0
-	cmp r15,rbx
-	mov r15, 0
-	sete r15B
-	mov r15,r15
+	cmp r9,rbx
+	mov r8, 0
+	sete r8B
+	mov r14,r8
 	
 L_525:
-	mov r15,r15
+	mov r10,r14
 	
 L_527:
-	cmp r15, 0
+	cmp r10, 0
 	je L_530
 	mov rbx,1
-	mov r15,rbx
+	mov r10,rbx
 	jmp L_531
 	
 L_530:
-	mov r15,r10
-	add r15,r13
-	add r15,r12
-	cmp r15,0
-	mov r15, 0
-	setg r15B
-	cmp r15, 0
+	mov rbx,  [rsp+8*25]
+	mov rdx,  [rsp+8*27]
+	mov r14,rbx
+	add r14,rdx
+	mov rax,  [rsp+8*29]
+	add r14,rax
+	cmp r14,0
+	mov r14, 0
+	setg r14B
+	cmp r14, 0
 	jne L_528
 	mov rbx,0
-	mov r15,rbx
+	mov r14,rbx
 	jmp L_529
 	
 L_528:
 	xor rdx, rdx
-	mov rax,  r12
+	mov rax, [rsp+8*29]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov  r15, rdx
+	mov  r9, rdx
 	mov rbx,0
-	cmp r15,rbx
-	mov r15, 0
-	sete r15B
-	mov r15,r15
+	cmp r9,rbx
+	mov r8, 0
+	sete r8B
+	mov r14,r8
 	
 L_529:
-	mov r15,r15
+	mov r10,r14
 	
 L_531:
-	cmp r15, 0
+	cmp r10, 0
 	je L_534
 	mov rbx,1
-	mov r15,rbx
+	mov r10,rbx
 	jmp L_535
 	
 L_534:
-	mov r15,r10
-	imul r15,r13
-	imul r15,r12
-	cmp r15,0
-	mov r15, 0
-	setg r15B
-	cmp r15, 0
+	mov rbx,  [rsp+8*25]
+	mov rdx,  [rsp+8*27]
+	mov r14,rbx
+	imul r14,rdx
+	mov rax,  [rsp+8*29]
+	imul r14,rax
+	cmp r14,0
+	mov r14, 0
+	setg r14B
+	cmp r14, 0
 	jne L_532
 	mov rbx,0
-	mov r15,rbx
+	mov r14,rbx
 	jmp L_533
 	
 L_532:
 	xor rdx, rdx
-	mov rax,  r12
+	mov rax, [rsp+8*29]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov  r15, rdx
+	mov  r9, rdx
 	mov rbx,0
-	cmp r15,rbx
-	mov r15, 0
-	sete r15B
-	mov r15,r15
+	cmp r9,rbx
+	mov r8, 0
+	sete r8B
+	mov r14,r8
 	
 L_533:
-	mov r15,r15
+	mov r10,r14
 	
 L_535:
-	mov r9,r15
-	cmp r10,0
-	mov r15, 0
-	setg r15B
-	cmp r15, 0
+	mov r14,r10
+	mov rbx,  [rsp+8*25]
+	cmp rbx,0
+	mov r10, 0
+	setg r10B
+	cmp r10, 0
 	jne L_536
 	mov rbx,0
-	mov r15,rbx
+	mov r10,rbx
 	jmp L_537
 	
 L_536:
 	xor rdx, rdx
-	mov rax,  r10
+	mov rax, [rsp+8*25]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov  r15, rdx
+	mov  r9, rdx
 	mov rbx,0
-	cmp r15,rbx
-	mov r15, 0
-	sete r15B
-	mov r15,r15
+	cmp r9,rbx
+	mov r8, 0
+	sete r8B
+	mov r10,r8
 	
 L_537:
-	cmp r15, 0
+	cmp r10, 0
 	je L_540
 	mov rbx,1
-	mov r15,rbx
+	mov r10,rbx
 	jmp L_541
 	
 L_540:
-	cmp r13,0
-	mov r15, 0
-	setg r15B
-	cmp r15, 0
+	mov rbx,  [rsp+8*27]
+	cmp rbx,0
+	mov r9, 0
+	setg r9B
+	cmp r9, 0
 	jne L_538
 	mov rbx,0
-	mov r15,rbx
+	mov r9,rbx
 	jmp L_539
 	
 L_538:
 	xor rdx, rdx
-	mov rax,  r13
+	mov rax, [rsp+8*27]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov  r15, rdx
+	mov  r8, rdx
 	mov rbx,0
-	cmp r15,rbx
+	cmp r8,rbx
 	mov r15, 0
 	sete r15B
-	mov r15,r15
+	mov r9,r15
 	
 L_539:
-	mov r15,r15
+	mov r10,r9
 	
 L_541:
-	cmp r15, 0
+	cmp r10, 0
 	je L_544
 	mov rbx,1
-	mov r15,rbx
+	mov r10,rbx
 	jmp L_545
 	
 L_544:
-	cmp r12,0
+	mov rbx,  [rsp+8*29]
+	cmp rbx,0
 	mov r15, 0
 	setg r15B
 	cmp r15, 0
@@ -1146,31 +1177,34 @@ L_544:
 	
 L_542:
 	xor rdx, rdx
-	mov rax,  r12
+	mov rax, [rsp+8*29]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov  r15, rdx
+	mov  r9, rdx
 	mov rbx,0
-	cmp r15,rbx
-	mov r15, 0
-	sete r15B
-	mov r15,r15
+	cmp r9,rbx
+	mov r8, 0
+	sete r8B
+	mov r15,r8
 	
 L_543:
-	mov r15,r15
+	mov r10,r15
 	
 L_545:
-	cmp r15, 0
+	cmp r10, 0
 	je L_548
 	mov rbx,1
-	mov r15,rbx
+	mov r10,rbx
 	jmp L_549
 	
 L_548:
-	mov r15,r10
-	add r15,r13
-	add r15,r12
+	mov rbx,  [rsp+8*25]
+	mov rdx,  [rsp+8*27]
+	mov r15,rbx
+	add r15,rdx
+	mov rax,  [rsp+8*29]
+	add r15,rax
 	cmp r15,0
 	mov r15, 0
 	setg r15B
@@ -1182,31 +1216,34 @@ L_548:
 	
 L_546:
 	xor rdx, rdx
-	mov rax,  r12
+	mov rax, [rsp+8*29]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov  r15, rdx
+	mov  r9, rdx
 	mov rbx,0
-	cmp r15,rbx
-	mov r15, 0
-	sete r15B
-	mov r15,r15
+	cmp r9,rbx
+	mov r8, 0
+	sete r8B
+	mov r15,r8
 	
 L_547:
-	mov r15,r15
+	mov r10,r15
 	
 L_549:
-	cmp r15, 0
+	cmp r10, 0
 	je L_552
 	mov rbx,1
-	mov r15,rbx
+	mov r10,rbx
 	jmp L_553
 	
 L_552:
-	mov r15,r10
-	imul r15,r13
-	imul r15,r12
+	mov rbx,  [rsp+8*25]
+	mov rdx,  [rsp+8*27]
+	mov r15,rbx
+	imul r15,rdx
+	mov rax,  [rsp+8*29]
+	imul r15,rax
 	cmp r15,0
 	mov r15, 0
 	setg r15B
@@ -1218,611 +1255,555 @@ L_552:
 	
 L_550:
 	xor rdx, rdx
-	mov rax,  r12
+	mov rax, [rsp+8*29]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov  r15, rdx
+	mov  r9, rdx
 	mov rbx,0
-	cmp r15,rbx
-	mov r15, 0
-	sete r15B
-	mov r15,r15
+	cmp r9,rbx
+	mov r8, 0
+	sete r8B
+	mov r15,r8
 	
 L_551:
-	mov r15,r15
+	mov r10,r15
 	
 L_553:
-	mov r8,r15
-	cmp r10,0
-	mov r15, 0
-	setg r15B
-	cmp r15, 0
+	mov r15,r10
+	mov rbx,  [rsp+8*25]
+	cmp rbx,0
+	mov r10, 0
+	setg r10B
+	cmp r10, 0
 	jne L_554
 	mov rbx,0
-	mov r15,rbx
+	mov r10,rbx
 	jmp L_555
 	
 L_554:
 	xor rdx, rdx
-	mov rax,  r10
+	mov rax, [rsp+8*25]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov  r15, rdx
+	mov  r9, rdx
 	mov rbx,0
-	cmp r15,rbx
-	mov r15, 0
-	sete r15B
-	mov r15,r15
+	cmp r9,rbx
+	mov r8, 0
+	sete r8B
+	mov r10,r8
 	
 L_555:
-	cmp r15, 0
+	cmp r10, 0
 	je L_558
 	mov rbx,1
-	mov r15,rbx
+	mov r10,rbx
 	jmp L_559
 	
 L_558:
-	cmp r13,0
-	mov r15, 0
-	setg r15B
-	cmp r15, 0
+	mov rbx,  [rsp+8*27]
+	cmp rbx,0
+	mov r9, 0
+	setg r9B
+	cmp r9, 0
 	jne L_556
 	mov rbx,0
-	mov r15,rbx
+	mov r9,rbx
 	jmp L_557
 	
 L_556:
 	xor rdx, rdx
-	mov rax,  r13
+	mov rax, [rsp+8*27]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov  r15, rdx
+	mov  r8, rdx
 	mov rbx,0
-	cmp r15,rbx
-	mov r15, 0
-	sete r15B
-	mov r15,r15
+	cmp r8,rbx
+	mov r12, 0
+	sete r12B
+	mov r9,r12
 	
 L_557:
-	mov r15,r15
+	mov r10,r9
 	
 L_559:
-	cmp r15, 0
+	cmp r10, 0
 	je L_562
 	mov rbx,1
-	mov r15,rbx
+	mov r10,rbx
 	jmp L_563
 	
 L_562:
-	cmp r12,0
-	mov r15, 0
-	setg r15B
-	cmp r15, 0
+	mov rbx,  [rsp+8*29]
+	cmp rbx,0
+	mov r12, 0
+	setg r12B
+	cmp r12, 0
 	jne L_560
 	mov rbx,0
-	mov r15,rbx
+	mov r12,rbx
 	jmp L_561
 	
 L_560:
 	xor rdx, rdx
-	mov rax,  r12
+	mov rax, [rsp+8*29]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov  r15, rdx
+	mov  r9, rdx
 	mov rbx,0
-	cmp r15,rbx
-	mov r15, 0
-	sete r15B
-	mov r15,r15
+	cmp r9,rbx
+	mov r8, 0
+	sete r8B
+	mov r12,r8
 	
 L_561:
-	mov r15,r15
+	mov r10,r12
 	
 L_563:
-	cmp r15, 0
+	cmp r10, 0
 	je L_566
 	mov rbx,1
-	mov r15,rbx
+	mov r10,rbx
 	jmp L_567
 	
 L_566:
-	mov r15,r10
-	add r15,r13
-	add r15,r12
-	cmp r15,0
-	mov r15, 0
-	setg r15B
-	cmp r15, 0
+	mov rbx,  [rsp+8*25]
+	mov rdx,  [rsp+8*27]
+	mov r12,rbx
+	add r12,rdx
+	mov rax,  [rsp+8*29]
+	add r12,rax
+	cmp r12,0
+	mov r12, 0
+	setg r12B
+	cmp r12, 0
 	jne L_564
 	mov rbx,0
-	mov r15,rbx
+	mov r12,rbx
 	jmp L_565
 	
 L_564:
 	xor rdx, rdx
-	mov rax,  r12
+	mov rax, [rsp+8*29]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov  r15, rdx
+	mov  r9, rdx
 	mov rbx,0
-	cmp r15,rbx
-	mov r15, 0
-	sete r15B
-	mov r15,r15
+	cmp r9,rbx
+	mov r8, 0
+	sete r8B
+	mov r12,r8
 	
 L_565:
-	mov r15,r15
+	mov r10,r12
 	
 L_567:
-	cmp r15, 0
+	cmp r10, 0
 	je L_570
 	mov rbx,1
-	mov r15,rbx
+	mov r10,rbx
 	jmp L_571
 	
 L_570:
-	mov r15,r10
-	imul r15,r13
-	imul r15,r12
-	cmp r15,0
-	mov r15, 0
-	setg r15B
-	cmp r15, 0
+	mov rbx,  [rsp+8*25]
+	mov rdx,  [rsp+8*27]
+	mov r12,rbx
+	imul r12,rdx
+	mov rax,  [rsp+8*29]
+	imul r12,rax
+	cmp r12,0
+	mov r12, 0
+	setg r12B
+	cmp r12, 0
 	jne L_568
 	mov rbx,0
-	mov r15,rbx
+	mov r12,rbx
 	jmp L_569
 	
 L_568:
 	xor rdx, rdx
-	mov rax,  r12
+	mov rax, [rsp+8*29]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov  r15, rdx
+	mov  r9, rdx
 	mov rbx,0
-	cmp r15,rbx
-	mov r15, 0
-	sete r15B
-	mov r15,r15
+	cmp r9,rbx
+	mov r8, 0
+	sete r8B
+	mov r12,r8
 	
 L_569:
-	mov r15,r15
+	mov r10,r12
 	
 L_571:
-	mov rbx,r15
-	cmp r10,0
-	mov rdx, 0
-	setg dl
-	cmp rdx, 0
-	mov qword [rsp+8*94],rbx
-	mov qword [rsp+8*95],rdx
+	mov r12,r10
+	mov rbx,  [rsp+8*25]
+	cmp rbx,0
+	mov r10, 0
+	setg r10B
+	cmp r10, 0
 	jne L_572
-	mov rdx,0
-	mov rbx,rdx
-	mov qword [rsp+8*95],rbx
+	mov rbx,0
+	mov r10,rbx
 	jmp L_573
 	
 L_572:
 	xor rdx, rdx
-	mov rax,  r10
+	mov rax, [rsp+8*25]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov [rsp+8*96], rdx
-	mov rbx,  [rsp+8*96]
-	mov rdx,0
-	cmp rbx,rdx
-	mov rax, 0
-	sete al
-	mov rbx,rax
-	mov qword [rsp+8*95],rbx
-	mov qword [rsp+8*97],rax
+	mov  r9, rdx
+	mov rbx,0
+	cmp r9,rbx
+	mov r8, 0
+	sete r8B
+	mov r10,r8
 	
 L_573:
-	mov rbx,  [rsp+8*95]
-	cmp rbx, 0
+	cmp r10, 0
 	je L_576
-	mov rdx,1
-	mov rbx,rdx
-	mov qword [rsp+8*95],rbx
+	mov rbx,1
+	mov r10,rbx
 	jmp L_577
 	
 L_576:
-	cmp r13,0
-	mov rbx, 0
-	setg bl
-	cmp rbx, 0
-	mov qword [rsp+8*98],rbx
+	mov rbx,  [rsp+8*27]
+	cmp rbx,0
+	mov r9, 0
+	setg r9B
+	cmp r9, 0
 	jne L_574
-	mov rdx,0
-	mov rbx,rdx
-	mov qword [rsp+8*98],rbx
+	mov rbx,0
+	mov r9,rbx
 	jmp L_575
 	
 L_574:
 	xor rdx, rdx
-	mov rax,  r13
+	mov rax, [rsp+8*27]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov [rsp+8*99], rdx
-	mov rbx,  [rsp+8*99]
-	mov rdx,0
-	cmp rbx,rdx
-	mov rax, 0
-	sete al
-	mov rbx,rax
-	mov qword [rsp+8*98],rbx
-	mov qword [rsp+8*100],rax
+	mov  r8, rdx
+	mov rbx,0
+	cmp r8,rbx
+	mov r11, 0
+	sete r11B
+	mov r9,r11
 	
 L_575:
-	mov rdx,  [rsp+8*98]
-	mov rbx,rdx
-	mov qword [rsp+8*95],rbx
+	mov r10,r9
 	
 L_577:
-	mov rbx,  [rsp+8*95]
-	cmp rbx, 0
+	cmp r10, 0
 	je L_580
-	mov rdx,1
-	mov rbx,rdx
-	mov qword [rsp+8*95],rbx
+	mov rbx,1
+	mov r10,rbx
 	jmp L_581
 	
 L_580:
-	cmp r12,0
-	mov r15, 0
-	setg r15B
-	cmp r15, 0
+	mov rbx,  [rsp+8*29]
+	cmp rbx,0
+	mov r11, 0
+	setg r11B
+	cmp r11, 0
 	jne L_578
 	mov rbx,0
-	mov r15,rbx
+	mov r11,rbx
 	jmp L_579
 	
 L_578:
 	xor rdx, rdx
-	mov rax,  r12
+	mov rax, [rsp+8*29]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov [rsp+8*102], rdx
-	mov rbx,  [rsp+8*102]
-	mov rdx,0
-	cmp rbx,rdx
-	mov rax, 0
-	sete al
-	mov r15,rax
-	mov qword [rsp+8*103],rax
+	mov  r9, rdx
+	mov rbx,0
+	cmp r9,rbx
+	mov r8, 0
+	sete r8B
+	mov r11,r8
 	
 L_579:
-	mov rbx,r15
-	mov qword [rsp+8*95],rbx
+	mov r10,r11
 	
 L_581:
-	mov rbx,  [rsp+8*95]
-	cmp rbx, 0
+	cmp r10, 0
 	je L_584
-	mov rdx,1
-	mov rbx,rdx
-	mov qword [rsp+8*95],rbx
+	mov rbx,1
+	mov r10,rbx
 	jmp L_585
 	
 L_584:
-	mov rbx,r10
-	add rbx,r13
-	add rbx,r12
-	cmp rbx,0
-	mov rbx, 0
-	setg bl
-	cmp rbx, 0
-	mov qword [rsp+8*104],rbx
+	mov rbx,  [rsp+8*25]
+	mov rdx,  [rsp+8*27]
+	mov r11,rbx
+	add r11,rdx
+	mov rax,  [rsp+8*29]
+	add r11,rax
+	cmp r11,0
+	mov r11, 0
+	setg r11B
+	cmp r11, 0
 	jne L_582
-	mov rdx,0
-	mov rbx,rdx
-	mov qword [rsp+8*104],rbx
+	mov rbx,0
+	mov r11,rbx
 	jmp L_583
 	
 L_582:
 	xor rdx, rdx
-	mov rax,  r12
+	mov rax, [rsp+8*29]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov [rsp+8*105], rdx
-	mov rbx,  [rsp+8*105]
-	mov rdx,0
-	cmp rbx,rdx
-	mov rax, 0
-	sete al
-	mov rbx,rax
-	mov qword [rsp+8*104],rbx
-	mov qword [rsp+8*106],rax
+	mov  r9, rdx
+	mov rbx,0
+	cmp r9,rbx
+	mov r8, 0
+	sete r8B
+	mov r11,r8
 	
 L_583:
-	mov rdx,  [rsp+8*104]
-	mov rbx,rdx
-	mov qword [rsp+8*95],rbx
+	mov r10,r11
 	
 L_585:
-	mov rbx,  [rsp+8*95]
-	cmp rbx, 0
+	cmp r10, 0
 	je L_588
-	mov rdx,1
-	mov rbx,rdx
-	mov qword [rsp+8*95],rbx
+	mov rbx,1
+	mov r10,rbx
 	jmp L_589
 	
 L_588:
-	mov rbx,r10
-	imul rbx,r13
-	imul rbx,r12
-	cmp rbx,0
-	mov rbx, 0
-	setg bl
-	cmp rbx, 0
-	mov qword [rsp+8*107],rbx
+	mov rbx,  [rsp+8*25]
+	mov rdx,  [rsp+8*27]
+	mov r11,rbx
+	imul r11,rdx
+	mov rax,  [rsp+8*29]
+	imul r11,rax
+	cmp r11,0
+	mov r11, 0
+	setg r11B
+	cmp r11, 0
 	jne L_586
-	mov rdx,0
-	mov rbx,rdx
-	mov qword [rsp+8*107],rbx
+	mov rbx,0
+	mov r11,rbx
 	jmp L_587
 	
 L_586:
 	xor rdx, rdx
-	mov rax,  r12
+	mov rax, [rsp+8*29]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov [rsp+8*108], rdx
-	mov rbx,  [rsp+8*108]
-	mov rdx,0
-	cmp rbx,rdx
-	mov r15, 0
-	sete r15B
-	mov rax,r15
-	mov qword [rsp+8*107],rax
+	mov  r9, rdx
+	mov rbx,0
+	cmp r9,rbx
+	mov r8, 0
+	sete r8B
+	mov r11,r8
 	
 L_587:
-	mov rdx,  [rsp+8*107]
-	mov rbx,rdx
-	mov qword [rsp+8*95],rbx
+	mov r10,r11
 	
 L_589:
-	mov rdx,  [rsp+8*95]
-	mov rbx,rdx
-	cmp r10,0
-	mov rax, 0
-	setg al
-	cmp rax, 0
+	mov rbx,r10
+	mov rdx,  [rsp+8*25]
+	cmp rdx,0
+	mov r10, 0
+	setg r10B
+	cmp r10, 0
 	mov qword [rsp+8*110],rbx
-	mov qword [rsp+8*111],rax
 	jne L_590
-	mov rdx,0
-	mov rbx,rdx
-	mov qword [rsp+8*111],rbx
+	mov rbx,0
+	mov r10,rbx
 	jmp L_591
 	
 L_590:
 	xor rdx, rdx
-	mov rax,  r10
+	mov rax, [rsp+8*25]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov [rsp+8*112], rdx
-	mov rbx,  [rsp+8*112]
-	mov rdx,0
-	cmp rbx,rdx
-	mov rax, 0
-	sete al
-	mov rbx,rax
-	mov qword [rsp+8*111],rbx
-	mov qword [rsp+8*113],rax
+	mov  r9, rdx
+	mov rbx,0
+	cmp r9,rbx
+	mov r8, 0
+	sete r8B
+	mov r10,r8
 	
 L_591:
-	mov rbx,  [rsp+8*111]
-	cmp rbx, 0
+	cmp r10, 0
 	je L_594
-	mov rdx,1
-	mov rbx,rdx
-	mov qword [rsp+8*111],rbx
+	mov rbx,1
+	mov r10,rbx
 	jmp L_595
 	
 L_594:
-	cmp r13,0
-	mov rbx, 0
-	setg bl
-	cmp rbx, 0
-	mov qword [rsp+8*114],rbx
+	mov rbx,  [rsp+8*27]
+	cmp rbx,0
+	mov r9, 0
+	setg r9B
+	cmp r9, 0
 	jne L_592
-	mov rdx,0
-	mov rbx,rdx
-	mov qword [rsp+8*114],rbx
+	mov rbx,0
+	mov r9,rbx
 	jmp L_593
 	
 L_592:
 	xor rdx, rdx
-	mov rax,  r13
+	mov rax, [rsp+8*27]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov [rsp+8*115], rdx
-	mov rbx,  [rsp+8*115]
-	mov rdx,0
-	cmp rbx,rdx
-	mov rax, 0
-	sete al
-	mov rbx,rax
-	mov qword [rsp+8*114],rbx
-	mov qword [rsp+8*116],rax
+	mov  r8, rdx
+	mov rbx,0
+	cmp r8,rbx
+	mov r11, 0
+	sete r11B
+	mov r9,r11
 	
 L_593:
-	mov rdx,  [rsp+8*114]
-	mov rbx,rdx
-	mov qword [rsp+8*111],rbx
+	mov r10,r9
 	
 L_595:
-	mov rbx,  [rsp+8*111]
-	cmp rbx, 0
+	cmp r10, 0
 	je L_598
-	mov rdx,1
-	mov rbx,rdx
-	mov qword [rsp+8*111],rbx
+	mov rbx,1
+	mov r10,rbx
 	jmp L_599
 	
 L_598:
-	cmp r12,0
-	mov rbx, 0
-	setg bl
-	cmp rbx, 0
-	mov qword [rsp+8*117],rbx
+	mov rbx,  [rsp+8*29]
+	cmp rbx,0
+	mov r11, 0
+	setg r11B
+	cmp r11, 0
 	jne L_596
-	mov rdx,0
-	mov rbx,rdx
-	mov qword [rsp+8*117],rbx
+	mov rbx,0
+	mov r11,rbx
 	jmp L_597
 	
 L_596:
 	xor rdx, rdx
-	mov rax,  r12
+	mov rax, [rsp+8*29]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov [rsp+8*118], rdx
-	mov rbx,  [rsp+8*118]
-	mov rdx,0
-	cmp rbx,rdx
-	mov rax, 0
-	sete al
-	mov rbx,rax
-	mov qword [rsp+8*117],rbx
-	mov qword [rsp+8*119],rax
+	mov  r9, rdx
+	mov rbx,0
+	cmp r9,rbx
+	mov r8, 0
+	sete r8B
+	mov r11,r8
 	
 L_597:
-	mov rdx,  [rsp+8*117]
-	mov rbx,rdx
-	mov qword [rsp+8*111],rbx
+	mov r10,r11
 	
 L_599:
-	mov rbx,  [rsp+8*111]
-	cmp rbx, 0
+	cmp r10, 0
 	je L_602
-	mov rdx,1
-	mov rbx,rdx
-	mov qword [rsp+8*111],rbx
+	mov rbx,1
+	mov r10,rbx
 	jmp L_603
 	
 L_602:
-	mov rbx,r10
-	add rbx,r13
-	add rbx,r12
-	cmp rbx,0
-	mov rbx, 0
-	setg bl
-	cmp rbx, 0
-	mov qword [rsp+8*120],rbx
+	mov rbx,  [rsp+8*25]
+	mov rdx,  [rsp+8*27]
+	mov r11,rbx
+	add r11,rdx
+	mov rax,  [rsp+8*29]
+	add r11,rax
+	cmp r11,0
+	mov r11, 0
+	setg r11B
+	cmp r11, 0
 	jne L_600
-	mov rdx,0
-	mov rbx,rdx
-	mov qword [rsp+8*120],rbx
+	mov rbx,0
+	mov r11,rbx
 	jmp L_601
 	
 L_600:
 	xor rdx, rdx
-	mov rax,  r12
+	mov rax, [rsp+8*29]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov [rsp+8*121], rdx
-	mov rbx,  [rsp+8*121]
-	mov rdx,0
-	cmp rbx,rdx
-	mov rax, 0
-	sete al
-	mov rbx,rax
-	mov qword [rsp+8*120],rbx
-	mov qword [rsp+8*122],rax
+	mov  r9, rdx
+	mov rbx,0
+	cmp r9,rbx
+	mov r8, 0
+	sete r8B
+	mov r11,r8
 	
 L_601:
-	mov rdx,  [rsp+8*120]
-	mov rbx,rdx
-	mov qword [rsp+8*111],rbx
+	mov r10,r11
 	
 L_603:
-	mov rbx,  [rsp+8*111]
-	cmp rbx, 0
+	cmp r10, 0
 	je L_606
-	mov rdx,1
-	mov rbx,rdx
-	mov qword [rsp+8*111],rbx
+	mov rbx,1
+	mov r10,rbx
 	jmp L_607
 	
 L_606:
-	mov rbx,r10
-	imul rbx,r13
-	imul rbx,r12
-	cmp rbx,0
-	mov rbx, 0
-	setg bl
-	cmp rbx, 0
-	mov qword [rsp+8*123],rbx
+	mov rbx,  [rsp+8*25]
+	mov rdx,  [rsp+8*27]
+	mov r11,rbx
+	imul r11,rdx
+	mov rax,  [rsp+8*29]
+	imul r11,rax
+	cmp r11,0
+	mov r11, 0
+	setg r11B
+	cmp r11, 0
 	jne L_604
-	mov rdx,0
-	mov rbx,rdx
-	mov qword [rsp+8*123],rbx
+	mov rbx,0
+	mov r11,rbx
 	jmp L_605
 	
 L_604:
 	xor rdx, rdx
-	mov rax,  r12
+	mov rax, [rsp+8*29]
 	mov rbx, 199
 	cdq
 	idiv ebx
-	mov [rsp+8*124], rdx
-	mov rbx,  [rsp+8*124]
-	mov rdx,0
-	cmp rbx,rdx
-	mov rax, 0
-	sete al
-	mov rbx,rax
-	mov qword [rsp+8*123],rbx
-	mov qword [rsp+8*125],rax
+	mov  r9, rdx
+	mov rbx,0
+	cmp r9,rbx
+	mov r8, 0
+	sete r8B
+	mov r11,r8
 	
 L_605:
-	mov rdx,  [rsp+8*123]
-	mov rbx,rdx
-	mov qword [rsp+8*111],rbx
+	mov r10,r11
 	
 L_607:
-	mov rdx,  [rsp+8*111]
-	mov rbx,rdx
-	cmp r11, 0
-	mov qword [rsp+8*126],rbx
+	mov r11,r10
+	cmp r13, 0
 	je L_609
-	mov rdx,  [rsp+8*13]
-	mov rbx,rdx
-	mov rax,1
-	add rdx,rax
-	mov qword [rsp+8*127],rbx
-	mov qword [rsp+8*13],rdx
+	mov rbx,  [rsp+8*13]
+	mov r13,rbx
+	mov rdx,1
+	add rbx,rdx
+	mov qword [rsp+8*13],rbx
 	
 L_609:
-	cmp r9, 0
+	cmp r14, 0
 	je L_611
-	mov rdx,  [rsp+8*13]
-	mov rbx,rdx
-	mov rax,1
-	add rdx,rax
-	mov qword [rsp+8*128],rbx
-	mov qword [rsp+8*13],rdx
+	mov rbx,  [rsp+8*13]
+	mov r14,rbx
+	mov rdx,1
+	add rbx,rdx
+	mov qword [rsp+8*13],rbx
 	
 L_611:
-	cmp r8, 0
+	cmp r15, 0
 	je L_613
 	mov rbx,  [rsp+8*13]
 	mov r15,rbx
@@ -1831,8 +1812,7 @@ L_611:
 	mov qword [rsp+8*13],rbx
 	
 L_613:
-	mov rbx,  [rsp+8*94]
-	cmp rbx, 0
+	cmp r12, 0
 	je L_615
 	mov rbx,  [rsp+8*13]
 	mov r15,rbx
@@ -1851,8 +1831,7 @@ L_615:
 	mov qword [rsp+8*13],rbx
 	
 L_617:
-	mov rbx,  [rsp+8*126]
-	cmp rbx, 0
+	cmp r11, 0
 	je L_619
 	mov rbx,  [rsp+8*13]
 	mov r15,rbx
@@ -1861,18 +1840,24 @@ L_617:
 	mov qword [rsp+8*13],rbx
 	
 L_619:
-	mov rbx,1
-	add r12,rbx
+	mov rbx,  [rsp+8*29]
+	mov rdx,1
+	add rbx,rdx
+	mov qword [rsp+8*29],rbx
 	jmp L_497
 	
 L_498:
-	mov rbx,1
-	add r13,rbx
+	mov rbx,  [rsp+8*27]
+	mov rdx,1
+	add rbx,rdx
+	mov qword [rsp+8*27],rbx
 	jmp L_494
 	
 L_495:
-	mov rbx,1
-	add r10,rbx
+	mov rbx,  [rsp+8*25]
+	mov rdx,1
+	add rbx,rdx
+	mov qword [rsp+8*25],rbx
 	jmp L_491
 	
 L_492:
@@ -1889,8 +1874,8 @@ L_492:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r15, rax
-	mov rdi,r15
+	mov     qword r14, rax
+	mov rdi,r14
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 
@@ -1903,12 +1888,14 @@ L_492:
 	pop r9
 	pop r10
 	pop r11
-	mov rbx,1
-	mov r10,rbx
+	mov rdx,1
+	mov rbx,rdx
+	mov qword [rsp+8*25],rbx
 	
 L_620:
-	mov rbx,30000000
-	cmp r10,rbx
+	mov rbx,  [rsp+8*25]
+	mov rdx,30000000
+	cmp rbx,rdx
 	mov r15, 0
 	setle r15B
 	cmp r15, 0
@@ -1921,249 +1908,249 @@ L_620:
 	mov rdi,r15
 	mov r15,rdi
 	mov rdi,r15
-	mov r12,rdi
+	mov r15,rdi
 	mov rdx,250
-	cmp r12,rdx
+	cmp r15,rdx
 	mov r14, 0
 	setl r14B
-	cmp r12,0
-	mov r15, 0
-	setg r15B
-	mov r11,r14
-	and r11,r15
-	cmp r11, 0
+	cmp r15,0
+	mov r13, 0
+	setg r13B
+	mov r12,r14
+	and r12,r13
+	cmp r12, 0
 	je L_689
 	mov rbx,  [gbl+8*1]
-	lea r14,[rbx+r12*8+8H]
-	mov r15, [r14]
-	cmp r15,0
-	mov r14, 0
-	setg r14B
-	cmp r14, 0
-	je L_689
+	lea r14,[rbx+r15*8+8H]
+	mov r13, [r14]
+	cmp r13,0
+	mov r11, 0
+	setg r11B
 	cmp r11, 0
+	je L_689
+	cmp r12, 0
 	je L_690
 	mov rbx,  [gbl+8*1]
-	lea r14,[rbx+r12*8+8H]
-	mov [r14],r15
+	lea r14,[rbx+r15*8+8H]
+	mov [r14],r13
 	
 L_690:
-	mov r15,r15
+	mov r11,r13
 	jmp L_692
 	
 L_689:
-	mov r14,rdi
+	mov r13,rdi
 	mov rbx,1
-	mov r15,r14
-	sub r15,rbx
+	mov r10,r13
+	sub r10,rbx
 	xor rdx, rdx
-	mov rax,  r14
-	mov rbx,  r15
+	mov rax,  r13
+	mov rbx,  r10
 	cdq
 	idiv ebx
-	mov  r13, rdx
+	mov  r9, rdx
 	mov rbx,2
-	mov r15,r14
-	sub r15,rbx
+	mov r10,r13
+	sub r10,rbx
 	xor rdx, rdx
-	mov rax,  r13
-	mov rbx,  r15
+	mov rax,  r9
+	mov rbx,  r10
 	cdq
 	idiv ebx
-	mov  r13, rdx
+	mov  r9, rdx
 	mov rbx,3
-	mov r15,r14
-	sub r15,rbx
+	mov r10,r13
+	sub r10,rbx
 	xor rdx, rdx
-	mov rax,  r13
-	mov rbx,  r15
+	mov rax,  r9
+	mov rbx,  r10
 	cdq
 	idiv ebx
-	mov  r13, rdx
+	mov  r9, rdx
 	mov rbx,4
-	mov r15,r14
-	sub r15,rbx
+	mov r10,r13
+	sub r10,rbx
 	xor rdx, rdx
-	mov rax,  r13
-	mov rbx,  r15
+	mov rax,  r9
+	mov rbx,  r10
 	cdq
 	idiv ebx
-	mov  r13, rdx
+	mov  r9, rdx
 	mov rbx,5
-	mov r15,r14
-	sub r15,rbx
+	mov r10,r13
+	sub r10,rbx
 	xor rdx, rdx
-	mov rax,  r13
-	mov rbx,  r15
+	mov rax,  r9
+	mov rbx,  r10
 	cdq
 	idiv ebx
-	mov  r13, rdx
+	mov  r9, rdx
 	mov rbx,6
-	mov r15,r14
-	sub r15,rbx
+	mov r10,r13
+	sub r10,rbx
 	xor rdx, rdx
-	mov rax,  r13
-	mov rbx,  r15
+	mov rax,  r9
+	mov rbx,  r10
 	cdq
 	idiv ebx
-	mov  r13, rdx
+	mov  r9, rdx
 	mov rbx,7
-	mov r15,r14
-	sub r15,rbx
+	mov r10,r13
+	sub r10,rbx
 	xor rdx, rdx
-	mov rax,  r13
-	mov rbx,  r15
+	mov rax,  r9
+	mov rbx,  r10
 	cdq
 	idiv ebx
-	mov  r13, rdx
+	mov  r9, rdx
 	mov rbx,8
-	mov r15,r14
-	sub r15,rbx
+	mov r10,r13
+	sub r10,rbx
 	xor rdx, rdx
-	mov rax,  r13
-	mov rbx,  r15
+	mov rax,  r9
+	mov rbx,  r10
 	cdq
 	idiv ebx
-	mov  r13, rdx
+	mov  r9, rdx
 	mov rbx,9
-	mov r15,r14
-	sub r15,rbx
+	mov r10,r13
+	sub r10,rbx
 	xor rdx, rdx
-	mov rax,  r13
-	mov rbx,  r15
+	mov rax,  r9
+	mov rbx,  r10
 	cdq
 	idiv ebx
-	mov  r13, rdx
+	mov  r9, rdx
 	mov rbx,10
-	mov r15,r14
-	sub r15,rbx
+	mov r10,r13
+	sub r10,rbx
 	xor rdx, rdx
-	mov rax,  r13
-	mov rbx,  r15
+	mov rax,  r9
+	mov rbx,  r10
 	cdq
 	idiv ebx
-	mov  r13, rdx
+	mov  r9, rdx
 	mov rbx,11
-	mov r15,r14
-	sub r15,rbx
+	mov r10,r13
+	sub r10,rbx
 	xor rdx, rdx
-	mov rax,  r13
-	mov rbx,  r15
+	mov rax,  r9
+	mov rbx,  r10
 	cdq
 	idiv ebx
-	mov  r13, rdx
+	mov  r9, rdx
 	mov rbx,12
-	mov r15,r14
-	sub r15,rbx
+	mov r10,r13
+	sub r10,rbx
 	xor rdx, rdx
-	mov rax,  r13
-	mov rbx,  r15
+	mov rax,  r9
+	mov rbx,  r10
 	cdq
 	idiv ebx
-	mov  r13, rdx
+	mov  r9, rdx
 	mov rbx,13
-	mov r15,r14
-	sub r15,rbx
+	mov r10,r13
+	sub r10,rbx
 	xor rdx, rdx
-	mov rax,  r13
-	mov rbx,  r15
+	mov rax,  r9
+	mov rbx,  r10
 	cdq
 	idiv ebx
-	mov  r13, rdx
+	mov  r9, rdx
 	mov rbx,14
-	mov r15,r14
-	sub r15,rbx
+	mov r10,r13
+	sub r10,rbx
 	xor rdx, rdx
-	mov rax,  r13
-	mov rbx,  r15
+	mov rax,  r9
+	mov rbx,  r10
 	cdq
 	idiv ebx
-	mov  r13, rdx
+	mov  r9, rdx
 	mov rbx,15
-	mov r15,r14
-	sub r15,rbx
+	mov r10,r13
+	sub r10,rbx
 	xor rdx, rdx
-	mov rax,  r13
-	mov rbx,  r15
+	mov rax,  r9
+	mov rbx,  r10
 	cdq
 	idiv ebx
-	mov  r13, rdx
+	mov  r9, rdx
 	mov rbx,16
-	mov r15,r14
-	sub r15,rbx
+	mov r10,r13
+	sub r10,rbx
 	xor rdx, rdx
-	mov rax,  r13
-	mov rbx,  r15
+	mov rax,  r9
+	mov rbx,  r10
 	cdq
 	idiv ebx
-	mov  r13, rdx
+	mov  r9, rdx
 	mov rbx,17
-	mov r15,r14
-	sub r15,rbx
+	mov r10,r13
+	sub r10,rbx
 	xor rdx, rdx
-	mov rax,  r13
-	mov rbx,  r15
+	mov rax,  r9
+	mov rbx,  r10
 	cdq
 	idiv ebx
-	mov  r13, rdx
+	mov  r9, rdx
 	mov rbx,18
-	mov r15,r14
-	sub r15,rbx
+	mov r10,r13
+	sub r10,rbx
 	xor rdx, rdx
-	mov rax,  r13
-	mov rbx,  r15
+	mov rax,  r9
+	mov rbx,  r10
 	cdq
 	idiv ebx
-	mov  r13, rdx
+	mov  r9, rdx
 	mov rbx,19
-	mov r15,r14
-	sub r15,rbx
+	mov r10,r13
+	sub r10,rbx
 	xor rdx, rdx
-	mov rax,  r13
-	mov rbx,  r15
+	mov rax,  r9
+	mov rbx,  r10
 	cdq
 	idiv ebx
-	mov  r13, rdx
+	mov  r9, rdx
 	mov rbx,20
-	mov r15,r14
-	sub r15,rbx
+	mov r10,r13
+	sub r10,rbx
 	xor rdx, rdx
-	mov rax,  r13
-	mov rbx,  r15
+	mov rax,  r9
+	mov rbx,  r10
 	cdq
 	idiv ebx
-	mov  r13, rdx
-	cmp r11, 0
+	mov  r9, rdx
+	cmp r12, 0
 	je L_693
 	mov rbx,  [gbl+8*1]
-	lea r14,[rbx+r12*8+8H]
-	mov [r14],r13
+	lea r14,[rbx+r15*8+8H]
+	mov [r14],r9
 	
 L_693:
-	mov r15,r13
+	mov r11,r9
 	
 L_692:
-	mov r15,r15
-	mov r15,r15
-	mov r15,r15
-	mov r15,r15
-	mov r15,r15
-	mov r15,r15
-	mov r15,r15
-	mov r15,r15
+	mov r15,r11
+	mov r14,r15
+	mov r15,r14
+	mov r14,r15
+	mov r15,r14
+	mov r14,r15
+	mov r15,r14
+	mov r14,r15
 	xor rdx, rdx
-	mov rax,  r10
+	mov rax, [rsp+8*25]
 	mov rbx, 3000000
 	cdq
 	idiv ebx
-	mov  r14, rdx
+	mov  r15, rdx
 	mov rbx,0
-	cmp r14,rbx
-	mov r14, 0
-	sete r14B
-	cmp r14, 0
+	cmp r15,rbx
+	mov r13, 0
+	sete r13B
+	cmp r13, 0
 	je L_624
-	mov rdi,r15
+	mov rdi,r14
 	mov r15,rdi
 	mov     rdi,  r15
 	push r11
@@ -2175,8 +2162,8 @@ L_692:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r15, rax
-	mov rdi,r15
+	mov     qword r14, rax
+	mov rdi,r14
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 
@@ -2191,8 +2178,10 @@ L_692:
 	pop r11
 	
 L_624:
-	mov rbx,1
-	add r10,rbx
+	mov rbx,  [rsp+8*25]
+	mov rdx,1
+	add rbx,rdx
+	mov qword [rsp+8*25],rbx
 	jmp L_620
 	
 L_621:

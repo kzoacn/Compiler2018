@@ -706,47 +706,48 @@ main:
 	mov rbx,0
 	mov r15,rbx
 	mov rbx,32
-	mov r12,rbx
+	mov r15,rbx
 	
 L_471:
 	mov rbx,126
-	cmp r12,rbx
-	mov r15, 0
-	setle r15B
-	cmp r15, 0
+	cmp r15,rbx
+	mov r14, 0
+	setle r14B
+	cmp r14, 0
 	je L_472
-	mov rdi,r12
-	mov r13,rdi
+	mov rdi,r15
+	mov r14,rdi
 	mov rbx,32
-	cmp r13,rbx
-	mov r15, 0
-	setge r15B
-	cmp r15, 0
+	cmp r14,rbx
+	mov r13, 0
+	setge r13B
+	cmp r13, 0
 	jne L_479
 	mov rbx,0
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_480
 	
 L_479:
 	mov rbx,126
-	cmp r13,rbx
-	mov r15, 0
-	setle r15B
-	mov r15,r15
+	cmp r14,rbx
+	mov r12, 0
+	setle r12B
+	mov r13,r12
 	
 L_480:
-	cmp r15, 0
+	cmp r13, 0
 	je L_481
 	mov rbx,  [gbl+8*19]
-	mov r15,rbx
+	mov r13,rbx
 	mov rdx,32
-	mov r14,r13
-	sub r14,rdx
+	mov r12,r14
+	sub r12,rdx
 	mov rax,32
-	sub r13,rax
-	mov rsi,r13
-	mov rdi,r14
-	mov rdx,r15
+	mov r11,r14
+	sub r11,rax
+	mov rsi,r11
+	mov rdi,r12
+	mov rdx,r13
 	mov qword [arg+8*63],rdx
 	mov     rsi, rsi
 	mov     rdi, rdi
@@ -759,20 +760,20 @@ L_480:
 	pop r9
 	pop r10
 	pop r11
-	mov  r15, rax
-	mov r15,r15
+	mov  r14, rax
+	mov r13,r14
 	jmp L_483
 	
 L_481:
 	mov rbx,t80
-	mov r15,rbx
+	mov r13,rbx
 	
 L_483:
-	mov r15,r15
-	mov rdi,r15
-	mov r15,rdi
+	mov r14,r13
+	mov rdi,r14
+	mov r14,rdi
 	mov rdi, format
-	mov rsi, r15 
+	mov rsi, r14 
 	add rsi, 1 
 	xor rax, rax
 	push r11
@@ -784,9 +785,9 @@ L_483:
 	pop r9
 	pop r10
 	pop r11
-	mov r15,r12
+	mov r14,r15
 	mov rbx,1
-	add r12,rbx
+	add r15,rbx
 	jmp L_471
 	
 L_472:

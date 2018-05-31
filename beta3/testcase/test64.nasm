@@ -684,24 +684,11 @@ main:
 	pop r15
 	mov r15 , rax
 	mov rbx,t64
-	mov r13,rbx
+	mov r15,rbx
 	mov rdx,t65
-	mov r15,rdx
+	mov r14,rdx
 	mov rax,t66
-	mov r14,rax
-	mov rdi,r13
-	mov r13,rdi
-	mov rdi, r13 
-	add rdi, 1 
-	push r11
-	push r10
-	push r9
-	push r8
-	call puts
-	pop r8
-	pop r9
-	pop r10
-	pop r11
+	mov r13,rax
 	mov rdi,r15
 	mov r15,rdi
 	mov rdi, r15 
@@ -716,6 +703,19 @@ main:
 	pop r10
 	pop r11
 	mov rdi,r14
+	mov r15,rdi
+	mov rdi, r15 
+	add rdi, 1 
+	push r11
+	push r10
+	push r9
+	push r8
+	call puts
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov rdi,r13
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 

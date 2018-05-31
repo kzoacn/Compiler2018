@@ -6,14 +6,73 @@ public class IROptimizer {
     public int registerNumber=8;
     public HashMap<Integer,HashSet<Integer> >saveRegister=new HashMap<Integer, HashSet<Integer>>();
 
-
+    class Interval{
+        int l,r;
+        String name;
+        public Interval(){
+            l=r=-1;
+        }
+        public Interval(String n,int x){
+            l=r=x;
+            name=n;
+        }
+        public void upd(int x){
+            if(l==-1){
+                l=r=x;
+            }else{
+                l=Math.min(l,x);
+                r=Math.max(r,x);
+            }
+        }
+    };
+    HashMap<String,Interval>liveInterval=new HashMap<String,Interval>();
     HashMap<Variable,Integer>degree=new HashMap<Variable,Integer>();
     HashSet<Variable>variables=new HashSet<Variable>();
     HashMap<Variable,HashSet<Variable> >graph=new HashMap<Variable,HashSet<Variable> >();
+    TreeMap<String,Integer> linearScan(){
+
+        TreeMap<String,Integer> colorMap=new TreeMap<String,Integer>();
+        ArrayList<Interval> arrayList = new ArrayList<Interval>(liveInterval.values());
+        HashSet<Interval>current=new HashSet<Interval>();
+        arrayList.sort((l1,l2)->l1.l-l2.l);
+
+        boolean[] visit=new boolean[10];
+
+        for(Interval l : arrayList){
+            current.removeIf((inter)->inter.r<l.l);
+            int mx=-1;
+            Interval lucky=new Interval();
+            for(int i=0;i<10;i++)visit[i]=false;
+            int mex=0;
+            for(Interval l2:current) {
+                visit[colorMap.get(l2.name)] = true;
+                if(l2.r>mx){
+                    mx=l2.r;
+                    lucky=l2;
+                }
+            }
+            for(int i=1;i<=registerNumber;i++)if(!visit[i]){
+                mex=i;
+                break;
+            }
+            if(mex>0){
+                colorMap.put(l.name,mex);;
+                current.add(l);
+                continue;
+            }
+            colorMap.put(l.name,colorMap.get(lucky.name));
+            colorMap.remove(lucky.name);
+            current.remove(lucky);
+            current.add(l);
+        }
+
+        return colorMap;
+    }
     TreeMap<String,Integer> chartin(){
         ArrayList<Variable>color=new ArrayList<Variable>();
         TreeMap<String,Integer> colorMap=new TreeMap<String,Integer>();
         boolean[] visit=new boolean[10];
+
         while(variables.size()>0){
             ArrayList<Variable>newColor=new ArrayList<Variable>();
             for(Variable var : variables){
@@ -43,7 +102,7 @@ public class IROptimizer {
                 degree.put(near,degree.get(near)-1);
             }
         }
-
+        variables.addAll(color);
 //        Collections.shuffle(color,new Random(3));
         for(Variable var:color){
             for(int i=0;i<10;i++)visit[i]=false;
@@ -89,14 +148,6 @@ public class IROptimizer {
 
         }
 
-        for(Variable var:variables)if(colorMap.containsKey(var.name)){
-
-            for(Variable var2:graph.get(var))if(colorMap.containsKey(var2.name))
-                if(colorMap.get(var.name).equals(colorMap.get(var2.name))){
-                    System.err.println(var.name+" "+var2.name);
-                    System.err.println("sdf");
-                }
-        }
         return colorMap;
     }
 
@@ -336,6 +387,9 @@ public class IROptimizer {
 
 
 
+        System.err.println("!----------------------------------------------");
+        tmp.print();
+        System.err.println("!----------------------------------------------");
 
         //register allocate
         for(Variable var:variables)
@@ -343,19 +397,44 @@ public class IROptimizer {
 
         for(int i=0;i<line_number;i++){
             //System.err.println(i);
+            for(Variable var1:in.get(i))
+                if(liveInterval.containsKey(var1.name)){
+                    liveInterval.get(var1.name).upd(i);
+                }else{
+                    liveInterval.put(var1.name,new Interval(var1.name,i));
+                }
+            for(Variable var1:out.get(i))
+                if(liveInterval.containsKey(var1.name)){
+                    liveInterval.get(var1.name).upd(i);
+                }else{
+                    liveInterval.put(var1.name,new Interval(var1.name,i));
+                }
+            for(Variable var1:def.get(i))
+                if(liveInterval.containsKey(var1.name)){
+                    liveInterval.get(var1.name).upd(i);
+                }else{
+                    liveInterval.put(var1.name,new Interval(var1.name,i));
+                }
+            for(Variable var1:use.get(i))
+                if(liveInterval.containsKey(var1.name)){
+                    liveInterval.get(var1.name).upd(i);
+                }else{
+                    liveInterval.put(var1.name,new Interval(var1.name,i));
+                }
             for(Variable var1:in.get(i)){
                 //System.err.print(var1.name+",");
                 for(Variable var2:in.get(i)){
                     if(!var1.equals(var2)){
-                        graph.get(var1).add(var2);
+                       // graph.get(var1).add(var2);
                     }
                 }
+
             }
             for(Variable var1:out.get(i)){
                 //System.err.print(var1.name+",");
                 for(Variable var2:out.get(i)){
                     if(!var1.equals(var2)){
-                        graph.get(var1).add(var2);
+                       // graph.get(var1).add(var2);
                     }
                 }
             }
@@ -381,6 +460,13 @@ public class IROptimizer {
         variables.removeIf((var)->gbl.contains(var.name));
         variables.removeIf((var)->var.type.name.contains("const") ||var.name.contains("const") || var.type.name.equals("null"));
         //variables.removeIf((var)->var.name.startsWith("t"));
+        HashMap<String,Interval> temp=new HashMap<String,Interval>();
+
+        for(Variable var : variables){
+            if(liveInterval.containsKey(var.name))
+                temp.put(var.name,liveInterval.get(var.name));
+        }
+        liveInterval=temp;
 
         TreeMap<String,Integer>colorMap=new TreeMap<String, Integer>();
         for(Variable var : variables){
@@ -404,13 +490,27 @@ public class IROptimizer {
         TreeMap<String,Integer> colorMap1=greed();
         TreeMap<String,Integer> colorMap2=chartin();
 
-        if(colorMap1.size()>colorMap2.size())
+
+        colorMap=linearScan();
+        /*if(colorMap1.size()>colorMap2.size())
             colorMap=colorMap1;
         else
             colorMap=colorMap2;
-
+*/
         cur=ir.head;
         line_number=0;
+
+
+        for(Variable var:variables)if(colorMap.containsKey(var.name)){
+
+            for(Variable var2:graph.get(var))if(colorMap.containsKey(var2.name))
+                if(colorMap.get(var.name).equals(colorMap.get(var2.name))){
+                    System.err.println(var.name+" "+var2.name);
+                    System.err.println("sdf");
+                }
+        }
+
+
         while(cur!=null){
             cur.line=line_number++;
             if(cur.dest!=null&&colorMap.containsKey(cur.dest.name))

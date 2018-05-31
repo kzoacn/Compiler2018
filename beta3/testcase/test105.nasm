@@ -688,33 +688,34 @@ main:
 	mov rdx,210
 	mov r15,rdx
 	mov rdi,r15
-	mov r13,rdi
+	mov r15,rdi
 	mov rax,0
 	mov r14,rax
 	
 L_293:
-	cmp r14,r13
-	mov r15, 0
-	setle r15B
-	cmp r15, 0
+	cmp r14,r15
+	mov r13, 0
+	setle r13B
+	cmp r13, 0
 	je L_294
 	mov rbx,1
-	mov r15,r14
-	add r15,rbx
-	imul r15,r14
+	mov r13,r14
+	add r13,rbx
+	mov r12,r14
+	imul r12,r13
 	xor rdx, rdx
-	mov rax,  r15
+	mov rax,  r12
 	mov rbx, 2
 	cdq
 	idiv ebx
-	mov  r15, rax
-	cmp r13,r15
-	mov r15, 0
-	sete r15B
-	cmp r15, 0
+	mov  r12, rax
+	cmp r15,r12
+	mov r13, 0
+	sete r13B
+	cmp r13, 0
 	je L_295
 	mov rbx,1
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_297
 	
 L_295:
@@ -724,13 +725,14 @@ L_295:
 	
 L_294:
 	mov rbx,0
-	mov r15,rbx
+	mov r13,rbx
 	
 L_297:
-	mov r15,r15
+	mov r15,r13
+	mov r14, 0
 	cmp r15, 0
-	sete r15B
-	cmp r15, 0
+	sete r14B
+	cmp r14, 0
 	je L_285
 	mov rbx,t84
 	mov rdi,rbx

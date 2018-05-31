@@ -655,33 +655,33 @@ gcd:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 240
-	mov r14,rdi
-	mov r13,rsi
+	mov r15,rdi
+	mov r14,rsi
 	xor rdx, rdx
-	mov rax,  r14
-	mov rbx,  r13
+	mov rax,  r15
+	mov rbx,  r14
 	cdq
 	idiv ebx
-	mov  r15, rdx
+	mov  r13, rdx
 	mov rbx,0
-	cmp r15,rbx
-	mov r15, 0
-	sete r15B
-	cmp r15, 0
+	cmp r13,rbx
+	mov r12, 0
+	sete r12B
+	cmp r12, 0
 	je L_1152
-	mov rax,r13
+	mov rax,r14
 	leave
 	ret
 	
 L_1152:
 	xor rdx, rdx
-	mov rax,  r14
-	mov rbx,  r13
+	mov rax,  r15
+	mov rbx,  r14
 	cdq
 	idiv ebx
-	mov  r15, rdx
-	mov rsi,r15
-	mov rdi,r13
+	mov  r13, rdx
+	mov rsi,r13
+	mov rdi,r14
 	push r15
 	call gcd
 	pop r15
@@ -742,8 +742,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r15, rax
-	mov rdi,r15
+	mov     qword r14, rax
+	mov rdi,r14
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 
@@ -776,8 +776,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r15, rax
-	mov rdi,r15
+	mov     qword r14, rax
+	mov rdi,r14
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 
@@ -810,8 +810,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r15, rax
-	mov rdi,r15
+	mov     qword r14, rax
+	mov rdi,r14
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 

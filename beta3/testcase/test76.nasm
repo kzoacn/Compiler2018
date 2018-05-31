@@ -694,24 +694,26 @@ main:
 	pop r10
 	pop r11
 	mov     qword  r15, rax
-	mov r12,r15
-	mov rbx,0
-	mov r14,rbx
+	mov rbx,r15
+	mov rdx,0
+	mov r15,rdx
+	mov qword [gbl+8*3],rbx
 	
 L_3235:
 	mov rbx,  [gbl+8*5]
-	cmp r14,rbx
-	mov r15, 0
-	setl r15B
-	cmp r15, 0
+	cmp r15,rbx
+	mov r13, 0
+	setl r13B
+	cmp r13, 0
 	je L_3236
-	mov r15,r12
-	lea r15,[r15+r14*8+8H]
-	mov rbx,0
-	mov [r15],rbx
-	mov r15,r14
-	mov rdx,1
-	add r14,rdx
+	mov rbx,  [gbl+8*3]
+	mov r13,rbx
+	lea r12,[r13+r15*8+8H]
+	mov rdx,0
+	mov [r12],rdx
+	mov r13,r15
+	mov rax,1
+	add r15,rax
 	jmp L_3235
 	
 L_3236:
@@ -719,31 +721,34 @@ L_3236:
 	mov rsi,rbx
 	mov rdx,1
 	mov rdi,rdx
-	mov r11,rdi
+	mov r15,rdi
 	mov r13,rsi
 	mov rax,0
-	mov r15,rax
-	mov rdi,r11
-	mov r15,rdi
+	mov r12,rax
+	mov rdi,r15
+	mov r12,rdi
 	mov rbx,237
-	imul r15,rbx
+	mov r11,r12
+	imul r11,rbx
 	xor rdx, rdx
-	mov rax,  r15
+	mov rax,  r11
 	mov rbx, [gbl+8*5]
 	cdq
 	idiv ebx
-	mov  r15, rdx
-	mov r15,r15
-	mov r15,r15
-	mov r10,r15
-	mov r15,r12
-	lea r15,[r15+r10*8+8H]
-	mov r15, [r15]
-	mov rbx,0
-	cmp r15,rbx
-	mov r15, 0
-	sete r15B
-	cmp r15, 0
+	mov  r11, rdx
+	mov rbx,r11
+	mov r9,rbx
+	mov r8,r9
+	mov rdx,  [gbl+8*3]
+	mov r9,rdx
+	lea r14,[r9+r8*8+8H]
+	mov r9, [r14]
+	mov rax,0
+	cmp r9,rax
+	mov r14, 0
+	sete r14B
+	cmp r14, 0
+	mov qword [rsp+8*19],rbx
 	je L_3251
 	mov     rdi, 3
 	push r11
@@ -755,10 +760,43 @@ L_3236:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword  r15, rax
-	mov r14,r12
-	lea r14,[r14+r10*8+8H]
-	mov [r14],r15
+	mov     qword  r14, rax
+	mov rbx,  [gbl+8*3]
+	mov r9,rbx
+	lea r10,[r9+r8*8+8H]
+	mov [r10],r14
+	mov     rdi, 2
+	push r11
+	push r10
+	push r9
+	push r8
+	call    mallocArray
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword  r14, rax
+	mov r10,r14
+	mov rbx,0
+	lea r10,[r14+rbx*8+8H]
+	mov [r10],r8
+	mov rdx,1
+	lea r10,[r14+rdx*8+8H]
+	mov rax,0
+	mov [r10],rax
+	mov     rsi,  r14
+	mov     rdi, [gbl+8*3]
+	push r11
+	push r10
+	push r9
+	push r8
+	call    multiAddress
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r10, rax
+	mov [r10],r15
 	mov     rdi, 2
 	push r11
 	push r10
@@ -773,13 +811,13 @@ L_3236:
 	mov r14,r15
 	mov rbx,0
 	lea r14,[r15+rbx*8+8H]
-	mov [r14],r10
+	mov [r14],r8
 	mov rdx,1
 	lea r14,[r15+rdx*8+8H]
-	mov rax,0
+	mov rax,1
 	mov [r14],rax
 	mov     rsi,  r15
-	mov     rdi,  r12
+	mov     rdi, [gbl+8*3]
 	push r11
 	push r10
 	push r9
@@ -789,8 +827,8 @@ L_3236:
 	pop r9
 	pop r10
 	pop r11
-	mov  r15, rax
-	mov [r15],r11
+	mov  r14, rax
+	mov [r14],r13
 	mov     rdi, 2
 	push r11
 	push r10
@@ -801,49 +839,17 @@ L_3236:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword  r14, rax
-	mov r15,r14
+	mov     qword  r15, rax
+	mov r14,r15
 	mov rbx,0
-	lea r15,[r14+rbx*8+8H]
-	mov [r15],r10
+	lea r14,[r15+rbx*8+8H]
+	mov [r14],r8
 	mov rdx,1
-	lea r15,[r14+rdx*8+8H]
-	mov rax,1
-	mov [r15],rax
-	mov     rsi,  r14
-	mov     rdi,  r12
-	push r11
-	push r10
-	push r9
-	push r8
-	call    multiAddress
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	mov  r15, rax
-	mov [r15],r13
-	mov     rdi, 2
-	push r11
-	push r10
-	push r9
-	push r8
-	call    mallocArray
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	mov     qword  r14, rax
-	mov r15,r14
-	mov rbx,0
-	lea r15,[r14+rbx*8+8H]
-	mov [r15],r10
-	mov rdx,1
-	lea r15,[r14+rdx*8+8H]
+	lea r14,[r15+rdx*8+8H]
 	mov rax,2
-	mov [r15],rax
-	mov     rsi,  r14
-	mov     rdi,  r12
+	mov [r14],rax
+	mov     rsi,  r15
+	mov     rdi, [gbl+8*3]
 	push r11
 	push r10
 	push r9
@@ -853,9 +859,9 @@ L_3236:
 	pop r9
 	pop r10
 	pop r11
-	mov  r15, rax
+	mov  r14, rax
 	mov rbx,0
-	mov [r15],rbx
+	mov [r14],rbx
 	mov rdx,0
 	mov r15,rdx
 	jmp L_3253
@@ -865,26 +871,29 @@ L_3251:
 	mov r15,rbx
 	
 L_3253:
-	mov r15,r15
+	mov r14,r15
 	mov rbx,0
-	mov r13,rbx
+	mov r15,rbx
 	mov rdx,1
 	mov rdi,rdx
-	mov r15,rdi
+	mov r12,rdi
 	mov rax,237
-	imul r15,rax
+	mov r11,r12
+	imul r11,rax
 	xor rdx, rdx
-	mov rax,  r15
+	mov rax,  r11
 	mov rbx, [gbl+8*5]
 	cdq
 	idiv ebx
-	mov  r15, rdx
-	mov r15,r15
-	mov r14,r15
-	mov r15,r12
-	lea r15,[r15+r14*8+8H]
-	mov r15, [r15]
-	mov r13,r15
+	mov  r11, rdx
+	mov rbx,r11
+	mov r14,rbx
+	mov rdx,  [gbl+8*3]
+	mov r13,rdx
+	lea r12,[r13+r14*8+8H]
+	mov r14, [r12]
+	mov r15,r14
+	mov qword [rsp+8*19],rbx
 	mov     rdi, 1
 	push r11
 	push r10
@@ -895,14 +904,14 @@ L_3253:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword  r15, rax
-	mov r14,r15
+	mov     qword  r14, rax
+	mov r13,r14
 	mov rbx,0
-	lea r14,[r15+rbx*8+8H]
+	lea r13,[r14+rbx*8+8H]
 	mov rdx,1
-	mov [r14],rdx
-	mov     rsi,  r15
-	mov     rdi,  r13
+	mov [r13],rdx
+	mov     rsi,  r14
+	mov     rdi,  r15
 	push r11
 	push r10
 	push r9
@@ -912,9 +921,9 @@ L_3253:
 	pop r9
 	pop r10
 	pop r11
-	mov  r15, rax
-	mov r15, [r15]
-	mov r15,r15
+	mov  r13, rax
+	mov r13, [r13]
+	mov r15,r13
 	mov rdi,r15
 	mov r15,rdi
 	mov     rdi,  r15
@@ -927,8 +936,8 @@ L_3253:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r15, rax
-	mov rdi,r15
+	mov     qword r14, rax
+	mov rdi,r14
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 

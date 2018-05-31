@@ -695,55 +695,57 @@ main:
 	pop r15
 	mov r15 , rax
 	mov rbx,10
-	mov r11,rbx
+	mov r15,rbx
 	mov rdx,20
 	mov rdi,rdx
-	mov r12,rdi
+	mov r14,rdi
 	mov rax,250
-	cmp r12,rax
-	mov r15, 0
-	setl r15B
-	cmp r12,0
-	mov r14, 0
-	setg r14B
-	and r14,r15
-	cmp r14, 0
+	cmp r14,rax
+	mov r13, 0
+	setl r13B
+	cmp r14,0
+	mov r12, 0
+	setg r12B
+	mov r11,r13
+	and r11,r12
+	cmp r11, 0
 	je L_3497
 	mov rbx,  [gbl+8*1]
-	lea r13,[rbx+r12*8+8H]
-	mov r15, [r13]
-	cmp r15,0
-	mov r13, 0
-	setg r13B
-	cmp r13, 0
+	lea r13,[rbx+r14*8+8H]
+	mov r12, [r13]
+	cmp r12,0
+	mov r10, 0
+	setg r10B
+	cmp r10, 0
 	je L_3497
-	cmp r14, 0
+	cmp r11, 0
 	je L_3498
 	mov rbx,  [gbl+8*1]
-	lea r13,[rbx+r12*8+8H]
-	mov [r13],r15
+	lea r13,[rbx+r14*8+8H]
+	mov [r13],r12
 	
 L_3498:
-	mov r15,r15
+	mov r10,r12
 	jmp L_3500
 	
 L_3497:
-	mov r15,rdi
-	imul r15,r15
-	cmp r14, 0
+	mov r12,rdi
+	mov r9,r12
+	imul r9,r12
+	cmp r11, 0
 	je L_3501
 	mov rbx,  [gbl+8*1]
-	lea r13,[rbx+r12*8+8H]
-	mov [r13],r15
+	lea r13,[rbx+r14*8+8H]
+	mov [r13],r9
 	
 L_3501:
-	mov r15,r15
+	mov r10,r9
 	
 L_3500:
-	mov r15,r15
-	mov rdi,r15
-	mov r15,rdi
-	mov     rdi,  r15
+	mov r14,r10
+	mov rdi,r14
+	mov r14,rdi
+	mov     rdi,  r14
 	push r11
 	push r10
 	push r9
@@ -753,10 +755,10 @@ L_3500:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r15, rax
-	mov rdi,r15
-	mov r15,rdi
-	mov rdi, r15 
+	mov     qword r13, rax
+	mov rdi,r13
+	mov r14,rdi
+	mov rdi, r14 
 	add rdi, 1 
 	push r11
 	push r10
@@ -767,7 +769,7 @@ L_3500:
 	pop r9
 	pop r10
 	pop r11
-	mov rdi,r11
+	mov rdi,r15
 	mov r15,rdi
 	mov     rdi,  r15
 	push r11
@@ -779,8 +781,8 @@ L_3500:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r15, rax
-	mov rdi,r15
+	mov     qword r14, rax
+	mov rdi,r14
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 

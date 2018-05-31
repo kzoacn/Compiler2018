@@ -684,8 +684,8 @@ main:
 	pop r15
 	mov r15 , rax
 	mov rbx,5
-	mov r12,rbx
-	mov     rdi,  r12
+	mov r15,rbx
+	mov     rdi,  r15
 	push r11
 	push r10
 	push r9
@@ -695,26 +695,26 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword  r15, rax
-	mov r14,r15
+	mov     qword  r14, rax
+	mov r13,r14
 	mov rbx,0
-	mov r13,rbx
+	mov r14,rbx
 	
 L_4451:
-	cmp r13,r12
-	mov r15, 0
-	setl r15B
-	cmp r15, 0
+	cmp r14,r15
+	mov r12, 0
+	setl r12B
+	cmp r12, 0
 	je L_4452
-	mov r15,r14
-	lea r15,[r15+r13*8+8H]
-	mov [r15],r13
-	mov r15,r14
-	lea r15,[r15+r13*8+8H]
-	mov r15, [r15]
-	mov rdi,r15
-	mov r15,rdi
-	mov     rdi,  r15
+	mov r12,r13
+	lea r11,[r12+r14*8+8H]
+	mov [r11],r14
+	mov r12,r13
+	lea r11,[r12+r14*8+8H]
+	mov r12, [r11]
+	mov rdi,r12
+	mov r12,rdi
+	mov     rdi,  r12
 	push r11
 	push r10
 	push r9
@@ -724,10 +724,10 @@ L_4451:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r15, rax
-	mov rdi,r15
-	mov r15,rdi
-	mov rdi, r15 
+	mov     qword r11, rax
+	mov rdi,r11
+	mov r12,rdi
+	mov rdi, r12 
 	add rdi, 1 
 	push r11
 	push r10
@@ -738,9 +738,9 @@ L_4451:
 	pop r9
 	pop r10
 	pop r11
-	mov r15,r13
+	mov r12,r14
 	mov rbx,1
-	add r13,rbx
+	add r14,rbx
 	jmp L_4451
 	
 L_4452:

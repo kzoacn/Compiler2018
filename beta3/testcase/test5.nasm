@@ -700,14 +700,14 @@ main:
 	
 L_706:
 	cmp r15,r13
-	mov r12, 0
-	setg r12B
-	mov r12,r12
+	mov r11, 0
+	setg r11B
+	mov r12,r11
 	
 L_707:
 	cmp r12, 0
 	je L_708
-	mov r15,r15
+	mov r12,r15
 	jmp L_709
 	
 L_708:
@@ -716,16 +716,16 @@ L_708:
 	setg r15B
 	cmp r15, 0
 	je L_710
-	mov r15,r14
+	mov r12,r14
 	jmp L_711
 	
 L_710:
-	mov r15,r13
+	mov r12,r13
 	
 L_711:
 	
 L_709:
-	mov rdi,r15
+	mov rdi,r12
 	mov r15,rdi
 	mov     rdi,  r15
 	push r11
@@ -737,8 +737,8 @@ L_709:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r15, rax
-	mov rdi,r15
+	mov     qword r14, rax
+	mov rdi,r14
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 

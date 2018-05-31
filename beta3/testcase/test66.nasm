@@ -703,12 +703,12 @@ L_1604:
 	mov rbx,  r14
 	cdq
 	idiv ebx
-	mov  r15, rax
+	mov  r12, rax
 	mov rbx,5
-	cmp r15,rbx
-	mov r15, 0
-	setl r15B
-	mov r13,r15
+	cmp r12,rbx
+	mov r12, 0
+	setl r12B
+	mov r13,r12
 	
 L_1605:
 	cmp r13, 0

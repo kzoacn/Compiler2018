@@ -733,28 +733,29 @@ L_1303:
 	pop r11
 	
 L_1304:
+	mov r14, 0
 	cmp r15, 0
-	sete r15B
-	cmp r15, 0
+	sete r14B
+	cmp r14, 0
 	je L_1305
 	mov rbx,1
-	mov r15,rbx
+	mov r14,rbx
 	jmp L_1306
 	
 L_1305:
 	mov rbx,1
 	cmp rbx,0
-	mov r15, 0
-	setg r15B
-	mov r15,r15
+	mov r13, 0
+	setg r13B
+	mov r14,r13
 	
 L_1306:
-	cmp r15, 0
+	cmp r14, 0
 	je L_1307
 	mov rbx,t82
 	mov rdi,rbx
-	mov r15,rdi
-	mov rdi, r15 
+	mov r14,rdi
+	mov rdi, r14 
 	add rdi, 1 
 	push r11
 	push r10
@@ -770,8 +771,8 @@ L_1306:
 L_1307:
 	mov rbx,t86
 	mov rdi,rbx
-	mov r15,rdi
-	mov rdi, r15 
+	mov r14,rdi
+	mov rdi, r14 
 	add rdi, 1 
 	push r11
 	push r10
@@ -810,9 +811,9 @@ L_1311:
 	mov rbx,2
 	mov rdx,4
 	cmp rbx,rdx
-	mov r15, 0
-	setne r15B
-	mov r15,r15
+	mov r14, 0
+	setne r14B
+	mov r15,r14
 	
 L_1312:
 	cmp r15, 0

@@ -707,8 +707,8 @@ L_701:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r13, rax
-	mov rdi,r13
+	mov     qword r12, rax
+	mov rdi,r12
 	mov r13,rdi
 	mov rdi, r13 
 	add rdi, 1 
@@ -721,10 +721,11 @@ L_701:
 	pop r9
 	pop r10
 	pop r11
-	add r15,r14
 	mov r13,r15
+	add r13,r14
+	mov r12,r13
 	mov r15,r14
-	mov r14,r13
+	mov r14,r12
 	jmp L_701
 	
 L_702:

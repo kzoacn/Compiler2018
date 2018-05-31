@@ -696,48 +696,49 @@ main:
 	mov r15 , rax
 	mov rbx,1
 	mov rdi,rbx
-	mov r13,rdi
+	mov r15,rdi
 	mov rdx,250
-	cmp r13,rdx
-	mov r15, 0
-	setl r15B
-	cmp r13,0
+	cmp r15,rdx
 	mov r14, 0
-	setg r14B
-	and r15,r14
-	cmp r15, 0
+	setl r14B
+	cmp r15,0
+	mov r13, 0
+	setg r13B
+	mov r12,r14
+	and r12,r13
+	cmp r12, 0
 	je L_3551
 	mov rbx,  [gbl+8*1]
-	lea r14,[rbx+r13*8+8H]
-	mov r12, [r14]
-	cmp r12,0
-	mov r14, 0
-	setg r14B
-	cmp r14, 0
+	lea r14,[rbx+r15*8+8H]
+	mov r13, [r14]
+	cmp r13,0
+	mov r11, 0
+	setg r11B
+	cmp r11, 0
 	je L_3551
-	cmp r15, 0
+	cmp r12, 0
 	je L_3552
 	mov rbx,  [gbl+8*1]
-	lea r14,[rbx+r13*8+8H]
-	mov [r14],r12
+	lea r14,[rbx+r15*8+8H]
+	mov [r14],r13
 	
 L_3552:
-	mov r15,r12
+	mov r11,r13
 	jmp L_3554
 	
 L_3551:
-	mov r12,rdi
-	cmp r15, 0
+	mov r13,rdi
+	cmp r12, 0
 	je L_3555
 	mov rbx,  [gbl+8*1]
-	lea r14,[rbx+r13*8+8H]
-	mov [r14],r12
+	lea r14,[rbx+r15*8+8H]
+	mov [r14],r13
 	
 L_3555:
-	mov r15,r12
+	mov r11,r13
 	
 L_3554:
-	mov r15,r15
+	mov r15,r11
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]
