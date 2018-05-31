@@ -486,13 +486,13 @@ public class IROptimizer {
         boolean[] used=new boolean[10];
         TreeMap<String,Integer> colorMap1=greed();
         TreeMap<String,Integer> colorMap2=chartin();
-        TreeMap<String,Integer> colorMap3=linearScan();
+        //TreeMap<String,Integer> colorMap3=linearScan();
 
 
         System.err.println("greed : "+colorMap1.size());
         System.err.println("chartin : "+colorMap2.size());
-        System.err.println("linearScan : "+colorMap3.size());
-        colorMap=colorMap3;
+        //System.err.println("linearScan : "+colorMap3.size());
+        colorMap=colorMap1;
         if(colorMap1.size()>colorMap.size())
             colorMap=colorMap1;
         if(colorMap2.size()>colorMap.size())

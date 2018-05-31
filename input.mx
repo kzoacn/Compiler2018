@@ -42,7 +42,7 @@ int main() {
 		int tt = f(100);
 		if(i % 3000000 == 0) println(toString(tt));
 	} 
-
+    return 0;
 }
 
 /*!! metadata:
@@ -51,9 +51,9 @@ int main() {
 === is_public ===
 True
 === assert ===
-success_compile
+output
 === timeout ===
-8
+8.0
 === input ===
 350
 === phase ===
