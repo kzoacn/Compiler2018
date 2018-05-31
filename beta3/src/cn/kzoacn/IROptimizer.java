@@ -3,14 +3,109 @@ package cn.kzoacn;
 import java.util.*;
 
 public class IROptimizer {
+    public int registerNumber=8;
     public HashMap<Integer,HashSet<Integer> >saveRegister=new HashMap<Integer, HashSet<Integer>>();
+
+
+    HashMap<Variable,Integer>degree=new HashMap<Variable,Integer>();
+    HashSet<Variable>variables=new HashSet<Variable>();
+    HashMap<Variable,HashSet<Variable> >graph=new HashMap<Variable,HashSet<Variable> >();
+    TreeMap<String,Integer> chartin(){
+        ArrayList<Variable>color=new ArrayList<Variable>();
+        TreeMap<String,Integer> colorMap=new TreeMap<String,Integer>();
+        boolean[] visit=new boolean[10];
+        while(variables.size()>0){
+            ArrayList<Variable>newColor=new ArrayList<Variable>();
+            for(Variable var : variables){
+                if(degree.get(var)<registerNumber){
+                    newColor.add(var);
+                    color.add(var);
+                }
+            }
+            if(!newColor.isEmpty()){
+                for(Variable var : newColor){
+                    variables.remove(var);
+                    for(Variable near : graph.get(var)){
+                        degree.put(near,degree.get(near)-1);
+                    }
+                }
+                continue;
+            }
+            Variable lucky=null;
+            int mx=0;
+            for(Variable var : variables){
+                lucky = var;
+                //break;
+            }
+
+            variables.remove(lucky);
+            for(Variable near : graph.get(lucky)){
+                degree.put(near,degree.get(near)-1);
+            }
+        }
+
+//        Collections.shuffle(color,new Random(3));
+        for(Variable var:color){
+            for(int i=0;i<10;i++)visit[i]=false;
+            for(Variable var2:graph.get(var))if(colorMap.containsKey(var2.name))
+                visit[colorMap.get(var2.name)]=true;
+            int mex=0;
+            for(int i=1;i<10;i++){
+                if(!visit[i]){
+                    mex=i;
+                    break;
+                }
+            }
+            if(mex>registerNumber)mex=0;
+            if(mex>0)colorMap.put(var.name,mex);
+        }
+
+        return colorMap;
+    }
+    TreeMap<String,Integer> greed(){
+        TreeMap<String,Integer> colorMap=new TreeMap<String,Integer>();
+        boolean[] visit=new boolean[10];
+        ArrayList<Variable>arrayList=new ArrayList<Variable>(variables);
+        arrayList.sort((var1, var2) -> graph.get(var2).size() - graph.get(var1).size());
+        for(Variable var:arrayList){
+            for(int i=0;i<10;i++)visit[i]=false;
+            for(Variable var2:graph.get(var))if(colorMap.containsKey(var2.name)) {
+                visit[colorMap.get(var2.name)] = true;
+            }
+            int mex=0;
+            for(int i=1;i<10;i++){
+                if(!visit[i]){
+                    mex=i;
+                    break;
+                }
+            }
+            if(mex>registerNumber)mex=0;
+
+            if(mex>0){
+                colorMap.put(var.name,mex);
+            }else{
+                colorMap.remove(var.name);
+            }
+
+        }
+
+        for(Variable var:variables)if(colorMap.containsKey(var.name)){
+
+            for(Variable var2:graph.get(var))if(colorMap.containsKey(var2.name))
+                if(colorMap.get(var.name).equals(colorMap.get(var2.name))){
+                    System.err.println(var.name+" "+var2.name);
+                    System.err.println("sdf");
+                }
+        }
+        return colorMap;
+    }
+
     IR optimize(IR ir){
         ArrayList<ArrayList<Integer> >edgeList=new ArrayList<ArrayList<Integer> >();
         IR tmp=new IR();
         Quad cur=ir.head;
         int line_number=0;
         HashMap<String,Integer>lineMap=new HashMap<String, Integer>();
-        HashSet<Variable>variables=new HashSet<Variable>();
         while(cur!=null){
             cur.line=line_number++;
             edgeList.add(new ArrayList<Integer>());
@@ -243,8 +338,6 @@ public class IROptimizer {
 
 
         //register allocate
-        HashMap<Variable,HashSet<Variable> >graph=new HashMap<Variable,HashSet<Variable> >();
-        HashMap<Variable,Integer>degree=new HashMap<Variable,Integer>();
         for(Variable var:variables)
             graph.put(var,new HashSet<Variable>());
 
@@ -282,7 +375,6 @@ public class IROptimizer {
         }
         visit=new boolean[10];
 
-        ArrayList<Variable>color=new ArrayList<Variable>();
 
 
         //variables.removeIf((var)->var.isTemp);
@@ -304,98 +396,18 @@ public class IROptimizer {
             degree.put(entry.getKey(),hashSet.size());
         }
 
-        int registerNumber=8;
+
 
 
         //greedy allocate
         boolean[] used=new boolean[10];
-//        Random random=new Random(0);
-//        for(Variable var:variables)
-//            colorMap.put(var.name,random.nextInt(registerNumber)+1);
-/*
-        ArrayList<Variable>arrayList=new ArrayList<Variable>(variables);
-        arrayList.sort((var1, var2) -> graph.get(var2).size() - graph.get(var1).size());
-        for(Variable var:arrayList){
-            for(int i=0;i<10;i++)visit[i]=false;
-            for(Variable var2:graph.get(var))if(colorMap.containsKey(var2.name)) {
-                visit[colorMap.get(var2.name)] = true;
-            }
-            int mex=0;
-            for(int i=1;i<10;i++){
-                if(!visit[i]){
-                    mex=i;
-                    break;
-                }
-            }
-            if(mex>registerNumber)mex=0;
+        TreeMap<String,Integer> colorMap1=greed();
+        TreeMap<String,Integer> colorMap2=chartin();
 
-            if(mex>0){
-                colorMap.put(var.name,mex);
-            }else{
-                colorMap.remove(var.name);
-            }
-
-        }
-
-        for(Variable var:variables)if(colorMap.containsKey(var.name)){
-
-            for(Variable var2:graph.get(var))if(colorMap.containsKey(var2.name))
-                if(colorMap.get(var.name).equals(colorMap.get(var2.name))){
-                    System.err.println(var.name+" "+var2.name);
-                    System.err.println("sdf");
-                }
-            }
-
-*/
-        while(variables.size()>0){
-            ArrayList<Variable>newColor=new ArrayList<Variable>();
-            for(Variable var : variables){
-                if(degree.get(var)<registerNumber){
-                    newColor.add(var);
-                    color.add(var);
-                }
-            }
-            if(!newColor.isEmpty()){
-                for(Variable var : newColor){
-                    variables.remove(var);
-                    for(Variable near : graph.get(var)){
-                        degree.put(near,degree.get(near)-1);
-                    }
-                }
-                continue;
-            }
-            Variable lucky=null;
-            int mx=0;
-            for(Variable var : variables){
-                lucky = var;
-                //break;
-            }
-
-            variables.remove(lucky);
-            for(Variable near : graph.get(lucky)){
-                degree.put(near,degree.get(near)-1);
-            }
-        }
-
-        for(int i=0;i<10;i++)used[i]=false;
-//        Collections.shuffle(color,new Random(3));
-        for(Variable var:color){
-            for(int i=0;i<10;i++)visit[i]=false;
-            for(Variable var2:graph.get(var))if(colorMap.containsKey(var2.name))
-                visit[colorMap.get(var2.name)]=true;
-            int mex=0;
-            for(int i=1;i<10;i++){
-                if(!visit[i]){
-                    mex=i;
-                    break;
-                }
-            }
-            if(mex>registerNumber)mex=0;
-            //if(used[mex])continue;
-            used[mex]=true;
-            if(mex>0)colorMap.put(var.name,mex);
-        }
-
+        if(colorMap1.size()>colorMap2.size())
+            colorMap=colorMap1;
+        else
+            colorMap=colorMap2;
 
         cur=ir.head;
         line_number=0;

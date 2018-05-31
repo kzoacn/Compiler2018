@@ -32,21 +32,24 @@
       <file leaf-file-name="IROptimizer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IROptimizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1489">
-              <caret line="315" selection-start-line="315" selection-end-line="315" />
+            <state relative-caret-position="406">
+              <caret line="404" column="26" selection-start-line="404" selection-start-column="26" selection-end-line="404" selection-end-column="26" />
               <folding>
-                <element signature="e#137#164#0" expanded="true" />
-                <element signature="e#252#273#0" expanded="true" />
-                <element signature="e#405#422#0" expanded="true" />
-                <element signature="e#472#482#0" expanded="true" />
-                <element signature="e#2361#2370#0" expanded="true" />
-                <element signature="e#2905#2913#0" expanded="true" />
-                <element signature="e#4171#4179#0" expanded="true" />
-                <element signature="e#8290#8319#0" expanded="true" />
-                <element signature="e#8374#8392#0" expanded="true" />
-                <element signature="e#9654#9664#0" expanded="true" />
-                <element signature="e#10022#10039#0" expanded="true" />
-                <element signature="e#10934#10944#0" expanded="true" />
+                <element signature="e#170#197#0" expanded="true" />
+                <element signature="e#254#272#0" expanded="true" />
+                <element signature="e#249#259#0" expanded="true" />
+                <element signature="e#320#349#0" expanded="true" />
+                <element signature="e#503#513#0" expanded="true" />
+                <element signature="e#440#456#0" expanded="true" />
+                <element signature="e#476#486#0" expanded="true" />
+                <element signature="e#2098#2114#0" expanded="true" />
+                <element signature="e#2209#2219#0" expanded="true" />
+                <element signature="e#3415#3436#0" expanded="true" />
+                <element signature="e#3793#3810#0" expanded="true" />
+                <element signature="e#5464#5473#0" expanded="true" />
+                <element signature="e#6008#6016#0" expanded="true" />
+                <element signature="e#7274#7282#0" expanded="true" />
+                <element signature="e#13123#13140#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,9 +120,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>r8</find>
-      <find>rcx</find>
-      <find>registerNun</find>
       <find>mov</find>
       <find>call</find>
       <find>optm</find>
@@ -147,6 +147,9 @@
       <find>sort</find>
       <find>mod</find>
       <find>flag</find>
+      <find>variables</find>
+      <find>graph</find>
+      <find>color</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -383,21 +386,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ExecTest - 2018.05.29 at 19h 49m 33s.xml">
-      <configuration name="ExecTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExecTest - 2018.05.29 at 20h 07m 05s.xml">
-      <configuration name="ExecTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExecTest - 2018.05.29 at 20h 10m 40s.xml">
-      <configuration name="ExecTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExecTest - 2018.05.30 at 12h 25m 22s.xml">
-      <configuration name="ExecTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExecTest_testInput - 2018.05.30 at 12h 26m 13s.xml">
-      <configuration name="ExecTest.testInput" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ExecTest_testInput - 2018.05.30 at 12h 26m 32s.xml">
       <configuration name="ExecTest.testInput" configurationId="JUnit" />
     </history-entry>
@@ -413,9 +401,25 @@
     <history-entry file="ExecTest - 2018.05.30 at 12h 56m 59s.xml">
       <configuration name="ExecTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ExecTest - 2018.05.31 at 13h 16m 27s.xml">
+      <configuration name="ExecTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecTest - 2018.05.31 at 13h 17m 06s.xml">
+      <configuration name="ExecTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecTest_testInput - 2018.05.31 at 13h 17m 46s.xml">
+      <configuration name="ExecTest.testInput" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecTest - 2018.05.31 at 13h 18m 53s.xml">
+      <configuration name="ExecTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecTest - 2018.05.31 at 13h 25m 48s.xml">
+      <configuration name="ExecTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -484,15 +488,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/cn/kzoacn/IROptimizer.java</url>
-          <line>400</line>
-          <properties />
-          <option name="timeStamp" value="187" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="193" />
+      <option name="time" value="194" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -836,21 +832,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IROptimizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1489">
-          <caret line="315" selection-start-line="315" selection-end-line="315" />
+        <state relative-caret-position="406">
+          <caret line="404" column="26" selection-start-line="404" selection-start-column="26" selection-end-line="404" selection-end-column="26" />
           <folding>
-            <element signature="e#137#164#0" expanded="true" />
-            <element signature="e#252#273#0" expanded="true" />
-            <element signature="e#405#422#0" expanded="true" />
-            <element signature="e#472#482#0" expanded="true" />
-            <element signature="e#2361#2370#0" expanded="true" />
-            <element signature="e#2905#2913#0" expanded="true" />
-            <element signature="e#4171#4179#0" expanded="true" />
-            <element signature="e#8290#8319#0" expanded="true" />
-            <element signature="e#8374#8392#0" expanded="true" />
-            <element signature="e#9654#9664#0" expanded="true" />
-            <element signature="e#10022#10039#0" expanded="true" />
-            <element signature="e#10934#10944#0" expanded="true" />
+            <element signature="e#170#197#0" expanded="true" />
+            <element signature="e#254#272#0" expanded="true" />
+            <element signature="e#249#259#0" expanded="true" />
+            <element signature="e#320#349#0" expanded="true" />
+            <element signature="e#503#513#0" expanded="true" />
+            <element signature="e#440#456#0" expanded="true" />
+            <element signature="e#476#486#0" expanded="true" />
+            <element signature="e#2098#2114#0" expanded="true" />
+            <element signature="e#2209#2219#0" expanded="true" />
+            <element signature="e#3415#3436#0" expanded="true" />
+            <element signature="e#3793#3810#0" expanded="true" />
+            <element signature="e#5464#5473#0" expanded="true" />
+            <element signature="e#6008#6016#0" expanded="true" />
+            <element signature="e#7274#7282#0" expanded="true" />
+            <element signature="e#13123#13140#0" expanded="true" />
           </folding>
         </state>
       </provider>
