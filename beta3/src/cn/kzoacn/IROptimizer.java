@@ -34,7 +34,7 @@ public class IROptimizer {
         TreeMap<String,Integer> colorMap=new TreeMap<String,Integer>();
         ArrayList<Interval> arrayList = new ArrayList<Interval>(liveInterval.values());
         HashSet<Interval>current=new HashSet<Interval>();
-        arrayList.sort((l1,l2)->l1.l-l2.l);
+        arrayList.sort((l1,l2)->l1.l-l2.l==0?l1.r-l2.r:l1.l-l2.l);
 
         boolean[] visit=new boolean[10];
 
