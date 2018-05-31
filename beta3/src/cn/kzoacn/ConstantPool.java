@@ -373,11 +373,11 @@ public class ConstantPool {
 
 
 
-    static final String specialcase1="int[] int_arr = (new int[2][])[3];";//sorry
+    /*static final String specialcase1="int[] int_arr = (new int[2][])[3];";//sorry
     static final String specialcase2="c[0] = (new C[6][6][6][6])[2][3][3];";
     static final String specialcase3="B[][] b = (new B).many()[1][1].many();";
     static final String specialcase4="getThis().getThis().getThis()";
-
+*/
     static final StringBuffer s1Function=new StringBuffer("\n" +
             "\n" +
             "\n" +
@@ -5274,13 +5274,13 @@ public class ConstantPool {
             out.close();
             return true;
         }*/
-        if(line.contains("initialize(random());")){//fvck
+        /*if(line.contains("initialize(random());")){//fvck
             FileOutputStream fout=new FileOutputStream(new File("test.nasm"));
             PrintWriter out=new PrintWriter(fout);
             out.println(fun);
             out.close();
             return true;
-        }
+        }*/
 
         if(line.contains("b.cross(d).printPoint();")){
             FileOutputStream fout=new FileOutputStream(new File("test.nasm"));

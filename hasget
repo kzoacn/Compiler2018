@@ -1,1 +1,1 @@
-	int n=getInt();
+        int times = getInt();
