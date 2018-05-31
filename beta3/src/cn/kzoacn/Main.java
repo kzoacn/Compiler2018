@@ -487,12 +487,14 @@ class SymbolMap{
         }
         operations.push(new Operation(name,renameMap.get(name),variableMap.get(name),depthMap.get(name)));
         variableMap.put(name,variableType);
-        if(global)
-            globalVariableMap.put(name,variableType);
         if(!renameMap.containsKey(name)) {
             renameMap.put(name, name );
         }else{
             renameMap.put(name, name + "_" + variableCounter);
+        }
+
+        if(global) {
+            globalVariableMap.put(renameMap.get(name), variableType);
         }
         if(!currentFunction.equals("")) {
             ArrayList<String> arrayList=localVariable.get(currentFunction);

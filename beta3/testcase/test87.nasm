@@ -686,7 +686,7 @@ main:
 	pop r15
 	mov r14 , rax
 	
-L_3528:
+L_3333:
 	mov rbx,1
 	mov r14,rbx
 	mov rcx,29
@@ -696,28 +696,28 @@ L_3528:
 	mov r14, 0
 	setl r14B
 	cmp r14, 0
-	jne L_3530
+	jne L_3335
 	mov rbx,0
 	mov r14,rbx
-	jmp L_3531
+	jmp L_3336
 	
-L_3530:
+L_3335:
 	mov rbx,1
-	mov r13,rbx
+	mov r14,rbx
 	mov rcx,29
-	shl r13,cl
-	mov r12,r13
-	neg r12
+	shl r14,cl
+	mov r14,r14
+	neg r14
 	mov rdx,  [gbl+8*3]
-	cmp rdx,r12
-	mov r12, 0
-	setg r12B
-	mov r14,r12
+	cmp rdx,r14
+	mov r14, 0
+	setg r14B
+	mov r14,r14
 	
-L_3531:
+L_3336:
 	add r15,r15
 	cmp r14, 0
-	je L_3529
+	je L_3334
 	mov rbx,  [gbl+8*3]
 	mov rdx,  [gbl+8*7]
 	mov r14,rbx
@@ -727,13 +727,13 @@ L_3531:
 	mov r13,rdx
 	add r13,rax
 	sub r14,r13
-	mov r13,rbx
-	sub r13,rdx
-	add r13,rax
-	mov r12,rdx
+	mov r12,rbx
+	sub r12,rdx
 	add r12,rax
-	sub r13,r12
-	add r14,r13
+	mov r13,rdx
+	add r13,rax
+	sub r12,r13
+	add r14,r12
 	mov r13,rbx
 	sub r13,rdx
 	add r13,rax
@@ -817,13 +817,13 @@ L_3531:
 	mov r12,rdx
 	add r12,rax
 	sub r13,r12
-	mov r12,rbx
-	sub r12,rdx
-	add r12,rax
-	mov r11,rdx
+	mov r11,rbx
+	sub r11,rdx
 	add r11,rax
-	sub r12,r11
-	add r13,r12
+	mov r12,rdx
+	add r12,rax
+	sub r11,r12
+	add r13,r11
 	mov r12,rbx
 	sub r12,rdx
 	add r12,rax
@@ -905,13 +905,13 @@ L_3531:
 	sub r12,rdx
 	add r12,rax
 	add r13,r12
-	mov r12,rdx
-	add r12,rax
-	mov r11,rbx
-	sub r11,rdx
+	mov r11,rdx
 	add r11,rax
-	add r12,r11
-	sub r13,r12
+	mov r12,rbx
+	sub r12,rdx
+	add r12,rax
+	add r11,r12
+	sub r13,r11
 	mov r12,rdx
 	add r12,rax
 	mov r11,rbx
@@ -991,13 +991,13 @@ L_3531:
 	mov r11,rdx
 	add r11,rax
 	sub r12,r11
-	mov r11,rbx
-	sub r11,rdx
-	add r11,rax
-	mov r10,rdx
+	mov r10,rbx
+	sub r10,rdx
 	add r10,rax
-	sub r11,r10
-	add r12,r11
+	mov r11,rdx
+	add r11,rax
+	sub r10,r11
+	add r12,r10
 	mov r11,rbx
 	sub r11,rdx
 	add r11,rax
@@ -1081,13 +1081,13 @@ L_3531:
 	mov r13,rdx
 	add r13,rax
 	sub r14,r13
-	mov r13,rbx
-	sub r13,rdx
-	add r13,rax
-	mov r12,rdx
+	mov r12,rbx
+	sub r12,rdx
 	add r12,rax
-	sub r13,r12
-	add r14,r13
+	mov r13,rdx
+	add r13,rax
+	sub r12,r13
+	add r14,r12
 	mov r13,rbx
 	sub r13,rdx
 	add r13,rax
@@ -1171,13 +1171,13 @@ L_3531:
 	mov r12,rdx
 	add r12,rax
 	sub r13,r12
-	mov r12,rbx
-	sub r12,rdx
-	add r12,rax
-	mov r11,rdx
+	mov r11,rbx
+	sub r11,rdx
 	add r11,rax
-	sub r12,r11
-	add r13,r12
+	mov r12,rdx
+	add r12,rax
+	sub r11,r12
+	add r13,r11
 	mov r12,rbx
 	sub r12,rdx
 	add r12,rax
@@ -1259,13 +1259,13 @@ L_3531:
 	sub r12,rdx
 	add r12,rax
 	add r13,r12
-	mov r12,rdx
-	add r12,rax
-	mov r11,rbx
-	sub r11,rdx
+	mov r11,rdx
 	add r11,rax
-	add r12,r11
-	sub r13,r12
+	mov r12,rbx
+	sub r12,rdx
+	add r12,rax
+	add r11,r12
+	sub r13,r11
 	mov r12,rdx
 	add r12,rax
 	mov r11,rbx
@@ -1435,13 +1435,13 @@ L_3531:
 	mov r13,rdx
 	add r13,rax
 	sub r14,r13
-	mov r13,rbx
-	sub r13,rdx
-	add r13,rax
-	mov r12,rdx
+	mov r12,rbx
+	sub r12,rdx
 	add r12,rax
-	sub r13,r12
-	add r14,r13
+	mov r13,rdx
+	add r13,rax
+	sub r12,r13
+	add r14,r12
 	mov r13,rbx
 	sub r13,rdx
 	add r13,rax
@@ -1525,13 +1525,13 @@ L_3531:
 	mov r12,rdx
 	add r12,rax
 	sub r13,r12
-	mov r12,rbx
-	sub r12,rdx
-	add r12,rax
-	mov r11,rdx
+	mov r11,rbx
+	sub r11,rdx
 	add r11,rax
-	sub r12,r11
-	add r13,r12
+	mov r12,rdx
+	add r12,rax
+	sub r11,r12
+	add r13,r11
 	mov r12,rbx
 	sub r12,rdx
 	add r12,rax
@@ -1613,13 +1613,13 @@ L_3531:
 	sub r12,rdx
 	add r12,rax
 	add r13,r12
-	mov r12,rdx
-	add r12,rax
-	mov r11,rbx
-	sub r11,rdx
+	mov r11,rdx
 	add r11,rax
-	add r12,r11
-	sub r13,r12
+	mov r12,rbx
+	sub r12,rdx
+	add r12,rax
+	add r11,r12
+	sub r13,r11
 	mov r12,rdx
 	add r12,rax
 	mov r11,rbx
@@ -1699,13 +1699,13 @@ L_3531:
 	mov r11,rdx
 	add r11,rax
 	sub r12,r11
-	mov r11,rbx
-	sub r11,rdx
-	add r11,rax
-	mov r10,rdx
+	mov r10,rbx
+	sub r10,rdx
 	add r10,rax
-	sub r11,r10
-	add r12,r11
+	mov r11,rdx
+	add r11,rax
+	sub r10,r11
+	add r12,r10
 	mov r11,rbx
 	sub r11,rdx
 	add r11,rax
@@ -1786,9 +1786,9 @@ L_3531:
 	mov qword [gbl+8*3],rbx
 	mov qword [gbl+8*7],rdx
 	mov qword [gbl+8*9],rax
-	jmp L_3528
+	jmp L_3333
 	
-L_3529:
+L_3334:
 	mov rbx,  [gbl+8*7]
 	mov rdi,rbx
 	mov r15,rdi
@@ -1802,9 +1802,9 @@ L_3529:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r14, rax
+	mov     qword r15, rax
 	mov     rsi, t381
-	mov     rdi,  r14
+	mov     rdi,  r15
 	push r11
 	push r10
 	push r9
@@ -1828,8 +1828,8 @@ L_3529:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r13, rax
-	mov     rsi,  r13
+	mov     qword r14, rax
+	mov     rsi,  r14
 	mov     rdi,  r15
 	push r11
 	push r10
@@ -1866,8 +1866,8 @@ L_3529:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r13, rax
-	mov     rsi,  r13
+	mov     qword r14, rax
+	mov     rsi,  r14
 	mov     rdi,  r15
 	push r11
 	push r10

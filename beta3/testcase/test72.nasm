@@ -684,7 +684,7 @@ main:
 	pop r15
 	mov r15 , rax
 	mov rbx,0
-	mov r15,rbx
+	mov r14,rbx
 	mov     rdi, 5
 	push r11
 	push r10
@@ -695,11 +695,39 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword  r14, rax
-	mov r13,r14
+	mov     qword  r15, rax
+	mov r15,r15
 	mov rbx,1
-	add r15,rbx
-	mov rdi,r15
+	add r14,rbx
+	mov rdi,r14
+	mov r13,rdi
+	mov     rdi,  r13
+	push r11
+	push r10
+	push r9
+	push r8
+	call    toString
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword r13, rax
+	mov rdi,r13
+	mov r13,rdi
+	mov rdi, r13 
+	add rdi, 1 
+	push r11
+	push r10
+	push r9
+	push r8
+	call puts
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov rbx,1
+	add r14,rbx
+	mov rdi,r14
 	mov r14,rdi
 	mov     rdi,  r14
 	push r11
@@ -711,8 +739,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r12, rax
-	mov rdi,r12
+	mov     qword r14, rax
+	mov rdi,r14
 	mov r14,rdi
 	mov rdi, r14 
 	add rdi, 1 
@@ -725,11 +753,16 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov rbx,1
-	add r15,rbx
-	mov rdi,r15
-	mov r15,rdi
-	mov     rdi,  r15
+	mov r14,r15
+	mov rbx,0
+	lea r14,[r14+rbx*8+8H]
+	mov r13, [r14]
+	mov rdx,1
+	add r13,rdx
+	mov [r14],r13
+	mov rdi,r13
+	mov r14,rdi
+	mov     rdi,  r14
 	push r11
 	push r10
 	push r9
@@ -741,8 +774,8 @@ main:
 	pop r11
 	mov     qword r14, rax
 	mov rdi,r14
-	mov r15,rdi
-	mov rdi, r15 
+	mov r14,rdi
+	mov rdi, r14 
 	add rdi, 1 
 	push r11
 	push r10
@@ -753,14 +786,14 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov r15,r13
+	mov r15,r15
 	mov rbx,0
-	lea r14,[r15+rbx*8+8H]
-	mov r15, [r14]
+	lea r15,[r15+rbx*8+8H]
+	mov r14, [r15]
 	mov rdx,1
-	add r15,rdx
-	mov [r14],r15
-	mov rdi,r15
+	add r14,rdx
+	mov [r15],r14
+	mov rdi,r14
 	mov r15,rdi
 	mov     rdi,  r15
 	push r11
@@ -772,41 +805,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r14, rax
-	mov rdi,r14
-	mov r15,rdi
-	mov rdi, r15 
-	add rdi, 1 
-	push r11
-	push r10
-	push r9
-	push r8
-	call puts
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	mov r15,r13
-	mov rbx,0
-	lea r14,[r15+rbx*8+8H]
-	mov r15, [r14]
-	mov rdx,1
-	add r15,rdx
-	mov [r14],r15
+	mov     qword r15, rax
 	mov rdi,r15
-	mov r15,rdi
-	mov     rdi,  r15
-	push r11
-	push r10
-	push r9
-	push r8
-	call    toString
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	mov     qword r14, rax
-	mov rdi,r14
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 

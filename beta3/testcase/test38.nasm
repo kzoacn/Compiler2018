@@ -661,13 +661,13 @@ f:
 	mov r14, 0
 	setle r14B
 	cmp r14, 0
-	je L_1199
+	je L_1004
 	mov rbx,0
 	mov rax,rbx
 	leave
 	ret
 	
-L_1199:
+L_1004:
 	mov rbx,t68
 	mov rdi,rbx
 	mov r14,rdi
@@ -696,8 +696,8 @@ L_1199:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r13, rax
-	mov rdi,r13
+	mov     qword r14, rax
+	mov rdi,r14
 	mov r14,rdi
 	mov rdi, r14 
 	add rdi, 1 
@@ -732,13 +732,13 @@ g:
 	mov r14, 0
 	setle r14B
 	cmp r14, 0
-	je L_1201
+	je L_1006
 	mov rbx,0
 	mov rax,rbx
 	leave
 	ret
 	
-L_1201:
+L_1006:
 	mov rbx,t85
 	mov rdi,rbx
 	mov r14,rdi
@@ -767,8 +767,8 @@ L_1201:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r13, rax
-	mov rdi,r13
+	mov     qword r14, rax
+	mov rdi,r14
 	mov r14,rdi
 	mov rdi, r14 
 	add rdi, 1 
@@ -803,13 +803,13 @@ h:
 	mov r14, 0
 	setle r14B
 	cmp r14, 0
-	je L_1203
+	je L_1008
 	mov rbx,0
 	mov rax,rbx
 	leave
 	ret
 	
-L_1203:
+L_1008:
 	mov rbx,t102
 	mov rdi,rbx
 	mov r14,rdi
@@ -838,8 +838,8 @@ L_1203:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r13, rax
-	mov rdi,r13
+	mov     qword r14, rax
+	mov rdi,r14
 	mov r14,rdi
 	mov rdi, r14 
 	add rdi, 1 

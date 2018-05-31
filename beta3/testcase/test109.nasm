@@ -730,9 +730,9 @@ L_471:
 L_479:
 	mov rbx,126
 	cmp r14,rbx
-	mov r12, 0
-	setle r12B
-	mov r13,r12
+	mov r13, 0
+	setle r13B
+	mov r13,r13
 	
 L_480:
 	cmp r13, 0
@@ -743,9 +743,8 @@ L_480:
 	mov r12,r14
 	sub r12,rdx
 	mov rax,32
-	mov r11,r14
-	sub r11,rax
-	mov rsi,r11
+	sub r14,rax
+	mov rsi,r14
 	mov rdi,r12
 	mov rdx,r13
 	mov qword [arg+8*63],rdx
@@ -761,15 +760,15 @@ L_480:
 	pop r10
 	pop r11
 	mov  r14, rax
-	mov r13,r14
+	mov r14,r14
 	jmp L_483
 	
 L_481:
 	mov rbx,t80
-	mov r13,rbx
+	mov r14,rbx
 	
 L_483:
-	mov r14,r13
+	mov r14,r14
 	mov rdi,r14
 	mov r14,rdi
 	mov rdi, format

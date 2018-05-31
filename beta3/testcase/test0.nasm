@@ -687,9 +687,8 @@ main:
 	mov r15,rbx
 	mov rdx,5
 	mov r14,rdx
-	mov r13,r15
-	add r13,r14
-	mov r15,r13
+	add r15,r14
+	mov r15,r15
 	mov rdi,r15
 	mov r15,rdi
 	mov     rdi,  r15
@@ -702,8 +701,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r14, rax
-	mov rdi,r14
+	mov     qword r15, rax
+	mov rdi,r15
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 

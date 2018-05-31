@@ -659,9 +659,8 @@ Adder_add:
 	mov r15,rbx
 	mov r15,rdi
 	mov r14,rsi
-	mov r13,r15
-	add r13,r14
-	mov rax,r13
+	add r15,r14
+	mov rax,r15
 	leave
 	ret
 	
@@ -708,8 +707,8 @@ main:
 	pop r10
 	pop r11
 	mov     qword  r15, rax
-	mov r14,r15
-	mov r15,r14
+	mov r15,r15
+	mov r15,r15
 	mov rbx,4
 	mov rsi,rbx
 	mov rdx,3
@@ -732,8 +731,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r14, rax
-	mov rdi,r14
+	mov     qword r15, rax
+	mov rdi,r15
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 

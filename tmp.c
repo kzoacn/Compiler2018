@@ -1,4 +1,4 @@
 #include<stdio.h>
 int main(){
-printf("a34\nawefe\n,,\"\"\\\\\n\"\"\"\\\\\n");
+printf("3736710778780434371\n");
 }

@@ -684,11 +684,11 @@ main:
 	pop r15
 	mov r15 , rax
 	mov rbx,t64
-	mov r15,rbx
+	mov r14,rbx
 	mov rdx,t65
-	mov r14,rdx
-	mov rdi,  r14
-	mov rsi,  r15
+	mov r15,rdx
+	mov rdi,  r15
+	mov rsi,  r14
 	push r11
 	push r10
 	push r9
@@ -698,9 +698,9 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov qword  r13, rax
-	cmp r13, 0
-	je L_3198
+	mov qword  r15, rax
+	cmp r15, 0
+	je L_3003
 	mov rbx,t67
 	mov rdi,rbx
 	mov r15,rdi
@@ -715,9 +715,9 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	jmp L_3199
+	jmp L_3004
 	
-L_3198:
+L_3003:
 	mov rbx,t71
 	mov rdi,rbx
 	mov r15,rdi
@@ -733,7 +733,7 @@ L_3198:
 	pop r10
 	pop r11
 	
-L_3199:
+L_3004:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

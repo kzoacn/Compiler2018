@@ -720,17 +720,17 @@ main:
 	pop r10
 	pop r11
 	mov     qword  r14, rax
-	mov r13,r14
+	mov r14,r14
 	mov rbx,0
-	mov r14,rbx
+	mov r13,rbx
 	
-L_1595:
+L_1400:
 	mov rbx,3
-	cmp r14,rbx
+	cmp r13,rbx
 	mov r12, 0
 	setl r12B
 	cmp r12, 0
-	je L_1596
+	je L_1401
 	mov     rdi, 0
 	push r11
 	push r10
@@ -742,12 +742,12 @@ L_1595:
 	pop r10
 	pop r11
 	mov     qword  r12, rax
-	mov r11,r13
-	lea r10,[r11+r14*8+8H]
-	mov [r10],r12
-	mov r12,r13
-	lea r11,[r12+r14*8+8H]
-	mov r12, [r11]
+	mov r11,r14
+	lea r11,[r11+r13*8+8H]
+	mov [r11],r12
+	mov r12,r14
+	lea r12,[r12+r13*8+8H]
+	mov r12, [r12]
 	mov rbx,r12
 	mov qword [arg+8*63],rbx
 	push r15
@@ -760,12 +760,12 @@ L_1595:
 	pop r14
 	pop r15
 	mov r12 , rax
-	mov r12,r14
+	mov r12,r13
 	mov rbx,1
-	add r14,rbx
-	jmp L_1595
+	add r13,rbx
+	jmp L_1400
 	
-L_1596:
+L_1401:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

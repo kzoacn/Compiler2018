@@ -701,8 +701,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r12, rax
-	mov rdi,r12
+	mov     qword r13, rax
+	mov rdi,r13
 	mov r13,rdi
 	mov rdi, r13 
 	add rdi, 1 
@@ -729,8 +729,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r12, rax
-	mov rdi,r12
+	mov     qword r13, rax
+	mov rdi,r13
 	mov r13,rdi
 	mov rdi, r13 
 	add rdi, 1 
@@ -757,8 +757,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r12, rax
-	mov rdi,r12
+	mov     qword r13, rax
+	mov rdi,r13
 	mov r13,rdi
 	mov rdi, r13 
 	add rdi, 1 
@@ -789,8 +789,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r12, rax
-	mov rdi,r12
+	mov     qword r13, rax
+	mov rdi,r13
 	mov r13,rdi
 	mov rdi, r13 
 	add rdi, 1 
@@ -821,8 +821,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r12, rax
-	mov rdi,r12
+	mov     qword r13, rax
+	mov rdi,r13
 	mov r13,rdi
 	mov rdi, r13 
 	add rdi, 1 
@@ -849,8 +849,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r12, rax
-	mov rdi,r12
+	mov     qword r13, rax
+	mov rdi,r13
 	mov r13,rdi
 	mov rdi, r13 
 	add rdi, 1 
@@ -877,8 +877,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r12, rax
-	mov rdi,r12
+	mov     qword r13, rax
+	mov rdi,r13
 	mov r13,rdi
 	mov rdi, r13 
 	add rdi, 1 
@@ -891,9 +891,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov r13,r15
-	xor r13,r14
-	mov rdi,r13
+	xor r14,r15
+	mov rdi,r14
 	mov r14,rdi
 	mov     rdi,  r14
 	push r11
@@ -905,8 +904,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r13, rax
-	mov rdi,r13
+	mov     qword r14, rax
+	mov rdi,r14
 	mov r14,rdi
 	mov rdi, r14 
 	add rdi, 1 
@@ -934,8 +933,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r13, rax
-	mov rdi,r13
+	mov     qword r14, rax
+	mov rdi,r14
 	mov r14,rdi
 	mov rdi, r14 
 	add rdi, 1 
@@ -962,8 +961,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r13, rax
-	mov rdi,r13
+	mov     qword r14, rax
+	mov rdi,r14
 	mov r14,rdi
 	mov rdi, r14 
 	add rdi, 1 
@@ -976,9 +975,9 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov r14,r15
-	not r14
-	mov rdi,r14
+	mov r15,r15
+	not r15
+	mov rdi,r15
 	mov r15,rdi
 	mov     rdi,  r15
 	push r11
@@ -990,8 +989,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r14, rax
-	mov rdi,r14
+	mov     qword r15, rax
+	mov rdi,r15
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 

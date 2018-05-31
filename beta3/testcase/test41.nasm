@@ -658,97 +658,95 @@ dfs:
 	mov r15,rdi
 	mov rbx,250
 	cmp r15,rbx
-	mov r14, 0
-	setl r14B
-	cmp r15,0
 	mov r13, 0
-	setg r13B
-	mov r12,r14
-	and r12,r13
-	cmp r12, 0
-	je L_1354
+	setl r13B
+	cmp r15,0
+	mov r14, 0
+	setg r14B
+	and r14,r13
+	cmp r14, 0
+	je L_1159
 	mov rbx,  [gbl+8*6]
-	lea r14,[rbx+r15*8+8H]
-	mov r13, [r14]
+	lea r12,[rbx+r15*8+8H]
+	mov r13, [r12]
 	cmp r13,0
-	mov r11, 0
-	setg r11B
-	cmp r11, 0
-	je L_1354
+	mov r12, 0
+	setg r12B
 	cmp r12, 0
-	je L_1355
+	je L_1159
+	cmp r14, 0
+	je L_1160
 	mov rbx,  [gbl+8*6]
-	lea r14,[rbx+r15*8+8H]
-	mov [r14],r13
+	lea r12,[rbx+r15*8+8H]
+	mov [r12],r13
 	
-L_1355:
+L_1160:
 	mov rax,r13
 	leave
 	ret
 	
-L_1354:
-	mov r13,rdi
+L_1159:
+	mov r11,rdi
 	mov rbx,0
-	mov r11,rbx
+	mov r13,rbx
 	mov rdx,1
-	mov r10,rdx
+	mov r12,rdx
 	
-L_1350:
+L_1155:
 	mov rbx,1
 	cmp rbx, 0
-	je L_1351
-	mov r9,r10
+	je L_1156
+	mov r10,r12
 	mov rbx,1
-	add r10,rbx
-	mov r9,r11
-	add r9,r10
-	mov r11,r9
-	cmp r10,r13
-	mov r9, 0
-	sete r9B
-	cmp r9, 0
-	je L_1353
-	cmp r12, 0
-	je L_1356
+	add r12,rbx
+	add r13,r12
+	mov r13,r13
+	cmp r12,r11
+	mov r10, 0
+	sete r10B
+	cmp r10, 0
+	je L_1158
+	cmp r14, 0
+	je L_1161
 	mov rbx,  [gbl+8*6]
-	lea r14,[rbx+r15*8+8H]
-	mov [r14],r11
+	lea r12,[rbx+r15*8+8H]
+	mov [r12],r13
 	
-L_1356:
-	mov rax,r11
+L_1161:
+	mov rax,r13
 	leave
 	ret
 	
-L_1353:
+L_1158:
 	mov rbx,1
-	mov r9,r13
-	sub r9,rbx
-	mov rdi,r9
+	mov r10,r11
+	sub r10,rbx
+	mov rdi,r10
 	push r15
+	push r14
 	push r13
 	push r12
 	push r11
 	push r10
-	push r9
 	call dfs
-	pop r9
 	pop r10
 	pop r11
 	pop r12
 	pop r13
+	pop r14
 	pop r15
-	mov r9 , rax
-	jmp L_1350
+	mov r10 , rax
+	jmp L_1155
 	
-L_1351:
-	cmp r12, 0
-	je L_1357
+L_1156:
+	cmp r14, 0
+	je L_1162
 	mov rbx,  [gbl+8*6]
-	lea r14,[rbx+r15*8+8H]
+	lea r12,[rbx+r15*8+8H]
 	mov rdx,0
-	mov [r14],rdx
+	mov [r12],rdx
 	
-L_1357:
+L_1162:
 	mov rbx,0
 	mov rax,rbx
 	leave
@@ -815,8 +813,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r14, rax
-	mov rdi,r14
+	mov     qword r15, rax
+	mov rdi,r15
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 

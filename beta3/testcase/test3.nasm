@@ -684,18 +684,18 @@ main:
 	pop r15
 	mov r15 , rax
 	mov rbx,1
-	mov r15,rbx
+	mov r14,rbx
 	mov rdx,1
-	mov r14,rdx
+	mov r15,rdx
 	
-L_719:
+L_524:
 	mov rbx,25
-	cmp r14,rbx
+	cmp r15,rbx
 	mov r13, 0
 	setl r13B
 	cmp r13, 0
-	je L_720
-	mov rdi,r14
+	je L_525
+	mov rdi,r15
 	mov r13,rdi
 	mov     rdi,  r13
 	push r11
@@ -707,8 +707,8 @@ L_719:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r12, rax
-	mov rdi,r12
+	mov     qword r13, rax
+	mov rdi,r13
 	mov r13,rdi
 	mov rdi, r13 
 	add rdi, 1 
@@ -721,14 +721,13 @@ L_719:
 	pop r9
 	pop r10
 	pop r11
-	mov r13,r15
-	add r13,r14
-	mov r12,r13
-	mov r15,r14
-	mov r14,r12
-	jmp L_719
+	add r14,r15
+	mov r13,r14
+	mov r14,r15
+	mov r15,r13
+	jmp L_524
 	
-L_720:
+L_525:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

@@ -695,20 +695,19 @@ main:
 	mov rbx,0
 	mov r14,rbx
 	
-L_3521:
+L_3326:
 	mov rbx,5
 	cmp r14,rbx
 	mov r12, 0
 	setl r12B
 	cmp r12, 0
-	je L_3522
-	mov r12,r15
-	add r12,r13
-	mov r15,r12
+	je L_3327
+	add r15,r13
+	mov r15,r15
 	mov rbx,1
-	mov r12,r14
-	add r12,rbx
-	mov r13,r12
+	mov r13,r14
+	add r13,rbx
+	mov r13,r13
 	mov rdi,r14
 	mov r12,rdi
 	mov     rdi,  r12
@@ -721,8 +720,8 @@ L_3521:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r11, rax
-	mov rdi,r11
+	mov     qword r12, rax
+	mov rdi,r12
 	mov r12,rdi
 	mov rdi, r12 
 	add rdi, 1 
@@ -747,8 +746,8 @@ L_3521:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r11, rax
-	mov rdi,r11
+	mov     qword r12, rax
+	mov rdi,r12
 	mov r12,rdi
 	mov rdi, r12 
 	add rdi, 1 
@@ -773,8 +772,8 @@ L_3521:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r11, rax
-	mov rdi,r11
+	mov     qword r12, rax
+	mov rdi,r12
 	mov r12,rdi
 	mov rdi, r12 
 	add rdi, 1 
@@ -791,11 +790,10 @@ L_3521:
 	mov rdi,r15
 	mov r12,rdi
 	mov r11,rsi
-	mov r10,r12
-	add r10,r11
-	mov r12,r10
-	mov r11,r12
-	mov r12,r11
+	add r12,r11
+	mov r12,r12
+	mov r12,r12
+	mov r12,r12
 	mov rdi,r12
 	mov r12,rdi
 	mov     rdi,  r12
@@ -808,8 +806,8 @@ L_3521:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r11, rax
-	mov rdi,r11
+	mov     qword r12, rax
+	mov rdi,r12
 	mov r12,rdi
 	mov rdi, r12 
 	add rdi, 1 
@@ -825,9 +823,9 @@ L_3521:
 	mov r12,r14
 	mov rbx,1
 	add r14,rbx
-	jmp L_3521
+	jmp L_3326
 	
-L_3522:
+L_3327:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

@@ -692,27 +692,27 @@ main:
 	mov r13, 0
 	setne r13B
 	cmp r13, 0
-	jne L_1622
+	jne L_1427
 	mov rbx,0
 	mov r13,rbx
-	jmp L_1623
+	jmp L_1428
 	
-L_1622:
+L_1427:
 	xor rdx, rdx
 	mov rax,  r15
 	mov rbx,  r14
 	cdq
 	idiv ebx
-	mov  r12, rax
+	mov  r15, rax
 	mov rbx,5
-	cmp r12,rbx
-	mov r12, 0
-	setl r12B
-	mov r13,r12
+	cmp r15,rbx
+	mov r15, 0
+	setl r15B
+	mov r13,r15
 	
-L_1623:
+L_1428:
 	cmp r13, 0
-	je L_1624
+	je L_1429
 	mov rbx,t71
 	mov rdi,rbx
 	mov r15,rdi
@@ -727,9 +727,9 @@ L_1623:
 	pop r9
 	pop r10
 	pop r11
-	jmp L_1625
+	jmp L_1430
 	
-L_1624:
+L_1429:
 	mov rbx,t75
 	mov rdi,rbx
 	mov r15,rdi
@@ -745,7 +745,7 @@ L_1624:
 	pop r10
 	pop r11
 	
-L_1625:
+L_1430:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

@@ -8,12 +8,21 @@ default rel
 
 global main
 
-extern _IO_putc
+extern puts
 extern _GLOBAL_OFFSET_TABLE_
-extern stdout
 
 
 SECTION .text   
+
+main:
+        push    rbp
+        mov     rbp, rsp
+        lea     rdi, [rel L_001]
+        call    puts
+        mov     eax, 0
+        pop     rbp
+        ret
+
 
 
 SECTION .data   
@@ -22,259 +31,11 @@ SECTION .data
 SECTION .bss    
 
 
-SECTION .text.startup 6
+SECTION .rodata 
 
-main:
-        sub     rsp, 8
-        mov     rsi, qword [rel stdout]
-        mov     edi, 50
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 52
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 54
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 53
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 55
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 54
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 49
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 49
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 49
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 50
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 55
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 49
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 48
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 50
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 50
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 49
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 51
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 49
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 51
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 50
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 54
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 50
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 49
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 49
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 55
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 49
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 49
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 49
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 51
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 52
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 55
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 50
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 54
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 51
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 52
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 50
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 51
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 57
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 53
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 50
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 52
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 55
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 53
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 52
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 54
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 52
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 49
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 57
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 50
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 52
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 49
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 57
-        call    _IO_putc
-        mov     rsi, qword [rel stdout]
-        mov     edi, 10
-        call    _IO_putc
-        xor     eax, eax
-        add     rsp, 8
-        ret
-
+L_001:
+        db 33H, 37H, 33H, 36H, 37H, 31H, 30H, 37H
+        db 37H, 38H, 37H, 38H, 30H, 34H, 33H, 34H
+        db 33H, 37H, 31H, 00H
 
 

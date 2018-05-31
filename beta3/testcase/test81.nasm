@@ -706,43 +706,41 @@ main:
 	cmp r14,0
 	mov r12, 0
 	setg r12B
-	mov r11,r13
-	and r11,r12
-	cmp r11, 0
-	je L_3515
+	and r13,r12
+	cmp r13, 0
+	je L_3320
 	mov rbx,  [gbl+8*1]
-	lea r13,[rbx+r14*8+8H]
-	mov r12, [r13]
+	lea r11,[rbx+r14*8+8H]
+	mov r12, [r11]
 	cmp r12,0
-	mov r10, 0
-	setg r10B
-	cmp r10, 0
-	je L_3515
+	mov r11, 0
+	setg r11B
 	cmp r11, 0
-	je L_3516
+	je L_3320
+	cmp r13, 0
+	je L_3321
 	mov rbx,  [gbl+8*1]
-	lea r13,[rbx+r14*8+8H]
-	mov [r13],r12
+	lea r11,[rbx+r14*8+8H]
+	mov [r11],r12
 	
-L_3516:
-	mov r10,r12
-	jmp L_3518
+L_3321:
+	mov r14,r12
+	jmp L_3323
 	
-L_3515:
+L_3320:
 	mov r12,rdi
-	mov r9,r12
-	imul r9,r12
-	cmp r11, 0
-	je L_3519
+	imul r12,r12
+	cmp r13, 0
+	je L_3324
 	mov rbx,  [gbl+8*1]
-	lea r13,[rbx+r14*8+8H]
-	mov [r13],r9
+	lea r11,[rbx+r14*8+8H]
+	mov [r11],r12
 	
-L_3519:
-	mov r10,r9
+L_3324:
+	mov r14,r12
 	
-L_3518:
-	mov r14,r10
+L_3323:
+	mov r14,r14
 	mov rdi,r14
 	mov r14,rdi
 	mov     rdi,  r14
@@ -755,8 +753,8 @@ L_3518:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r13, rax
-	mov rdi,r13
+	mov     qword r14, rax
+	mov rdi,r14
 	mov r14,rdi
 	mov rdi, r14 
 	add rdi, 1 
@@ -781,8 +779,8 @@ L_3518:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r14, rax
-	mov rdi,r14
+	mov     qword r15, rax
+	mov rdi,r15
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 

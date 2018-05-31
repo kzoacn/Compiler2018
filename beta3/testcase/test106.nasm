@@ -718,9 +718,9 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r13, rax
+	mov     qword r14, rax
 	mov     rsi, t75
-	mov     rdi,  r13
+	mov     rdi,  r14
 	push r11
 	push r10
 	push r9
@@ -743,8 +743,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r12, rax
-	mov     rsi,  r12
+	mov     qword r13, rax
+	mov     rsi,  r13
 	mov     rdi,  r14
 	push r11
 	push r10
@@ -770,17 +770,17 @@ main:
 	pop r10
 	pop r11
 	mov rbx,1
-	mov r14,rbx
+	mov r13,rbx
 	mov rdx,0
-	mov r13,rdx
+	mov r14,rdx
 	
 L_299:
-	cmp r13,r15
+	cmp r14,r15
 	mov r12, 0
 	setl r12B
 	cmp r12, 0
 	je L_300
-	mov rdi,r14
+	mov rdi,r13
 	mov r12,rdi
 	mov     rdi,  r12
 	push r11
@@ -792,9 +792,9 @@ L_299:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r11, rax
+	mov     qword r12, rax
 	mov     rsi, t90
-	mov     rdi,  r11
+	mov     rdi,  r12
 	push r11
 	push r10
 	push r9
@@ -806,7 +806,7 @@ L_299:
 	pop r11
 	mov  r12, rax
 	mov rbx,1
-	mov r11,r14
+	mov r11,r13
 	add r11,rbx
 	mov rdi,r11
 	mov r11,rdi
@@ -820,8 +820,8 @@ L_299:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r10, rax
-	mov     rsi,  r10
+	mov     qword r11, rax
+	mov     rsi,  r11
 	mov     rdi,  r12
 	push r11
 	push r10
@@ -846,11 +846,11 @@ L_299:
 	pop r11
 	mov  r12, rax
 	mov rbx,2
-	mov r11,r14
+	mov r11,r13
 	add r11,rbx
-	mov r10,r11
-	neg r10
-	mov rdi,r10
+	mov r11,r11
+	neg r11
+	mov rdi,r11
 	mov r11,rdi
 	mov     rdi,  r11
 	push r11
@@ -862,8 +862,8 @@ L_299:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r10, rax
-	mov     rsi,  r10
+	mov     qword r11, rax
+	mov     rsi,  r11
 	mov     rdi,  r12
 	push r11
 	push r10
@@ -875,20 +875,20 @@ L_299:
 	pop r10
 	pop r11
 	mov  r12, rax
-	mov r11,r12
+	mov r12,r12
 	xor rdx, rdx
-	mov rax,  r13
+	mov rax,  r14
 	mov rbx, 100000
 	cdq
 	idiv ebx
-	mov  r12, rdx
+	mov  r11, rdx
 	mov rbx,0
-	cmp r12,rbx
-	mov r10, 0
-	sete r10B
-	cmp r10, 0
+	cmp r11,rbx
+	mov r11, 0
+	sete r11B
+	cmp r11, 0
 	je L_303
-	mov rdi,r11
+	mov rdi,r12
 	mov r12,rdi
 	mov rdi, r12 
 	add rdi, 1 
@@ -904,11 +904,10 @@ L_299:
 	
 L_303:
 	mov rbx,2
-	mov r12,r14
-	add r12,rbx
-	mov r14,r12
+	add r13,rbx
+	mov r13,r13
 	mov rdx,1
-	add r13,rdx
+	add r14,rdx
 	jmp L_299
 	
 L_300:

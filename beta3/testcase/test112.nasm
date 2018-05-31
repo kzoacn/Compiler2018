@@ -651,10 +651,59 @@ strne:
         ret
 
 
+lol:
+	push   rbp
+	mov    rbp, rsp
+	sub    rsp, 216
+	mov r15,rdi
+	mov rbx,250
+	cmp r15,rbx
+	mov r13, 0
+	setl r13B
+	cmp r15,0
+	mov r14, 0
+	setg r14B
+	and r14,r13
+	cmp r14, 0
+	je L_509
+	mov rbx,  [gbl+8*6]
+	lea r12,[rbx+r15*8+8H]
+	mov r13, [r12]
+	cmp r13,0
+	mov r12, 0
+	setg r12B
+	cmp r12, 0
+	je L_509
+	cmp r14, 0
+	je L_510
+	mov rbx,  [gbl+8*6]
+	lea r12,[rbx+r15*8+8H]
+	mov [r12],r13
+	
+L_510:
+	mov rax,r13
+	leave
+	ret
+	
+L_509:
+	mov r13,rdi
+	mov rbx,1
+	add r13,rbx
+	cmp r14, 0
+	je L_511
+	mov rbx,  [gbl+8*6]
+	lea r12,[rbx+r15*8+8H]
+	mov [r12],r13
+	
+L_511:
+	mov rax,r13
+	leave
+	ret
+	
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 128
+	sub    rsp, 216
 	mov     rax, 936870912
         cdqe
         mov     rdi, rax
@@ -674,18 +723,28 @@ main:
 			mov r15,0
         mov     edx, dword 936870912
         movsxd  rdx, edx
-        sub     rdx, 2112
+        sub     rdx, 2200
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	mov     rdi, 256
+	push r11
+	push r10
+	push r9
+	push r8
+	call    mallocArray
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword [gbl+8*6], rax
 	push r15
 	call global_init
 	pop r15
 	mov r15 , rax
-	mov rbx,4
-	mov r15,rbx
-	mov rdi,r15
+	mov rbx,  [gbl+8*13]
+	mov rdi,rbx
 	mov r15,rdi
 	mov     rdi,  r15
 	push r11
@@ -698,18 +757,6 @@ main:
 	pop r10
 	pop r11
 	mov     qword r15, rax
-	mov     rsi,  r15
-	mov     rdi, t65
-	push r11
-	push r10
-	push r9
-	push r8
-	call    concat
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	mov  r15, rax
 	mov rdi,r15
 	mov r15,rdi
 	mov rdi, r15 
@@ -732,14 +779,23 @@ main:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 128
-	mov rbx,  [rsp+8*8]
+	sub    rsp, 216
+	mov rdx,123
+	mov rbx,rdx
+	mov rdi,rbx
+	mov qword [gbl+8*17],rbx
+	call lol
+	mov rbx , rax
+	mov rdx,rbx
+	mov qword [gbl+8*18],rbx
+	mov qword [gbl+8*13],rdx
+	mov rbx,  [rsp+8*19]
 	mov rax,rbx
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2112
+gbl:         resb   2200
 buff.1788:
         resb    256
 arg:
@@ -768,9 +824,6 @@ GS_32:
 	db 25H, 73H, 00H
 	ML_32:
         db 25H, 6CH, 64H, 00H
-
-t65:
-	 db 6,"Hello " ,0
 
 SECTION .data.rel.local align=8
 

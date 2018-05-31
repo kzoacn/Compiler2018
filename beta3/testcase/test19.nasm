@@ -686,20 +686,20 @@ main:
 	mov rbx,1
 	mov r15,rbx
 	cmp r15, 0
-	jne L_1319
+	jne L_1124
 	mov rbx,0
 	mov r14,rbx
-	jmp L_1320
+	jmp L_1125
 	
-L_1319:
+L_1124:
 	mov rbx,1
 	cmp rbx,0
 	mov r14, 0
 	setg r14B
 	
-L_1320:
+L_1125:
 	cmp r14, 0
-	je L_1321
+	je L_1126
 	mov rbx,t69
 	mov rdi,rbx
 	mov r14,rdi
@@ -714,9 +714,9 @@ L_1320:
 	pop r9
 	pop r10
 	pop r11
-	jmp L_1322
+	jmp L_1127
 	
-L_1321:
+L_1126:
 	mov rbx,t73
 	mov rdi,rbx
 	mov r14,rdi
@@ -732,30 +732,29 @@ L_1321:
 	pop r10
 	pop r11
 	
-L_1322:
-	mov r14, 0
+L_1127:
 	cmp r15, 0
-	sete r14B
-	cmp r14, 0
-	je L_1323
+	sete r15B
+	cmp r15, 0
+	je L_1128
 	mov rbx,1
-	mov r14,rbx
-	jmp L_1324
+	mov r15,rbx
+	jmp L_1129
 	
-L_1323:
+L_1128:
 	mov rbx,1
 	cmp rbx,0
-	mov r13, 0
-	setg r13B
-	mov r14,r13
+	mov r15, 0
+	setg r15B
+	mov r15,r15
 	
-L_1324:
-	cmp r14, 0
-	je L_1325
+L_1129:
+	cmp r15, 0
+	je L_1130
 	mov rbx,t82
 	mov rdi,rbx
-	mov r14,rdi
-	mov rdi, r14 
+	mov r15,rdi
+	mov rdi, r15 
 	add rdi, 1 
 	push r11
 	push r10
@@ -766,13 +765,13 @@ L_1324:
 	pop r9
 	pop r10
 	pop r11
-	jmp L_1326
+	jmp L_1131
 	
-L_1325:
+L_1130:
 	mov rbx,t86
 	mov rdi,rbx
-	mov r14,rdi
-	mov rdi, r14 
+	mov r15,rdi
+	mov rdi, r15 
 	add rdi, 1 
 	push r11
 	push r10
@@ -784,40 +783,40 @@ L_1325:
 	pop r10
 	pop r11
 	
-L_1326:
+L_1131:
 	mov rbx,0
 	mov r15,rbx
 	cmp r15, 0
-	jne L_1327
+	jne L_1132
 	mov rbx,0
 	mov r15,rbx
-	jmp L_1328
+	jmp L_1133
 	
-L_1327:
+L_1132:
 	mov rbx,1
 	mov rdx,0
 	cmp rbx,rdx
 	mov r15, 0
 	setne r15B
 	
-L_1328:
+L_1133:
 	cmp r15, 0
-	jne L_1329
+	jne L_1134
 	mov rbx,0
 	mov r15,rbx
-	jmp L_1330
+	jmp L_1135
 	
-L_1329:
+L_1134:
 	mov rbx,2
 	mov rdx,4
 	cmp rbx,rdx
-	mov r14, 0
-	setne r14B
-	mov r15,r14
+	mov r15, 0
+	setne r15B
+	mov r15,r15
 	
-L_1330:
+L_1135:
 	cmp r15, 0
-	je L_1331
+	je L_1136
 	mov rbx,t99
 	mov rdi,rbx
 	mov r15,rdi
@@ -832,9 +831,9 @@ L_1330:
 	pop r9
 	pop r10
 	pop r11
-	jmp L_1332
+	jmp L_1137
 	
-L_1331:
+L_1136:
 	mov rbx,t103
 	mov rdi,rbx
 	mov r15,rdi
@@ -850,7 +849,7 @@ L_1331:
 	pop r10
 	pop r11
 	
-L_1332:
+L_1137:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

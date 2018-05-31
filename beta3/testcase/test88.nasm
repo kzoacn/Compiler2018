@@ -706,9 +706,9 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r14, rax
+	mov     qword r15, rax
 	mov     rsi, t72
-	mov     rdi,  r14
+	mov     rdi,  r15
 	push r11
 	push r10
 	push r9
@@ -732,8 +732,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r13, rax
-	mov     rsi,  r13
+	mov     qword r14, rax
+	mov     rsi,  r14
 	mov     rdi,  r15
 	push r11
 	push r10
@@ -770,8 +770,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r13, rax
-	mov     rsi,  r13
+	mov     qword r14, rax
+	mov     rsi,  r14
 	mov     rdi,  r15
 	push r11
 	push r10

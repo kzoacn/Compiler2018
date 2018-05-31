@@ -699,7 +699,7 @@ main:
 	pop r11
 	mov rbx,0
 	mov r15,rbx
-	mov r14,r15
+	mov r15,r15
 	mov rdx,0
 	mov rax,rdx
 	        mov     rsp, qword [trsp]

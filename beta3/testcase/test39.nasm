@@ -661,13 +661,13 @@ f:
 	mov r14, 0
 	sete r14B
 	cmp r14, 0
-	je L_1205
+	je L_1010
 	mov rbx,0
 	mov rax,rbx
 	leave
 	ret
 	
-L_1205:
+L_1010:
 	mov rbx,  [gbl+8*4]
 	mov r14,rbx
 	mov rdx,1
@@ -741,8 +741,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r14, rax
-	mov rdi,r14
+	mov     qword r15, rax
+	mov rdi,r15
 	mov r15,rdi
 	mov rdi, r15 
 	add rdi, 1 
