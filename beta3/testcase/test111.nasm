@@ -654,7 +654,7 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 288
+	sub    rsp, 456
 	mov     rax, 936870912
         cdqe
         mov     rdi, rax
@@ -674,7 +674,7 @@ main:
 			mov r15,0
         mov     edx, dword 936870912
         movsxd  rdx, edx
-        sub     rdx, 2272
+        sub     rdx, 2440
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
@@ -683,9 +683,7 @@ main:
 	call global_init
 	pop r15
 	mov r15 , rax
-	mov rbx,5
-	mov r15,rbx
-	mov     rdi,  r15
+	mov     rdi, 2
 	push r11
 	push r10
 	push r9
@@ -695,81 +693,248 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword  r14, rax
-	mov r13,r14
-	mov rbx,1
-	mov r14,rbx
-	neg r14
-	mov r12,r14
-	mov r14,r13
-	mov rdx,0
-	lea r11,[r14+rdx*8+8H]
-	mov rax,3
-	mov [r11],rax
-	mov r14,r13
-	mov rbx,1
-	lea r11,[r14+rbx*8+8H]
-	mov rbx,1
-	mov [r11],rbx
-	mov r14,r13
-	mov rbx,2
-	lea r11,[r14+rbx*8+8H]
-	mov rbx,3
-	mov [r11],rbx
-	mov r14,r13
-	mov rbx,3
-	lea r11,[r14+rbx*8+8H]
-	mov rbx,2
-	mov [r11],rbx
-	mov r14,r13
-	mov rbx,4
-	lea r11,[r14+rbx*8+8H]
-	mov rbx,6
-	mov [r11],rbx
+	mov     qword  r15, rax
+	mov r14,r15
+	mov     rdi, 1
+	push r11
+	push r10
+	push r9
+	push r8
+	call    mallocArray
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword  r13, rax
+	mov r15,r13
 	mov rbx,0
-	mov r14,rbx
-	
-L_744:
-	cmp r14,r15
-	mov r11, 0
-	setl r11B
-	cmp r11, 0
-	je L_745
-	mov r11,r13
-	lea r10,[r11+r14*8+8H]
-	mov r11, [r10]
-	mov rbx,2
-	cmp r11,rbx
-	mov r10, 0
-	sete r10B
-	cmp r10, 0
-	je L_748
-	mov r12,r14
-	jmp L_745
-	
-L_748:
-	mov r11,r14
-	mov rbx,1
-	add r14,rbx
-	jmp L_744
-	
-L_745:
-	mov rdi,r12
-	mov r15,rdi
+	lea r15,[r13+rbx*8+8H]
+	mov rdx,0
+	mov [r15],rdx
+	mov     rsi,  r13
+	mov     rdi,  r14
+	push r11
+	push r10
+	push r9
+	push r8
+	call    multiAddress
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r15, rax
+	mov rbx,t138
+	mov [r15],rbx
+	mov     rdi, 1
+	push r11
+	push r10
+	push r9
+	push r8
+	call    mallocArray
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword  r13, rax
+	mov r15,r13
+	mov rbx,0
+	lea r15,[r13+rbx*8+8H]
+	mov rdx,1
+	mov [r15],rdx
+	mov     rsi,  r13
+	mov     rdi,  r14
+	push r11
+	push r10
+	push r9
+	push r8
+	call    multiAddress
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r15, rax
+	mov rbx,0
+	mov [r15],rbx
+	mov     rdi, 2
+	push r11
+	push r10
+	push r9
+	push r8
+	call    mallocArray
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword  r15, rax
+	mov r15,r15
+	mov     rdi, 1
+	push r11
+	push r10
+	push r9
+	push r8
+	call    mallocArray
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword  r12, rax
+	mov r13,r12
+	mov rbx,0
+	lea r13,[r12+rbx*8+8H]
+	mov rdx,0
+	mov [r13],rdx
+	mov     rsi,  r12
 	mov     rdi,  r15
 	push r11
 	push r10
 	push r9
 	push r8
-	call    toString
+	call    multiAddress
 	pop r8
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r14, rax
-	mov rdi,r14
-	mov r15,rdi
-	mov rdi, r15 
+	mov  r13, rax
+	mov rbx,t160
+	mov [r13],rbx
+	mov     rdi, 1
+	push r11
+	push r10
+	push r9
+	push r8
+	call    mallocArray
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword  r12, rax
+	mov r13,r12
+	mov rbx,0
+	lea r13,[r12+rbx*8+8H]
+	mov rdx,1
+	mov [r13],rdx
+	mov     rsi,  r12
+	mov     rdi,  r15
+	push r11
+	push r10
+	push r9
+	push r8
+	call    multiAddress
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r13, rax
+	mov rbx,  [gbl+8*18]
+	mov [r13],rbx
+	mov rsi,r14
+	mov rdx,t170
+	mov rdi,rdx
+	mov r13,rdi
+	mov r14,rsi
+	mov     rdi, 1
+	push r11
+	push r10
+	push r9
+	push r8
+	call    mallocArray
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword  r12, rax
+	mov r11,r12
+	mov rbx,0
+	lea r11,[r12+rbx*8+8H]
+	mov rdx,1
+	mov [r11],rdx
+	mov     rsi,  r12
+	mov     rdi,  r14
+	push r11
+	push r10
+	push r9
+	push r8
+	call    multiAddress
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r12, rax
+	mov r12, [r12]
+	mov rbx,100
+	cmp r12,rbx
+	mov r12, 0
+	setle r12B
+	cmp r12, 0
+	je L_6
+	mov     rsi, t77
+	mov     rdi,  r13
+	push r11
+	push r10
+	push r9
+	push r8
+	call    concat
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r13, rax
+	mov     rdi, 1
+	push r11
+	push r10
+	push r9
+	push r8
+	call    mallocArray
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword  r11, rax
+	mov r12,r11
+	mov rbx,0
+	lea r12,[r11+rbx*8+8H]
+	mov rdx,0
+	mov [r12],rdx
+	mov     rsi,  r11
+	mov     rdi,  r14
+	push r11
+	push r10
+	push r9
+	push r8
+	call    multiAddress
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r12, rax
+	mov r12, [r12]
+	mov     rsi,  r12
+	mov     rdi,  r13
+	push r11
+	push r10
+	push r9
+	push r8
+	call    concat
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r13, rax
+	mov     rsi, t88
+	mov     rdi,  r13
+	push r11
+	push r10
+	push r9
+	push r8
+	call    concat
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r13, rax
+	mov rdi,r13
+	mov r13,rdi
+	mov rdi, r13 
 	add rdi, 1 
 	push r11
 	push r10
@@ -780,8 +945,682 @@ L_745:
 	pop r9
 	pop r10
 	pop r11
+	jmp L_7
+	
+L_6:
+	mov     rsi, t92
+	mov     rdi,  r13
+	push r11
+	push r10
+	push r9
+	push r8
+	call    concat
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r13, rax
+	mov     rdi, 1
+	push r11
+	push r10
+	push r9
+	push r8
+	call    mallocArray
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword  r11, rax
+	mov r12,r11
 	mov rbx,0
-	mov rax,rbx
+	lea r12,[r11+rbx*8+8H]
+	mov rdx,0
+	mov [r12],rdx
+	mov     rsi,  r11
+	mov     rdi,  r14
+	push r11
+	push r10
+	push r9
+	push r8
+	call    multiAddress
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r12, rax
+	mov r12, [r12]
+	mov     rsi,  r12
+	mov     rdi,  r13
+	push r11
+	push r10
+	push r9
+	push r8
+	call    concat
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r13, rax
+	mov     rsi, t103
+	mov     rdi,  r13
+	push r11
+	push r10
+	push r9
+	push r8
+	call    concat
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r13, rax
+	mov rdi,r13
+	mov r13,rdi
+	mov rdi, r13 
+	add rdi, 1 
+	push r11
+	push r10
+	push r9
+	push r8
+	call puts
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	
+L_7:
+	mov     rdi, 1
+	push r11
+	push r10
+	push r9
+	push r8
+	call    mallocArray
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword  r12, rax
+	mov r13,r12
+	mov rbx,0
+	lea r13,[r12+rbx*8+8H]
+	mov rdx,1
+	mov [r13],rdx
+	mov     rsi,  r12
+	mov     rdi,  r14
+	push r11
+	push r10
+	push r9
+	push r8
+	call    multiAddress
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r13, rax
+	mov     rdi, 1
+	push r11
+	push r10
+	push r9
+	push r8
+	call    mallocArray
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword  r11, rax
+	mov r12,r11
+	mov rbx,0
+	lea r12,[r11+rbx*8+8H]
+	mov rdx,1
+	mov [r12],rdx
+	mov     rsi,  r11
+	mov     rdi,  r14
+	push r11
+	push r10
+	push r9
+	push r8
+	call    multiAddress
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r14, rax
+	mov r14, [r14]
+	mov rbx,  [gbl+8*43]
+	add r14,rbx
+	mov [r13],r14
+	mov rdx,0
+	mov r14,rdx
+	mov r14,r14
+	mov rsi,r15
+	mov rax,t173
+	mov rdi,rax
+	mov r13,rdi
+	mov r14,rsi
+	mov     rdi, 1
+	push r11
+	push r10
+	push r9
+	push r8
+	call    mallocArray
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword  r12, rax
+	mov r11,r12
+	mov rbx,0
+	lea r11,[r12+rbx*8+8H]
+	mov rdx,1
+	mov [r11],rdx
+	mov     rsi,  r12
+	mov     rdi,  r14
+	push r11
+	push r10
+	push r9
+	push r8
+	call    multiAddress
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r12, rax
+	mov r12, [r12]
+	mov rbx,100
+	cmp r12,rbx
+	mov r12, 0
+	setle r12B
+	cmp r12, 0
+	je L_10
+	mov     rsi, t77
+	mov     rdi,  r13
+	push r11
+	push r10
+	push r9
+	push r8
+	call    concat
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r13, rax
+	mov     rdi, 1
+	push r11
+	push r10
+	push r9
+	push r8
+	call    mallocArray
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword  r11, rax
+	mov r12,r11
+	mov rbx,0
+	lea r12,[r11+rbx*8+8H]
+	mov rdx,0
+	mov [r12],rdx
+	mov     rsi,  r11
+	mov     rdi,  r14
+	push r11
+	push r10
+	push r9
+	push r8
+	call    multiAddress
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r12, rax
+	mov r12, [r12]
+	mov     rsi,  r12
+	mov     rdi,  r13
+	push r11
+	push r10
+	push r9
+	push r8
+	call    concat
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r13, rax
+	mov     rsi, t88
+	mov     rdi,  r13
+	push r11
+	push r10
+	push r9
+	push r8
+	call    concat
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r13, rax
+	mov rdi,r13
+	mov r13,rdi
+	mov rdi, r13 
+	add rdi, 1 
+	push r11
+	push r10
+	push r9
+	push r8
+	call puts
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	jmp L_11
+	
+L_10:
+	mov     rsi, t92
+	mov     rdi,  r13
+	push r11
+	push r10
+	push r9
+	push r8
+	call    concat
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r13, rax
+	mov     rdi, 1
+	push r11
+	push r10
+	push r9
+	push r8
+	call    mallocArray
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword  r11, rax
+	mov r12,r11
+	mov rbx,0
+	lea r12,[r11+rbx*8+8H]
+	mov rdx,0
+	mov [r12],rdx
+	mov     rsi,  r11
+	mov     rdi,  r14
+	push r11
+	push r10
+	push r9
+	push r8
+	call    multiAddress
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r12, rax
+	mov r12, [r12]
+	mov     rsi,  r12
+	mov     rdi,  r13
+	push r11
+	push r10
+	push r9
+	push r8
+	call    concat
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r13, rax
+	mov     rsi, t103
+	mov     rdi,  r13
+	push r11
+	push r10
+	push r9
+	push r8
+	call    concat
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r13, rax
+	mov rdi,r13
+	mov r13,rdi
+	mov rdi, r13 
+	add rdi, 1 
+	push r11
+	push r10
+	push r9
+	push r8
+	call puts
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	
+L_11:
+	mov     rdi, 1
+	push r11
+	push r10
+	push r9
+	push r8
+	call    mallocArray
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword  r12, rax
+	mov r13,r12
+	mov rbx,0
+	lea r13,[r12+rbx*8+8H]
+	mov rdx,1
+	mov [r13],rdx
+	mov     rsi,  r12
+	mov     rdi,  r14
+	push r11
+	push r10
+	push r9
+	push r8
+	call    multiAddress
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r13, rax
+	mov     rdi, 1
+	push r11
+	push r10
+	push r9
+	push r8
+	call    mallocArray
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword  r11, rax
+	mov r12,r11
+	mov rbx,0
+	lea r12,[r11+rbx*8+8H]
+	mov rdx,1
+	mov [r12],rdx
+	mov     rsi,  r11
+	mov     rdi,  r14
+	push r11
+	push r10
+	push r9
+	push r8
+	call    multiAddress
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r14, rax
+	mov r14, [r14]
+	mov rbx,  [gbl+8*43]
+	add r14,rbx
+	mov [r13],r14
+	mov rdx,0
+	mov r14,rdx
+	mov r14,r14
+	mov rsi,r15
+	mov rax,t176
+	mov rdi,rax
+	mov r13,rdi
+	mov r14,rsi
+	mov     rdi, 1
+	push r11
+	push r10
+	push r9
+	push r8
+	call    mallocArray
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword  r12, rax
+	mov r11,r12
+	mov rbx,0
+	lea r11,[r12+rbx*8+8H]
+	mov rdx,1
+	mov [r11],rdx
+	mov     rsi,  r12
+	mov     rdi,  r14
+	push r11
+	push r10
+	push r9
+	push r8
+	call    multiAddress
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r12, rax
+	mov r12, [r12]
+	mov rbx,100
+	cmp r12,rbx
+	mov r12, 0
+	setle r12B
+	cmp r12, 0
+	je L_14
+	mov     rsi, t77
+	mov     rdi,  r13
+	push r11
+	push r10
+	push r9
+	push r8
+	call    concat
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r13, rax
+	mov     rdi, 1
+	push r11
+	push r10
+	push r9
+	push r8
+	call    mallocArray
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword  r11, rax
+	mov r12,r11
+	mov rbx,0
+	lea r12,[r11+rbx*8+8H]
+	mov rdx,0
+	mov [r12],rdx
+	mov     rsi,  r11
+	mov     rdi,  r14
+	push r11
+	push r10
+	push r9
+	push r8
+	call    multiAddress
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r12, rax
+	mov r12, [r12]
+	mov     rsi,  r12
+	mov     rdi,  r13
+	push r11
+	push r10
+	push r9
+	push r8
+	call    concat
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r13, rax
+	mov     rsi, t88
+	mov     rdi,  r13
+	push r11
+	push r10
+	push r9
+	push r8
+	call    concat
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r13, rax
+	mov rdi,r13
+	mov r13,rdi
+	mov rdi, r13 
+	add rdi, 1 
+	push r11
+	push r10
+	push r9
+	push r8
+	call puts
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	jmp L_15
+	
+L_14:
+	mov     rsi, t92
+	mov     rdi,  r13
+	push r11
+	push r10
+	push r9
+	push r8
+	call    concat
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r13, rax
+	mov     rdi, 1
+	push r11
+	push r10
+	push r9
+	push r8
+	call    mallocArray
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword  r11, rax
+	mov r12,r11
+	mov rbx,0
+	lea r12,[r11+rbx*8+8H]
+	mov rdx,0
+	mov [r12],rdx
+	mov     rsi,  r11
+	mov     rdi,  r14
+	push r11
+	push r10
+	push r9
+	push r8
+	call    multiAddress
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r12, rax
+	mov r12, [r12]
+	mov     rsi,  r12
+	mov     rdi,  r13
+	push r11
+	push r10
+	push r9
+	push r8
+	call    concat
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r13, rax
+	mov     rsi, t103
+	mov     rdi,  r13
+	push r11
+	push r10
+	push r9
+	push r8
+	call    concat
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r13, rax
+	mov rdi,r13
+	mov r13,rdi
+	mov rdi, r13 
+	add rdi, 1 
+	push r11
+	push r10
+	push r9
+	push r8
+	call puts
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	
+L_15:
+	mov     rdi, 1
+	push r11
+	push r10
+	push r9
+	push r8
+	call    mallocArray
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword  r12, rax
+	mov r13,r12
+	mov rbx,0
+	lea r13,[r12+rbx*8+8H]
+	mov rdx,1
+	mov [r13],rdx
+	mov     rsi,  r12
+	mov     rdi,  r14
+	push r11
+	push r10
+	push r9
+	push r8
+	call    multiAddress
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r13, rax
+	mov     rdi, 1
+	push r11
+	push r10
+	push r9
+	push r8
+	call    mallocArray
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword  r11, rax
+	mov r12,r11
+	mov rbx,0
+	lea r12,[r11+rbx*8+8H]
+	mov rdx,1
+	mov [r12],rdx
+	mov     rsi,  r11
+	mov     rdi,  r14
+	push r11
+	push r10
+	push r9
+	push r8
+	call    multiAddress
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r14, rax
+	mov r14, [r14]
+	mov rbx,  [gbl+8*43]
+	add r14,rbx
+	mov [r13],r14
+	mov rdx,0
+	mov r14,rdx
+	mov r15,r14
+	mov rax,0
+	mov rax,rax
 	        mov     rsp, qword [trsp]
 	leave
 	ret
@@ -789,14 +1628,20 @@ L_745:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 288
-	mov rbx,  [rsp+8*28]
+	sub    rsp, 456
+	mov rdx,100
+	mov rbx,rdx
+	mov qword [gbl+8*18],rbx
+	mov rbx,10
+	mov rax,rbx
+	mov qword [gbl+8*43],rax
+	mov rbx,  [rsp+8*49]
 	mov rax,rbx
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2272
+gbl:         resb   2440
 buff.1788:
         resb    256
 arg:
@@ -825,6 +1670,33 @@ GS_32:
 	db 25H, 73H, 00H
 	ML_32:
         db 25H, 6CH, 64H, 00H
+
+t160:
+	 db 15,"the striking TA" ,0
+
+t170:
+	 db 2,"MR" ,0
+
+t77:
+	 db 2,", " ,0
+
+t88:
+	 db 21," enjoys this work. XD" ,0
+
+t103:
+	 db 22," wants to give up!!!!!" ,0
+
+t138:
+	 db 14,"the leading TA" ,0
+
+t176:
+	 db 4,"Mars" ,0
+
+t92:
+	 db 2,", " ,0
+
+t173:
+	 db 4,"Mars" ,0
 
 SECTION .data.rel.local align=8
 

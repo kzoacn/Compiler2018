@@ -725,12 +725,12 @@ main:
 	mov rbx,0
 	mov r14,rbx
 	
-L_1260:
+L_797:
 	cmp r14,r15
 	mov r12, 0
 	setl r12B
 	cmp r12, 0
-	je L_1261
+	je L_798
 	mov r12,r13
 	lea r11,[r12+r14*8+8H]
 	mov r12, [r11]
@@ -763,9 +763,9 @@ L_1260:
 	mov r12,r14
 	mov rbx,1
 	add r14,rbx
-	jmp L_1260
+	jmp L_797
 	
-L_1261:
+L_798:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

@@ -706,177 +706,177 @@ main:
 	mov r12,rdx
 	mov qword [rsp+8*5],rbx
 	
-L_1212:
+L_749:
 	mov rbx,1
 	mov r10,rbx
 	mov rax,0
 	mov rdx,rax
 	mov qword [rsp+8*8],rdx
 	
-L_1215:
+L_752:
 	mov rbx,  [rsp+8*8]
 	mov rdx,  [rsp+8*2]
 	cmp rbx,rdx
 	mov r8, 0
 	setl r8B
 	cmp r8, 0
-	je L_1216
-	mov rbx,  [rsp+8*5]
-	mov r8,rbx
-	mov rdx,  [rsp+8*8]
-	lea r14,[r8+rdx*8+8H]
-	mov [r14],r13
-	mov r14,r13
-	imul r14,r12
-	xor rdx, rdx
-	mov rax,  r14
-	mov rbx, 7
-	cdq
-	idiv ebx
-	mov  r14, rdx
-	mov r13,r14
-	mov rbx,0
-	mov r14,rbx
-	
-L_1218:
-	mov rbx,  [rsp+8*8]
-	cmp r14,rbx
-	mov r8, 0
-	setl r8B
-	cmp r8, 0
-	je L_1219
+	je L_753
 	mov rbx,  [rsp+8*5]
 	mov r8,rbx
 	mov rdx,  [rsp+8*8]
 	lea r11,[r8+rdx*8+8H]
-	mov r8, [r11]
+	mov [r11],r13
+	mov r11,r13
+	imul r11,r12
+	xor rdx, rdx
+	mov rax,  r11
+	mov rbx, 7
+	cdq
+	idiv ebx
+	mov  r11, rdx
+	mov r13,r11
+	mov rbx,0
 	mov r11,rbx
-	lea r9,[r11+r14*8+8H]
-	mov r11, [r9]
-	cmp r8,r11
+	
+L_755:
+	mov rbx,  [rsp+8*8]
+	cmp r11,rbx
+	mov r8, 0
+	setl r8B
+	cmp r8, 0
+	je L_756
+	mov rbx,  [rsp+8*5]
+	mov r8,rbx
+	mov rdx,  [rsp+8*8]
+	lea r14,[r8+rdx*8+8H]
+	mov r8, [r14]
+	mov r14,rbx
+	lea r9,[r14+r11*8+8H]
+	mov r14, [r9]
+	cmp r8,r14
 	mov r9, 0
 	sete r9B
 	cmp r9, 0
-	je L_1222
+	je L_759
 	mov rbx,0
 	mov r10,rbx
-	jmp L_1219
+	jmp L_756
 	
-L_1222:
-	mov r11,r14
+L_759:
+	mov r14,r11
 	mov rbx,1
-	add r14,rbx
-	jmp L_1218
+	add r11,rbx
+	jmp L_755
 	
-L_1219:
+L_756:
 	mov rbx,  [rsp+8*8]
-	mov r11,rbx
+	mov r14,rbx
 	mov rdx,1
 	add rbx,rdx
 	mov qword [rsp+8*8],rbx
-	jmp L_1215
+	jmp L_752
 	
-L_1216:
+L_753:
 	cmp r10, 0
-	je L_1224
-	jmp L_1213
+	je L_761
+	jmp L_750
 	
-L_1224:
-	mov r11,r12
+L_761:
+	mov r14,r12
 	mov rbx,1
 	add r12,rbx
-	jmp L_1212
+	jmp L_749
 	
-L_1213:
+L_750:
 	mov rdx,0
 	mov rbx,rdx
 	mov qword [rsp+8*8],rbx
 	
-L_1225:
+L_762:
 	mov rbx,  [rsp+8*8]
 	mov rdx,  [rsp+8*2]
 	cmp rbx,rdx
-	mov r13, 0
-	setl r13B
-	cmp r13, 0
-	je L_1226
+	mov r14, 0
+	setl r14B
+	cmp r14, 0
+	je L_763
 	mov rbx,0
-	mov r14,rbx
+	mov r11,rbx
 	
-L_1228:
+L_765:
 	mov rbx,1
-	mov r13,r14
-	add r13,rbx
-	mov rdx,  [rsp+8*2]
-	cmp r13,rdx
-	mov r13, 0
-	setl r13B
-	add r15,r15
-	cmp r13, 0
-	je L_1229
-	mov rbx,  [rsp+8*5]
-	mov r13,rbx
-	lea r12,[r13+r14*8+8H]
-	mov r13, [r12]
-	mov rdx,1
-	mov r12,r14
-	add r12,rdx
-	mov r11,rbx
-	lea r10,[r11+r12*8+8H]
-	mov r12, [r10]
-	cmp r13,r12
-	mov r11, 0
-	setg r11B
-	cmp r11, 0
-	je L_1232
-	mov rbx,  [rsp+8*5]
-	mov r13,rbx
-	lea r12,[r13+r14*8+8H]
-	mov r13, [r12]
-	mov r12,r13
-	mov rdx,1
-	mov r13,r14
-	add r13,rdx
-	mov r11,rbx
-	lea r10,[r11+r13*8+8H]
-	mov r13, [r10]
-	mov r11,rbx
-	lea r10,[r11+r14*8+8H]
-	mov [r10],r13
-	mov rax,1
-	mov r13,r14
-	add r13,rax
-	mov r11,rbx
-	lea r10,[r11+r13*8+8H]
-	mov [r10],r12
-	
-L_1232:
-	mov r13,r14
-	mov rbx,1
+	mov r14,r11
 	add r14,rbx
-	jmp L_1228
+	mov rdx,  [rsp+8*2]
+	cmp r14,rdx
+	mov r14, 0
+	setl r14B
+	add r15,r15
+	cmp r14, 0
+	je L_766
+	mov rbx,  [rsp+8*5]
+	mov r14,rbx
+	lea r13,[r14+r11*8+8H]
+	mov r14, [r13]
+	mov rdx,1
+	mov r13,r11
+	add r13,rdx
+	mov r12,rbx
+	lea r10,[r12+r13*8+8H]
+	mov r13, [r10]
+	cmp r14,r13
+	mov r12, 0
+	setg r12B
+	cmp r12, 0
+	je L_769
+	mov rbx,  [rsp+8*5]
+	mov r14,rbx
+	lea r13,[r14+r11*8+8H]
+	mov r14, [r13]
+	mov r13,r14
+	mov rdx,1
+	mov r14,r11
+	add r14,rdx
+	mov r12,rbx
+	lea r10,[r12+r14*8+8H]
+	mov r14, [r10]
+	mov r12,rbx
+	lea r10,[r12+r11*8+8H]
+	mov [r10],r14
+	mov rax,1
+	mov r14,r11
+	add r14,rax
+	mov r12,rbx
+	lea r10,[r12+r14*8+8H]
+	mov [r10],r13
 	
-L_1229:
+L_769:
+	mov r14,r11
+	mov rbx,1
+	add r11,rbx
+	jmp L_765
+	
+L_766:
 	mov rbx,  [rsp+8*8]
 	mov r14,rbx
 	mov rdx,1
 	add rbx,rdx
 	mov qword [rsp+8*8],rbx
-	jmp L_1225
+	jmp L_762
 	
-L_1226:
+L_763:
 	mov rdx,0
 	mov rbx,rdx
 	mov qword [rsp+8*8],rbx
 	
-L_1233:
+L_770:
 	mov rbx,  [rsp+8*8]
 	mov rdx,  [rsp+8*2]
 	cmp rbx,rdx
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	je L_1234
+	je L_771
 	mov rbx,  [rsp+8*5]
 	mov r15,rbx
 	mov rdx,  [rsp+8*8]
@@ -913,9 +913,9 @@ L_1233:
 	mov rdx,1
 	add rbx,rdx
 	mov qword [rsp+8*8],rbx
-	jmp L_1233
+	jmp L_770
 	
-L_1234:
+L_771:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

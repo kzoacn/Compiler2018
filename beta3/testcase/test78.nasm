@@ -775,7 +775,7 @@ L_3342:
 	mov rax,  [rsp+8*20]
 	mov rdi,rax
 	mov r8,rdi
-	mov r10,rsi
+	mov r9,rsi
 	mov qword [rsp+8*22],rdx
 	mov qword [rsp+8*21],rbx
 	mov rbx,1
@@ -786,9 +786,9 @@ L_3349:
 	mov rbx,  [gbl+8*6]
 	mov rdx,49
 	cmp rbx,rdx
-	mov r9, 0
-	setle r9B
-	cmp r9, 0
+	mov r14, 0
+	setle r14B
+	cmp r14, 0
 	je L_3350
 	mov rbx,50
 	mov r11,rbx
@@ -796,24 +796,24 @@ L_3349:
 L_3351:
 	mov rbx,98
 	mov rdx,  [gbl+8*6]
-	mov r9,rbx
-	sub r9,rdx
+	mov r14,rbx
+	sub r14,rdx
 	mov rax,1
-	add r9,rax
-	cmp r11,r9
-	mov r9, 0
-	setle r9B
+	add r14,rax
+	cmp r11,r14
+	mov r14, 0
+	setle r14B
 	add r15,r15
-	cmp r9, 0
+	cmp r14, 0
 	je L_3353
 	mov rbx,  [gbl+8*5]
-	mov r9,rbx
+	mov r14,rbx
 	mov rdx,  [gbl+8*6]
-	lea r14,[r9+rdx*8+8H]
-	mov r9, [r14]
-	lea r14,[r9+r11*8+8H]
+	lea r10,[r14+rdx*8+8H]
+	mov r14, [r10]
+	lea r10,[r14+r11*8+8H]
 	mov rax,1
-	mov [r14],rax
+	mov [r10],rax
 	mov r14,r11
 	mov rax,1
 	add r11,rax
@@ -872,7 +872,7 @@ L_3359:
 	mov rdx,  [gbl+8*6]
 	lea r14,[r15+rdx*8+8H]
 	mov r15, [r14]
-	lea r14,[r15+r10*8+8H]
+	lea r14,[r15+r9*8+8H]
 	mov rax,1
 	mov [r14],rax
 	mov r15,rdx

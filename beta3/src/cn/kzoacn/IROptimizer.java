@@ -387,9 +387,6 @@ public class IROptimizer {
 
 
 
-        System.err.println("!----------------------------------------------");
-        tmp.print();
-        System.err.println("!----------------------------------------------");
 
         //register allocate
         for(Variable var:variables)
@@ -489,14 +486,17 @@ public class IROptimizer {
         boolean[] used=new boolean[10];
         TreeMap<String,Integer> colorMap1=greed();
         TreeMap<String,Integer> colorMap2=chartin();
+        TreeMap<String,Integer> colorMap3=linearScan();
 
 
-        colorMap=linearScan();
-        /*if(colorMap1.size()>colorMap2.size())
+        System.err.println("greed : "+colorMap1.size());
+        System.err.println("chartin : "+colorMap2.size());
+        System.err.println("linearScan : "+colorMap3.size());
+        colorMap=colorMap3;
+        if(colorMap1.size()>colorMap.size())
             colorMap=colorMap1;
-        else
+        if(colorMap2.size()>colorMap.size())
             colorMap=colorMap2;
-*/
         cur=ir.head;
         line_number=0;
 

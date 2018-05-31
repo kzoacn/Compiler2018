@@ -769,45 +769,45 @@ L_4079:
 	mov rbx,  [rsp+8*16]
 	mov rdx,  [rsp+8*2]
 	cmp rbx,rdx
-	mov r15, 0
-	setl r15B
-	cmp r15, 0
+	mov r13, 0
+	setl r13B
+	cmp r13, 0
 	je L_4080
 	mov rbx,  [rsp+8*4]
 	mov rdx,  [rsp+8*6]
 	cmp rbx,rdx
-	mov r15, 0
-	sete r15B
-	cmp r15, 0
+	mov r13, 0
+	sete r13B
+	cmp r13, 0
 	jne L_4082
 	mov rbx,0
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_4083
 	
 L_4082:
 	mov rbx,  [rsp+8*8]
 	cmp rbx,0
-	mov r13, 0
-	setg r13B
-	mov r15,r13
+	mov r15, 0
+	setg r15B
+	mov r13,r15
 	
 L_4083:
-	cmp r15, 0
+	cmp r13, 0
 	je L_4088
 	mov rbx,1
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_4089
 	
 L_4088:
 	mov rbx,  [rsp+8*10]
 	mov rdx,  [rsp+8*12]
 	cmp rbx,rdx
-	mov r13, 0
-	sete r13B
-	cmp r13, 0
+	mov r15, 0
+	sete r15B
+	cmp r15, 0
 	jne L_4084
 	mov rbx,0
-	mov r13,rbx
+	mov r15,rbx
 	jmp L_4085
 	
 L_4084:
@@ -815,13 +815,13 @@ L_4084:
 	cmp rbx,0
 	mov r12, 0
 	setg r12B
-	mov r13,r12
+	mov r15,r12
 	
 L_4085:
-	cmp r13, 0
+	cmp r15, 0
 	jne L_4086
 	mov rbx,0
-	mov r13,rbx
+	mov r15,rbx
 	jmp L_4087
 	
 L_4086:
@@ -829,42 +829,42 @@ L_4086:
 	cmp rbx,0
 	mov r12, 0
 	setg r12B
-	mov r13,r12
+	mov r15,r12
 	
 L_4087:
-	mov r15,r13
+	mov r13,r15
 	
 L_4089:
-	cmp r15, 0
+	cmp r13, 0
 	je L_4090
 	mov rbx,1
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_4091
 	
 L_4090:
 	mov rbx,  [rsp+8*4]
 	mov rdx,  [rsp+8*16]
 	cmp rbx,rdx
-	mov r13, 0
-	sete r13B
-	mov r15,r13
+	mov r15, 0
+	sete r15B
+	mov r13,r15
 	
 L_4091:
-	cmp r15, 0
+	cmp r13, 0
 	je L_4094
 	mov rbx,1
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_4095
 	
 L_4094:
 	mov rbx,  [rsp+8*10]
 	cmp rbx,0
-	mov r13, 0
-	setg r13B
-	cmp r13, 0
+	mov r15, 0
+	setg r15B
+	cmp r15, 0
 	jne L_4092
 	mov rbx,0
-	mov r13,rbx
+	mov r15,rbx
 	jmp L_4093
 	
 L_4092:
@@ -872,22 +872,22 @@ L_4092:
 	cmp rbx,0
 	mov r12, 0
 	setg r12B
-	mov r13,r12
+	mov r15,r12
 	
 L_4093:
-	mov r15,r13
+	mov r13,r15
 	
 L_4095:
-	mov r13,r15
+	mov r15,r13
 	mov rbx,  [rsp+8*4]
 	mov rdx,  [rsp+8*6]
 	cmp rbx,rdx
-	mov r15, 0
-	sete r15B
-	cmp r15, 0
+	mov r13, 0
+	sete r13B
+	cmp r13, 0
 	jne L_4096
 	mov rbx,0
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_4097
 	
 L_4096:
@@ -895,13 +895,13 @@ L_4096:
 	cmp rbx,0
 	mov r12, 0
 	setg r12B
-	mov r15,r12
+	mov r13,r12
 	
 L_4097:
-	cmp r15, 0
+	cmp r13, 0
 	je L_4102
 	mov rbx,1
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_4103
 	
 L_4102:
@@ -938,13 +938,13 @@ L_4100:
 	mov r12,r11
 	
 L_4101:
-	mov r15,r12
+	mov r13,r12
 	
 L_4103:
-	cmp r15, 0
+	cmp r13, 0
 	je L_4104
 	mov rbx,1
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_4105
 	
 L_4104:
@@ -953,13 +953,13 @@ L_4104:
 	cmp rbx,rdx
 	mov r12, 0
 	sete r12B
-	mov r15,r12
+	mov r13,r12
 	
 L_4105:
-	cmp r15, 0
+	cmp r13, 0
 	je L_4108
 	mov rbx,1
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_4109
 	
 L_4108:
@@ -981,19 +981,19 @@ L_4106:
 	mov r12,r11
 	
 L_4107:
-	mov r15,r12
+	mov r13,r12
 	
 L_4109:
-	mov r12,r15
+	mov r12,r13
 	mov rbx,  [rsp+8*4]
 	mov rdx,  [rsp+8*6]
 	cmp rbx,rdx
-	mov r15, 0
-	sete r15B
-	cmp r15, 0
+	mov r13, 0
+	sete r13B
+	cmp r13, 0
 	jne L_4110
 	mov rbx,0
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_4111
 	
 L_4110:
@@ -1001,13 +1001,13 @@ L_4110:
 	cmp rbx,0
 	mov r11, 0
 	setg r11B
-	mov r15,r11
+	mov r13,r11
 	
 L_4111:
-	cmp r15, 0
+	cmp r13, 0
 	je L_4116
 	mov rbx,1
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_4117
 	
 L_4116:
@@ -1044,13 +1044,13 @@ L_4114:
 	mov r11,r10
 	
 L_4115:
-	mov r15,r11
+	mov r13,r11
 	
 L_4117:
-	cmp r15, 0
+	cmp r13, 0
 	je L_4118
 	mov rbx,1
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_4119
 	
 L_4118:
@@ -1059,13 +1059,13 @@ L_4118:
 	cmp rbx,rdx
 	mov r11, 0
 	sete r11B
-	mov r15,r11
+	mov r13,r11
 	
 L_4119:
-	cmp r15, 0
+	cmp r13, 0
 	je L_4122
 	mov rbx,1
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_4123
 	
 L_4122:
@@ -1087,19 +1087,19 @@ L_4120:
 	mov r11,r10
 	
 L_4121:
-	mov r15,r11
+	mov r13,r11
 	
 L_4123:
-	mov r11,r15
+	mov r11,r13
 	mov rbx,  [rsp+8*4]
 	mov rdx,  [rsp+8*6]
 	cmp rbx,rdx
-	mov r15, 0
-	sete r15B
-	cmp r15, 0
+	mov r13, 0
+	sete r13B
+	cmp r13, 0
 	jne L_4124
 	mov rbx,0
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_4125
 	
 L_4124:
@@ -1107,13 +1107,13 @@ L_4124:
 	cmp rbx,0
 	mov r10, 0
 	setg r10B
-	mov r15,r10
+	mov r13,r10
 	
 L_4125:
-	cmp r15, 0
+	cmp r13, 0
 	je L_4130
 	mov rbx,1
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_4131
 	
 L_4130:
@@ -1150,13 +1150,13 @@ L_4128:
 	mov r10,r9
 	
 L_4129:
-	mov r15,r10
+	mov r13,r10
 	
 L_4131:
-	cmp r15, 0
+	cmp r13, 0
 	je L_4132
 	mov rbx,1
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_4133
 	
 L_4132:
@@ -1165,13 +1165,13 @@ L_4132:
 	cmp rbx,rdx
 	mov r10, 0
 	sete r10B
-	mov r15,r10
+	mov r13,r10
 	
 L_4133:
-	cmp r15, 0
+	cmp r13, 0
 	je L_4136
 	mov rbx,1
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_4137
 	
 L_4136:
@@ -1193,19 +1193,19 @@ L_4134:
 	mov r10,r9
 	
 L_4135:
-	mov r15,r10
+	mov r13,r10
 	
 L_4137:
-	mov r10,r15
+	mov r10,r13
 	mov rbx,  [rsp+8*4]
 	mov rdx,  [rsp+8*6]
 	cmp rbx,rdx
-	mov r15, 0
-	sete r15B
-	cmp r15, 0
+	mov r13, 0
+	sete r13B
+	cmp r13, 0
 	jne L_4138
 	mov rbx,0
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_4139
 	
 L_4138:
@@ -1213,13 +1213,13 @@ L_4138:
 	cmp rbx,0
 	mov r9, 0
 	setg r9B
-	mov r15,r9
+	mov r13,r9
 	
 L_4139:
-	cmp r15, 0
+	cmp r13, 0
 	je L_4144
 	mov rbx,1
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_4145
 	
 L_4144:
@@ -1256,13 +1256,13 @@ L_4142:
 	mov r9,r8
 	
 L_4143:
-	mov r15,r9
+	mov r13,r9
 	
 L_4145:
-	cmp r15, 0
+	cmp r13, 0
 	je L_4146
 	mov rbx,1
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_4147
 	
 L_4146:
@@ -1271,13 +1271,13 @@ L_4146:
 	cmp rbx,rdx
 	mov r9, 0
 	sete r9B
-	mov r15,r9
+	mov r13,r9
 	
 L_4147:
-	cmp r15, 0
+	cmp r13, 0
 	je L_4150
 	mov rbx,1
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_4151
 	
 L_4150:
@@ -1299,19 +1299,19 @@ L_4148:
 	mov r9,r8
 	
 L_4149:
-	mov r15,r9
+	mov r13,r9
 	
 L_4151:
-	mov r9,r15
+	mov r9,r13
 	mov rbx,  [rsp+8*4]
 	mov rdx,  [rsp+8*6]
 	cmp rbx,rdx
-	mov r15, 0
-	sete r15B
-	cmp r15, 0
+	mov r13, 0
+	sete r13B
+	cmp r13, 0
 	jne L_4152
 	mov rbx,0
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_4153
 	
 L_4152:
@@ -1319,13 +1319,13 @@ L_4152:
 	cmp rbx,0
 	mov r8, 0
 	setg r8B
-	mov r15,r8
+	mov r13,r8
 	
 L_4153:
-	cmp r15, 0
+	cmp r13, 0
 	je L_4158
 	mov rbx,1
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_4159
 	
 L_4158:
@@ -1362,13 +1362,13 @@ L_4156:
 	mov r8,r14
 	
 L_4157:
-	mov r15,r8
+	mov r13,r8
 	
 L_4159:
-	cmp r15, 0
+	cmp r13, 0
 	je L_4160
 	mov rbx,1
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_4161
 	
 L_4160:
@@ -1377,13 +1377,13 @@ L_4160:
 	cmp rbx,rdx
 	mov r14, 0
 	sete r14B
-	mov r15,r14
+	mov r13,r14
 	
 L_4161:
-	cmp r15, 0
+	cmp r13, 0
 	je L_4164
 	mov rbx,1
-	mov r15,rbx
+	mov r13,rbx
 	jmp L_4165
 	
 L_4164:
@@ -1405,11 +1405,11 @@ L_4162:
 	mov r14,r8
 	
 L_4163:
-	mov r15,r14
+	mov r13,r14
 	
 L_4165:
-	mov r14,r15
-	cmp r13, 0
+	mov r14,r13
+	cmp r15, 0
 	je L_4167
 	mov rbx,  [rsp+8*3]
 	mov r15,rbx
