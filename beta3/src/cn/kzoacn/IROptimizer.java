@@ -39,7 +39,7 @@ public class IROptimizer {
         boolean[] visit=new boolean[10];
 
         for(Interval l : arrayList){
-            current.removeIf((inter)->inter.r<l.l);
+            current.removeIf((inter)->inter.r+2<l.l);
             int mx=-1;
             Interval lucky=new Interval();
             for(int i=0;i<10;i++)visit[i]=false;
