@@ -654,7 +654,7 @@ strne:
 qsrt:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 584
+	sub    rsp, 560
 	mov r12,rdi
 	mov r14,rsi
 	mov r15,r12
@@ -781,7 +781,7 @@ L_846:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 584
+	sub    rsp, 560
 	mov     rax, 936870912
         cdqe
         mov     rdi, rax
@@ -801,7 +801,7 @@ main:
 			mov r15,0
         mov     edx, dword 936870912
         movsxd  rdx, edx
-        sub     rdx, 2568
+        sub     rdx, 2544
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
@@ -820,29 +820,18 @@ L_847:
 	setle r14B
 	cmp r14, 0
 	je L_848
-	mov rbx,1
-	mov r14,rbx
+	mov rbx,  [gbl+8*44]
 	mov rdx,1
-	mov rax,0
-	mov r13,rdx
-	imul r13,rax
-	add r14,r13
-	mov rbx,-1
-	mov r13,rbx
-	imul r13,r15
-	add r14,r13
-	mov rbx,1
-	mov rdx,  [gbl+8*44]
-	mov r13,rbx
-	imul r13,rdx
-	add r14,r13
-	mov rbx,  [gbl+8*8]
-	mov r13,rbx
+	mov r14,rbx
+	add r14,rdx
+	sub r14,r15
+	mov rax,  [gbl+8*8]
+	mov r13,rax
 	lea r13,[r13+r15*8+8H]
 	mov [r13],r14
 	mov r14,r15
-	mov rax,1
-	add r15,rax
+	mov rdx,1
+	add r15,rdx
 	jmp L_847
 	
 L_848:
@@ -896,7 +885,7 @@ L_850:
 	pop r9
 	pop r10
 	pop r11
-	mov rbx,t142
+	mov rbx,t133
 	mov rdi,rbx
 	mov r14,rdi
 	mov rdi, format
@@ -918,7 +907,7 @@ L_850:
 	jmp L_850
 	
 L_851:
-	mov rbx,t146
+	mov rbx,t137
 	mov rdi,rbx
 	mov r15,rdi
 	mov rdi, r15 
@@ -941,7 +930,7 @@ L_851:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 584
+	sub    rsp, 560
 	mov     rdi, 11
 	push r11
 	push r10
@@ -952,20 +941,20 @@ global_init:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword [gbl+8*64], rax
-	mov rdx,  [gbl+8*64]
+	mov     qword [gbl+8*61], rax
+	mov rdx,  [gbl+8*61]
 	mov rbx,rdx
 	mov qword [gbl+8*8],rbx
 	mov rbx,4
 	mov rax,rbx
 	mov qword [gbl+8*44],rax
-	mov rbx,  [rsp+8*65]
+	mov rbx,  [rsp+8*62]
 	mov rax,rbx
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2568
+gbl:         resb   2544
 buff.1788:
         resb    256
 arg:
@@ -995,10 +984,10 @@ GS_32:
 	ML_32:
         db 25H, 6CH, 64H, 00H
 
-t146:
+t137:
 	 db 0,"" ,0
 
-t142:
+t133:
 	 db 1," " ,0
 
 SECTION .data.rel.local align=8

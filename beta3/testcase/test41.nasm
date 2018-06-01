@@ -654,62 +654,54 @@ strne:
 dfs:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 264
+	sub    rsp, 248
 	mov r15,rdi
 	mov rbx,250
 	cmp r15,rbx
-	mov r14, 0
-	setl r14B
-	cmp r15,0
 	mov r13, 0
-	setg r13B
+	setl r13B
+	cmp r15,0
+	mov r14, 0
+	setg r14B
 	and r14,r13
 	cmp r14, 0
 	je L_1308
 	mov rbx,  [gbl+8*6]
-	lea r13,[rbx+r15*8+8H]
-	mov r12, [r13]
-	cmp r12,0
-	mov r13, 0
-	setg r13B
-	cmp r13, 0
+	lea r12,[rbx+r15*8+8H]
+	mov r13, [r12]
+	cmp r13,0
+	mov r12, 0
+	setg r12B
+	cmp r12, 0
 	je L_1308
 	cmp r14, 0
 	je L_1309
 	mov rbx,  [gbl+8*6]
-	lea r13,[rbx+r15*8+8H]
-	mov [r13],r12
+	lea r12,[rbx+r15*8+8H]
+	mov [r12],r13
 	
 L_1309:
-	mov rax,r12
+	mov rax,r13
 	leave
 	ret
 	
 L_1308:
-	mov r12,rdi
+	mov r11,rdi
 	mov rbx,0
-	mov r11,rbx
+	mov r13,rbx
 	mov rdx,1
-	mov r13,rdx
+	mov r12,rdx
 	
 L_1304:
 	mov rbx,1
 	cmp rbx, 0
 	je L_1305
-	mov r10,r13
+	mov r10,r12
 	mov rbx,1
-	add r13,rbx
-	mov rdx,0
-	mov r10,rdx
-	mov rax,1
-	imul r11,rax
-	add r10,r11
-	mov rbx,1
-	mov r11,rbx
-	imul r11,r13
-	add r10,r11
-	mov r11,r10
-	cmp r13,r12
+	add r12,rbx
+	add r13,r12
+	mov r13,r13
+	cmp r12,r11
 	mov r10, 0
 	sete r10B
 	cmp r10, 0
@@ -717,17 +709,17 @@ L_1304:
 	cmp r14, 0
 	je L_1310
 	mov rbx,  [gbl+8*6]
-	lea r13,[rbx+r15*8+8H]
-	mov [r13],r11
+	lea r12,[rbx+r15*8+8H]
+	mov [r12],r13
 	
 L_1310:
-	mov rax,r11
+	mov rax,r13
 	leave
 	ret
 	
 L_1307:
 	mov rbx,1
-	mov r10,r12
+	mov r10,r11
 	sub r10,rbx
 	mov rdi,r10
 	push r15
@@ -750,9 +742,9 @@ L_1305:
 	cmp r14, 0
 	je L_1311
 	mov rbx,  [gbl+8*6]
-	lea r13,[rbx+r15*8+8H]
+	lea r12,[rbx+r15*8+8H]
 	mov rdx,0
-	mov [r13],rdx
+	mov [r12],rdx
 	
 L_1311:
 	mov rbx,0
@@ -763,7 +755,7 @@ L_1311:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 264
+	sub    rsp, 248
 	mov     rax, 936870912
         cdqe
         mov     rdi, rax
@@ -783,7 +775,7 @@ main:
 			mov r15,0
         mov     edx, dword 936870912
         movsxd  rdx, edx
-        sub     rdx, 2248
+        sub     rdx, 2232
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
@@ -844,14 +836,14 @@ main:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 264
-	mov rbx,  [rsp+8*25]
+	sub    rsp, 248
+	mov rbx,  [rsp+8*23]
 	mov rax,rbx
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2248
+gbl:         resb   2232
 buff.1788:
         resb    256
 arg:

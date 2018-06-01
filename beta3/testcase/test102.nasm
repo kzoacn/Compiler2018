@@ -825,7 +825,7 @@ L_53:
 	je L_55
 	mov rbx,4
 	mov r11,r12
-	imul r11,rbx
+	shl r11,2
 	xor rdx, rdx
 	mov rax,  r11
 	mov rbx, 100
@@ -835,7 +835,7 @@ L_53:
 	mov r9,r11
 	mov rbx,4
 	mov r11,r12
-	imul r11,rbx
+	shl r11,2
 	xor rdx, rdx
 	mov rax,  r11
 	mov rbx, 100

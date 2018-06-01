@@ -445,6 +445,9 @@ public class IRTranslator {
         regName.put(14,"r14");
         regName.put(15,"r15");
 
+        HashMap<Integer,Integer>two=new HashMap<Integer, Integer>();
+        for(int i=1;i<20;i++)
+            two.put(1<<i,i);
         IROptimizer irOptimizer=new IROptimizer();
         ir=irOptimizer.optimize(ir);
         HashMap<Integer,HashSet<Integer>>saveRegister=irOptimizer.saveRegister;
@@ -625,8 +628,13 @@ public class IRTranslator {
                     if(writeReg(dest).equals(readReg(var2))){
                         text.append(new StringBuffer("imul " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
                     }else {
-                        text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
-                        text.append(new StringBuffer("imul " + writeReg(dest) + "," + readReg(var2) + "\n\t"));
+                        if(var2.type.equals(VariableType.CONST_INT)&&two.containsKey(var2.constValue)){
+                            text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
+                            text.append(new StringBuffer("shl " + writeReg(dest) + "," + two.get(var2.constValue) + "\n\t"));
+                        }else {
+                            text.append(new StringBuffer("mov " + writeReg(dest) + "," + readReg(var1) + "\n\t"));
+                            text.append(new StringBuffer("imul " + writeReg(dest) + "," + readReg(var2) + "\n\t"));
+                        }
                     }
                     //kickAll();
                     break;

@@ -703,7 +703,7 @@ main:
 	pop r11
 	mov rbx,2
 	mov r14,r15
-	imul r14,rbx
+	shl r14,1
 	mov rdx,1
 	add r14,rdx
 	mov rdi,r14

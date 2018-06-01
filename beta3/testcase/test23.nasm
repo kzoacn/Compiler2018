@@ -654,7 +654,7 @@ strne:
 qsrt:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 568
+	sub    rsp, 544
 	mov r12,rdi
 	mov r14,rsi
 	mov r15,r12
@@ -781,7 +781,7 @@ L_864:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 568
+	sub    rsp, 544
 	mov     rax, 936870912
         cdqe
         mov     rdi, rax
@@ -801,7 +801,7 @@ main:
 			mov r15,0
         mov     edx, dword 936870912
         movsxd  rdx, edx
-        sub     rdx, 2552
+        sub     rdx, 2528
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
@@ -820,29 +820,18 @@ L_865:
 	setle r14B
 	cmp r14, 0
 	je L_866
-	mov rbx,1
-	mov r14,rbx
+	mov rbx,  [gbl+8*44]
 	mov rdx,1
-	mov rax,0
-	mov r13,rdx
-	imul r13,rax
-	add r14,r13
-	mov rbx,-1
-	mov r13,rbx
-	imul r13,r15
-	add r14,r13
-	mov rbx,1
-	mov rdx,  [gbl+8*44]
-	mov r13,rbx
-	imul r13,rdx
-	add r14,r13
-	mov rbx,  [gbl+8*8]
-	mov r13,rbx
+	mov r14,rbx
+	add r14,rdx
+	sub r14,r15
+	mov rax,  [gbl+8*8]
+	mov r13,rax
 	lea r13,[r13+r15*8+8H]
 	mov [r13],r14
 	mov r14,r15
-	mov rax,1
-	add r15,rax
+	mov rdx,1
+	add r15,rdx
 	jmp L_865
 	
 L_866:
@@ -909,7 +898,7 @@ L_869:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 568
+	sub    rsp, 544
 	mov     rdi, 101
 	push r11
 	push r10
@@ -920,20 +909,20 @@ global_init:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword [gbl+8*62], rax
-	mov rdx,  [gbl+8*62]
+	mov     qword [gbl+8*59], rax
+	mov rdx,  [gbl+8*59]
 	mov rbx,rdx
 	mov qword [gbl+8*8],rbx
 	mov rbx,100
 	mov rax,rbx
 	mov qword [gbl+8*44],rax
-	mov rbx,  [rsp+8*63]
+	mov rbx,  [rsp+8*60]
 	mov rax,rbx
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2552
+gbl:         resb   2528
 buff.1788:
         resb    256
 arg:

@@ -2150,7 +2150,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
             }else {
                 Quad quad1, quad2;
                 Variable adder = nextVariable(VariableType.INT);
-                quad1 = new Quad(OpCode.multiply, nextConst(cof, VariableType.CONST_INT), var, adder);
+                quad1 = new Quad(OpCode.multiply, var,nextConst(cof, VariableType.CONST_INT), adder);
                 quad2 = new Quad(OpCode.add, adder, tmp.last.dest, tmp.last.dest);
                 tmp.push(quad1);
                 tmp.push(quad2);

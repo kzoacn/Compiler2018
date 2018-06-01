@@ -654,7 +654,7 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 376
+	sub    rsp, 360
 	mov     rax, 936870912
         cdqe
         mov     rdi, rax
@@ -674,7 +674,7 @@ main:
 			mov r15,0
         mov     edx, dword 936870912
         movsxd  rdx, edx
-        sub     rdx, 2360
+        sub     rdx, 2344
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
@@ -739,7 +739,7 @@ L_1294:
 	mov r13,rbx
 	mov rdx,2
 	mov r15,r10
-	imul r15,rdx
+	shl r15,1
 	mov rax,r15
 	mov rbx,0
 	cmp rax,rbx
@@ -802,18 +802,10 @@ L_1303:
 	jmp L_1299
 	
 L_1300:
-	mov rbx,-14
-	mov r14,rbx
-	mov rdx,1
-	mov r15,rdx
-	imul r15,r10
-	add r14,r15
-	mov rax,-14
-	mov rbx,0
-	mov r15,rax
-	imul r15,rbx
-	add r14,r15
-	mov r10,r14
+	mov rbx,14
+	mov r15,r10
+	sub r15,rbx
+	mov r10,r15
 	xor rdx, rdx
 	mov rax,  r13
 	mov rbx,  r12
@@ -859,7 +851,7 @@ L_1300:
 	jmp L_1294
 	
 L_1295:
-	mov rbx,t119
+	mov rbx,t112
 	mov rdi,rbx
 	mov r15,rdi
 	mov rdi, r15 
@@ -882,14 +874,14 @@ L_1295:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 376
-	mov rbx,  [rsp+8*39]
+	sub    rsp, 360
+	mov rbx,  [rsp+8*37]
 	mov rax,rbx
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2360
+gbl:         resb   2344
 buff.1788:
         resb    256
 arg:
@@ -919,7 +911,7 @@ GS_32:
 	ML_32:
         db 25H, 6CH, 64H, 00H
 
-t119:
+t112:
 	 db 0,"" ,0
 
 SECTION .data.rel.local align=8

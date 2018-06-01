@@ -1,1 +1,1 @@
-        int times = getInt();
+	n = getString().parseInt();
