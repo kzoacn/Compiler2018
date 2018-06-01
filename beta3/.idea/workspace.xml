@@ -32,8 +32,24 @@
       <file leaf-file-name="IROptimizer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IROptimizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="105" column="16" selection-start-line="105" selection-start-column="16" selection-end-line="105" selection-end-column="16" />
+            <state relative-caret-position="496">
+              <caret line="153" column="23" selection-start-line="153" selection-start-column="23" selection-end-line="153" selection-end-column="23" />
+              <folding>
+                <element signature="e#5137#5154#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="825" column="85" selection-start-line="825" selection-start-column="85" selection-end-line="825" selection-end-column="85" />
+              <folding>
+                <element signature="e#28946#28965#0" expanded="true" />
+                <element signature="e#29931#29947#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -41,8 +57,8 @@
       <file leaf-file-name="IRTranslator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="831" column="20" selection-start-line="831" selection-start-column="20" selection-end-line="831" selection-end-column="20" />
+            <state relative-caret-position="19">
+              <caret line="486" column="36" selection-start-line="486" selection-start-column="36" selection-end-line="486" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1828#1846#0" expanded="true" />
@@ -58,8 +74,8 @@
       <file leaf-file-name="ConstantPool.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/ConstantPool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="379" column="1" selection-start-line="379" selection-start-column="1" selection-end-line="379" selection-end-column="1" />
+            <state relative-caret-position="59">
+              <caret line="381" column="18" selection-start-line="381" selection-start-column="18" selection-end-line="381" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -70,8 +86,8 @@
       <file leaf-file-name="ExecTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/ExecTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="82" column="9" selection-start-line="82" selection-start-column="9" selection-end-line="82" selection-end-column="9" />
+            <state relative-caret-position="76">
+              <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -79,20 +95,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="840" column="63" selection-start-line="840" selection-start-column="63" selection-end-line="840" selection-end-column="63" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Builder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Builder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
+            <state relative-caret-position="349">
+              <caret line="61" column="24" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -108,9 +115,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Variabledefin</find>
-      <find>10</find>
-      <find>sort</find>
       <find>mod</find>
       <find>flag</find>
       <find>variables</find>
@@ -131,13 +135,16 @@
       <find>logic</find>
       <find>and</find>
       <find>equalor</find>
-      <find>equal</find>
       <find>inequal</find>
       <find>xor</find>
       <find>mem</find>
       <find>add</find>
+      <find>equal</find>
       <find>IRO</find>
+      <find>test9</find>
       <find>inequa</find>
+      <find>multipl</find>
+      <find>maintain</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -148,11 +155,11 @@
         <option value="$PROJECT_DIR$/src/cn/kzoacn/Mxstar.g4" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/Semantic.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/SemanticTest.java" />
-        <option value="$PROJECT_DIR$/src/cn/kzoacn/Builder.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/IRSimulator.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/IROptimizer.java" />
-        <option value="$PROJECT_DIR$/src/cn/kzoacn/ExecTest.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/ConstantPool.java" />
+        <option value="$PROJECT_DIR$/src/cn/kzoacn/Builder.java" />
+        <option value="$PROJECT_DIR$/src/cn/kzoacn/ExecTest.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java" />
         <option value="$PROJECT_DIR$/src/cn/kzoacn/Main.java" />
       </list>
@@ -251,7 +258,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="ExecTest.test103" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ExecTest.test10" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="beta3" />
       <extension name="coverage">
         <pattern>
@@ -263,7 +270,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="cn.kzoacn" />
       <option name="MAIN_CLASS_NAME" value="cn.kzoacn.ExecTest" />
-      <option name="METHOD_NAME" value="test103" />
+      <option name="METHOD_NAME" value="test10" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -274,7 +281,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="ExecTest.test106" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ExecTest.test100" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="beta3" />
       <extension name="coverage">
         <pattern>
@@ -286,7 +293,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="cn.kzoacn" />
       <option name="MAIN_CLASS_NAME" value="cn.kzoacn.ExecTest" />
-      <option name="METHOD_NAME" value="test106" />
+      <option name="METHOD_NAME" value="test100" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -297,7 +304,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="ExecTest.test112" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ExecTest.test101" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="beta3" />
       <extension name="coverage">
         <pattern>
@@ -309,7 +316,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="cn.kzoacn" />
       <option name="MAIN_CLASS_NAME" value="cn.kzoacn.ExecTest" />
-      <option name="METHOD_NAME" value="test112" />
+      <option name="METHOD_NAME" value="test101" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -320,7 +327,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="ExecTest.testInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ExecTest.test20" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="beta3" />
       <extension name="coverage">
         <pattern>
@@ -332,7 +339,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="cn.kzoacn" />
       <option name="MAIN_CLASS_NAME" value="cn.kzoacn.ExecTest" />
-      <option name="METHOD_NAME" value="testInput" />
+      <option name="METHOD_NAME" value="test20" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -345,18 +352,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.ExecTest" />
-      <item itemvalue="JUnit.ExecTest.testInput" />
-      <item itemvalue="JUnit.ExecTest.test112" />
-      <item itemvalue="JUnit.ExecTest.test103" />
-      <item itemvalue="JUnit.ExecTest.test106" />
+      <item itemvalue="JUnit.ExecTest.test100" />
+      <item itemvalue="JUnit.ExecTest.test10" />
+      <item itemvalue="JUnit.ExecTest.test101" />
+      <item itemvalue="JUnit.ExecTest.test20" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ExecTest" />
-        <item itemvalue="JUnit.ExecTest.test103" />
-        <item itemvalue="JUnit.ExecTest.testInput" />
-        <item itemvalue="JUnit.ExecTest.test106" />
-        <item itemvalue="JUnit.ExecTest.test112" />
+        <item itemvalue="JUnit.ExecTest.test20" />
+        <item itemvalue="JUnit.ExecTest.test101" />
+        <item itemvalue="JUnit.ExecTest.test10" />
+        <item itemvalue="JUnit.ExecTest.test100" />
       </list>
     </recent_temporary>
   </component>
@@ -374,34 +381,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ExecTest_testInput - 2018.06.01 at 13h 13m 21s.xml">
-      <configuration name="ExecTest.testInput" configurationId="JUnit" />
+    <history-entry file="ExecTest_test100 - 2018.06.01 at 17h 49m 27s.xml">
+      <configuration name="ExecTest.test100" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ExecTest_testInput - 2018.06.01 at 13h 13m 46s.xml">
-      <configuration name="ExecTest.testInput" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExecTest_testInput - 2018.06.01 at 13h 13m 56s.xml">
-      <configuration name="ExecTest.testInput" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExecTest_testInput - 2018.06.01 at 13h 14m 29s.xml">
-      <configuration name="ExecTest.testInput" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExecTest_test103 - 2018.06.01 at 13h 14m 50s.xml">
-      <configuration name="ExecTest.test103" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExecTest_test103 - 2018.06.01 at 13h 15m 07s.xml">
-      <configuration name="ExecTest.test103" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExecTest - 2018.06.01 at 13h 15m 29s.xml">
+    <history-entry file="ExecTest - 2018.06.01 at 17h 51m 47s.xml">
       <configuration name="ExecTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ExecTest_test103 - 2018.06.01 at 13h 15m 45s.xml">
-      <configuration name="ExecTest.test103" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExecTest - 2018.06.01 at 13h 16m 27s.xml">
+    <history-entry file="ExecTest - 2018.06.01 at 18h 47m 28s.xml">
       <configuration name="ExecTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ExecTest - 2018.06.01 at 13h 17m 34s.xml">
+    <history-entry file="ExecTest_test10 - 2018.06.01 at 18h 47m 42s.xml">
+      <configuration name="ExecTest.test10" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecTest - 2018.06.01 at 18h 47m 59s.xml">
+      <configuration name="ExecTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecTest_test101 - 2018.06.01 at 18h 48m 07s.xml">
+      <configuration name="ExecTest.test101" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecTest - 2018.06.01 at 18h 49m 08s.xml">
+      <configuration name="ExecTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecTest_test20 - 2018.06.01 at 18h 49m 37s.xml">
+      <configuration name="ExecTest.test20" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecTest_test20 - 2018.06.01 at 18h 50m 38s.xml">
+      <configuration name="ExecTest.test20" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecTest - 2018.06.01 at 18h 51m 19s.xml">
       <configuration name="ExecTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -422,7 +429,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24791667" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24791667" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -774,20 +781,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/SemanticTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/ConstantPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="379" column="1" selection-start-line="379" selection-start-column="1" selection-end-line="379" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/ExecTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="82" column="9" selection-start-line="82" selection-start-column="9" selection-end-line="82" selection-end-column="9" />
+        <state relative-caret-position="76">
+          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -796,15 +793,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Builder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        <state relative-caret-position="349">
+          <caret line="61" column="24" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/ConstantPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="381" column="18" selection-start-line="381" selection-start-column="18" selection-end-line="381" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IRTranslator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="831" column="20" selection-start-line="831" selection-start-column="20" selection-end-line="831" selection-end-column="20" />
+        <state relative-caret-position="19">
+          <caret line="486" column="36" selection-start-line="486" selection-start-column="36" selection-end-line="486" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1828#1846#0" expanded="true" />
@@ -818,15 +825,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IROptimizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="105" column="16" selection-start-line="105" selection-start-column="16" selection-end-line="105" selection-end-column="16" />
+        <state relative-caret-position="496">
+          <caret line="153" column="23" selection-start-line="153" selection-start-column="23" selection-end-line="153" selection-end-column="23" />
+          <folding>
+            <element signature="e#5137#5154#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="840" column="63" selection-start-line="840" selection-start-column="63" selection-end-line="840" selection-end-column="63" />
+        <state relative-caret-position="150">
+          <caret line="825" column="85" selection-start-line="825" selection-start-column="85" selection-end-line="825" selection-end-column="85" />
+          <folding>
+            <element signature="e#28946#28965#0" expanded="true" />
+            <element signature="e#29931#29947#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

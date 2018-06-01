@@ -817,18 +817,7 @@ public class IRTranslator {
                     break;
                 case equal:
 
-                    /*if(writeReg(dest).equals(readReg(var2))){
-                        text.append(new StringBuffer("xor " + writeReg(dest) + ", " + readReg(var1)) + "\n\t");
-                        text.append(new StringBuffer("test " + writeReg(dest) + ", " + writeReg(dest) + "\n\t"));
-                        text.append(new StringBuffer("xor " + writeReg(dest) + ", " + writeReg(dest)) + "\n\t");
-                        text.append(new StringBuffer("setz " + lowbit.get(writeReg(dest)) + "\n\t"));
-                    }else {
-                        text.append(new StringBuffer("mov " + writeReg(dest) + ", " + readReg(var1) + "\n\t"));
-                        text.append(new StringBuffer("xor " + writeReg(dest) + ", " + readReg(var2)) + "\n\t");
-                        text.append(new StringBuffer("test " + writeReg(dest) + ", " + writeReg(dest) + "\n\t"));
-                        text.append(new StringBuffer("xor " + writeReg(dest) + ", " + writeReg(dest)) + "\n\t");
-                        text.append(new StringBuffer("setz " + lowbit.get(writeReg(dest)) + "\n\t"));
-                    }*/
+
                     text.append(new StringBuffer("cmp "+ readReg(var1)+","+readReg(var2)+"\n\t"));
                     text.append(new StringBuffer("mov "+writeReg(dest)+", 0\n\t"));
                     text.append(new StringBuffer("sete "+lowbit.get(writeReg(dest))+"\n\t"));

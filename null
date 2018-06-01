@@ -1,2 +1,6 @@
-0a1
-> 	int n=getInt();
+
+Input file: ha.c.o, output file: ha.c.nasm
+Converting from ELF64 to Disassembly64
+
+  0 Debug sections removed
+  0 Exception sections removed

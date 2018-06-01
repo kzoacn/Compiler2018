@@ -673,14 +673,14 @@ qsrt:
 	mov r11, [r11]
 	mov r11,r11
 	
-L_713:
+L_922:
 	cmp r15,r13
 	mov r10, 0
 	setle r10B
 	cmp r10, 0
-	je L_714
+	je L_923
 	
-L_715:
+L_924:
 	mov rbx,  [gbl+8*8]
 	mov r10,rbx
 	lea r10,[r10+r15*8+8H]
@@ -689,15 +689,15 @@ L_715:
 	mov r10, 0
 	setl r10B
 	cmp r10, 0
-	je L_716
+	je L_925
 	mov r10,r15
 	mov rbx,1
 	add r15,rbx
-	jmp L_715
+	jmp L_924
 	
-L_716:
+L_925:
 	
-L_717:
+L_926:
 	mov rbx,  [gbl+8*8]
 	mov r10,rbx
 	lea r10,[r10+r13*8+8H]
@@ -706,18 +706,18 @@ L_717:
 	mov r10, 0
 	setg r10B
 	cmp r10, 0
-	je L_718
+	je L_927
 	mov r10,r13
 	mov rbx,1
 	sub r13,rbx
-	jmp L_717
+	jmp L_926
 	
-L_718:
+L_927:
 	cmp r15,r13
 	mov r10, 0
 	setle r10B
 	cmp r10, 0
-	je L_720
+	je L_929
 	mov rbx,  [gbl+8*8]
 	mov r10,rbx
 	lea r10,[r10+r15*8+8H]
@@ -739,15 +739,15 @@ L_718:
 	mov rax,1
 	sub r13,rax
 	
-L_720:
-	jmp L_713
+L_929:
+	jmp L_922
 	
-L_714:
+L_923:
 	cmp r12,r13
 	mov r11, 0
 	setl r11B
 	cmp r11, 0
-	je L_722
+	je L_931
 	mov rsi,r13
 	mov rdi,r12
 	push r15
@@ -759,12 +759,12 @@ L_714:
 	pop r15
 	mov r13 , rax
 	
-L_722:
+L_931:
 	cmp r15,r14
 	mov r13, 0
 	setl r13B
 	cmp r13, 0
-	je L_724
+	je L_933
 	mov rsi,r14
 	mov rdi,r15
 	push r15
@@ -772,7 +772,7 @@ L_722:
 	pop r15
 	mov r15 , rax
 	
-L_724:
+L_933:
 	mov rbx,0
 	mov rax,rbx
 	leave
@@ -813,13 +813,13 @@ main:
 	mov rbx,1
 	mov r15,rbx
 	
-L_725:
+L_934:
 	mov rbx,  [gbl+8*44]
 	cmp r15,rbx
 	mov r14, 0
 	setle r14B
 	cmp r14, 0
-	je L_726
+	je L_935
 	mov rbx,  [gbl+8*44]
 	mov rdx,1
 	mov r14,rbx
@@ -832,9 +832,9 @@ L_725:
 	mov r14,r15
 	mov rdx,1
 	add r15,rdx
-	jmp L_725
+	jmp L_934
 	
-L_726:
+L_935:
 	mov rbx,  [gbl+8*44]
 	mov rsi,rbx
 	mov rdx,1
@@ -846,13 +846,13 @@ L_726:
 	mov rbx,1
 	mov r15,rbx
 	
-L_728:
+L_937:
 	mov rbx,  [gbl+8*44]
 	cmp r15,rbx
 	mov r14, 0
 	setle r14B
 	cmp r14, 0
-	je L_729
+	je L_938
 	mov rbx,  [gbl+8*8]
 	mov r14,rbx
 	lea r14,[r14+r15*8+8H]
@@ -886,9 +886,9 @@ L_728:
 	mov r14,r15
 	mov rbx,1
 	add r15,rbx
-	jmp L_728
+	jmp L_937
 	
-L_729:
+L_938:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

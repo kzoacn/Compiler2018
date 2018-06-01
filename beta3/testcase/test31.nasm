@@ -697,13 +697,13 @@ main:
 	mov rbx,1
 	mov r15,rbx
 	
-L_976:
+L_1264:
 	mov rbx,10
 	cmp r15,rbx
 	mov r14, 0
 	setle r14B
 	cmp r14, 0
-	je L_977
+	je L_1265
 	mov rdi,r15
 	push r15
 	push r14
@@ -740,9 +740,9 @@ L_976:
 	mov r14,r15
 	mov rbx,1
 	add r15,rbx
-	jmp L_976
+	jmp L_1264
 	
-L_977:
+L_1265:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]
@@ -763,7 +763,7 @@ fib:
 	setg r13B
 	and r14,r13
 	cmp r14, 0
-	je L_979
+	je L_1267
 	mov rbx,  [gbl+8*1]
 	lea r12,[rbx+r15*8+8H]
 	mov r13, [r12]
@@ -771,38 +771,38 @@ fib:
 	mov r12, 0
 	setg r12B
 	cmp r12, 0
-	je L_979
+	je L_1267
 	cmp r14, 0
-	je L_980
+	je L_1268
 	mov rbx,  [gbl+8*1]
 	lea r12,[rbx+r15*8+8H]
 	mov [r12],r13
 	
-L_980:
+L_1268:
 	mov rax,r13
 	leave
 	ret
 	
-L_979:
+L_1267:
 	mov r13,rdi
 	mov rbx,1
 	cmp r13,rbx
 	mov r12, 0
 	setle r12B
 	cmp r12, 0
-	je L_975
+	je L_1263
 	cmp r14, 0
-	je L_981
+	je L_1269
 	mov rbx,  [gbl+8*1]
 	lea r12,[rbx+r15*8+8H]
 	mov [r12],r13
 	
-L_981:
+L_1269:
 	mov rax,r13
 	leave
 	ret
 	
-L_975:
+L_1263:
 	mov rbx,1
 	mov r12,r13
 	sub r12,rbx
@@ -832,12 +832,12 @@ L_975:
 	mov r13 , rax
 	add r13,r12
 	cmp r14, 0
-	je L_982
+	je L_1270
 	mov rbx,  [gbl+8*1]
 	lea r12,[rbx+r15*8+8H]
 	mov [r12],r13
 	
-L_982:
+L_1270:
 	mov rax,r13
 	leave
 	ret

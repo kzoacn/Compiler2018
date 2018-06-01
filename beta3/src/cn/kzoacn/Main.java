@@ -817,6 +817,56 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         tmpIR.push(new Quad(OpCode.move,result,Variable.empty,result));
         return tmpIR;
     }
+    IR maintainIR(IR ir){
+        IR tmp=new IR();
+        HashMap<Variable,Variable>variableHashMap=new HashMap<Variable,Variable>();
+        Quad head=ir.head;
+        java.util.function.Function addVar=(obj)->{
+            Variable var = (Variable)obj;
+            if(var==null || var.equals(Variable.empty) || var.equals(Variable.error))
+                return null;
+            if(var.type.name.contains("const"))
+                return null;
+            if(symbolMap.globalVariableMap.containsKey(var.name)||argList.contains(var))
+                return null;
+            if(!variableHashMap.containsKey(var)){
+                variableHashMap.put(var,nextVariable(var.type));
+            }
+            return null;
+        };
+        java.util.function.Function getVar=(obj)->{
+            Variable var = (Variable)obj;
+            if(var==null || var.equals(Variable.empty) || var.equals(Variable.error))
+                return Variable.empty;
+            if(var.type.name.contains("const"))
+                return var;
+            if(symbolMap.globalVariableMap.containsKey(var.name)||argList.contains(var))
+                return var;
+            return variableHashMap.get(var);
+        };
+        HashMap<String,String>labelMap=new HashMap<String, String>();
+        java.util.function.Function getName=(str)->{
+            if(str==null)return null;
+            String name=(String)str;
+            if(!labelMap.containsKey(name))
+                labelMap.put(name,nextLabel());
+            return labelMap.get(name);
+        };
+        while(head!=null){
+            addVar.apply(head.var1);
+            addVar.apply(head.var2);
+            addVar.apply(head.dest);
+
+            Quad fake=head.clone();
+            fake.var1=(Variable) getVar.apply(fake.var1);
+            fake.var2=(Variable) getVar.apply(fake.var2);
+            fake.dest=(Variable) getVar.apply(fake.dest);
+            fake.name=(String)getName.apply(fake.name);
+            tmp.push(fake);
+            head=head.next;
+        }
+        return tmp;
+    }
     IR IROptimize(){
         IR functionIR=new IR();
         HashMap<String,ArrayList<String> >callList =new HashMap<String, ArrayList<String> >();
@@ -930,6 +980,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
                     }
                     Variable dest=head.dest;
                     IR bIR=bareIR.get(head.name).clone();
+                    bIR=maintainIR(bIR);
                     bIR=changeLabel(bIR);
                     Quad quad=new Quad(OpCode.move,bIR.last.dest,Variable.empty,dest);
                     prev.next=bIR.head;

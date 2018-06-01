@@ -727,16 +727,16 @@ main:
 	mov rbx,0
 	mov r12,rbx
 	
-L_4286:
+L_6951:
 	cmp r12,r15
 	mov r11, 0
 	setl r11B
 	cmp r11, 0
-	je L_4287
+	je L_6952
 	mov rbx,0
 	mov r11,rbx
 	
-L_4289:
+L_6954:
 	mov rbx,1
 	mov r10,r11
 	add r10,rbx
@@ -745,7 +745,7 @@ L_4289:
 	setl r10B
 	add r13,r13
 	cmp r10, 0
-	je L_4290
+	je L_6955
 	mov r10,r14
 	lea r10,[r10+r11*8+8H]
 	mov r10, [r10]
@@ -759,7 +759,7 @@ L_4289:
 	mov r10, 0
 	setg r10B
 	cmp r10, 0
-	je L_4293
+	je L_6958
 	mov r10,r14
 	lea r10,[r10+r11*8+8H]
 	mov r10, [r10]
@@ -780,28 +780,28 @@ L_4289:
 	lea r9,[r9+r8*8+8H]
 	mov [r9],r10
 	
-L_4293:
+L_6958:
 	mov r10,r11
 	mov rbx,1
 	add r11,rbx
-	jmp L_4289
+	jmp L_6954
 	
-L_4290:
+L_6955:
 	mov r11,r12
 	mov rbx,1
 	add r12,rbx
-	jmp L_4286
+	jmp L_6951
 	
-L_4287:
+L_6952:
 	mov rbx,0
 	mov r12,rbx
 	
-L_4294:
+L_6959:
 	cmp r12,r15
 	mov r13, 0
 	setl r13B
 	cmp r13, 0
-	je L_4295
+	je L_6960
 	mov r13,r14
 	lea r13,[r13+r12*8+8H]
 	mov r13, [r13]
@@ -834,9 +834,9 @@ L_4294:
 	mov r13,r12
 	mov rbx,1
 	add r12,rbx
-	jmp L_4294
+	jmp L_6959
 	
-L_4295:
+L_6960:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

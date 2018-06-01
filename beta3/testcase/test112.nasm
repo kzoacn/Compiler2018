@@ -665,7 +665,7 @@ lol:
 	setg r14B
 	and r14,r13
 	cmp r14, 0
-	je L_509
+	je L_705
 	mov rbx,  [gbl+8*6]
 	lea r12,[rbx+r15*8+8H]
 	mov r13, [r12]
@@ -673,29 +673,29 @@ lol:
 	mov r12, 0
 	setg r12B
 	cmp r12, 0
-	je L_509
+	je L_705
 	cmp r14, 0
-	je L_510
+	je L_706
 	mov rbx,  [gbl+8*6]
 	lea r12,[rbx+r15*8+8H]
 	mov [r12],r13
 	
-L_510:
+L_706:
 	mov rax,r13
 	leave
 	ret
 	
-L_509:
+L_705:
 	mov r13,rdi
 	mov rbx,1
 	add r13,rbx
 	cmp r14, 0
-	je L_511
+	je L_707
 	mov rbx,  [gbl+8*6]
 	lea r12,[rbx+r15*8+8H]
 	mov [r12],r13
 	
-L_511:
+L_707:
 	mov rax,r13
 	leave
 	ret

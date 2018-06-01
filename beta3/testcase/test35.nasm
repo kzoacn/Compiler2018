@@ -690,36 +690,36 @@ main:
 	mov rax,1
 	mov r15,rax
 	
-L_998:
+L_1286:
 	cmp r15,r14
 	mov r12, 0
 	setle r12B
 	cmp r12, 0
-	je L_999
+	je L_1287
 	mov rbx,1
 	mov r12,rbx
 	
-L_1001:
+L_1289:
 	cmp r12,r14
 	mov r11, 0
 	setle r11B
 	cmp r11, 0
-	je L_1002
+	je L_1290
 	add r13,r15
 	mov r13,r13
 	mov rbx,1
 	add r12,rbx
-	jmp L_1001
+	jmp L_1289
 	
-L_1002:
+L_1290:
 	mov rbx,1
 	add r13,rbx
 	mov r13,r13
 	mov rdx,1
 	add r15,rdx
-	jmp L_998
+	jmp L_1286
 	
-L_999:
+L_1287:
 	mov rdi,r13
 	mov r15,rdi
 	mov     rdi,  r15

@@ -774,12 +774,12 @@ main:
 	mov rdx,0
 	mov r14,rdx
 	
-L_299:
+L_400:
 	cmp r14,r15
 	mov r12, 0
 	setl r12B
 	cmp r12, 0
-	je L_300
+	je L_401
 	mov rdi,r13
 	mov r12,rdi
 	mov     rdi,  r12
@@ -887,7 +887,7 @@ L_299:
 	mov r11, 0
 	sete r11B
 	cmp r11, 0
-	je L_303
+	je L_404
 	mov rdi,r12
 	mov r12,rdi
 	mov rdi, r12 
@@ -902,15 +902,15 @@ L_299:
 	pop r10
 	pop r11
 	
-L_303:
+L_404:
 	mov rbx,2
 	add r13,rbx
 	mov r13,r13
 	mov rdx,1
 	add r14,rdx
-	jmp L_299
+	jmp L_400
 	
-L_300:
+L_401:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

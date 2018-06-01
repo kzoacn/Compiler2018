@@ -746,7 +746,7 @@ gcd:
 	mov qword [rsp+8*64],rdx
 	mov qword [rsp+8*65],rax
 	
-L_3346:
+L_5452:
 	mov rbx,  [rsp+8*65]
 	mov rdx,10
 	cmp rbx,rdx
@@ -754,7 +754,7 @@ L_3346:
 	setle al
 	cmp rax, 0
 	mov qword [rsp+8*66],rax
-	je L_3347
+	je L_5453
 	mov rbx,  [rsp+8*6]
 	mov rdx,  [rsp+8*8]
 	mov r15,rbx
@@ -819,9 +819,9 @@ L_3346:
 	mov rdx,1
 	add rbx,rdx
 	mov qword [rsp+8*65],rbx
-	jmp L_3346
+	jmp L_5452
 	
-L_3347:
+L_5453:
 	xor rdx, rdx
 	mov rax, [rsp+8*2]
 	mov rbx, [rsp+8*4]
@@ -835,13 +835,13 @@ L_3347:
 	sete al
 	cmp rax, 0
 	mov qword [rsp+8*70],rax
-	je L_3349
+	je L_5455
 	mov rbx,  [rsp+8*4]
 	mov rax,rbx
 	leave
 	ret
 	
-L_3349:
+L_5455:
 	xor rdx, rdx
 	mov rax, [rsp+8*2]
 	mov rbx, [rsp+8*4]
@@ -1224,13 +1224,13 @@ gcd1:
 	sete al
 	cmp rax, 0
 	mov qword [rsp+8*109],rax
-	je L_3351
+	je L_5457
 	mov rbx,  [rsp+8*75]
 	mov rax,rbx
 	leave
 	ret
 	
-L_3351:
+L_5457:
 	xor rdx, rdx
 	mov rax, [rsp+8*74]
 	mov rbx, [rsp+8*75]
@@ -1501,13 +1501,13 @@ gcd2:
 	sete al
 	cmp rax, 0
 	mov qword [rsp+8*147],rax
-	je L_3353
+	je L_5459
 	mov rbx,  [rsp+8*113]
 	mov rax,rbx
 	leave
 	ret
 	
-L_3353:
+L_5459:
 	xor rdx, rdx
 	mov rax, [rsp+8*112]
 	mov rbx, [rsp+8*113]

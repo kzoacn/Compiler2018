@@ -683,24 +683,15 @@ main:
 	call global_init
 	pop r15
 	mov r15 , rax
-	mov rbx,t64
-	mov r14,rbx
-	mov rdx,t65
-	mov r15,rdx
-	mov rdi,  r15
-	mov rsi,  r14
-	push r11
-	push r10
-	push r9
-	push r8
-	call    strls
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	mov qword  r15, rax
+	mov rbx,0
+	mov r15,rbx
+	mov rdx,0
+	mov r14,rdx
+	cmp r15,r14
+	mov r15, 0
+	sete r15B
 	cmp r15, 0
-	je L_4997
+	je L_715
 	mov rbx,t67
 	mov rdi,rbx
 	mov r15,rdi
@@ -715,9 +706,9 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	jmp L_4998
+	jmp L_716
 	
-L_4997:
+L_715:
 	mov rbx,t71
 	mov rdi,rbx
 	mov r15,rdi
@@ -733,7 +724,7 @@ L_4997:
 	pop r10
 	pop r11
 	
-L_4998:
+L_716:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]
@@ -780,17 +771,11 @@ GS_32:
 	ML_32:
         db 25H, 6CH, 64H, 00H
 
-t65:
-	 db 3,"abc" ,0
-
-t64:
-	 db 3,"acc" ,0
-
 t67:
-	 db 2,"ls" ,0
+	 db 2,"eq" ,0
 
 t71:
-	 db 6,"not ls" ,0
+	 db 2,"ne" ,0
 
 SECTION .data.rel.local align=8
 
