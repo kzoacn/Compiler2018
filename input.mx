@@ -20,7 +20,7 @@ int dp(int x){
 
 int main(){
 	int i;
-	int n=55;
+	int n=getInt();
 	for(i=1;i<=n;i++)
 		println(toString(dp(i)));
 	return 0;

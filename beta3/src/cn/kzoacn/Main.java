@@ -836,11 +836,11 @@ class MVisitor extends MxstarBaseVisitor<IR>{
                     if(!head.name.equals(name)&&head.next.equals("add"))//sorry ,I'll fix it
                         flag=false;
                 }
-                if(head.var1!=null&&!head.var1.equals(argList.get(0))&&symbolMap.globalVariableMap.containsKey(head.var1.name))
+                if(head.var1!=null&&!argList.contains(head.var1)&&symbolMap.globalVariableMap.containsKey(head.var1.name))
                     flag=false;
-                if(head.var2!=null&&!head.var2.equals(argList.get(0))&&symbolMap.globalVariableMap.containsKey(head.var2.name))
+                if(head.var2!=null&&!argList.contains(head.var2)&&symbolMap.globalVariableMap.containsKey(head.var2.name))
                     flag=false;
-                if(head.dest!=null&&!head.dest.equals(argList.get(0))&&symbolMap.globalVariableMap.containsKey(head.dest.name))
+                if(head.dest!=null&&!argList.contains(head.dest)&&symbolMap.globalVariableMap.containsKey(head.dest.name))
                     flag=false;
                 head=head.next;
             }
