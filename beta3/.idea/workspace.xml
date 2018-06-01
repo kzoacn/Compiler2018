@@ -32,8 +32,8 @@
       <file leaf-file-name="IROptimizer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IROptimizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="208" column="31" selection-start-line="208" selection-start-column="27" selection-end-line="208" selection-end-column="31" />
+            <state relative-caret-position="539">
+              <caret line="113" column="26" selection-start-line="113" selection-start-column="26" selection-end-line="113" selection-end-column="26" />
               <folding>
                 <element signature="e#5137#5154#0" expanded="true" />
               </folding>
@@ -44,8 +44,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="1001" column="20" selection-start-line="1001" selection-start-column="20" selection-end-line="1001" selection-end-column="20" />
+            <state relative-caret-position="382">
+              <caret line="2012" column="8" selection-start-line="2012" selection-start-column="8" selection-end-line="2012" selection-end-column="8" />
               <folding>
                 <element signature="e#28946#28965#0" expanded="true" />
                 <element signature="e#29931#29947#0" expanded="true" />
@@ -116,7 +116,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>variables</find>
       <find>graph</find>
       <find>color</find>
       <find>!--</find>
@@ -146,6 +145,7 @@
       <find>exp must be bool for</find>
       <find>main</find>
       <find>maintain</find>
+      <find>assign</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -382,9 +382,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ExecTest_test101 - 2018.06.01 at 18h 48m 07s.xml">
-      <configuration name="ExecTest.test101" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ExecTest - 2018.06.01 at 18h 49m 08s.xml">
       <configuration name="ExecTest" configurationId="JUnit" />
     </history-entry>
@@ -410,6 +407,9 @@
       <configuration name="ExecTest.test114" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ExecTest - 2018.06.01 at 19h 10m 46s.xml">
+      <configuration name="ExecTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecTest - 2018.06.01 at 19h 11m 38s.xml">
       <configuration name="ExecTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -826,8 +826,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/IROptimizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="208" column="31" selection-start-line="208" selection-start-column="27" selection-end-line="208" selection-end-column="31" />
+        <state relative-caret-position="539">
+          <caret line="113" column="26" selection-start-line="113" selection-start-column="26" selection-end-line="113" selection-end-column="26" />
           <folding>
             <element signature="e#5137#5154#0" expanded="true" />
           </folding>
@@ -836,8 +836,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/kzoacn/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="1001" column="20" selection-start-line="1001" selection-start-column="20" selection-end-line="1001" selection-end-column="20" />
+        <state relative-caret-position="382">
+          <caret line="2012" column="8" selection-start-line="2012" selection-start-column="8" selection-end-line="2012" selection-end-column="8" />
           <folding>
             <element signature="e#28946#28965#0" expanded="true" />
             <element signature="e#29931#29947#0" expanded="true" />

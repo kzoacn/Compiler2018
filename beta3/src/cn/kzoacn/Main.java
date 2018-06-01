@@ -1999,6 +1999,20 @@ class MVisitor extends MxstarBaseVisitor<IR>{
 
     }
 
+    IR algebraOpt(IR ir){
+        IR tmp=new IR();
+        Quad head=ir.head;
+        while(head!=null){
+            if(head.opCode==OpCode.add&&head.opCode==OpCode.subtract&&head.opCode==OpCode.move){
+
+            }else{
+                return ir;
+            }
+            head=head.next;
+        }
+
+        return tmp;
+    }
 
     @Override public IR visitAssign(MxstarParser.AssignContext ctx) {
         String variableName = ctx.leftValue().variable(0).variableName().getText();
@@ -2008,6 +2022,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
             for (int i = 0; i < ctx.leftValue().variable(0).index().size(); i++) {
                 parameterList.add(visit(ctx.leftValue().variable(0).index().get(i)));
             }
+            exp=algebraOpt(exp);
             return assign(variableName, exp, parameterList);
         }else{
             IR ir=new IR();
