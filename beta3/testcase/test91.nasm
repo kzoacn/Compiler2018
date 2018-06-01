@@ -668,7 +668,7 @@ cd:
 	mov r10, 0
 	sete r10B
 	cmp r10, 0
-	je L_1947
+	je L_2058
 	mov     rsi,  r13
 	mov     rdi, t66
 	push r11
@@ -721,9 +721,9 @@ cd:
 	mov r14,r15
 	mov rbx,1
 	add r15,rbx
-	jmp L_1948
+	jmp L_2059
 	
-L_1947:
+L_2058:
 	mov rbx,1
 	mov r10,r11
 	sub r10,rbx
@@ -816,7 +816,7 @@ L_1947:
 	mov rbx,1
 	add r15,rbx
 	
-L_1948:
+L_2059:
 	mov rax,r15
 	leave
 	ret

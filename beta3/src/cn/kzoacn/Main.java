@@ -9,6 +9,7 @@ import java.lang.*;
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.parse.*;
 import org.antlr.v4.runtime.tree.ParseTree;
+import org.opentest4j.ValueWrapper;
 
 
 import javax.lang.model.type.ArrayType;
@@ -435,6 +436,10 @@ class SymbolMap{
     String currentFunction="";
     boolean global=false;
     HashSet<String>typeMap=new HashSet<String>();
+
+    HashMap<Long,Variable>commonExp=new HashMap<Long, Variable>();
+    HashMap<Long,IR>commonExpIR=new HashMap<Long, IR>();
+
     SymbolMap(){
         typeMap.add("int");
         typeMap.add("string");
@@ -456,9 +461,13 @@ class SymbolMap{
     private Stack<Operation>operations = new Stack<Operation>();
 
     public void nextScope(){
+        commonExp.clear();
+        commonExpIR.clear();
         scopeIndex.push(operations.size());
     }
     public void prevScope(){
+        commonExp.clear();
+        commonExpIR.clear();
         while (operations.size()!=scopeIndex.peek()){
             Operation operation=operations.peek();
             operations.pop();
@@ -2032,12 +2041,77 @@ class MVisitor extends MxstarBaseVisitor<IR>{
             return ans;
         }
     }
-    IR algebraOpt(IR ir){
+
+    long expressHash(IR tmpIR){
+        IR ir=tmpIR.clone();
+        Quad head=ir.head;
+
+        Random random=new Random(19260817);
+        HashMap<Variable,Integer>variableHashMap=new HashMap<Variable,Integer>();
+        long hashCode=0;
+
+        java.util.function.Function getVar=(obj)->{
+            if(obj==null)return 0;
+            Variable var=(Variable)obj;
+            if (!variableHashMap.containsKey(var)) {
+                variableHashMap.put(var, random.nextInt(1 << 30));
+            }
+            return variableHashMap.get(var);
+        };
+
+        while(head!=null){
+
+            hashCode=(hashCode<<1) ^ head.opCode.hashCode();
+            hashCode=(hashCode<<1) ^ ((int)getVar.apply(head.var1));
+            hashCode=(hashCode<<1) ^ ((int)getVar.apply(head.var2));
+            hashCode=(hashCode<<1) ^ ((int)getVar.apply(head.dest));
+
+            head=head.next;
+        }
+        return hashCode;
+    }
+    IR algebraOpt(IR ir,Variable assignVar){
         IR tmp=new IR();
         Quad head=ir.head;
 
 
         int len=0;
+
+        head=ir.head;
+        while(head!=null){
+            len++;
+            head=head.next;
+        }
+
+        //I think it may be wrong
+        if(len>=10) {
+
+
+            long hashCode=expressHash(ir);
+            if (symbolMap.commonExp.containsKey(hashCode)) {
+
+                head=symbolMap.commonExpIR.get(hashCode).head;
+                boolean flag=true;
+                while(head!=null){
+                    if(head.var1!=null&&head.var1.name.equals(assignVar.name))flag=false;
+                    if(head.var2!=null&&head.var2.name.equals(assignVar.name))flag=false;
+                    if(head.dest!=null&&head.dest.name.equals(assignVar.name))flag=false;
+                    head=head.next;
+                }
+                if(flag) {
+                    tmp.push(new Quad(OpCode.move, symbolMap.commonExp.get(hashCode), Variable.empty, symbolMap.commonExp.get(hashCode)));
+                    return tmp;
+                }
+            } else {
+                symbolMap.commonExpIR.put(hashCode,ir.clone());
+                symbolMap.commonExp.put(hashCode, ir.last.dest);
+            }
+
+
+        }
+
+
+        head=ir.head;
         while(head!=null){
             if(head.opCode==OpCode.add || head.opCode==OpCode.subtract || head.opCode==OpCode.move){
                 if(head.opCode==OpCode.move){
@@ -2047,7 +2121,6 @@ class MVisitor extends MxstarBaseVisitor<IR>{
             }else{
                 return ir;
             }
-            len++;
             head=head.next;
         }
         if(len<=10)return ir;
@@ -2168,7 +2241,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
             for (int i = 0; i < ctx.leftValue().variable(0).index().size(); i++) {
                 parameterList.add(visit(ctx.leftValue().variable(0).index().get(i)));
             }
-            exp=algebraOpt(exp);
+            exp=algebraOpt(exp,new Variable(variableName,VariableType.INT));
             return assign(variableName, exp, parameterList);
         }else{
             IR ir=new IR();
@@ -3071,6 +3144,11 @@ class MVisitor extends MxstarBaseVisitor<IR>{
 
         IR ir = new IR();
         IR exp = visit(ctx.expression());
+
+
+
+        exp=algebraOpt(exp,new Variable(variableName,variableType));
+
         ir.concat(exp);
 
         if(!symbolMap.typeMap.contains(variableType.name)){

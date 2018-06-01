@@ -661,13 +661,13 @@ f:
 	mov r14, 0
 	setle r14B
 	cmp r14, 0
-	je L_1153
+	je L_1264
 	mov rbx,0
 	mov rax,rbx
 	leave
 	ret
 	
-L_1153:
+L_1264:
 	mov rbx,t68
 	mov rdi,rbx
 	mov r14,rdi
@@ -732,13 +732,13 @@ g:
 	mov r14, 0
 	setle r14B
 	cmp r14, 0
-	je L_1155
+	je L_1266
 	mov rbx,0
 	mov rax,rbx
 	leave
 	ret
 	
-L_1155:
+L_1266:
 	mov rbx,t85
 	mov rdi,rbx
 	mov r14,rdi
@@ -803,13 +803,13 @@ h:
 	mov r14, 0
 	setle r14B
 	cmp r14, 0
-	je L_1157
+	je L_1268
 	mov rbx,0
 	mov rax,rbx
 	leave
 	ret
 	
-L_1157:
+L_1268:
 	mov rbx,t102
 	mov rdi,rbx
 	mov r14,rdi

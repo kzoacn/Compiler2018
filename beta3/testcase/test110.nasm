@@ -746,7 +746,7 @@ fib:
 	setg r14B
 	and r14,r13
 	cmp r14, 0
-	je L_484
+	je L_478
 	mov rbx,  [gbl+8*1]
 	lea r12,[rbx+r15*8+8H]
 	mov r13, [r12]
@@ -754,40 +754,40 @@ fib:
 	mov r12, 0
 	setg r12B
 	cmp r12, 0
-	je L_484
+	je L_478
 	cmp r14, 0
-	je L_485
+	je L_479
 	mov rbx,  [gbl+8*1]
 	lea r12,[rbx+r15*8+8H]
 	mov [r12],r13
 	
-L_485:
+L_479:
 	mov rax,r13
 	leave
 	ret
 	
-L_484:
+L_478:
 	mov r12,rdi
 	mov rbx,1
 	cmp r12,rbx
 	mov r13, 0
 	setle r13B
 	cmp r13, 0
-	je L_483
+	je L_477
 	cmp r14, 0
-	je L_486
+	je L_480
 	mov rbx,  [gbl+8*1]
 	lea r12,[rbx+r15*8+8H]
 	mov rdx,1
 	mov [r12],rdx
 	
-L_486:
+L_480:
 	mov rbx,1
 	mov rax,rbx
 	leave
 	ret
 	
-L_483:
+L_477:
 	mov rbx,1
 	mov r13,r12
 	sub r13,rbx
@@ -817,12 +817,12 @@ L_483:
 	mov r12 , rax
 	add r13,r12
 	cmp r14, 0
-	je L_487
+	je L_481
 	mov rbx,  [gbl+8*1]
 	lea r12,[rbx+r15*8+8H]
 	mov [r12],r13
 	
-L_487:
+L_481:
 	mov rax,r13
 	leave
 	ret

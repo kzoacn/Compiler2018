@@ -105,6 +105,10 @@ class ExecTest {
         test("test117");
     }
     @Test
+    void test118()throws Exception{
+        test("test118");
+    }
+    @Test
     void test28()throws Exception{
         test("test28");
     }
@@ -296,7 +300,7 @@ class ExecTest {
     void test72()throws Exception{
         test("test72");
     }
-    @Test
+    @Test @Disabled
     void test73()throws Exception{
         test("test73");
     }

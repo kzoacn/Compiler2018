@@ -668,12 +668,12 @@ gcd:
 	mov r13, 0
 	sete r13B
 	cmp r13, 0
-	je L_1124
+	je L_1235
 	mov rax,r15
 	leave
 	ret
 	
-L_1124:
+L_1235:
 	xor rdx, rdx
 	mov rax,  r14
 	mov rbx,  r15

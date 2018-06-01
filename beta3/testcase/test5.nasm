@@ -693,38 +693,38 @@ main:
 	mov r12, 0
 	setg r12B
 	cmp r12, 0
-	jne L_678
+	jne L_789
 	mov rbx,0
 	mov r12,rbx
-	jmp L_679
+	jmp L_790
 	
-L_678:
+L_789:
 	cmp r13,r14
 	mov r12, 0
 	setg r12B
 	mov r12,r12
 	
-L_679:
+L_790:
 	cmp r12, 0
-	je L_680
+	je L_791
 	mov r15,r13
-	jmp L_681
+	jmp L_792
 	
-L_680:
+L_791:
 	cmp r15,r14
 	mov r13, 0
 	setg r13B
 	cmp r13, 0
-	je L_682
+	je L_793
 	mov r15,r15
-	jmp L_683
+	jmp L_794
 	
-L_682:
+L_793:
 	mov r15,r14
 	
-L_683:
+L_794:
 	
-L_681:
+L_792:
 	mov rdi,r15
 	mov r15,rdi
 	mov     rdi,  r15

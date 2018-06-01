@@ -698,13 +698,13 @@ main:
 	mov rbx,0
 	mov r14,rbx
 	
-L_33:
+L_27:
 	mov rbx,100
 	cmp r14,rbx
 	mov r13, 0
 	setl r13B
 	cmp r13, 0
-	je L_34
+	je L_28
 	mov     rdi, 100
 	push r11
 	push r10
@@ -722,31 +722,31 @@ L_33:
 	mov r13,r14
 	mov rbx,1
 	add r14,rbx
-	jmp L_33
+	jmp L_27
 	
-L_34:
+L_28:
 	mov rbx,0
 	mov r13,rbx
 	mov rdx,0
 	mov r14,rdx
 	
-L_36:
+L_30:
 	mov rbx,100
 	cmp r14,rbx
 	mov r12, 0
 	setl r12B
 	cmp r12, 0
-	je L_37
+	je L_31
 	mov rbx,0
 	mov r12,rbx
 	
-L_39:
+L_33:
 	mov rbx,100
 	cmp r12,rbx
 	mov r11, 0
 	setl r11B
 	cmp r11, 0
-	je L_40
+	je L_34
 	mov r11,r15
 	lea r11,[r11+r14*8+8H]
 	mov r11, [r11]
@@ -756,73 +756,73 @@ L_39:
 	mov r11,r12
 	mov rdx,1
 	add r12,rdx
-	jmp L_39
+	jmp L_33
 	
-L_40:
+L_34:
 	mov r12,r14
 	mov rbx,1
 	add r14,rbx
-	jmp L_36
+	jmp L_30
 	
-L_37:
+L_31:
 	mov rbx,0
 	mov r14,rbx
 	
-L_42:
+L_36:
 	mov rbx,100
 	cmp r14,rbx
 	mov r12, 0
 	setl r12B
 	cmp r12, 0
-	je L_43
+	je L_37
 	cmp r14,20
 	mov r12, 0
 	setg r12B
 	cmp r12, 0
-	jne L_45
+	jne L_39
 	mov rbx,0
 	mov r12,rbx
-	jmp L_46
+	jmp L_40
 	
-L_45:
+L_39:
 	mov rbx,80
 	cmp r14,rbx
 	mov r12, 0
 	setl r12B
 	mov r12,r12
 	
-L_46:
+L_40:
 	cmp r12, 0
-	je L_48
+	je L_42
 	mov rbx,0
 	mov r12,rbx
 	
-L_49:
+L_43:
 	mov rbx,100
 	cmp r12,rbx
 	mov r11, 0
 	setl r11B
 	cmp r11, 0
-	je L_50
+	je L_44
 	cmp r12,5
 	mov r11, 0
 	setg r11B
 	cmp r11, 0
-	je L_52
+	je L_46
 	mov rbx,1
 	mov r11,rbx
-	jmp L_53
+	jmp L_47
 	
-L_52:
+L_46:
 	mov rbx,90
 	cmp r14,rbx
 	mov r11, 0
 	setl r11B
 	mov r11,r11
 	
-L_53:
+L_47:
 	cmp r11, 0
-	je L_55
+	je L_49
 	mov rbx,4
 	mov r11,r12
 	shl r11,2
@@ -867,41 +867,41 @@ L_53:
 	lea r9,[r8+r10*8+8H]
 	mov [r9],r11
 	
-L_55:
+L_49:
 	mov r11,r12
 	mov rbx,1
 	add r12,rbx
-	jmp L_49
+	jmp L_43
 	
-L_50:
+L_44:
 	
-L_48:
+L_42:
 	mov r12,r14
 	mov rbx,1
 	add r14,rbx
-	jmp L_42
+	jmp L_36
 	
-L_43:
+L_37:
 	mov rbx,0
 	mov r14,rbx
 	
-L_56:
+L_50:
 	mov rbx,100
 	cmp r14,rbx
 	mov r12, 0
 	setl r12B
 	cmp r12, 0
-	je L_57
+	je L_51
 	mov rbx,0
 	mov r12,rbx
 	
-L_59:
+L_53:
 	mov rbx,100
 	cmp r12,rbx
 	mov r11, 0
 	setl r11B
 	cmp r11, 0
-	je L_60
+	je L_54
 	mov r11,r15
 	lea r11,[r11+r14*8+8H]
 	mov r11, [r11]
@@ -912,15 +912,15 @@ L_59:
 	mov r11,r12
 	mov rbx,1
 	add r12,rbx
-	jmp L_59
+	jmp L_53
 	
-L_60:
+L_54:
 	mov r12,r14
 	mov rbx,1
 	add r14,rbx
-	jmp L_56
+	jmp L_50
 	
-L_57:
+L_51:
 	mov rdi,r13
 	mov r15,rdi
 	mov     rdi,  r15

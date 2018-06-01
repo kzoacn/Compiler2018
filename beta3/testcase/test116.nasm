@@ -690,12 +690,12 @@ main:
 	mov rdx,1000000
 	mov r14,rdx
 	
-L_645:
+L_639:
 	cmp r13,r14
 	mov r12, 0
 	setl r12B
 	cmp r12, 0
-	je L_646
+	je L_640
 	mov rbx,1
 	mov r12,r13
 	add r12,rbx
@@ -709,7 +709,7 @@ L_645:
 	add r12,rax
 	mov r12,r12
 	
-L_648:
+L_642:
 	mov rbx,1
 	mov r9,rbx
 	mov rcx,29
@@ -718,12 +718,12 @@ L_648:
 	mov r9, 0
 	setl r9B
 	cmp r9, 0
-	jne L_650
+	jne L_644
 	mov rbx,0
 	mov r9,rbx
-	jmp L_651
+	jmp L_645
 	
-L_650:
+L_644:
 	mov rbx,1
 	mov r9,rbx
 	mov rcx,29
@@ -735,10 +735,10 @@ L_650:
 	setg r9B
 	mov r9,r9
 	
-L_651:
+L_645:
 	add r15,r15
 	cmp r9, 0
-	je L_649
+	je L_643
 	mov rbx,0
 	mov r9,rbx
 	mov rdx,3
@@ -765,9 +765,9 @@ L_651:
 	add r9,r11
 	sub r9,r12
 	mov r12,r9
-	jmp L_648
+	jmp L_642
 	
-L_649:
+L_643:
 	xor rdx, rdx
 	mov rax,  r13
 	mov rbx, 1000
@@ -779,7 +779,7 @@ L_649:
 	mov r9, 0
 	sete r9B
 	cmp r9, 0
-	je L_653
+	je L_647
 	mov rdi,r10
 	mov r10,rdi
 	mov     rdi,  r10
@@ -881,12 +881,12 @@ L_649:
 	pop r10
 	pop r11
 	
-L_653:
+L_647:
 	mov rbx,1
 	add r13,rbx
-	jmp L_645
+	jmp L_639
 	
-L_646:
+L_640:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]
