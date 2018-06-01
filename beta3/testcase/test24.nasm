@@ -654,7 +654,7 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 360
+	sub    rsp, 376
 	mov     rax, 936870912
         cdqe
         mov     rdi, rax
@@ -674,7 +674,7 @@ main:
 			mov r15,0
         mov     edx, dword 936870912
         movsxd  rdx, edx
-        sub     rdx, 2344
+        sub     rdx, 2360
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
@@ -709,7 +709,7 @@ main:
 	mov rbx,rdx
 	mov qword [rsp+8*9],rbx
 	
-L_1282:
+L_1291:
 	mov r15,r11
 	sub r15,r10
 	mov rbx,0
@@ -717,7 +717,7 @@ L_1282:
 	mov r15, 0
 	setne r15B
 	cmp r15, 0
-	je L_1283
+	je L_1292
 	xor rdx, rdx
 	mov rax,  r12
 	mov rbx, 5
@@ -730,11 +730,11 @@ L_1282:
 	mov r14,r8
 	lea r15,[r14+r15*8+8H]
 	mov [r15],r13
-	jmp L_1282
+	jmp L_1291
 	
-L_1283:
+L_1292:
 	
-L_1285:
+L_1294:
 	mov rbx,0
 	mov r13,rbx
 	mov rdx,2
@@ -747,13 +747,13 @@ L_1285:
 	sete r15B
 	cmp r15, 0
 	mov qword [rsp+8*9],rax
-	je L_1289
-	jmp L_1286
+	je L_1298
+	jmp L_1295
 	
-L_1289:
+L_1298:
 	mov r11,r10
 	
-L_1290:
+L_1299:
 	mov r15,r8
 	lea r15,[r15+r11*8+8H]
 	mov r15, [r15]
@@ -792,20 +792,28 @@ L_1290:
 	mov r15, 0
 	sete r15B
 	cmp r15, 0
-	je L_1294
-	jmp L_1291
+	je L_1303
+	jmp L_1300
 	
-L_1294:
+L_1303:
 	mov r15,r13
 	imul r15,r11
 	mov r13,r15
-	jmp L_1290
+	jmp L_1299
 	
-L_1291:
-	mov rbx,14
-	mov r15,r10
-	sub r15,rbx
-	mov r10,r15
+L_1300:
+	mov rbx,-14
+	mov r14,rbx
+	mov rdx,1
+	mov r15,rdx
+	imul r15,r10
+	add r14,r15
+	mov rax,-14
+	mov rbx,0
+	mov r15,rax
+	imul r15,rbx
+	add r14,r15
+	mov r10,r14
 	xor rdx, rdx
 	mov rax,  r13
 	mov rbx,  r12
@@ -848,10 +856,10 @@ L_1291:
 	idiv ebx
 	mov  r15, rdx
 	mov r9,r15
-	jmp L_1285
+	jmp L_1294
 	
-L_1286:
-	mov rbx,t112
+L_1295:
+	mov rbx,t119
 	mov rdi,rbx
 	mov r15,rdi
 	mov rdi, r15 
@@ -874,14 +882,14 @@ L_1286:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 360
-	mov rbx,  [rsp+8*37]
+	sub    rsp, 376
+	mov rbx,  [rsp+8*39]
 	mov rax,rbx
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2344
+gbl:         resb   2360
 buff.1788:
         resb    256
 arg:
@@ -911,7 +919,7 @@ GS_32:
 	ML_32:
         db 25H, 6CH, 64H, 00H
 
-t112:
+t119:
 	 db 0,"" ,0
 
 SECTION .data.rel.local align=8

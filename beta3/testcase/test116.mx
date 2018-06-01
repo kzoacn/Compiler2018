@@ -9,7 +9,7 @@ int C;
 
 int main(){
 	int T = 0;
-        int times = getInt();
+        int times = 1000000;
 	for (; T < times; ++T){
 		A = T+1;
 		B = T+1;

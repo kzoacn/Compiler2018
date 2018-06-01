@@ -654,7 +654,7 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 176
+	sub    rsp, 216
 	mov     rax, 936870912
         cdqe
         mov     rdi, rax
@@ -674,7 +674,7 @@ main:
 			mov r15,0
         mov     edx, dword 936870912
         movsxd  rdx, edx
-        sub     rdx, 2160
+        sub     rdx, 2200
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
@@ -690,37 +690,56 @@ main:
 	mov rax,1
 	mov r13,rax
 	
-L_1123:
+L_1132:
 	cmp r13,r15
 	mov r12, 0
 	setle r12B
 	cmp r12, 0
-	je L_1124
-	add r14,r13
-	mov r14,r14
+	je L_1133
+	mov rbx,0
+	mov r12,rbx
+	mov rdx,1
+	mov r11,rdx
+	imul r11,r13
+	add r12,r11
+	mov rax,1
+	imul r14,rax
+	add r12,r14
+	mov r14,r12
 	mov rbx,1
 	add r13,rbx
-	jmp L_1123
+	jmp L_1132
 	
-L_1124:
+L_1133:
 	mov rbx,1
 	mov r13,rbx
 	
-L_1126:
+L_1135:
 	cmp r13,r15
 	mov r12, 0
 	setle r12B
 	cmp r12, 0
-	je L_1127
+	je L_1136
 	mov rbx,10
-	add r14,rbx
-	add r14,r13
-	mov r14,r14
+	mov r12,rbx
 	mov rdx,1
-	add r13,rdx
-	jmp L_1126
+	imul r14,rdx
+	add r12,r14
+	mov rax,1
+	mov r14,rax
+	imul r14,r13
+	add r12,r14
+	mov rbx,10
+	mov rdx,0
+	mov r14,rbx
+	imul r14,rdx
+	add r12,r14
+	mov r14,r12
+	mov rbx,1
+	add r13,rbx
+	jmp L_1135
 	
-L_1127:
+L_1136:
 	mov rdi,r14
 	mov r15,rdi
 	mov     rdi,  r15
@@ -756,14 +775,14 @@ L_1127:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 176
-	mov rbx,  [rsp+8*14]
+	sub    rsp, 216
+	mov rbx,  [rsp+8*19]
 	mov rax,rbx
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2160
+gbl:         resb   2200
 buff.1788:
         resb    256
 arg:

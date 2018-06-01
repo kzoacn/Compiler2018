@@ -687,10 +687,10 @@ main:
 	mov rsi,rbx
 	mov rdx,3
 	mov rdi,rdx
-	mov r15,rdi
-	mov r14,rsi
-	mov rsi,r14
-	mov rdi,r15
+	mov r14,rdi
+	mov r15,rsi
+	mov rsi,r15
+	mov rdi,r14
 	mov r15,rdi
 	mov r14,rsi
 	add r15,r14

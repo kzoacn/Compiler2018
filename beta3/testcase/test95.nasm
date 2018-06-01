@@ -706,37 +706,37 @@ main:
 	setg r13B
 	and r14,r13
 	cmp r14, 0
-	je L_1966
+	je L_1975
 	mov rbx,  [gbl+8*1]
-	lea r12,[rbx+r15*8+8H]
-	mov r13, [r12]
-	cmp r13,0
-	mov r12, 0
-	setg r12B
-	cmp r12, 0
-	je L_1966
+	lea r13,[rbx+r15*8+8H]
+	mov r12, [r13]
+	cmp r12,0
+	mov r13, 0
+	setg r13B
+	cmp r13, 0
+	je L_1975
 	cmp r14, 0
-	je L_1967
+	je L_1976
 	mov rbx,  [gbl+8*1]
-	lea r12,[rbx+r15*8+8H]
-	mov [r12],r13
+	lea r13,[rbx+r15*8+8H]
+	mov [r13],r12
 	
-L_1967:
-	mov r15,r13
-	jmp L_1969
+L_1976:
+	mov r15,r12
+	jmp L_1978
 	
-L_1966:
-	mov r13,rdi
+L_1975:
+	mov r12,rdi
 	cmp r14, 0
-	je L_1970
+	je L_1979
 	mov rbx,  [gbl+8*1]
-	lea r12,[rbx+r15*8+8H]
-	mov [r12],r13
+	lea r13,[rbx+r15*8+8H]
+	mov [r13],r12
 	
-L_1970:
-	mov r15,r13
+L_1979:
+	mov r15,r12
 	
-L_1969:
+L_1978:
 	mov r15,r15
 	mov rbx,0
 	mov rax,rbx

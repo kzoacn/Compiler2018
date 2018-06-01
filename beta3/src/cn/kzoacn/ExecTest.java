@@ -97,6 +97,14 @@ class ExecTest {
         test("test115");
     }
     @Test
+    void test116()throws Exception{
+        test("test116");
+    }
+    @Test
+    void test117()throws Exception{
+        test("test117");
+    }
+    @Test
     void test28()throws Exception{
         test("test28");
     }

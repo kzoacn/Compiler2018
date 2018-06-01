@@ -654,7 +654,7 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 168
+	sub    rsp, 416
 	mov     rax, 936870912
         cdqe
         mov     rdi, rax
@@ -674,60 +674,155 @@ main:
 			mov r15,0
         mov     edx, dword 936870912
         movsxd  rdx, edx
-        sub     rdx, 2152
+        sub     rdx, 2400
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
 	push r15
+	push r14
 	call global_init
+	pop r14
 	pop r15
-	mov r15 , rax
-	mov rbx,3
-	mov r13,rbx
-	mov rdx,2
-	mov r15,rdx
-	mov rax,5
-	mov r14,rax
-	cmp r13,r15
-	mov r12, 0
-	setg r12B
-	cmp r12, 0
-	jne L_678
+	mov r14 , rax
 	mov rbx,0
-	mov r12,rbx
-	jmp L_679
+	mov r13,rbx
+	mov rdx,1000000
+	mov r14,rdx
 	
-L_678:
+L_645:
 	cmp r13,r14
 	mov r12, 0
-	setg r12B
-	mov r12,r12
-	
-L_679:
+	setl r12B
 	cmp r12, 0
-	je L_680
-	mov r15,r13
-	jmp L_681
+	je L_646
+	mov rbx,1
+	mov r12,rbx
+	mov rdx,1
+	mov r11,rdx
+	imul r11,r13
+	add r12,r11
+	mov rax,1
+	mov rbx,0
+	mov r11,rax
+	imul r11,rbx
+	add r12,r11
+	mov r10,r12
+	mov rbx,1
+	mov r12,rbx
+	mov rbx,1
+	mov rdx,0
+	mov r11,rbx
+	imul r11,rdx
+	add r12,r11
+	mov rbx,1
+	mov r11,rbx
+	imul r11,r13
+	add r12,r11
+	mov r12,r12
+	mov rbx,1
+	mov r11,rbx
+	mov rbx,1
+	mov r9,rbx
+	imul r9,r13
+	add r11,r9
+	mov rbx,1
+	mov rdx,0
+	mov r9,rbx
+	imul r9,rdx
+	add r11,r9
+	mov r11,r11
 	
-L_680:
-	cmp r15,r14
-	mov r13, 0
-	setg r13B
-	cmp r13, 0
-	je L_682
-	mov r15,r15
-	jmp L_683
+L_648:
+	mov rbx,1
+	mov r9,rbx
+	mov rcx,29
+	shl r9,cl
+	cmp r11,r9
+	mov r9, 0
+	setl r9B
+	cmp r9, 0
+	jne L_650
+	mov rbx,0
+	mov r9,rbx
+	jmp L_651
 	
-L_682:
-	mov r15,r14
+L_650:
+	mov rbx,1
+	mov r9,rbx
+	mov rcx,29
+	shl r9,cl
+	mov r9,r9
+	neg r9
+	cmp r11,r9
+	mov r9, 0
+	setg r9B
+	mov r9,r9
 	
-L_683:
+L_651:
+	add r15,r15
+	cmp r9, 0
+	je L_649
+	mov rbx,0
+	mov r9,rbx
+	mov rdx,3
+	imul r10,rdx
+	add r9,r10
+	mov rax,1
+	mov r10,rax
+	imul r10,r12
+	add r9,r10
+	mov rbx,-1
+	mov r10,rbx
+	imul r10,r11
+	add r9,r10
+	mov r10,r9
+	mov rbx,0
+	mov r9,rbx
+	mov rbx,3
+	mov r8,rbx
+	imul r8,r10
+	add r9,r8
+	mov rbx,1
+	imul r12,rbx
+	add r9,r12
+	mov rbx,-1
+	mov r12,rbx
+	imul r12,r11
+	add r9,r12
+	mov r12,r9
+	mov rbx,0
+	mov r9,rbx
+	mov rbx,3
+	mov r8,rbx
+	imul r8,r10
+	add r9,r8
+	mov rbx,1
+	mov r8,rbx
+	imul r8,r12
+	add r9,r8
+	mov rbx,-1
+	imul r11,rbx
+	add r9,r11
+	mov r11,r9
+	jmp L_648
 	
-L_681:
-	mov rdi,r15
-	mov r15,rdi
-	mov     rdi,  r15
+L_649:
+	xor rdx, rdx
+	mov rax,  r13
+	mov rbx, 1000
+	cdq
+	idiv ebx
+	mov  r9, rdx
+	mov rbx,0
+	cmp r9,rbx
+	mov r9, 0
+	sete r9B
+	cmp r9, 0
+	je L_653
+	mov rdi,r10
+	mov r10,rdi
+	mov     rdi,  r10
 	push r11
 	push r10
 	push r9
@@ -737,10 +832,84 @@ L_681:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword r15, rax
-	mov rdi,r15
-	mov r15,rdi
-	mov rdi, r15 
+	mov     qword r10, rax
+	mov     rsi, t440
+	mov     rdi,  r10
+	push r11
+	push r10
+	push r9
+	push r8
+	call    concat
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r10, rax
+	mov rdi,r12
+	mov r12,rdi
+	mov     rdi,  r12
+	push r11
+	push r10
+	push r9
+	push r8
+	call    toString
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword r12, rax
+	mov     rsi,  r12
+	mov     rdi,  r10
+	push r11
+	push r10
+	push r9
+	push r8
+	call    concat
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r10, rax
+	mov     rsi, t445
+	mov     rdi,  r10
+	push r11
+	push r10
+	push r9
+	push r8
+	call    concat
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r10, rax
+	mov rdi,r11
+	mov r12,rdi
+	mov     rdi,  r12
+	push r11
+	push r10
+	push r9
+	push r8
+	call    toString
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword r12, rax
+	mov     rsi,  r12
+	mov     rdi,  r10
+	push r11
+	push r10
+	push r9
+	push r8
+	call    concat
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r10, rax
+	mov rdi,r10
+	mov r12,rdi
+	mov rdi, r12 
 	add rdi, 1 
 	push r11
 	push r10
@@ -751,6 +920,13 @@ L_681:
 	pop r9
 	pop r10
 	pop r11
+	
+L_653:
+	mov rbx,1
+	add r13,rbx
+	jmp L_645
+	
+L_646:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]
@@ -760,14 +936,14 @@ L_681:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 168
-	mov rbx,  [rsp+8*13]
+	sub    rsp, 416
+	mov rbx,  [rsp+8*44]
 	mov rax,rbx
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2152
+gbl:         resb   2400
 buff.1788:
         resb    256
 arg:
@@ -796,6 +972,12 @@ GS_32:
 	db 25H, 73H, 00H
 	ML_32:
         db 25H, 6CH, 64H, 00H
+
+t445:
+	 db 1," " ,0
+
+t440:
+	 db 1," " ,0
 
 SECTION .data.rel.local align=8
 

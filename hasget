@@ -1,6 +1,1 @@
-	l1 = getInt();
-	r1 = getInt();
-	l2 = getInt();
-	r2 = getInt();
-	l3 = getInt();
-	r3 = getInt();
+        int times = getInt();

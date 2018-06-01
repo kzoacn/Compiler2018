@@ -654,7 +654,7 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 152
+	sub    rsp, 168
 	mov     rax, 936870912
         cdqe
         mov     rdi, rax
@@ -674,7 +674,7 @@ main:
 			mov r15,0
         mov     edx, dword 936870912
         movsxd  rdx, edx
-        sub     rdx, 2136
+        sub     rdx, 2152
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
@@ -688,13 +688,13 @@ main:
 	mov rdx,1
 	mov r15,rdx
 	
-L_664:
+L_673:
 	mov rbx,25
 	cmp r15,rbx
 	mov r13, 0
 	setl r13B
 	cmp r13, 0
-	je L_665
+	je L_674
 	mov rdi,r15
 	mov r13,rdi
 	mov     rdi,  r13
@@ -721,13 +721,21 @@ L_664:
 	pop r9
 	pop r10
 	pop r11
-	add r14,r15
-	mov r13,r14
+	mov rbx,0
+	mov r13,rbx
+	mov rdx,1
+	imul r14,rdx
+	add r13,r14
+	mov rax,1
+	mov r14,rax
+	imul r14,r15
+	add r13,r14
+	mov r13,r13
 	mov r14,r15
 	mov r15,r13
-	jmp L_664
+	jmp L_673
 	
-L_665:
+L_674:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]
@@ -737,14 +745,14 @@ L_665:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 152
-	mov rbx,  [rsp+8*11]
+	sub    rsp, 168
+	mov rbx,  [rsp+8*13]
 	mov rax,rbx
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2136
+gbl:         resb   2152
 buff.1788:
         resb    256
 arg:

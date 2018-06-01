@@ -654,7 +654,7 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 864
+	sub    rsp, 840
 	mov     rax, 936870912
         cdqe
         mov     rdi, rax
@@ -674,7 +674,7 @@ main:
 			mov r15,0
         mov     edx, dword 936870912
         movsxd  rdx, edx
-        sub     rdx, 2848
+        sub     rdx, 2824
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
@@ -698,13 +698,13 @@ main:
 	mov rbx,0
 	mov r14,rbx
 	
-L_1607:
+L_1616:
 	mov rbx,  [gbl+8*5]
 	cmp r14,rbx
 	mov r13, 0
 	setl r13B
 	cmp r13, 0
-	je L_1608
+	je L_1617
 	mov r13,r15
 	lea r13,[r13+r14*8+8H]
 	mov rbx,0
@@ -712,19 +712,19 @@ L_1607:
 	mov r13,r14
 	mov rdx,1
 	add r14,rdx
-	jmp L_1607
+	jmp L_1616
 	
-L_1608:
+L_1617:
 	mov rbx,1
 	mov r14,rbx
 	
-L_1610:
+L_1619:
 	mov rbx,500
 	cmp r14,rbx
 	mov r13, 0
 	setle r13B
 	cmp r13, 0
-	je L_1611
+	je L_1620
 	mov rsi,r14
 	mov rdi,r14
 	mov r12,rdi
@@ -752,7 +752,7 @@ L_1610:
 	mov r10, 0
 	sete r10B
 	cmp r10, 0
-	je L_1644
+	je L_1653
 	mov     rdi, 3
 	push r11
 	push r10
@@ -777,16 +777,16 @@ L_1610:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword  r9, rax
-	mov r10,r9
+	mov     qword  r10, rax
+	mov r9,r10
 	mov rbx,0
-	lea r10,[r9+rbx*8+8H]
-	mov [r10],r11
+	lea r9,[r10+rbx*8+8H]
+	mov [r9],r11
 	mov rdx,1
-	lea r10,[r9+rdx*8+8H]
+	lea r9,[r10+rdx*8+8H]
 	mov rax,0
-	mov [r10],rax
-	mov     rsi,  r9
+	mov [r9],rax
+	mov     rsi,  r10
 	mov     rdi,  r15
 	call    multiAddress
 	mov  r10, rax
@@ -801,16 +801,16 @@ L_1610:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword  r12, rax
-	mov r10,r12
+	mov     qword  r10, rax
+	mov r12,r10
 	mov rbx,0
-	lea r10,[r12+rbx*8+8H]
-	mov [r10],r11
+	lea r12,[r10+rbx*8+8H]
+	mov [r12],r11
 	mov rdx,1
-	lea r10,[r12+rdx*8+8H]
+	lea r12,[r10+rdx*8+8H]
 	mov rax,1
-	mov [r10],rax
-	mov     rsi,  r12
+	mov [r12],rax
+	mov     rsi,  r10
 	mov     rdi,  r15
 	call    multiAddress
 	mov  r12, rax
@@ -842,15 +842,15 @@ L_1610:
 	mov [r13],rbx
 	mov rdx,0
 	mov r13,rdx
-	jmp L_1646
+	jmp L_1655
 	
-L_1644:
+L_1653:
 	mov r10,r15
 	lea r11,[r10+r11*8+8H]
 	mov r11, [r11]
 	mov r11,r11
 	
-L_1647:
+L_1656:
 	mov     rdi, 1
 	push r11
 	push r10
@@ -876,7 +876,7 @@ L_1647:
 	mov r10, 0
 	setne r10B
 	cmp r10, 0
-	je L_1648
+	je L_1657
 	mov     rdi, 1
 	push r11
 	push r10
@@ -903,7 +903,7 @@ L_1647:
 	mov r10, 0
 	sete r10B
 	cmp r10, 0
-	je L_1649
+	je L_1658
 	mov     rdi, 1
 	push r11
 	push r10
@@ -914,16 +914,16 @@ L_1647:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword  r10, rax
-	mov r9,r10
+	mov     qword  r9, rax
+	mov r10,r9
 	mov rbx,0
-	lea r9,[r10+rbx*8+8H]
+	lea r10,[r9+rbx*8+8H]
 	mov rdx,2
-	mov [r9],rdx
-	mov     rsi,  r10
+	mov [r10],rdx
+	mov     rsi,  r9
 	mov     rdi,  r11
 	call    multiAddress
-	mov  r9, rax
+	mov  r10, rax
 	mov     rdi, 3
 	push r11
 	push r10
@@ -934,8 +934,8 @@ L_1647:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword  r10, rax
-	mov [r9],r10
+	mov     qword  r9, rax
+	mov [r10],r9
 	mov     rdi, 2
 	push r11
 	push r10
@@ -971,24 +971,24 @@ L_1647:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword  r10, rax
-	mov r9,r10
+	mov     qword  r9, rax
+	mov r10,r9
 	mov rbx,0
-	lea r9,[r10+rbx*8+8H]
+	lea r10,[r9+rbx*8+8H]
 	mov rdx,2
-	mov [r9],rdx
+	mov [r10],rdx
 	mov rax,1
-	lea r9,[r10+rax*8+8H]
+	lea r10,[r9+rax*8+8H]
 	mov rbx,2
-	mov [r9],rbx
-	mov     rsi,  r10
+	mov [r10],rbx
+	mov     rsi,  r9
 	mov     rdi,  r11
 	call    multiAddress
 	mov  r10, rax
 	mov rbx,0
 	mov [r10],rbx
 	
-L_1649:
+L_1658:
 	mov     rdi, 1
 	push r11
 	push r10
@@ -999,21 +999,21 @@ L_1649:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword  r9, rax
-	mov r10,r9
+	mov     qword  r10, rax
+	mov r9,r10
 	mov rbx,0
-	lea r10,[r9+rbx*8+8H]
+	lea r9,[r10+rbx*8+8H]
 	mov rdx,2
-	mov [r10],rdx
-	mov     rsi,  r9
+	mov [r9],rdx
+	mov     rsi,  r10
 	mov     rdi,  r11
 	call    multiAddress
 	mov  r11, rax
 	mov r11, [r11]
 	mov r11,r11
-	jmp L_1647
+	jmp L_1656
 	
-L_1648:
+L_1657:
 	mov     rdi, 1
 	push r11
 	push r10
@@ -1038,46 +1038,46 @@ L_1648:
 	mov rbx,0
 	mov r13,rbx
 	
-L_1646:
+L_1655:
 	mov r13,r13
 	mov r13,r14
 	mov rbx,1
 	add r14,rbx
-	jmp L_1610
+	jmp L_1619
 	
-L_1611:
+L_1620:
 	mov rbx,1
 	mov r14,rbx
 	
-L_1613:
+L_1622:
 	mov rbx,500
 	cmp r14,rbx
 	mov r13, 0
 	setle r13B
 	cmp r13, 0
-	je L_1614
+	je L_1623
 	mov rdi,r14
 	mov r13,rdi
 	mov rbx,0
 	mov r12,rbx
 	mov rdi,r13
-	mov r12,rdi
+	mov r11,rdi
 	mov rdx,237
-	imul r12,rdx
+	imul r11,rdx
 	xor rdx, rdx
-	mov rax,  r12
+	mov rax,  r11
 	mov rbx, [gbl+8*5]
 	cdq
 	idiv ebx
-	mov  r12, rdx
-	mov r12,r12
-	mov r12,r12
+	mov  r11, rdx
+	mov r11,r11
+	mov r12,r11
 	mov r11,r15
 	lea r12,[r11+r12*8+8H]
 	mov r12, [r12]
 	mov r12,r12
 	
-L_1630:
+L_1639:
 	mov     rdi, 1
 	push r11
 	push r10
@@ -1088,13 +1088,13 @@ L_1630:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword  r11, rax
-	mov r10,r11
+	mov     qword  r10, rax
+	mov r11,r10
 	mov rbx,0
-	lea r10,[r11+rbx*8+8H]
+	lea r11,[r10+rbx*8+8H]
 	mov rdx,0
-	mov [r10],rdx
-	mov     rsi,  r11
+	mov [r11],rdx
+	mov     rsi,  r10
 	mov     rdi,  r12
 	call    multiAddress
 	mov  r11, rax
@@ -1103,7 +1103,7 @@ L_1630:
 	mov r11, 0
 	setne r11B
 	cmp r11, 0
-	je L_1631
+	je L_1640
 	mov     rdi, 1
 	push r11
 	push r10
@@ -1126,9 +1126,9 @@ L_1630:
 	mov  r12, rax
 	mov r12, [r12]
 	mov r12,r12
-	jmp L_1630
+	jmp L_1639
 	
-L_1631:
+L_1640:
 	mov     rdi, 1
 	push r11
 	push r10
@@ -1139,13 +1139,13 @@ L_1631:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword  r13, rax
-	mov r11,r13
+	mov     qword  r11, rax
+	mov r13,r11
 	mov rbx,0
-	lea r11,[r13+rbx*8+8H]
+	lea r13,[r11+rbx*8+8H]
 	mov rdx,1
-	mov [r11],rdx
-	mov     rsi,  r13
+	mov [r13],rdx
+	mov     rsi,  r11
 	mov     rdi,  r12
 	call    multiAddress
 	mov  r13, rax
@@ -1181,9 +1181,9 @@ L_1631:
 	mov r13,r14
 	mov rbx,1
 	add r14,rbx
-	jmp L_1613
+	jmp L_1622
 	
-L_1614:
+L_1623:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]
@@ -1193,17 +1193,17 @@ L_1614:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 864
+	sub    rsp, 840
 	mov rdx,100
 	mov rbx,rdx
 	mov qword [gbl+8*5],rbx
-	mov rbx,  [rsp+8*100]
+	mov rbx,  [rsp+8*97]
 	mov rax,rbx
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2848
+gbl:         resb   2824
 buff.1788:
         resb    256
 arg:

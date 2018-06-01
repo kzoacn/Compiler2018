@@ -731,12 +731,12 @@ main:
 	mov rbx,1
 	mov r13,rbx
 	
-L_783:
+L_792:
 	cmp r13,r15
 	mov r12, 0
 	setl r12B
 	cmp r12, 0
-	je L_784
+	je L_793
 	mov rbx,2
 	mov r12,r13
 	add r12,rbx
@@ -764,12 +764,12 @@ L_783:
 	mov rax,1
 	mov r12,rax
 	
-L_786:
+L_795:
 	cmp r12,r13
 	mov r11, 0
 	setle r11B
 	cmp r11, 0
-	je L_787
+	je L_796
 	mov rbx,1
 	mov r10,r13
 	sub r10,rbx
@@ -798,14 +798,14 @@ L_786:
 	mov r11,r12
 	mov rbx,1
 	add r12,rbx
-	jmp L_786
+	jmp L_795
 	
-L_787:
+L_796:
 	mov rbx,1
 	add r13,rbx
-	jmp L_783
+	jmp L_792
 	
-L_784:
+L_793:
 	mov r15,r14
 	mov rbx,6
 	lea r15,[r15+rbx*8+8H]

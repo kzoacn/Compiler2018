@@ -2004,16 +2004,157 @@ class MVisitor extends MxstarBaseVisitor<IR>{
 
     }
 
+    class Poly{
+        int[] arr;
+        int size;
+        public Poly(int x){
+            size=x;
+            arr=new int[x];
+            for(int i=0;i<size;i++)
+                arr[i]=0;
+        }
+        int get(int x){
+            return arr[x];
+        }
+        void set(int x,int y){
+            arr[x]=y;
+        }
+        Poly add(Poly oth){
+            Poly ans=new Poly(size);
+            for(int i=0;i<size;i++)
+                ans.set(i,arr[i]+oth.get(i));
+            return ans;
+        }
+        Poly subtract(Poly oth){
+            Poly ans=new Poly(size);
+            for(int i=0;i<size;i++)
+                ans.set(i,arr[i]-oth.get(i));
+            return ans;
+        }
+    }
     IR algebraOpt(IR ir){
         IR tmp=new IR();
         Quad head=ir.head;
-        while(head!=null){
-            if(head.opCode==OpCode.add&&head.opCode==OpCode.subtract&&head.opCode==OpCode.move){
 
+
+        int len=0;
+        while(head!=null){
+            if(head.opCode==OpCode.add || head.opCode==OpCode.subtract || head.opCode==OpCode.move){
+                if(head.opCode==OpCode.move){
+                    if(!head.var1.equals(head.dest))
+                        return ir;
+                }
             }else{
                 return ir;
             }
+            len++;
             head=head.next;
+        }
+        if(len<=10)return ir;
+
+        Variable answer=ir.last.dest;
+        HashMap<Variable,Poly>value=new HashMap<Variable,Poly>();
+
+        HashSet<Variable>tempSet=new HashSet<Variable>();
+        head=ir.head;
+        while(head!=null){
+            if(head.opCode!=OpCode.move)
+                tempSet.add(head.dest);
+            head=head.next;
+        }
+        head=ir.head;
+        HashMap<Variable,Integer>Index=new HashMap<Variable,Integer>();
+        Index.put(nextConst(0,VariableType.CONST_INT),0);
+
+
+        while(head!=null){
+            if(head.opCode!=OpCode.move) {
+                if (!head.var1.type.equals(VariableType.CONST_INT) && !tempSet.contains(head.var1) && !Index.containsKey(head.var1)) {
+                    Index.put(head.var1, Index.size());
+                }
+                if (!head.var2.type.equals(VariableType.CONST_INT) && !tempSet.contains(head.var2) && !Index.containsKey(head.var2)) {
+                    Index.put(head.var2, Index.size());
+                }
+            }
+            head=head.next;
+        }
+        if(Index.size()==1)return ir;
+        head=ir.head;
+        while(head!=null){
+            if(head.opCode!=OpCode.move) {
+                if (Index.containsKey(head.var1)) {
+                    Poly poly = new Poly(Index.size());
+                    poly.set(Index.get(head.var1), 1);
+                    value.put(head.var1, poly);
+                }
+                if (Index.containsKey(head.var2)) {
+                    Poly poly = new Poly(Index.size());
+                    poly.set(Index.get(head.var2), 1);
+                    value.put(head.var2, poly);
+                }
+            }
+            head=head.next;
+        }
+        head=ir.head;
+        java.util.function.Function getValue=(obj)->{
+            Variable var=(Variable)obj;
+
+            if(var.type.equals(VariableType.CONST_INT)){
+                Poly poly=new Poly(Index.size());
+                poly.set(0,var.constValue);
+                return poly;
+            }
+            if(value.containsKey(var)){
+                return value.get(var);
+            }
+            return null;
+        };
+        while(head!=null){
+            Poly poly1,poly2;
+            switch (head.opCode){
+                case move:
+                    value.put(head.dest,(Poly) getValue.apply(head.var1));
+                    break;
+                case add:
+                    poly1=(Poly) getValue.apply(head.var1);
+                    poly2=(Poly) getValue.apply(head.var2);
+                    value.put(head.dest,poly1.add(poly2));
+                    break;
+                case subtract:
+                    poly1=(Poly) getValue.apply(head.var1);
+                    poly2=(Poly) getValue.apply(head.var2);
+                    value.put(head.dest,poly1.subtract(poly2));
+                    break;
+            }
+            head=head.next;
+        }
+        Poly ans=value.get(answer);
+
+        tmp.push(new Quad(OpCode.move,nextConst(ans.get(0),VariableType.CONST_INT),Variable.empty,nextVariable(VariableType.INT)));
+        for(Map.Entry<Variable,Integer>entry : Index.entrySet()){
+            Variable var=entry.getKey();
+            int id=entry.getValue();
+            int cof=ans.get(id);
+            if(cof==0)continue;
+            if(cof==1){
+                Quad quad1, quad2;
+                quad2 = new Quad(OpCode.add, var, tmp.last.dest, tmp.last.dest);
+                tmp.push(quad2);
+
+            }else
+            if(cof==-1){
+                Quad quad1, quad2;
+                quad2 = new Quad(OpCode.subtract, tmp.last.dest,var , tmp.last.dest);
+                tmp.push(quad2);
+
+            }else {
+                Quad quad1, quad2;
+                Variable adder = nextVariable(VariableType.INT);
+                quad1 = new Quad(OpCode.multiply, nextConst(cof, VariableType.CONST_INT), var, adder);
+                quad2 = new Quad(OpCode.add, adder, tmp.last.dest, tmp.last.dest);
+                tmp.push(quad1);
+                tmp.push(quad2);
+            }
         }
 
         return tmp;

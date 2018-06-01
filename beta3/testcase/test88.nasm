@@ -654,7 +654,7 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 192
+	sub    rsp, 200
 	mov     rax, 936870912
         cdqe
         mov     rdi, rax
@@ -674,7 +674,7 @@ main:
 			mov r15,0
         mov     edx, dword 936870912
         movsxd  rdx, edx
-        sub     rdx, 2176
+        sub     rdx, 2184
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
@@ -683,19 +683,23 @@ main:
 	call global_init
 	pop r15
 	mov r15 , rax
-	mov rbx,  [gbl+8*2]
-	mov rdx,  [gbl+8*3]
+	mov rbx,0
 	mov r15,rbx
-	add r15,rdx
-	mov rax,  [gbl+8*5]
-	mov r14,rax
-	sub r14,rbx
-	add r14,rdx
+	mov rdx,2
+	mov rax,  [gbl+8*3]
+	mov r14,rdx
+	imul r14,rax
 	add r15,r14
-	mov rax,r15
+	mov rbx,1
+	mov rdx,  [gbl+8*5]
+	mov r14,rbx
+	imul r14,rdx
+	add r15,r14
+	mov rdx,r15
+	mov rbx,  [gbl+8*7]
 	mov rdi,rbx
 	mov r15,rdi
-	mov qword [gbl+8*5],rax
+	mov qword [gbl+8*5],rdx
 	mov     rdi,  r15
 	push r11
 	push r10
@@ -707,7 +711,7 @@ main:
 	pop r10
 	pop r11
 	mov     qword r15, rax
-	mov     rsi, t72
+	mov     rsi, t79
 	mov     rdi,  r15
 	push r11
 	push r10
@@ -745,7 +749,7 @@ main:
 	pop r10
 	pop r11
 	mov  r15, rax
-	mov     rsi, t77
+	mov     rsi, t84
 	mov     rdi,  r15
 	push r11
 	push r10
@@ -805,23 +809,23 @@ main:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 192
+	sub    rsp, 200
 	mov rdx,1
 	mov rbx,rdx
-	mov qword [gbl+8*2],rbx
+	mov qword [gbl+8*7],rbx
 	mov rbx,1
 	mov rax,rbx
 	mov rdx,1
 	mov rbx,rdx
 	mov qword [gbl+8*5],rbx
 	mov qword [gbl+8*3],rax
-	mov rbx,  [rsp+8*16]
+	mov rbx,  [rsp+8*17]
 	mov rax,rbx
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2176
+gbl:         resb   2184
 buff.1788:
         resb    256
 arg:
@@ -851,10 +855,10 @@ GS_32:
 	ML_32:
         db 25H, 6CH, 64H, 00H
 
-t77:
+t84:
 	 db 1," " ,0
 
-t72:
+t79:
 	 db 1," " ,0
 
 SECTION .data.rel.local align=8

@@ -845,8 +845,8 @@ L_628:
 	mov r10 , rax
 	mov rsi,r10
 	mov rdi,r11
-	mov r10,rdi
-	mov r11,rsi
+	mov r11,rdi
+	mov r10,rsi
 	add r11,r10
 	xor rdx, rdx
 	mov rax,  r11
