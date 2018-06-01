@@ -872,7 +872,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         HashMap<String,ArrayList<String> >callList =new HashMap<String, ArrayList<String> >();
 
         HashSet<String>pureFunction=new HashSet<String>();
-        int TA=0;
+        int TA=50;
         while(TA-->0) {
             for (Map.Entry<String, IR> entry : funcIR.entrySet()) {
                 IR tmpIR = entry.getValue();
