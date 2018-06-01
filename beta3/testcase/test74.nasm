@@ -700,7 +700,7 @@ main:
 	pop r11
 	mov qword  r15, rax
 	cmp r15, 0
-	je L_3003
+	je L_3012
 	mov rbx,t67
 	mov rdi,rbx
 	mov r15,rdi
@@ -715,9 +715,9 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	jmp L_3004
+	jmp L_3013
 	
-L_3003:
+L_3012:
 	mov rbx,t71
 	mov rdi,rbx
 	mov r15,rdi
@@ -733,7 +733,7 @@ L_3003:
 	pop r10
 	pop r11
 	
-L_3004:
+L_3013:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

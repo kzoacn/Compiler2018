@@ -661,27 +661,27 @@ search:
 	mov r14, 0
 	sete r14B
 	cmp r14, 0
-	je L_917
+	je L_926
 	mov rbx,0
 	mov r15,rbx
 	
-L_941:
+L_950:
 	mov rbx,  [gbl+8*3]
 	cmp r15,rbx
 	mov r14, 0
 	setl r14B
 	cmp r14, 0
-	je L_942
+	je L_951
 	mov rbx,0
 	mov r14,rbx
 	
-L_943:
+L_952:
 	mov rbx,  [gbl+8*3]
 	cmp r14,rbx
 	mov r13, 0
 	setl r13B
 	cmp r13, 0
-	je L_944
+	je L_953
 	mov rbx,  [gbl+8*9]
 	mov r13,rbx
 	lea r13,[r13+r15*8+8H]
@@ -690,7 +690,7 @@ L_943:
 	mov r13, 0
 	sete r13B
 	cmp r13, 0
-	je L_945
+	je L_954
 	mov rbx,t86
 	mov rdi,rbx
 	mov r13,rdi
@@ -707,9 +707,9 @@ L_943:
 	pop r9
 	pop r10
 	pop r11
-	jmp L_946
+	jmp L_955
 	
-L_945:
+L_954:
 	mov rbx,t90
 	mov rdi,rbx
 	mov r13,rdi
@@ -727,13 +727,13 @@ L_945:
 	pop r10
 	pop r11
 	
-L_946:
+L_955:
 	mov r13,r14
 	mov rbx,1
 	add r14,rbx
-	jmp L_943
+	jmp L_952
 	
-L_944:
+L_953:
 	mov rbx,t94
 	mov rdi,rbx
 	mov r14,rdi
@@ -751,9 +751,9 @@ L_944:
 	mov r14,r15
 	mov rbx,1
 	add r15,rbx
-	jmp L_941
+	jmp L_950
 	
-L_942:
+L_951:
 	mov rbx,t98
 	mov rdi,rbx
 	mov r15,rdi
@@ -771,19 +771,19 @@ L_942:
 	mov rbx,0
 	mov r15,rbx
 	mov r15,r15
-	jmp L_918
+	jmp L_927
 	
-L_917:
+L_926:
 	mov rbx,0
 	mov r14,rbx
 	
-L_919:
+L_928:
 	mov rbx,  [gbl+8*3]
 	cmp r14,rbx
 	mov r13, 0
 	setl r13B
 	cmp r13, 0
-	je L_920
+	je L_929
 	mov rbx,  [gbl+8*24]
 	mov r13,rbx
 	lea r13,[r13+r14*8+8H]
@@ -793,7 +793,7 @@ L_919:
 	mov r13, 0
 	sete r13B
 	cmp r13, 0
-	je L_923
+	je L_932
 	mov r13,r14
 	add r13,r15
 	mov rbx,  [gbl+8*30]
@@ -808,7 +808,7 @@ L_919:
 	mov r13, 0
 	sete r13B
 	cmp r13, 0
-	je L_925
+	je L_934
 	mov rbx,  [gbl+8*3]
 	mov r13,r14
 	add r13,rbx
@@ -827,7 +827,7 @@ L_919:
 	mov r13, 0
 	sete r13B
 	cmp r13, 0
-	je L_927
+	je L_936
 	mov rbx,  [gbl+8*3]
 	mov r13,r14
 	add r13,rbx
@@ -915,19 +915,19 @@ L_919:
 	mov rbx,0
 	mov [r12],rbx
 	
-L_927:
+L_936:
 	
-L_925:
+L_934:
 	
-L_923:
+L_932:
 	mov r13,r14
 	mov rbx,1
 	add r14,rbx
-	jmp L_919
+	jmp L_928
 	
-L_920:
+L_929:
 	
-L_918:
+L_927:
 	mov rbx,0
 	mov rax,rbx
 	leave
@@ -968,13 +968,13 @@ main:
 	mov rbx,0
 	mov r15,rbx
 	
-L_928:
+L_937:
 	mov rbx,2
 	cmp r15,rbx
 	mov r14, 0
 	setl r14B
 	cmp r14, 0
-	je L_929
+	je L_938
 	mov rbx,8
 	mov rdx,8
 	mov r14,rbx
@@ -999,9 +999,9 @@ L_928:
 	mov r14,r15
 	mov rdx,1
 	add r15,rdx
-	jmp L_928
+	jmp L_937
 	
-L_929:
+L_938:
 	mov rbx,0
 	mov rdi,rbx
 	push r15

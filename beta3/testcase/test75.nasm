@@ -698,13 +698,13 @@ main:
 	mov rbx,0
 	mov r14,rbx
 	
-L_3013:
+L_3022:
 	mov rbx,  [gbl+8*5]
 	cmp r14,rbx
 	mov r13, 0
 	setl r13B
 	cmp r13, 0
-	je L_3014
+	je L_3023
 	mov r13,r15
 	lea r13,[r13+r14*8+8H]
 	mov rbx,0
@@ -712,19 +712,19 @@ L_3013:
 	mov r13,r14
 	mov rdx,1
 	add r14,rdx
-	jmp L_3013
+	jmp L_3022
 	
-L_3014:
+L_3023:
 	mov rbx,1
 	mov r14,rbx
 	
-L_3016:
+L_3025:
 	mov rbx,500
 	cmp r14,rbx
 	mov r13, 0
 	setle r13B
 	cmp r13, 0
-	je L_3017
+	je L_3026
 	mov rsi,r14
 	mov rdi,r14
 	mov r12,rdi
@@ -752,7 +752,7 @@ L_3016:
 	mov r10, 0
 	sete r10B
 	cmp r10, 0
-	je L_3050
+	je L_3059
 	mov     rdi, 3
 	push r11
 	push r10
@@ -842,15 +842,15 @@ L_3016:
 	mov [r13],rbx
 	mov rdx,0
 	mov r13,rdx
-	jmp L_3052
+	jmp L_3061
 	
-L_3050:
+L_3059:
 	mov r10,r15
 	lea r11,[r10+r11*8+8H]
 	mov r11, [r11]
 	mov r11,r11
 	
-L_3053:
+L_3062:
 	mov     rdi, 1
 	push r11
 	push r10
@@ -876,7 +876,7 @@ L_3053:
 	mov r10, 0
 	setne r10B
 	cmp r10, 0
-	je L_3054
+	je L_3063
 	mov     rdi, 1
 	push r11
 	push r10
@@ -903,7 +903,7 @@ L_3053:
 	mov r10, 0
 	sete r10B
 	cmp r10, 0
-	je L_3055
+	je L_3064
 	mov     rdi, 1
 	push r11
 	push r10
@@ -988,7 +988,7 @@ L_3053:
 	mov rbx,0
 	mov [r10],rbx
 	
-L_3055:
+L_3064:
 	mov     rdi, 1
 	push r11
 	push r10
@@ -1011,9 +1011,9 @@ L_3055:
 	mov  r11, rax
 	mov r11, [r11]
 	mov r11,r11
-	jmp L_3053
+	jmp L_3062
 	
-L_3054:
+L_3063:
 	mov     rdi, 1
 	push r11
 	push r10
@@ -1038,24 +1038,24 @@ L_3054:
 	mov rbx,0
 	mov r13,rbx
 	
-L_3052:
+L_3061:
 	mov r13,r13
 	mov r13,r14
 	mov rbx,1
 	add r14,rbx
-	jmp L_3016
+	jmp L_3025
 	
-L_3017:
+L_3026:
 	mov rbx,1
 	mov r14,rbx
 	
-L_3019:
+L_3028:
 	mov rbx,500
 	cmp r14,rbx
 	mov r13, 0
 	setle r13B
 	cmp r13, 0
-	je L_3020
+	je L_3029
 	mov rdi,r14
 	mov r13,rdi
 	mov rbx,0
@@ -1077,7 +1077,7 @@ L_3019:
 	mov r12, [r12]
 	mov r12,r12
 	
-L_3036:
+L_3045:
 	mov     rdi, 1
 	push r11
 	push r10
@@ -1103,7 +1103,7 @@ L_3036:
 	mov r11, 0
 	setne r11B
 	cmp r11, 0
-	je L_3037
+	je L_3046
 	mov     rdi, 1
 	push r11
 	push r10
@@ -1126,9 +1126,9 @@ L_3036:
 	mov  r12, rax
 	mov r12, [r12]
 	mov r12,r12
-	jmp L_3036
+	jmp L_3045
 	
-L_3037:
+L_3046:
 	mov     rdi, 1
 	push r11
 	push r10
@@ -1181,9 +1181,9 @@ L_3037:
 	mov r13,r14
 	mov rbx,1
 	add r14,rbx
-	jmp L_3019
+	jmp L_3028
 	
-L_3020:
+L_3029:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

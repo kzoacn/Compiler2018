@@ -833,7 +833,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
             Quad head=tmpIR.head;
             while(head!=null){
                 if(head.opCode==OpCode.call){
-                    if(!head.name.equals(name))
+                    if(!head.name.equals(name)&&head.next.equals("add"))//sorry ,I'll fix it
                         flag=false;
                 }
                 if(head.var1!=null&&!head.var1.equals(argList.get(0))&&symbolMap.globalVariableMap.containsKey(head.var1.name))
@@ -2222,6 +2222,11 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         Variable temp=buildVariable(ir0.last.dest,"||",ir1.last.dest);
 
 
+        //no logic
+        //ir.concat(ir0);
+        //ir.concat(ir1);
+        //ir.push(new Quad(OpCode.or,ir0.last.dest,ir1.last.dest,temp));
+
         ir.concat(ir0);
         Quad quad=new Quad(OpCode.jz,ir0.last.dest,Variable.empty,Variable.empty);
         quad.name=falseLabel;
@@ -2233,6 +2238,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         ir.push(new Quad(OpCode.move,ir1.last.dest,Variable.empty,temp));
         ir.push(new Quad(OpCode.label,endLabel));
         ir.push(new Quad(OpCode.move,temp,Variable.empty,temp));
+
         return ir;
     }
     @Override public IR visitLogicAnd(MxstarParser.LogicAndContext ctx) {
@@ -2244,6 +2250,13 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         String endLabel=nextLabel();
         Variable temp=buildVariable(ir0.last.dest,"&&",ir1.last.dest);
         temp.isTemp=true;
+
+
+        //no logic
+        //ir.concat(ir0);
+        //ir.concat(ir1);
+        //ir.push(new Quad(OpCode.and,ir0.last.dest,ir1.last.dest,temp));
+
         ir.concat(ir0);
         Quad quad=new Quad(OpCode.jnz,ir0.last.dest,Variable.empty,Variable.empty);
         quad.name=trueLabel;

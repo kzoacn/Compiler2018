@@ -695,13 +695,13 @@ main:
 	mov rbx,0
 	mov r14,rbx
 	
-L_3326:
+L_3335:
 	mov rbx,5
 	cmp r14,rbx
 	mov r12, 0
 	setl r12B
 	cmp r12, 0
-	je L_3327
+	je L_3336
 	add r15,r13
 	mov r15,r15
 	mov rbx,1
@@ -823,9 +823,9 @@ L_3326:
 	mov r12,r14
 	mov rbx,1
 	add r14,rbx
-	jmp L_3326
+	jmp L_3335
 	
-L_3327:
+L_3336:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]
