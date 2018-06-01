@@ -1,0 +1,23 @@
+int main(){
+    bool bl=true;
+    if(bl && 1>0){
+        println("true1");
+    }else{
+        println("false1");
+    }
+    
+    
+    if(!bl || 1>0){
+        println("true2");
+    }else{
+        println("false2");
+    }
+    
+    bl=false;
+    
+    if(bl && 1!=0 && 2!=4){
+        println("true3");
+    }else{
+        println("false3");
+    }
+}

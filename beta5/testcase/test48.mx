@@ -1,0 +1,12 @@
+class A{
+    int[] a;
+}
+
+int main(){
+    int n=5;
+    A[] x = new A[n];
+    x[1]=new A();
+    x[1].a=new int[n];
+    x[1].a[2]=3;
+    println(toString(x[1].a[2]));
+}

@@ -1,0 +1,23 @@
+void f(){
+	int x=1;
+	println("call f");
+}
+
+void g(){
+	int x=1;
+	int y=2;
+	println("call g");
+	f();
+}
+void h(){
+	int x=1;
+	int y=2;
+	int z=3;
+	println("call h");
+	g();
+}
+
+int main(){
+	h();
+	return 0;
+}

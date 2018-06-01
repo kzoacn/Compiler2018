@@ -1,0 +1,8 @@
+string f(){
+    return "123aaa";
+}
+
+int main(){
+    println(f().substring(0,2));
+    return 0;
+}

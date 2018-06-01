@@ -1,0 +1,20 @@
+
+int n=5;
+int[] a;
+int main(){
+    a=new int[n];
+    int cnt=0;
+    int i;
+    for(i=0;i<n;i++){
+        if(i%2==1){
+            a[i]=0;
+            continue;
+        }
+        a[i]=++cnt;
+    }
+    for(i=0;i<n;i++)
+        println(toString(a[i]));
+    
+    
+    return 0;
+}

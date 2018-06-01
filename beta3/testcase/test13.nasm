@@ -686,19 +686,19 @@ main:
 	mov rbx,1
 	mov r13,rbx
 	
-L_1202:
+L_1226:
 	mov rbx,1
 	mov r12,rbx
 	mov rdx,0
 	mov r15,rdx
 	
-L_1205:
+L_1229:
 	mov rbx,  [gbl+8*5]
 	cmp r15,rbx
 	mov r14, 0
 	setl r14B
 	cmp r14, 0
-	je L_1206
+	je L_1230
 	mov rbx,  [gbl+8*7]
 	mov r14,rbx
 	lea r14,[r14+r15*8+8H]
@@ -717,12 +717,12 @@ L_1205:
 	mov r14,rdx
 	mov qword [gbl+8*10],rbx
 	
-L_1208:
+L_1232:
 	cmp r14,r15
 	mov r11, 0
 	setl r11B
 	cmp r11, 0
-	je L_1209
+	je L_1233
 	mov rbx,  [gbl+8*7]
 	mov r11,rbx
 	lea r11,[r11+r15*8+8H]
@@ -734,49 +734,49 @@ L_1208:
 	mov r11, 0
 	sete r11B
 	cmp r11, 0
-	je L_1212
+	je L_1236
 	mov rbx,0
 	mov r12,rbx
-	jmp L_1209
+	jmp L_1233
 	
-L_1212:
+L_1236:
 	mov r11,r14
 	mov rbx,1
 	add r14,rbx
-	jmp L_1208
+	jmp L_1232
 	
-L_1209:
+L_1233:
 	mov r14,r15
 	mov rbx,1
 	add r15,rbx
-	jmp L_1205
+	jmp L_1229
 	
-L_1206:
+L_1230:
 	cmp r12, 0
-	je L_1214
-	jmp L_1203
+	je L_1238
+	jmp L_1227
 	
-L_1214:
+L_1238:
 	mov r15,r13
 	mov rbx,1
 	add r13,rbx
-	jmp L_1202
+	jmp L_1226
 	
-L_1203:
+L_1227:
 	mov rbx,0
 	mov r15,rbx
 	
-L_1215:
+L_1239:
 	mov rbx,  [gbl+8*5]
 	cmp r15,rbx
 	mov r14, 0
 	setl r14B
 	cmp r14, 0
-	je L_1216
+	je L_1240
 	mov rbx,0
 	mov r14,rbx
 	
-L_1218:
+L_1242:
 	mov rbx,1
 	mov r13,r14
 	add r13,rbx
@@ -785,7 +785,7 @@ L_1218:
 	mov r13, 0
 	setl r13B
 	cmp r13, 0
-	je L_1219
+	je L_1243
 	mov rbx,  [gbl+8*7]
 	mov r13,rbx
 	lea r13,[r13+r14*8+8H]
@@ -800,7 +800,7 @@ L_1218:
 	mov r13, 0
 	setg r13B
 	cmp r13, 0
-	je L_1222
+	je L_1246
 	mov rbx,  [gbl+8*7]
 	mov r13,rbx
 	lea r13,[r13+r14*8+8H]
@@ -822,29 +822,29 @@ L_1218:
 	lea r12,[r11+r12*8+8H]
 	mov [r12],r13
 	
-L_1222:
+L_1246:
 	mov r13,r14
 	mov rbx,1
 	add r14,rbx
-	jmp L_1218
+	jmp L_1242
 	
-L_1219:
+L_1243:
 	mov r14,r15
 	mov rbx,1
 	add r15,rbx
-	jmp L_1215
+	jmp L_1239
 	
-L_1216:
+L_1240:
 	mov rbx,0
 	mov r15,rbx
 	
-L_1223:
+L_1247:
 	mov rbx,  [gbl+8*5]
 	cmp r15,rbx
 	mov r14, 0
 	setl r14B
 	cmp r14, 0
-	je L_1224
+	je L_1248
 	mov rbx,  [gbl+8*7]
 	mov r14,rbx
 	lea r14,[r14+r15*8+8H]
@@ -878,9 +878,9 @@ L_1223:
 	mov r14,r15
 	mov rbx,1
 	add r15,rbx
-	jmp L_1223
+	jmp L_1247
 	
-L_1224:
+L_1248:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

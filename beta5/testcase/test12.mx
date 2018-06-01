@@ -1,0 +1,13 @@
+int main(){
+    int n=5;
+    int[] a= new int[n];
+    a[0]=127;
+    a[1]=128;
+    a[2]=255;
+    a[3]=256;
+    a[4]=2147483247;
+    int i;
+    for(i=0;i<n;i++)
+        println(toString(a[i]));
+    return 0;
+}

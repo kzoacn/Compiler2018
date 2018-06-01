@@ -1,0 +1,31 @@
+
+int n=40;
+
+void f(int n){
+    if(n<=0)return ;
+    print("f ");
+    println(toString(n));
+    --n;
+    g(n);
+}
+
+
+void g(int n){
+    if(n<=0)return ;
+    print("g ");
+    println(toString(n));
+    --n;
+    h(n);
+}
+
+void h(int n){
+    if(n<=0)return ;
+    print("h ");
+    println(toString(n));
+    --n;
+    f(n);
+}
+
+int main(){
+    f(5);
+}

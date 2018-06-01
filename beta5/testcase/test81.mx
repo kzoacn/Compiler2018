@@ -1,0 +1,11 @@
+int n;
+
+int f(int n){
+    return n*n;
+}
+
+int main(){
+    n=10;
+    println(toString(f(20)));
+    println(toString(n));
+}

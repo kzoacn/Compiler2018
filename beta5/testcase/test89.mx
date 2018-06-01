@@ -1,0 +1,9 @@
+int main(){
+    int cnt=0;
+    int x=0;
+    int y=0;
+    x=++cnt;
+    y=++cnt;
+    println(toString(x));
+    println(toString(y));
+}

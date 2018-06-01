@@ -1,0 +1,16 @@
+int main(){
+    int a=3;
+    int b=2;
+    int c=5;
+    int mx;
+    if(a>b && a>c)
+        mx=a;
+    else{
+        if(b>c){
+            mx=b;
+        }else{
+            mx=c;
+        }
+    }
+    println(toString(mx));
+}

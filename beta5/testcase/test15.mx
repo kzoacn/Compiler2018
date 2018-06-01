@@ -1,0 +1,15 @@
+int main(){
+    int n=7;
+    int[][] c=new int[n][n];
+    int i;int j;
+    c[0][0]=1;
+    for(i=1;i<n;++i){
+        c[i][0]=1;
+        for(j=1;j<=i;j++){
+            c[i][j]=c[i-1][j]+c[i-1][j-1];
+        }
+    }
+    println(toString(c[6][4]));
+    
+    return 0;
+}

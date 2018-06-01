@@ -1,0 +1,8 @@
+
+int f(int x){
+	return x;
+	return 233;
+}
+int main(){
+	f(1);
+}

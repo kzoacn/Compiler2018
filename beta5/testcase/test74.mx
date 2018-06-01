@@ -1,0 +1,10 @@
+int main(){
+    string b="acc";
+    string a="abc";
+    if(a<b){
+        println("ls");
+    }else{
+        println("not ls");
+    }
+    return 0;
+}

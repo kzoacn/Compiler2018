@@ -1,0 +1,12 @@
+class pair{
+    int a;
+    int b;
+}
+
+int main(){
+    pair p = new pair();
+    p.a=3;
+    p.b=4;
+    println(toString(p.a+p.b));
+    return 0;
+}

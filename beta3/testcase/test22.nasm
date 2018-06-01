@@ -673,14 +673,14 @@ qsrt:
 	mov r11, [r11]
 	mov r11,r11
 	
-L_802:
+L_826:
 	cmp r15,r13
 	mov r10, 0
 	setle r10B
 	cmp r10, 0
-	je L_803
+	je L_827
 	
-L_804:
+L_828:
 	mov rbx,  [gbl+8*8]
 	mov r10,rbx
 	lea r10,[r10+r15*8+8H]
@@ -689,15 +689,15 @@ L_804:
 	mov r10, 0
 	setl r10B
 	cmp r10, 0
-	je L_805
+	je L_829
 	mov r10,r15
 	mov rbx,1
 	add r15,rbx
-	jmp L_804
+	jmp L_828
 	
-L_805:
+L_829:
 	
-L_806:
+L_830:
 	mov rbx,  [gbl+8*8]
 	mov r10,rbx
 	lea r10,[r10+r13*8+8H]
@@ -706,18 +706,18 @@ L_806:
 	mov r10, 0
 	setg r10B
 	cmp r10, 0
-	je L_807
+	je L_831
 	mov r10,r13
 	mov rbx,1
 	sub r13,rbx
-	jmp L_806
+	jmp L_830
 	
-L_807:
+L_831:
 	cmp r15,r13
 	mov r10, 0
 	setle r10B
 	cmp r10, 0
-	je L_809
+	je L_833
 	mov rbx,  [gbl+8*8]
 	mov r10,rbx
 	lea r10,[r10+r15*8+8H]
@@ -739,15 +739,15 @@ L_807:
 	mov rax,1
 	sub r13,rax
 	
-L_809:
-	jmp L_802
+L_833:
+	jmp L_826
 	
-L_803:
+L_827:
 	cmp r12,r13
 	mov r11, 0
 	setl r11B
 	cmp r11, 0
-	je L_811
+	je L_835
 	mov rsi,r13
 	mov rdi,r12
 	push r15
@@ -759,12 +759,12 @@ L_803:
 	pop r15
 	mov r13 , rax
 	
-L_811:
+L_835:
 	cmp r15,r14
 	mov r13, 0
 	setl r13B
 	cmp r13, 0
-	je L_813
+	je L_837
 	mov rsi,r14
 	mov rdi,r15
 	push r15
@@ -772,7 +772,7 @@ L_811:
 	pop r15
 	mov r15 , rax
 	
-L_813:
+L_837:
 	mov rbx,0
 	mov rax,rbx
 	leave
@@ -813,13 +813,13 @@ main:
 	mov rbx,1
 	mov r15,rbx
 	
-L_814:
+L_838:
 	mov rbx,  [gbl+8*44]
 	cmp r15,rbx
 	mov r14, 0
 	setle r14B
 	cmp r14, 0
-	je L_815
+	je L_839
 	mov rbx,  [gbl+8*44]
 	mov rdx,1
 	mov r14,rbx
@@ -832,9 +832,9 @@ L_814:
 	mov r14,r15
 	mov rdx,1
 	add r15,rdx
-	jmp L_814
+	jmp L_838
 	
-L_815:
+L_839:
 	mov rbx,  [gbl+8*44]
 	mov rsi,rbx
 	mov rdx,1
@@ -846,13 +846,13 @@ L_815:
 	mov rbx,1
 	mov r15,rbx
 	
-L_817:
+L_841:
 	mov rbx,  [gbl+8*44]
 	cmp r15,rbx
 	mov r14, 0
 	setle r14B
 	cmp r14, 0
-	je L_818
+	je L_842
 	mov rbx,  [gbl+8*8]
 	mov r14,rbx
 	lea r14,[r14+r15*8+8H]
@@ -904,9 +904,9 @@ L_817:
 	mov r14,r15
 	mov rbx,1
 	add r15,rbx
-	jmp L_817
+	jmp L_841
 	
-L_818:
+L_842:
 	mov rbx,t137
 	mov rdi,rbx
 	mov r15,rdi

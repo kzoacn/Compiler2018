@@ -1,0 +1,29 @@
+int main(){
+    int n=5;
+    int[] a;
+    a=new int[n];
+    
+    a[0]=1;
+    a[1]=5;
+    a[2]=2;
+    a[3]=4;
+    a[4]=3;
+    
+    int i;
+    
+    
+    int j;
+    for(i=0;i<n;i++){
+        for(j=0;j+1<n;j++){
+            if(a[j]>a[j+1]){
+                int t=a[j];
+                a[j]=a[j+1];
+                a[j+1]=t;
+            }
+        }
+    }
+    
+    for(i=0;i<n;i++)
+        println(toString(a[i]));
+    return 0;
+}

@@ -359,8 +359,6 @@ public class IROptimizer {
 
         Date date=new Date();
         while(true){
-            if((new Date()).getTime()-date.getTime()>24000)
-                return ir;
             boolean flag=true;
 
             int code1=in.hashCode();
@@ -374,6 +372,10 @@ public class IROptimizer {
                 for(int j : edgeList.get(i))
                     for(Variable var : in.get(j))
                         out.get(i).add(var);
+
+
+                if((new Date()).getTime()-date.getTime()>24000)
+                    return ir;
             }
 
             if(code1==in.hashCode()&&code2==out.hashCode())

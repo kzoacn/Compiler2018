@@ -1,0 +1,16 @@
+class A{
+    int[] a;
+}
+class B{
+    A[] mat;
+}
+
+int main(){
+    int n=5;
+    B bb = new B();
+    bb.mat = new A[n];
+    bb.mat[0]=new A();
+    bb.mat[0].a=new int[n];
+    bb.mat[0].a[1]=4;
+    println(toString(bb.mat[0].a[1]));
+}

@@ -1,2 +1,7 @@
-0a1
-> 	int n=getInt();
+0a1,6
+> 	l1 = getInt();
+> 	r1 = getInt();
+> 	l2 = getInt();
+> 	r2 = getInt();
+> 	l3 = getInt();
+> 	r3 = getInt();

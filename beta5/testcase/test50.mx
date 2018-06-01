@@ -1,0 +1,18 @@
+class A{
+    int[][] a;
+}
+class B{
+    A[][] mat;
+}
+
+int main(){
+    int n=5;
+    B bb = new B();
+    bb.mat = new A[n][n];
+    bb.mat[0][1]=new A();
+    bb.mat[0][1].a=new int[n][];
+    bb.mat[0][1].a[2]=new int[4];
+    
+    bb.mat[0][1].a[2][3]=5;
+    println(toString(bb.mat[0][1].a[2][3]));
+}

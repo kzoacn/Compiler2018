@@ -688,7 +688,7 @@ main:
 	mov r15, 0
 	setg r15B
 	cmp r15, 0
-	je L_1118
+	je L_1142
 	mov rbx,  [gbl+8*2]
 	mov r15,rbx
 	mov rdx,1
@@ -721,7 +721,7 @@ main:
 	pop r10
 	pop r11
 	
-L_1118:
+L_1142:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

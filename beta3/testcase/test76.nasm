@@ -654,7 +654,7 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 504
+	sub    rsp, 528
 	mov     rax, 936870912
         cdqe
         mov     rdi, rax
@@ -674,7 +674,7 @@ main:
 			mov r15,0
         mov     edx, dword 936870912
         movsxd  rdx, edx
-        sub     rdx, 2488
+        sub     rdx, 2512
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
@@ -698,13 +698,13 @@ main:
 	mov rbx,0
 	mov r14,rbx
 	
-L_3174:
+L_1652:
 	mov rbx,  [gbl+8*5]
 	cmp r14,rbx
 	mov r13, 0
 	setl r13B
 	cmp r13, 0
-	je L_3175
+	je L_1653
 	mov r13,r15
 	lea r13,[r13+r14*8+8H]
 	mov rbx,0
@@ -712,9 +712,9 @@ L_3174:
 	mov r13,r14
 	mov rdx,1
 	add r14,rdx
-	jmp L_3174
+	jmp L_1652
 	
-L_3175:
+L_1653:
 	mov rbx,2
 	mov rsi,rbx
 	mov rdx,1
@@ -744,7 +744,7 @@ L_3175:
 	mov r11, 0
 	sete r11B
 	cmp r11, 0
-	je L_3190
+	je L_1668
 	mov     rdi, 3
 	push r11
 	push r10
@@ -769,16 +769,16 @@ L_3175:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword  r11, rax
-	mov r10,r11
+	mov     qword  r10, rax
+	mov r11,r10
 	mov rbx,0
-	lea r10,[r11+rbx*8+8H]
-	mov [r10],r12
+	lea r11,[r10+rbx*8+8H]
+	mov [r11],r12
 	mov rdx,1
-	lea r10,[r11+rdx*8+8H]
+	lea r11,[r10+rdx*8+8H]
 	mov rax,0
-	mov [r10],rax
-	mov     rsi,  r11
+	mov [r11],rax
+	mov     rsi,  r10
 	mov     rdi,  r15
 	call    multiAddress
 	mov  r11, rax
@@ -817,16 +817,16 @@ L_3175:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword  r13, rax
-	mov r14,r13
+	mov     qword  r14, rax
+	mov r13,r14
 	mov rbx,0
-	lea r14,[r13+rbx*8+8H]
-	mov [r14],r12
+	lea r13,[r14+rbx*8+8H]
+	mov [r13],r12
 	mov rdx,1
-	lea r14,[r13+rdx*8+8H]
+	lea r13,[r14+rdx*8+8H]
 	mov rax,2
-	mov [r14],rax
-	mov     rsi,  r13
+	mov [r13],rax
+	mov     rsi,  r14
 	mov     rdi,  r15
 	call    multiAddress
 	mov  r14, rax
@@ -834,29 +834,29 @@ L_3175:
 	mov [r14],rbx
 	mov rdx,0
 	mov r14,rdx
-	jmp L_3192
+	jmp L_1670
 	
-L_3190:
+L_1668:
 	mov rbx,0
 	mov r14,rbx
 	
-L_3192:
+L_1670:
 	mov r14,r14
 	mov rbx,0
 	mov r14,rbx
 	mov rdx,1
 	mov rdi,rdx
-	mov r12,rdi
+	mov r14,rdi
 	mov rax,237
-	imul r12,rax
+	imul r14,rax
 	xor rdx, rdx
-	mov rax,  r12
+	mov rax,  r14
 	mov rbx, [gbl+8*5]
 	cdq
 	idiv ebx
-	mov  r12, rdx
-	mov r12,r12
-	mov r14,r12
+	mov  r14, rdx
+	mov r14,r14
+	mov r14,r14
 	mov r15,r15
 	lea r15,[r15+r14*8+8H]
 	mov r15, [r15]
@@ -918,17 +918,17 @@ L_3192:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 504
+	sub    rsp, 528
 	mov rdx,100
 	mov rbx,rdx
 	mov qword [gbl+8*5],rbx
-	mov rbx,  [rsp+8*55]
+	mov rbx,  [rsp+8*58]
 	mov rax,rbx
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2488
+gbl:         resb   2512
 buff.1788:
         resb    256
 arg:

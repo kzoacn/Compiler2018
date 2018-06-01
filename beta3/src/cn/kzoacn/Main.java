@@ -837,7 +837,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         java.util.function.Function getVar=(obj)->{
             Variable var = (Variable)obj;
             if(var==null || var.equals(Variable.empty) || var.equals(Variable.error))
-                return Variable.empty;
+                return var;
             if(var.type.name.contains("const"))
                 return var;
             if(symbolMap.globalVariableMap.containsKey(var.name)||argList.contains(var))
@@ -857,10 +857,11 @@ class MVisitor extends MxstarBaseVisitor<IR>{
             addVar.apply(head.var2);
             addVar.apply(head.dest);
 
-            Quad fake=head.clone();
-            fake.var1=(Variable) getVar.apply(fake.var1);
-            fake.var2=(Variable) getVar.apply(fake.var2);
-            fake.dest=(Variable) getVar.apply(fake.dest);
+            Quad fake=new Quad(head.opCode);
+            fake.var1=(Variable) getVar.apply(head.var1);
+            fake.var2=(Variable) getVar.apply(head.var2);
+            fake.dest=(Variable) getVar.apply(head.dest);
+            fake.name=head.name;
             //fake.name=(String)getName.apply(fake.name);
             tmp.push(fake);
             head=head.next;
@@ -887,9 +888,9 @@ class MVisitor extends MxstarBaseVisitor<IR>{
                 }
                 if(!flag)continue;
                 Quad head=tmpIR.head;
-                while(head!=null){
+                while(head!=null&&flag){
                     if(head.opCode==OpCode.call){
-                        if(!head.name.equals(name)&&!pureFunction.contains(name))//sorry ,I'll fix it
+                        if(!head.name.equals(name)&&!pureFunction.contains(head.name))//sorry ,I'll fix it
                             flag=false;
                     }
                     if(head.var1!=null&&!argList.contains(head.var1)&&symbolMap.globalVariableMap.containsKey(head.var1.name))

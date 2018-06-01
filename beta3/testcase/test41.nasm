@@ -665,7 +665,7 @@ dfs:
 	setg r14B
 	and r14,r13
 	cmp r14, 0
-	je L_1275
+	je L_1299
 	mov rbx,  [gbl+8*6]
 	lea r12,[rbx+r15*8+8H]
 	mov r13, [r12]
@@ -673,29 +673,29 @@ dfs:
 	mov r12, 0
 	setg r12B
 	cmp r12, 0
-	je L_1275
+	je L_1299
 	cmp r14, 0
-	je L_1276
+	je L_1300
 	mov rbx,  [gbl+8*6]
 	lea r12,[rbx+r15*8+8H]
 	mov [r12],r13
 	
-L_1276:
+L_1300:
 	mov rax,r13
 	leave
 	ret
 	
-L_1275:
+L_1299:
 	mov r11,rdi
 	mov rbx,0
 	mov r13,rbx
 	mov rdx,1
 	mov r12,rdx
 	
-L_1271:
+L_1295:
 	mov rbx,1
 	cmp rbx, 0
-	je L_1272
+	je L_1296
 	mov r10,r12
 	mov rbx,1
 	add r12,rbx
@@ -705,19 +705,19 @@ L_1271:
 	mov r10, 0
 	sete r10B
 	cmp r10, 0
-	je L_1274
+	je L_1298
 	cmp r14, 0
-	je L_1277
+	je L_1301
 	mov rbx,  [gbl+8*6]
 	lea r12,[rbx+r15*8+8H]
 	mov [r12],r13
 	
-L_1277:
+L_1301:
 	mov rax,r13
 	leave
 	ret
 	
-L_1274:
+L_1298:
 	mov rbx,1
 	mov r10,r11
 	sub r10,rbx
@@ -736,17 +736,17 @@ L_1274:
 	pop r14
 	pop r15
 	mov r10 , rax
-	jmp L_1271
+	jmp L_1295
 	
-L_1272:
+L_1296:
 	cmp r14, 0
-	je L_1278
+	je L_1302
 	mov rbx,  [gbl+8*6]
 	lea r12,[rbx+r15*8+8H]
 	mov rdx,0
 	mov [r12],rdx
 	
-L_1278:
+L_1302:
 	mov rbx,0
 	mov rax,rbx
 	leave
