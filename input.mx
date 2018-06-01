@@ -1,4 +1,3 @@
-int hilo(int hi, int lo)
 {
 	return lo | (hi << 16);
 }
