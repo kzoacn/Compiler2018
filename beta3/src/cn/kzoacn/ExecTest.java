@@ -300,7 +300,7 @@ class ExecTest {
     void test72()throws Exception{
         test("test72");
     }
-    @Test @Disabled
+    @Test
     void test73()throws Exception{
         test("test73");
     }

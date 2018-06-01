@@ -2050,10 +2050,16 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         long hashCode=0;
 
         java.util.function.Function getVar=(obj)->{
-            if(obj==null)return 0;
+            if(obj==null)return 19981223;
             Variable var=(Variable)obj;
-            if (!variableHashMap.containsKey(var)) {
-                variableHashMap.put(var, random.nextInt(1 << 30));
+            if(var.type.name.contains("const"))
+                return var.constValue;
+            if(var.name.startsWith("t")) {
+                if (!variableHashMap.containsKey(var)) {
+                    variableHashMap.put(var, random.nextInt(1 << 30));
+                }
+            }else {
+                return var.name.hashCode();
             }
             return variableHashMap.get(var);
         };

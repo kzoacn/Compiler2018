@@ -654,7 +654,7 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 448
+	sub    rsp, 480
 	mov     rax, 936870912
         cdqe
         mov     rdi, rax
@@ -674,7 +674,7 @@ main:
 			mov r15,0
         mov     edx, dword 936870912
         movsxd  rdx, edx
-        sub     rdx, 2432
+        sub     rdx, 2464
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
@@ -782,38 +782,39 @@ L_1716:
 calc:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 448
-	mov r15,rdi
-	mov r14,r15
-	mov rbx,r14
-	mov r14,rbx
-	mov r14, [r14]
+	sub    rsp, 480
+	mov r14,rdi
+	mov r15,r14
+	mov rbx,r15
+	mov r15,rbx
+	mov r15, [r15]
 	mov rdx,255
-	and r14,rdx
-	mov r14,r14
+	and r15,rdx
+	mov r13,r15
 	mov rax,1
-	cmp rax,r14
-	mov r13, 0
-	sete r13B
-	cmp r13, 0
+	cmp rax,r13
+	mov r15, 0
+	sete r15B
+	cmp r15, 0
 	mov qword [arg+8*63],rbx
 	je L_1706
-	mov rax,r15
+	mov rax,r14
 	leave
 	ret
 	
 L_1706:
 	xor rdx, rdx
-	mov rax,  r14
+	mov rax,  r13
 	mov rbx, 2
 	cdq
 	idiv ebx
-	mov  r14, rax
-	mov r14,r14
-	mov r15,r15
+	mov  r15, rax
+	mov r12,r15
+	mov r15,r14
 	mov rbx,1
-	sub r14,rbx
-	mov rsi,r14
+	mov r11,r12
+	sub r11,rbx
+	mov rsi,r11
 	mov rdx,0
 	mov rdi,rdx
 	mov rax,r15
@@ -831,11 +832,43 @@ L_1706:
 	pop r11
 	mov  r15, rax
 	mov rdi,r15
+	push r15
+	push r14
+	push r13
+	push r12
+	call calc
+	pop r12
+	pop r13
+	pop r14
+	pop r15
+	mov r15 , rax
+	mov r15,r15
+	mov r14,r14
+	mov rbx,1
+	sub r13,rbx
+	mov rsi,r13
+	mov rdi,r12
+	mov rdx,r14
+	mov qword [arg+8*63],rdx
+	mov     rsi, rsi
+	mov     rdi, rdi
+	push r11
+	push r10
+	push r9
+	push r8
+	call    substring
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r14, rax
+	mov rdi,r14
+	push r15
 	push r14
 	call calc
 	pop r14
+	pop r15
 	mov r14 , rax
-	mov r15,r14
 	mov r14,r14
 	mov rdi,  r15
 	mov rsi,  r14
@@ -1008,14 +1041,14 @@ L_1714:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 448
-	mov rbx,  [rsp+8*48]
+	sub    rsp, 480
+	mov rbx,  [rsp+8*52]
 	mov rax,rbx
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2432
+gbl:         resb   2464
 buff.1788:
         resb    256
 arg:
