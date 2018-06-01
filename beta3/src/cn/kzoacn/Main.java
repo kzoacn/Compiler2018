@@ -999,7 +999,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
                     }
                     Variable dest=head.dest;
                     IR bIR=bareIR.get(head.name).clone();
-                    bIR=maintainIR(bIR);
+                    //bIR=maintainIR(bIR);
                     bIR=changeLabel(bIR);
                     Quad quad=new Quad(OpCode.move,bIR.last.dest,Variable.empty,dest);
                     prev.next=bIR.head;

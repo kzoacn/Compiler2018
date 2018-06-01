@@ -1,3 +1,4 @@
+int hilo(int hi, int lo)
 {
 	return lo | (hi << 16);
 }
@@ -58,4 +59,24 @@ int main() {
 	println("Ans is " + toString(sum));
     return 0;
 }
+
+/*!! metadata:
+=== comment ===
+王天哲 Test for register allocate, function inline // 516030910591
+=== is_public ===
+True
+=== assert ===
+output
+=== timeout ===
+10.0
+=== input ===
+80
+=== phase ===
+optim extended
+=== output ===
+Ans is 915763225
+=== exitcode ===
+0
+
+!!*/
 
