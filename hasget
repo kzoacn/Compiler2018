@@ -1,1 +1,1 @@
-	int n = getInt();
+	int n=getInt();

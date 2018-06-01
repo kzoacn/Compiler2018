@@ -724,13 +724,13 @@ main:
 	mov rbx,0
 	mov r13,rbx
 	
-L_1493:
+L_1516:
 	mov rbx,3
 	cmp r13,rbx
 	mov r12, 0
 	setl r12B
 	cmp r12, 0
-	je L_1494
+	je L_1517
 	mov     rdi, 0
 	push r11
 	push r10
@@ -763,9 +763,9 @@ L_1493:
 	mov r12,r13
 	mov rbx,1
 	add r13,rbx
-	jmp L_1493
+	jmp L_1516
 	
-L_1494:
+L_1517:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

@@ -729,12 +729,12 @@ main:
 	mov rbx,0
 	mov r12,rbx
 	
-L_3306:
+L_4388:
 	cmp r12,r15
 	mov r11, 0
 	setl r11B
 	cmp r11, 0
-	je L_3307
+	je L_4389
 	mov r11,r14
 	lea r11,[r11+r12*8+8H]
 	mov r11, [r11]
@@ -743,17 +743,17 @@ L_3306:
 	mov r11, 0
 	sete r11B
 	cmp r11, 0
-	je L_3310
+	je L_4392
 	mov r13,r12
-	jmp L_3307
+	jmp L_4389
 	
-L_3310:
+L_4392:
 	mov r11,r12
 	mov rbx,1
 	add r12,rbx
-	jmp L_3306
+	jmp L_4388
 	
-L_3307:
+L_4389:
 	mov rdi,r13
 	mov r15,rdi
 	mov     rdi,  r15

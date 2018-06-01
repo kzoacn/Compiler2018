@@ -700,7 +700,7 @@ main:
 	pop r11
 	mov qword  r15, rax
 	cmp r15, 0
-	je L_2064
+	je L_3119
 	mov rbx,t67
 	mov rdi,rbx
 	mov r15,rdi
@@ -715,9 +715,9 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	jmp L_2065
+	jmp L_3120
 	
-L_2064:
+L_3119:
 	mov rbx,t71
 	mov rdi,rbx
 	mov r15,rdi
@@ -733,7 +733,7 @@ L_2064:
 	pop r10
 	pop r11
 	
-L_2065:
+L_3120:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

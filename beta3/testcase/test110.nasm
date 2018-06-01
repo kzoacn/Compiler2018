@@ -654,7 +654,7 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 176
+	sub    rsp, 240
 	mov     rax, 936870912
         cdqe
         mov     rdi, rax
@@ -674,11 +674,22 @@ main:
 			mov r15,0
         mov     edx, dword 936870912
         movsxd  rdx, edx
-        sub     rdx, 2160
+        sub     rdx, 2224
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
+	mov     rdi, 256
+	push r11
+	push r10
+	push r9
+	push r8
+	call    mallocArray
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword [gbl+8*1], rax
 	push r15
 	call global_init
 	pop r15
@@ -724,14 +735,53 @@ main:
 fib:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 176
-	mov r14,rdi
+	sub    rsp, 240
+	mov r15,rdi
+	mov rbx,250
+	cmp r15,rbx
+	mov r13, 0
+	setl r13B
+	cmp r15,0
+	mov r14, 0
+	setg r14B
+	and r14,r13
+	cmp r14, 0
+	je L_484
+	mov rbx,  [gbl+8*1]
+	lea r12,[rbx+r15*8+8H]
+	mov r13, [r12]
+	cmp r13,0
+	mov r12, 0
+	setg r12B
+	cmp r12, 0
+	je L_484
+	cmp r14, 0
+	je L_485
+	mov rbx,  [gbl+8*1]
+	lea r12,[rbx+r15*8+8H]
+	mov [r12],r13
+	
+L_485:
+	mov rax,r13
+	leave
+	ret
+	
+L_484:
+	mov r12,rdi
 	mov rbx,1
-	cmp r14,rbx
-	mov r15, 0
-	setle r15B
-	cmp r15, 0
+	cmp r12,rbx
+	mov r13, 0
+	setle r13B
+	cmp r13, 0
 	je L_483
+	cmp r14, 0
+	je L_486
+	mov rbx,  [gbl+8*1]
+	lea r12,[rbx+r15*8+8H]
+	mov rdx,1
+	mov [r12],rdx
+	
+L_486:
 	mov rbx,1
 	mov rax,rbx
 	leave
@@ -739,40 +789,55 @@ fib:
 	
 L_483:
 	mov rbx,1
-	mov r15,r14
-	sub r15,rbx
-	mov rdi,r15
+	mov r13,r12
+	sub r13,rbx
+	mov rdi,r13
 	push r15
 	push r14
+	push r13
+	push r12
 	call fib
+	pop r12
+	pop r13
 	pop r14
 	pop r15
-	mov r15 , rax
+	mov r13 , rax
 	mov rbx,2
-	sub r14,rbx
-	mov rdi,r14
+	sub r12,rbx
+	mov rdi,r12
 	push r15
 	push r14
+	push r13
+	push r12
 	call fib
+	pop r12
+	pop r13
 	pop r14
 	pop r15
-	mov r14 , rax
-	add r15,r14
-	mov rax,r15
+	mov r12 , rax
+	add r13,r12
+	cmp r14, 0
+	je L_487
+	mov rbx,  [gbl+8*1]
+	lea r12,[rbx+r15*8+8H]
+	mov [r12],r13
+	
+L_487:
+	mov rax,r13
 	leave
 	ret
 	
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 176
-	mov rbx,  [rsp+8*14]
+	sub    rsp, 240
+	mov rbx,  [rsp+8*22]
 	mov rax,rbx
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2160
+gbl:         resb   2224
 buff.1788:
         resb    256
 arg:

@@ -314,9 +314,9 @@ public class IROptimizer {
             line_number++;
             cur=cur.next;
         }
-        if(variables.size()>750){
-            return ir;
-        }
+        //if(variables.size()>750){
+        //    return ir;
+       // }
         //live analyze
         cur=ir.head;
         while(cur!=null){
@@ -363,26 +363,21 @@ public class IROptimizer {
                 return ir;
             boolean flag=true;
 
-            HashSet<Variable> nin;
-            HashSet<Variable> nout;
+            int code1=in.hashCode();
+            int code2=out.hashCode();
             for(int i=line_number-1;i>=0;i--){
-                nin=new HashSet<Variable>();
-                nout=new HashSet<Variable>();
                 for(Variable var : use.get(i))
-                    nin.add(var);
+                    in.get(i).add(var);
                 for(Variable var : out.get(i))
                     if(!def.get(i).contains(var))
-                        nin.add(var);
+                        in.get(i).add(var);
                 for(int j : edgeList.get(i))
                     for(Variable var : in.get(j))
-                        nout.add(var);
-                if(!in.get(i).equals(nin) || !out.get(i).equals(nout))
-                    flag=false;
-                in.set(i,nin);
-                out.set(i,nout);
+                        out.get(i).add(var);
             }
 
-            if(flag)break;
+            if(code1==in.hashCode()&&code2==out.hashCode())
+                break;
         }
 
 

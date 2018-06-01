@@ -695,13 +695,13 @@ main:
 	mov rbx,0
 	mov r14,rbx
 	
-L_2373:
+L_3440:
 	mov rbx,5
 	cmp r14,rbx
 	mov r12, 0
 	setl r12B
 	cmp r12, 0
-	je L_2374
+	je L_3441
 	add r15,r13
 	mov r15,r15
 	mov rbx,1
@@ -788,8 +788,8 @@ L_2373:
 	pop r11
 	mov rsi,r13
 	mov rdi,r15
-	mov r11,rdi
-	mov r12,rsi
+	mov r12,rdi
+	mov r11,rsi
 	add r12,r11
 	mov r12,r12
 	mov r12,r12
@@ -823,9 +823,9 @@ L_2373:
 	mov r12,r14
 	mov rbx,1
 	add r14,rbx
-	jmp L_2373
+	jmp L_3440
 	
-L_2374:
+L_3441:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]
