@@ -694,12 +694,12 @@ main:
 	mov r12, 0
 	sete r12B
 	cmp r12, 0
-	jne L_1274
+	jne L_1075
 	mov rbx,0
 	mov r12,rbx
-	jmp L_1275
+	jmp L_1076
 	
-L_1274:
+L_1075:
 	xor rdx, rdx
 	mov rax,  r14
 	mov rbx,  r13
@@ -712,30 +712,30 @@ L_1274:
 	sete r13B
 	mov r12,r13
 	
-L_1275:
+L_1076:
 	cmp r12, 0
-	jne L_1276
+	jne L_1077
 	mov rbx,0
 	mov r12,rbx
-	jmp L_1277
+	jmp L_1078
 	
-L_1276:
+L_1077:
 	mov rbx,5
 	cmp r14,rbx
 	mov r14, 0
 	sete r14B
 	mov r12,r14
 	
-L_1277:
+L_1078:
 	mov r14, 0
 	cmp r12, 0
 	sete r14B
 	cmp r14, 0
-	je L_1279
+	je L_1080
 	mov rbx,30
 	mov r15,rbx
 	
-L_1279:
+L_1080:
 	mov rdi,r15
 	mov r15,rdi
 	mov     rdi,  r15

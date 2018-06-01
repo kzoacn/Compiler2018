@@ -686,7 +686,7 @@ main:
 	pop r15
 	mov r14 , rax
 	
-L_5448:
+L_2380:
 	mov rbx,1
 	mov r14,rbx
 	mov rcx,29
@@ -696,12 +696,12 @@ L_5448:
 	mov r14, 0
 	setl r14B
 	cmp r14, 0
-	jne L_5450
+	jne L_2382
 	mov rbx,0
 	mov r14,rbx
-	jmp L_5451
+	jmp L_2383
 	
-L_5450:
+L_2382:
 	mov rbx,1
 	mov r14,rbx
 	mov rcx,29
@@ -714,10 +714,10 @@ L_5450:
 	setg r14B
 	mov r14,r14
 	
-L_5451:
+L_2383:
 	add r15,r15
 	cmp r14, 0
-	je L_5449
+	je L_2381
 	mov rbx,  [gbl+8*3]
 	mov rdx,  [gbl+8*7]
 	mov r14,rbx
@@ -1786,9 +1786,9 @@ L_5451:
 	mov qword [gbl+8*3],rbx
 	mov qword [gbl+8*7],rdx
 	mov qword [gbl+8*9],rax
-	jmp L_5448
+	jmp L_2380
 	
-L_5449:
+L_2381:
 	mov rbx,  [gbl+8*7]
 	mov rdi,rbx
 	mov r15,rdi

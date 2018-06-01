@@ -698,13 +698,13 @@ main:
 	mov rbx,0
 	mov r14,rbx
 	
-L_5007:
+L_2074:
 	mov rbx,  [gbl+8*5]
 	cmp r14,rbx
 	mov r13, 0
 	setl r13B
 	cmp r13, 0
-	je L_5008
+	je L_2075
 	mov r13,r15
 	lea r13,[r13+r14*8+8H]
 	mov rbx,0
@@ -712,19 +712,19 @@ L_5007:
 	mov r13,r14
 	mov rdx,1
 	add r14,rdx
-	jmp L_5007
+	jmp L_2074
 	
-L_5008:
+L_2075:
 	mov rbx,1
 	mov r14,rbx
 	
-L_5010:
+L_2077:
 	mov rbx,500
 	cmp r14,rbx
 	mov r13, 0
 	setle r13B
 	cmp r13, 0
-	je L_5011
+	je L_2078
 	mov rsi,r14
 	mov rdi,r14
 	mov r12,rdi
@@ -752,7 +752,7 @@ L_5010:
 	mov r10, 0
 	sete r10B
 	cmp r10, 0
-	je L_5062
+	je L_2111
 	mov     rdi, 3
 	push r11
 	push r10
@@ -842,15 +842,15 @@ L_5010:
 	mov [r13],rbx
 	mov rdx,0
 	mov r13,rdx
-	jmp L_5064
+	jmp L_2113
 	
-L_5062:
+L_2111:
 	mov r10,r15
 	lea r11,[r10+r11*8+8H]
 	mov r11, [r11]
 	mov r11,r11
 	
-L_5065:
+L_2114:
 	mov     rdi, 1
 	push r11
 	push r10
@@ -876,7 +876,7 @@ L_5065:
 	mov r10, 0
 	setne r10B
 	cmp r10, 0
-	je L_5066
+	je L_2115
 	mov     rdi, 1
 	push r11
 	push r10
@@ -903,7 +903,7 @@ L_5065:
 	mov r10, 0
 	sete r10B
 	cmp r10, 0
-	je L_5067
+	je L_2116
 	mov     rdi, 1
 	push r11
 	push r10
@@ -988,7 +988,7 @@ L_5065:
 	mov rbx,0
 	mov [r10],rbx
 	
-L_5067:
+L_2116:
 	mov     rdi, 1
 	push r11
 	push r10
@@ -1011,9 +1011,9 @@ L_5067:
 	mov  r11, rax
 	mov r11, [r11]
 	mov r11,r11
-	jmp L_5065
+	jmp L_2114
 	
-L_5066:
+L_2115:
 	mov     rdi, 1
 	push r11
 	push r10
@@ -1038,24 +1038,24 @@ L_5066:
 	mov rbx,0
 	mov r13,rbx
 	
-L_5064:
+L_2113:
 	mov r13,r13
 	mov r13,r14
 	mov rbx,1
 	add r14,rbx
-	jmp L_5010
+	jmp L_2077
 	
-L_5011:
+L_2078:
 	mov rbx,1
 	mov r14,rbx
 	
-L_5013:
+L_2080:
 	mov rbx,500
 	cmp r14,rbx
 	mov r13, 0
 	setle r13B
 	cmp r13, 0
-	je L_5014
+	je L_2081
 	mov rdi,r14
 	mov r13,rdi
 	mov rbx,0
@@ -1077,7 +1077,7 @@ L_5013:
 	mov r12, [r12]
 	mov r12,r12
 	
-L_5040:
+L_2097:
 	mov     rdi, 1
 	push r11
 	push r10
@@ -1103,7 +1103,7 @@ L_5040:
 	mov r11, 0
 	setne r11B
 	cmp r11, 0
-	je L_5041
+	je L_2098
 	mov     rdi, 1
 	push r11
 	push r10
@@ -1126,9 +1126,9 @@ L_5040:
 	mov  r12, rax
 	mov r12, [r12]
 	mov r12,r12
-	jmp L_5040
+	jmp L_2097
 	
-L_5041:
+L_2098:
 	mov     rdi, 1
 	push r11
 	push r10
@@ -1181,9 +1181,9 @@ L_5041:
 	mov r13,r14
 	mov rbx,1
 	add r14,rbx
-	jmp L_5013
+	jmp L_2080
 	
-L_5014:
+L_2081:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

@@ -698,13 +698,13 @@ main:
 	mov rbx,0
 	mov r14,rbx
 	
-L_5070:
+L_2119:
 	mov rbx,  [gbl+8*5]
 	cmp r14,rbx
 	mov r13, 0
 	setl r13B
 	cmp r13, 0
-	je L_5071
+	je L_2120
 	mov r13,r15
 	lea r13,[r13+r14*8+8H]
 	mov rbx,0
@@ -712,9 +712,9 @@ L_5070:
 	mov r13,r14
 	mov rdx,1
 	add r14,rdx
-	jmp L_5070
+	jmp L_2119
 	
-L_5071:
+L_2120:
 	mov rbx,2
 	mov rsi,rbx
 	mov rdx,1
@@ -744,7 +744,7 @@ L_5071:
 	mov r11, 0
 	sete r11B
 	cmp r11, 0
-	je L_5095
+	je L_2135
 	mov     rdi, 3
 	push r11
 	push r10
@@ -834,13 +834,13 @@ L_5071:
 	mov [r14],rbx
 	mov rdx,0
 	mov r14,rdx
-	jmp L_5097
+	jmp L_2137
 	
-L_5095:
+L_2135:
 	mov rbx,0
 	mov r14,rbx
 	
-L_5097:
+L_2137:
 	mov r14,r14
 	mov rbx,0
 	mov r14,rbx

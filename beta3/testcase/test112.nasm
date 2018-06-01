@@ -654,56 +654,18 @@ strne:
 lol:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 216
+	sub    rsp, 152
 	mov r15,rdi
-	mov rbx,250
-	cmp r15,rbx
-	mov r13, 0
-	setl r13B
-	cmp r15,0
-	mov r14, 0
-	setg r14B
-	and r14,r13
-	cmp r14, 0
-	je L_705
-	mov rbx,  [gbl+8*6]
-	lea r12,[rbx+r15*8+8H]
-	mov r13, [r12]
-	cmp r13,0
-	mov r12, 0
-	setg r12B
-	cmp r12, 0
-	je L_705
-	cmp r14, 0
-	je L_706
-	mov rbx,  [gbl+8*6]
-	lea r12,[rbx+r15*8+8H]
-	mov [r12],r13
-	
-L_706:
-	mov rax,r13
-	leave
-	ret
-	
-L_705:
-	mov r13,rdi
 	mov rbx,1
-	add r13,rbx
-	cmp r14, 0
-	je L_707
-	mov rbx,  [gbl+8*6]
-	lea r12,[rbx+r15*8+8H]
-	mov [r12],r13
-	
-L_707:
-	mov rax,r13
+	add r15,rbx
+	mov rax,r15
 	leave
 	ret
 	
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 216
+	sub    rsp, 152
 	mov     rax, 936870912
         cdqe
         mov     rdi, rax
@@ -723,27 +685,16 @@ main:
 			mov r15,0
         mov     edx, dword 936870912
         movsxd  rdx, edx
-        sub     rdx, 2200
+        sub     rdx, 2136
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
-	mov     rdi, 256
-	push r11
-	push r10
-	push r9
-	push r8
-	call    mallocArray
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	mov     qword [gbl+8*6], rax
 	push r15
 	call global_init
 	pop r15
 	mov r15 , rax
-	mov rbx,  [gbl+8*13]
+	mov rbx,  [gbl+8*5]
 	mov rdi,rbx
 	mov r15,rdi
 	mov     rdi,  r15
@@ -779,23 +730,23 @@ main:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 216
+	sub    rsp, 152
 	mov rdx,123
 	mov rbx,rdx
 	mov rdi,rbx
-	mov qword [gbl+8*17],rbx
+	mov qword [gbl+8*9],rbx
 	call lol
 	mov rbx , rax
 	mov rdx,rbx
-	mov qword [gbl+8*18],rbx
-	mov qword [gbl+8*13],rdx
-	mov rbx,  [rsp+8*19]
+	mov qword [gbl+8*10],rbx
+	mov qword [gbl+8*5],rdx
+	mov rbx,  [rsp+8*11]
 	mov rax,rbx
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2200
+gbl:         resb   2136
 buff.1788:
         resb    256
 arg:

@@ -700,7 +700,7 @@ main:
 	mov rbx,0
 	mov r14,rbx
 	
-L_5300:
+L_2289:
 	mov r15,r9
 	mov rbx,r15
 	mov r15,rbx
@@ -710,7 +710,7 @@ L_5300:
 	setl r15B
 	cmp r15, 0
 	mov qword [arg+8*63],rbx
-	je L_5301
+	je L_2290
 	mov r15,r9
 	lea r15,[r15+r14*8+8H]
 	mov [r15],r14
@@ -718,9 +718,9 @@ L_5300:
 	mov r15,r14
 	add r15,rbx
 	mov r14,r15
-	jmp L_5300
+	jmp L_2289
 	
-L_5301:
+L_2290:
 	mov rbx,1
 	mov r15,r8
 	sub r15,rbx
@@ -736,13 +736,13 @@ L_5301:
 	mov rdx,0
 	mov r13,rdx
 	
-L_5377:
+L_2344:
 	mov rbx,0
 	cmp r10,rbx
 	mov r15, 0
 	setge r15B
 	cmp r15, 0
-	je L_5378
+	je L_2345
 	mov rbx,2
 	mov r15,r10
 	imul r15,rbx
@@ -756,12 +756,12 @@ L_5377:
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	jne L_5379
+	jne L_2346
 	mov rbx,0
 	mov r15,rbx
-	jmp L_5380
+	jmp L_2347
 	
-L_5379:
+L_2346:
 	mov rbx,2
 	mov r14,r10
 	imul r14,rbx
@@ -781,9 +781,9 @@ L_5379:
 	setl r15B
 	mov r15,r15
 	
-L_5380:
+L_2347:
 	cmp r15, 0
-	je L_5381
+	je L_2348
 	mov rbx,2
 	mov r15,r10
 	imul r15,rbx
@@ -791,7 +791,7 @@ L_5380:
 	add r15,rdx
 	mov r13,r15
 	
-L_5381:
+L_2348:
 	mov r15,r9
 	lea r15,[r15+r10*8+8H]
 	mov r14, [r15]
@@ -802,7 +802,7 @@ L_5381:
 	mov r15, 0
 	setg r15B
 	cmp r15, 0
-	je L_5382
+	je L_2349
 	mov rsi,r13
 	mov rdi,r10
 	mov r11,rdi
@@ -824,14 +824,14 @@ L_5381:
 	mov r15,rbx
 	mov r15,r15
 	
-L_5382:
+L_2349:
 	mov rbx,1
 	mov r15,r10
 	sub r15,rbx
 	mov r10,r15
-	jmp L_5377
+	jmp L_2344
 	
-L_5378:
+L_2345:
 	mov rbx,0
 	mov r15,rbx
 	mov r15,r15
@@ -841,13 +841,13 @@ L_5378:
 	mov rax,rbx
 	mov qword [rsp+8*58],rax
 	
-L_5402:
+L_2354:
 	mov rbx,  [rsp+8*58]
 	cmp rbx,r8
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	je L_5403
+	je L_2355
 	mov r15,r9
 	mov rbx,0
 	lea r15,[r15+rbx*8+8H]
@@ -885,7 +885,7 @@ L_5402:
 	mov rbx,0
 	mov r15,rbx
 	
-L_5404:
+L_2356:
 	mov rbx,2
 	mov r15,r12
 	imul r15,rbx
@@ -895,7 +895,7 @@ L_5404:
 	mov rdx,0
 	add rdx,rdx
 	cmp r15, 0
-	je L_5406
+	je L_2358
 	mov rbx,2
 	mov r15,r12
 	imul r15,rbx
@@ -909,12 +909,12 @@ L_5404:
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	jne L_5407
+	jne L_2359
 	mov rbx,0
 	mov r15,rbx
-	jmp L_5408
+	jmp L_2360
 	
-L_5407:
+L_2359:
 	mov rbx,2
 	mov r14,r12
 	imul r14,rbx
@@ -934,9 +934,9 @@ L_5407:
 	setl r15B
 	mov r15,r15
 	
-L_5408:
+L_2360:
 	cmp r15, 0
-	je L_5409
+	je L_2361
 	mov rbx,2
 	mov r15,r12
 	imul r15,rbx
@@ -944,7 +944,7 @@ L_5408:
 	add r15,rdx
 	mov r10,r15
 	
-L_5409:
+L_2361:
 	mov r15,r9
 	lea r15,[r15+r12*8+8H]
 	mov r14, [r15]
@@ -955,7 +955,7 @@ L_5409:
 	mov r15, 0
 	setg r15B
 	cmp r15, 0
-	je L_5410
+	je L_2362
 	mov r15,r9
 	lea r15,[r15+r12*8+8H]
 	mov r15, [r15]
@@ -970,15 +970,15 @@ L_5409:
 	lea r15,[r15+r10*8+8H]
 	mov [r15],r13
 	mov r12,r10
-	jmp L_5411
+	jmp L_2363
 	
-L_5410:
-	jmp L_5406
+L_2362:
+	jmp L_2358
 	
-L_5411:
-	jmp L_5404
+L_2363:
+	jmp L_2356
 	
-L_5406:
+L_2358:
 	mov rbx,0
 	mov r15,rbx
 	mov r15,r15
@@ -988,16 +988,16 @@ L_5406:
 	add r15,rax
 	mov rdx,r15
 	mov qword [rsp+8*58],rdx
-	jmp L_5402
+	jmp L_2354
 	
-L_5403:
+L_2355:
 	mov rbx,0
 	mov r15,rbx
 	mov r15,r15
 	mov rdx,0
 	mov r14,rdx
 	
-L_5303:
+L_2292:
 	mov r15,r9
 	mov rbx,r15
 	mov r15,rbx
@@ -1007,7 +1007,7 @@ L_5303:
 	setl r15B
 	cmp r15, 0
 	mov qword [arg+8*63],rbx
-	je L_5304
+	je L_2293
 	mov r15,r9
 	lea r15,[r15+r14*8+8H]
 	mov r15, [r15]
@@ -1055,9 +1055,9 @@ L_5303:
 	mov r15,r14
 	add r15,rbx
 	mov r14,r15
-	jmp L_5303
+	jmp L_2292
 	
-L_5304:
+L_2293:
 	mov rbx,t226
 	mov rdi,rbx
 	mov r15,rdi

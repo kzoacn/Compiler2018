@@ -688,13 +688,13 @@ main:
 	mov rdx,1
 	mov r15,rdx
 	
-L_738:
+L_627:
 	mov rbx,25
 	cmp r15,rbx
 	mov r13, 0
 	setl r13B
 	cmp r13, 0
-	je L_739
+	je L_628
 	mov rdi,r15
 	mov r13,rdi
 	mov     rdi,  r13
@@ -725,9 +725,9 @@ L_738:
 	mov r13,r14
 	mov r14,r15
 	mov r15,r13
-	jmp L_738
+	jmp L_627
 	
-L_739:
+L_628:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

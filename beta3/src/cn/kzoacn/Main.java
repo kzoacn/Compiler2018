@@ -861,7 +861,7 @@ class MVisitor extends MxstarBaseVisitor<IR>{
             fake.var1=(Variable) getVar.apply(fake.var1);
             fake.var2=(Variable) getVar.apply(fake.var2);
             fake.dest=(Variable) getVar.apply(fake.dest);
-            fake.name=(String)getName.apply(fake.name);
+            //fake.name=(String)getName.apply(fake.name);
             tmp.push(fake);
             head=head.next;
         }
@@ -870,6 +870,37 @@ class MVisitor extends MxstarBaseVisitor<IR>{
     IR IROptimize(){
         IR functionIR=new IR();
         HashMap<String,ArrayList<String> >callList =new HashMap<String, ArrayList<String> >();
+
+        HashSet<String>pureFunction=new HashSet<String>();
+        int TA=0;
+        while(TA-->0) {
+            for (Map.Entry<String, IR> entry : funcIR.entrySet()) {
+                IR tmpIR = entry.getValue();
+                String name = entry.getKey();
+                Function function = symbolMap.functionMap.get(name);
+                if(function.parameterList.size()!=1)continue;
+                if(!function.parameterList.get(0).equals(VariableType.INT))continue;
+                if(!function.returnType.equals(VariableType.INT))continue;
+                boolean flag=true;//close
+                Quad head=tmpIR.head;
+                while(head!=null){
+                    if(head.opCode==OpCode.call){
+                        if(!head.name.equals(name)&&!pureFunction.contains(name))//sorry ,I'll fix it
+                            flag=false;
+                    }
+                    if(head.var1!=null&&!argList.contains(head.var1)&&symbolMap.globalVariableMap.containsKey(head.var1.name))
+                        flag=false;
+                    if(head.var2!=null&&!argList.contains(head.var2)&&symbolMap.globalVariableMap.containsKey(head.var2.name))
+                        flag=false;
+                    if(head.dest!=null&&!argList.contains(head.dest)&&symbolMap.globalVariableMap.containsKey(head.dest.name))
+                        flag=false;
+                    head=head.next;
+                }
+                if(flag){
+                    pureFunction.add(name);
+                }
+            }
+        }
         //try_memorize
         ArrayList<Variable>memoryVariable=new ArrayList<Variable>();
         for (Map.Entry<String, IR> entry : funcIR.entrySet()) {
@@ -881,20 +912,8 @@ class MVisitor extends MxstarBaseVisitor<IR>{
             if(!function.returnType.equals(VariableType.INT))continue;
             boolean flag=true;//close
             Quad head=tmpIR.head;
-            while(head!=null){
-                if(head.opCode==OpCode.call){
-                    if(!head.name.equals(name)&&head.next.equals("add"))//sorry ,I'll fix it
-                        flag=false;
-                }
-                if(head.var1!=null&&!argList.contains(head.var1)&&symbolMap.globalVariableMap.containsKey(head.var1.name))
-                    flag=false;
-                if(head.var2!=null&&!argList.contains(head.var2)&&symbolMap.globalVariableMap.containsKey(head.var2.name))
-                    flag=false;
-                if(head.dest!=null&&!argList.contains(head.dest)&&symbolMap.globalVariableMap.containsKey(head.dest.name))
-                    flag=false;
-                head=head.next;
-            }
-            if(!flag)continue;
+
+            if(!pureFunction.contains(name))continue;
             Variable.isGlobal=true;
             symbolMap.global=true;
             Variable memory=new Variable("mem_"+name,new VariableType("int",1,false));
@@ -2191,8 +2210,8 @@ class MVisitor extends MxstarBaseVisitor<IR>{
         ir.push(new Quad(OpCode.label,startLabel));
         ir.concat(B);
         if(B!=null) {
-            if(!VariableType.BOOL.match(B.last.dest.type))
-                ir.push(Quad.quadError("exp must be bool for"));
+            //if(!VariableType.BOOL.match(B.last.dest.type))
+            //    ir.push(Quad.quadError("exp must be bool for"));
             Quad quad = new Quad(OpCode.jz, B.last.dest, Variable.empty, Variable.empty);
             quad.name = endLabel;
             ir.push(quad);

@@ -826,7 +826,7 @@ main:
 	mov r12, 0
 	setle r12B
 	cmp r12, 0
-	je L_685
+	je L_490
 	mov     rsi, t77
 	mov     rdi,  r13
 	push r11
@@ -897,9 +897,9 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	jmp L_686
+	jmp L_491
 	
-L_685:
+L_490:
 	mov     rsi, t92
 	mov     rdi,  r13
 	push r11
@@ -971,7 +971,7 @@ L_685:
 	pop r10
 	pop r11
 	
-L_686:
+L_491:
 	mov     rdi, 1
 	push r11
 	push r10
@@ -1050,7 +1050,7 @@ L_686:
 	mov r12, 0
 	setle r12B
 	cmp r12, 0
-	je L_693
+	je L_494
 	mov     rsi, t77
 	mov     rdi,  r13
 	push r11
@@ -1121,9 +1121,9 @@ L_686:
 	pop r9
 	pop r10
 	pop r11
-	jmp L_694
+	jmp L_495
 	
-L_693:
+L_494:
 	mov     rsi, t92
 	mov     rdi,  r13
 	push r11
@@ -1195,7 +1195,7 @@ L_693:
 	pop r10
 	pop r11
 	
-L_694:
+L_495:
 	mov     rdi, 1
 	push r11
 	push r10
@@ -1274,7 +1274,7 @@ L_694:
 	mov r13, 0
 	setle r13B
 	cmp r13, 0
-	je L_701
+	je L_498
 	mov     rsi, t77
 	mov     rdi,  r14
 	push r11
@@ -1345,9 +1345,9 @@ L_694:
 	pop r9
 	pop r10
 	pop r11
-	jmp L_702
+	jmp L_499
 	
-L_701:
+L_498:
 	mov     rsi, t92
 	mov     rdi,  r14
 	push r11
@@ -1419,7 +1419,7 @@ L_701:
 	pop r10
 	pop r11
 	
-L_702:
+L_499:
 	mov     rdi, 1
 	push r11
 	push r10

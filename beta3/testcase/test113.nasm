@@ -691,7 +691,7 @@ main:
 	mov r15, 0
 	sete r15B
 	cmp r15, 0
-	je L_715
+	je L_504
 	mov rbx,t67
 	mov rdi,rbx
 	mov r15,rdi
@@ -706,9 +706,9 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	jmp L_716
+	jmp L_505
 	
-L_715:
+L_504:
 	mov rbx,t71
 	mov rdi,rbx
 	mov r15,rdi
@@ -724,7 +724,7 @@ L_715:
 	pop r10
 	pop r11
 	
-L_716:
+L_505:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]

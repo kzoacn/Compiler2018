@@ -702,13 +702,13 @@ main:
 	mov rbx,1
 	mov r14,rbx
 	
-L_1319:
+L_1120:
 	mov rbx,  [gbl+8*2]
 	cmp r14,rbx
 	mov r13, 0
 	setle r13B
 	cmp r13, 0
-	je L_1320
+	je L_1121
 	mov rbx,  [gbl+8*8]
 	mov rdx,7
 	mov r13,rbx
@@ -734,9 +734,9 @@ L_1319:
 	mov rax,1
 	add r14,rax
 	mov qword [gbl+8*8],rbx
-	jmp L_1319
+	jmp L_1120
 	
-L_1320:
+L_1121:
 	mov rbx,  [gbl+8*2]
 	mov rsi,rbx
 	mov rdx,1
@@ -789,13 +789,13 @@ dp:
 	mov r12, 0
 	setg r12B
 	cmp r12, 0
-	je L_1311
+	je L_1112
 	mov rbx,0
 	mov rax,rbx
 	leave
 	ret
 	
-L_1311:
+L_1112:
 	mov rbx,  [gbl+8*25]
 	mov r12,rbx
 	lea r12,[r12+r13*8+8H]
@@ -807,7 +807,7 @@ L_1311:
 	mov r12, 0
 	setne r12B
 	cmp r12, 0
-	je L_1313
+	je L_1114
 	mov rbx,  [gbl+8*25]
 	mov r15,rbx
 	lea r15,[r15+r13*8+8H]
@@ -818,12 +818,12 @@ L_1311:
 	leave
 	ret
 	
-L_1313:
+L_1114:
 	cmp r13,r14
 	mov r12, 0
 	sete r12B
 	cmp r12, 0
-	je L_1315
+	je L_1116
 	mov r15,r15
 	lea r15,[r15+r13*8+8H]
 	mov r15, [r15]
@@ -831,17 +831,17 @@ L_1313:
 	leave
 	ret
 	
-L_1315:
+L_1116:
 	mov rbx,0
 	mov r11,rbx
 	mov r12,r13
 	
-L_1316:
+L_1117:
 	cmp r12,r14
 	mov r10, 0
 	setl r10B
 	cmp r10, 0
-	je L_1317
+	je L_1118
 	mov rsi,r12
 	mov rdi,r13
 	push r15
@@ -888,22 +888,22 @@ L_1316:
 	mov r9, 0
 	setg r9B
 	cmp r9, 0
-	je L_1334
+	je L_1130
 	mov r11,r10
-	jmp L_1336
+	jmp L_1132
 	
-L_1334:
+L_1130:
 	mov r11,r11
 	
-L_1336:
+L_1132:
 	mov r11,r11
 	mov r11,r11
 	mov r10,r12
 	mov rbx,1
 	add r12,rbx
-	jmp L_1316
+	jmp L_1117
 	
-L_1317:
+L_1118:
 	mov rbx,  [gbl+8*25]
 	mov r15,rbx
 	lea r15,[r15+r13*8+8H]

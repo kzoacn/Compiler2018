@@ -709,7 +709,7 @@ main:
 	mov rbx,rdx
 	mov qword [rsp+8*9],rbx
 	
-L_1446:
+L_1240:
 	mov r15,r11
 	sub r15,r10
 	mov rbx,0
@@ -717,7 +717,7 @@ L_1446:
 	mov r15, 0
 	setne r15B
 	cmp r15, 0
-	je L_1447
+	je L_1241
 	xor rdx, rdx
 	mov rax,  r12
 	mov rbx, 5
@@ -730,11 +730,11 @@ L_1446:
 	mov r14,r8
 	lea r15,[r14+r15*8+8H]
 	mov [r15],r13
-	jmp L_1446
+	jmp L_1240
 	
-L_1447:
+L_1241:
 	
-L_1449:
+L_1243:
 	mov rbx,0
 	mov r13,rbx
 	mov rdx,2
@@ -747,13 +747,13 @@ L_1449:
 	sete r15B
 	cmp r15, 0
 	mov qword [rsp+8*9],rax
-	je L_1453
-	jmp L_1450
+	je L_1247
+	jmp L_1244
 	
-L_1453:
+L_1247:
 	mov r11,r10
 	
-L_1454:
+L_1248:
 	mov r15,r8
 	lea r15,[r15+r11*8+8H]
 	mov r15, [r15]
@@ -792,16 +792,16 @@ L_1454:
 	mov r15, 0
 	sete r15B
 	cmp r15, 0
-	je L_1458
-	jmp L_1455
+	je L_1252
+	jmp L_1249
 	
-L_1458:
+L_1252:
 	mov r15,r13
 	imul r15,r11
 	mov r13,r15
-	jmp L_1454
+	jmp L_1248
 	
-L_1455:
+L_1249:
 	mov rbx,14
 	mov r15,r10
 	sub r15,rbx
@@ -848,9 +848,9 @@ L_1455:
 	idiv ebx
 	mov  r15, rdx
 	mov r9,r15
-	jmp L_1449
+	jmp L_1243
 	
-L_1450:
+L_1244:
 	mov rbx,t112
 	mov rdi,rbx
 	mov r15,rdi

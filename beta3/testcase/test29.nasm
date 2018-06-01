@@ -697,12 +697,12 @@ main:
 	mov r13,rbx
 	mov r12,r12
 	
-L_1257:
+L_1063:
 	cmp r14,0
 	mov r11, 0
 	setg r11B
 	cmp r11, 0
-	je L_1258
+	je L_1064
 	mov rbx,1
 	mov r11,r14
 	and r11,rbx
@@ -711,7 +711,7 @@ L_1257:
 	mov r11, 0
 	sete r11B
 	cmp r11, 0
-	je L_1259
+	je L_1065
 	imul r13,r12
 	xor rdx, rdx
 	mov rax,  r13
@@ -721,7 +721,7 @@ L_1257:
 	mov  r13, rdx
 	mov r13,r13
 	
-L_1259:
+L_1065:
 	imul r12,r12
 	xor rdx, rdx
 	mov rax,  r12
@@ -737,9 +737,9 @@ L_1259:
 	idiv ebx
 	mov  r14, rax
 	mov r14,r14
-	jmp L_1257
+	jmp L_1063
 	
-L_1258:
+L_1064:
 	mov r15,r13
 	mov r15,r15
 	mov rdi,r15

@@ -654,7 +654,7 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 560
+	sub    rsp, 552
 	mov     rax, 936870912
         cdqe
         mov     rdi, rax
@@ -674,7 +674,7 @@ main:
 			mov r15,0
         mov     edx, dword 936870912
         movsxd  rdx, edx
-        sub     rdx, 2544
+        sub     rdx, 2536
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
@@ -707,19 +707,19 @@ main:
 	mov rbx,1
 	mov r13,rbx
 	
-L_1361:
+L_1157:
 	mov rbx,1
 	mov r12,rbx
 	mov rdx,0
 	mov r9,rdx
 	
-L_1364:
+L_1160:
 	mov rbx,  [rsp+8*4]
 	cmp r9,rbx
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	je L_1365
+	je L_1161
 	mov r15,r11
 	lea r15,[r15+r9*8+8H]
 	mov [r15],r10
@@ -735,13 +735,13 @@ L_1364:
 	mov rbx,0
 	mov r8,rbx
 	
-L_1367:
+L_1163:
 	cmp r8,r9
 	mov rbx, 0
 	setl bl
 	cmp rbx, 0
 	mov qword [rsp+8*16],rbx
-	je L_1368
+	je L_1164
 	mov rbx,r11
 	lea rdx,[rbx+r9*8+8H]
 	mov rax, [rdx]
@@ -757,50 +757,50 @@ L_1367:
 	mov qword [rsp+8*20],rbx
 	mov qword [rsp+8*21],rdx
 	mov qword [rsp+8*19],rax
-	je L_1371
+	je L_1167
 	mov rbx,0
 	mov r12,rbx
-	jmp L_1368
+	jmp L_1164
 	
-L_1371:
+L_1167:
 	mov rbx,r8
 	mov rdx,1
 	add r8,rdx
 	mov qword [rsp+8*24],rbx
-	jmp L_1367
+	jmp L_1163
 	
-L_1368:
+L_1164:
 	mov r15,r9
 	mov rbx,1
 	add r9,rbx
-	jmp L_1364
+	jmp L_1160
 	
-L_1365:
+L_1161:
 	cmp r12, 0
-	je L_1373
-	jmp L_1362
+	je L_1169
+	jmp L_1158
 	
-L_1373:
+L_1169:
 	mov r15,r13
 	mov rbx,1
 	add r13,rbx
-	jmp L_1361
+	jmp L_1157
 	
-L_1362:
+L_1158:
 	mov rbx,0
 	mov r9,rbx
 	
-L_1374:
+L_1170:
 	mov rbx,  [rsp+8*4]
 	cmp r9,rbx
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	je L_1375
+	je L_1171
 	mov rbx,0
 	mov r8,rbx
 	
-L_1377:
+L_1173:
 	mov rbx,1
 	mov r15,r8
 	add r15,rbx
@@ -808,11 +808,8 @@ L_1377:
 	cmp r15,rdx
 	mov r15, 0
 	setl r15B
-	mov rax,  [rsp+8*29]
-	add rax,rax
 	cmp r15, 0
-	mov qword [rsp+8*29],rax
-	je L_1378
+	je L_1174
 	mov r15,r11
 	lea r15,[r15+r8*8+8H]
 	mov r13, [r15]
@@ -826,7 +823,7 @@ L_1377:
 	mov r15, 0
 	setg r15B
 	cmp r15, 0
-	je L_1381
+	je L_1177
 	mov r15,r11
 	lea r15,[r15+r8*8+8H]
 	mov r15, [r15]
@@ -847,29 +844,29 @@ L_1377:
 	lea r15,[r14+r15*8+8H]
 	mov [r15],r13
 	
-L_1381:
+L_1177:
 	mov r15,r8
 	mov rbx,1
 	add r8,rbx
-	jmp L_1377
+	jmp L_1173
 	
-L_1378:
+L_1174:
 	mov r15,r9
 	mov rbx,1
 	add r9,rbx
-	jmp L_1374
+	jmp L_1170
 	
-L_1375:
+L_1171:
 	mov rbx,0
 	mov r9,rbx
 	
-L_1382:
+L_1178:
 	mov rbx,  [rsp+8*4]
 	cmp r9,rbx
 	mov r15, 0
 	setl r15B
 	cmp r15, 0
-	je L_1383
+	je L_1179
 	mov r15,r11
 	lea r15,[r15+r9*8+8H]
 	mov r15, [r15]
@@ -902,9 +899,9 @@ L_1382:
 	mov r15,r9
 	mov rbx,1
 	add r9,rbx
-	jmp L_1382
+	jmp L_1178
 	
-L_1383:
+L_1179:
 	mov rbx,0
 	mov rax,rbx
 	        mov     rsp, qword [trsp]
@@ -914,14 +911,14 @@ L_1383:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 560
-	mov rbx,  [rsp+8*62]
+	sub    rsp, 552
+	mov rbx,  [rsp+8*61]
 	mov rax,rbx
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2544
+gbl:         resb   2536
 buff.1788:
         resb    256
 arg:
