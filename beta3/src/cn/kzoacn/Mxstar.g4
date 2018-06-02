@@ -141,8 +141,8 @@ expression
     |   expression '&' expression                                                   # and
     |   expression '^' expression                                                   # xor
     |   expression '|' expression                                                   # or
-    |   <assoc=right> expression '&&' expression                                                  # logicAnd
-    |   <assoc=right> expression '||' expression                                                  # logicOr
+    |   <assoc=right> expression '&&' expression                                    # logicAnd
+    |   <assoc=right> expression '||' expression                                    # logicOr
     |   ConstNumber                                                                 # constNumber
     |   ConstString                                                                 # constString
     |   NULL                                                                        # null

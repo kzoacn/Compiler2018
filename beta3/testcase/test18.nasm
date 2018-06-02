@@ -763,20 +763,6 @@ L_915:
 	mov r15, 0
 	sete r15B
 	cmp r15, 0
-	je L_918
-	mov rbx,1
-	mov r15,rbx
-	jmp L_919
-	
-L_918:
-	mov rbx,0
-	cmp r10,rbx
-	mov r15, 0
-	sete r15B
-	mov r15,r15
-	
-L_919:
-	cmp r15, 0
 	je L_920
 	mov rbx,1
 	mov r15,rbx
@@ -784,9 +770,23 @@ L_919:
 	
 L_920:
 	mov rbx,0
+	cmp r10,rbx
+	mov r15, 0
+	sete r15B
+	cmp r15, 0
+	je L_918
+	mov rbx,1
+	mov r15,rbx
+	jmp L_919
+	
+L_918:
+	mov rbx,0
 	cmp r9,rbx
 	mov r15, 0
 	sete r15B
+	mov r15,r15
+	
+L_919:
 	mov r15,r15
 	
 L_921:

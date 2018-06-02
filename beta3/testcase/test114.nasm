@@ -745,28 +745,28 @@ L_522:
 	mov r15, 0
 	setg r15B
 	cmp r15, 0
-	jne L_525
-	mov rbx,0
-	mov r15,rbx
-	jmp L_526
-	
-L_525:
-	cmp r10,0
-	mov r15, 0
-	setg r15B
-	mov r15,r15
-	
-L_526:
-	cmp r15, 0
 	jne L_527
 	mov rbx,0
 	mov r15,rbx
 	jmp L_528
 	
 L_527:
+	cmp r10,0
+	mov r15, 0
+	setg r15B
+	cmp r15, 0
+	jne L_525
+	mov rbx,0
+	mov r15,rbx
+	jmp L_526
+	
+L_525:
 	cmp r9,0
 	mov r15, 0
 	setg r15B
+	mov r15,r15
+	
+L_526:
 	mov r15,r15
 	
 L_528:
@@ -788,12 +788,12 @@ L_528:
 	mov r15, 0
 	setne r15B
 	cmp r15, 0
-	jne L_531
+	jne L_533
 	mov rbx,0
 	mov r15,rbx
-	jmp L_532
+	jmp L_534
 	
-L_531:
+L_533:
 	xor rdx, rdx
 	mov rax,  r10
 	mov rbx,  r9
@@ -809,31 +809,31 @@ L_531:
 	cmp r15,r14
 	mov r15, 0
 	setne r15B
-	mov r15,r15
-	
-L_532:
 	cmp r15, 0
-	jne L_533
+	jne L_531
 	mov rbx,0
 	mov r15,rbx
-	jmp L_534
+	jmp L_532
 	
-L_533:
+L_531:
 	xor rdx, rdx
 	mov rax, [rsp+8*2]
 	mov rbx,  r10
 	cdq
 	idiv ebx
-	mov  r14, rdx
+	mov  r15, rdx
 	xor rdx, rdx
 	mov rax,  r9
 	mov rbx, [rsp+8*2]
 	cdq
 	idiv ebx
-	mov  r15, rdx
-	cmp r14,r15
+	mov  r14, rdx
+	cmp r15,r14
 	mov r15, 0
 	setne r15B
+	mov r15,r15
+	
+L_532:
 	mov r15,r15
 	
 L_534:

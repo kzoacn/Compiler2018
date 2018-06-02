@@ -787,32 +787,32 @@ L_1391:
 	mov rbx,0
 	mov r15,rbx
 	cmp r15, 0
-	jne L_1392
-	mov rbx,0
-	mov r15,rbx
-	jmp L_1393
-	
-L_1392:
-	mov rbx,1
-	mov rdx,0
-	cmp rbx,rdx
-	mov r15, 0
-	setne r15B
-	
-L_1393:
-	cmp r15, 0
 	jne L_1394
 	mov rbx,0
 	mov r15,rbx
 	jmp L_1395
 	
 L_1394:
+	mov rbx,1
+	mov rdx,0
+	cmp rbx,rdx
+	mov r15, 0
+	setne r15B
+	cmp r15, 0
+	jne L_1392
+	mov rbx,0
+	mov r15,rbx
+	jmp L_1393
+	
+L_1392:
 	mov rbx,2
 	mov rdx,4
 	cmp rbx,rdx
 	mov r15, 0
 	setne r15B
 	mov r15,r15
+	
+L_1393:
 	
 L_1395:
 	cmp r15, 0

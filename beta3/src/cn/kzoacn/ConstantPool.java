@@ -5267,35 +5267,8 @@ public class ConstantPool {
             "\t\n");
     static boolean checkCode(String line)throws Exception{
         //sorry,I can't pass the evil testcases
-        /*if(line.contains("int[][] s = new int[500005][80];")){
-            FileOutputStream fout=new FileOutputStream(new File("test.nasm"));
-            PrintWriter out=new PrintWriter(fout);
-            out.println(mem);
-            out.close();
-            return true;
-        }*/
-        /*if(line.contains("initialize(random());")){//fvck
-            FileOutputStream fout=new FileOutputStream(new File("test.nasm"));
-            PrintWriter out=new PrintWriter(fout);
-            out.println(fun);
-            out.close();
-            return true;
-        }*/
 
-        if(line.contains("b.cross(d).printPoint();")){
-            FileOutputStream fout=new FileOutputStream(new File("test.nasm"));
-            PrintWriter out=new PrintWriter(fout);
-            out.println(s1Function);
-            out.close();
-            return true;
-        }
-        if(line.contains("println((x.add(y)).tostring());")){
-            FileOutputStream fout=new FileOutputStream(new File("test.nasm"));
-            PrintWriter out=new PrintWriter(fout);
-            out.println(s2Function);
-            out.close();
-            return true;
-        }
+        //now I can pass :)
         return false;
     }
 
