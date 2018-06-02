@@ -1,4 +1,4 @@
-// Generated from /home/kzoacn/Compiler2018/beta3/src/cn/kzoacn/Mxstar.g4 by ANTLR 4.7
+// Generated from /home/kzoacn/tester/Compiler2018/beta3/src/cn/kzoacn/Mxstar.g4 by ANTLR 4.7
 package cn.kzoacn;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 

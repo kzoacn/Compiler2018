@@ -12,7 +12,7 @@ int main() {
 	int d;
 	int e;
 	int f;
-	N=getInt();
+	scanf("%d",&N);
 	for ( a=1; a<=N; a++ )
 	for ( b=1; b<=N; b++ )
 	for ( c=1; c<=N; c++ )	
@@ -29,7 +29,5 @@ int main() {
 			total++;
 		}
 	
-	println(toString(total));
 	return 0;
 }
-

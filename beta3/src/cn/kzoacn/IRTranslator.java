@@ -493,7 +493,7 @@ public class IRTranslator {
         variables.sort((var1,var2)->{
             return var1.register!=var2.register?var1.register-var2.register:variableFirstIndex.get(var1)-variableFirstIndex.get(var2);
         });
-        
+
         variableIndex.clear();
         for(Variable var : variables)
             variableIndex.put(var,variableIndex.size()+1);

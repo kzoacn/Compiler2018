@@ -1,4 +1,4 @@
-// Generated from /home/kzoacn/Compiler2018/beta3/src/cn/kzoacn/Mxstar.g4 by ANTLR 4.7
+// Generated from /home/kzoacn/tester/Compiler2018/beta3/src/cn/kzoacn/Mxstar.g4 by ANTLR 4.7
 package cn.kzoacn;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -3090,7 +3090,7 @@ public class MxstarParser extends Parser {
 						setState(341);
 						match(T__30);
 						setState(342);
-						expression(10);
+						expression(9);
 						}
 						break;
 					case 10:
@@ -3102,7 +3102,7 @@ public class MxstarParser extends Parser {
 						setState(344);
 						match(T__31);
 						setState(345);
-						expression(9);
+						expression(8);
 						}
 						break;
 					case 11:
@@ -3670,8 +3670,8 @@ public class MxstarParser extends Parser {
 		"\u014e\f\16\2\2\u014e\u014f\7\36\2\2\u014f\u0164\5\64\33\17\u0150\u0151"+
 		"\f\r\2\2\u0151\u0152\7\37\2\2\u0152\u0164\5\64\33\16\u0153\u0154\f\f\2"+
 		"\2\u0154\u0155\7 \2\2\u0155\u0164\5\64\33\r\u0156\u0157\f\13\2\2\u0157"+
-		"\u0158\7!\2\2\u0158\u0164\5\64\33\f\u0159\u015a\f\n\2\2\u015a\u015b\7"+
-		"\"\2\2\u015b\u0164\5\64\33\13\u015c\u015f\f\30\2\2\u015d\u015e\7\f\2\2"+
+		"\u0158\7!\2\2\u0158\u0164\5\64\33\13\u0159\u015a\f\n\2\2\u015a\u015b\7"+
+		"\"\2\2\u015b\u0164\5\64\33\n\u015c\u015f\f\30\2\2\u015d\u015e\7\f\2\2"+
 		"\u015e\u0160\5\62\32\2\u015f\u015d\3\2\2\2\u0160\u0161\3\2\2\2\u0161\u015f"+
 		"\3\2\2\2\u0161\u0162\3\2\2\2\u0162\u0164\3\2\2\2\u0163\u013e\3\2\2\2\u0163"+
 		"\u0141\3\2\2\2\u0163\u0144\3\2\2\2\u0163\u0147\3\2\2\2\u0163\u014a\3\2"+
