@@ -1,2 +1,1 @@
-	n = getInt();
-	int k = getInt();
+	int n = getInt();

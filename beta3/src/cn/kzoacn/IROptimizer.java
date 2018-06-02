@@ -1,5 +1,6 @@
 package cn.kzoacn;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class IROptimizer {
@@ -150,8 +151,79 @@ public class IROptimizer {
 
         return colorMap;
     }
+    Date date=new Date();
+    IR deadCode(IR ir){
+        IR tmp=new IR();
+        Quad head=ir.head;
+        HashSet<Variable>use=new HashSet<Variable>();
+        ArrayList<Quad>reverseIR=new ArrayList<Quad>();
+        use.add(new Variable("t63",VariableType.INT));
+        while(head!=null){
+            reverseIR.add(head);
+            if(head.opCode==OpCode.ret){
+                use.add(head.var1);
+            }
+            if(head.opCode==OpCode.call){
+                use.add(head.dest);
+            }
+            if(head.opCode==OpCode.print || head.opCode==OpCode.println){
+                use.add(head.var1);
+            }
+            if(head.opCode==OpCode.jz || head.opCode==OpCode.jnz || head.opCode==OpCode.jne){
+                use.add(head.var1);
+            }
+            head=head.next;
+        }
 
+        Collections.reverse(reverseIR);
+        while(true){
+
+            if((new Date()).getTime()-date.getTime()>24000)
+                return ir;
+            int hashCode=use.hashCode();
+            for(Quad quad:reverseIR){
+                if(quad.opCode==OpCode.address || quad.opCode==OpCode.multiAddress){
+                    if(use.contains(quad.var1)){
+                        use.add(quad.var2);
+                        use.add(quad.dest);
+                    }
+                }
+                if(quad.opCode==OpCode.move){
+                    if(use.contains(quad.var1)){
+                        use.add(quad.dest);
+                    }
+                }
+                if(use.contains(quad.dest)){
+                    if(quad.var1!=null&&!quad.var1.equals(Variable.empty))
+                        use.add(quad.var1);
+                    if(quad.var2!=null&&!quad.var2.equals(Variable.empty))
+                        use.add(quad.var2);
+                }
+            }
+            if(hashCode==use.hashCode())
+                break;
+        }
+
+        head=ir.head;
+        while(head!=null){
+            if(head.dest!=null && !head.dest.equals(Variable.empty) && !use.contains(head.dest)){
+
+            }else{
+                tmp.push(head.clone());
+            }
+            head=head.next;
+        }
+
+        return tmp;
+    }
     IR optimize(IR ir){
+
+        ir=deadCode(ir);
+        ir.print();
+        System.err.println("~~~~~~~~~~~~");
+        ir.print();
+        System.err.println("~~~~~~~~~~~~");
+
         ArrayList<ArrayList<Integer> >edgeList=new ArrayList<ArrayList<Integer> >();
         IR tmp=new IR();
         Quad cur=ir.head;
@@ -357,7 +429,7 @@ public class IROptimizer {
             cur=cur.next;
         }
 
-        Date date=new Date();
+
         while(true){
             boolean flag=true;
 

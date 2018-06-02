@@ -654,7 +654,7 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 1472
+	sub    rsp, 1464
 	mov     rax, 936870912
         cdqe
         mov     rdi, rax
@@ -674,7 +674,7 @@ main:
 			mov r15,0
         mov     edx, dword 936870912
         movsxd  rdx, edx
-        sub     rdx, 3456
+        sub     rdx, 3448
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
@@ -787,9 +787,8 @@ L_157:
 L_121:
 	mov rbx,t229
 	mov rdi,rbx
-	mov rdx,rdi
-	mov qword [rsp+8*25],rdx
-	mov rdi,[rsp+8*25] 
+	mov r15,rdi
+	mov rdi, r15 
 	add rdi, 1 
 	push r11
 	push r10
@@ -802,13 +801,12 @@ L_121:
 	pop r11
 	mov rbx,3654898
 	mov rdi,rbx
-	mov rdx,rdi
-	mov rax,rdx
-	mov rbx,0
-	mov r15,rbx
+	mov r15,rdi
+	mov rdx,r15
+	mov rax,0
+	mov r15,rax
 	mov r15,r15
-	mov qword [rsp+8*26],rdx
-	mov qword [gbl+8*27],rax
+	mov qword [gbl+8*27],rdx
 	xor rdx, rdx
 	mov rax, [gbl+8*27]
 	mov rbx,  r13
@@ -850,10 +848,9 @@ L_159:
 L_160:
 	mov rbx,  [gbl+8*27]
 	mov r15,rbx
-	mov rdx,r15
-	mov qword [rsp+8*38],rdx
+	mov r15,r15
 	xor rdx, rdx
-	mov rax, [rsp+8*38]
+	mov rax,  r15
 	mov rbx, 10
 	cdq
 	idiv ebx
@@ -862,10 +859,9 @@ L_160:
 	add r15,rbx
 	mov rdx,r15
 	mov rdi,rdx
-	mov rax,rdi
+	mov r15,rdi
 	mov qword [gbl+8*40],rdx
-	mov qword [rsp+8*41],rax
-	mov     rdi, [rsp+8*41]
+	mov     rdi,  r15
 	push r11
 	push r10
 	push r9
@@ -875,12 +871,10 @@ L_160:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword[rsp+8*42], rax
-	mov rbx,  [rsp+8*42]
-	mov rdi,rbx
-	mov rdx,rdi
-	mov qword [rsp+8*43],rdx
-	mov rdi,[rsp+8*43] 
+	mov     qword r15, rax
+	mov rdi,r15
+	mov r15,rdi
+	mov rdi, r15 
 	add rdi, 1 
 	push r11
 	push r10
@@ -978,11 +972,8 @@ L_125:
 	cmp rdx,r11
 	mov rdx, 0
 	setg dl
-	mov qword [rsp+8*51],rbx
-	mov rbx,  [rsp+8*53]
-	add rbx,rbx
 	cmp rdx, 0
-	mov qword [rsp+8*53],rbx
+	mov qword [rsp+8*51],rbx
 	mov qword [rsp+8*52],rdx
 	je L_126
 	xor rdx, rdx
@@ -1027,38 +1018,38 @@ L_168:
 	mov rbx,  [gbl+8*27]
 	mov r15,rbx
 	mov rdx,r15
-	mov qword [rsp+8*54],rdx
+	mov qword [rsp+8*53],rdx
 	xor rdx, rdx
-	mov rax, [rsp+8*54]
+	mov rax, [rsp+8*53]
 	mov rbx, 10
 	cdq
 	idiv ebx
-	mov [rsp+8*55], rdx
-	mov rbx,  [rsp+8*55]
+	mov [rsp+8*54], rdx
+	mov rbx,  [rsp+8*54]
 	mov rdx,1
 	add rbx,rdx
 	mov rax,r10
 	mov rdx,  [rsp+8*2]
-	mov qword [rsp+8*55],rbx
+	mov qword [rsp+8*54],rbx
 	lea rbx,[rax+rdx*8+8H]
-	mov qword [rsp+8*56],rax
-	mov rax,  [rsp+8*55]
+	mov qword [rsp+8*55],rax
+	mov rax,  [rsp+8*54]
 	mov [rbx],rax
-	mov qword [rsp+8*57],rbx
+	mov qword [rsp+8*56],rbx
 	jmp L_125
 	
 L_126:
 	mov rbx,r10
 	mov rdx,  [rsp+8*2]
 	lea rax,[rbx+rdx*8+8H]
-	mov qword [rsp+8*58],rbx
+	mov qword [rsp+8*57],rbx
 	mov rbx, [rax]
-	mov qword [rsp+8*59],rax
+	mov qword [rsp+8*58],rax
 	mov rax,  [rsp+8*3]
 	mov rdx,rax
 	add rdx,rbx
 	mov rax,rdx
-	mov qword [rsp+8*60],rbx
+	mov qword [rsp+8*59],rbx
 	mov rbx,  [rsp+8*2]
 	mov rdx,1
 	add rbx,rdx
@@ -1212,7 +1203,7 @@ L_226:
 	mov rdx,0
 	mov r15,rdx
 	mov r15,r15
-	mov qword [rsp+8*97],rbx
+	mov qword [rsp+8*96],rbx
 	jmp L_227
 	
 L_228:
@@ -1341,7 +1332,7 @@ L_247:
 	mov r15, 0
 	setg r15B
 	cmp r15, 0
-	mov qword [rsp+8*131],rbx
+	mov qword [rsp+8*130],rbx
 	je L_249
 	mov r15,r13
 	lea r15,[r15+r11*8+8H]
@@ -1350,19 +1341,19 @@ L_247:
 	mov rbx,r13
 	lea rdx,[rbx+r12*8+8H]
 	mov rax, [rdx]
-	mov qword [rsp+8*140],rbx
+	mov qword [rsp+8*139],rbx
 	mov rbx,r13
-	mov qword [rsp+8*141],rdx
+	mov qword [rsp+8*140],rdx
 	lea rdx,[rbx+r11*8+8H]
 	mov [rdx],rax
-	mov qword [rsp+8*143],rbx
+	mov qword [rsp+8*142],rbx
 	mov rbx,r13
-	mov qword [rsp+8*144],rdx
+	mov qword [rsp+8*143],rdx
 	lea rdx,[rbx+r12*8+8H]
 	mov [rdx],r15
-	mov qword [rsp+8*145],rbx
-	mov qword [rsp+8*146],rdx
-	mov qword [rsp+8*142],rax
+	mov qword [rsp+8*144],rbx
+	mov qword [rsp+8*145],rdx
+	mov qword [rsp+8*141],rax
 	
 L_249:
 	mov rbx,1
@@ -1561,7 +1552,7 @@ L_259:
 	mov rdx,0
 	mov r15,rdx
 	mov r15,r15
-	mov qword [rsp+8*97],rbx
+	mov qword [rsp+8*96],rbx
 	jmp L_260
 	
 L_261:
@@ -1746,7 +1737,7 @@ L_128:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 1472
+	sub    rsp, 1464
 	mov rdx,48271
 	mov rbx,rdx
 	mov qword [gbl+8*10],rbx
@@ -1756,13 +1747,13 @@ global_init:
 	mov rbx,rdx
 	mov qword [gbl+8*27],rbx
 	mov qword [gbl+8*9],rax
-	mov rbx,  [rsp+8*176]
+	mov rbx,  [rsp+8*175]
 	mov rax,rbx
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   3456
+gbl:         resb   3448
 buff.1788:
         resb    256
 arg:

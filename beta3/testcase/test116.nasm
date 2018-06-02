@@ -654,7 +654,7 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 320
+	sub    rsp, 312
 	mov     rax, 936870912
         cdqe
         mov     rdi, rax
@@ -674,137 +674,109 @@ main:
 			mov r15,0
         mov     edx, dword 936870912
         movsxd  rdx, edx
-        sub     rdx, 2304
+        sub     rdx, 2296
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
 	push r15
-	push r14
 	call global_init
-	pop r14
 	pop r15
-	mov r14 , rax
+	mov r15 , rax
 	mov rbx,0
-	mov r13,rbx
+	mov r14,rbx
 	mov rdx,1000000
-	mov r14,rdx
+	mov r15,rdx
 	
 L_639:
-	cmp r13,r14
-	mov r12, 0
-	setl r12B
-	cmp r12, 0
+	cmp r14,r15
+	mov r13, 0
+	setl r13B
+	cmp r13, 0
 	je L_640
 	mov rbx,1
-	mov r12,r13
-	add r12,rbx
-	mov r10,r12
+	mov r13,r14
+	add r13,rbx
+	mov r11,r13
 	mov rdx,1
+	mov r13,r14
+	add r13,rdx
 	mov r12,r13
-	add r12,rdx
-	mov r11,r12
 	mov rax,1
-	mov r12,r13
-	add r12,rax
-	mov r12,r12
+	mov r13,r14
+	add r13,rax
+	mov r13,r13
 	
 L_642:
 	mov rbx,1
-	mov r9,rbx
+	mov r10,rbx
 	mov rcx,29
-	shl r9,cl
-	cmp r12,r9
-	mov r9, 0
-	setl r9B
-	cmp r9, 0
+	shl r10,cl
+	cmp r13,r10
+	mov r10, 0
+	setl r10B
+	cmp r10, 0
 	jne L_644
 	mov rbx,0
-	mov r9,rbx
+	mov r10,rbx
 	jmp L_645
 	
 L_644:
 	mov rbx,1
-	mov r9,rbx
+	mov r10,rbx
 	mov rcx,29
-	shl r9,cl
-	mov r9,r9
-	neg r9
-	cmp r12,r9
-	mov r9, 0
-	setg r9B
-	mov r9,r9
+	shl r10,cl
+	mov r10,r10
+	neg r10
+	cmp r13,r10
+	mov r10, 0
+	setg r10B
+	mov r10,r10
 	
 L_645:
-	add r15,r15
-	cmp r9, 0
+	cmp r10, 0
 	je L_643
 	mov rbx,0
-	mov r9,rbx
+	mov r10,rbx
 	mov rdx,3
-	imul r10,rdx
-	add r9,r10
-	add r9,r11
-	sub r9,r12
-	mov r10,r9
+	imul r11,rdx
+	add r10,r11
+	add r10,r12
+	sub r10,r13
+	mov r11,r10
 	mov rax,0
-	mov r8,rax
+	mov r9,rax
 	mov rbx,3
-	mov r9,r10
-	imul r9,rbx
-	add r8,r9
-	add r8,r11
-	sub r8,r12
-	mov r11,r8
-	mov rbx,0
-	mov r9,rbx
-	mov rbx,3
-	mov r8,r10
-	imul r8,rbx
-	add r9,r8
-	add r9,r11
-	sub r9,r12
+	mov r10,r11
+	imul r10,rbx
+	add r9,r10
+	add r9,r12
+	sub r9,r13
 	mov r12,r9
+	mov rbx,0
+	mov r10,rbx
+	mov rbx,3
+	mov r9,r11
+	imul r9,rbx
+	add r10,r9
+	add r10,r12
+	sub r10,r13
+	mov r13,r10
 	jmp L_642
 	
 L_643:
 	xor rdx, rdx
-	mov rax,  r13
+	mov rax,  r14
 	mov rbx, 1000
 	cdq
 	idiv ebx
-	mov  r9, rdx
+	mov  r10, rdx
 	mov rbx,0
-	cmp r9,rbx
-	mov r9, 0
-	sete r9B
-	cmp r9, 0
+	cmp r10,rbx
+	mov r10, 0
+	sete r10B
+	cmp r10, 0
 	je L_647
-	mov rdi,r10
-	mov r10,rdi
-	mov     rdi,  r10
-	push r11
-	push r10
-	push r9
-	push r8
-	call    toString
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	mov     qword r10, rax
-	mov     rsi, t407
-	mov     rdi,  r10
-	push r11
-	push r10
-	push r9
-	push r8
-	call    concat
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	mov  r10, rax
 	mov rdi,r11
 	mov r11,rdi
 	mov     rdi,  r11
@@ -818,8 +790,8 @@ L_643:
 	pop r10
 	pop r11
 	mov     qword r11, rax
-	mov     rsi,  r11
-	mov     rdi,  r10
+	mov     rsi, t407
+	mov     rdi,  r11
 	push r11
 	push r10
 	push r9
@@ -829,19 +801,7 @@ L_643:
 	pop r9
 	pop r10
 	pop r11
-	mov  r10, rax
-	mov     rsi, t412
-	mov     rdi,  r10
-	push r11
-	push r10
-	push r9
-	push r8
-	call    concat
-	pop r8
-	pop r9
-	pop r10
-	pop r11
-	mov  r10, rax
+	mov  r11, rax
 	mov rdi,r12
 	mov r12,rdi
 	mov     rdi,  r12
@@ -856,7 +816,7 @@ L_643:
 	pop r11
 	mov     qword r12, rax
 	mov     rsi,  r12
-	mov     rdi,  r10
+	mov     rdi,  r11
 	push r11
 	push r10
 	push r9
@@ -866,10 +826,47 @@ L_643:
 	pop r9
 	pop r10
 	pop r11
-	mov  r10, rax
-	mov rdi,r10
-	mov r12,rdi
-	mov rdi, r12 
+	mov  r11, rax
+	mov     rsi, t412
+	mov     rdi,  r11
+	push r11
+	push r10
+	push r9
+	push r8
+	call    concat
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r11, rax
+	mov rdi,r13
+	mov r13,rdi
+	mov     rdi,  r13
+	push r11
+	push r10
+	push r9
+	push r8
+	call    toString
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov     qword r13, rax
+	mov     rsi,  r13
+	mov     rdi,  r11
+	push r11
+	push r10
+	push r9
+	push r8
+	call    concat
+	pop r8
+	pop r9
+	pop r10
+	pop r11
+	mov  r11, rax
+	mov rdi,r11
+	mov r13,rdi
+	mov rdi, r13 
 	add rdi, 1 
 	push r11
 	push r10
@@ -883,7 +880,7 @@ L_643:
 	
 L_647:
 	mov rbx,1
-	add r13,rbx
+	add r14,rbx
 	jmp L_639
 	
 L_640:
@@ -896,14 +893,14 @@ L_640:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 320
-	mov rbx,  [rsp+8*32]
+	sub    rsp, 312
+	mov rbx,  [rsp+8*31]
 	mov rax,rbx
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2304
+gbl:         resb   2296
 buff.1788:
         resb    256
 arg:

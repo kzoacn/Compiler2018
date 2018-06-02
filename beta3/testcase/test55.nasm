@@ -654,7 +654,7 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 192
+	sub    rsp, 184
 	mov     rax, 936870912
         cdqe
         mov     rdi, rax
@@ -674,17 +674,15 @@ main:
 			mov r15,0
         mov     edx, dword 936870912
         movsxd  rdx, edx
-        sub     rdx, 2176
+        sub     rdx, 2168
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
         mov     eax, 0
 	push r15
-	push r14
 	call global_init
-	pop r14
 	pop r15
-	mov r14 , rax
+	mov r15 , rax
 	mov     rdi, 10
 	push r11
 	push r10
@@ -695,9 +693,8 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword  r14, rax
-	add r15,r15
-	mov r15,r14
+	mov     qword  r15, rax
+	mov r15,r15
 	mov     rdi, 6
 	push r11
 	push r10
@@ -756,14 +753,14 @@ main:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 192
-	mov rbx,  [rsp+8*16]
+	sub    rsp, 184
+	mov rbx,  [rsp+8*15]
 	mov rax,rbx
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2176
+gbl:         resb   2168
 buff.1788:
         resb    256
 arg:

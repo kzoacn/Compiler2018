@@ -654,7 +654,7 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 304
+	sub    rsp, 216
 	mov     rax, 936870912
         cdqe
         mov     rdi, rax
@@ -674,7 +674,7 @@ main:
 			mov r15,0
         mov     edx, dword 936870912
         movsxd  rdx, edx
-        sub     rdx, 2288
+        sub     rdx, 2200
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
@@ -683,28 +683,6 @@ main:
 	call global_init
 	pop r15
 	mov r15 , rax
-	mov rbx,0
-	mov r15,rbx
-	mov rdx,40
-	mov r15,rdx
-	mov rax,100
-	mov r15,rax
-	mov rbx,200
-	mov r15,rbx
-	mov rbx,125
-	mov r15,rbx
-	mov rbx,250
-	mov r15,rbx
-	mov rbx,30
-	mov r15,rbx
-	mov rbx,0
-	mov r15,rbx
-	mov rbx,0
-	mov r15,rbx
-	mov rbx,0
-	mov r15,rbx
-	mov rbx,0
-	mov r15,rbx
 	mov rbx,32
 	mov r15,rbx
 	
@@ -737,7 +715,7 @@ L_471:
 L_472:
 	cmp r13, 0
 	je L_473
-	mov rbx,  [gbl+8*19]
+	mov rbx,  [gbl+8*8]
 	mov r13,rbx
 	mov rdx,32
 	mov r12,r14
@@ -799,17 +777,17 @@ L_464:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 304
+	sub    rsp, 216
 	mov rdx,t64
 	mov rbx,rdx
-	mov qword [gbl+8*19],rbx
-	mov rbx,  [rsp+8*30]
+	mov qword [gbl+8*8],rbx
+	mov rbx,  [rsp+8*19]
 	mov rax,rbx
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   2288
+gbl:         resb   2200
 buff.1788:
         resb    256
 arg:

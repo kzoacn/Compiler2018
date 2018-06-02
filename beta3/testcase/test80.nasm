@@ -654,7 +654,7 @@ strne:
 main:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 1072
+	sub    rsp, 1048
 	mov     rax, 936870912
         cdqe
         mov     rdi, rax
@@ -674,7 +674,7 @@ main:
 			mov r15,0
         mov     edx, dword 936870912
         movsxd  rdx, edx
-        sub     rdx, 3056
+        sub     rdx, 3032
         add     rax, rdx
         mov     qword [trsp], rsp
         mov     rsp, rax
@@ -730,25 +730,23 @@ L_1943:
 	cdq
 	idiv ebx
 	mov  r15, rax
-	mov r11,r15
+	mov r10,r15
 	mov rbx,0
-	mov r15,rbx
-	mov rdx,0
-	mov r13,rdx
+	mov r13,rbx
 	
 L_1997:
 	mov rbx,0
-	cmp r11,rbx
+	cmp r10,rbx
 	mov r15, 0
 	setge r15B
 	cmp r15, 0
 	je L_1998
 	mov rbx,2
-	mov r15,r11
+	mov r15,r10
 	shl r15,1
 	mov r13,r15
 	mov rdx,2
-	mov r15,r11
+	mov r15,r10
 	shl r15,1
 	mov rax,1
 	add r15,rax
@@ -763,7 +761,7 @@ L_1997:
 	
 L_1999:
 	mov rbx,2
-	mov r15,r11
+	mov r15,r10
 	shl r15,1
 	mov rdx,1
 	add r15,rdx
@@ -771,7 +769,7 @@ L_1999:
 	lea r15,[r14+r15*8+8H]
 	mov r12, [r15]
 	mov rax,2
-	mov r15,r11
+	mov r15,r10
 	shl r15,1
 	mov r14,r9
 	lea r15,[r14+r15*8+8H]
@@ -785,7 +783,7 @@ L_2000:
 	cmp r15, 0
 	je L_2001
 	mov rbx,2
-	mov r15,r11
+	mov r15,r10
 	shl r15,1
 	mov rdx,1
 	add r15,rdx
@@ -793,7 +791,7 @@ L_2000:
 	
 L_2001:
 	mov r15,r9
-	lea r15,[r15+r11*8+8H]
+	lea r15,[r15+r10*8+8H]
 	mov r14, [r15]
 	mov r15,r9
 	lea r15,[r15+r13*8+8H]
@@ -804,21 +802,21 @@ L_2001:
 	cmp r15, 0
 	je L_2002
 	mov rsi,r13
-	mov rdi,r11
+	mov rdi,r10
 	mov r12,rdi
-	mov r10,rsi
+	mov r11,rsi
 	mov r15,r9
 	lea r15,[r15+r12*8+8H]
 	mov r15, [r15]
 	mov r13,r15
 	mov r15,r9
-	lea r15,[r15+r10*8+8H]
+	lea r15,[r15+r11*8+8H]
 	mov r14, [r15]
 	mov r15,r9
 	lea r15,[r15+r12*8+8H]
 	mov [r15],r14
 	mov r15,r9
-	lea r15,[r15+r10*8+8H]
+	lea r15,[r15+r11*8+8H]
 	mov [r15],r13
 	mov rbx,0
 	mov r15,rbx
@@ -826,9 +824,9 @@ L_2001:
 	
 L_2002:
 	mov rbx,1
-	mov r15,r11
+	mov r15,r10
 	sub r15,rbx
-	mov r11,r15
+	mov r10,r15
 	jmp L_1997
 	
 L_1998:
@@ -879,22 +877,17 @@ L_2007:
 	mov r11,rdx
 	mov rdx,0
 	mov r10,rdx
-	mov rdx,0
-	mov r15,rdx
-	mov qword [rsp+8*73],rbx
+	mov qword [rsp+8*72],rbx
 	
 L_2009:
 	mov rbx,2
 	mov r15,r11
 	shl r15,1
-	mov rdx,  [rsp+8*73]
+	mov rdx,  [rsp+8*72]
 	cmp r15,rdx
 	mov r15, 0
 	setl r15B
-	mov rax,  [rsp+8*78]
-	add rax,rax
 	cmp r15, 0
-	mov qword [rsp+8*78],rax
 	je L_2011
 	mov rbx,2
 	mov r15,r11
@@ -905,7 +898,7 @@ L_2009:
 	shl r15,1
 	mov rax,1
 	add r15,rax
-	mov rbx,  [rsp+8*73]
+	mov rbx,  [rsp+8*72]
 	cmp r15,rbx
 	mov r15, 0
 	setl r15B
@@ -1082,14 +1075,14 @@ L_1946:
 global_init:
 	push   rbp
 	mov    rbp, rsp
-	sub    rsp, 1072
-	mov rbx,  [rsp+8*126]
+	sub    rsp, 1048
+	mov rbx,  [rsp+8*123]
 	mov rax,rbx
 	leave
 	ret
 	
 	 section   .bss
-gbl:         resb   3056
+gbl:         resb   3032
 buff.1788:
         resb    256
 arg:
