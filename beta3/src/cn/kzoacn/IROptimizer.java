@@ -218,11 +218,11 @@ public class IROptimizer {
     }
     IR optimize(IR ir){
 
-        ir=deadCode(ir);
-        ir.print();
-        System.err.println("~~~~~~~~~~~~");
-        ir.print();
-        System.err.println("~~~~~~~~~~~~");
+        //ir=deadCode(ir);
+        //ir.print();
+        //System.err.println("~~~~~~~~~~~~");
+        //ir.print();
+        //System.err.println("~~~~~~~~~~~~");
 
         ArrayList<ArrayList<Integer> >edgeList=new ArrayList<ArrayList<Integer> >();
         IR tmp=new IR();
