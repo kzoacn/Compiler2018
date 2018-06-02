@@ -683,19 +683,19 @@ main:
 	call global_init
 	pop r15
 	mov r15 , rax
-	mov rbx,  [gbl+8*2]
+	mov rbx,  [gbl+8*1]
 	cmp rbx,0
 	mov r15, 0
 	setg r15B
 	cmp r15, 0
 	je L_1262
-	mov rbx,  [gbl+8*2]
+	mov rbx,  [gbl+8*1]
 	mov r15,rbx
 	mov rdx,1
 	sub rbx,rdx
 	mov rdi,r15
 	mov r15,rdi
-	mov qword [gbl+8*2],rbx
+	mov qword [gbl+8*1],rbx
 	mov     rdi,  r15
 	push r11
 	push r10
@@ -734,8 +734,8 @@ global_init:
 	sub    rsp, 136
 	mov rdx,4
 	mov rbx,rdx
-	mov qword [gbl+8*2],rbx
-	mov rbx,  [rsp+8*9]
+	mov qword [gbl+8*1],rbx
+	mov rbx,  [rsp+8*3]
 	mov rax,rbx
 	leave
 	ret

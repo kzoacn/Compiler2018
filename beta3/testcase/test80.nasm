@@ -877,13 +877,13 @@ L_2007:
 	mov r11,rdx
 	mov rdx,0
 	mov r10,rdx
-	mov qword [rsp+8*72],rbx
+	mov qword [rsp+8*4],rbx
 	
 L_2009:
 	mov rbx,2
 	mov r15,r11
 	shl r15,1
-	mov rdx,  [rsp+8*72]
+	mov rdx,  [rsp+8*4]
 	cmp r15,rdx
 	mov r15, 0
 	setl r15B
@@ -898,7 +898,7 @@ L_2009:
 	shl r15,1
 	mov rax,1
 	add r15,rax
-	mov rbx,  [rsp+8*72]
+	mov rbx,  [rsp+8*4]
 	cmp r15,rbx
 	mov r15, 0
 	setl r15B
@@ -1076,7 +1076,7 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 1048
-	mov rbx,  [rsp+8*123]
+	mov rbx,  [rsp+8*5]
 	mov rax,rbx
 	leave
 	ret

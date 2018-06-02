@@ -668,25 +668,25 @@ f:
 	ret
 	
 L_1270:
-	mov rbx,  [gbl+8*4]
+	mov rbx,  [gbl+8*2]
 	mov r14,rbx
 	mov rdx,1
 	add rbx,rdx
 	mov rax,1
 	sub r15,rax
 	mov rdi,r15
-	mov qword [gbl+8*4],rbx
+	mov qword [gbl+8*2],rbx
 	push r15
 	call f
 	pop r15
 	mov r15 , rax
-	mov rbx,  [gbl+8*4]
+	mov rbx,  [gbl+8*2]
 	mov r15,rbx
 	mov rdx,1
 	add rbx,rdx
 	mov rax,0
 	mov rax,rax
-	mov qword [gbl+8*4],rbx
+	mov qword [gbl+8*2],rbx
 	leave
 	ret
 	
@@ -728,7 +728,7 @@ main:
 	call f
 	pop r15
 	mov r15 , rax
-	mov rbx,  [gbl+8*4]
+	mov rbx,  [gbl+8*2]
 	mov rdi,rbx
 	mov r15,rdi
 	mov     rdi,  r15
@@ -767,8 +767,8 @@ global_init:
 	sub    rsp, 168
 	mov rdx,0
 	mov rbx,rdx
-	mov qword [gbl+8*4],rbx
-	mov rbx,  [rsp+8*13]
+	mov qword [gbl+8*2],rbx
+	mov rbx,  [rsp+8*3]
 	mov rax,rbx
 	leave
 	ret

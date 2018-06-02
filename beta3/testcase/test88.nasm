@@ -683,11 +683,11 @@ main:
 	call global_init
 	pop r15
 	mov r15 , rax
-	mov rbx,  [gbl+8*2]
-	mov rdx,  [gbl+8*3]
+	mov rbx,  [gbl+8*1]
+	mov rdx,  [gbl+8*2]
 	mov r15,rbx
 	add r15,rdx
-	mov rax,  [gbl+8*5]
+	mov rax,  [gbl+8*3]
 	mov r14,rax
 	sub r14,rbx
 	add r14,rdx
@@ -695,7 +695,7 @@ main:
 	mov rax,r15
 	mov rdi,rbx
 	mov r15,rdi
-	mov qword [gbl+8*5],rax
+	mov qword [gbl+8*3],rax
 	mov     rdi,  r15
 	push r11
 	push r10
@@ -719,7 +719,7 @@ main:
 	pop r10
 	pop r11
 	mov  r15, rax
-	mov rbx,  [gbl+8*3]
+	mov rbx,  [gbl+8*2]
 	mov rdi,rbx
 	mov r14,rdi
 	mov     rdi,  r14
@@ -757,7 +757,7 @@ main:
 	pop r10
 	pop r11
 	mov  r15, rax
-	mov rbx,  [gbl+8*5]
+	mov rbx,  [gbl+8*3]
 	mov rdi,rbx
 	mov r14,rdi
 	mov     rdi,  r14
@@ -808,14 +808,14 @@ global_init:
 	sub    rsp, 192
 	mov rdx,1
 	mov rbx,rdx
-	mov qword [gbl+8*2],rbx
+	mov qword [gbl+8*1],rbx
 	mov rbx,1
 	mov rax,rbx
 	mov rdx,1
 	mov rbx,rdx
-	mov qword [gbl+8*5],rbx
-	mov qword [gbl+8*3],rax
-	mov rbx,  [rsp+8*16]
+	mov qword [gbl+8*3],rbx
+	mov qword [gbl+8*2],rax
+	mov rbx,  [rsp+8*5]
 	mov rax,rbx
 	leave
 	ret

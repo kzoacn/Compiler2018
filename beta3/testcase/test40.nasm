@@ -683,7 +683,7 @@ main:
 	call global_init
 	pop r15
 	mov r15 , rax
-	mov rbx,  [gbl+8*2]
+	mov rbx,  [gbl+8*1]
 	mov rdx,1
 	mov r15,rbx
 	add r15,rdx
@@ -703,13 +703,13 @@ main:
 	mov r14,rbx
 	
 L_1282:
-	mov rbx,  [gbl+8*2]
+	mov rbx,  [gbl+8*1]
 	cmp r14,rbx
 	mov r13, 0
 	setle r13B
 	cmp r13, 0
 	je L_1283
-	mov rbx,  [gbl+8*8]
+	mov rbx,  [gbl+8*2]
 	mov rdx,7
 	mov r13,rbx
 	imul r13,rdx
@@ -733,11 +733,11 @@ L_1282:
 	mov r13,r14
 	mov rax,1
 	add r14,rax
-	mov qword [gbl+8*8],rbx
+	mov qword [gbl+8*2],rbx
 	jmp L_1282
 	
 L_1283:
-	mov rbx,  [gbl+8*2]
+	mov rbx,  [gbl+8*1]
 	mov rsi,rbx
 	mov rdx,1
 	mov rdi,rdx
@@ -796,7 +796,7 @@ dp:
 	ret
 	
 L_1274:
-	mov rbx,  [gbl+8*25]
+	mov rbx,  [gbl+8*5]
 	mov r12,rbx
 	lea r12,[r12+r13*8+8H]
 	mov r12, [r12]
@@ -808,7 +808,7 @@ L_1274:
 	setne r12B
 	cmp r12, 0
 	je L_1276
-	mov rbx,  [gbl+8*25]
+	mov rbx,  [gbl+8*5]
 	mov r15,rbx
 	lea r15,[r15+r13*8+8H]
 	mov r15, [r15]
@@ -904,7 +904,7 @@ L_1294:
 	jmp L_1279
 	
 L_1280:
-	mov rbx,  [gbl+8*25]
+	mov rbx,  [gbl+8*5]
 	mov r15,rbx
 	lea r15,[r15+r13*8+8H]
 	mov r15, [r15]
@@ -920,7 +920,7 @@ global_init:
 	sub    rsp, 496
 	mov rdx,50
 	mov rbx,rdx
-	mov qword [gbl+8*2],rbx
+	mov qword [gbl+8*1],rbx
 	mov     rdi, 2
 	push r11
 	push r10
@@ -931,8 +931,8 @@ global_init:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword [gbl+8*52], rax
-	mov rbx,  [gbl+8*52]
+	mov     qword [gbl+8*6], rax
+	mov rbx,  [gbl+8*6]
 	mov rdx,0
 	lea rax,[rbx+rdx*8+8H]
 	mov rdx,51
@@ -941,17 +941,17 @@ global_init:
 	lea rax,[rbx+rdx*8+8H]
 	mov rdx,51
 	mov [rax],rdx
-	mov qword [gbl+8*53],rax
-	mov     rdi, [gbl+8*52]
+	mov qword [gbl+8*7],rax
+	mov     rdi, [gbl+8*6]
 	call    multiArray
-	mov     qword [gbl+8*52], rax
-	mov rdx,  [gbl+8*52]
+	mov     qword [gbl+8*6], rax
+	mov rdx,  [gbl+8*6]
 	mov rbx,rdx
-	mov qword [gbl+8*25],rbx
+	mov qword [gbl+8*5],rbx
 	mov rbx,13
 	mov rax,rbx
-	mov qword [gbl+8*8],rax
-	mov rbx,  [rsp+8*54]
+	mov qword [gbl+8*2],rax
+	mov rbx,  [rsp+8*8]
 	mov rax,rbx
 	leave
 	ret

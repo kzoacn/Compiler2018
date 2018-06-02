@@ -218,7 +218,7 @@ public class IROptimizer {
     }
     IR optimize(IR ir){
 
-        //ir=deadCode(ir);
+        ir=deadCode(ir);
         //ir.print();
         //System.err.println("~~~~~~~~~~~~");
         //ir.print();

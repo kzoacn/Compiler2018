@@ -707,7 +707,7 @@ main:
 	mov r8,r15
 	mov rdx,0
 	mov rbx,rdx
-	mov qword [rsp+8*9],rbx
+	mov qword [rsp+8*1],rbx
 	
 L_1402:
 	mov r15,r11
@@ -746,7 +746,7 @@ L_1405:
 	mov r15, 0
 	sete r15B
 	cmp r15, 0
-	mov qword [rsp+8*9],rax
+	mov qword [rsp+8*1],rax
 	je L_1409
 	jmp L_1406
 	
@@ -760,24 +760,24 @@ L_1410:
 	imul r15,r12
 	add r15,r13
 	mov r13,r15
-	mov rbx,  [rsp+8*9]
+	mov rbx,  [rsp+8*1]
 	mov rdx,1
 	sub rbx,rdx
-	mov qword [rsp+8*9],rbx
+	mov qword [rsp+8*1],rbx
 	xor rdx, rdx
 	mov rax,  r13
-	mov rbx, [rsp+8*9]
+	mov rbx, [rsp+8*1]
 	cdq
 	idiv ebx
 	mov  r14, rdx
 	mov r15,r8
 	lea r15,[r15+r11*8+8H]
 	mov [r15],r14
-	mov rbx,  [rsp+8*9]
+	mov rbx,  [rsp+8*1]
 	mov r15,rbx
 	mov rdx,1
 	sub rbx,rdx
-	mov qword [rsp+8*9],rbx
+	mov qword [rsp+8*1],rbx
 	xor rdx, rdx
 	mov rax,  r13
 	mov rbx,  r15
@@ -875,7 +875,7 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 360
-	mov rbx,  [rsp+8*37]
+	mov rbx,  [rsp+8*3]
 	mov rax,rbx
 	leave
 	ret

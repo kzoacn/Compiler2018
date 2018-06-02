@@ -80,6 +80,7 @@ public class IRTranslator {
 
     HashMap<Variable,Integer> variableIndex = new HashMap<Variable,Integer>();
     HashMap<Variable,Integer> variableLastIndex = new HashMap<Variable,Integer>();
+    HashMap<Variable,Integer> variableFirstIndex = new HashMap<Variable,Integer>();
 
 
     int currentLine=0;
@@ -87,6 +88,8 @@ public class IRTranslator {
         if(variable==null || variable.equals(Variable.empty))
             return ;
         variableLastIndex.put(variable,currentLine);
+        if(!variableFirstIndex.containsKey(variable))
+            variableFirstIndex.put(variable,currentLine);
         if(!variable.type.name.contains("const") && !variableIndex.containsKey(variable)){
             variableIndex.put(variable,variableIndex.size()+1);
         }
@@ -485,6 +488,16 @@ public class IRTranslator {
             putVariable(cur.dest);
         }
 
+        ArrayList<Variable>variables=new ArrayList<Variable>(variableIndex.keySet());
+
+        variables.sort((var1,var2)->{
+            return var1.register!=var2.register?var1.register-var2.register:variableFirstIndex.get(var1)-variableFirstIndex.get(var2);
+        });
+        
+        variableIndex.clear();
+        for(Variable var : variables)
+            variableIndex.put(var,variableIndex.size()+1);
+
         bss.append("gbl:         resb   "+Integer.toString(variableIndex.size()*8+2048)+"\n");
         bss.append("buff.1788:\n" +
                 "        resb    256\n");
@@ -657,12 +670,50 @@ public class IRTranslator {
                     break;
                 case mod:
                     kickAll();
-                    text.append(new StringBuffer("xor rdx, rdx\n\t"));
-                    text.append(new StringBuffer("mov rax, "+varName(var1)+"\n\t"));
-                    text.append(new StringBuffer("mov rbx, "+varName(var2)+"\n\t"));
-                    text.append(new StringBuffer("cdq\n\t"));
-                    text.append(new StringBuffer("idiv ebx\n\t"));
-                    text.append(new StringBuffer("mov "+varName(dest)+", rdx\n\t"));
+                    //It's worth 1.3 pt
+                    if(false && var2.type.equals(VariableType.CONST_INT)&&(var2.constValue==199 || var2.constValue==3000000)){
+/*
+                        text.append(new StringBuffer("mov rcx, " + varName(var1) + "\n\t"));
+
+                        if(var2.constValue==199) {
+                            text.append(new StringBuffer("        mov     rdx, qword 5254E78ECB419BA9H\n" +
+                                    "        mov     rax, rcx\n" +
+                                    "        imul    rdx\n" +
+                                    "        sar     rdx, 6\n" +
+                                    "        mov     rax, rcx\n" +
+                                    "        sar     rax, 63\n" +
+                                    "        sub     rdx, rax\n" +
+                                    "        mov     rax, rdx\n" +
+                                    "        imul    rax, rax, 199\n" +
+                                    "        sub     rcx, rax\n" +
+                                    "        mov     rax, rcx \n\t"));
+                        }else{
+                            text.append(new StringBuffer("        mov     rdx, qword 0B2F4FC0794908CF3H\n" +
+                                    "        mov     rax, rcx\n" +
+                                    "        imul    rdx\n" +
+                                    "        lea     rax, [rdx+rcx]\n" +
+                                    "        sar     rax, 21\n" +
+                                    "        mov     rdx, rax\n" +
+                                    "        mov     rax, rcx\n" +
+                                    "        sar     rax, 63\n" +
+                                    "        sub     rdx, rax\n" +
+                                    "        mov     rax, rdx\n" +
+                                    "        imul    rax, rax, 3000000\n" +
+                                    "        sub     rcx, rax\n" +
+                                    "        mov     rax, rcx \n\t"));
+
+                        }
+                        text.append(new StringBuffer("mov " + varName(dest) + ", rax\n\t"));
+*/
+                    }else {
+
+                        text.append(new StringBuffer("xor rdx, rdx\n\t"));
+                        text.append(new StringBuffer("mov rax, " + varName(var1) + "\n\t"));
+                        text.append(new StringBuffer("mov rbx, " + varName(var2) + "\n\t"));
+                        text.append(new StringBuffer("cdq\n\t"));
+                        text.append(new StringBuffer("idiv ebx\n\t"));
+                        text.append(new StringBuffer("mov " + varName(dest) + ", rdx\n\t"));
+                    }
                     //kickAll();
                     break;
                 case and:

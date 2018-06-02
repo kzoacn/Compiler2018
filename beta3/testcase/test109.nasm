@@ -715,7 +715,7 @@ L_471:
 L_472:
 	cmp r13, 0
 	je L_473
-	mov rbx,  [gbl+8*8]
+	mov rbx,  [gbl+8*2]
 	mov r13,rbx
 	mov rdx,32
 	mov r12,r14
@@ -780,8 +780,8 @@ global_init:
 	sub    rsp, 216
 	mov rdx,t64
 	mov rbx,rdx
-	mov qword [gbl+8*8],rbx
-	mov rbx,  [rsp+8*19]
+	mov qword [gbl+8*2],rbx
+	mov rbx,  [rsp+8*5]
 	mov rax,rbx
 	leave
 	ret

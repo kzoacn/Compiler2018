@@ -699,7 +699,7 @@ main:
 	mov r14,rbx
 	
 L_1727:
-	mov rbx,  [gbl+8*5]
+	mov rbx,  [gbl+8*1]
 	cmp r14,rbx
 	mov r13, 0
 	setl r13B
@@ -737,7 +737,7 @@ L_1730:
 	imul r11,rdx
 	xor rdx, rdx
 	mov rax,  r11
-	mov rbx, [gbl+8*5]
+	mov rbx, [gbl+8*1]
 	cdq
 	idiv ebx
 	mov  r11, rdx
@@ -1066,7 +1066,7 @@ L_1733:
 	imul r11,rdx
 	xor rdx, rdx
 	mov rax,  r11
-	mov rbx, [gbl+8*5]
+	mov rbx, [gbl+8*1]
 	cdq
 	idiv ebx
 	mov  r11, rdx
@@ -1196,8 +1196,8 @@ global_init:
 	sub    rsp, 840
 	mov rdx,100
 	mov rbx,rdx
-	mov qword [gbl+8*5],rbx
-	mov rbx,  [rsp+8*97]
+	mov qword [gbl+8*1],rbx
+	mov rbx,  [rsp+8*11]
 	mov rax,rbx
 	leave
 	ret

@@ -707,7 +707,7 @@ main:
 	mov r15, [r15]
 	mov rdi,r15
 	mov r15,rdi
-	mov qword [gbl+8*6],rax
+	mov qword [gbl+8*1],rax
 	mov     rdi,  r15
 	push r11
 	push r10
@@ -752,11 +752,11 @@ global_init:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword [gbl+8*14], rax
-	mov rdx,  [gbl+8*14]
+	mov     qword [gbl+8*3], rax
+	mov rdx,  [gbl+8*3]
 	mov rbx,rdx
-	mov qword [gbl+8*6],rbx
-	mov rbx,  [rsp+8*15]
+	mov qword [gbl+8*1],rbx
+	mov rbx,  [rsp+8*4]
 	mov rax,rbx
 	leave
 	ret

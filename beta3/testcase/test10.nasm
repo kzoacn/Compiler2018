@@ -745,9 +745,9 @@ L_1301:
 	mov r8, 0
 	sete r8B
 	cmp r8, 0
-	mov qword [rsp+8*18],rbx
-	mov qword [rsp+8*19],rdx
-	mov qword [rsp+8*20],rax
+	mov qword [rsp+8*1],rbx
+	mov qword [rsp+8*2],rdx
+	mov qword [rsp+8*3],rax
 	je L_1305
 	mov rbx,0
 	mov r9,rbx
@@ -899,7 +899,7 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 536
-	mov rbx,  [rsp+8*59]
+	mov rbx,  [rsp+8*5]
 	mov rax,rbx
 	leave
 	ret

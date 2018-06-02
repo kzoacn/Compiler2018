@@ -1,2 +1,2 @@
 0a1
-> 	int n = getInt();
+>     int n = getInt();

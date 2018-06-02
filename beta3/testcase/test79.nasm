@@ -728,7 +728,7 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 136
-	mov rbx,  [rsp+8*9]
+	mov rbx,  [rsp+8*4]
 	mov rax,rbx
 	leave
 	ret

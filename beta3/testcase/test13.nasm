@@ -693,29 +693,29 @@ L_1346:
 	mov r15,rdx
 	
 L_1349:
-	mov rbx,  [gbl+8*5]
+	mov rbx,  [gbl+8*1]
 	cmp r15,rbx
 	mov r14, 0
 	setl r14B
 	cmp r14, 0
 	je L_1350
-	mov rbx,  [gbl+8*7]
+	mov rbx,  [gbl+8*2]
 	mov r14,rbx
 	lea r14,[r14+r15*8+8H]
-	mov rdx,  [gbl+8*10]
+	mov rdx,  [gbl+8*3]
 	mov [r14],rdx
 	mov r14,rdx
 	imul r14,r13
 	xor rdx, rdx
 	mov rax,  r14
-	mov rbx, [gbl+8*12]
+	mov rbx, [gbl+8*4]
 	cdq
 	idiv ebx
 	mov  r14, rdx
 	mov rbx,r14
 	mov rdx,0
 	mov r14,rdx
-	mov qword [gbl+8*10],rbx
+	mov qword [gbl+8*3],rbx
 	
 L_1352:
 	cmp r14,r15
@@ -723,7 +723,7 @@ L_1352:
 	setl r11B
 	cmp r11, 0
 	je L_1353
-	mov rbx,  [gbl+8*7]
+	mov rbx,  [gbl+8*2]
 	mov r11,rbx
 	lea r11,[r11+r15*8+8H]
 	mov r11, [r11]
@@ -767,7 +767,7 @@ L_1347:
 	mov r15,rbx
 	
 L_1359:
-	mov rbx,  [gbl+8*5]
+	mov rbx,  [gbl+8*1]
 	cmp r15,rbx
 	mov r14, 0
 	setl r14B
@@ -780,13 +780,13 @@ L_1362:
 	mov rbx,1
 	mov r13,r14
 	add r13,rbx
-	mov rdx,  [gbl+8*5]
+	mov rdx,  [gbl+8*1]
 	cmp r13,rdx
 	mov r13, 0
 	setl r13B
 	cmp r13, 0
 	je L_1363
-	mov rbx,  [gbl+8*7]
+	mov rbx,  [gbl+8*2]
 	mov r13,rbx
 	lea r13,[r13+r14*8+8H]
 	mov r13, [r13]
@@ -801,7 +801,7 @@ L_1362:
 	setg r13B
 	cmp r13, 0
 	je L_1366
-	mov rbx,  [gbl+8*7]
+	mov rbx,  [gbl+8*2]
 	mov r13,rbx
 	lea r13,[r13+r14*8+8H]
 	mov r13, [r13]
@@ -839,13 +839,13 @@ L_1360:
 	mov r15,rbx
 	
 L_1367:
-	mov rbx,  [gbl+8*5]
+	mov rbx,  [gbl+8*1]
 	cmp r15,rbx
 	mov r14, 0
 	setl r14B
 	cmp r14, 0
 	je L_1368
-	mov rbx,  [gbl+8*7]
+	mov rbx,  [gbl+8*2]
 	mov r14,rbx
 	lea r14,[r14+r15*8+8H]
 	mov r14, [r14]
@@ -896,13 +896,13 @@ global_init:
 	mov rax,1
 	mov rdx,rbx
 	sub rdx,rax
-	mov qword [gbl+8*12],rbx
+	mov qword [gbl+8*4],rbx
 	mov rbx,rdx
 	mov rax,1
 	mov rdx,rax
-	mov qword [gbl+8*5],rbx
-	mov qword [gbl+8*10],rdx
-	mov     rdi, [gbl+8*5]
+	mov qword [gbl+8*1],rbx
+	mov qword [gbl+8*3],rdx
+	mov     rdi, [gbl+8*1]
 	push r11
 	push r10
 	push r9
@@ -912,11 +912,11 @@ global_init:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword [gbl+8*60], rax
-	mov rdx,  [gbl+8*60]
+	mov     qword [gbl+8*7], rax
+	mov rdx,  [gbl+8*7]
 	mov rbx,rdx
-	mov qword [gbl+8*7],rbx
-	mov rbx,  [rsp+8*61]
+	mov qword [gbl+8*2],rbx
+	mov rbx,  [rsp+8*8]
 	mov rax,rbx
 	leave
 	ret

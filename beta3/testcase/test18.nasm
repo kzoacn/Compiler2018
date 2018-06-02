@@ -689,8 +689,8 @@ main:
 	mov rax,rdx
 	mov rdx,6
 	mov r8,rdx
-	mov qword [rsp+8*2],rbx
-	mov qword [rsp+8*3],rax
+	mov qword [rsp+8*1],rbx
+	mov qword [rsp+8*2],rax
 	mov     rdi, 3
 	push r11
 	push r10
@@ -733,7 +733,7 @@ main:
 	mov r11,rbx
 	
 L_909:
-	mov rbx,  [rsp+8*2]
+	mov rbx,  [rsp+8*1]
 	cmp r11,rbx
 	mov r15, 0
 	setle r15B
@@ -743,7 +743,7 @@ L_909:
 	mov r10,rbx
 	
 L_912:
-	mov rbx,  [rsp+8*3]
+	mov rbx,  [rsp+8*2]
 	cmp r10,rbx
 	mov r15, 0
 	setle r15B
@@ -864,10 +864,10 @@ L_913:
 	
 L_910:
 	mov r15,r12
-	mov rbx,  [rsp+8*2]
+	mov rbx,  [rsp+8*1]
 	lea r15,[r15+rbx*8+8H]
 	mov r15, [r15]
-	mov rdx,  [rsp+8*3]
+	mov rdx,  [rsp+8*2]
 	lea r15,[r15+rdx*8+8H]
 	mov r15, [r15]
 	lea r15,[r15+r8*8+8H]
@@ -908,7 +908,7 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 432
-	mov rbx,  [rsp+8*46]
+	mov rbx,  [rsp+8*4]
 	mov rax,rbx
 	leave
 	ret

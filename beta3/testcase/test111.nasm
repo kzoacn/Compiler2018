@@ -793,7 +793,7 @@ main:
 	mov     rdi,  r15
 	call    multiAddress
 	mov  r13, rax
-	mov rbx,  [gbl+8*18]
+	mov rbx,  [gbl+8*1]
 	mov [r13],rbx
 	mov rsi,r14
 	mov rdx,t170
@@ -1013,7 +1013,7 @@ L_490:
 	call    multiAddress
 	mov  r14, rax
 	mov r14, [r14]
-	mov rbx,  [gbl+8*43]
+	mov rbx,  [gbl+8*4]
 	add r14,rbx
 	mov [r13],r14
 	mov rdx,0
@@ -1237,7 +1237,7 @@ L_494:
 	call    multiAddress
 	mov  r14, rax
 	mov r14, [r14]
-	mov rbx,  [gbl+8*43]
+	mov rbx,  [gbl+8*4]
 	add r14,rbx
 	mov [r13],r14
 	mov rdx,0
@@ -1461,7 +1461,7 @@ L_498:
 	call    multiAddress
 	mov  r14, rax
 	mov r14, [r14]
-	mov rbx,  [gbl+8*43]
+	mov rbx,  [gbl+8*4]
 	add r14,rbx
 	mov [r13],r14
 	mov rdx,0
@@ -1479,11 +1479,11 @@ global_init:
 	sub    rsp, 456
 	mov rdx,100
 	mov rbx,rdx
-	mov qword [gbl+8*18],rbx
+	mov qword [gbl+8*1],rbx
 	mov rbx,10
 	mov rax,rbx
-	mov qword [gbl+8*43],rax
-	mov rbx,  [rsp+8*49]
+	mov qword [gbl+8*4],rax
+	mov rbx,  [rsp+8*5]
 	mov rax,rbx
 	leave
 	ret

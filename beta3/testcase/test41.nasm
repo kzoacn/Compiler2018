@@ -666,7 +666,7 @@ dfs:
 	and r14,r13
 	cmp r14, 0
 	je L_1419
-	mov rbx,  [gbl+8*6]
+	mov rbx,  [gbl+8*2]
 	lea r12,[rbx+r15*8+8H]
 	mov r13, [r12]
 	cmp r13,0
@@ -676,7 +676,7 @@ dfs:
 	je L_1419
 	cmp r14, 0
 	je L_1420
-	mov rbx,  [gbl+8*6]
+	mov rbx,  [gbl+8*2]
 	lea r12,[rbx+r15*8+8H]
 	mov [r12],r13
 	
@@ -708,7 +708,7 @@ L_1415:
 	je L_1418
 	cmp r14, 0
 	je L_1421
-	mov rbx,  [gbl+8*6]
+	mov rbx,  [gbl+8*2]
 	lea r12,[rbx+r15*8+8H]
 	mov [r12],r13
 	
@@ -741,7 +741,7 @@ L_1418:
 L_1416:
 	cmp r14, 0
 	je L_1422
-	mov rbx,  [gbl+8*6]
+	mov rbx,  [gbl+8*2]
 	lea r12,[rbx+r15*8+8H]
 	mov rdx,0
 	mov [r12],rdx
@@ -790,7 +790,7 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword [gbl+8*6], rax
+	mov     qword [gbl+8*2], rax
 	push r15
 	call global_init
 	pop r15
@@ -837,7 +837,7 @@ global_init:
 	push   rbp
 	mov    rbp, rsp
 	sub    rsp, 248
-	mov rbx,  [rsp+8*23]
+	mov rbx,  [rsp+8*3]
 	mov rax,rbx
 	leave
 	ret

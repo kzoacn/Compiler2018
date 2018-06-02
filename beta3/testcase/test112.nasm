@@ -666,7 +666,7 @@ lol:
 	and r14,r13
 	cmp r14, 0
 	je L_501
-	mov rbx,  [gbl+8*6]
+	mov rbx,  [gbl+8*2]
 	lea r12,[rbx+r15*8+8H]
 	mov r13, [r12]
 	cmp r13,0
@@ -676,7 +676,7 @@ lol:
 	je L_501
 	cmp r14, 0
 	je L_502
-	mov rbx,  [gbl+8*6]
+	mov rbx,  [gbl+8*2]
 	lea r12,[rbx+r15*8+8H]
 	mov [r12],r13
 	
@@ -691,7 +691,7 @@ L_501:
 	add r13,rbx
 	cmp r14, 0
 	je L_503
-	mov rbx,  [gbl+8*6]
+	mov rbx,  [gbl+8*2]
 	lea r12,[rbx+r15*8+8H]
 	mov [r12],r13
 	
@@ -738,12 +738,12 @@ main:
 	pop r9
 	pop r10
 	pop r11
-	mov     qword [gbl+8*6], rax
+	mov     qword [gbl+8*2], rax
 	push r15
 	call global_init
 	pop r15
 	mov r15 , rax
-	mov rbx,  [gbl+8*13]
+	mov rbx,  [gbl+8*3]
 	mov rdi,rbx
 	mov r15,rdi
 	mov     rdi,  r15
@@ -783,13 +783,13 @@ global_init:
 	mov rdx,123
 	mov rbx,rdx
 	mov rdi,rbx
-	mov qword [gbl+8*17],rbx
+	mov qword [gbl+8*4],rbx
 	call lol
 	mov rbx , rax
 	mov rdx,rbx
-	mov qword [gbl+8*18],rbx
-	mov qword [gbl+8*13],rdx
-	mov rbx,  [rsp+8*19]
+	mov qword [gbl+8*5],rbx
+	mov qword [gbl+8*3],rdx
+	mov rbx,  [rsp+8*6]
 	mov rax,rbx
 	leave
 	ret

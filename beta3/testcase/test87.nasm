@@ -689,7 +689,7 @@ L_2045:
 	mov r15,rbx
 	mov rcx,29
 	shl r15,cl
-	mov rdx,  [gbl+8*3]
+	mov rdx,  [gbl+8*1]
 	cmp rdx,r15
 	mov r15, 0
 	setl r15B
@@ -706,7 +706,7 @@ L_2047:
 	shl r15,cl
 	mov r15,r15
 	neg r15
-	mov rdx,  [gbl+8*3]
+	mov rdx,  [gbl+8*1]
 	cmp rdx,r15
 	mov r15, 0
 	setg r15B
@@ -717,14 +717,14 @@ L_2048:
 	je L_2046
 	mov rbx,0
 	mov r14,rbx
-	mov rdx,  [gbl+8*7]
+	mov rdx,  [gbl+8*2]
 	mov rax,3
 	mov r15,rdx
 	imul r15,rax
 	add r14,r15
-	mov rbx,  [gbl+8*9]
+	mov rbx,  [gbl+8*3]
 	add r14,rbx
-	mov rax,  [gbl+8*3]
+	mov rax,  [gbl+8*1]
 	sub r14,rax
 	mov rdx,r14
 	mov rbx,0
@@ -733,28 +733,28 @@ L_2048:
 	mov r15,rdx
 	imul r15,rbx
 	add r14,r15
-	mov rbx,  [gbl+8*9]
+	mov rbx,  [gbl+8*3]
 	add r14,rbx
 	sub r14,rax
 	mov rbx,r14
-	mov qword [gbl+8*7],rdx
+	mov qword [gbl+8*2],rdx
 	mov rdx,0
 	mov r14,rdx
-	mov rdx,  [gbl+8*7]
+	mov rdx,  [gbl+8*2]
 	mov rax,3
 	mov r15,rdx
 	imul r15,rax
 	add r14,r15
 	add r14,rbx
-	mov rax,  [gbl+8*3]
+	mov rax,  [gbl+8*1]
 	sub r14,rax
 	mov rax,r14
-	mov qword [gbl+8*9],rbx
-	mov qword [gbl+8*3],rax
+	mov qword [gbl+8*3],rbx
+	mov qword [gbl+8*1],rax
 	jmp L_2045
 	
 L_2046:
-	mov rbx,  [gbl+8*7]
+	mov rbx,  [gbl+8*2]
 	mov rdi,rbx
 	mov r15,rdi
 	mov     rdi,  r15
@@ -780,7 +780,7 @@ L_2046:
 	pop r10
 	pop r11
 	mov  r15, rax
-	mov rbx,  [gbl+8*9]
+	mov rbx,  [gbl+8*3]
 	mov rdi,rbx
 	mov r14,rdi
 	mov     rdi,  r14
@@ -818,7 +818,7 @@ L_2046:
 	pop r10
 	pop r11
 	mov  r15, rax
-	mov rbx,  [gbl+8*3]
+	mov rbx,  [gbl+8*1]
 	mov rdi,rbx
 	mov r14,rdi
 	mov     rdi,  r14
@@ -869,14 +869,14 @@ global_init:
 	sub    rsp, 248
 	mov rdx,1
 	mov rbx,rdx
-	mov qword [gbl+8*7],rbx
+	mov qword [gbl+8*2],rbx
 	mov rbx,1
 	mov rax,rbx
 	mov rdx,1
 	mov rbx,rdx
-	mov qword [gbl+8*3],rbx
-	mov qword [gbl+8*9],rax
-	mov rbx,  [rsp+8*23]
+	mov qword [gbl+8*1],rbx
+	mov qword [gbl+8*3],rax
+	mov rbx,  [rsp+8*5]
 	mov rax,rbx
 	leave
 	ret
